@@ -1,0 +1,30 @@
+baseurl = "https://stuartellis.github.io"
+languageCode = "en-us"
+title = "Notes from the Field"
+theme = "liquorice"
+
+[params]
+author = "Stuart Ellis"
+copyright = "Contents © 2016 Stuart Ellis"
+googleAnalytics = "UA-23721911-2"
+
+[[menu.main]]
+name = "Article Tags"
+pre = "<i class='fa fa-heart'></i>"
+weight = -110
+identifier = "tags"
+url = "/tags/"
+
+[[menu.main]]
+name = "Projects on GitHub"
+pre = "<i class='fa fa-heart'></i>"
+weight = -100
+identifier = "github"
+url = "https://github.com/stuartellis"
+
+[[menu.main]]
+name = "Contact Me"
+pre = "<i class='fa fa-heart'></i>"
+weight = -90
+identifier = "contact"
+url = "/contact/"
