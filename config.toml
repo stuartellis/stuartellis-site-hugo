@@ -1,4 +1,4 @@
-baseurl = "https://stuartellis.github.io"
+baseurl = "http://www.stuartellis.eu"
 languageCode = "en-us"
 title = "Notes from the Field"
 theme = "liquorice"
