@@ -4,7 +4,7 @@ Slug = "postgresql-setup"
 Date = "2016-07-01T01:00:00+01:00"
 Description = ""
 Categories = ["databases"]
-Tags = ["linux", "postgresql"]
+Tags = ["database", "linux", "postgresql", "sql"]
 Type = "article"
 
 +++

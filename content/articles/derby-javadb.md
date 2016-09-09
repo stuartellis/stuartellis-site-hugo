@@ -4,7 +4,7 @@ Slug = "derby-javadb"
 Date = "2016-07-01T01:00:00+01:00"
 Description = ""
 Categories = ["databases"]
-Tags = ["database", "java"]
+Tags = ["database", "java", "sql"]
 Type = "article"
 
 +++
