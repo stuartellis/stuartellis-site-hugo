@@ -9,6 +9,7 @@ Type = "article"
 
 +++
 
+
 [Ansible](http://www.ansible.com) provides an Open Source tool for provisioning,
 configuring and orchestrating changes on systems that is fundamentally much
 simpler and more flexible than older tools such Puppet and Chef. This makes it
