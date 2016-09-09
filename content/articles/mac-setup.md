@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2016-07-01T01:00:00+01:00"
+Date = "2016-09-09T21:13:00+01:00"
 Description = ""
 Categories = ["administration", "programming"]
 Tags = ["macos", "javascript", "python", "ruby"]
@@ -208,12 +208,6 @@ well as TextEdit, a desktop text editor. TextEdit is designed for light-weight
 word processing, and has no support for programming. Unless you already have a
 preferred editor, install [Atom](http://www.atom.io),  which is a powerful
 graphical text editor.
-
-[Sublime Text](http://www.sublimetext.com/) is probably still the most popular
-text editor for programmers on Mac OS X, but it is under a proprietary license
-and the future of the product is unclear. Atom is functionally very similar to
-Sublime, but it is developed as an Open Source project with support from
-[GitHub](https://github.com).
 
 Whichever text editor you choose, remember to set the EDITOR environment
 variable in your *~/.bash\_profile* file, so that this editor is
