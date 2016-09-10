@@ -21,10 +21,12 @@ Jenkins uses the [Groovy](http://www.groovy-lang.org/) scripting language for de
 
 You can write Pipeline configurations directly into the Web interface of Jenkins, but should only use this feature for development and testing.
 
-Your job code can call functions from any Jenkins plugin that supports Pipeline. If you work with Bitbucket, GitHub or Docker, use the specific plugins for Pipeline support. Check the [compatibility list](https://github.com/jenkinsci/pipeline-plugin/blob/master/COMPATIBILITY.md) for the status of other plugins. You do have to ensure that all of the plugins that you reference are installed on every Jenkins instance that you use for that job.
+Your job code can call functions from any Jenkins plugin that supports Pipeline. If you work with Bitbucket, GitHub or Docker, use the specific plugins for Pipeline support. For example, install the [CloudBees Docker Pipeline Plugin](https://wiki.jenkins-ci.org/display/JENKINS/CloudBees+Docker+Pipeline+Plugin) for Docker support. Check the [compatibility list](https://github.com/jenkinsci/pipeline-plugin/blob/master/COMPATIBILITY.md) for the status of other plugins. You do have to ensure that all of the plugins that you reference are installed on every Jenkins instance that you use for that job.
 
-If you maintain Jenkins 1 systems you can install the Pipeline Plugin through the usual process. It is automatically included in all new installations of Jenkins 2.
+If you maintain Jenkins version 1 systems you can install the Pipeline Plugin through the usual process. It is automatically included in all new installations of Jenkins 2.
 
 # Learning Pipeline #
 
 The [tutorial for Pipeline](https://jenkins.io/doc/pipeline/) explains how to install and use it. Rather than repeat the tutorial, I will assume that you have read it.
+
+# Managing Variables and Secrets #
