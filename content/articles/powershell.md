@@ -3,7 +3,7 @@ Title = "Notes on PowerShell"
 Slug = "powershell"
 Date = "2016-07-01T01:00:00+01:00"
 Description = ""
-Categories = ["administration"]
+Categories = ["administration", "tools"]
 Tags = ["administration", "dotnet", "powershell", "windows"]
 Type = "article"
 
