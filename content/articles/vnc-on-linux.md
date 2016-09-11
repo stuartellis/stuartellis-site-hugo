@@ -4,7 +4,7 @@ Slug = "vnc-on-linux"
 Date = "2016-07-01T01:00:00+01:00"
 Description = ""
 Categories = ["administration"]
-Tags = ["linux", "vnc"]
+Tags = ["administration", "linux", "vnc"]
 Type = "article"
 
 +++

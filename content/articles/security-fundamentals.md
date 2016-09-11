@@ -4,7 +4,7 @@ Slug = ""
 Date = "2016-07-01T01:00:00+01:00"
 Description = "security-fundamentals"
 Categories = ["administration"]
-Tags = ["linux", "security", "windows"]
+Tags = ["administration", "linux", "security", "windows"]
 Type = "article"
 
 +++

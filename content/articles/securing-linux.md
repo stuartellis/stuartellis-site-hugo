@@ -4,7 +4,7 @@ Slug = "securing-linux"
 Date = "2016-07-01T01:00:00+01:00"
 Description = ""
 Categories = ["administration"]
-Tags = ["linux", "security"]
+Tags = ["administration", "linux", "security"]
 Type = "article"
 
 +++

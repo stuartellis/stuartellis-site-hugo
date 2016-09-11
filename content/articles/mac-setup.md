@@ -4,7 +4,7 @@ Slug = "mac-setup"
 Date = "2016-09-09T21:13:00+01:00"
 Description = ""
 Categories = ["administration", "programming"]
-Tags = ["macos", "javascript", "python", "ruby"]
+Tags = ["administration", "macos", "javascript", "python", "ruby"]
 Type = "article"
 
 +++
