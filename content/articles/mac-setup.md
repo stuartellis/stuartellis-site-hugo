@@ -340,7 +340,11 @@ and clean Ruby environments, use the [RVM](https://rvm.io/) system.
 RVM relies on Git, so you must have a working installation of Git before
 you can set up RVM.
 
-Then enter this command to install GCC and other requirements using Homebrew:
+By default, RVM downloads copies of Ruby that have been compiled for your
+operating system. If there is no compiled version, RVM then falls back to
+downloading the source code and then compiling it on your computer. Enter this
+command to ensure that the requirements for compiling Ruby are on your system,
+using Homebrew:
 
     brew install libksba autoconf automake
 
