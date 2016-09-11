@@ -9,11 +9,11 @@ copyright = "Contents © 2016 Stuart Ellis"
 googleAnalytics = "UA-23721911-2"
 
 [[menu.main]]
-name = "Article Tags"
+name = "Article Categories"
 pre = "<i class='fa fa-heart'></i>"
 weight = -110
-identifier = "tags"
-url = "/tags/"
+identifier = "categories"
+url = "/categories/"
 
 [[menu.main]]
 name = "Projects on GitHub"
