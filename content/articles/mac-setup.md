@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2016-09-09T21:13:00+01:00"
+Date = "2016-09-11T10:57:00+01:00"
 Description = ""
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "javascript", "python", "ruby"]
@@ -311,6 +311,27 @@ Open a new Terminal window and enter these commands:
 
 These install Python 3.5 and make it the default Python run-time.
 
+# A Lightweight Setup for Python 2 Development #
+
+If you only need to work with Python 2, and prefer not to use *pyenv*, you can
+just use the copy of Python that is part of OS X, and add some tools.
+
+First, install *pip*:
+
+    easy_install --user pip
+
+Then add this to your $PATH:
+
+    $HOME/Library/Python/2.7/bin
+
+Use *pip* to install [virtualenv](https://virtualenv.pypa.io/en/stable/):
+
+    pip install --user virtualenv
+
+You can now use *virtualenv* to create Python 2 virtual environments and manage
+the packages within them using *pip*, all inside your home directory, and
+without modifying any system files.
+
 # Setting Up RVM for Ruby Development #
 
 Mac OS X includes a copy of Ruby, but it is outdated. To maintain current
@@ -411,9 +432,7 @@ better desktop integration, [VMWare
 Fusion](https://www.vmware.com/products/fusion/) is probably the best product
 available.
 
-# Other Resources #
-
-## Online Resources ##
+# Online Resources #
 
 Apple offer overviews and task-orientated help on their [support Web
 site](http://www.apple.com/support/mac101/).
@@ -421,16 +440,3 @@ site](http://www.apple.com/support/mac101/).
 Every new user should probably read [How to switch to the
 Mac](http://the.taoofmac.com/space/HOWTO/Switch%20To%20The%20Mac), by
 Rui Carmo.
-
-## Books ##
-
-The single best book on Mac OS X is the [Missing
-Manual](http://missingmanuals.com/), by David Pogue. Once you have this,
-you only need to buy books that are specifically relevant to your fields
-of interest.
-
-Rubyists will also benefit from getting a PDF version of [Programming
-Ruby](http://www.pragprog.com/titles/ruby3/programming-ruby-1-9) (the
-Pickaxe book). This may not be the best resource for learning Ruby, but
-it is the most complete reference, and is very useful to have on your
-computer in a searchable form.
