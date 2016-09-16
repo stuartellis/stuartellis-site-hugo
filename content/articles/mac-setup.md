@@ -174,10 +174,9 @@ terminal window:
 
 ## Installing the Git Version Control System ##
 
-MacOS includes [Subversion](http://subversion.tigris.org/), so that you can
-work with older source code repositories. The Xcode Command Line Tools include a
-copy of [Git](http://www.git-scm.com/), which is now the standard for Open
-Source development, but this will be out of date.
+The Xcode Command Line Tools include a copy of [Git](http://www.git-scm.com/),
+which is now the standard for Open Source development, but this will be out of
+date.
 
 To install a newer version of Git than Apple provide, use Homebrew.
 Enter this command in a terminal window:
