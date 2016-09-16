@@ -279,6 +279,20 @@ example:
 > Use 4096-bit RSA keys for all systems. The older DSA standard only supports
 1024-bit keys, which are now too small to be considered secure.
 
+# Setting Up nvm for Node.js Development #
+
+To maintain multiple Node.js versions on your system, use the [nvm](https://github.com/creationix/nvm) utility.
+
+Enter this command to install nvm:
+
+     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
+
+Open a new Terminal window and enter this command:
+
+    nvm install 6.6.0
+
+This installs Node.js 6.6.0 and makes it the default Node.js run-time.
+
 # Setting Up pyenv for Python Development #
 
 MacOS includes a copy of Python 2. To maintain current and clean Python
