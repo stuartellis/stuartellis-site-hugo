@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2016-09-11T10:57:00+01:00"
+Date = "2016-09-16T12:02:00+01:00"
 Description = ""
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "javascript", "python", "ruby"]
@@ -42,7 +42,7 @@ your system.
 
 # Configuring a User Account #
 
-## Configuring The Trackpad {#trackpad}
+## Configuring The Trackpad ##
 
 To make the trackpad behave correctly, ensure that these settings are
 enabled:
@@ -63,14 +63,14 @@ Applications folder.
 
 ## Securing the Safari Browser ##
 
-Whether or not you use Safari, you should open it once, and change these
-settings:
+Whether or not you regularly use Safari, you should open it once, and adjust the
+settings in case that you use it later.
 
-* Choose *Safari \> Preferences \> General* and deselect the option *Open “safe” files after downloading*.
-* Choose *Safari \> Preferences \> Security* and deselect the option *Enable Java*.
+First, choose *Safari \> Preferences \> General* and deselect the option *Open
+“safe” files after downloading*.
 
-Both of these options have been proven to allow successful attacks on
-systems.
+Then, check the plug-in settings. Go to *Safari \> Preferences \> Security \>
+Plug-in Settings...* and review the plug-ins and settings.
 
 # Configuring Security #
 
@@ -81,23 +81,12 @@ you should probably make all of these changes as soon as possible.
 
 ## Basic Settings ##
 
-Select *System Preferences \> Security \> General*, and set the
+Select *System Preferences \> Security & Privacy*, and set the
 following:
 
-* On Snow Leopard and above: Require password immediately after sleep or screen saver begins
-* On Leopard: Require password to wake this computer from sleep or screen saver
-* Disable automatic login
-* Disable remote control infrared receiver (under *Security \> General \> Advanced*)
-
-Under *Firewall*, choose *Block all incoming connections*, and disable
-*Automatically allow signed software to receive incoming connections*.
-On Leopard (Mac OS X 10.5) these options do not exist; instead set
-*Allow only essential services*.
-
-New installations of Snow Leopard and above use secure virtual memory by
-default. For older systems, this is an option under *Security \>
-General \> Advanced*. If you enable secure virtual memory yourself,
-restart your system so that the feature is active.
+* Under *General*, set *require a password after sleep or screen saver begins* to *immediately*
+* Click *Advanced...* and select *Require an administrator password to access system-wide preferences*
+* Under *Firewall*, click *Turn Firewall On*.
 
 ## Enable File Vault NOW ##
 
@@ -155,8 +144,9 @@ graphical desktop applications.
 
 Apple now provide the Xcode suite as a free download from the App Store.
 To install Xcode Command Line Tools, install Xcode from the App Store,
-then add the Command Line Tools using the *Preferences \> Downloads \>
-Components*.
+then open a Terminal window and enter the following command:
+
+    xcode-select --install
 
 ## Setting Up Homebrew ##
 
@@ -432,7 +422,7 @@ range of products from both strands of software development.
 
 The ready-to-use versions of VirtualBox are free for personal use, but not
 actually Open Source. If you want to pay for a virtual machine application with
-better desktop integration, [VMWare
+better performance, [VMWare
 Fusion](https://www.vmware.com/products/fusion/) is probably the best product
 available.
 
