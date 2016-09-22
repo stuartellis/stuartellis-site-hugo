@@ -279,7 +279,9 @@ example:
 > Use 4096-bit RSA keys for all systems. The older DSA standard only supports
 1024-bit keys, which are now too small to be considered secure.
 
-# Setting Up nvm for Node.js Development #
+# Setting Up Environments #
+
+## nvm for Node.js Development ##
 
 To maintain multiple Node.js versions on your system, use the [nvm](https://github.com/creationix/nvm) utility.
 
@@ -293,49 +295,7 @@ Open a new Terminal window and enter this command:
 
 This installs Node.js 6.6.0 and makes it the default Node.js run-time.
 
-# Setting Up pyenv for Python Development #
-
-MacOS includes a copy of Python 2. To maintain current and clean Python
-environments, use the [pyenv](https://github.com/yyuu/pyenv) system and the
-[pyenv-virtualenv](https://github.com/yyuu/pyenv-virtualenv) plugin.
-
-Enter this command to install pyenv using Homebrew:
-
-    brew install pyenv pyenv-virtualenv
-
-Next, add this line to the *.bashrc* file in your home directory:
-
-     if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-Open a new Terminal window and enter these commands:
-
-    pyenv install 3.5.1
-    pyenv global 3.5.1
-
-These install Python 3.5 and make it the default Python run-time.
-
-# A Lightweight Setup for Python 2 Development #
-
-If you only need to work with Python 2, and prefer not to use *pyenv*, you can
-just use the copy of Python that is part of MacOS, and add some tools.
-
-First, install *pip*:
-
-    easy_install --user pip
-
-Then add this to your $PATH:
-
-    $HOME/Library/Python/2.7/bin
-
-Use *pip* to install [virtualenv](https://virtualenv.pypa.io/en/stable/):
-
-    pip install --user virtualenv
-
-You can now use *virtualenv* to create Python 2 virtual environments and manage
-the packages within them using *pip*, all inside your home directory, and
-without modifying any system files.
-
-# Setting Up RVM for Ruby Development #
+## RVM for Ruby Development ##
 
 MacOS includes a copy of Ruby, but it is outdated. To maintain current
 and clean Ruby environments, use the [RVM](https://rvm.io/) system.
@@ -356,6 +316,48 @@ generation of local documentation. To do this, create a file in your
 home directory with the name *.gemrc* and put this line in it:
 
     gem: --no-ri --no-rdoc
+
+## pyenv for Python Development ##
+
+MacOS includes a copy of Python 2. To maintain current and clean Python
+environments, use the [pyenv](https://github.com/yyuu/pyenv) system and the
+[pyenv-virtualenv](https://github.com/yyuu/pyenv-virtualenv) plugin.
+
+Enter this command to install pyenv using Homebrew:
+
+    brew install pyenv pyenv-virtualenv
+
+Next, add this line to the *.bashrc* file in your home directory:
+
+     if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+Open a new Terminal window and enter these commands:
+
+    pyenv install 3.5.1
+    pyenv global 3.5.1
+
+These install Python 3.5 and make it the default Python run-time.
+
+## A Lightweight Setup for Python 2 Development ##
+
+If you only need to work with Python 2, and prefer not to use *pyenv*, you can
+just use the copy of Python that is part of MacOS, and add some tools.
+
+First, install *pip*:
+
+    easy_install --user pip
+
+Then add this to your $PATH:
+
+    $HOME/Library/Python/2.7/bin
+
+Use *pip* to install [virtualenv](https://virtualenv.pypa.io/en/stable/):
+
+    pip install --user virtualenv
+
+You can now use *virtualenv* to create Python 2 virtual environments and manage
+the packages within them using *pip*, all inside your home directory, and
+without modifying any system files.
 
 # MariaDB and MySQL #
 
@@ -422,7 +424,7 @@ configuration file on your Mac. Production installations of MySQL should be
 configured with appropriate *SQL modes* to enable data integrity safeguards. By
 default, MySQL permits various types of invalid data to be entered.
 
-# Desktop Applications #
+# Other Useful Desktop Applications for Developers #
 
 MacOS has a double identity - it is both a UNIX operating system, and
 a proprietary graphical desktop system. This enables it to host a broad
