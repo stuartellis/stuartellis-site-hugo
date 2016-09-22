@@ -1,8 +1,8 @@
 +++
 Title = "Enabling Remote Access to MySQL"
 Slug = "mysql-remote-access"
-Date = "2016-10-22T21:20:00+01:00"
-Description = ""
+Date = "2016-09-22T21:20:00+01:00"
+Description = "Setting up remote access to MySQL with SSL encryption"
 Categories = ["databases"]
 Tags = ["database", "mysql", "sql"]
 Type = "article"
@@ -10,7 +10,7 @@ Type = "article"
 +++
 
 
-Setting up MySQL remote access with SSL encryption is surprisingly awkward. This article was pieced together from a number of places, but [a post on the Distracted-IT blog](http://distracted-it.blogspot.co.nz/2014/04/getting-mysql-server-to-run-with-ssl.html) was the most helpful.
+Setting up MySQL remote access with SSL encryption is surprisingly awkward. This article describes all of the steps that are necessary to make this feature work in practice.
 
 <!--more-->
 
@@ -97,3 +97,8 @@ The *ssl-ca* option requires the certificate bundle.
 To verify that the connection is protected by SSL, type *\s* at the MySQL prompt. The *SSL* item will show the cipher:
 
      SSL:			Cipher in use is DHE-RSA-AES256-SHA
+
+# Endnote #
+
+This article was pieced together from a number of places, but [a post on the Distracted-IT blog](http://distracted-it.blogspot.co.nz/2014/04/getting-mysql-server-to-run-with-ssl.html) was the most helpful.
+
