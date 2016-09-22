@@ -22,15 +22,18 @@ to add Docker support.
 
 Jenkins uses the [Groovy](http://www.groovy-lang.org/) scripting language for
 defining jobs with Pipeline, but you can write scripts without learning the
-details of Groovy. In most cases, you put the script in a file (called
+details of Groovy. Your job code can call functions from any Jenkins plugin that supports Pipeline.
+
+In most cases, you put the script in a file (called
 *Jenkinsfile* by default), and add this to the version control repository for
 your project. This means that each job only need a minimal configuration on the
 Jenkins server, which specifies the Jenkinsfile.
 
-You can write Pipeline scripts directly into the Web interface of Jenkins, but
+You can also write Pipeline scripts directly into the Web interface of Jenkins, but
 should only use this feature for development and testing.
 
-Your job code may call functions from any Jenkins plugin that supports Pipeline.
+# Installation #
+
 To integrate Docker with Pipeline, install Docker on the Jenkins server and add
 the [CloudBees Docker Pipeline
 Plugin](https://wiki.jenkins-ci.org/display/JENKINS/CloudBees+Docker+Pipeline+Plugin)
@@ -40,7 +43,7 @@ for the status of other plugins. You do have to ensure that all of the plugins
 that you reference are installed on every Jenkins instance that you use for that
 job.
 
-If you maintain Jenkins version 1 systems you can install the Pipeline Plugin
+If you maintain Jenkins version 1 systems you will need to install the Pipeline Plugin
 through the usual process. It is automatically included in all new installations
 of Jenkins 2.
 
