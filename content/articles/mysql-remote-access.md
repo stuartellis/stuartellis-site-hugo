@@ -1,7 +1,7 @@
 +++
 Title = "Enabling Remote Access to MySQL"
 Slug = "mysql-remote-access"
-Date = "2016-07-01T01:00:00+01:00"
+Date = "2016-10-22T21:20:00+01:00"
 Description = ""
 Categories = ["databases"]
 Tags = ["database", "mysql", "sql"]
@@ -10,7 +10,7 @@ Type = "article"
 +++
 
 
-There are a number of posts about this topic, and this article was pieced together from a number of places. [The Distracted-IT post](http://distracted-it.blogspot.co.nz/2014/04/getting-mysql-server-to-run-with-ssl.html) is probably the most complete.
+Setting up MySQL remote access with SSL encryption is surprisingly awkward. This article was pieced together from a number of places, but [a post on the Distracted-IT blog](http://distracted-it.blogspot.co.nz/2014/04/getting-mysql-server-to-run-with-ssl.html) was the most helpful.
 
 <!--more-->
 
