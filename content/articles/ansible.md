@@ -1,7 +1,7 @@
 +++
 Title = "Managing Systems with Ansible"
 Slug = "ansible"
-Date = "2016-07-01T01:00:00+01:00"
+Date = "2016-09-22T11:58:00+01:00"
 Description = "An introduction to Ansible"
 Categories = ["administration"]
 Tags = ["administration", "python"]
