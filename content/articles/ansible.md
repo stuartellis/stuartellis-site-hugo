@@ -1,7 +1,7 @@
 +++
 Title = "Managing Systems with Ansible"
 Slug = "ansible"
-Date = "2016-09-22T11:58:00+01:00"
+Date = "2016-09-22T20:52:00+01:00"
 Description = "An introduction to Ansible"
 Categories = ["administration"]
 Tags = ["administration", "python"]
@@ -207,3 +207,9 @@ valid hash with *passlib* enter this command in a terminal window:
 Enter the password that you would like to use at the prompt.
 
 Any YAML file that stores password variables should be encrypted using the [Vault](http://docs.ansible.com/playbooks_vault.html) feature of Ansible.
+
+# Examples #
+
+* [Ansible configuration for Linux and MacOS](https://github.com/stuartellis/linux-ansible-config)
+* [Ansible configuration for Amazon Web Services](https://github.com/stuartellis/aws-ansible-config)
+* [Ansible configuration for Microsoft Windows](https://github.com/stuartellis/windows-ansible-config)
