@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2016-09-22T11:40:00+01:00"
+Date = "2016-09-24T12:40:00+01:00"
 Description = ""
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "javascript", "python", "ruby"]
@@ -309,7 +309,7 @@ downloading the source code and then compiling it on your computer. Enter this
 command to ensure that the requirements for compiling Ruby are on your system,
 using Homebrew:
 
-    brew install libksba autoconf automake
+    brew install autoconf automake gmp libksba libtool libyaml openssl pkg-config readline
 
 Finally, you can speed up installation of gem packages by disabling the
 generation of local documentation. To do this, create a file in your
@@ -432,7 +432,7 @@ range of products from both strands of software development.
 
 * Office suite: [LibreOffice](http://www.libreoffice.org/)
 * Virtual machine management: [VirtualBox](http://www.virtualbox.org/)
-* Docker container management: [Docker ToolBox](https://www.docker.com/toolbox)
+* Docker container management: [Docker for Mac](http://www.docker.com/products/docker#/mac)
 * MySQL database management: [MySQL Workbench](http://wb.mysql.com/)
 
 The ready-to-use versions of VirtualBox are free for personal use, but not
