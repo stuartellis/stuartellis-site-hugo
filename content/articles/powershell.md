@@ -20,7 +20,7 @@ installation of .NET, and by running standard commands and scripts from the host
 
 # Installing PowerShell #
 
-To use PowerShell on Linux and MacOS systems, install .NET Core and PowerShell Core. To write and debug PowerShell scripts, install the [Visual Studio Code](https://code.visualstudio.com) editor and add the [PowerShell Language Support](https://marketplace.visualstudio.com/items?itemname=ms-vscode.powershell).
+To use PowerShell on Linux and macOS systems, install .NET Core and PowerShell Core. To write and debug PowerShell scripts, install the [Visual Studio Code](https://code.visualstudio.com) editor and add the [PowerShell Language Support](https://marketplace.visualstudio.com/items?itemname=ms-vscode.powershell).
 
 All of the recent versions of Windows desktop and server operating systems
 include versions of PowerShell and the [Integrated Script

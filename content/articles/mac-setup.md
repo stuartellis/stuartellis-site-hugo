@@ -11,7 +11,7 @@ Type = "article"
 
 
 This is a set of notes for setting up an Apple Mac, specifically as a
-development system. Current versions of MacOS have a fairly good default
+development system. Current versions of macOS have a fairly good default
 configuration for general-purpose use, but you do need to to adjust some
 of the security settings. In addition, you need to install several
 pieces of software in order to make the system useful for development.
@@ -74,7 +74,7 @@ Plug-in Settings...* and review the plug-ins and settings.
 
 # Configuring Security #
 
-MacOS is a reasonably secure operating system, but unfortunately
+macOS is a reasonably secure operating system, but unfortunately
 convenience has won out over security in a few places. These can easily
 be corrected by changing a few settings. If you are using a laptop then
 you should probably make all of these changes as soon as possible.
@@ -90,7 +90,7 @@ following:
 
 ## Enable File Vault NOW ##
 
-Current versions of MacOS include File Vault 2, a full-disk encryption system
+Current versions of macOS include File Vault 2, a full-disk encryption system
 that has little in common with the much more limited File Vault 1. You should
 enable File Vault *NOW*, because it is the only protection against anyone with
 physical access to your computer. All other security measures will be completely
@@ -151,7 +151,7 @@ then open a Terminal window and enter the following command:
 ## Setting Up Homebrew ##
 
 [Homebrew](http://brew.sh/) provides a package
-management system for MacOS, enabling you to quickly install and update the
+management system for macOS, enabling you to quickly install and update the
 tools and libraries that you need. Follow the instructions on the site.
 
 You should also amend your PATH, so that the versions of tools that are
@@ -185,13 +185,13 @@ Enter this command in a terminal window:
 
 If you do not use Homebrew, go to the [Web
 site](http://www.git-scm.com/) and follow the link for *Other Download
-Options* to obtain a MacOS disk image. Open your downloaded copy of
+Options* to obtain a macOS disk image. Open your downloaded copy of
 the disk image and run the enclosed installer in the usual way, then
 dismount the disk image.
 
 ## Choosing a Text Editor ##
 
-MacOS includes command-line versions of both
+macOS includes command-line versions of both
 [Emacs](http://www.gnu.org/software/emacs/) and [vim](http://www.vim.org/), as
 well as TextEdit, a desktop text editor. TextEdit is designed for light-weight
 word processing, and has no support for programming. Unless you already have a
@@ -269,7 +269,7 @@ environments.
 ## Creating SSH Keys ##
 
 You will frequently use SSH to access Git repositories or remote UNIX systems.
-MacOS includes the standard OpenSSH suite of tools.
+macOS includes the standard OpenSSH suite of tools.
 
 To create an SSH key, run the *ssh-keygen* command in a terminal window. For
 example:
@@ -297,7 +297,7 @@ This installs Node.js 6.6.0 and makes it the default Node.js run-time.
 
 ## RVM for Ruby Development ##
 
-MacOS includes a copy of Ruby, but it is outdated. To maintain current
+macOS includes a copy of Ruby, but it is outdated. To maintain current
 and clean Ruby environments, use the [RVM](https://rvm.io/) system.
 
 RVM relies on Git, so you must have a working installation of Git before
@@ -319,7 +319,7 @@ home directory with the name *.gemrc* and put this line in it:
 
 ## pyenv for Python Development ##
 
-MacOS includes a copy of Python 2. To maintain current and clean Python
+macOS includes a copy of Python 2. To maintain current and clean Python
 environments, use the [pyenv](https://github.com/yyuu/pyenv) system and the
 [pyenv-virtualenv](https://github.com/yyuu/pyenv-virtualenv) plugin.
 
@@ -341,7 +341,7 @@ These install Python 3.5 and make it the default Python run-time.
 ## A Lightweight Setup for Python 2 Development ##
 
 If you only need to work with Python 2, and prefer not to use *pyenv*, you can
-just use the copy of Python that is part of MacOS, and add some tools.
+just use the copy of Python that is part of macOS, and add some tools.
 
 First, install *pip*:
 
@@ -426,7 +426,7 @@ default, MySQL permits various types of invalid data to be entered.
 
 # Other Useful Desktop Applications for Developers #
 
-MacOS has a double identity - it is both a UNIX operating system, and
+macOS has a double identity - it is both a UNIX operating system, and
 a proprietary graphical desktop system. This enables it to host a broad
 range of products from both strands of software development.
 

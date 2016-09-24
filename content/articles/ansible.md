@@ -30,9 +30,9 @@ run-time that is already installed on the target. The managed systems are
 referred to as *nodes*.
 
 Most Ansible modules connect to the target systems with SSH and run Python 2,
-both of which are installed on most Linux systems, and are part of MacOS.
+both of which are installed on most Linux systems, and are part of macOS.
 There are also modules to execute actions with more basic methods, such as the
-Bash shell that is the default for both MacOS and GNU/Linux distributions.
+Bash shell that is the default for both macOS and GNU/Linux distributions.
 The Ansible modules for managing Microsoft Windows systems send commands to
 PowerShell, using the PowerShell remoting facility. This means that you can
 manage almost any system with Ansible, possibly starting with low-level modules,
@@ -43,9 +43,9 @@ detailed inventories of systems, Red Hat offer
 [Ansible Tower](http://www.ansible.com/tower), but this product is not needed for any of
 the features of Ansible itself.
 
-# Setting Up A MacOS Control Machine #
+# Setting Up A macOS Control Machine #
 
-To set up Ansible on a MacOS workstation using [Homebrew](http://brew.sh/)
+To set up Ansible on a macOS workstation using [Homebrew](http://brew.sh/)
 enter these commands in a terminal window:
 
     brew update && brew install ansible
@@ -197,7 +197,7 @@ The [Ansible documentation on Windows](http://docs.ansible.com/ansible/intro_win
 # A Note on Generating Passwords #
 
 You must specify the SHA512 hashed version of a user password when you set it
-through Ansible. By default, MacOS does not generate the same hashes as
+through Ansible. By default, macOS does not generate the same hashes as
 Linux, so you should install the Python module *passlib* to provide a hash
 generator that behaves consistently across operating systems. To generate a
 valid hash with *passlib* enter this command in a terminal window:
@@ -210,6 +210,6 @@ Any YAML file that stores password variables should be encrypted using the [Vaul
 
 # Example Repositories #
 
-* [Ansible configuration for Linux and MacOS](https://github.com/stuartellis/linux-ansible-config)
+* [Ansible configuration for Linux and macOS](https://github.com/stuartellis/linux-ansible-config)
 * [Ansible configuration for Amazon Web Services](https://github.com/stuartellis/aws-ansible-config)
 * [Ansible configuration for Microsoft Windows](https://github.com/stuartellis/windows-ansible-config)
