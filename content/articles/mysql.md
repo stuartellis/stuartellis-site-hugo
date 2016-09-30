@@ -324,8 +324,8 @@ backups, and add a matching account within MySQL. On Debian and Ubuntu
 systems the backup account must be a member of the adm group. To create
 this user from the command-line, enter the following:
 
-    .. sudo adduser backup-user\
-sudo usermod -G adm backup-user
+    sudo adduser backup-user\
+    sudo usermod -G adm backup-user
 
 This SQL statement creates a new MySQL user account called backup-user,
 with a password of passwd, and sufficient privileges to backup all
@@ -416,17 +416,17 @@ run at 2am every day.
 -   Linux only: ensure that you enable AppArmor (or SELinux on Red
     Hat-based systems)
 
-    # Differences Between The Debian Version of MySQL and the MySQL Community Release #
+# Differences Between The Debian Version of MySQL and the MySQL Community Release #
 
-    The MySQL configuration provided by Debian and Ubuntu differs slightly
-    from the version provided and documented by MySQL AB. Specifically:
+The MySQL configuration provided by Debian and Ubuntu differs slightly
+from the version provided and documented by MySQL AB. Specifically:
 
-    * The service management facilities use mysqld\_safe, rather than mysqlmanager
-    * A **debian-sys-maint** account is created by default, to enable management scripts to automatically access MySQL
-    * The MySQL Reference Manual cannot be included in the distribution, as this document is under a proprietary license
+* The service management facilities use mysqld\_safe, rather than mysqlmanager
+* A **debian-sys-maint** account is created by default, to enable management scripts to automatically access MySQL
+* The MySQL Reference Manual cannot be included in the distribution, as this document is under a proprietary license
 
-    Ubuntu includes a package for the MySQL Reference Manual in the
-    **multiverse** repository.
+Ubuntu includes a package for the MySQL Reference Manual in the
+**multiverse** repository.
 
 # Managing MySQL #
 
@@ -494,7 +494,7 @@ GRANT SELECT,INSERT,UPDATE,DELETE
 ON adatabase.*
 TO  'newuser'@'localhost'
 IDENTIFIED BY 'passwd';
-~~~sql
+~~~
 
 The *GRANT* statement automatically encrypts the password that you
 specify. Use the *PASSWORD ('passwd')* function to specify passwords
