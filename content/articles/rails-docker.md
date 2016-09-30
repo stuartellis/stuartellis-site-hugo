@@ -33,9 +33,9 @@ To configure applications that are inside a container, the simplest approach is 
 
 Use the most recent version of Docker that you can. Docker, Inc. currently release new versions of Docker every eight weeks with fixes and new features, and so packages will quickly become outdated.
 
-If you are using Mac OS X, install the [Docker Toolbox](https://www.docker.com/docker-toolbox) package on to your workstation. This includes the main *Docker Engine*, the *Docker Machine* setup tool, and the *Docker Compose* container management utility. Docker, Inc. also provide packages for Ubuntu, but for other Linux distributions you should look for packages in the distribution repositories.
+If you are using macOS, install the [Docker Toolbox](https://www.docker.com/docker-toolbox) package on to your workstation. This includes the main *Docker Engine*, the *Docker Machine* setup tool, and the *Docker Compose* container management utility. Docker, Inc. also provide packages for Ubuntu, but for other Linux distributions you should look for packages in the distribution repositories.
 
-To manage the Amazon container service, install the *ECS CLI* tool. On Mac OS X, use Homebrew:
+To manage the Amazon container service, install the *ECS CLI* tool. On macOS, use Homebrew:
 
     brew install amazon-ecs-cli
 

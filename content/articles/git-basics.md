@@ -266,10 +266,10 @@ Install one of the following:
 * [Git for Windows](http://code.google.com/p/msysgit/) - Package for command-line Git on Windows, including SSH
 * [Git Extensions](http://sourceforge.net/projects/gitextensions/) - Provides Git for Windows, as well as a graphical utility, and a Visual Studio plugin for Git
 
-## Installing Git on Mac OS X ##
+## Installing Git on macOS ##
 
 Go to the [Git Web site](http://www.git-scm.com/) and follow the link
-for *Other Download Options*, to obtain a Mac OS X disk image. Use the
+for *Other Download Options*, to obtain a macOS disk image. Use the
 disk image as normal.
 
 # Configuring Git #

@@ -17,9 +17,9 @@ The Ionic Framework provides a set of tools and libraries for developing mobile 
 
 # Installation #
 
-You may run Ionic and the Android compiler on any platform. You may only compile and run iOS packages on Mac OS X.
+You may run Ionic and the Android compiler on any platform. You may only compile and run iOS packages on macOS.
 
-First install Node.js. To set up Node.js on a Mac OS X workstation using [Homebrew](http://mxcl.github.com/homebrew/) enter this command in a terminal window::
+First install Node.js. To set up Node.js on a macOS workstation using [Homebrew](http://mxcl.github.com/homebrew/) enter this command in a terminal window::
 
     brew install node
 

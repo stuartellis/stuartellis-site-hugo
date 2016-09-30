@@ -49,7 +49,7 @@ Frequently used NuGet packages are:
 * [Nancy](http://nancyfx.org/) - A lightweight Web framework that is built on ASP.NET
 * [SignalR](http://www.asp.net/signalr) - The default WebSockets implementation for .NET (does not support .NET Core yet)
 
-# Setup on A Mac OS X Development Workstation #
+# Setup on A macOS Development Workstation #
 
 First, use the installer to set up the [.NET Core SDK](https://www.microsoft.com/net/core#macos).
 

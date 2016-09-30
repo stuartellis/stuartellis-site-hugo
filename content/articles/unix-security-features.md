@@ -205,7 +205,7 @@ potentially crackable passwords.
 
 Most Linux distributions include the OpenSSH client by default. The
 OpenSSH service as usually offered as an option, although some
-distributions also provide it by default. Mac OS X includes both the
+distributions also provide it by default. macOS includes both the
 OpenSSH service, and the client utilities. To access SSH services from
 Microsoft Windows systems, install PuTTY. You may download PuTTY from
 the main project Web site:

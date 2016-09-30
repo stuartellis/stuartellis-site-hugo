@@ -46,7 +46,7 @@ package with APT:
 
     sudo apt-get install monit
 
-You can install Monit on Mac OS X with [Homebrew](http://mxcl.github.com/homebrew/):
+You can install Monit on macOS with [Homebrew](http://mxcl.github.com/homebrew/):
 
     brew install monit
 

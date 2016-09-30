@@ -90,7 +90,7 @@ command-line utilities are automatically installed along with the MySQL
 server. You may install both the graphical and command-line utilities on
 any system, without installing a MySQL instance.
 
-> *Mac OS X:* The MySQL distributions for Mac OS X install it into a
+> *macOS:* The MySQL distributions for macOS install it into a
 > subdirectory within the /usr/local/ directory. In addition, a symlink
 > of /usr/local/mysql is created to point to the most recent version of
 > MySQL. For convenience, add /usr/local/mysql/bin to your PATH.

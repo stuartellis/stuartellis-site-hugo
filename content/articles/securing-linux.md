@@ -677,7 +677,7 @@ over the network, and incorporates a Web interface for easy management:
 
 <http://backuppc.sourceforge.net/>
 
-Client computers may run Windows, Mac OS X, or any Linux distribution.
+Client computers may run Windows, macOS, or any Linux distribution.
 
 If you need advanced backup facilities for a larger network, use
 [Bacula](http://www.bacula.org/) or [Amanda](http://www.amanda.org/).

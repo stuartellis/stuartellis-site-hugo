@@ -461,7 +461,7 @@ command:
 
 To start a VNC desktop on a remote system, use an SSH client to execute
 vncserver on the remote system. The OpenSSH software automatically
-installed on Linux, Mac OS X, and other UNIX-like systems provides the
+installed on Linux, macOS, and other UNIX-like systems provides the
 ssh client. As an example, this command uses ssh runs vncserver on the
 system *server.example.com*, as the user *username*:
 
@@ -551,7 +551,7 @@ Java support enabled:
 The standard VNC software does not encrypt the connection between the
 client and the server. In order to protect VNC communications, we can
 simply use the *tunneling* feature of SSH secure remote access software.
-Linux, Mac OS X, and other UNIX-based systems include OpenSSH by
+Linux, macOS, and other UNIX-based systems include OpenSSH by
 default.
 
 For Windows systems, install the open source PuTTY suite, to provide SSH
