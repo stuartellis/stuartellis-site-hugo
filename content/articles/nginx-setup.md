@@ -1,7 +1,7 @@
 +++
 Title = "Configuring nginx"
 Slug = "nginx-setup"
-Date = "2016-07-01T01:00:00+01:00"
+Date = "2016-11-13T12:40:00+00:00"
 Description = ""
 Categories = ["administration"]
 Tags = ["linux", "web"]
@@ -29,13 +29,24 @@ The Debian and Ubuntu packages include support for multiple sites.
 
 # Security and SSL #
 
-For general security, turn off version identifiers and set an appropriate size limit for uploaded files:
+## Version Identifiers ##
 
-    # Disable display of server information
-    server_tokens off;
+For general security, turn off the *Server* header that identifies the Web
+server and version:
+
+    # Removes headers
+    more_clear_headers 'Server' 'X-Powered-By' 'X-Runtime';
+
+The *more_clear_headers* means that nginx will not send these headers at all.
+
+## Limit Uploads ##
+
+Set an appropriate size limit for uploaded files:
 
     # Limit the size of file uploads
     client_max_body_size 10M;
+
+## SSL #
 
 Use the [Mozilla SSL Configuration Generator](https://mozilla.github.io/server-side-tls/ssl-config-generator/) to produce the best SSL configuration for your system. For example, [this link](https://mozilla.github.io/server-side-tls/ssl-config-generator/?server=nginx-1.6.2&openssl=1.0.1f&hsts=yes&profile=modern) provides a configuration that provides high security, and [this configuration](https://mozilla.github.io/server-side-tls/ssl-config-generator/?server=nginx-1.6.2&openssl=1.0.1f&hsts=yes&profile=intermediate) is a practical configuration:
 
