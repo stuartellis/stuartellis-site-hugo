@@ -1,7 +1,7 @@
 +++
 Title = "Using PostgreSQL on Debian and Ubuntu"
 Slug = "postgresql-setup"
-Date = "2016-07-01T01:00:00+01:00"
+Date = "2016-12-06T21:00:00+00:00"
 Description = ""
 Categories = ["databases"]
 Tags = ["database", "linux", "postgresql", "sql"]
@@ -21,9 +21,7 @@ but should be adaptable to other operating systems. Ubuntu provides
 versions of the Debian PostgreSQL packages, and so has the same
 maintenance facilities as Debian.
 
-The current releases of Ubuntu (12.04 and above) includes version 9.1 of
-PostgreSQL, rather than PostgreSQL 8.1, so amend the commands below
-accordingly.
+The current releases of Ubuntu (16.04 and above) includes version 9.5 of PostgreSQL, rather than PostgreSQL 9.3, so amend the commands below accordingly.
 
 > *Privileged Commands*: Commands that require root (administrative)
 > privileges are shown with the prefix \#. On Ubuntu, simply replace the
@@ -79,15 +77,15 @@ clusters (see below).
 PostgreSQL is highly standards-compliant, and also provides the
 additional features that you would expect from a enterprise SQL
 database. You may use popular programming languages within PostgreSQL
-functions, as well as standard SQL. Version 8.3 includes XML support and
+functions, as well as standard SQL. Version 9.5 includes XML support and
 full-text search as part of the core system, and these features were
 available as extensions in previous releases.
 
-Version 9.0 of PostgreSQL includes support for single-master
+Version 9.0 and above of PostgreSQL includes support for single-master
 replication. Use Bucardo, Slony-I, or a commercial replication product
 to support more advanced scenarios or older versions of PostgreSQL.
 
-The development team prefer more specialized features to remain
+The development team prefer more specialised features to remain
 separate, rather than simply being bundled with the main software in the
 form of one preset solution. For example, the PostGIS extension adds
 support for spatial data. Similarly, database drivers and the extensions
@@ -102,36 +100,36 @@ PGFoundry Web site:
 
 On a Debian server:
 
-    # apt-get install postgresql-8.1 postgresql-client-8.1 postgresql-contrib-8.1
+    # apt-get install postgresql-9.3 postgresql-client-9.3 postgresql-contrib-9.3
 
 On an Ubuntu server:
 
-    # apt-get install postgresql-9.1 postgresql-client-9.1 postgresql-contrib-9.1
+    # apt-get install postgresql-9.5 postgresql-client-9.5 postgresql-contrib-9.5
 
 Ubuntu also has packages for Slony-I replication and the PostGIS spacial
 data extensions:
 
-    # apt-get install postgresql-8.3-slony1
+    # apt-get install postgresql-9.5-slony1
 
-    # apt-get install postgresql-8.3-postgis
+    # apt-get install postgresql-9.5-postgis
 
 # Installing the PostgreSQL Management Tools #
 
 To manage a PostgreSQL service from an Ubuntu workstation, install these
 packages:
 
-    # apt-get install pgadmin3 postgresql-client-9.1 postgresql-doc-9.1
+    # apt-get install pgadmin3 postgresql-client-9.5 postgresql-doc-9.5
 
 This installs the graphical management tool pgAdmin III, the
 command-line utilities, and the official documentation in HTML format.
 
 Enter this URI in your Web browser to read the documentation:
 
-<file:///usr/share/doc/postgresql-doc-9.1/html/index.html>
+<file:///usr/share/doc/postgresql-doc-9.5/html/index.html>
 
 If you use Debian stable, install these packages:
 
-    # apt-get install pgadmin3 postgresql-client-8.1 postgresql-doc-8.1
+    # apt-get install pgadmin3 postgresql-client-9.3 postgresql-doc-9.3
 
 # Configuring the PostgreSQL Server #
 
@@ -165,16 +163,38 @@ To exit the PostgreSQL shell, type:
 To enable some of the functions of the pgAdmin utility, you must run a
 script against the *postgres* database:
 
-    sudo -u postgres psql -d postgres < /usr/share/postgresql/8.1/contrib/admin81.sql
+    sudo -u postgres psql -d postgres < /usr/share/postgresql/9.3/contrib/admin81.sql
 
-Use /usr/share/postgresql/8.3/contrib/adminpack.sql on current versions
+Use /usr/share/postgresql/9.5/contrib/adminpack.sql on current versions
 of Ubuntu.
+
+## Adding Extra User Accounts ##
+
+To create an extra user account for local access only, run *CREATE USER*:
+
+~~~sql
+CREATE USER myaccount;
+~~~
+
+To enable remote access for a user account, you must provide a password:
+
+~~~sql
+CREATE USER myaccount WITH ENCRYPTED PASSWORD 'mypassword';
+~~~
+
+The *CREATE ROLE* creates user account without the LOGIN privilege.
+
+To promote a user account to *superuser* status, use *ALTER ROLE*:
+
+~~~sql
+ALTER ROLE myaccount WITH SUPERUSER;
+~~~
 
 # Enabling Remote Access #
 
 If you wish to enable remote access, modify the cluster settings. The
 configuration files for each cluster are in the directory
-/etc/postgresql/version/clustername/, e.g. /etc/postgresql/8.1/main/.
+/etc/postgresql/version/clustername/, e.g. /etc/postgresql/9.3/main/.
 
 Edit the file postgresql.conf, and remove the comment marker on the line
 for the listen\_addresses setting, so that it reads:
@@ -183,14 +203,14 @@ for the listen\_addresses setting, so that it reads:
 
 Open the file pg\_hba.conf:
 
-    # nano /etc/postgresql/8.1/main/pg_hba.conf
+    # nano /etc/postgresql/9.3/main/pg_hba.conf
 
 To permit users to connect from remote systems on your network with any
 role, add this line:
 
-    host all all 192.168.1.0/24  md5
+    host all all 192.169.3.0/24  md5
 
-Replace 192.168.1.0/24 with the appropriate subnet definition for your
+Replace 192.169.3.0/24 with the appropriate subnet definition for your
 network.
 
 This enables *md5* authentication, which means that login roles are
@@ -205,7 +225,7 @@ PostgreSQL cluster with the postgres role and a password first!
 
 To make your changes take effect, restart the service:
 
-    # /etc/init.d/postgresql-8.1 restart
+    # /etc/init.d/postgresql-9.3 restart
 
 Once the service restarts, you may access your PostgreSQL service from
 remote systems, either using tools such as psql or pgAdmin III, or with
@@ -266,7 +286,7 @@ rate of change. For smaller databases, the best solution is to simply
 use the supplied pg\_dumpall utility. Refer to the documentation for a
 detailed explanation of backup options:
 
-<http://www.postgresql.org/docs/9.1/static/backup.html>
+<http://www.postgresql.org/docs/9.5/static/backup.html>
 
 # Using Multiple PostgreSQL Clusters #
 
