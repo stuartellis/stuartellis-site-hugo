@@ -408,9 +408,7 @@ installation process is completed.
 
 > For compatibility, MariaDB uses the same names for command-line tools as MySQL.
 
-## Securing the Server ##
-
-Set a password for the root accounts. First, login with the *mysql*
+Remember to set a password for the root accounts. First, login with the *mysql*
 command-line utility:
 
     mysql -u root -q
