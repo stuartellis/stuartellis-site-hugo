@@ -1,10 +1,10 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2016-09-24T12:40:00+01:00"
+Date = "2016-12-17T13:41:00+00:00"
 Description = ""
 Categories = ["administration", "programming"]
-Tags = ["administration", "macos", "javascript", "python", "ruby"]
+Tags = ["administration", "macos", "javascript", "python", "ruby", "rust"]
 Type = "article"
 
 +++
@@ -74,7 +74,7 @@ Plug-in Settings...* and review the plug-ins and settings.
 
 # Configuring Security #
 
-macOS is a reasonably secure operating system, but unfortunately
+Apple provide quite secure operating systems, but unfortunately
 convenience has won out over security in a few places. These can easily
 be corrected by changing a few settings. If you are using a laptop then
 you should probably make all of these changes as soon as possible.
@@ -127,11 +127,7 @@ drive is short of space, exclude the *System* folder.
 
 # Setting Up for Development #
 
-Every developer needs a text editor and a version control system. Mac OS
-X includes software for both of these jobs, but most developers prefer
-to install newer tools.
-
-The first step, though, is to install a compiler. The easiest way to install
+The first step is to install a compiler. The easiest way to install
 one is with the *Xcode Command Line Tools* package.
 
 Once you have the compiler that is provided by Xcode, you can use
@@ -155,7 +151,7 @@ management system for macOS, enabling you to quickly install and update the
 tools and libraries that you need. Follow the instructions on the site.
 
 You should also amend your PATH, so that the versions of tools that are
-installed with Homebrew take precendence over others. To do this, edit
+installed with Homebrew take precedence over others. To do this, edit
 the file *.bash\_login* in your home directory to include this line:
 
     export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
@@ -191,11 +187,11 @@ dismount the disk image.
 
 ## Choosing a Text Editor ##
 
-macOS includes command-line versions of both
+Current versions of macOS include command-line versions of both
 [Emacs](http://www.gnu.org/software/emacs/) and [vim](http://www.vim.org/), as
 well as TextEdit, a desktop text editor. TextEdit is designed for light-weight
 word processing, and has no support for programming. Unless you already have a
-preferred editor, install [Atom](http://www.atom.io),  which is a powerful
+preferred editor, I suggest that you install [Atom](http://www.atom.io),  which is a powerful
 graphical text editor.
 
 Whichever text editor you choose, remember to set the EDITOR environment
@@ -244,9 +240,18 @@ on different version control hosts.
 First create a top-level directory with a short, generic name like *code*. In
 this directory, create an *src* sub-directory. For each repository host, create
 a subdirectory in *src* that matches your username. Check out projects in the
-directory.
+directory. The final directory structure looks like this:
 
-The final directory structure looks like this:
+    code/
+      src/
+        bitbucket.org/
+          my-bitbucket-username/
+            a-project/
+        github.com/
+          my-github-username/
+            another-project/
+
+If you use Go, add *bin*, *doc* and *pkg* directories:
 
     code/
       bin/
@@ -260,7 +265,7 @@ The final directory structure looks like this:
           my-github-username/
             another-project/
 
-If you set the top-level directory as the environment variable GOPATH, Go will
+Once you set the top-level directory as the environment variable GOPATH, Go will
 compile to the *bin*, *doc* and *pkg* subdirectories. You can add the *bin*
 directory to your PATH to be able to run the compiled programs by typing their
 names. You may or may not choose to use these directories with other programming
@@ -295,9 +300,20 @@ Open a new Terminal window and enter this command:
 
 This installs Node.js 6.6.0 and makes it the default Node.js run-time.
 
+## rustup for Rust Development ##
+
+The official *rustup* utility enables you to install the tools for building software with the Rust programming language. Click on the Install button on the front page of the [Rust Website](https://www.rust-lang.org), and follow the instructions.
+
+By default, the installer adds the correct directory to your path. If this does not work, add this to your PATH manually:
+
+    $HOME/.cargo/bin
+
+This process installs all of the tools into your home directory, and does not add any files into system directories.
+
 ## RVM for Ruby Development ##
 
-macOS includes a copy of Ruby, but it is outdated. To maintain current
+All macOS systems include
+ a copy of Ruby, but it is outdated. To maintain current
 and clean Ruby environments, use the [RVM](https://rvm.io/) system.
 
 RVM relies on Git, so you must have a working installation of Git before
@@ -319,7 +335,7 @@ home directory with the name *.gemrc* and put this line in it:
 
 ## pyenv for Python Development ##
 
-macOS includes a copy of Python 2. To maintain current and clean Python
+Unfortunately, macOS include a copy of Python 2. To maintain current and clean Python
 environments, use the [pyenv](https://github.com/yyuu/pyenv) system and the
 [pyenv-virtualenv](https://github.com/yyuu/pyenv-virtualenv) plugin.
 
@@ -359,11 +375,21 @@ You can now use *virtualenv* to create Python 2 virtual environments and manage
 the packages within them using *pip*, all inside your home directory, and
 without modifying any system files.
 
-# MariaDB and MySQL #
+# SQL Databases #
 
 If you develop any kind of database-driven application, it is useful to have a
-version of the database server available on your system. The majority of Web
-applications use either MySQL or MariaDB, which you can easily set up.
+version of the database server available on your system. Consider using containers for this. If you prefer to install services directly on to your workstation, Homebrew provides packages for PostgreSQL, MariaDB and MySQL.
+
+## Installing PostgreSQL ##
+
+To install PostgreSQL using Homebrew, enter this command in a terminal window:
+
+    brew install postgresql
+
+This command installs the server, the command-line tools, and the client
+libraries that are needed to compile adapters for programming languages. To
+start the server, follow the instructions that are displayed after the
+installation process is completed.
 
 ## Installing MariaDB or MySQL ##
 
