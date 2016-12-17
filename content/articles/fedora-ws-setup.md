@@ -62,11 +62,11 @@ the firmware settings to boot from a disc or device of their choosing. If you
 did not enable disk encryption, then the attacker will have complete access to all of
 the files on the system.
 
-## Adding a Firewall ##
+## Configuring a Firewall ##
 
 FIXME
 
-Linux systems include powerful firewall capabilities, but Fedora does not currently include a convenient way to manage these by default.  
+Fedora Workstation includes [firewalld](http://www.firewalld.org/), but does not provide a graphical utility to manage it in the initial installation. 
 
 ## Setting Up Backups ##
 
