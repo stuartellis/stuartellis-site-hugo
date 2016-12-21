@@ -66,7 +66,7 @@ the files on the system.
 
 FIXME
 
-Fedora Workstation includes [firewalld](http://www.firewalld.org/), but does not provide a graphical utility to manage it in the initial installation. 
+Fedora Workstation includes [firewalld](http://www.firewalld.org/), but does not provide a graphical utility to manage it in the initial installation.
 
 ## Setting Up Backups ##
 
@@ -109,7 +109,7 @@ preferred programming languages and data file formats.
 The Atom community provides extensions as [packages](https://atom.io/packages).
 This command installs a selection of popular and generally useful packages:
 
-    apm install file-icons jshint linter-csslint linter-js-yaml minimap
+    apm install file-icons linter-csslint linter-eslint linter-js-yaml minimap
 
 Atom automatically runs the appropriate linter for the files that you are
 editing. The [file-icons](https://atom.io/packages/file-icons) package also

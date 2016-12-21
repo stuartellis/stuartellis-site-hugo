@@ -217,7 +217,7 @@ preferred programming languages and data file formats.
 The Atom community provides extensions as [packages](https://atom.io/packages).
 This command installs a selection of popular and generally useful packages:
 
-    apm install atom-terminal file-icons git-plus jshint linter-csslint linter-js-yaml minimap
+    apm install atom-terminal file-icons git-plus linter-eslint linter-csslint linter-js-yaml minimap
 
 Atom automatically runs the appropriate linter for the files that you are
 editing. The [file-icons](https://atom.io/packages/file-icons) package also
