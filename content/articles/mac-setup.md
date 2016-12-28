@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2016-12-17T13:41:00+00:00"
+Date = "2016-12-28T11:38:00+00:00"
 Description = ""
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "javascript", "python", "ruby", "rust"]
@@ -191,8 +191,8 @@ Current versions of macOS include command-line versions of both
 [Emacs](http://www.gnu.org/software/emacs/) and [vim](http://www.vim.org/), as
 well as TextEdit, a desktop text editor. TextEdit is designed for light-weight
 word processing, and has no support for programming. Unless you already have a
-preferred editor, I suggest that you install [Atom](http://www.atom.io),  which is a powerful
-graphical text editor.
+preferred editor, I suggest that you install [Atom](http://www.atom.io),  which
+is a powerful graphical text editor.
 
 Whichever text editor you choose, remember to set the EDITOR environment
 variable in your *~/.bash\_profile* file, so that this editor is
@@ -215,20 +215,31 @@ control integration, convenient access to the terminal, and linters for your
 preferred programming languages and data file formats.
 
 The Atom community provides extensions as [packages](https://atom.io/packages).
-This command installs a selection of popular and generally useful packages:
+This command installs some packages that are generally useful:
 
-    apm install atom-terminal file-icons git-plus linter-eslint linter-csslint linter-js-yaml minimap
+    apm install atom-beautify color-picker file-icons git-plus minimap
 
-Atom automatically runs the appropriate linter for the files that you are
-editing. The [file-icons](https://atom.io/packages/file-icons) package also
-requires no configuration. Refer to the pages for
-[atom-terminal](https://atom.io/packages/atom-terminal),
+The [file-icons](https://atom.io/packages/file-icons) package requires no
+configuration. Refer to the pages for
+[atom-beautify](https://atom.io/packages/atom-beautify),
+[color-picker](https://atom.io/packages/color-picker),
 [git-plus](https://atom.io/packages/git-plus) and
 [minimap](https://atom.io/packages/minimap) for details on how to use them.
 
-Browse the [Atom package index](https://atom.io/packages) for more specialized
-extensions, such as [linter-ruby](https://atom.io/packages/linter-ruby), [rails-snippets](https://atom.io/packages/rails-snippets) and [rails-transporter](https://atom.io/packages/rails-transporter) for Ruby on Rails
-development.
+Install code linters for the languages that you use. Atom
+automatically runs the appropriate linter for the files that you are editing.
+
+This command installs
+support for [CSSLint](http://csslint.net/), [ESLint](http://eslint.org/) and
+[yaml-js](http://nodeca.github.com/js-yaml/):
+
+    apm install linter-csslint linter-eslint linter-js-yaml
+
+If you are a Ruby on Rails developer, use this command to install support for
+[CoffeeLint](http://www.coffeelint.org/) and
+[Rubocop](http://batsov.com/rubocop/):
+
+    apm install linter-coffeelint linter-rubocop
 
 ## Setting Up A Directory Structure for Projects ##
 
@@ -302,19 +313,23 @@ This installs Node.js 6.6.0 and makes it the default Node.js run-time.
 
 ## rustup for Rust Development ##
 
-The official *rustup* utility enables you to install the tools for building software with the Rust programming language. Click on the Install button on the front page of the [Rust Website](https://www.rust-lang.org), and follow the instructions.
+The official *rustup* utility enables you to install the tools for building
+software with the Rust programming language. Click on the Install button on the
+front page of the [Rust Website](https://www.rust-lang.org), and follow the
+instructions.
 
-By default, the installer adds the correct directory to your path. If this does not work, add this to your PATH manually:
+By default, the installer adds the correct directory to your path. If this does
+not work, add this to your PATH manually:
 
     $HOME/.cargo/bin
 
-This process installs all of the tools into your home directory, and does not add any files into system directories.
+This process installs all of the tools into your home directory, and does not
+add any files into system directories.
 
 ## RVM for Ruby Development ##
 
-All macOS systems include
- a copy of Ruby, but it is outdated. To maintain current
-and clean Ruby environments, use the [RVM](https://rvm.io/) system.
+All macOS systems include a copy of Ruby, but it is outdated. To maintain
+current and clean Ruby environments, use the [RVM](https://rvm.io/) system.
 
 RVM relies on Git, so you must have a working installation of Git before
 you can set up RVM.
@@ -335,9 +350,9 @@ home directory with the name *.gemrc* and put this line in it:
 
 ## pyenv for Python Development ##
 
-Unfortunately, macOS include a copy of Python 2. To maintain current and clean Python
-environments, use the [pyenv](https://github.com/yyuu/pyenv) system and the
-[pyenv-virtualenv](https://github.com/yyuu/pyenv-virtualenv) plugin.
+Unfortunately, macOS include a copy of Python 2. To maintain current and clean
+Python environments, use the [pyenv](https://github.com/yyuu/pyenv) system and
+the [pyenv-virtualenv](https://github.com/yyuu/pyenv-virtualenv) plugin.
 
 Enter this command to install pyenv using Homebrew:
 
@@ -378,7 +393,9 @@ without modifying any system files.
 # SQL Databases #
 
 If you develop any kind of database-driven application, it is useful to have a
-version of the database server available on your system. Consider using containers for this. If you prefer to install services directly on to your workstation, Homebrew provides packages for PostgreSQL, MariaDB and MySQL.
+version of the database server available on your system. Consider using
+containers for this. If you prefer to install services directly on to your
+workstation, Homebrew provides packages for PostgreSQL, MariaDB and MySQL.
 
 ## Installing PostgreSQL ##
 
@@ -449,10 +466,6 @@ configured with appropriate *SQL modes* to enable data integrity safeguards. By
 default, MySQL permits various types of invalid data to be entered.
 
 # Other Useful Desktop Applications for Developers #
-
-macOS has a double identity - it is both a UNIX operating system, and
-a proprietary graphical desktop system. This enables it to host a broad
-range of products from both strands of software development.
 
 * Office suite: [LibreOffice](http://www.libreoffice.org/)
 * Virtual machine management: [VirtualBox](http://www.virtualbox.org/)

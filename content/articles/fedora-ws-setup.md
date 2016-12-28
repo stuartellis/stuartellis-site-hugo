@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Fedora Workstation for Software Development"
 Slug = "fedora-ws-setup"
-Date = "2016-12-17T13:09:00+00:00"
+Date = "2016-12-28T13:26:00+00:00"
 Description = ""
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "javascript", "python", "ruby", "rust"]
@@ -11,7 +11,8 @@ Draft = true
 +++
 
 
-This is a set of notes for setting up Fedora Workstation, specifically for system administration and Web development.
+This is a set of notes for setting up Fedora Workstation, specifically for
+system administration and Web development.
 
 <!--more-->
 
@@ -32,12 +33,13 @@ enabled:
 
 # Configuring System Security #
 
-Fedora is a secure operating system, but it is not yet perfect. If you are using a laptop then
-you should probably make all of these changes as soon as possible.
+Fedora is a secure operating system, but it is not yet perfect. If you are using
+a laptop then you should probably make all of these changes as soon as possible.
 
 ## Basic Settings ##
 
-Select *Settings \> Privacy*, and review the settings. Depending upon your needs, you may decide to turn off *Location Services* or *Usage & History*.
+Select *Settings \> Privacy*, and review the settings. Depending upon your
+needs, you may decide to turn off *Location Services* or *Usage & History*.
 
 ## Enable Disk Encryption NOW ##
 
@@ -54,13 +56,13 @@ lose the passwords and the recovery key.
 
 ## Requiring a Password on Bootup ##
 
-Modern Intel-based computers include EFI firmware that runs when the machine is powered on,
-to start the operating system. This takes the place of the standard PC BIOS, or
-Open Firmware on older Macs. If your computer is frequently left in public
-places, then set a boot password. Otherwise, any malicious individual can change
-the firmware settings to boot from a disc or device of their choosing. If you
-did not enable disk encryption, then the attacker will have complete access to all of
-the files on the system.
+Modern Intel-based computers include EFI firmware that runs when the machine is
+powered on, to start the operating system. This takes the place of the standard
+PC BIOS, or Open Firmware on older Macs. If your computer is frequently left in
+public places, then set a boot password. Otherwise, any malicious individual can
+change the firmware settings to boot from a disc or device of their choosing. If
+you did not enable disk encryption, then the attacker will have complete access
+to all of the files on the system.
 
 ## Configuring a Firewall ##
 
@@ -74,17 +76,21 @@ FIXME
 
 # Setting Up for Development #
 
-Every developer needs a text editor and a version control system. Fedora Workstation includes the [Git version control system](http://www.git-scm.com/), but most developers prefer to install their own text editors and IDEs.
+Every developer needs a text editor and a version control system. Fedora
+Workstation includes the [Git version control system](http://www.git-scm.com/),
+but most developers prefer to install their own text editors and IDEs.
 
-Fedora Workstation includes GCC and the C compiler toolchain by default. This means that you can compile C programs and native extensions for languages like Python and JavaScript without any extra requirements.
+Fedora Workstation includes GCC and the C compiler toolchain by default. This
+means that you can compile C programs and native extensions for languages like
+Python and JavaScript without any extra requirements.
 
 ## Choosing a Text Editor ##
 
-Fedora includes a command-line version of [vim](http://www.vim.org/), as
-well as GNOME Text Editor, a desktop text editor. The Text Editor has some support for programming, but is more useful for light-weight
-word processing. Unless you already have a
-preferred editor, I suggest that you install [Atom](http://www.atom.io),  which is a powerful
-graphical text editor.
+Fedora includes a command-line version of [vim](http://www.vim.org/), as well as
+GNOME Text Editor, a desktop text editor. The Text Editor has some support for
+programming, but is more useful for light-weight word processing. Unless you
+already have a preferred editor, I suggest that you install
+[Atom](http://www.atom.io),  which is a powerful graphical text editor.
 
 Whichever text editor you choose, remember to set the EDITOR environment
 variable in your *~/.bashrc* file, so that this editor is
@@ -107,20 +113,31 @@ control integration, convenient access to the terminal, and linters for your
 preferred programming languages and data file formats.
 
 The Atom community provides extensions as [packages](https://atom.io/packages).
-This command installs a selection of popular and generally useful packages:
+This command installs some packages that are generally useful:
 
-    apm install file-icons linter-csslint linter-eslint linter-js-yaml minimap
+    apm install atom-beautify color-picker file-icons git-plus minimap
 
-Atom automatically runs the appropriate linter for the files that you are
-editing. The [file-icons](https://atom.io/packages/file-icons) package also
-requires no configuration. Refer to the pages for
-[atom-terminal](https://atom.io/packages/atom-terminal),
+The [file-icons](https://atom.io/packages/file-icons) package requires no
+configuration. Refer to the pages for
+[atom-beautify](https://atom.io/packages/atom-beautify),
+[color-picker](https://atom.io/packages/color-picker),
 [git-plus](https://atom.io/packages/git-plus) and
 [minimap](https://atom.io/packages/minimap) for details on how to use them.
 
-Browse the [Atom package index](https://atom.io/packages) for more specialized
-extensions, such as [linter-ruby](https://atom.io/packages/linter-ruby), [rails-snippets](https://atom.io/packages/rails-snippets) and [rails-transporter](https://atom.io/packages/rails-transporter) for Ruby on Rails
-development.
+Install code linters for the languages that you use. Atom
+automatically runs the appropriate linter for the files that you are editing.
+
+This command installs
+support for [CSSLint](http://csslint.net/), [ESLint](http://eslint.org/) and
+[yaml-js](http://nodeca.github.com/js-yaml/):
+
+    apm install linter-csslint linter-eslint linter-js-yaml
+
+If you are a Ruby on Rails developer, use this command to install support for
+[CoffeeLint](http://www.coffeelint.org/) and
+[Rubocop](http://batsov.com/rubocop/):
+
+    apm install linter-coffeelint linter-rubocop
 
 ## Setting Up A Directory Structure for Projects ##
 
@@ -180,7 +197,8 @@ example:
 
 ## nvm for Node.js Development ##
 
-To maintain multiple Node.js versions on your system, use the [nvm](https://github.com/creationix/nvm) utility.
+To maintain multiple Node.js versions on your system, use the
+[nvm](https://github.com/creationix/nvm) utility.
 
 Enter this command to install nvm:
 
@@ -194,15 +212,21 @@ This installs Node.js 6.6.0 and makes it the default Node.js run-time.
 
 ## rustup for Rust Development ##
 
-The official *rustup* utility enables you to install the tools for building software with the Rust programming language. Click on the Install button on the front page of the [Rust Website](https://www.rust-lang.org), and follow the instructions.
+The official *rustup* utility enables you to install the tools for building
+software with the Rust programming language. Click on the Install button on the
+front page of the [Rust Website](https://www.rust-lang.org), and follow the
+instructions.
 
-By default, the installer adds the correct directory to your path. If this does not work, add this to your PATH manually:
+By default, the installer adds the correct directory to your path. If this does
+not work, add this to your PATH manually:
 
     $HOME/.cargo/bin
 
 FIXME: Adding to .bash_profile PATH does not work
 
-This process installs all of the tools into your home directory, and does not add any files into system directories. The Rust packages from Fedora provide older versions of Rust, and do install into system directories.
+This process installs all of the tools into your home directory, and does not
+add any files into system directories. The Rust packages from Fedora provide
+older versions of Rust, and do install into system directories.
 
 ## RVM for Ruby Development ##
 
@@ -248,9 +272,15 @@ These install Python 3.5 and make it the default Python run-time.
 
 # Virtualization and Containers #
 
-Fedora Workstation includes the *Boxes* application by default for virtualization and remote desktop access. *Boxes* builds on the same KVM virtualization technology that companies like DigitalOcean use for production hosting.
+Fedora Workstation includes the *Boxes* application by default for
+virtualization and remote desktop access. *Boxes* builds on the same KVM
+virtualization technology that companies like DigitalOcean use for production
+hosting.
 
-Fedora includes *systemd-nspawn* for simple containers, and provides packages for Docker. These may have more thorough testing and better system integration than the packages from the Docker, Inc. Website. To install Docker on Fedora Workstation, enter these commands in a terminal window:
+Fedora includes *systemd-nspawn* for simple containers, and provides packages
+for Docker. These may have more thorough testing and better system integration
+than the packages from the Docker, Inc. Website. To install Docker on Fedora
+Workstation, enter these commands in a terminal window:
 
     sudo dnf install docker
     sudo systemctl enable docker
@@ -260,7 +290,9 @@ FIXME: Does not run. See: http://www.projectatomic.io/blog/2015/06/notes-on-fedo
 # SQL Databases #
 
 If you develop any kind of database-driven application, it is useful to have a
-version of the database server available on your system. Consider using containers for this. If you prefer to install services directly on to your workstation, Fedora provides packages for PostgreSQL and MariaDB.
+version of the database server available on your system. Consider using
+containers for this. If you prefer to install services directly on to your
+workstation, Fedora provides packages for PostgreSQL and MariaDB.
 
 ## Installing PostgreSQL ##
 
