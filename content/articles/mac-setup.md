@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2016-12-28T11:38:00+00:00"
+Date = "2016-12-30T13:43:00+00:00"
 Description = ""
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "javascript", "python", "ruby", "rust"]
@@ -481,8 +481,8 @@ available.
 # Online Resources #
 
 Apple offer overviews and task-orientated help on their [support Web
-site](http://www.apple.com/support/mac101/).
+site for new macOS users](https://support.apple.com/explore/new-to-mac).
 
 Every new user should probably read [How to switch to the
-Mac](http://the.taoofmac.com/space/HOWTO/Switch%20To%20The%20Mac), by
+Mac](http://taoofmac.com/space/HOWTO/Switch), by
 Rui Carmo.
