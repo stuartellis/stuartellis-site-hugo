@@ -5,7 +5,7 @@ theme = "liquorice"
 
 [params]
 author = "Stuart Ellis"
-copyright = "Contents © 2016 Stuart Ellis"
+copyright = "Contents © 2017 Stuart Ellis"
 googleAnalytics = "UA-23721911-2"
 
 [[menu.main]]
