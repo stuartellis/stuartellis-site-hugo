@@ -105,3 +105,13 @@ system.
 This means that a Rust library can be made in a way that allows the functions to
 be called from other languages, such as Python, in the same way that the
 functions of C libraries can be called from higher-level languages.
+
+## Documentation ##
+
+To use the supplied documentation, first install it with *rustup*:
+
+    rustup component add rust-docs
+
+To open the documentation, enter the command *rustup doc*:
+
+    rustup doc
