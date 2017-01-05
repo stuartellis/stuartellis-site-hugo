@@ -82,6 +82,10 @@ TODO
 
 TODO
 
+## Modules ##
+
+TODO
+
 ## Tools ##
 
 TODO
@@ -90,6 +94,8 @@ TODO
 * cargo
 * rustfmt
 * clippy
+
+Cargo is Rust’s primary workflow tool.
 
 Cargo supports [third-party subcommands](https://github.com/rust-lang/cargo/wiki/Third-party-cargo-subcommands).
 
@@ -115,3 +121,7 @@ To use the supplied documentation, first install it with *rustup*:
 To open the documentation, enter the command *rustup doc*:
 
     rustup doc
+
+To see the documentation for a specific error code, run *rustc --explain*:
+
+    rustc --explain E0200
