@@ -1,6 +1,6 @@
 baseurl = "http://www.stuartellis.name"
 languageCode = "en-us"
-title = "Notes from the Field"
+title = "Field Notes"
 theme = "liquorice"
 
 [params]
