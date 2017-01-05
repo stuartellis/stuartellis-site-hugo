@@ -10,22 +10,29 @@ copyright = "Contents © 2017 Stuart Ellis"
 googleAnalytics = "UA-23721911-2"
 
 [[menu.main]]
-name = "Categories"
+name = "Blog"
 pre = "<i class='fa fa-heart'></i>"
 weight = -110
-identifier = "categories"
-url = "/categories/"
+identifier = "blog"
+url = "/posts/"
+
+[[menu.main]]
+name = "Articles"
+pre = "<i class='fa fa-heart'></i>"
+weight = -100
+identifier = "articles"
+url = "/articles/"
 
 [[menu.main]]
 name = "Projects on GitHub"
 pre = "<i class='fa fa-heart'></i>"
-weight = -100
+weight = -90
 identifier = "github"
 url = "https://github.com/stuartellis"
 
 [[menu.main]]
 name = "Contact Me"
 pre = "<i class='fa fa-heart'></i>"
-weight = -90
+weight = -80
 identifier = "contact"
 url = "/contact/"
