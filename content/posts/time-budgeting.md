@@ -2,7 +2,7 @@
 Categories = ["productivity", "bloggery"]
 Tags = []
 Description = ""
-Date = "2017-01-05T07:09:49Z"
+Date = "2017-01-05T23:09:00Z"
 Title = "Funny How It Adds Up (Time Budgeting)"
 Type = "post"
 
@@ -21,14 +21,14 @@ it). Following [this review by Russ
 Allbery](https://www.eyrie.org/~eagle/reviews/books/1-4736-0885-6.html), I got a
 copy of [Secrets of Productive People, by Mark
 Forster](http://markforster.squarespace.com/) and started reading. The author
-actually starts with time costs, to make the point that learning a new skill or
+actually begins with time costs, to make the point that learning a new skill or
 carrying out a project _will_ require a non-trivial investment of your time, and
 you have to deal with that.
 
 # OK, How Much Time Do I Actually Have?
 
 It's not difficult to work out a rough schedule, but the different slots of time
-that I have available will not be equivalent. The time that I have during
+that I will have available are not equivalent. The time that I have during
 (train) commutes is better in some ways than, say, time later in an evening,
 because I know that I will have more energy.
 
@@ -38,8 +38,8 @@ though: I don't have Internet access during most of my commute.
 For these reasons, I'm dividing my time slots into three kinds: _Wide_, _Narrow_
 and _Consolidation_ (naming is hard). Wide slots are the times when I have
 Internet access and the energy to actively work on things, Narrow slots are when
-I don't have much Internet access but could do focus and do something useful, and
-Consolidation slots are when I could probably do low-intensity stuff, like
+I don't have much Internet access but could focus and do something useful, and
+Consolidation slots are when I can do low-intensity stuff, like
 reviewing code or reading.
 
 Mondays to Thursdays:
