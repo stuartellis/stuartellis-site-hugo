@@ -14,10 +14,10 @@ personal time budget that I can actually stick to.
 
 <!--more-->
 
-It's the New Year, which means looking at how many things that I want to do, and
-despair at finding the time to do them all. (I know that I have the same 24
-hours each day that Einstein did, etc. etc. That makes me feel even worse about
-it). Following [this review by Russ
+It's the New Year, of course, which means looking at how many things that I want
+to do, and despairing at finding the time to do them all. (I know that I have
+the same 24 hours each day that Einstein did, etc. etc. That makes me feel even
+worse about it). Following [this review by Russ
 Allbery](https://www.eyrie.org/~eagle/reviews/books/1-4736-0885-6.html), I got a
 copy of [Secrets of Productive People, by Mark
 Forster](http://markforster.squarespace.com/) and started reading. The author
