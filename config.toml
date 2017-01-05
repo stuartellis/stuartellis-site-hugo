@@ -2,6 +2,7 @@ baseurl = "http://www.stuartellis.name"
 languageCode = "en-us"
 title = "Field Notes"
 theme = "liquorice"
+disqusShortname = "fieldnotes-1"
 
 [params]
 author = "Stuart Ellis"

@@ -4,6 +4,7 @@ Tags = []
 Description = ""
 Date = "2017-01-05T07:09:49Z"
 Title = "Funny How It Adds Up (Time Budgeting)"
+Type = "post"
 
 +++
 
@@ -11,7 +12,7 @@ We have too many things that we want to learn, and not enough time for them all.
 To try to help myself with this, I'm going to try working out a kind of
 personal time budget that I can actually stick to.
 
-<!-- more -->
+<!--more-->
 
 It's the New Year, which means looking at how many things that I want to do, and
 despair at finding the time to do them all. (I know that I have the same 24
