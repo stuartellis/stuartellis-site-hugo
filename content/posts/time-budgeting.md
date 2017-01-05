@@ -9,7 +9,7 @@ Type = "post"
 +++
 
 We have too many things that we want to learn, and not enough time for them all.
-To try to help myself with this, I'm going to try working out a kind of
+To help myself with this, I'm going to try working out a kind of
 personal time budget that I can actually stick to.
 
 <!--more-->
@@ -99,9 +99,9 @@ sessions. Hmm.
 
 An obvious solution is to spend one of my Wide slots laying out a plan for the
 week. The obvious problem is that sounds dull and serious, and I've just
-concluded that the way for me to actually be productive is to get some kind of
-enjoyment and some visible result from each time slot. There needs to be a
-touch of fun and self-indulgence somewhere in this.
+concluded that the way for me to actually be productive is to get enjoyment and
+a visible result from each time slot. There needs to be  touch of fun and
+self-indulgence somewhere in this.
 
 Oh, right...
 
