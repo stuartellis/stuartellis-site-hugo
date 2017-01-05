@@ -9,7 +9,7 @@ copyright = "Contents © 2017 Stuart Ellis"
 googleAnalytics = "UA-23721911-2"
 
 [[menu.main]]
-name = "Article Categories"
+name = "Categories"
 pre = "<i class='fa fa-heart'></i>"
 weight = -110
 identifier = "categories"
