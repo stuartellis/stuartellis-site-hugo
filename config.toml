@@ -1,6 +1,6 @@
 baseurl = "http://www.stuartellis.name"
 languageCode = "en-us"
-title = "Field Notes"
+title = "Field Notes - Happier Dev Through Ops"
 theme = "liquorice"
 disqusShortname = "fieldnotes-1"
 
