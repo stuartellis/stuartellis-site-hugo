@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Fedora Workstation for Software Development"
 Slug = "fedora-ws-setup"
-Date = "2016-12-28T13:26:00+00:00"
+Date = "2017-01-11T22:25:00+00:00"
 Description = ""
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "javascript", "python", "ruby", "rust"]
@@ -195,7 +195,9 @@ example:
 
 # Setting Up Environments #
 
-## nvm for Node.js Development ##
+## nvm and Yarn for Node.js Development ##
+
+FIXME: Test this!
 
 To maintain multiple Node.js versions on your system, use the
 [nvm](https://github.com/creationix/nvm) utility.
@@ -206,9 +208,23 @@ Enter this command to install nvm:
 
 Open a new Terminal window and enter this command:
 
-    nvm install 6.6.0
+    nvm install 6.9.4
 
-This installs Node.js 6.6.0 and makes it the default Node.js run-time.
+This installs Node.js 6.9.4 and makes it the default Node.js run-time.
+
+To install the [Yarn](http://yarnpkg.com) package manager, enter these commands
+in a Terminal window:
+
+    sudo wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo
+    sudo dnf install yarn
+
+Then add this to the end of your PATH:
+
+    `yarn global bin`
+
+For example:
+
+    export PATH="$PATH:$HOME/.rvm/bin:$HOME/.cargo/bin:`yarn global bin`"
 
 ## rustup for Rust Development ##
 
@@ -225,15 +241,16 @@ not work, add this to your PATH manually:
 FIXME: Adding to .bash_profile PATH does not work
 
 This process installs all of the tools into your home directory, and does not
-add any files into system directories. The Rust packages from Fedora provide
-older versions of Rust, and do install into system directories.
+add any files into shared system directories. The Rust packages from Fedora
+provide older versions of Rust, and do install the Rust tools into system
+directories.
 
 ## RVM for Ruby Development ##
 
 Fedora provides packages for Ruby, but these can be outdated. To maintain current
 and clean Ruby environments, use the [RVM](https://rvm.io/) system.
 
-FIXME
+FIXME: Test this!
 
 By default, RVM downloads copies of Ruby that have been compiled for your
 operating system. If there is no compiled version, RVM then falls back to
@@ -241,7 +258,7 @@ downloading the source code and then compiling it on your computer. Enter this
 command to ensure that the requirements for compiling Ruby are on your system,
 using DNF:
 
-    sudo dnf install autoconf automake gmp libksba libtool libyaml openssl pkg-config readline
+    sudo dnf install autoconf automake gdbm gmp libksba libtool libyaml openssl pkg-config readline
 
 Finally, you can speed up installation of gem packages by disabling the
 generation of local documentation. To do this, create a file in your

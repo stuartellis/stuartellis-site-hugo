@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2016-12-30T13:43:00+00:00"
+Date = "2017-01-11T22:12:00+00:00"
 Description = ""
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "javascript", "python", "ruby", "rust"]
@@ -115,7 +115,7 @@ HT1352](http://support.apple.com/kb/HT1352) provides full details.
 
 ## Setting Up Time Machine Backups ##
 
-Time Machine is very, very simple to setup. Just take a suitably large
+Time Machine is simple to setup. Just take a suitably large
 external hard drive, plug it in to your Mac, and agree when prompted.
 The drive setup process will reformat the hard drive. The only settings
 that may need to change are the exclusions.
@@ -133,7 +133,7 @@ one is with the *Xcode Command Line Tools* package.
 Once you have the compiler that is provided by Xcode, you can use
 [Homebrew](http://brew.sh/) to install everything else that you need. Homebrew
 itself manages packages for command-line tools and services. The
-[Cask](http://caskroom.io/)  extension to Homebrew enables you to install
+[Cask](http://caskroom.io/) extension to Homebrew enables you to install
 graphical desktop applications.
 
 ## Getting Xcode ##
@@ -152,7 +152,7 @@ tools and libraries that you need. Follow the instructions on the site.
 
 You should also amend your PATH, so that the versions of tools that are
 installed with Homebrew take precedence over others. To do this, edit
-the file *.bash\_login* in your home directory to include this line:
+the file *~/.bash\_profile* in your home directory to include this line:
 
     export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
@@ -297,9 +297,10 @@ example:
 
 # Setting Up Environments #
 
-## nvm for Node.js Development ##
+## nvm and Yarn for Node.js Development ##
 
-To maintain multiple Node.js versions on your system, use the [nvm](https://github.com/creationix/nvm) utility.
+To maintain multiple Node.js versions on your system, use the
+[nvm](https://github.com/creationix/nvm) utility.
 
 Enter this command to install nvm:
 
@@ -307,9 +308,22 @@ Enter this command to install nvm:
 
 Open a new Terminal window and enter this command:
 
-    nvm install 6.6.0
+    nvm install 6.9.4
 
-This installs Node.js 6.6.0 and makes it the default Node.js run-time.
+This installs Node.js 6.9.4 and makes it the default Node.js run-time.
+
+To install the [Yarn](http://yarnpkg.com) package manager, enter this command in
+a Terminal window:
+
+    brew install yarn
+
+Then add this to the end of your PATH:
+
+    `yarn global bin`
+
+For example:
+
+    export PATH="$PATH:$HOME/.rvm/bin:$HOME/.cargo/bin:`yarn global bin`"
 
 ## rustup for Rust Development ##
 
@@ -340,7 +354,7 @@ downloading the source code and then compiling it on your computer. Enter this
 command to ensure that the requirements for compiling Ruby are on your system,
 using Homebrew:
 
-    brew install autoconf automake gmp libksba libtool libyaml openssl pkg-config readline
+    brew install autoconf automake gdbm gmp libksba libtool libyaml openssl pkg-config readline
 
 Finally, you can speed up installation of gem packages by disabling the
 generation of local documentation. To do this, create a file in your
@@ -358,7 +372,7 @@ Enter this command to install pyenv using Homebrew:
 
     brew install pyenv pyenv-virtualenv
 
-Next, add this line to the *.bashrc* file in your home directory:
+Next, add this line to the *~/.bash\_profile* file in your home directory:
 
      if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
