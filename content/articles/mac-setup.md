@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2017-01-11T22:12:00+00:00"
+Date = "2017-01-12T22:12:00+00:00"
 Description = ""
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "javascript", "python", "ruby", "rust"]
@@ -324,6 +324,25 @@ Then add this to the end of your PATH:
 For example:
 
     export PATH="$PATH:$HOME/.rvm/bin:$HOME/.cargo/bin:`yarn global bin`"
+
+## Developer Tools for Go ##
+
+Use Homebrew to install [Go](https://golang.org/):
+
+    brew install golang
+
+Set the GOPATH environment variable in your *~/.bash\_profile* file:
+
+    export GOPATH="$HOME/code"
+
+Add this to your PATH:
+
+    $GOPATH/bin
+
+Close the Terminal and open it again for the changes to take effect. Then use
+*go get* to install [golint](https://github.com/golang/lint):
+
+    go get -u github.com/golang/lint/golint
 
 ## rustup for Rust Development ##
 
