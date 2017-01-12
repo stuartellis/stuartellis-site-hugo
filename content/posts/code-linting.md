@@ -2,7 +2,7 @@
 Categories = ["programming"]
 Tags = []
 Description = ""
-Date = "2017-01-12T18:51:00Z"
+Date = "2017-01-12T21:20:00Z"
 Title = "A Pocket Guide to Linting (Code Linting Everywhere on Your Project)"
 Type = "post"
 Draft = true
@@ -53,29 +53,48 @@ push.
 
 # A Handy List of Linters #
 
-* CoffeeScript - [CoffeeLint](http://www.coffeelint.org/), Atom package: [linter-coffeelint](https://atom.io/packages/linter-coffeelint)
-* CSS - [CSSLint](http://csslint.net/), Atom package: [linter-csslint](https://atom.io/packages/linter-csslint)
-* English (see below!) - [Proselint](http://proselint.com/), Atom package: [linter-proselint](https://atom.io/packages/linter-proselint)
-* Go - [golinter](https://github.com/golang/lint), Atom package: [linter-golinter](https://atom.io/packages/linter-golinter)
+* CoffeeScript - Linter: [CoffeeLint](http://www.coffeelint.org/), Atom package: [linter-coffeelint](https://atom.io/packages/linter-coffeelint)
+* CSS - Linter: [CSSLint](http://csslint.net/), Atom package: [linter-csslint](https://atom.io/packages/linter-csslint)
+* English (see below!) - Linter: [Proselint](http://proselint.com/), Atom package: [linter-proselint](https://atom.io/packages/linter-proselint)*
+* Go - Linter: [golinter](https://github.com/golang/lint), Atom package: [linter-golinter](https://atom.io/packages/linter-golinter)*
 * Java - [linting is built-in](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/javac.html), Atom package: [linter-javac](https://atom.io/packages/linter-javac)
-* JavaScript and JSX - [ESLint](http://eslint.org/), Atom package: [linter-eslint](https://atom.io/packages/linter-eslint)
+* JavaScript and JSX - Linter: [ESLint](http://eslint.org/), Atom package: [linter-eslint](https://atom.io/packages/linter-eslint)
 * PHP - [linting is built-in](http://www.php.net/manual/en/features.commandline.options.php), Atom package: [linter-php](https://atom.io/packages/linter-php)
-* Python - [Pylint](https://www.pylint.org/), Atom package: [linter-pylint](https://atom.io/packages/linter-pylint)
-* Ruby - [Rubocop](http://batsov.com/rubocop/), Atom package: [linter-rubocop](https://atom.io/packages/linter-rubocop)
+* Python - Linter: [Pylint](https://www.pylint.org/), Atom package: [linter-pylint](https://atom.io/packages/linter-pylint)*
+* Ruby - Linter: [Rubocop](http://batsov.com/rubocop/), Atom package: [linter-rubocop](https://atom.io/packages/linter-rubocop)*
 * Rust - [linting is built-in](https://doc.rust-lang.org/reference.html#lint-check-attributes), Atom package: [linter-rust](https://atom.io/packages/linter-rust)
-* XML - [xmllint](http://xmlsoft.org/xmllint.html), Atom package: [linter-xmllint](https://atom.io/packages/linter-xmllint)
-* YAML - [yaml-js](http://nodeca.github.com/js-yaml/), Atom package: [linter-js-yaml](https://atom.io/packages/linter-js-yaml)
+* XML - Linter: [xmllint](http://xmlsoft.org/xmllint.html), Atom package: [linter-xmllint](https://atom.io/packages/linter-xmllint)*
+* YAML - Linter: [yaml-js](http://nodeca.github.com/js-yaml/), Atom package: [linter-js-yaml](https://atom.io/packages/linter-js-yaml)
 
-# How Automatic Linting Works in Atom #
+The asterisk means that the Atom package requires the command-line linter
+utility to be installed.
 
-To use a particular linter with Atom, you must install the appropriate linter
-package. Several packages include a copy of the linter utility itself, because
-the utility is written in JavaScript, and so these packages will work without
-any setup. In other cases, the packages for Atom rely on you installing the
-command-line linter separately.
+# Automatic Linting in Atom #
+
+To use a particular linter with the Atom editor, install the appropriate
+package. I prefer to install multiple Atom packages from the command-line,
+simply because it is quicker to copy and paste the command. The *apm* utility
+that is supplied with Atom makes this easy:
+
+    apm install linter-csslint linter-eslint linter-rust
+
+A number of these packages will work without any other setup. Several packages
+include a copy of the linter utility itself, because the utility is written in
+JavaScript. In other cases, like Java and Rust, the programming language
+includes linting capabilities in the default installation.
+
+Otherwise, the packages for Atom rely on you installing the command-line linter
+separately. For example, if you are a Ruby developer, either include the Rubocop
+linter in your projects with Bundler, or add it to your Ruby installation:
+
+    gem install rubocop
+
+Then enter this command to install the Atom package:
+
+    apm install linter-rubocop
 
 Once you add linter packages in Atom, the editor runs a linter each time that
-you open or save a file that is relevant to the installed linter packages. If
+you open or save a file that is relevant to whichever installed linter packages. If
 there are any linter warnings for an open file, the bottom of the file tab shows
 a list of linter warnings, and the total number of issues for the current file
 also appears in the bar at the bottom of the Atom window.
@@ -87,32 +106,14 @@ Incidentally, you will notice that Atom has a package that is just called
 that all of the actual linter packages for various programming languages use,
 and it is installed the first time that you add any linter package to Atom.
 
-# Setting Up Code Linting with Atom #
-
-If the language include linting capabilities in the default installation, or the
-Atom package bundles a linter, as [CSSLint](http://csslint.net/) and
-[ESLint](http://eslint.org/) do, simply install the package. I prefer to install
-multiple Atom packages from the command-line, simply because it is quicker to
-copy and paste the command. The *apm* utility that is supplied with Atom makes
-this easy:
-
-    apm install linter-csslint linter-eslint linter-rust
-
-If the Atom package requires a third-party linter, you will need to install it
-separately. For example you are a Ruby developer, either include the Rubocop
-linter in your projects with Bundler, or add it to your Ruby installation. Then
-enter this command to install the Atom package:
-
-    apm install linter-rubocop
-
 # Tuning Your Linters #
 
 Once you have started using a linter, you will quickly realise that you do not
-always agree with it. Sometimes there will be parts of your code where you
-deliberately break rules, or standard rules that you do not agree with. For this
-reason, each linter will check the root directory of your project for a
-configuration file that overrides the defaults, and have ways of adjusting or
-disabling rules for particular files.
+always agree with what it tells you. Sometimes there will be parts of your code
+where you deliberately break rules, or standard rules that you do not agree
+with. For this reason, each linter will check the root directory of your project
+for a configuration file that overrides the defaults, and have ways of adjusting
+or disabling rules for particular files.
 
 Each linter works differently, so it is hard to generalise beyond this. For a
 well-documented example of [rules](http://eslint.org/docs/rules/), [how to
@@ -124,8 +125,8 @@ take a look at [the documentation for
 ESLint](http://eslint.org/docs/user-guide/configuring).
 
 By the way, if you use Code Climate, the setup process generates a set of
-configuration files for the default linters that you can download and add to
-your project.
+configuration files for the default linters, so that you can download and add
+these to your project immediately.
 
 # Adding Linter Testing to Your Continuous Integration #
 
@@ -135,7 +136,7 @@ https://docs.travis-ci.com/
 
 FIXME: Pictures!
 
-# Analysis with Code Climate #
+# Project Analysis with Code Climate #
 
 FIXME
 
@@ -143,7 +144,7 @@ https://docs.codeclimate.com/docs/getting-started-configuration
 
 FIXME: Pictures!
 
-# Fun Bonus: Linting Prose #
+# Bonus Fun: Linting Prose #
 
 You can lint your writing as well as your code! (English-only, unfortunately).
 [Proselint](http://proselint.com/) tests plain-text files like Markdown for [an
