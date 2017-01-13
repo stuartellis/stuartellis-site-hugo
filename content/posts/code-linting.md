@@ -2,7 +2,7 @@
 Categories = ["programming"]
 Tags = []
 Description = ""
-Date = "2017-01-12T21:20:00Z"
+Date = "2017-01-13T20:03:00Z"
 Title = "A Pocket Guide to Linting (Code Linting Everywhere on Your Project)"
 Type = "post"
 Draft = true
@@ -116,10 +116,12 @@ for a configuration file that overrides the defaults, and have ways of adjusting
 or disabling rules for particular files.
 
 Each linter works differently, so it is hard to generalise beyond this. For a
-well-documented example of [rules](http://eslint.org/docs/rules/), [how to
-configure
-them](http://eslint.org/docs/user-guide/configuring#configuring-rules), and [how
-to disable rules for a particular
+good example of a linter, with documentation for
+[rules](http://eslint.org/docs/rules/), [how to configure
+them](http://eslint.org/docs/user-guide/configuring#configuring-rules), [how to
+exclude specific
+files](http://eslint.org/docs/user-guide/configuring#ignoring-files-and-directories),
+and [how to disable individual rules for a particular
 file](http://eslint.org/docs/user-guide/configuring#disabling-rules-with-inline-comments),
 take a look at [the documentation for
 ESLint](http://eslint.org/docs/user-guide/configuring).
