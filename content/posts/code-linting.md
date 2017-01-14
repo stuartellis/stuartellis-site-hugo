@@ -2,7 +2,7 @@
 Categories = ["programming"]
 Tags = []
 Description = ""
-Date = "2017-01-13T20:03:00Z"
+Date = "2017-01-14T15:28:00Z"
 Title = "A Pocket Guide to Linting (Code Linting Everywhere on Your Project)"
 Type = "post"
 Draft = true
@@ -10,8 +10,9 @@ Draft = true
 +++
 
 [Lint checking](https://en.wikipedia.org/wiki/Lint_(software)) is an extremely
-effective aid for maintaining code, and it is now easy to set up the same
-quality checking on both your development and continuous integration systems.
+effective aid for maintaining the quality of your code, and it is now easy to
+set up the same quality checking on both your development and continuous
+integration systems.
 
 <!--more-->
 
@@ -26,7 +27,7 @@ apply the same linter rules in all of these environments.
 
 Travis and Code Climate themselves are proprietary services, but there is no fee
 for Open Source projects. To self-host your Continuous Integration and code
-analysis, try [Jenkins](https://jenkins.io).
+analysis, try [Jenkins](https://jenkins.io) with either linters or [Sonarqube](https://www.sonarqube.org).
 
 # So, Umm, What is a Linter? #
 
@@ -66,8 +67,9 @@ push.
 * XML - Linter: [xmllint](http://xmlsoft.org/xmllint.html), Atom package: [linter-xmllint](https://atom.io/packages/linter-xmllint)*
 * YAML - Linter: [yaml-js](http://nodeca.github.com/js-yaml/), Atom package: [linter-js-yaml](https://atom.io/packages/linter-js-yaml)
 
-The asterisk means that the Atom package requires the command-line linter
-utility to be installed.
+The asterisk means that the Atom linter package for that language requires the
+separate command-line linter utility to be installed. Check the Web page for the
+package, which will explain.
 
 # Automatic Linting in Atom #
 
@@ -94,10 +96,11 @@ Then enter this command to install the Atom package:
     apm install linter-rubocop
 
 Once you add linter packages in Atom, the editor runs a linter each time that
-you open or save a file that is relevant to whichever installed linter packages. If
-there are any linter warnings for an open file, the bottom of the file tab shows
-a list of linter warnings, and the total number of issues for the current file
-also appears in the bar at the bottom of the Atom window.
+you open or save a file that is relevant to whichever installed linter packages.
+If there are any linter warnings for an open file, the bottom of the file tab
+shows a list of linter warnings. The number of issues for the current file and
+the total number of linter issues for the project also appear in the bar at the
+bottom of the Atom window.
 
 FIXME: Pictures!
 
@@ -108,8 +111,8 @@ and it is installed the first time that you add any linter package to Atom.
 
 # Tuning Your Linters #
 
-Once you have started using a linter, you will quickly realise that you do not
-always agree with what it tells you. Sometimes there will be parts of your code
+Once you have started using linters, you will quickly realise that you do not
+always agree with what they tell you. Sometimes there will be parts of your code
 where you deliberately break rules, or standard rules that you do not agree
 with. For this reason, each linter will check the root directory of your project
 for a configuration file that overrides the defaults, and have ways of adjusting
@@ -132,11 +135,28 @@ these to your project immediately.
 
 # Adding Linter Testing to Your Continuous Integration #
 
+Here, we will use a linter to provide a simple pass or fail test for commits:
+if the linter finds any issue, the test fails. This enables us to enforce coding
+standards for the project, since we must specifically exclude every issue that
+we do not intend to fix. If that is too much work, just set up project analysis
+to report issues, as shown in the next section.
+
+The [Travis CI documentation](https://docs.travis-ci.com/). [Travis for Node.js developers by dwyl](https://github.com/dwyl/learn-travis).
+
 FIXME
 
-https://docs.travis-ci.com/
+First, make sure that the build environment will have the linter installed. Modern CI systems usually create a clean environment for each build, so you need to either add this to the job configuration for the CI service, or include the linter as a dependency for  the builds.
+
+Next, add the configuration files for your linter to the repository for your project.
 
 FIXME: Pictures!
+
+If you don't like Travis, you can use an alternative service, such as
+[CircleCI](https://circleci.com/), [Codeship](https://codeship.com/) or
+[Semaphore](https://semaphoreci.com/), all of which have a free plan for light
+use. For example, the *circle.yml* file for CircleCI would look like this:
+
+FIXME
 
 # Project Analysis with Code Climate #
 
@@ -145,6 +165,16 @@ FIXME
 https://docs.codeclimate.com/docs/getting-started-configuration
 
 FIXME: Pictures!
+
+Once you have set up a project, add a webhook to your Continuous Integration
+system to trigger a Code Climate report each time that a commit is pushed. If
+you are using Travis, the documentation includes a section on [Code
+Climate](https://docs.travis-ci.com/user/code-climate/).
+
+If you don't like Code Climate, alternative services include
+[Codacy](https://www.codacy.com/), [CodeFactor](https://www.codefactor.io/),
+[Hound](https://houndci.com/) and
+[QuantifiedCode](https://www.quantifiedcode.com/).
 
 # Bonus Fun: Linting Prose #
 
