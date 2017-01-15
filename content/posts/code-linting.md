@@ -2,12 +2,12 @@
 Categories = ["programming"]
 Tags = []
 Description = ""
-Date = "2017-01-15T17:53:00Z"
+Date = "2017-01-15T20:40:00Z"
 Title = "A Pocket Guide to Linting (Code Linting Everywhere on Your Project)"
 Type = "post"
-Draft = true
 
 +++
+
 
 [Lint checking](https://en.wikipedia.org/wiki/Lint_(software)) is an extremely
 effective aid for maintaining the quality of your code, and it is now easy to
@@ -27,7 +27,7 @@ apply the same linter rules in all of these environments.
 
 Travis and Code Climate themselves are proprietary services, but there is no fee
 for Open Source projects. To self-host your Continuous Integration and code
-analysis, try [Jenkins](https://jenkins.io) with either linters or [Sonarqube](https://www.sonarqube.org).
+analysis, try [Jenkins](https://jenkins.io) with either linters or  [Sonarqube](https://www.sonarqube.org).
 
 # So, Umm, What is a Linter? #
 
@@ -35,27 +35,26 @@ A linter is a command-line tool that checks one or more files that have been
 written in a particular programming language or data format against a set of
 rules. Every programming language has best practices and a common set of style
 rules that are either [endorsed by the core
-team](https://www.python.org/dev/peps/pep-0008/), or [generally
-accepted by the community](https://github.com/bbatsov/ruby-style-guide), and
-these are coded into the linter. If a line in a file does not meet one of these
-rules, the linter prints outs the line number, and the rule that has been
-broken. Modern computers can analyze a complete project with a linter in
-seconds, or less.
+team](https://www.python.org/dev/peps/pep-0008/), or [generally accepted by the
+community](https://github.com/bbatsov/ruby-style-guide), and these are coded
+into the linter. If a line in a file does not meet one of these rules, the
+linter prints outs the file and line number where the problem was found, and the
+rule that has been broken.
+
+Unlike unit tests, lint checks are fast enough that they can effectively be
+instant (as far as humans can tell). This means that these checks can be
+integrated everywhere. Linters will run interactively with your editor, so that
+you can get feedback on screen as your write your code. You can easily set your
+Continuous Integration system to run lint checks along with your test suites,
+without adding any significant delay to the build time. Extra services like Code
+Climate use suites of linters to rapidly provide detailed code analysis on your
+projects for every Git commit.
 
 Every linter is an independent project that is written for a specific
 data format or programming language. For example, the
 [ESLint](http://eslint.org/) utility checks JavaScript (and ES2015, and JSX)
 files for compliance with a set of good practices, and is written in JavaScript
 itself.
-
-Like many things, the simple tools become much more powerful as they are
-used in conjunction with other software. You can manually run a linter against
-the files in your project, but you will get much more value from having other
-applications automatically run linters. The Atom test editor integrates with
-linters through plugins, so that you can get feedback as your write your code,
-and you can set your CI system to fail commits that introduce poor code.
-Services like Code Climate will provide more detailed reports for every Git
-push.
 
 # A Handy List of Linters #
 
@@ -164,8 +163,10 @@ project.
 3. Edit your build process to run the linters.
 
 To see a working example that uses Travis CI, take a look at [the code-linting
-branch of my example Ruby on Rails
-application](https://github.com/stuartellis/status-please/tree/01-code-linting).
+branch](https://github.com/stuartellis/status-please/tree/01-code-linting) of my
+example Ruby on Rails application. [The individual
+commits](https://github.com/stuartellis/status-please/commits/01-code-linting)
+show the different steps.
 
 FIXME: Pictures
 
@@ -193,25 +194,26 @@ also runs additional quality checks like [Brakeman](http://brakemanscanner.org/)
 [Bundler-audit](https://github.com/rubysec/bundler-audit) and [test
 coverage](https://docs.codeclimate.com/docs/setting-up-test-coverage).
 
-Rather than repeat the perfectly good setup documentation that Code Climate has,
-I will just provide [a link to
-it](https://docs.codeclimate.com/docs/getting-started-configuration).
+Rather than repeat the setup documentation for Code Climate, I will just provide
+[a link](https://docs.codeclimate.com/docs/getting-started-configuration).
 
 FIXME: Pictures!
 
-Once you have set up a project, add a webhook to your Continuous Integration
-system to trigger a report each time that a commit is pushed. If
-you are using Travis, the documentation includes a section on [Code
-Climate](https://docs.travis-ci.com/user/code-climate/).
+Once you have set up a project, you must also [add a webhook to your repository
+host system](https://docs.codeclimate.com/docs/installing-our-webhook).
+This triggers a new analysis each time that a commit is pushed.
 
 Remember to set up an integration with your preferred chat service as well! For
 example, [this page explains how to set up
 Slack](https://docs.codeclimate.com/docs/slack-integration). Code Climate will
-send messages whenever it considers that a file is Grade D or worse.
+send messages whenever an analysis considers that a file in the project is Grade
+D or worse.
 
 To see a working example that uses Travis CI and Code Climate, [the code-linting
-branch of my example Ruby on Rails
-application](https://github.com/stuartellis/status-please/tree/01-code-linting).
+branch](https://github.com/stuartellis/status-please/tree/01-code-linting) of my
+example Ruby on Rails application. [The individual
+commits](https://github.com/stuartellis/status-please/commits/01-code-linting)
+show the different steps.
 
 If you don't like Code Climate, alternative services include
 [Codacy](https://www.codacy.com/), [CodeFactor](https://www.codefactor.io/),
