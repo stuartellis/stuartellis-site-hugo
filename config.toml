@@ -35,4 +35,4 @@ name = "Contact Me"
 pre = "<i class='fa fa-heart'></i>"
 weight = -80
 identifier = "contact"
-url = "/contact/"
+url = "/contact/me/"
