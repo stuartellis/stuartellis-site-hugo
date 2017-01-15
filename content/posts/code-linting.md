@@ -2,7 +2,7 @@
 Categories = ["programming"]
 Tags = []
 Description = ""
-Date = "2017-01-14T15:28:00Z"
+Date = "2017-01-15T17:53:00Z"
 Title = "A Pocket Guide to Linting (Code Linting Everywhere on Your Project)"
 Type = "post"
 Draft = true
@@ -33,17 +33,22 @@ analysis, try [Jenkins](https://jenkins.io) with either linters or [Sonarqube](h
 
 A linter is a command-line tool that checks one or more files that have been
 written in a particular programming language or data format against a set of
-rules. If a line in a file does not meet one of these rules, the linter prints
-outs the line number, and the rule that has been broken. Modern computers can
-analyze a complete project with a linter in seconds, or less.
+rules. Every programming language has best practices and a common set of style
+rules that are either [endorsed by the core
+team](https://www.python.org/dev/peps/pep-0008/), or [generally
+accepted by the community](https://github.com/bbatsov/ruby-style-guide), and
+these are coded into the linter. If a line in a file does not meet one of these
+rules, the linter prints outs the line number, and the rule that has been
+broken. Modern computers can analyze a complete project with a linter in
+seconds, or less.
 
-Currently, every linter is an independent project that is written for a specific
+Every linter is an independent project that is written for a specific
 data format or programming language. For example, the
 [ESLint](http://eslint.org/) utility checks JavaScript (and ES2015, and JSX)
 files for compliance with a set of good practices, and is written in JavaScript
 itself.
 
-Like many UNIX things, the simple tools become much more powerful as they are
+Like many things, the simple tools become much more powerful as they are
 used in conjunction with other software. You can manually run a linter against
 the files in your project, but you will get much more value from having other
 applications automatically run linters. The Atom test editor integrates with
@@ -54,22 +59,25 @@ push.
 
 # A Handy List of Linters #
 
-* CoffeeScript - Linter: [CoffeeLint](http://www.coffeelint.org/), Atom package: [linter-coffeelint](https://atom.io/packages/linter-coffeelint)
-* CSS - Linter: [CSSLint](http://csslint.net/), Atom package: [linter-csslint](https://atom.io/packages/linter-csslint)
-* English (see below!) - Linter: [Proselint](http://proselint.com/), Atom package: [linter-proselint](https://atom.io/packages/linter-proselint)*
-* Go - Linter: [golinter](https://github.com/golang/lint), Atom package: [linter-golinter](https://atom.io/packages/linter-golinter)*
-* Java - [linting is built-in](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/javac.html), Atom package: [linter-javac](https://atom.io/packages/linter-javac)
-* JavaScript and JSX - Linter: [ESLint](http://eslint.org/), Atom package: [linter-eslint](https://atom.io/packages/linter-eslint)
-* PHP - [linting is built-in](http://www.php.net/manual/en/features.commandline.options.php), Atom package: [linter-php](https://atom.io/packages/linter-php)
-* Python - Linter: [Pylint](https://www.pylint.org/), Atom package: [linter-pylint](https://atom.io/packages/linter-pylint)*
-* Ruby - Linter: [Rubocop](http://batsov.com/rubocop/), Atom package: [linter-rubocop](https://atom.io/packages/linter-rubocop)*
-* Rust - [linting is built-in](https://doc.rust-lang.org/reference.html#lint-check-attributes), Atom package: [linter-rust](https://atom.io/packages/linter-rust)
-* XML - Linter: [xmllint](http://xmlsoft.org/xmllint.html), Atom package: [linter-xmllint](https://atom.io/packages/linter-xmllint)*
-* YAML - Linter: [yaml-js](http://nodeca.github.com/js-yaml/), Atom package: [linter-js-yaml](https://atom.io/packages/linter-js-yaml)
+* *C and C++* - Linter: Various, or use your compiler!, Atom package: [linter-clang](https://atom.io/packages/linter-clang)* or [linter-gcc](https://atom.io/packages/linter-gcc)*
+* *CoffeeScript* - Linter: [CoffeeLint](http://www.coffeelint.org/), Atom package: [linter-coffeelint](https://atom.io/packages/linter-coffeelint)
+* *CSS* - Linter: [CSSLint](http://csslint.net/), Atom package: [linter-csslint](https://atom.io/packages/linter-csslint)
+* *English (see below!)* - Linter: [Proselint](http://proselint.com/), Atom package: [linter-proselint](https://atom.io/packages/linter-proselint)*
+* *Go* - Linter: [golinter](https://github.com/golang/lint) (style-only) and [gometalinter](https://github.com/alecthomas/gometalinter) (all the things), Atom package: [linter-golinter](https://atom.io/packages/linter-golinter)* or  [go-plus](https://atom.io/packages/go-plus)*
+* *HAML* - Linter: [haml-lint](https://github.com/brigade/haml-lint), Atom package: [linter-haml](https://atom.io/packages/linter-haml)*
+* *Java* - [linting is built-in](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/javac.html), Atom package: [linter-javac](https://atom.io/packages/linter-javac)
+* *JavaScript and JSX* - Linter: [ESLint](http://eslint.org/), Atom package: [linter-eslint](https://atom.io/packages/linter-eslint)
+* *PHP* - [linting is built-in](http://www.php.net/manual/en/features.commandline.options.php), Atom package: [linter-php](https://atom.io/packages/linter-php)
+* *Python* - Linter: [Pylint](https://www.pylint.org/), Atom package: [linter-pylint](https://atom.io/packages/linter-pylint)*
+* *Ruby* - Linter: [Rubocop](http://rubocop.readthedocs.io), Atom package: [linter-rubocop](https://atom.io/packages/linter-rubocop)*
+* *Rust* - [linting is built-in](https://doc.rust-lang.org/reference.html#lint-check-attributes), Atom package: [linter-rust](https://atom.io/packages/linter-rust)
+* *SASS* - Linter: [sass-lint](https://github.com/sasstools/sass-lint), Atom package: [linter-sass-lint](https://atom.io/packages/linter-sass-lint)*
+* *XML* - Linter: [xmllint](http://xmlsoft.org/xmllint.html), Atom package: [linter-xmllint](https://atom.io/packages/linter-xmllint)*
+* *YAML* - Linter: [yaml-js](http://nodeca.github.com/js-yaml/), Atom package: [linter-js-yaml](https://atom.io/packages/linter-js-yaml)
 
 The asterisk means that the Atom linter package for that language requires the
 separate command-line linter utility to be installed. Check the Web page for the
-package, which will explain.
+Atom package, which will explain.
 
 # Automatic Linting in Atom #
 
@@ -119,8 +127,8 @@ for a configuration file that overrides the defaults, and have ways of adjusting
 or disabling rules for particular files.
 
 Each linter works differently, so it is hard to generalise beyond this. For a
-good example of a linter, with documentation for
-[rules](http://eslint.org/docs/rules/), [how to configure
+good example of a linter, with documentation on [the
+rules](http://eslint.org/docs/rules/), [how to configure
 them](http://eslint.org/docs/user-guide/configuring#configuring-rules), [how to
 exclude specific
 files](http://eslint.org/docs/user-guide/configuring#ignoring-files-and-directories),
@@ -135,41 +143,75 @@ these to your project immediately.
 
 # Adding Linter Testing to Your Continuous Integration #
 
-Here, we will use a linter to provide a simple pass or fail test for commits:
-if the linter finds any issue, the test fails. This enables us to enforce coding
-standards for the project, since we must specifically exclude every issue that
-we do not intend to fix. If that is too much work, just set up project analysis
-to report issues, as shown in the next section.
+Consider using linters to provide a pass or fail check for commits, so
+that if the linters finds any issue, the test fails. This enables you to enforce
+coding standards for the project, since contributors must specifically exclude
+every issue that they do not intend to fix.
 
-The [Travis CI documentation](https://docs.travis-ci.com/). [Travis for Node.js developers by dwyl](https://github.com/dwyl/learn-travis).
+Your CI system marks a build as failed if any step in the build process raises
+an error. Linters will raise an error if they find any issue, so to use a linter
+to check commits, you simply need to modify your CI build process to run that
+linter in the same way that it runs the unit tests. There are three steps to do
+this:
 
-FIXME
+1. Make sure that the build environment will have the linters installed. Either
+add this to the job configuration for the CI service, or include the linters as
+dependencies for the build process.
 
-First, make sure that the build environment will have the linter installed. Modern CI systems usually create a clean environment for each build, so you need to either add this to the job configuration for the CI service, or include the linter as a dependency for  the builds.
+2. Add the configuration files for your linters to the repository for your
+project.
 
-Next, add the configuration files for your linter to the repository for your project.
+3. Edit your build process to run the linters.
 
-FIXME: Pictures!
+To see a working example that uses Travis CI, take a look at [the code-linting
+branch of my example Ruby on Rails
+application](https://github.com/stuartellis/status-please/tree/01-code-linting).
 
-If you don't like Travis, you can use an alternative service, such as
+FIXME: Pictures
+
+I used three resources to help me set this up:
+
+* [The Travis CI documentation](https://docs.travis-ci.com/).
+* [Travis for Node.js developers by dwyl](https://github.com/dwyl/learn-travis).
+* [Rubocop and Rails: Getting started, by Joan E. Hughes](http://joanswork.com/rubocop-rails-getting-started/)
+
+If you don't want to use Travis, you can use an alternative service, such as
 [CircleCI](https://circleci.com/), [Codeship](https://codeship.com/) or
-[Semaphore](https://semaphoreci.com/), all of which have a free plan for light
-use. For example, the *circle.yml* file for CircleCI would look like this:
-
-FIXME
+[Semaphore](https://semaphoreci.com/), all of which work in a similar way, and
+have a free plan for light use.
 
 # Project Analysis with Code Climate #
 
-FIXME
+For larger projects, especially projects that have been in development for a
+long time before you started linting, it may more be practical to just check
+analysis reports and fix issues over time, rather than fail commits that do not
+meet the standard.
 
-https://docs.codeclimate.com/docs/getting-started-configuration
+You may also find that the analysis that is provided by a third-party service
+has more features. For example, Code Climate uses multiple linters, and
+also runs additional quality checks like [Brakeman](http://brakemanscanner.org/),
+[Bundler-audit](https://github.com/rubysec/bundler-audit) and [test
+coverage](https://docs.codeclimate.com/docs/setting-up-test-coverage).
+
+Rather than repeat the perfectly good setup documentation that Code Climate has,
+I will just provide [a link to
+it](https://docs.codeclimate.com/docs/getting-started-configuration).
 
 FIXME: Pictures!
 
 Once you have set up a project, add a webhook to your Continuous Integration
-system to trigger a Code Climate report each time that a commit is pushed. If
+system to trigger a report each time that a commit is pushed. If
 you are using Travis, the documentation includes a section on [Code
 Climate](https://docs.travis-ci.com/user/code-climate/).
+
+Remember to set up an integration with your preferred chat service as well! For
+example, [this page explains how to set up
+Slack](https://docs.codeclimate.com/docs/slack-integration). Code Climate will
+send messages whenever it considers that a file is Grade D or worse.
+
+To see a working example that uses Travis CI and Code Climate, [the code-linting
+branch of my example Ruby on Rails
+application](https://github.com/stuartellis/status-please/tree/01-code-linting).
 
 If you don't like Code Climate, alternative services include
 [Codacy](https://www.codacy.com/), [CodeFactor](https://www.codefactor.io/),
