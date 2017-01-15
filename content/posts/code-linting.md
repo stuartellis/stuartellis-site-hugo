@@ -2,7 +2,7 @@
 Categories = ["programming"]
 Tags = []
 Description = ""
-Date = "2017-01-15T20:40:00Z"
+Date = "2017-01-15T21:40:00Z"
 Title = "A Pocket Guide to Linting (Code Linting Everywhere on Your Project)"
 Type = "post"
 
@@ -16,10 +16,10 @@ integration systems.
 
 <!--more-->
 
-FIXME: Pictures!
+{{< figure src="/img/posts/code-linting/fig1.png" title="Atom Editor Linter Display" alt="Linter Display in Atom Editor" >}}
 
-My text editor of choice is [Atom](http://www.atom.io), and in this post we'll
-also look at enforcing lint checks in the build process with [Travis
+In this post we will cover linting with the [Atom](http://www.atom.io) text
+editor, and also look at enforcing lint checks in the build process with [Travis
 CI](https://travis-ci.org/), and setting up [Code
 Climate](https://codeclimate.com) to give us project analysis with a nice user
 interface. Code Climate runs a suite of Open Source linters, so that we can
@@ -40,6 +40,10 @@ community](https://github.com/bbatsov/ruby-style-guide), and these are coded
 into the linter. If a line in a file does not meet one of these rules, the
 linter prints outs the file and line number where the problem was found, and the
 rule that has been broken.
+
+Some linters also provide an option to automatically rewrite your code to fix
+issues that they find. Automatic code reformatting is definitely outside the
+scope of this introductory post.
 
 Unlike unit tests, lint checks are fast enough that they can effectively be
 instant (as far as humans can tell). This means that these checks can be
@@ -94,7 +98,19 @@ includes linting capabilities in the default installation.
 
 Otherwise, the packages for Atom rely on you installing the command-line linter
 separately. For example, if you are a Ruby developer, either include the Rubocop
-linter in your projects with Bundler, or add it to your Ruby installation:
+linter in your project by adding it to the Gemfile, or add it to your Ruby
+installation, so that one version will be available to all projects.
+
+To include Rubocop in the Gemfile, add it to the *development* and *test*
+groups, with *require* set to *false*:
+
+~~~ruby
+group :development, :test do
+  gem 'rubocop', require: false
+end
+~~~
+
+To add Rubocop to your Ruby installation:
 
     gem install rubocop
 
@@ -109,7 +125,7 @@ shows a list of linter warnings. The number of issues for the current file and
 the total number of linter issues for the project also appear in the bar at the
 bottom of the Atom window.
 
-FIXME: Pictures!
+{{< figure src="/img/posts/code-linting/fig1.png" title="Atom Editor Linter Display" alt="Linter Display in Atom Editor" >}}
 
 Incidentally, you will notice that Atom has a package that is just called
 *linter*, and is labelled *A Base Linter with Cow Powers*. This is the framework
@@ -126,21 +142,20 @@ for a configuration file that overrides the defaults, and have ways of adjusting
 or disabling rules for particular files.
 
 Each linter works differently, so it is hard to generalise beyond this. For a
-good example of a linter, with documentation on [the
-rules](http://eslint.org/docs/rules/), [how to configure
+good example of a linter, take a look at [the documentation for
+ESLint](http://eslint.org/docs/user-guide/configuring), which fully explains
+[the rules](http://eslint.org/docs/rules/), [how to configure
 them](http://eslint.org/docs/user-guide/configuring#configuring-rules), [how to
 exclude specific
 files](http://eslint.org/docs/user-guide/configuring#ignoring-files-and-directories),
 and [how to disable individual rules for a particular
-file](http://eslint.org/docs/user-guide/configuring#disabling-rules-with-inline-comments),
-take a look at [the documentation for
-ESLint](http://eslint.org/docs/user-guide/configuring).
+file](http://eslint.org/docs/user-guide/configuring#disabling-rules-with-inline-comments).
 
 By the way, if you use Code Climate, the setup process generates a set of
 configuration files for the default linters, so that you can download and add
 these to your project immediately.
 
-# Adding Linter Testing to Your Continuous Integration #
+# Adding Lint Checking to Your Continuous Integration #
 
 Consider using linters to provide a pass or fail check for commits, so
 that if the linters finds any issue, the test fails. This enables you to enforce
@@ -168,12 +183,12 @@ example Ruby on Rails application. [The individual
 commits](https://github.com/stuartellis/status-please/commits/01-code-linting)
 show the different steps.
 
-FIXME: Pictures
+{{< figure src="/img/posts/code-linting/fig2.png" title="Travis Build Log" alt="Travis Build Log with Linter Output" >}}
 
 I used three resources to help me set this up:
 
-* [The Travis CI documentation](https://docs.travis-ci.com/).
-* [Travis for Node.js developers by dwyl](https://github.com/dwyl/learn-travis).
+* [The Travis CI documentation](https://docs.travis-ci.com/)
+* [Travis for Node.js developers by dwyl](https://github.com/dwyl/learn-travis)
 * [Rubocop and Rails: Getting started, by Joan E. Hughes](http://joanswork.com/rubocop-rails-getting-started/)
 
 If you don't want to use Travis, you can use an alternative service, such as
@@ -197,7 +212,7 @@ coverage](https://docs.codeclimate.com/docs/setting-up-test-coverage).
 Rather than repeat the setup documentation for Code Climate, I will just provide
 [a link](https://docs.codeclimate.com/docs/getting-started-configuration).
 
-FIXME: Pictures!
+{{< figure src="/img/posts/code-linting/fig3.png" title="Code Climate Project Report" alt="Linter Display in Atom Editor" >}}
 
 Once you have set up a project, you must also [add a webhook to your repository
 host system](https://docs.codeclimate.com/docs/installing-our-webhook).
@@ -257,4 +272,4 @@ command is:
 
 Behold:
 
-FIXME: Pictures!
+{{< figure src="/img/posts/code-linting/fig4.png" title="Atom Editor Linter Display with Proselint" alt="Linter Display for Proselint in Atom Editor" >}}
