@@ -2,7 +2,7 @@
 Categories = ["programming"]
 Tags = []
 Description = ""
-Date = "2017-01-15T21:40:00Z"
+Date = "2017-01-17T20:34:00Z"
 Title = "A Pocket Guide to Linting (Code Linting Everywhere on Your Project)"
 Type = "post"
 
@@ -16,7 +16,7 @@ integration systems.
 
 <!--more-->
 
-{{< figure src="/img/posts/code-linting/fig1.png" title="Atom Editor Linter Display" alt="Linter Display in Atom Editor" >}}
+{{< figure src="/img/posts/code-linting/atom-linter-bar.png" title="The linter bar in the Atom editor" alt="Linter display bar in the Atom text editor" >}}
 
 In this post we will cover linting with the [Atom](http://www.atom.io) text
 editor, and also look at enforcing lint checks in the build process with [Travis
@@ -110,11 +110,15 @@ group :development, :test do
 end
 ~~~
 
-To add Rubocop to your Ruby installation:
+To add Rubocop to your Ruby installation with RubyGems:
 
     gem install rubocop
 
-Then enter this command to install the Atom package:
+Use the helpful option to generate initial configuration files:
+
+    rubocop --auto-gen-config
+
+Finally, enter this command to install the Atom package:
 
     apm install linter-rubocop
 
@@ -125,7 +129,7 @@ shows a list of linter warnings. The number of issues for the current file and
 the total number of linter issues for the project also appear in the bar at the
 bottom of the Atom window.
 
-{{< figure src="/img/posts/code-linting/fig1.png" title="Atom Editor Linter Display" alt="Linter Display in Atom Editor" >}}
+{{< figure src="/img/posts/code-linting/atom-linter-file.png" title="This file has issues" alt="File with linter messages in the Atom editor" >}}
 
 Incidentally, you will notice that Atom has a package that is just called
 *linter*, and is labelled *A Base Linter with Cow Powers*. This is the framework
@@ -183,7 +187,7 @@ example Ruby on Rails application. [The individual
 commits](https://github.com/stuartellis/status-please/commits/01-code-linting)
 show the different steps.
 
-{{< figure src="/img/posts/code-linting/fig2.png" title="Travis Build Log" alt="Travis Build Log with Linter Output" >}}
+{{< figure src="/img/posts/code-linting/travis-build-log.png" title="Travis CI running the Rubocop linter" alt="A Travis build log with linter output" >}}
 
 I used three resources to help me set this up:
 
@@ -209,14 +213,14 @@ also runs additional quality checks like [Brakeman](http://brakemanscanner.org/)
 [Bundler-audit](https://github.com/rubysec/bundler-audit) and [test
 coverage](https://docs.codeclimate.com/docs/setting-up-test-coverage).
 
+{{< figure src="/img/posts/code-linting/code-climate.png" title="A project report page on Code Climate" alt="A project report page on Code Climate" >}}
+
 Rather than repeat the setup documentation for Code Climate, I will just provide
 [a link](https://docs.codeclimate.com/docs/getting-started-configuration).
 
-{{< figure src="/img/posts/code-linting/fig3.png" title="Code Climate Project Report" alt="Linter Display in Atom Editor" >}}
-
 Once you have set up a project, you must also [add a webhook to your repository
-host system](https://docs.codeclimate.com/docs/installing-our-webhook).
-This triggers a new analysis each time that a commit is pushed.
+host](https://docs.codeclimate.com/docs/installing-our-webhook). This triggers a
+new analysis each time that a commit is pushed.
 
 Remember to set up an integration with your preferred chat service as well! For
 example, [this page explains how to set up
@@ -272,4 +276,4 @@ command is:
 
 Behold:
 
-{{< figure src="/img/posts/code-linting/fig4.png" title="Atom Editor Linter Display with Proselint" alt="Linter Display for Proselint in Atom Editor" >}}
+{{< figure src="/img/posts/code-linting/proselint.png" title="Proselint providing feedback in the Atom editor" alt="Proselint feedback in the Atom editor" >}}
