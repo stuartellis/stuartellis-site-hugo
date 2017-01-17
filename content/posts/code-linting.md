@@ -3,7 +3,7 @@ Categories = ["programming"]
 Tags = []
 Description = ""
 Date = "2017-01-17T20:34:00Z"
-Title = "A Pocket Guide to Linting (Code Linting Everywhere on Your Project)"
+Title = "A Pocket Guide to Linting (Enabling Code Linting Everywhere)"
 Type = "post"
 
 +++
