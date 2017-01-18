@@ -2,7 +2,7 @@
 Categories = ["programming"]
 Tags = []
 Description = ""
-Date = "2017-01-17T20:34:00Z"
+Date = "2017-01-18T07:10:00Z"
 Title = "A Pocket Guide to Linting (Enabling Code Linting Everywhere)"
 Type = "post"
 
@@ -73,7 +73,7 @@ itself.
 * *PHP* - [linting is built-in](http://www.php.net/manual/en/features.commandline.options.php), Atom package: [linter-php](https://atom.io/packages/linter-php)
 * *Python* - Linter: [Pylint](https://www.pylint.org/), Atom package: [linter-pylint](https://atom.io/packages/linter-pylint)*
 * *Ruby* - Linter: [Rubocop](http://rubocop.readthedocs.io), Atom package: [linter-rubocop](https://atom.io/packages/linter-rubocop)*
-* *Rust* - [linting is built-in](https://doc.rust-lang.org/reference.html#lint-check-attributes), Atom package: [linter-rust](https://atom.io/packages/linter-rust)
+* *Rust* - [Basic linting is built-in](https://doc.rust-lang.org/reference.html#lint-check-attributes) but there's also [Clippy](https://github.com/Manishearth/rust-clippy), Atom package: [linter-rust](https://atom.io/packages/linter-rust)
 * *SASS* - Linter: [sass-lint](https://github.com/sasstools/sass-lint), Atom package: [linter-sass-lint](https://atom.io/packages/linter-sass-lint)*
 * *XML* - Linter: [xmllint](http://xmlsoft.org/xmllint.html), Atom package: [linter-xmllint](https://atom.io/packages/linter-xmllint)*
 * *YAML* - Linter: [yaml-js](http://nodeca.github.com/js-yaml/), Atom package: [linter-js-yaml](https://atom.io/packages/linter-js-yaml)
