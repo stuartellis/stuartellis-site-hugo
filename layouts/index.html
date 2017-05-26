@@ -5,7 +5,7 @@
         <div class="row">
             <div class="sixteen columns">
                 <div class="li-main-article-list">
-                    {{ range where .Data.Pages "Type" "post" }}
+                    {{ range where .Data.Pages "Type" "article" }}
                         <div class="li-article">
                             {{ .Render "summary"}}
                         </div>
