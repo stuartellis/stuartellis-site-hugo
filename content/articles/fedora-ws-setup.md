@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Fedora Workstation for Software Development"
 Slug = "fedora-ws-setup"
-Date = "2017-01-12T22:12:00+00:00"
+Date = "2017-05-28T20:59:00+01:00"
 Description = ""
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "javascript", "python", "ruby", "rust"]
@@ -208,9 +208,10 @@ Enter this command to install nvm:
 
 Open a new Terminal window and enter this command:
 
-    nvm install 6.9.4
+    nvm install --lts
 
-This installs Node.js 6.9.4 and makes it the default Node.js run-time.
+This installs the latest LTS release of Node.js, and makes it the default
+Node.js run-time.
 
 To install the [Yarn](http://yarnpkg.com) package manager, enter these commands
 in a Terminal window:
@@ -303,10 +304,10 @@ Next, add this line to the *.bashrc* file in your home directory:
 
 Open a new Terminal window and enter these commands:
 
-    pyenv install 3.5.1
-    pyenv global 3.5.1
+    pyenv install 3.6.1
+    pyenv global 3.6.1
 
-These install Python 3.5 and make it the default Python run-time.
+These install Python 3.6.1 and make it the default Python run-time.
 
 # Virtualization and Containers #
 
