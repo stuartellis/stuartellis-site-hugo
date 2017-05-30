@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2017-05-28T20:59:00+01:00"
+Date = "2017-05-30T21:20:00+01:00"
 Description = ""
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "javascript", "python", "ruby", "rust"]
@@ -304,7 +304,7 @@ To maintain multiple Node.js versions on your system, use the
 
 Enter this command to install nvm:
 
-     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
+     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 
 Open a new Terminal window and enter this command:
 
@@ -332,7 +332,11 @@ Use Homebrew to install [Go](https://golang.org/):
 
     brew install golang
 
-Set the GOPATH environment variable in your *~/.bash\_profile* file:
+### Setting a Custom GOPATH ###
+
+By default, current versions of Go automatically create and use a *go* directory
+in your home directory as the GOPATH. To specify a custom GOPATH, such as a
+*code* directory, set the GOPATH environment variable in your *~/.bashrc* file:
 
     export GOPATH="$HOME/code"
 
@@ -340,10 +344,7 @@ Add this to your PATH:
 
     $GOPATH/bin
 
-Close the Terminal and open it again for the changes to take effect. Then use
-*go get* to install [golint](https://github.com/golang/lint):
-
-    go get -u github.com/golang/lint/golint
+Close the Terminal and open it again for the changes to take effect.
 
 ## rustup for Rust Development ##
 
