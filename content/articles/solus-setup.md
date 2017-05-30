@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Solus for Software Development"
 Slug = "solus-setup"
-Date = "2017-05-28T20:59:00+01:00"
+Date = "2017-05-30T20:50:00+01:00"
 Description = "Setting up a Solus installation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "javascript", "python", "ruby", "rust"]
@@ -21,13 +21,20 @@ development.
 
 ## Enable Disk Encryption ##
 
-FIXME
+Enable *LVM* and disk encryption when prompted during the setup process.
 
-Current versions of Solus include a full-disk encryption system. You should
-enable disk encryption during the installation process, because it is the only
-protection against anyone with physical access to your computer. All other
-security measures will be completely bypassed if someone with physical access
-simply restarts the computer with a bootable pen drive.
+Disk encryption is the only protection against anyone with physical access to
+your computer. All other security measures will be completely bypassed if
+someone with physical access simply restarts the computer with a bootable pen
+drive or remove the internal hard drive.
+
+## Set a Password for UEFI ##
+
+Modern Intel-based computers include UEFI firmware that runs when the machine is
+powered on, to start the operating system. Restart your computer, press the
+function key to enter the setup menu. Change the boot options so that the
+computer only boots from the hard drive, and set both a user password for
+startup, and an administrator password to protect the UEFI menus.
 
 # Do This First! #
 
@@ -35,43 +42,20 @@ Log in once, run the Software Center utility, and ensure that the operating
 system has the latest updates. After all of the updates have been applied,
 restart the computer.
 
-# Configuring a User Account #
-
-## Configuring The Trackpad ##
-
-To make the trackpad behave correctly, ensure that these settings are
-enabled:
-
-* *Settings \> Mouse \& Touchpad \> Tap to Click*
-
 # Configuring System Security #
 
-Solus is a secure operating system, but it is not yet perfect. If you are using
-a laptop then you should probably make all of these changes as soon as possible.
-
 ## Basic Settings ##
-
-FIXME
 
 Select *Settings \> Privacy*, and review the settings. Depending upon your
 needs, you may decide to turn off *Location Services* or *Usage & History*.
 
-> Disk encryption really is secure, which means that you can permanently lose access to your data if you
-lose the passwords and the recovery key.
-
-## Requiring a Password on Bootup ##
+## Consider Requiring a Password on Bootup ##
 
 If your computer is frequently left in
 public places, then set a boot password. Otherwise, any malicious individual can
 change the firmware settings to boot from a disc or device of their choosing. If
 you did not enable disk encryption, then the attacker will have complete access
 to all of the files on the system.
-
-Modern Intel-based computers include EFI firmware that runs when the machine is
-powered on, to start the operating system. Restart your computer, press the
-function key to enter the setup menu. Change the boot options so that the
-computer only boots from the hard drive, and set both a user password for
-startup, and an administrator password to protect the EFI menus.
 
 ## Configuring a Firewall ##
 
@@ -84,8 +68,6 @@ Solus includes [firewalld](http://www.firewalld.org/), but does not provide a gr
 FIXME
 
 # Setting Up for Development #
-
-FIXME
 
 Every developer needs a text editor and a version control system.
 
@@ -104,19 +86,24 @@ extensions for languages like Python and JavaScript.
 
 ## Choosing a Text Editor ##
 
-Solus includes a command-line version of [vim](http://www.vim.org/), as well as
-a desktop text editor. The text editor has some support for programming, but is
-more useful for light-weight word processing. Unless you already have a
-preferred editor, I suggest that you install [Atom](http://www.atom.io), which
-is a powerful graphical text editor that is specifically designed for programming.
+Solus includes a command-line version of [nano](https://www.nano-editor.org/),
+as well as a desktop text editor. The text editor has some support for
+programming, but is more useful for light-weight word processing. Unless you
+already have a preferred editor, I suggest that you install
+[Atom](http://www.atom.io), which is a powerful graphical text editor that is
+specifically designed for programming.
+
+To install Atom, enter this command in a Terminal window:
+
+    sudo eopkg install atom
 
 Whichever text editor you choose, remember to set the EDITOR environment
 variable in your *~/.bashrc* file, so that this editor is
 automatically invoked by command-line tools like your version control
-system. For example, put this line in your profile to make *vim* the
+system. For example, put this line in your profile to make *nano* the
 favored text editor:
 
-    export EDITOR="vi"
+    export EDITOR="nano"
 
 To make Atom your default editor, use this line instead:
 
@@ -150,12 +137,6 @@ support for [CSSLint](http://csslint.net/), [ESLint](http://eslint.org/) and
 [yaml-js](http://nodeca.github.com/js-yaml/):
 
     apm install linter-csslint linter-eslint linter-js-yaml
-
-If you are a Ruby on Rails developer, use this command to install support for
-[CoffeeLint](http://www.coffeelint.org/) and
-[Rubocop](http://batsov.com/rubocop/):
-
-    apm install linter-coffeelint linter-rubocop
 
 ## Setting Up A Directory Structure for Projects ##
 
@@ -213,7 +194,7 @@ example:
 
 # Setting Up Environments #
 
-## nvm and Yarn for Node.js Development ##
+## nvm for Node.js Development ##
 
 FIXME: Test this! and update other docs
 
@@ -231,28 +212,17 @@ Open a new Terminal window and enter this command:
 This installs the latest LTS release of Node.js, and makes it the default
 Node.js run-time.
 
-To install the [Yarn](http://yarnpkg.com) package manager, enter these commands
-in a Terminal window:
-
-    sudo eopkg install yarn
-
-Then add this to the end of your PATH:
-
-    `yarn global bin`
-
-For example:
-
-    export PATH="$PATH:$HOME/.rvm/bin:$HOME/.cargo/bin:`yarn global bin`"
-
 ## Developer Tools for Go ##
 
-FIXME: Test this
-
-Use *eopkg* to install [Go](https://golang.org/)::
+Use *eopkg* to install [Go](https://golang.org/):
 
     sudo eopkg install golang
 
-Set the GOPATH environment variable in your *~/.bash\_profile* file:
+### Setting a Custom GOPATH ###
+
+By default, current versions of Go automatically create and use a *go* directory
+in your home directory as the GOPATH. To specify a custom GOPATH, such as a
+*code* directory, set the GOPATH environment variable in your *~/.bashrc* file:
 
     export GOPATH="$HOME/code"
 
@@ -260,10 +230,7 @@ Add this to your PATH:
 
     $GOPATH/bin
 
-Close the Terminal and open it again for the changes to take effect. Then use
-*go get* to install [golint](https://github.com/golang/lint):
-
-    go get -u github.com/golang/lint/golint
+Close the Terminal and open it again for the changes to take effect.
 
 ## rustup for Rust Development ##
 
@@ -326,20 +293,19 @@ Open a new Terminal window and enter these commands:
 
 These install Python 3.6.1 and make it the default Python run-time.
 
-# Virtualization and Containers #
+# Containers #
 
-Solus includes the *Boxes* application by default for
-virtualization and remote desktop access. *Boxes* builds on the same KVM
-virtualization technology that companies like DigitalOcean use for production
-hosting.
-
-Solus includes *systemd-nspawn* for simple containers, and provides packages
-for Docker. These may have more thorough testing and better system integration
-than the packages from the Docker, Inc. Website. To install Docker on Solus
-Workstation, enter these commands in a terminal window:
+Solus includes *systemd-nspawn* for simple containers, and provides packages for
+Docker. These may have more thorough testing and better system integration than
+the packages from the Docker, Inc. Website. To install Docker on Solus, enter
+these commands in a terminal window:
 
     sudo eopkg install docker
     sudo systemctl enable docker
+    sudo systemctl start docker
+    sudo usermod -G docker USERNAME
+
+Replace *USERNAME* with your username.    
 
 # SQL Databases #
 
@@ -420,6 +386,10 @@ default, MySQL permits various types of invalid data to be entered.
 # Other Useful Desktop Applications for Developers #
 
 FIXME
+
+*Settings \> Online Accounts*
+
+[Web page for third-party applications](https://solus-project.com/articles/software/third-party/en/)
 
 * Google Chrome
 * AWS CLI
