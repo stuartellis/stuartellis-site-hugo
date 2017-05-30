@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Solus for Software Development"
 Slug = "solus-setup"
-Date = "2017-05-30T20:50:00+01:00"
+Date = "2017-05-30T21:50:00+01:00"
 Description = "Setting up a Solus installation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "javascript", "python", "ruby", "rust"]
@@ -72,12 +72,12 @@ FIXME
 Every developer needs a text editor and a version control system.
 
 To install the [Git version control system](http://www.git-scm.com/) on Solus,
-run this command in a Terminal window:
+run this command in a terminal window:
 
     sudo eopkg install git
 
 To install GCC and the C compiler toolchain on Solus, run this command in a
-Terminal window:
+terminal window:
 
     sudo eopkg install -c system.devel
 
@@ -93,7 +93,7 @@ already have a preferred editor, I suggest that you install
 [Atom](http://www.atom.io), which is a powerful graphical text editor that is
 specifically designed for programming.
 
-To install Atom, enter this command in a Terminal window:
+To install Atom, enter this command in a terminal window:
 
     sudo eopkg install atom
 
@@ -205,7 +205,7 @@ Enter this command to install nvm:
 
      curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
 
-Open a new Terminal window and enter this command:
+Open a new terminal window and enter this command:
 
     nvm install --lts
 
@@ -230,7 +230,7 @@ Add this to your PATH:
 
     $GOPATH/bin
 
-Close the Terminal and open it again for the changes to take effect.
+Close the terminal and open it again for the changes to take effect.
 
 ## rustup for Rust Development ##
 
@@ -286,7 +286,7 @@ Next, add this line to the *.bashrc* file in your home directory:
 
     if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
-Open a new Terminal window and enter these commands:
+Open a new terminal window and enter these commands:
 
     pyenv install 3.6.1
     pyenv global 3.6.1
@@ -303,9 +303,14 @@ these commands in a terminal window:
     sudo eopkg install docker
     sudo systemctl enable docker
     sudo systemctl start docker
+
+To enable your user account to manage Docker without administrative privileges,
+add your user account to the *docker* group:
+
     sudo usermod -G docker USERNAME
 
-Replace *USERNAME* with your username.    
+Replace *USERNAME* with your username. You must log out and log in again for
+this change to take effect.
 
 # SQL Databases #
 
