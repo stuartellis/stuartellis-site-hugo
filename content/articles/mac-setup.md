@@ -1,8 +1,8 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2017-05-30T21:20:00+01:00"
-Description = ""
+Date = "2017-06-03T20:04:00+01:00"
+Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "javascript", "python", "ruby", "rust"]
 Type = "article"
@@ -248,10 +248,13 @@ conventions](http://golang.org/doc/code.html). These guidelines may seem
 slightly fussy, but they pay off when you have many projects, some of which are
 on different version control hosts.
 
-First create a top-level directory with a short, generic name like *code*. In
-this directory, create an *src* sub-directory. For each repository host, create
-a subdirectory in *src* that matches your username. Check out projects in the
-directory. The final directory structure looks like this:
+First create a top-level directory with a short, generic name like *code*. By
+default Go uses a directory called *go*, but you can change that when you set up
+a Go installation.
+
+In this directory, create an *src* sub-directory. For each repository host,
+create a subdirectory in *src* that matches your username. Check out projects in
+the directory. The final directory structure looks like this:
 
     code/
       src/
@@ -261,26 +264,6 @@ directory. The final directory structure looks like this:
         github.com/
           my-github-username/
             another-project/
-
-If you use Go, add *bin*, *doc* and *pkg* directories:
-
-    code/
-      bin/
-      doc/
-      pkg/
-      src/
-        bitbucket.org/
-          my-bitbucket-username/
-            a-project/
-        github.com/
-          my-github-username/
-            another-project/
-
-Once you set the top-level directory as the environment variable GOPATH, Go will
-compile to the *bin*, *doc* and *pkg* subdirectories. You can add the *bin*
-directory to your PATH to be able to run the compiled programs by typing their
-names. You may or may not choose to use these directories with other programming
-environments.
 
 ## Creating SSH Keys ##
 
@@ -306,25 +289,17 @@ Enter this command to install nvm:
 
      curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 
-Open a new Terminal window and enter this command:
+Open a new terminal window and enter this command:
 
     nvm install --lts
 
 This installs the latest LTS release of Node.js, and makes it the default
 Node.js run-time.
 
-To install the [Yarn](http://yarnpkg.com) package manager, enter this command in
-a Terminal window:
+To upgrade the copy of *npm* that is provided with Node.js, run this command in
+a terminal window:
 
-    brew install yarn
-
-Then add this to the end of your PATH:
-
-    `yarn global bin`
-
-For example:
-
-    export PATH="$PATH:$HOME/.rvm/bin:$HOME/.cargo/bin:`yarn global bin`"
+    npm -g upgrade npm
 
 ## Developer Tools for Go ##
 
@@ -473,7 +448,7 @@ command-line utility:
 Run these statements to change the password for root access:
 
 ~~~sql
-UPDATE mysql.user SET password = PASSWORD ('yourpassword') WHERE user
+UPDATE mysql.user SET password = PASSWORD('yourpassword') WHERE user
 LIKE ‘root’;
 FLUSH PRIVILEGES;
 EXIT;
