@@ -1,19 +1,18 @@
 +++
 Title = "Setting Up Solus for Software Development"
 Slug = "solus-setup"
-Date = "2017-05-30T21:50:00+01:00"
+Date = "2017-06-03T20:56:00+01:00"
 Description = "Setting up a Solus installation for development and systems administration"
 Categories = ["administration", "programming"]
-Tags = ["administration", "linux", "javascript", "python", "ruby", "rust"]
+Tags = ["administration", "linux", "javascript", "python", "rust"]
 Type = "article"
-Draft = true
 
 +++
 
 
-This is a set of notes for setting up a [Solus](https://solus-project.com/)
-installation on your PC, specifically for system administration and Web
-development.
+This is a set of notes for setting up an installation of the
+[Solus](https://solus-project.com/) Linux distribution on your PC, specifically
+for systems administration and Web development.
 
 <!--more-->
 
@@ -25,16 +24,16 @@ Enable *LVM* and disk encryption when prompted during the setup process.
 
 Disk encryption is the only protection against anyone with physical access to
 your computer. All other security measures will be completely bypassed if
-someone with physical access simply restarts the computer with a bootable pen
-drive or remove the internal hard drive.
+someone with physical access either restarts your computer with a bootable pen
+drive, or removes the internal hard drive and attaches it to another computer.
 
-## Set a Password for UEFI ##
+## Set a Password for UEFI or BIOS ##
 
-Modern Intel-based computers include UEFI firmware that runs when the machine is
-powered on, to start the operating system. Restart your computer, press the
-function key to enter the setup menu. Change the boot options so that the
-computer only boots from the hard drive, and set both a user password for
-startup, and an administrator password to protect the UEFI menus.
+Once you have installed Solus, restart your computer, and press the function key
+to enter the setup menu for the UEFI firmware, or BIOS. Change the boot options
+so that the computer only boots from the hard drive, and set both a user
+password for startup, and an administrator password to protect the firmware
+menus.
 
 # Do This First! #
 
@@ -44,7 +43,7 @@ restart the computer.
 
 # Configuring System Security #
 
-## Basic Settings ##
+## User Settings ##
 
 Select *Settings \> Privacy*, and review the settings. Depending upon your
 needs, you may decide to turn off *Location Services* or *Usage & History*.
@@ -57,16 +56,6 @@ change the firmware settings to boot from a disc or device of their choosing. If
 you did not enable disk encryption, then the attacker will have complete access
 to all of the files on the system.
 
-## Configuring a Firewall ##
-
-FIXME
-
-Solus includes [firewalld](http://www.firewalld.org/), but does not provide a graphical utility to manage it in the initial installation.
-
-## Setting Up Backups ##
-
-FIXME
-
 # Setting Up for Development #
 
 Every developer needs a text editor and a version control system.
@@ -76,8 +65,8 @@ run this command in a terminal window:
 
     sudo eopkg install git
 
-To install GCC and the C compiler toolchain on Solus, run this command in a
-terminal window:
+To install GCC and a complete C compiler toolchain on Solus, run this command in
+a terminal window:
 
     sudo eopkg install -c system.devel
 
@@ -87,8 +76,8 @@ extensions for languages like Python and JavaScript.
 ## Choosing a Text Editor ##
 
 Solus includes a command-line version of [nano](https://www.nano-editor.org/),
-as well as a desktop text editor. The text editor has some support for
-programming, but is more useful for light-weight word processing. Unless you
+as well as a desktop text editor. These text editors have some support for
+programming, but are more useful for light-weight word processing. Unless you
 already have a preferred editor, I suggest that you install
 [Atom](http://www.atom.io), which is a powerful graphical text editor that is
 specifically designed for programming.
@@ -129,12 +118,11 @@ configuration. Refer to the pages for
 [git-plus](https://atom.io/packages/git-plus) and
 [minimap](https://atom.io/packages/minimap) for details on how to use them.
 
-Install code linters for the languages that you use. Atom
-automatically runs the appropriate linter for the files that you are editing.
-
-This command installs
-support for [CSSLint](http://csslint.net/), [ESLint](http://eslint.org/) and
-[yaml-js](http://nodeca.github.com/js-yaml/):
+Install code linters for the languages that you use. Atom automatically runs the
+appropriate linter for the files that you are editing. This command installs
+support for CSS (using [CSSLint](http://csslint.net/)), JavaScript (using
+[ESLint](http://eslint.org/)) and YAML (using
+[yaml-js](http://nodeca.github.com/js-yaml/)):
 
     apm install linter-csslint linter-eslint linter-js-yaml
 
@@ -145,39 +133,28 @@ conventions](http://golang.org/doc/code.html). These guidelines may seem
 slightly fussy, but they pay off when you have many projects, some of which are
 on different version control hosts.
 
-First create a top-level directory with a short, generic name like *code*. In
-this directory, create an *src* sub-directory. For each repository host, create
-a subdirectory in *src* that matches your username. Check out projects in the
-directory. The final directory structure looks like this:
-
-    code/
-      src/
-        bitbucket.org/
-          my-bitbucket-username/
-            a-project/
-        github.com/
-          my-github-username/
-            another-project/
-
-If you use Go, add *bin*, *doc* and *pkg* directories:
-
-    code/
-      bin/
-      doc/
-      pkg/
-      src/
-        bitbucket.org/
-          my-bitbucket-username/
-            a-project/
-        github.com/
-          my-github-username/
-            another-project/
+First create a top-level directory with a short, generic name like *code*. By
+default Go uses a directory called *go*, but you can change that when you set up
+a Go installation.
 
 Once you set the top-level directory as the environment variable GOPATH, Go will
 compile to the *bin*, *doc* and *pkg* subdirectories. You can add the *bin*
 directory to your PATH to be able to run the compiled programs by typing their
 names. You may or may not choose to use these directories with other programming
 environments.
+
+In this directory, create an *src* sub-directory. For each repository host,
+create a subdirectory in *src* that matches your username. Check out projects in
+the directory. The final directory structure looks like this:
+
+    code/
+      src/
+        bitbucket.org/
+          my-bitbucket-username/
+            a-project/
+        github.com/
+          my-github-username/
+            another-project/
 
 ## Creating SSH Keys ##
 
@@ -196,14 +173,12 @@ example:
 
 ## nvm for Node.js Development ##
 
-FIXME: Test this! and update other docs
-
 To maintain multiple Node.js versions on your system, use the
 [nvm](https://github.com/creationix/nvm) utility.
 
 Enter this command to install nvm:
 
-     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
+     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 
 Open a new terminal window and enter this command:
 
@@ -212,23 +187,33 @@ Open a new terminal window and enter this command:
 This installs the latest LTS release of Node.js, and makes it the default
 Node.js run-time.
 
+To upgrade the copy of *npm* that is provided with Node.js, run this command in
+a terminal window:
+
+    npm -g upgrade npm
+
 ## Developer Tools for Go ##
 
 Use *eopkg* to install [Go](https://golang.org/):
 
     sudo eopkg install golang
 
+To run Go applications that you have compiled, edit the  *~/.bashrc* and add
+this to your PATH:
+
+    export PATH="$GOPATH/bin:$PATH"
+
+Close the terminal and open it again for the changes to take effect.
+
 ### Setting a Custom GOPATH ###
 
 By default, current versions of Go automatically create and use a *go* directory
-in your home directory as the GOPATH. To specify a custom GOPATH, such as a
-*code* directory, set the GOPATH environment variable in your *~/.bashrc* file:
+in your home directory as the GOPATH, which is the root directory for your Go
+workspace. To specify a custom GOPATH, set the GOPATH environment variable in
+your *~/.bashrc* file. For example this sets a directory called *code* as your
+Go workspace:
 
     export GOPATH="$HOME/code"
-
-Add this to your PATH:
-
-    $GOPATH/bin
 
 Close the terminal and open it again for the changes to take effect.
 
@@ -239,66 +224,34 @@ software with the Rust programming language. Click on the Install button on the
 front page of the [Rust Website](https://www.rust-lang.org), and follow the
 instructions.
 
-By default, the installer adds the correct directory to your path. If this does
-not work, add this to your PATH manually:
-
-    $HOME/.cargo/bin
-
-FIXME: Adding to .bash_profile PATH does not work
-
 This process installs all of the tools into your home directory, and does not
-add any files into shared system directories. The Rust packages from Solus
-provide older versions of Rust, and do install the Rust tools into system
-directories.
+add any files into shared system directories.
 
-## RVM for Ruby Development ##
+The installer does not currently add the correct directory to your PATH. To use
+your Rust installation, edit the *.bashrc* file in your home directory to add
+this line:
 
-Solus provides packages for Ruby, but these can be outdated. To maintain current
-and clean Ruby environments, use the [RVM](https://rvm.io/) system.
+    source $HOME/.cargo/env
 
-FIXME: Test this!
+Close the terminal and open it again for the changes to take effect.
 
-By default, RVM downloads copies of Ruby that have been compiled for your
-operating system. If there is no compiled version, RVM then falls back to
-downloading the source code and then compiling it on your computer. Enter this
-command to ensure that the requirements for compiling Ruby are on your system,
-using *eopkg*:
+The Rust packages from Solus may provide older versions of Rust, and do install
+the Rust tools into system directories.
 
-    sudo eopkg install autoconf automake gdbm gmp libksba libtool libyaml openssl pkg-config readline
+## Python Development ##
 
-Finally, you can speed up installation of gem packages by disabling the
-generation of local documentation. To do this, create a file in your
-home directory with the name *.gemrc* and put this line in it:
+Solus includes both Python 2 and Python 3.
 
-    gem: --no-ri --no-rdoc
+To run Python 3, be sure to specify *python3* as the interpreter, instead of
+*python*. The *python* interpreter is Python 2.
 
-## pyenv for Python Development ##
+# Containers and Virtual Machines #
 
-Solus includes a copy of Python 3. To maintain current and clean Python
-environments, use the [pyenv](https://github.com/yyuu/pyenv) system and the
-[pyenv-virtualenv](https://github.com/yyuu/pyenv-virtualenv) plugin.
-
-FIXME Enter this command to install pyenv using Homebrew:
-
-    sudo eopkg install pyenv pyenv-virtualenv
-
-Next, add this line to the *.bashrc* file in your home directory:
-
-    if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-Open a new terminal window and enter these commands:
-
-    pyenv install 3.6.1
-    pyenv global 3.6.1
-
-These install Python 3.6.1 and make it the default Python run-time.
-
-# Containers #
-
-Solus includes *systemd-nspawn* for simple containers, and provides packages for
-Docker. These may have more thorough testing and better system integration than
-the packages from the Docker, Inc. Website. To install Docker on Solus, enter
-these commands in a terminal window:
+Solus provides packages for Docker, as well as including *systemd-nspawn* for
+simple containers. The Docker packages for Solus may have more thorough testing
+and better system integration than the generic Linux packages from the Docker,
+Inc. Website. To install Docker on Solus, enter these commands in a terminal
+window:
 
     sudo eopkg install docker
     sudo systemctl enable docker
@@ -312,36 +265,59 @@ add your user account to the *docker* group:
 Replace *USERNAME* with your username. You must log out and log in again for
 this change to take effect.
 
+If you need a virtual machine manager, consider using [GNOME
+Boxes](https://wiki.gnome.org/Apps/Boxes) for creating and managing virtual
+machines. To install the Solus packages for Boxes:
+
+    sudo eopkg install gnome-boxes
+
 # SQL Databases #
 
 If you develop any kind of database-driven application, it is useful to have a
 version of the database server available on your system. Consider using
-containers for this. If you prefer to install services directly on to your
-workstation, Solus provides packages for PostgreSQL and MariaDB.
+containers for this.
+
+If you prefer to install services directly on to your workstation, Solus
+provides packages for PostgreSQL and [MariaDB](https://mariadb.org/). If you
+need a database server that is compatible with MySQL, install MariaDB.
+Otherwise, PostgreSQL is often a better choice for new applications.
 
 ## Installing PostgreSQL ##
 
 To install PostgreSQL using *eopkg*, enter these commands in a terminal window:
 
-    sudo eopkg install postgresql postgresql-server
-    sudo postgresql-setup --initdb
-    sudo systemctl start postgresql
+    sudo eopkg install postgresql
     sudo systemctl enable postgresql
+    sudo systemctl start postgresql
 
 These commands install the server, the command-line tools, and the client
 libraries that are needed to compile adapters for programming languages.
 
-## Installing MariaDB or MySQL ##
+To create a user account for yourself in PostgreSQL with administrative rights,
+enter this command in a terminal window:
+
+    sudo createuser -U postgres -s YOU
+
+Replace *YOU* with the username of your account on Solus.
+
+The *-s* option means that your new PostgreSQL account is a *superuser*, with
+unlimited rights over the databases. Once you have a superuser account, you may
+use tools like *createuser* or log in to databases without using sudo or the
+*-U* option.
+
+For example, to create an extra user account that is not a superuser:
+
+    createuser EXTRA-ACCOUNT
+
+Replace *EXTRA-ACCOUNT* with the username of the new account.
+
+## Installing MariaDB ##
 
 To install MariaDB using *eopkg*, enter these commands in a terminal window:
 
     sudo eopkg install mariadb-server
     sudo systemctl enable mariadb
     sudo systemctl start mariadb
-
-FIXME To install MySQL using *eopkg*, enter this command in a terminal window:
-
-    sudo eopkg install mysql
 
 These commands install the server, the command-line tools, and the client
 libraries that are needed to compile adapters for programming languages.
@@ -361,7 +337,7 @@ command-line utility:
 Run these statements to change the password for root access:
 
 ~~~sql
-UPDATE mysql.user SET password = PASSWORD ('yourpassword') WHERE user
+UPDATE mysql.user SET password = PASSWORD('yourpassword') WHERE user
 LIKE ‘root’;
 FLUSH PRIVILEGES;
 EXIT;
@@ -375,7 +351,7 @@ with root again, use this command:
 Enter the password when prompted.
 
 You should also remove the anonymous accounts and test database that
-MySQL automatically includes:
+MariaDB automatically includes:
 
 ~~~sql
 DROP DATABASE test;
@@ -384,26 +360,14 @@ FLUSH PRIVILEGES;
 ~~~
 
 If you intend to duplicate a production environment for testing, create a
-configuration file on your Mac. Production installations of MySQL should be
-configured with appropriate *SQL modes* to enable data integrity safeguards. By
-default, MySQL permits various types of invalid data to be entered.
+configuration file on your computer. Production installations of MariaDB should
+be configured with appropriate *SQL modes* to enable data integrity safeguards.
+By default, MySQL permits various types of invalid data to be entered.
 
-# Other Useful Desktop Applications for Developers #
+# Installing Proprietary Desktop Applications #
 
-FIXME
-
-*Settings \> Online Accounts*
-
-[Web page for third-party applications](https://solus-project.com/articles/software/third-party/en/)
-
-* Google Chrome
-* AWS CLI
-* Heroku CLI
-* Slack
-* IRC client
-* Virtual machine management: [VirtualBox](http://www.virtualbox.org/)
-* MySQL database management: [MySQL Workbench](http://wb.mysql.com/)
-
-# Online Resources #
-
-FIXME
+To install Google Chrome, Skype, Slack and other proprietary software, visit the
+[Web page for third-party
+applications](https://solus-project.com/articles/software/third-party/en/), and
+follow the instructions. The Software Center also offers some of the most
+popular and well-tested of these products in the *Third Party* section.
