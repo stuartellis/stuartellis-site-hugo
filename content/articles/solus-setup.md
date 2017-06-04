@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Solus for Software Development"
 Slug = "solus-setup"
-Date = "2017-06-04T21:40:00+01:00"
+Date = "2017-06-04T21:54:00+01:00"
 Description = "Setting up a Solus installation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "solus", "javascript", "python", "rust"]
