@@ -335,7 +335,8 @@ command-line utility:
 > that you are going to run statements that include passwords or other
 > sensitive data, use the -q option.
 
-Run these statements to change the password for root access:
+Once you have logged into MariaDB, run these statements to change the password
+for root access:
 
 ~~~sql
 UPDATE mysql.user SET password = PASSWORD('yourpassword') WHERE user
@@ -352,18 +353,13 @@ with root again, use this command:
 Enter the password when prompted.
 
 You should also remove the anonymous accounts and test database that
-MariaDB automatically includes:
+MariaDB automatically includes. Log in to MariaDB and run these statements:
 
 ~~~sql
 DROP DATABASE test;
 DELETE FROM mysql.user WHERE user = ’’;
 FLUSH PRIVILEGES;
 ~~~
-
-If you intend to duplicate a production environment for testing, create a
-configuration file on your computer. Production installations of MariaDB should
-be configured with appropriate *SQL modes* to enable data integrity safeguards.
-By default, MySQL permits various types of invalid data to be entered.
 
 # Installing Proprietary Desktop Applications #
 
