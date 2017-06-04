@@ -1,10 +1,10 @@
 +++
 Title = "Setting Up Solus for Software Development"
 Slug = "solus-setup"
-Date = "2017-06-03T20:56:00+01:00"
+Date = "2017-06-04T21:40:00+01:00"
 Description = "Setting up a Solus installation for development and systems administration"
 Categories = ["administration", "programming"]
-Tags = ["administration", "linux", "javascript", "python", "rust"]
+Tags = ["administration", "linux", "solus", "javascript", "python", "rust"]
 Type = "article"
 
 +++
@@ -266,16 +266,17 @@ Replace *USERNAME* with your username. You must log out and log in again for
 this change to take effect.
 
 If you need a virtual machine manager, consider using [GNOME
-Boxes](https://wiki.gnome.org/Apps/Boxes) for creating and managing virtual
-machines. To install the Solus packages for Boxes:
+Boxes](https://wiki.gnome.org/Apps/Boxes) to create and manage your virtual
+machines. To install the Solus package for GNOME Boxes:
 
     sudo eopkg install gnome-boxes
 
 # SQL Databases #
 
-If you develop any kind of database-driven application, it is useful to have a
-version of the database server available on your system. Consider using
-containers for this.
+Consider using Docker containers to provide the database services for your Web
+applications. This enables you to use different versions of the database servers
+for different projects, and ensure that you are running the same versions as the
+database instances on your production systems.
 
 If you prefer to install services directly on to your workstation, Solus
 provides packages for PostgreSQL and [MariaDB](https://mariadb.org/). If you
@@ -369,5 +370,5 @@ By default, MySQL permits various types of invalid data to be entered.
 To install Google Chrome, Skype, Slack and other proprietary software, visit the
 [Web page for third-party
 applications](https://solus-project.com/articles/software/third-party/en/), and
-follow the instructions. The Software Center also offers some of the most
-popular and well-tested of these products in the *Third Party* section.
+follow the instructions. The Software Center also offers some, but not all, of
+these products in the *Third Party* section.
