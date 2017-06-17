@@ -1,10 +1,10 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2017-06-03T20:04:00+01:00"
+Date = "2017-06-17T14:52:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
-Tags = ["administration", "macos", "javascript", "python", "ruby", "rust"]
+Tags = ["administration", "macos", "golang", "javascript", "python", "ruby", "rust"]
 Type = "article"
 
 +++
@@ -214,16 +214,11 @@ you depend upon the work that you do, but you should always look at version
 control integration, convenient access to the terminal, and linters for your
 preferred programming languages and data file formats.
 
-The Atom community provides extensions as [packages](https://atom.io/packages).
-This command installs some packages that are generally useful:
-
-    apm install atom-beautify color-picker file-icons git-plus minimap
+apm install color-picker file-icons minimap
 
 The [file-icons](https://atom.io/packages/file-icons) package requires no
 configuration. Refer to the pages for
-[atom-beautify](https://atom.io/packages/atom-beautify),
-[color-picker](https://atom.io/packages/color-picker),
-[git-plus](https://atom.io/packages/git-plus) and
+[color-picker](https://atom.io/packages/color-picker), and
 [minimap](https://atom.io/packages/minimap) for details on how to use them.
 
 Install code linters for the languages that you use. Atom
@@ -300,6 +295,11 @@ To upgrade the copy of *npm* that is provided with Node.js, run this command in
 a terminal window:
 
     npm -g upgrade npm
+
+If you need [yarn](https://yarnpkg.com/en/), enter this command in a terminal
+window to install it:
+
+    brew install yarn
 
 ## Developer Tools for Go ##
 

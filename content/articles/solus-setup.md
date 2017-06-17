@@ -1,10 +1,10 @@
 +++
 Title = "Setting Up Solus for Software Development"
 Slug = "solus-setup"
-Date = "2017-06-06T05:51:00+01:00"
+Date = "2017-06-17T14:50:00+01:00"
 Description = "Setting up a Solus installation for development and systems administration"
 Categories = ["administration", "programming"]
-Tags = ["administration", "linux", "solus", "javascript", "python", "rust"]
+Tags = ["administration", "linux", "solus", "golang", "javascript", "python", "rust"]
 Type = "article"
 
 +++
@@ -109,13 +109,11 @@ preferred programming languages and data file formats.
 The Atom community provides extensions as [packages](https://atom.io/packages).
 This command installs some packages that are generally useful:
 
-    apm install atom-beautify color-picker file-icons git-plus minimap
+    apm install color-picker file-icons minimap
 
 The [file-icons](https://atom.io/packages/file-icons) package requires no
 configuration. Refer to the pages for
-[atom-beautify](https://atom.io/packages/atom-beautify),
-[color-picker](https://atom.io/packages/color-picker),
-[git-plus](https://atom.io/packages/git-plus) and
+[color-picker](https://atom.io/packages/color-picker), and
 [minimap](https://atom.io/packages/minimap) for details on how to use them.
 
 Install code linters for the languages that you use. Atom automatically runs the
