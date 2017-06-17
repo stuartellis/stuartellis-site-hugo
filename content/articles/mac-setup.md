@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2017-06-17T14:52:00+01:00"
+Date = "2017-06-17T15:16:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "javascript", "python", "ruby", "rust"]
@@ -218,7 +218,7 @@ apm install color-picker file-icons minimap
 
 The [file-icons](https://atom.io/packages/file-icons) package requires no
 configuration. Refer to the pages for
-[color-picker](https://atom.io/packages/color-picker), and
+[color-picker](https://atom.io/packages/color-picker) and
 [minimap](https://atom.io/packages/minimap) for details on how to use them.
 
 Install code linters for the languages that you use. Atom

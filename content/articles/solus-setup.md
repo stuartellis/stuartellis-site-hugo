@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Solus for Software Development"
 Slug = "solus-setup"
-Date = "2017-06-17T14:50:00+01:00"
+Date = "2017-06-17T15:16:00+01:00"
 Description = "Setting up a Solus installation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "solus", "golang", "javascript", "python", "rust"]
@@ -113,7 +113,7 @@ This command installs some packages that are generally useful:
 
 The [file-icons](https://atom.io/packages/file-icons) package requires no
 configuration. Refer to the pages for
-[color-picker](https://atom.io/packages/color-picker), and
+[color-picker](https://atom.io/packages/color-picker) and
 [minimap](https://atom.io/packages/minimap) for details on how to use them.
 
 Install code linters for the languages that you use. Atom automatically runs the
