@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Solus for Software Development"
 Slug = "solus-setup"
-Date = "2017-06-17T15:16:00+01:00"
+Date = "2017-07-12T18:16:00+01:00"
 Description = "Setting up a Solus installation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "solus", "golang", "javascript", "python", "rust"]
@@ -248,8 +248,11 @@ To run Python 3, be sure to specify *python3* as the interpreter, instead of
 Solus provides packages for Docker, as well as including *systemd-nspawn* for
 simple containers. The Docker packages for Solus may have more thorough testing
 and better system integration than the generic Linux packages from the Docker,
-Inc. Website. To install Docker on Solus, enter these commands in a terminal
-window:
+Inc. Website.
+
+## Installing Docker ##
+
+To install Docker on Solus, enter these commands in a terminal window:
 
     sudo eopkg install docker
     sudo systemctl enable docker
@@ -258,10 +261,12 @@ window:
 To enable your user account to manage Docker without administrative privileges,
 add your user account to the *docker* group:
 
-    sudo usermod -G docker USERNAME
+    sudo usermod -aG docker USERNAME
 
 Replace *USERNAME* with your username. You must log out and log in again for
 this change to take effect.
+
+## Installing GNOME Boxes ##
 
 If you need a virtual machine manager, consider using [GNOME
 Boxes](https://wiki.gnome.org/Apps/Boxes) to create and manage your virtual
