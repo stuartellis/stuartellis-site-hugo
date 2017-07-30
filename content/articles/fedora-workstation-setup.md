@@ -253,14 +253,6 @@ To install Docker on Fedora, enter these commands in a terminal window:
     sudo systemctl enable docker
     sudo systemctl start docker
 
-To enable your user account to manage Docker without administrative privileges,
-add your user account to the *docker* group:
-
-    sudo usermod -aG docker USERNAME
-
-Replace *USERNAME* with your username. You must log out and log in again for
-this change to take effect.
-
 # SQL Databases #
 
 Consider using Docker containers to provide the database services for your Web
@@ -277,7 +269,7 @@ Otherwise, PostgreSQL is often a better choice for new applications.
 
 To install PostgreSQL using *dnf*, enter these commands in a terminal window:
 
-    sudo dnf install postgresql
+    sudo dnf install postgresql-server
     sudo systemctl enable postgresql
     sudo systemctl start postgresql
 
