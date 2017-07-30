@@ -1,7 +1,7 @@
 +++
 Title = "Building Ionic apps with Bitrise"
 Slug = "ionic-bitrise"
-Date = "2017-07-08T01:10:46+01:00"
+Date = "2017-07-16T17:30:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["bitrise", "cordova", "ionic", "javascript", "mobile"]
@@ -36,7 +36,7 @@ configuration.
 
 # Android Code Signing
 
-Follow the steps in [the documentation](http://devcenter.bitrise.io/android/code-signing) to upload the files for [Android code signing](https://developer.android.com/studio/publish/app-signing.html) to, and
+Follow the steps in [the Bitrise documentation](http://devcenter.bitrise.io/android/code-signing) to upload the files for [Android code signing](https://developer.android.com/studio/publish/app-signing.html) to, and
 enable Bitrise to sign the app.
 
 Remember that each version of the app must be signed with the same identity to
@@ -53,9 +53,30 @@ They recommend that you create certificates that are valid for a minimum of 25
 years. You must currently use certificates that are valid until at least 22
 October 2033 for all apps that you publish with the Google Play Store.
 
-Once you build a APK package for an app, it must be aligned, and then signed. If
+Once you build a APK package for an app, it must be aligned, and signed. If
 you [build a package manually](https://developer.android.com/studio/publish/app-signing.html#signing-manually), use
 [zipalign](https://developer.android.com/studio/command-line/zipalign.html) to
 align it, and then run
 [apksigner](https://developer.android.com/studio/command-line/apksigner.html) to
-sign it for distribution. Bitrise provides the [sign-apk](https://github.com/bitrise-steplib/steps-sign-apk) Step to sign Android apps as part of a Workflow.
+sign it for distribution.
+
+Bitrise provides the
+[sign-apk](https://github.com/bitrise-steplib/steps-sign-apk) Step to sign
+Android apps as part of a Workflow. This currently uses the older *jarsigner*
+utility, rather than *apksigner*.
+
+# iOS Code Signing
+
+[the Bitrise documentation for iOS code-signing](http://devcenter.bitrise.io/ios/code-signing/)
+
+# Incrementing the Version Number
+
+FIXME
+
+# Unit Testing
+
+FIXME
+
+# Slack Notifications
+
+FIXME
