@@ -27,9 +27,9 @@ determined by the bundle.
 
 AWS WorkSpaces uses the proprietary
 [PCoIP](http://www.teradici.com/pcoip-technology) protocol, which is developed
-by [Teradici](http://www.teradici.com/). You may only connect to a workspace
-with either a AWS WorkSpaces client, or another system that uses PCoIP, such as
-a thin client unit.
+by [Teradici](http://www.teradici.com/). You connect to a
+workspace with either a AWS WorkSpaces client application, or another system
+that uses PCoIP, such as a thin client unit.
 
 # Networking and Directories #
 
@@ -72,3 +72,4 @@ At the time of writing, Windows 10 workspaces do not support Web access.
 * [Move your desktops to the cloud with Amazon WorkSpaces](https://youtu.be/r2Bh1hc-fak?list=PLufobnmLAUEygUaDDci7JT2JkGX7slDPA)
 * [Best Practices from the Trenches: Deploy Amazon WorkSpaces Like a Pro](https://www.youtube.com/watch?v=9Q-ahnw2Lsc)
 * [Managing WorkSpaces at Scale](https://www.youtube.com/watch?v=iAkkuuUJVUk)
+* [How to connect to a workspace with RDP](https://www.youtube.com/watch?v=Of9NAz0ze6Q)
