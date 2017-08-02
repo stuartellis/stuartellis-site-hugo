@@ -6,6 +6,7 @@ Description = "Setting up a Fedora Workstation for development and systems admin
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "fedora", "golang", "javascript", "python", "rust"]
 Type = "article"
+Draft = true
 
 +++
 
