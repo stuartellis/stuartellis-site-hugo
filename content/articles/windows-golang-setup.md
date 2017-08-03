@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Windows for Go Software Development"
 Slug = "windows-golang-setup"
-Date = "2017-08-02T21:30:00+01:00"
+Date = "2017-08-03T06:30:00+01:00"
 Description = "Setting up Windows for development with Go"
 Categories = ["administration", "programming"]
 Tags = ["administration", "golang", "javascript", "windows"]
@@ -30,15 +30,12 @@ To develop Web applications, you will also need some other pieces of software:
 * A database, such as [PostgreSQL](https://www.postgresql.org/) or [SQLite](https://sqlite.org/)
 * A compiler for C, so that downloaded C libraries will build on your computer
 
-Many other languages rely on libraries that are written in C, so you should
-install GCC even if you do not write C code.
+Go, Node.js and many other systems can use libraries that are written in C, so
+you should install GCC even if you do not write C code.
 
-You may choose to add other tools as well, such as
-[Docker](https://www.docker.com/docker-windows) for containers, or command-line
-utilities for working with cloud services.
-
-To easily install and manage all of this, start by setting up a package manager.
-This tutorial uses [Chocolatey](https://chocolatey.org/).
+Rather installing and updating these tools yourself, use a package manager.
+This tutorial explains how to set up [Chocolatey](https://chocolatey.org/)
+package manager and have it install the other software that you need.
 
 IMPORTANT: If you download and install software yourself, always choose
 the 64-bit version. Only use 32-bit versions of Windows software if you know
@@ -167,6 +164,8 @@ window for PowerShell:
     choco install sqlite
 
 # Installing a C Compiler #
+
+FIXME
 
 [GCC](https://gcc.gnu.org/) is the standard compiler and tools for Free and Open
 Source libraries that are written in the C programming language. To install GCC
