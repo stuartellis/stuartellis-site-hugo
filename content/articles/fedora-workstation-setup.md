@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Fedora Workstation for Software Development"
 Slug = "fedora-workstation-setup"
-Date = "2017-07-30T08:30:00+01:00"
+Date = "2017-08-04T18:30:00+01:00"
 Description = "Setting up a Fedora Workstation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "fedora", "golang", "javascript", "python", "rust"]
@@ -116,6 +116,22 @@ support for CSS (using [CSSLint](http://csslint.net/)), JavaScript (using
 [yaml-js](http://nodeca.github.com/js-yaml/)):
 
     apm install linter-csslint linter-eslint linter-js-yaml
+
+## Configuring Git ##
+
+Always set your details before you create or clone repositories on a new system.
+This requires two commands in a terminal window:
+
+    git config —global user.name "Your Name"
+    git config —global user.email "you@your-domain.com"
+
+The *—global* option means that the setting will apply to every
+repository that you work with in the current user account.
+
+To enable colors in the output, which can be very helpful, enter this
+command:
+
+    git config --global color.ui auto
 
 ## Setting Up A Directory Structure for Projects ##
 
@@ -294,54 +310,3 @@ For example, to create an extra user account that is not a superuser:
     createuser EXTRA-ACCOUNT
 
 Replace *EXTRA-ACCOUNT* with the username of the new account.
-
-## Installing MariaDB ##
-
-To install MariaDB using *dnf*, enter these commands in a terminal window:
-
-    sudo dnf install mariadb-server
-    sudo systemctl enable mariadb
-    sudo systemctl start mariadb
-
-These commands install the server, the command-line tools, and the client
-libraries that are needed to compile adapters for programming languages.
-
-> For compatibility, MariaDB uses the same names for command-line tools as MySQL.
-
-Remember to set a password for the root accounts. First, login with the *mysql*
-command-line utility:
-
-    mysql -u root -q
-
-> *The -q Option Disables Command History:* By default, the command-line client
-> stores the full text of every command in a history file. If you know
-> that you are going to run statements that include passwords or other
-> sensitive data, use the -q option.
-
-Once you have logged into MariaDB, run these statements to change the password
-for root access:
-
-~~~sql
-UPDATE mysql.user SET password = PASSWORD('yourpassword') WHERE user
-LIKE ‘root’;
-FLUSH PRIVILEGES;
-EXIT;
-~~~
-
-You now need a password to login to the installation as root. To login
-with root again, use this command:
-
-    mysql -u root -p
-
-Enter the password when prompted.
-
-You should also remove the anonymous accounts and test database that
-MariaDB automatically includes. Log in to MariaDB and run these statements:
-
-~~~sql
-DROP DATABASE test;
-DELETE FROM mysql.user WHERE user = ’’;
-FLUSH PRIVILEGES;
-~~~
-
-Use SQL statements to create additional user accounts.

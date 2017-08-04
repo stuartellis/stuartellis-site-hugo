@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Windows for Go Software Development"
 Slug = "windows-golang-setup"
-Date = "2017-08-04T12:10:00+01:00"
+Date = "2017-08-04T18:30:00+01:00"
 Description = "Setting up Windows for development with Go"
 Categories = ["administration", "programming"]
 Tags = ["administration", "golang", "javascript", "windows"]
@@ -77,6 +77,22 @@ and follow the link for *Downloads* to find a Windows installer.
 
 To use Git to access remote code repositories, you should create an SSH key for
 yourself, as explained at the end of this document.
+
+## Configuring Git ##
+
+Once you have installed Git on a system, set your details. These are
+automatically applied to every commit that you make. This requires two commands:
+
+    git config —global user.name "Your Name"
+    git config —global user.email "you@your-domain.com"
+
+The *—global* option means that the setting will apply to every
+repository that you work with in the current user account.
+
+To enable colors in the output, which can be very helpful, enter this
+command:
+
+    git config --global color.ui auto
 
 # The Text Editor #
 

@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Solus for Software Development"
 Slug = "solus-setup"
-Date = "2017-07-12T18:16:00+01:00"
+Date = "2017-08-04T18:30:00+01:00"
 Description = "Setting up a Solus installation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "solus", "golang", "javascript", "python", "rust"]
@@ -60,18 +60,26 @@ to all of the files on the system.
 
 Every developer needs a text editor and a version control system.
 
+## Git Version Control ##
+
 To install the [Git version control system](http://www.git-scm.com/) on Solus,
 run this command in a terminal window:
 
     sudo eopkg install git
 
-To install GCC and a complete C compiler toolchain on Solus, run this command in
-a terminal window:
+Always set your details before you create or clone repositories on a new system.
+This requires two commands in a terminal window:
 
-    sudo eopkg install -c system.devel
+    git config —global user.name "Your Name"
+    git config —global user.email "you@your-domain.com"
 
-Once the toolchain is installed, you can compile C programs and native
-extensions for languages like Python and JavaScript.
+The *—global* option means that the setting will apply to every
+repository that you work with in the current user account.
+
+To enable colors in the output, which can be very helpful, enter this
+command:
+
+    git config --global color.ui auto
 
 ## Choosing a Text Editor ##
 
@@ -168,6 +176,16 @@ example:
 1024-bit keys, which are now too small to be considered secure.
 
 # Setting Up Environments #
+
+## C Compiler ##
+
+To install GCC and a complete C compiler toolchain on Solus, run this command in
+a terminal window:
+
+    sudo eopkg install -c system.devel
+
+Once the toolchain is installed, you can compile C programs and native
+extensions for languages like Python and JavaScript.
 
 ## nvm for Node.js Development ##
 
