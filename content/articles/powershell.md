@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2016-07-01T01:00:00+01:00"
+Date = "2017-08-04T12:40:00+01:00"
 Description = ""
 Categories = ["administration", "tools"]
 Tags = ["administration", "dotnet", "powershell", "windows"]
@@ -10,28 +10,47 @@ Type = "article"
 +++
 
 
-[PowerShell](https://msdn.microsoft.com/en-us/powershell) is an
-object-oriented shell that is built on .NET, and the custom programming
-language that runs within that shell. Third-parties such as VMWare and Amazon Web Services provide modules to enable users to work with their products through PowerShell. You can also supplement the capabilities of
-PowerShell modules by directly accessing classes from the underlying
-installation of .NET, and by running standard commands and scripts from the host operating system.
+[PowerShell](https://msdn.microsoft.com/en-us/powershell) is an object-oriented
+shell that is built on .NET, and the custom programming language that runs
+within that shell. Third-parties such as VMWare and Amazon Web Services provide
+modules to enable users to work with their products through PowerShell. You can
+also supplement the capabilities of PowerShell modules by directly accessing
+classes from the underlying installation of .NET, and by running standard
+commands and scripts from the host operating system.
 
 <!--more-->
 
+# PowerShell Editions #
+
+Windows PowerShell is the proprietary implementation of PowerShell that is
+shipped with most versions of Windows. It is sometimes referred to as the
+*Desktop* edition. Windows PowerShell is now frozen, and will be replaced by
+PowerShell Core.
+
+PowerShell Core is the new implementation of PowerShell. It is built with .NET
+Core to be cross-platform and Open Source. Currently, PowerShell Core is a beta
+product. The finished version will become PowerShell 6. PowerShell Core 5.1 is a
+special edition that was shipped with Windows Nano Server.
+
 # Installing PowerShell #
 
-To use PowerShell on Linux and macOS systems, install .NET Core and PowerShell Core. To write and debug PowerShell scripts, install the [Visual Studio Code](https://code.visualstudio.com) editor and add the [PowerShell Language Support](https://marketplace.visualstudio.com/items?itemname=ms-vscode.powershell).
-
 All of the recent versions of Windows desktop and server operating systems
-include versions of PowerShell and the [Integrated Script
+include versions of Windows PowerShell and the [Integrated Script
 Environment](https://technet.microsoft.com/en-us/library/dd315244.aspx) (ISE)
-for editing PowerShell scripts.
+for editing PowerShell scripts. Windows 10 and Windows Server 2016 provide Windows
+PowerShell 5.1.
 
-To install the latest version of PowerShell on older Windows systems, install
+To install the latest version of PowerShell 5 on older Windows systems, install
 the Windows Management Framework (WMF). WMF is a package of the latest version
 of PowerShell, along with PowerShell Desired State Configuration (DSC).
 
-Current versions of PowerShell include features to install extra modules from remote repositories. By default, the public [PowerShell Gallery](http://www.powershellgallery.com) is configured as a repository.
+To use PowerShell on Linux and macOS systems, install .NET Core and PowerShell
+Core.
+
+The current versions of PowerShell include features to install extra modules from
+remote repositories. By default, the public [PowerShell Gallery](http://www.powershellgallery.com) is configured as a repository.
+
+To write and debug PowerShell scripts, install the [Visual Studio Code](https://code.visualstudio.com) editor and add the [PowerShell Language Support](https://marketplace.visualstudio.com/items?itemname=ms-vscode.powershell).
 
 # Running Scripts #
 
@@ -44,9 +63,9 @@ one script from within another.
 
 The *$args* collection contains the input parameters from the script file.
 
-By default, PowerShell on older versions of Windows would only run interactive commands at the shell prompt. To
-run local unsigned scripts, but still require scripts from the Internet to be
-signed, set the policy to *RemoteSigned*:
+By default, Windows PowerShell only runs interactive commands at the shell
+prompt. To run local unsigned scripts, but still require scripts from the
+Internet to be signed, set the policy to *RemoteSigned*:
 
 ~~~powershell
 Set-ExecutionPolicy RemoteSigned
@@ -85,7 +104,8 @@ Get-Service | Where-Object { $_.Status -like 'Stopped'} | Select-Object Name
 To specify a positional parameter, use space-separated values after the function
 name. To set named parameters, specify them as switches.
 
-PowerShell provides direct access to .NET classes. For example, this calls *DateTime.Today()*:
+PowerShell provides direct access to .NET classes. For example, this calls
+*DateTime.Today()*:
 
 ~~~powershell
 $today = [datetime]::Today
@@ -189,7 +209,8 @@ function Get-RandomNumber([int] $quantity) {
 }
 ~~~
 
-Remember that you specify parameters by either position or name when you call a function:
+Remember that you specify parameters by either position or name when you call a
+function:
 
 ~~~powershell
 Some-Task "this" -b "that"
@@ -206,9 +227,13 @@ Internally, each function is actually an instance of the .NET class
 
 ## Error Handling ##
 
-Every cmdlet must support the parameters *ErrorAction*, *ErrorVariable*, *Debug*, and *Verbose*. This means that you can specify the error handling behaviour for each command that you run by setting these parameters.
+Every cmdlet must support the parameters *ErrorAction*, *ErrorVariable*,
+*Debug*, and *Verbose*. This means that you can specify the error handling
+behaviour for each command that you run by setting these parameters.
 
-The *ErrorVariable* is a variable that will hold any error message that is generated. If more than one error is produced, the variable will be a collection.
+The *ErrorVariable* is a variable that will hold any error message that is
+generated. If more than one error is produced, the variable will be a
+collection.
 
 The *ErrorAction* parameter accepts one of these options:
 
@@ -234,13 +259,19 @@ trap [System.Management.Automation.PSInvalidCastException] {
 # Resources #
 
 * [Microsoft introductory video tutorial ](http://www.microsoftvirtualacademy.com/training-courses/advanced-tools-scripting-with-powershell-3-0-jump-start)
+* [PowerShell.org](https://powershell.org/) - Community forums for PowerShell users
 * [PowerShell Magazine](http://www.powershellmagazine.com/)
+
+# Extra Modules #
+
 * [AWS Tools for Windows PowerShell](https://aws.amazon.com/powershell/) - Modules for managing the Amazon Web Services.
 * [Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure/) - Modules for managing the Microsoft cloud services.
+* [PSWindowsUpdate](https://gallery.technet.microsoft.com/scriptcenter/2d191bcd-3308-4edd-9de2-88dff796b0bc) - Module to manage and run Microsoft Updates on Windows systems, as explained in [this tutorial](https://www.petri.com/manage-windows-updates-with-powershell-module)
 
 # Common Commands #
 
-Unless otherwise noted, these are all valid for PowerShell for Windows 4.0 and above, and PowerShell Core.
+Unless otherwise noted, these are all valid for PowerShell for Windows 4.0 and
+above, and PowerShell Core.
 
 Run *Get-Alias* to see a list of the PowerShell commands that have shortcuts.
 The [Wikipedia page](https://en.wikipedia.org/wiki/Windows_PowerShell) also
@@ -257,6 +288,7 @@ lists common commands.
 * *Install-Module NAME* - Install the specified module from an available repository
 * *Uninstall-Module NAME* - Delete the specified module from the system
 * *Remove-Module NAME* - Removes a module from the current session only
+* *$PSVersionTable* - Display the table of components versions for PowerShell itself
 
 ## Network Interfaces ##
 
@@ -270,6 +302,8 @@ lists common commands.
 * *Invoke-Webrequest URL* - HTTP request to URL
 * *Test-Connection ADDRESS* - ICMP ping to the specified address (Windows-only)
 * *Send-MailMessage* - Send an email (requires PowerShell for Windows 5.0 or above)
+
+Use *Copy-Item* to transfer files over Windows file-sharing or PowerShell Remoting.
 
 ## Services ##
 
@@ -308,6 +342,7 @@ lists common commands.
 * *Get-Content FILE* - Output the contents of the file
 * *Set-Content FILE TEXT* - Write the text to the file
 * *Add-Content FILE TEXT* - Append the text to the file
+* *Copy-Item SOURCE DESTINATION* - Copies the specified item (file or directory)
 * *Remove-Item ITEM* - Delete the specified item (file or directory)
 * *Compress-Archive -LiteralPath ITEM -DestPath ARCHIVE* - Packs the specified item into a ZIP archive file
 * *Expand-Archive ITEM* - Unpacks the specified ZIP archive file
