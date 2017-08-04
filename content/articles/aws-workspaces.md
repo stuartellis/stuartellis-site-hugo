@@ -39,7 +39,7 @@ Each workspace is tied to one user account in one directory. A workspace will ex
 
 Remember that you cannot expand a VPC. If you destroy a VPC you will lose all of the directories,  workspaces and images.
 
-# Creating a Template Desktop #
+# Managing Images and Bundles #
 
 At the time of writing, you cannot create an image from a workspace that has encrypted drives.
 
@@ -51,8 +51,20 @@ Create new images frequently.
 
 Keep a log of your changes!
 
-Use Group Policy to manage settings. AWS provides a [policy template](http://docs.aws.amazon.com/workspaces/latest/adminguide/group_policy.html)
+Use [Group Policy](https://technet.microsoft.com/en-us/library/hh831791.aspx) to
+manage settings. For example, you can [manage the Settings app with Group
+Policy](https://docs.microsoft.com/en-us/windows/client-management/manage-settings-app-with-group-policy).
+AWS provides a [policy
+template](http://docs.aws.amazon.com/workspaces/latest/adminguide/group_policy.html)
 for settings that are specific to WorkSpaces.
+
+To create an useful process:
+
+* Launch a workspace without disk encryption
+* Update the workspace and add any management agents
+* Create an image from this workspace
+* Create a custom bundle that uses the new image
+* Destroy the original workspace
 
 # Request a New Service Limit #
 
@@ -72,4 +84,5 @@ At the time of writing, Windows 10 workspaces do not support Web access.
 * [Move your desktops to the cloud with Amazon WorkSpaces](https://youtu.be/r2Bh1hc-fak?list=PLufobnmLAUEygUaDDci7JT2JkGX7slDPA)
 * [Best Practices from the Trenches: Deploy Amazon WorkSpaces Like a Pro](https://www.youtube.com/watch?v=9Q-ahnw2Lsc)
 * [Managing WorkSpaces at Scale](https://www.youtube.com/watch?v=iAkkuuUJVUk)
+* [Using Microsoft Active Directory across On-premises and Cloud Workloads](https://www.youtube.com/watch?v=fQf_GD39T2c)
 * [How to connect to a workspace with RDP](https://www.youtube.com/watch?v=Of9NAz0ze6Q)
