@@ -125,7 +125,7 @@ This requires two commands in a terminal window:
     git config --global user.name "Your Name"
     git config --global user.email "you@your-domain.com"
 
-The *--global* option means that the setting will apply to every
+The *global* option means that the setting will apply to every
 repository that you work with in the current user account.
 
 To enable colors in the output, which can be very helpful, enter this
@@ -258,9 +258,9 @@ Fedora Workstation includes [GNOME Boxes](https://wiki.gnome.org/Apps/Boxes) to
 create and manage your virtual machines, as well as *systemd-nspawn* for
 simple containers.
 
-The Fedora project also provide packages for Docker. The Docker packages for
-Fedora have more thorough testing and better integration with the operating
-system than packages from the Docker, Inc. Website.
+The Fedora project also provide packages for [Docker](https://www.docker.com/).
+The Docker packages for Fedora have more thorough testing and better integration
+with the operating system than packages from the Docker, Inc. Website.
 
 ## Installing Docker ##
 

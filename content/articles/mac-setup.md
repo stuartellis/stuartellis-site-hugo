@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2017-06-17T15:16:00+01:00"
+Date = "2017-08-04T20:16:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "javascript", "python", "ruby", "rust"]
@@ -185,13 +185,27 @@ Options* to obtain a macOS disk image. Open your downloaded copy of
 the disk image and run the enclosed installer in the usual way, then
 dismount the disk image.
 
+Always set your details before you create or clone repositories on a new system.
+This requires two commands in a terminal window:
+
+    git config --global user.name "Your Name"
+    git config --global user.email "you@your-domain.com"
+
+The *global* option means that the setting will apply to every
+repository that you work with in the current user account.
+
+To enable colors in the output, which can be very helpful, enter this
+command:
+
+    git config --global color.ui auto
+
 ## Choosing a Text Editor ##
 
 Current versions of macOS include command-line versions of both
 [Emacs](http://www.gnu.org/software/emacs/) and [vim](http://www.vim.org/), as
 well as TextEdit, a desktop text editor. TextEdit is designed for light-weight
 word processing, and has no support for programming. Unless you already have a
-preferred editor, I suggest that you install [Atom](http://www.atom.io),  which
+preferred editor, I suggest that you install [Atom](http://www.atom.io), which
 is a powerful graphical text editor.
 
 Whichever text editor you choose, remember to set the EDITOR environment
@@ -404,8 +418,9 @@ without modifying any system files.
 
 If you develop any kind of database-driven application, it is useful to have a
 version of the database server available on your system. Consider using
-containers for this. If you prefer to install services directly on to your
-workstation, Homebrew provides packages for PostgreSQL, MariaDB and MySQL.
+[Docker](https://www.docker.com/) containers for this. If you prefer to install
+services directly on to your workstation, Homebrew provides packages for
+PostgreSQL, MariaDB and MySQL.
 
 ## Installing PostgreSQL ##
 

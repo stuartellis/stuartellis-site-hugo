@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Solus for Software Development"
 Slug = "solus-setup"
-Date = "2017-08-04T18:30:00+01:00"
+Date = "2017-08-04T20:30:00+01:00"
 Description = "Setting up a Solus installation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "solus", "golang", "javascript", "python", "rust"]
@@ -73,7 +73,7 @@ This requires two commands in a terminal window:
     git config --global user.name "Your Name"
     git config --global user.email "you@your-domain.com"
 
-The *--global* option means that the setting will apply to every
+The *global* option means that the setting will apply to every
 repository that you work with in the current user account.
 
 To enable colors in the output, which can be very helpful, enter this
@@ -263,10 +263,10 @@ To run Python 3, be sure to specify *python3* as the interpreter, instead of
 
 # Containers and Virtual Machines #
 
-Solus provides packages for Docker, as well as including *systemd-nspawn* for
-simple containers. The Docker packages for Solus may have more thorough testing
-and better system integration than the generic Linux packages from the Docker,
-Inc. Website.
+Solus provides packages for [Docker](https://www.docker.com/), as well as
+including *systemd-nspawn* for simple containers. The Docker packages for Solus
+may have more thorough testing and better system integration than the generic
+Linux packages from the Docker, Inc. Website.
 
 ## Installing Docker ##
 

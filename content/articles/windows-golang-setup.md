@@ -86,7 +86,7 @@ automatically applied to every commit that you make. This requires two commands:
     git config --global user.name "Your Name"
     git config --global user.email "you@your-domain.com"
 
-The *--global* option means that the setting will apply to every
+The *global* option means that the setting will apply to every
 repository that you work with in the current user account.
 
 To enable colors in the output, which can be very helpful, enter this
