@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Windows for Go Software Development"
 Slug = "windows-golang-setup"
-Date = "2017-08-03T06:30:00+01:00"
+Date = "2017-08-04T12:10:00+01:00"
 Description = "Setting up Windows for development with Go"
 Categories = ["administration", "programming"]
 Tags = ["administration", "golang", "javascript", "windows"]
@@ -47,6 +47,7 @@ To install Chocolatey, run these commands in an Administrator window for PowerSh
 
     Set-ExecutionPolicy AllSigned
     iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+    choco feature enable -n allowGlobalConfirmation
 
 You need to close all PowerShell windows for the changes to take effect.
 
@@ -58,7 +59,7 @@ for more details about using Chocolatey.
 To install Go using Chocolatey, enter this command in an Administrator window
 for PowerShell:
 
-    choco install go
+    choco install golang
 
 If you do not use Chocolatey, go to the [Go Web site](https://golang.org/) and
 follow the [Download Go](https://golang.org/dl/) link to find a Windows
@@ -83,10 +84,9 @@ The Notepad text editor in Windows is designed for light-weight word processing,
 and has no support for programming. Unless you already have a preferred editor,
 install [Atom](http://www.atom.io), which is a powerful Open Source text editor.
 
-To install Atom using Chocolatey, enter this command in an Administrator window
-for PowerShell:
+## Atom ##
 
-    choco install atom
+To install Atom, download the latest version from the project Website.
 
 Current versions of Atom include support for Git. You will massively improve
 your experience with your text editor by installing a few more plugins to it.
@@ -110,6 +110,17 @@ icons for different types of file. Linter packages automatically check your
 files for errors and other potential problems. Each linter works with specific
 types of file. For example, the ESLint plugin checks JavaScript files.
 
+## Visual Studio Code ##
+
+To install Visual Studio Code using Chocolatey, enter this command in an Administrator
+window for PowerShell:
+
+    choco install VisualStudioCode
+
+Be sure to add the [Go
+package](https://code.visualstudio.com/docs/languages/go), which turns Visual
+Studio Code into a development environment for Go.
+
 # Node.js #
 
 [Node.js](https://nodejs.org/) is the run-time for JavaScript. It also includes
@@ -118,7 +129,7 @@ types of file. For example, the ESLint plugin checks JavaScript files.
 To install Node.js using Chocolatey, enter this command in an Administrator
 window for PowerShell:
 
-    choco install nodejs
+    choco install nodejs-lts
 
 This installs the current LTS (Long-term Support) version of Node.js. The
 Node.js project provides other versions that are specifically for
@@ -146,17 +157,12 @@ purposes.
 
 ## Installing PostgreSQL ##
 
-To install PostgreSQL using Chocolatey, enter this command in an Administrator
-window for PowerShell:
-
-    choco install postgresql
+FIXME
 
 This command installs the server, the command-line tools, and the client
 libraries that are needed to compile adapters for programming languages.
 
 ## Installing SQLite ##
-
-FIXME
 
 To install SQLite using Chocolatey, enter this command in an Administrator
 window for PowerShell:
@@ -165,13 +171,16 @@ window for PowerShell:
 
 # Installing a C Compiler #
 
+[GCC](https://gcc.gnu.org/) is the standard compiler and tools for Free and Open
+Source libraries that are written in the C programming language. The
+[mingw-w64](http://mingw-w64.org) project provide releases of GCC for Windows.
+
 FIXME
 
-[GCC](https://gcc.gnu.org/) is the standard compiler and tools for Free and Open
-Source libraries that are written in the C programming language. To install GCC
+To install GCC
 using Chocolatey, enter this command in an Administrator window for PowerShell:
 
-    choco install gcc
+    choco install ???
 
 # Setting Up a Directory Structure for Projects #
 
@@ -218,7 +227,7 @@ Use Chocolatey to upgrade your software as new versions become available.
 To update the index of available packages, run this command in in an
 Administrator window for PowerShell:
 
-    choco update
+    choco upgrade
 
 To upgrade a specific application, give the name of the product as an option to
 the *choco upgrade* command. For, example this command upgrades Go:
