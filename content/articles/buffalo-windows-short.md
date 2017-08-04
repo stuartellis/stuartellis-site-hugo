@@ -11,7 +11,7 @@ Draft = true
 +++
 
 This is the short summary of how to start developing Web applications on Windows
-with Buffalo. The [Go with
+with [Buffalo](). The [Go with
 Windows](http://www.stuartellis.name/articles/windows-golang-setup) article provides a
 more detailed version.
 
@@ -27,28 +27,23 @@ an Administrator window for PowerShell, and enter this command:
 
 You need to close all PowerShell windows for the changes to take effect.
 
-    choco install gcc git golang nodejs postgresql
-
 Next, open an Administrator window for PowerShell, and enter this command:
+
+    choco install git golang nodejs-lts sqlite
 
 This installs:
 
+* [Go](https://golang.org/) itself
 * [Git](https://git-scm.com/), for version control
 * [Node.js](https://nodejs.org/), the run-time for JavaScript
-* [PostgreSQL](https://www.postgresql.org/), the database
-* GCC compiler for C, so that downloaded C libraries will build on your computer
-
-Lastly, if you do not have a text editor, install [Atom](http://www.atom.io) and
-be sure to add the [go-plus](https://atom.io/packages/go-plus) package, which
-turns Atom into a development environment for Go.
-
-Enter this command in an Administrator window for PowerShell to install Atom:
-
-    choco install atom
+* [SQLite](https://sqlite.org/), for small databases
 
 # Get Buffalo #
 
-FIXME
+To install Buffalo:
+
+    go get -u -v github.com/gobuffalo/buffalo/...
+    go install -v github.com/gobuffalo/buffalo/buffalo
 
 # Create your Application #
 
