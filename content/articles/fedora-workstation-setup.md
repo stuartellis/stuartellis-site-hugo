@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Fedora Workstation for Software Development"
 Slug = "fedora-workstation-setup"
-Date = "2017-08-05T14:30:00+01:00"
+Date = "2017-08-05T15:11:00+01:00"
 Description = "Setting up a Fedora Workstation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "fedora", "golang", "javascript", "python", "rust"]
@@ -46,14 +46,6 @@ restart the computer.
 
 Select *Settings \> Privacy*, and review the settings. Depending upon your
 needs, you may decide to turn off *Location Services* or *Usage & History*.
-
-## Consider Requiring a Password on Bootup ##
-
-If your computer is frequently left in
-public places, then set a boot password. Otherwise, any malicious individual can
-change the firmware settings to boot from a disc or device of their choosing. If
-you did not enable disk encryption, then the attacker will have complete access
-to all of the files on the system.
 
 # Setting Up for Development #
 
@@ -296,7 +288,7 @@ libraries that are needed to compile adapters for programming languages.
 To create a user account for yourself in PostgreSQL with administrative rights,
 enter this command in a terminal window:
 
-    sudo su - postgres 
+    sudo su - postgres
     createuser -s YOU
     exit
 

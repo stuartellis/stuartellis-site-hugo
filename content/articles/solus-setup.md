@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Solus for Software Development"
 Slug = "solus-setup"
-Date = "2017-08-04T20:30:00+01:00"
+Date = "2017-08-05T15:05:00+01:00"
 Description = "Setting up a Solus installation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "solus", "golang", "javascript", "python", "rust"]
@@ -47,14 +47,6 @@ restart the computer.
 
 Select *Settings \> Privacy*, and review the settings. Depending upon your
 needs, you may decide to turn off *Location Services* or *Usage & History*.
-
-## Consider Requiring a Password on Bootup ##
-
-If your computer is frequently left in
-public places, then set a boot password. Otherwise, any malicious individual can
-change the firmware settings to boot from a disc or device of their choosing. If
-you did not enable disk encryption, then the attacker will have complete access
-to all of the files on the system.
 
 # Setting Up for Development #
 
