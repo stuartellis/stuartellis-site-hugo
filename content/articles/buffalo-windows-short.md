@@ -19,7 +19,7 @@ more detailed version.
 
 # Go on Windows #
 
-First, install [Scoop](https://scoop.sh/) to manage your tools. Open
+First, install [Scoop](http://scoop.sh/) to manage your tools. Open
 a PowerShell window, and enter this command:
 
     Set-ExecutionPolicy RemoteSigned -scope CurrentUser

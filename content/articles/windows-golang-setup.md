@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Windows for Software Development with Go"
 Slug = "windows-golang-setup"
-Date = "2017-08-05T18:05:00+01:00"
+Date = "2017-08-05T18:10:00+01:00"
 Description = "Setting up Windows for development with Go"
 Categories = ["administration", "programming"]
 Tags = ["administration", "golang", "javascript", "windows"]
@@ -33,14 +33,14 @@ Go, Node.js and many other systems can use libraries that are written in C, so
 you should install GCC even if you do not write C code.
 
 Rather installing and updating these tools yourself, use a package manager.
-This tutorial explains how to set up the [Scoop](https://scoop.sh/)
+This tutorial explains how to set up the [Scoop](http://scoop.sh/)
 package manager and have it install the other software that you need.
 
-IMPORTANT: If you download and install software yourself, always choose
+> If you download and install software yourself, always choose
 the 64-bit version. Only use 32-bit versions of Windows software if you know
 that you are using a 32-bit computer.
 
-# Setting Up Scoop #
+# Setting Up the Scoop Package Manager #
 
 To install Scoop, run these commands in a PowerShell window:
 
