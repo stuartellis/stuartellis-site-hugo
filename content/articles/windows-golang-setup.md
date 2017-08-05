@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Windows for Software Development with Go"
 Slug = "windows-golang-setup"
-Date = "2017-08-05T18:10:00+01:00"
+Date = "2017-08-05T20:20:00+01:00"
 Description = "Setting up Windows for development with Go"
 Categories = ["administration", "programming"]
 Tags = ["administration", "golang", "javascript", "windows"]
@@ -42,9 +42,14 @@ that you are using a 32-bit computer.
 
 # Setting Up the Scoop Package Manager #
 
-To install Scoop, run these commands in a PowerShell window:
+First, run this command in a PowerShell window:
 
     Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+
+Press *A* when prompted. This ensures that PowerShell can run Scoop.
+
+Enter this command in PowerShell to install Scoop:
+
     iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
 
 # Installing Go #
@@ -59,14 +64,21 @@ installer.
 
 The Go tool will automatically create a folder called *go* in your user account
 when it is needed. This is your [Go
-workspace](https://golang.org/doc/code.html#Workspaces).
+workspace](https://golang.org/doc/code.html#Workspaces). To ensure that Go
+applications run, you must add the *bin* folder in your workspace to your PATH:
+
+1. Open *Control Panel*
+2. Choose *System and Security* > *System* > *Advanced System Settings*
+3. Click *Environment Variables...*
+4. Select *Path* from the list of user variables and click *Edit...*
+5. Click *New* and enter: *%HOMEPATH%\go\bin*
+6. Click *OK* to exit
 
 # Installing the Git Version Control System #
 
 To install Git using Scoop, enter this command in a PowerShell window:
 
     scoop install openssh git
-    [environment]::setenvironmentvariable('GIT_SSH', (resolve-path (scoop which ssh)), 'USER')
 
 If you do not use Scoop, go to the [Git Web site](http://www.git-scm.com/)
 and follow the link for *Downloads* to find a Windows installer.
@@ -84,11 +96,6 @@ automatically applied to every commit that you make. This requires two commands:
 
 The *global* option means that the setting will apply to every
 repository that you work with in the current user account.
-
-To enable colors in the output, which can be very helpful, enter this
-command:
-
-    git config --global color.ui auto
 
 # Installing a Text Editor #
 
