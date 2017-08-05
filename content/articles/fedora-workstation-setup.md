@@ -1,12 +1,11 @@
 +++
 Title = "Setting Up Fedora Workstation for Software Development"
 Slug = "fedora-workstation-setup"
-Date = "2017-08-04T18:30:00+01:00"
+Date = "2017-08-05T14:30:00+01:00"
 Description = "Setting up a Fedora Workstation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "fedora", "golang", "javascript", "python", "rust"]
 Type = "article"
-Draft = true
 
 +++
 
@@ -287,6 +286,7 @@ Otherwise, PostgreSQL is often a better choice for new applications.
 To install PostgreSQL using *dnf*, enter these commands in a terminal window:
 
     sudo dnf install postgresql-server
+    sudo postgresql-setup --initdb
     sudo systemctl enable postgresql
     sudo systemctl start postgresql
 
@@ -296,7 +296,9 @@ libraries that are needed to compile adapters for programming languages.
 To create a user account for yourself in PostgreSQL with administrative rights,
 enter this command in a terminal window:
 
-    sudo createuser -U postgres -s YOU
+    sudo su - postgres 
+    createuser -s YOU
+    exit
 
 Replace *YOU* with the username of your account on Fedora.
 
@@ -310,3 +312,6 @@ For example, to create an extra user account that is not a superuser:
     createuser EXTRA-ACCOUNT
 
 Replace *EXTRA-ACCOUNT* with the username of the new account.
+
+Refer to the [Fedora Wiki article](https://fedoraproject.org/wiki/PostgreSQL)
+for more information on working with PostgreSQL.
