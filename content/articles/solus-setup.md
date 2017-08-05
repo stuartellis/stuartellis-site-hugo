@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Solus for Software Development"
 Slug = "solus-setup"
-Date = "2017-08-05T15:05:00+01:00"
+Date = "2017-08-05T15:06:00+01:00"
 Description = "Setting up a Solus installation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "solus", "golang", "javascript", "python", "rust"]
@@ -41,9 +41,7 @@ Log in once, run the Software Center utility, and ensure that the operating
 system has the latest updates. After all of the updates have been applied,
 restart the computer.
 
-# Configuring System Security #
-
-## User Settings ##
+# User Settings #
 
 Select *Settings \> Privacy*, and review the settings. Depending upon your
 needs, you may decide to turn off *Location Services* or *Usage & History*.

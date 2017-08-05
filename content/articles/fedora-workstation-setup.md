@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Fedora Workstation for Software Development"
 Slug = "fedora-workstation-setup"
-Date = "2017-08-05T15:11:00+01:00"
+Date = "2017-08-05T15:12:00+01:00"
 Description = "Setting up a Fedora Workstation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "fedora", "golang", "javascript", "python", "rust"]
@@ -40,9 +40,7 @@ Log in once, run the GNOME Software utility, and ensure that the operating
 system has the latest updates. After all of the updates have been applied,
 restart the computer.
 
-# Configuring System Security #
-
-## User Settings ##
+# User Settings #
 
 Select *Settings \> Privacy*, and review the settings. Depending upon your
 needs, you may decide to turn off *Location Services* or *Usage & History*.
