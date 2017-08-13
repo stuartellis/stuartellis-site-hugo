@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Windows for Software Development with Go"
 Slug = "windows-golang-setup"
-Date = "2017-08-05T20:20:00+01:00"
+Date = "2017-08-13T19:10:00+01:00"
 Description = "Setting up Windows for development with Go"
 Categories = ["administration", "programming"]
 Tags = ["administration", "golang", "javascript", "windows"]
@@ -83,9 +83,6 @@ To install Git using Scoop, enter this command in a PowerShell window:
 If you do not use Scoop, go to the [Git Web site](http://www.git-scm.com/)
 and follow the link for *Downloads* to find a Windows installer.
 
-To use Git to access remote code repositories, you should create an SSH key for
-yourself, as explained at the end of this document.
-
 ## Configuring Git ##
 
 Once you have installed Git on a system, set your details. These are
@@ -96,6 +93,22 @@ automatically applied to every commit that you make. This requires two commands:
 
 The *global* option means that the setting will apply to every
 repository that you work with in the current user account.
+
+## Creating SSH Keys ##
+
+You will frequently use SSH to access Git repositories or remote UNIX systems.
+The Git package includes the standard OpenSSH suite of tools.
+
+To create an SSH key, run the *ssh-keygen* command in a Git terminal window. For
+example:
+
+    ssh-keygen -t rsa -b 4096 -C "Me MyName (MyDevice) <me@mydomain.com>"
+
+> Use 4096-bit RSA keys for all systems. The older DSA standard only supports
+1024-bit keys, which are now too small to be considered secure.
+
+For more on how to use SSH with GitHub, [see the GitHub setup guide](https://help.github.com/articles/connecting-to-github-with-ssh/). GitHub
+also provide [tips for troubleshooting SSH problems](https://help.github.com/articles/troubleshooting-ssh/).
 
 # Installing a Text Editor #
 
@@ -214,22 +227,6 @@ Source libraries that are written in the C programming language. The
 To install GCC using Scoop, enter this command in a PowerShell window:
 
     scoop install gcc
-
-# Creating SSH Keys #
-
-You will frequently use SSH to access Git repositories or remote UNIX systems.
-The Git package includes the standard OpenSSH suite of tools.
-
-To create an SSH key, run the *ssh-keygen* command in a Git terminal window. For
-example:
-
-    ssh-keygen -t rsa -b 4096 -C "Me MyName (MyDevice) <me@mydomain.com>"
-
-> Use 4096-bit RSA keys for all systems. The older DSA standard only supports
-1024-bit keys, which are now too small to be considered secure.
-
-For more on how to use SSH with GitHub, [see the GitHub setup guide](https://help.github.com/articles/connecting-to-github-with-ssh/). GitHub
-also provide [tips for troubleshooting SSH problems](https://help.github.com/articles/troubleshooting-ssh/).
 
 # Updating Your Tools #
 
