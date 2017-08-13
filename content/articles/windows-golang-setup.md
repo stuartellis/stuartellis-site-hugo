@@ -142,14 +142,6 @@ icons for different types of file. Linter packages automatically check your
 files for errors and other potential problems. Each linter works with specific
 types of file. For example, the ESLint plugin checks JavaScript files.
 
-## Visual Studio Code ##
-
-To install Visual Studio Code, download the latest version from the project Website.
-
-Be sure to add the [Go
-package](https://code.visualstudio.com/docs/languages/go), which turns Visual
-Studio Code into a development environment for Go.
-
 # Installing Node.js #
 
 [Node.js](https://nodejs.org/) is the run-time for JavaScript. It also includes
