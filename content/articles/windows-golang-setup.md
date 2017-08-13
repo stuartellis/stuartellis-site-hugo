@@ -10,8 +10,8 @@ Type = "article"
 +++
 
 
-This is a set of notes for setting up a Windows 10 system, specifically as a
-development system for the [Go](https://golang.org/) programming language.
+This is a set of notes for setting up Windows 10 as a development system for the
+[Go](https://golang.org/) programming language. It does not use the [Windows Subsystem for Linux](https://msdn.microsoft.com/en-us/commandline/wsl/about).
 
 <!--more-->
 
