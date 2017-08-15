@@ -1,11 +1,12 @@
 +++
 Title = "An Introduction to Cross-Platform .NET"
 Slug = "dotnet-crossplatform"
-Date = "2016-07-01T01:00:00+01:00"
+Date = "2017-08-15T19:00:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["csharp", "dotnet"]
 Type = "article"
+Draft = true
 
 +++
 
@@ -23,7 +24,7 @@ and the associated tools.
 The .NET Core implementation itself consists of the *CoreCLR*, which is the
 runtime for .NET Core, and *CoreFX*, the standard libraries for .NET Core. Many
 other libraries and tools are shared between .NET Core and other
-implementations. In future all .NET implementations should follow the [.NET
+implementations. In future all .NET implementations will follow the [.NET
 Platform
 Standard](https://github.com/dotnet/corefx/blob/master/Documentation/project-docs/standard-platform.md)
 to ensure that they remain interoperable.
@@ -36,7 +37,9 @@ The key developer tool that you use for setting up .NET Core projects is the [*d
 Visual Studio use [NuGet](http://www.nuget.org), the underlying package
 management system for .NET platforms.
 
-Use the [Visual Studio Code](https://code.visualstudio.com) editor, which includes support for .NET Core projects, such as debugging for C# and JavaScript.
+Use the [Visual Studio Code](https://code.visualstudio.com) editor, which
+includes support for .NET Core projects, such as debugging for C# and
+JavaScript.
 
 # Popular Libraries #
 
