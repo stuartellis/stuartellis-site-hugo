@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2017-08-04T20:16:00+01:00"
+Date = "2017-08-15T18:50:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "javascript", "python", "ruby", "rust"]
@@ -111,7 +111,7 @@ did not enable File Vault, then the attacker will have complete access to all of
 the files on the system.
 
 [Apple Knowledge Base article
-HT1352](http://support.apple.com/kb/HT1352) provides full details.
+HT204455](https://support.apple.com/en-gb/HT204455) provides full details.
 
 ## Setting Up Time Machine Backups ##
 
