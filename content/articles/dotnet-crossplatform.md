@@ -1,7 +1,7 @@
 +++
 Title = "An Introduction to Cross-Platform .NET"
 Slug = "dotnet-crossplatform"
-Date = "2017-08-18T16:40:00+01:00"
+Date = "2017-08-18T16:45:00+01:00"
 Description = "The .NET Core and supporting tools"
 Categories = ["programming"]
 Tags = ["csharp", "dotnet"]
@@ -26,13 +26,17 @@ other libraries and tools are shared between .NET Core and other
 implementations. The various implementations of .NET follow the [.NET
 Platform
 Standard](https://github.com/dotnet/corefx/blob/master/Documentation/project-docs/standard-platform.md)
-to ensure that they remain interoperable. The [.NET Core SDK](https://docs.microsoft.com/en-us/dotnet/core/sdk) includes .NET Core and the tools for building .NET Core applications.
-
-Microsoft support [two tracks of .NET Core releases](https://docs.microsoft.com/en-gb/dotnet/core/versions/lts-current). Long-Term Support (LTS) versions of .NET Core are supported for three years, and Current versions are supported for one year.
+to ensure that they remain interoperable.
 
 ## Programming Languages ##
 
 The .NET platforms support multiple programming languages. In practice, the [C# language](https://docs.microsoft.com/en-gb/dotnet/csharp/) is the standard for .NET development.
+
+## Releases ##
+
+Microsoft support [two tracks of .NET Core releases](https://docs.microsoft.com/en-gb/dotnet/core/versions/lts-current). Long-Term Support (LTS) versions of .NET Core are supported for three years, and Current versions are supported for one year.
+
+Install .NET Core releases on systems that need to run .NET applications, and the [.NET Core SDK](https://docs.microsoft.com/en-us/dotnet/core/sdk) on developer systems. The .NET Core SDK includes .NET Core and the tools for building .NET Core applications.
 
 ## Deployment ##
 
