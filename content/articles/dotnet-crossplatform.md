@@ -1,7 +1,7 @@
 +++
 Title = "An Introduction to Cross-Platform .NET"
 Slug = "dotnet-crossplatform"
-Date = "2017-08-18T16:30:00+01:00"
+Date = "2017-08-18T16:40:00+01:00"
 Description = "The .NET Core and supporting tools"
 Categories = ["programming"]
 Tags = ["csharp", "dotnet"]
@@ -26,7 +26,7 @@ other libraries and tools are shared between .NET Core and other
 implementations. The various implementations of .NET follow the [.NET
 Platform
 Standard](https://github.com/dotnet/corefx/blob/master/Documentation/project-docs/standard-platform.md)
-to ensure that they remain interoperable. The [.NET Core SDK]() includes .NET Core and the tools for building .NET Core applications.
+to ensure that they remain interoperable. The [.NET Core SDK](https://docs.microsoft.com/en-us/dotnet/core/sdk) includes .NET Core and the tools for building .NET Core applications.
 
 Microsoft support [two tracks of .NET Core releases](https://docs.microsoft.com/en-gb/dotnet/core/versions/lts-current). Long-Term Support (LTS) versions of .NET Core are supported for three years, and Current versions are supported for one year.
 
@@ -87,8 +87,6 @@ If you are going to deploy your Web applications with Docker, install [Docker fo
 
 # Creating an Application #
 
-* [ASP.NET MVC tutorial](https://docs.microsoft.com/en-gb/aspnet/core/tutorials/first-mvc-app-xplat/start-mvc)
-
 Create a directory and change the working directory before you run any commands:
 
     mkdir MyApplication
@@ -122,3 +120,4 @@ environment, set a shell environment variable with the name *ASPNETCORE_ENVIRONM
 * [.NET Core Web site](https://dotnet.github.io/)
 * [ASP.NET Web site](https://get.asp.net/)
 * [NuGet Web site](http://www.nuget.org)
+* [ASP.NET MVC tutorial](https://docs.microsoft.com/en-gb/aspnet/core/tutorials/first-mvc-app-xplat/start-mvc)
