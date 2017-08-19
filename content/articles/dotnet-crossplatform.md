@@ -1,7 +1,7 @@
 +++
 Title = "An Introduction to Cross-Platform .NET"
 Slug = "dotnet-crossplatform"
-Date = "2017-08-18T16:45:00+01:00"
+Date = "2017-08-19T13:03:00+01:00"
 Description = "The .NET Core and supporting tools"
 Categories = ["programming"]
 Tags = ["csharp", "dotnet"]
@@ -10,11 +10,8 @@ Type = "article"
 +++
 
 
-There are currently several implementations of the .NET APIs and programming
-languages, and the .NET Framework product is not Open Source, although the [code
-is available](http://referencesource.microsoft.com/) for reference purposes.
-This article only covers the Open Source [.NET Core](https://dotnet.github.io/),
-and the associated tools.
+This article covers the Open Source [.NET Core](https://dotnet.github.io/),
+and associated tools.
 
 <!--more-->
 
@@ -25,8 +22,12 @@ runtime for .NET Core, and *CoreFX*, the standard libraries for .NET Core. Many
 other libraries and tools are shared between .NET Core and other
 implementations. The various implementations of .NET follow the [.NET
 Platform
-Standard](https://github.com/dotnet/corefx/blob/master/Documentation/project-docs/standard-platform.md)
+Standard](https://github.com/dotnet/standard)
 to ensure that they remain interoperable.
+
+There are currently other implementations of the .NET APIs and programming
+languages. The .NET Framework supplied with most editions of Windows is not Open Source, although the [code
+is available](http://referencesource.microsoft.com/) for reference purposes.
 
 ## Programming Languages ##
 
