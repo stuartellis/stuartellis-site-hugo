@@ -25,15 +25,12 @@ TODO
 
 ## Extensions for Go Development ##
 
-TODO
+Run this command to add the [Go](https://marketplace.visualstudio.com/items?itemName=lukehoban.Go)
+extension, which turns Code into a development environment for Go:
 
-Run this command to add the [go-plus](https://Code.io/packages/go-plus)
-package, which turns Code into a development environment for Go:
+    code --install-extension lukehoban.go
 
-    code install go
-
-The next time that you open Code, you will see the Go extension automatically download
-and configure all of the tools that it needs.
+The Go extension will automatically download and configure all of the tools that it needs.
 
 ## Extensions for Ruby Development ##
 
