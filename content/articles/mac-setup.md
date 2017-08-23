@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2017-08-15T18:50:00+01:00"
+Date = "2017-08-23T11:45:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "javascript", "python", "ruby", "rust"]
@@ -100,12 +100,9 @@ bootable pen drive.
 > File Vault really is secure, which means that you can permanently lose access to your data if you
 lose the passwords and the recovery key.
 
-## Requiring a Password on Bootup ##
+## Set a Firmware Password ##
 
-Intel-based Macs include EFI firmware that runs when the machine is powered on,
-to start the operating system. This takes the place of the standard PC BIOS, or
-Open Firmware on older Macs. If your computer is frequently left in public
-places, then set a boot password. Otherwise, any malicious individual can change
+Set a password to stop access to the [Recovery](https://support.apple.com/en-us/HT201314) mode. Otherwise, any malicious individual can change
 the firmware settings to boot from a disc or device of their choosing. If you
 did not enable File Vault, then the attacker will have complete access to all of
 the files on the system.
