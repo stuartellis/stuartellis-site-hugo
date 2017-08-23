@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2017-08-04T12:40:00+01:00"
+Date = "2017-08-23T12:10:00+01:00"
 Description = ""
 Categories = ["administration", "tools"]
 Tags = ["administration", "dotnet", "powershell", "windows"]
@@ -34,18 +34,29 @@ special edition that was shipped with Windows Nano Server.
 
 # Installing PowerShell #
 
+## Windows ##
+
 All of the recent versions of Windows desktop and server operating systems
 include versions of Windows PowerShell and the [Integrated Script
 Environment](https://technet.microsoft.com/en-us/library/dd315244.aspx) (ISE)
 for editing PowerShell scripts. Windows 10 and Windows Server 2016 provide Windows
-PowerShell 5.1.
+PowerShell 5.1. ISE is deprecated in favour of Visual Studio Code, but is still supported.
 
 To install the latest version of PowerShell 5 on older Windows systems, install
 the Windows Management Framework (WMF). WMF is a package of the latest version
 of PowerShell, along with PowerShell Desired State Configuration (DSC).
 
-To use PowerShell on Linux and macOS systems, install .NET Core and PowerShell
-Core.
+## macOS and Linux ##
+
+To use PowerShell on Linux and macOS systems, install [.NET Core](https://www.microsoft.com/net/download/core) and [PowerShell Core](https://github.com/powershell/powershell).
+
+Follow [these instructions](https://github.com/powershell/powershell#telemetry) to disable the telemetry in PowerShell Core. The PowerShell Core installer creates a directory called `/usr/local/microsoft/`, with one subdirectory per PowerShell installation.
+
+Once PowerShell Core is installed, type *powershell* in a Terminal window to start a PowerShell session:
+
+    powershell
+
+## Extra Tools and Modules ##
 
 The current versions of PowerShell include features to install extra modules from
 remote repositories. By default, the public [PowerShell Gallery](http://www.powershellgallery.com) is configured as a repository.

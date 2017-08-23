@@ -1,14 +1,13 @@
 +++
 Title = "An Introduction to Cross-Platform .NET"
 Slug = "dotnet-crossplatform"
-Date = "2017-08-19T13:03:00+01:00"
+Date = "2017-08-23T12:40:00+01:00"
 Description = "The .NET Core and supporting tools"
 Categories = ["programming"]
 Tags = ["csharp", "dotnet"]
 Type = "article"
 
 +++
-
 
 This article covers the Open Source [.NET Core](https://dotnet.github.io/),
 and associated tools.
@@ -52,7 +51,9 @@ management system for .NET platforms, and [MSBuild](https://docs.microsoft.com/e
 Use the [Visual Studio Code](https://code.visualstudio.com) editor, which
 includes support for .NET Core projects, such as debugging for C#, JavaScript, and TypeScript.
 
-Both the *dotnet* command-line utility and the Visual Studio Code editor enable telemetry by default. 
+If you manage Windows systems, you may also [PowerShell Core](http://www.stuartellis.name/articles/powershell/) useful.
+
+The *dotnet* command-line utility, the Visual Studio Code editor and PowerShell Core all enable telemetry by default.
 
 * [.NET Core Telemetry](https://docs.microsoft.com/en-gb/dotnet/core/tools/telemetry)
 * [Visual Studio Code Crash Reporting](https://code.visualstudio.com/Docs/supporting/FAQ#_how-to-disable-crash-reporting)
