@@ -6,7 +6,6 @@ Description = "Getting started with Buffalo on Windows"
 Categories = ["programming"]
 Tags = ["administration", "golang", "javascript", "windows"]
 Type = "article"
-Draft = true
 
 +++
 
@@ -62,7 +61,3 @@ To install Buffalo:
 
     go get -u -v github.com/gobuffalo/buffalo/...
     go install -v github.com/gobuffalo/buffalo/buffalo
-
-# Create your Application #
-
-FIXME
