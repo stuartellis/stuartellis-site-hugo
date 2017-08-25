@@ -1,7 +1,7 @@
 +++
 Title = "Get Rolling with Buffalo on Windows"
 Slug = "buffalo-windows-short"
-Date = "2017-08-25T16:27:00+01:00"
+Date = "2017-08-25T19:04:00+01:00"
 Description = "Getting started with Buffalo on Windows"
 Categories = ["programming"]
 Tags = ["administration", "golang", "javascript", "windows"]
@@ -61,4 +61,5 @@ applications that you compile in the workspace run correctly, enter this in a Po
 To install Buffalo:
 
     go get -u -v github.com/gobuffalo/buffalo/...
-    go install -v github.com/gobuffalo/buffalo/buffalo
+
+Once it is installed, use the *buffalo* utility to create and manage your Web applications.

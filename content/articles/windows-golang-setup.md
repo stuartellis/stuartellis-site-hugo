@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Windows for Go and Buffalo"
 Slug = "windows-golang-setup"
-Date = "2017-08-25T16:15:00+01:00"
+Date = "2017-08-25T19:02:00+01:00"
 Description = "Setting up Windows for development with Go and Buffalo"
 Categories = ["administration", "programming"]
 Tags = ["administration", "golang", "javascript", "windows"]
@@ -219,6 +219,14 @@ To install GCC using Scoop, enter this command in a PowerShell window:
 
     scoop install gcc
 
+# Get Buffalo #
+
+To install Buffalo, enter this command in a PowerShell window:
+
+    go get -u -v github.com/gobuffalo/buffalo/...
+
+Once it is installed, use the *buffalo* utility to create and manage your Web applications.
+
 # Updating Your Tools #
 
 Use Scoop to upgrade your software as new versions become available.
@@ -240,3 +248,9 @@ the name of an application:
 Atom has a built-in update system. It will
 automatically display a message when you should update either the editor, or one of the
 packages that you have installed.
+
+To upgrade Buffalo, enter this command in a PowerShell window:
+
+    go get -u -v github.com/gobuffalo/buffalo/...
+
+The *-u* option means that if you already have a copy of Buffalo, it will be upgraded.
