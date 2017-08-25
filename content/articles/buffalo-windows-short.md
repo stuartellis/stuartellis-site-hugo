@@ -1,7 +1,7 @@
 +++
 Title = "Get Rolling with Buffalo on Windows"
 Slug = "buffalo-windows-short"
-Date = "2017-08-05T20:19:00+01:00"
+Date = "2017-08-25T16:27:00+01:00"
 Description = "Getting started with Buffalo on Windows"
 Categories = ["programming"]
 Tags = ["administration", "golang", "javascript", "windows"]
@@ -10,7 +10,7 @@ Type = "article"
 +++
 
 This is the short summary of how to start developing Web applications on Windows
-with [Buffalo](http://gobuffalo.io). The [Go with
+with [Buffalo](http://gobuffalo.io). The [Go on 
 Windows](http://www.stuartellis.name/articles/windows-golang-setup) article
 provides a more detailed version.
 
@@ -22,13 +22,17 @@ First, let's install [Scoop](http://scoop.sh/), to manage your tools.
 
 Open a PowerShell window, and enter this command:
 
-    Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+~~~powershell
+Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+~~~
 
 Press *A* when prompted. This ensures that PowerShell can run Scoop.
 
 Next, install Scoop:
 
-    iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+~~~powershell
+iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+~~~
 
 Now enter this command:
 
@@ -46,14 +50,11 @@ These are all of the things that Buffalo will need.
 The Go tool will automatically create a folder called *go* in your user account
 when it is needed. This is your [Go
 workspace](https://golang.org/doc/code.html#Workspaces). To ensure that Go
-applications run, you must add the *bin* folder in your workspace to your PATH:
+applications that you compile in the workspace run correctly, enter this in a PowerShell window to register the correct folder:
 
-1. Open *Control Panel*
-2. Choose *System and Security* > *System* > *Advanced System Settings*
-3. Click *Environment Variables...*
-4. Select *Path* from the list of user variables and click *Edit...*
-5. Click *New* and enter: *%HOMEPATH%\go\bin*
-6. Click *OK* to exit
+~~~powershell
+[Environment]::SetEnvironmentVariable("Path", $env:Path + ";$($env:HOMEDRIVE)$($env:HOMEPATH)\go\bin", [EnvironmentVariableTarget]::User)
+~~~
 
 # Get Buffalo #
 

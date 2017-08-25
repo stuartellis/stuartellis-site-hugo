@@ -1,17 +1,15 @@
 +++
-Title = "Setting Up Windows for Software Development with Go"
+Title = "Setting Up Windows for Go and Buffalo"
 Slug = "windows-golang-setup"
-Date = "2017-08-13T19:10:00+01:00"
-Description = "Setting up Windows for development with Go"
+Date = "2017-08-25T16:15:00+01:00"
+Description = "Setting up Windows for development with Go and Buffalo"
 Categories = ["administration", "programming"]
 Tags = ["administration", "golang", "javascript", "windows"]
 Type = "article"
 
 +++
 
-
-This is a set of notes for setting up Windows 10 as a development system for the
-[Go](https://golang.org/) programming language. It does not use the [Windows Subsystem for Linux](https://msdn.microsoft.com/en-us/commandline/wsl/about).
+This is a set of notes for setting up Windows 10 as a development system for the [Go](https://golang.org/) programming language, with the [Buffalo](https://gobuffalo.io) Web framework. It does not use the [Windows Subsystem for Linux](https://msdn.microsoft.com/en-us/commandline/wsl/about).
 
 <!--more-->
 
@@ -23,7 +21,7 @@ To work with Go, you only need three things:
 * A text editor that understands Go, such as [Atom](https://atom.io/)
 * [Git](https://git-scm.com/), for version control
 
-To develop Web applications, you will also need some other pieces of software:
+To develop Web applications with Buffalo, you will also need some other pieces of software:
 
 * [Node.js](https://nodejs.org/), the run-time for JavaScript
 * A database, such as [SQLite](https://sqlite.org/) or [PostgreSQL](https://www.postgresql.org/)
@@ -44,13 +42,17 @@ that you are using a 32-bit computer.
 
 First, run this command in a PowerShell window:
 
-    Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+~~~powershell
+Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+~~~
 
 Press *A* when prompted. This ensures that PowerShell can run Scoop.
 
 Enter this command in PowerShell to install Scoop:
 
-    iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+~~~powershell
+iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+~~~
 
 # Installing Go #
 
@@ -65,14 +67,11 @@ installer.
 The Go tool will automatically create a folder called *go* in your user account
 when it is needed. This is your [Go
 workspace](https://golang.org/doc/code.html#Workspaces). To ensure that Go
-applications run, you must add the *bin* folder in your workspace to your PATH:
+applications run, you must add the *bin* folder in your workspace to your PATH. Run this in a PowerShell window to update your PATH:
 
-1. Open *Control Panel*
-2. Choose *System and Security* > *System* > *Advanced System Settings*
-3. Click *Environment Variables...*
-4. Select *Path* from the list of user variables and click *Edit...*
-5. Click *New* and enter: *%HOMEPATH%\go\bin*
-6. Click *OK* to exit
+~~~powershell
+[Environment]::SetEnvironmentVariable("Path", $env:Path + ";$($env:HOMEDRIVE)$($env:HOMEPATH)\go\bin", [EnvironmentVariableTarget]::User)
+~~~
 
 # Installing the Git Version Control System #
 
@@ -238,6 +237,6 @@ the name of an application:
 
     scoop update *
 
-Atom and Visual Studio Code have their own update systems. They will
-automatically display a message when you should update the editor or one of the
+Atom has a built-in update system. It will
+automatically display a message when you should update either the editor, or one of the
 packages that you have installed.
