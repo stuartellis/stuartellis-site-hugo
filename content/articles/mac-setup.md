@@ -1,14 +1,13 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2017-08-23T11:45:00+01:00"
+Date = "2017-11-21T20:30:00+00:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "javascript", "python", "ruby", "rust"]
 Type = "article"
 
 +++
-
 
 This is a set of notes for setting up an Apple Mac, specifically as a
 development system. Current versions of macOS have a fairly good default
@@ -202,8 +201,15 @@ Current versions of macOS include command-line versions of both
 [Emacs](http://www.gnu.org/software/emacs/) and [vim](http://www.vim.org/), as
 well as TextEdit, a desktop text editor. TextEdit is designed for light-weight
 word processing, and has no support for programming. Unless you already have a
-preferred editor, I suggest that you install [Atom](http://www.atom.io), which
-is a powerful graphical text editor.
+preferred editor, I suggest that you install either [Atom](http://www.atom.io) or [Visual Studio Code](https://code.visualstudio.com), which are powerful graphical text editors.
+
+To install Atom, enter this command in a terminal window:
+
+    brew cask install atom
+
+To install Visual Studio Code, enter this command in a terminal window:
+
+    brew cask install visual-studio-code
 
 Whichever text editor you choose, remember to set the EDITOR environment
 variable in your *~/.bash\_profile* file, so that this editor is
@@ -213,9 +219,13 @@ favored text editor:
 
     export EDITOR="vim"
 
-To make Atom your default editor, use this line instead:
+To make Atom your default editor, use this line:
 
     export EDITOR="atom -w"
+
+To make Visual Studio Code your default editor, use this line instead:
+
+    export EDITOR="code -w"
 
 ## Customizing Your Text Editor ##
 
@@ -225,7 +235,9 @@ you depend upon the work that you do, but you should always look at version
 control integration, convenient access to the terminal, and linters for your
 preferred programming languages and data file formats.
 
-apm install color-picker file-icons minimap
+Atom takes this further: you are expected to install extensions to customize the user interface. These extensions provide some valuable enhancements to the user interface of Atom:
+
+    apm install color-picker file-icons minimap
 
 The [file-icons](https://atom.io/packages/file-icons) package requires no
 configuration. Refer to the pages for
@@ -236,14 +248,14 @@ Install code linters for the languages that you use. Atom
 automatically runs the appropriate linter for the files that you are editing.
 
 This command installs
-support for [CSSLint](http://csslint.net/), [ESLint](http://eslint.org/) and
+support into Atom for [CSSLint](http://csslint.net/), [ESLint](http://eslint.org/) and
 [yaml-js](http://nodeca.github.com/js-yaml/):
 
     apm install linter-csslint linter-eslint linter-js-yaml
 
 If you are a Ruby on Rails developer, use this command to install support for
 [CoffeeLint](http://www.coffeelint.org/) and
-[Rubocop](http://batsov.com/rubocop/):
+[Rubocop](http://batsov.com/rubocop/) into Atom:
 
     apm install linter-coffeelint linter-rubocop
 
@@ -493,12 +505,6 @@ default, MySQL permits various types of invalid data to be entered.
 * Virtual machine management: [VirtualBox](http://www.virtualbox.org/)
 * Docker container management: [Docker for Mac](http://www.docker.com/products/docker#/mac)
 * MySQL database management: [MySQL Workbench](http://wb.mysql.com/)
-
-The ready-to-use versions of VirtualBox are free for personal use, but not
-actually Open Source. If you want to pay for a virtual machine application with
-better performance, [VMWare
-Fusion](https://www.vmware.com/products/fusion/) is probably the best product
-available.
 
 # Online Resources #
 
