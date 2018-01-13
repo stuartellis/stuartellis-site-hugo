@@ -1,14 +1,13 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2018-01-13T10:00:00+01:00"
+Date = "2018-01-13T12:30:00+01:00"
 Description = ""
 Categories = ["administration", "tools"]
 Tags = ["administration", "dotnet", "powershell", "windows"]
 Type = "article"
 
 +++
-
 
 [PowerShell](https://microsoft.com/powershell) is an object-oriented
 shell that is built on .NET, and the custom programming language that runs
@@ -270,6 +269,7 @@ trap [System.Management.Automation.PSInvalidCastException] {
 * [Microsoft introductory video tutorial ](http://www.microsoftvirtualacademy.com/training-courses/advanced-tools-scripting-with-powershell-3-0-jump-start)
 * [PowerShell.org](https://powershell.org/) - Community forums for PowerShell users
 * [PowerShell Magazine](http://www.powershellmagazine.com/)
+* [PowerShell Notes for Professionals book](http://goalkicker.com/PowerShellBook/) - Free ebook
 
 # Extra Modules #
 
