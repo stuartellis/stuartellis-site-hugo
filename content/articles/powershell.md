@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2018-01-13T09:30:00+01:00"
+Date = "2018-01-13T10:00:00+01:00"
 Description = ""
 Categories = ["administration", "tools"]
 Tags = ["administration", "dotnet", "powershell", "windows"]
@@ -38,7 +38,7 @@ All of the recent versions of Windows desktop and server operating systems
 include versions of Windows PowerShell and the [Integrated Script
 Environment](https://technet.microsoft.com/en-us/library/dd315244.aspx) (ISE)
 for editing PowerShell scripts. Windows 10 and Windows Server 2016 provide Windows
-PowerShell 5.1. Microsoft now recommend that you use Visual Studio Code for writing PowerShell, rather than ISE.
+PowerShell 5.1. Microsoft now recommend that you use Visual Studio Code for writing PowerShell code, rather than ISE.
 
 To install the latest version of PowerShell 5 on older Windows systems, install
 the Windows Management Framework (WMF). WMF is a package of the latest version
@@ -50,9 +50,9 @@ To use PowerShell on Linux and macOS systems, install [.NET Core](https://www.mi
 
 Follow [these instructions](https://github.com/powershell/powershell#telemetry) to disable the telemetry in PowerShell Core. The PowerShell Core installer creates a directory called `/usr/local/microsoft/`, with one subdirectory per PowerShell installation.
 
-Once PowerShell Core is installed, type *powershell* in a Terminal window to start a PowerShell session:
+Once PowerShell Core is installed, type *pwsh* in a Terminal window to start a PowerShell session:
 
-    powershell
+    pwsh
 
 ## Extra Tools and Modules ##
 
