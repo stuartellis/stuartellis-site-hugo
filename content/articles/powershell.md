@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2017-08-23T12:10:00+01:00"
+Date = "2018-01-13T09:30:00+01:00"
 Description = ""
 Categories = ["administration", "tools"]
 Tags = ["administration", "dotnet", "powershell", "windows"]
@@ -10,7 +10,7 @@ Type = "article"
 +++
 
 
-[PowerShell](https://msdn.microsoft.com/en-us/powershell) is an object-oriented
+[PowerShell](https://microsoft.com/powershell) is an object-oriented
 shell that is built on .NET, and the custom programming language that runs
 within that shell. Third-parties such as VMWare and Amazon Web Services provide
 modules to enable users to work with their products through PowerShell. You can
@@ -22,14 +22,12 @@ commands and scripts from the host operating system.
 
 # PowerShell Editions #
 
-Windows PowerShell is the proprietary implementation of PowerShell that is
+Windows PowerShell is the older, proprietary implementation of PowerShell that is
 shipped with most versions of Windows. It is sometimes referred to as the
-*Desktop* edition. Windows PowerShell is now frozen, and will be replaced by
-PowerShell Core.
+*Desktop* edition. Windows PowerShell is still maintained, but will receive no new features. The intention is to replace it with PowerShell Core.
 
-PowerShell Core is the new implementation of PowerShell. It is built with .NET
-Core to be cross-platform and Open Source. Currently, PowerShell Core is a beta
-product. The finished version will become PowerShell 6. PowerShell Core 5.1 is a
+PowerShell Core is the latest implementation of PowerShell. It is built with .NET
+Core to be cross-platform and Open Source. For consistency with Windows PowerShell, the first full release of PowerShell Core has 6.0 as the version number. PowerShell Core 5.1 was a
 special edition that was shipped with Windows Nano Server.
 
 # Installing PowerShell #
@@ -40,7 +38,7 @@ All of the recent versions of Windows desktop and server operating systems
 include versions of Windows PowerShell and the [Integrated Script
 Environment](https://technet.microsoft.com/en-us/library/dd315244.aspx) (ISE)
 for editing PowerShell scripts. Windows 10 and Windows Server 2016 provide Windows
-PowerShell 5.1. ISE is deprecated in favour of Visual Studio Code, but is still supported.
+PowerShell 5.1. Microsoft now recommend that you use Visual Studio Code for writing PowerShell, rather than ISE.
 
 To install the latest version of PowerShell 5 on older Windows systems, install
 the Windows Management Framework (WMF). WMF is a package of the latest version
