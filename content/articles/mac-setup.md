@@ -383,7 +383,7 @@ home directory with the name *.gemrc* and put this line in it:
 
 ## pyenv for Python Development ##
 
-Unfortunately, macOS include a copy of Python 2, not Python 3. To maintain current and clean
+Unfortunately, macOS includes a copy of Python 2, not Python 3. To maintain current and clean
 Python environments, use the [pyenv](https://github.com/yyuu/pyenv) system and
 the [pyenv-virtualenv](https://github.com/yyuu/pyenv-virtualenv) plugin.
 
