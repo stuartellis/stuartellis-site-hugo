@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2017-11-21T20:30:00+00:00"
+Date = "2018-01-19T11:30:00+00:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "javascript", "python", "ruby", "rust"]
@@ -129,7 +129,7 @@ one is with the *Xcode Command Line Tools* package.
 Once you have the compiler that is provided by Xcode, you can use
 [Homebrew](http://brew.sh/) to install everything else that you need. Homebrew
 itself manages packages for command-line tools and services. The
-[Cask](http://caskroom.io/) extension to Homebrew enables you to install
+[Cask](https://caskroom.github.io/) extension to Homebrew enables you to install
 graphical desktop applications.
 
 ## Getting Xcode ##
@@ -383,7 +383,7 @@ home directory with the name *.gemrc* and put this line in it:
 
 ## pyenv for Python Development ##
 
-Unfortunately, macOS include a copy of Python 2. To maintain current and clean
+Unfortunately, macOS include a copy of Python 2, not Python 3. To maintain current and clean
 Python environments, use the [pyenv](https://github.com/yyuu/pyenv) system and
 the [pyenv-virtualenv](https://github.com/yyuu/pyenv-virtualenv) plugin.
 
@@ -438,10 +438,9 @@ To install PostgreSQL using Homebrew, enter this command in a terminal window:
     brew install postgresql
 
 This command installs the server, the command-line tools, and the client
-libraries that are needed to compile adapters for programming languages. To
-start the server, follow the instructions that are displayed after the
-installation process is completed.
+libraries that are needed to compile adapters for programming languages.
 
+Homebrew also provides some commands for managing your PostgreSQL installation. For example, to start the server, follow the instructions that are displayed after the installation process is completed. If you upgrade your copy of PostgreSQL, you should use the *postgresql-upgrade-database* command that Homebrew gives you.
 ## Installing MariaDB or MySQL ##
 
 To install MariaDB using Homebrew, enter this command in a terminal window:
