@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Solus for Software Development"
 Slug = "solus-setup"
-Date = "2017-08-05T15:06:00+01:00"
+Date = "2018-01-20T10:50:00+00:00"
 Description = "Setting up a Solus installation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "solus", "golang", "javascript", "python", "rust"]
@@ -104,8 +104,7 @@ you depend upon the work that you do, but you should always look at version
 control integration, convenient access to the terminal, and linters for your
 preferred programming languages and data file formats.
 
-The Atom community provides extensions as [packages](https://atom.io/packages).
-This command installs some packages that are generally useful:
+Atom takes this further: you are expected to install extensions to customize the user interface. For example, these extensions provide some valuable enhancements to the user interface of Atom:
 
     apm install color-picker file-icons minimap
 
@@ -114,13 +113,20 @@ configuration. Refer to the pages for
 [color-picker](https://atom.io/packages/color-picker) and
 [minimap](https://atom.io/packages/minimap) for details on how to use them.
 
-Install code linters for the languages that you use. Atom automatically runs the
-appropriate linter for the files that you are editing. This command installs
-support for CSS (using [CSSLint](http://csslint.net/)), JavaScript (using
-[ESLint](http://eslint.org/)) and YAML (using
-[yaml-js](http://nodeca.github.com/js-yaml/)):
+Install code linters for the languages that you use. Atom
+automatically runs the appropriate linter for the files that you are editing.
+
+This command installs
+support into Atom for [CSSLint](http://csslint.net/), [ESLint](http://eslint.org/) and
+[yaml-js](http://nodeca.github.com/js-yaml/):
 
     apm install linter-csslint linter-eslint linter-js-yaml
+
+If you are a Ruby on Rails developer, use this command to install support for
+[CoffeeLint](http://www.coffeelint.org/) and
+[Rubocop](http://batsov.com/rubocop/) into Atom:
+
+    apm install linter-coffeelint linter-rubocop
 
 ## Setting Up A Directory Structure for Projects ##
 
@@ -184,7 +190,7 @@ To maintain multiple Node.js versions on your system, use the
 
 Enter this command to install nvm:
 
-     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 
 Open a new terminal window and enter this command:
 
@@ -204,22 +210,16 @@ Use *eopkg* to install [Go](https://golang.org/):
 
     sudo eopkg install golang
 
-To run Go applications that you have compiled, edit the  *~/.bashrc* and add
-this to your PATH:
-
-    export PATH="$GOPATH/bin:$PATH"
-
-Close the terminal and open it again for the changes to take effect.
-
-### Setting a Custom GOPATH ###
-
 By default, current versions of Go automatically create and use a *go* directory
-in your home directory as the GOPATH, which is the root directory for your Go
-workspace. To specify a custom GOPATH, set the GOPATH environment variable in
-your *~/.bashrc* file. For example this sets a directory called *code* as your
-Go workspace:
+in your home directory as the GOPATH. To ensure that third-party tools and terminal auto-completion work, you should still explicitly set the environment variables.
 
-    export GOPATH="$HOME/code"
+Set a GOPATH environment variable in your *~/.bashrc* file:
+
+    export GOPATH="$HOME/go"
+
+Then, add this to your PATH:
+
+    $GOPATH/bin
 
 Close the terminal and open it again for the changes to take effect.
 
