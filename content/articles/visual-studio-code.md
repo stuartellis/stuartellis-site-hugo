@@ -1,7 +1,7 @@
 +++
 Title = "Setting up the Visual Studio Code Text Editor"
 Slug = "visual-studio-code"
-Date = "2017-08-20T13:12:00+01:00"
+Date = "2018-01-20T11:11:00+00:00"
 Description = "Setting up the Visual Studio Code text editor for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["javascript"]
@@ -19,9 +19,13 @@ Notes on customizing the [Visual Studio Code](https://code.visualstudio.com) tex
 Install code linters for the languages that you use. Code automatically runs the
 appropriate linter for the files that you are editing. 
 
+## Extensions for Development ##
+
+Consider installing the *Git Lens* extension to enhance the user interface, and the *Docker* and *markdownlint* extensions if appropriate.
+
 ## Extensions for Web Development ##
 
-TODO
+Install *ESLint* or *TSLint* for linter integration, and the *Debugger for Chrome*.
 
 ## Extensions for Go Development ##
 
@@ -34,14 +38,10 @@ The Go extension will automatically download and configure all of the tools that
 
 ## Extensions for Ruby Development ##
 
-TODO
+Run this command to add the [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.ruby)
+extension:
 
-If you are a Ruby on Rails developer, use this command to install support for
-[CoffeeLint](http://www.coffeelint.org/), 
-[Rubocop](http://batsov.com/rubocop/), and YAML (using
-[yaml-js](http://nodeca.github.com/js-yaml/)):
-
-    code install linter-coffeelint linter-rubocop linter-js-yaml
+    code --install-extension rebornix.ruby
 
 # The EDITOR Environment Variable #
 
