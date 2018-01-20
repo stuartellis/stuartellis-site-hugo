@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2018-01-20T10:20:00+00:00"
+Date = "2018-01-20T10:30:00+00:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "javascript", "python", "ruby", "rust"]
@@ -259,6 +259,8 @@ If you are a Ruby on Rails developer, use this command to install support for
 
     apm install linter-coffeelint linter-rubocop
 
+Similarly, if you use Visual Studio Code, consider installing the *Git Lens* extension to enhance the user interface, the extensions to support your preferred languages, the *Docker* extension if appropriate, and *ESLint* or *TSLint* for linter integration.
+
 ## Setting Up A Directory Structure for Projects ##
 
 To keep your projects tidy, I would recommend following the [Go developer
@@ -385,12 +387,12 @@ Next, add this line to the *~/.bash\_profile* file in your home directory:
 
      if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
+Close the Terminal and open it again for the changes to take effect.
+
 You can now *pyenv* to manage your Python environments. For example, to install Python 3.6.4 and make it the default version of Python for your user account, open a Terminal window and enter these commands:
 
     pyenv install 3.6.4
     pyenv global 3.6.4
-
-These install Python 3.6.4 and make it the default Python run-time.
 
 ## A Lightweight Setup for Python 2 Development ##
 
