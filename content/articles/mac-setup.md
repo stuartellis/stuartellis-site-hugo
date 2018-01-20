@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2018-01-19T11:30:00+00:00"
+Date = "2018-01-20T10:20:00+00:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "javascript", "python", "ruby", "rust"]
@@ -235,7 +235,7 @@ you depend upon the work that you do, but you should always look at version
 control integration, convenient access to the terminal, and linters for your
 preferred programming languages and data file formats.
 
-Atom takes this further: you are expected to install extensions to customize the user interface. These extensions provide some valuable enhancements to the user interface of Atom:
+Atom takes this further: you are expected to install extensions to customize the user interface. For example, these extensions provide some valuable enhancements to the user interface of Atom:
 
     apm install color-picker file-icons minimap
 
@@ -298,28 +298,17 @@ example:
 
 # Setting Up Environments #
 
-## nvm and Yarn for Node.js Development ##
+## Node.js for JavaScript Development ##
 
-To maintain multiple Node.js versions on your system, use the
-[nvm](https://github.com/creationix/nvm) utility.
+Homebrew provides separate packages for each version of [Node.js](https://nodejs.org). To ensure that you are using the version of Node.js that you expect, specify the version when you install it. For example, enter this command in a Terminal window to install the Node.js 8, the current LTS release:
 
-Enter this command to install nvm:
+    brew install node@8
 
-     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+Add the *bin/* directory for this Node.js installation to your PATH:
 
-Open a new terminal window and enter this command:
+    /usr/local/opt/node@8/bin
 
-    nvm install --lts
-
-This installs the latest LTS release of Node.js, and makes it the default
-Node.js run-time.
-
-To upgrade the copy of *npm* that is provided with Node.js, run this command in
-a terminal window:
-
-    npm -g upgrade npm
-
-If you need [yarn](https://yarnpkg.com/en/), enter this command in a terminal
+If you need [yarn](https://yarnpkg.com/en/), enter this command in a Terminal
 window to install it:
 
     brew install yarn
@@ -330,15 +319,16 @@ Use Homebrew to install [Go](https://golang.org/):
 
     brew install golang
 
-### Setting a Custom GOPATH ###
+### Setting a GOPATH ###
 
 By default, current versions of Go automatically create and use a *go* directory
-in your home directory as the GOPATH. To specify a custom GOPATH, such as a
-*code* directory, set the GOPATH environment variable in your *~/.bashrc* file:
+in your home directory as the GOPATH. To ensure that third-party tools and Terminal auto-completion work, you should still explicitly set the environment variables.
 
-    export GOPATH="$HOME/code"
+Set a GOPATH environment variable in your *~/.bashrc* file:
 
-Add this to your PATH:
+    export GOPATH="$HOME/go"
+
+Then, add this to your PATH:
 
     $GOPATH/bin
 
@@ -395,12 +385,12 @@ Next, add this line to the *~/.bash\_profile* file in your home directory:
 
      if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
-Open a new Terminal window and enter these commands:
+You can now *pyenv* to manage your Python environments. For example, to install Python 3.6.4 and make it the default version of Python for your user account, open a Terminal window and enter these commands:
 
-    pyenv install 3.6.1
-    pyenv global 3.6.1
+    pyenv install 3.6.4
+    pyenv global 3.6.4
 
-These install Python 3.6.1 and make it the default Python run-time.
+These install Python 3.6.4 and make it the default Python run-time.
 
 ## A Lightweight Setup for Python 2 Development ##
 
