@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2016-07-01T01:00:00+01:00"
+Date = "2018-01-25T21:00:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -19,28 +19,23 @@ These are some notes on starting Python development on Windows.
 First, download the latest version of Python from [the official
 Website](http://www.python.org/).
 
-The Windows version is provided as an MSI package. To install it
-manually, just double-click the file. The MSI package format allows
-Windows administrators to automate installation with their standard
-tools.
-
 By design, Python installs to a directory with the version number
-embedded, e.g. C:\\Python34\\, so that you can have multiple versions of
+embedded, e.g. C:\\Python36\\, so that you can have multiple versions of
 Python on the same system without conflicts. Of course, only one
 interpreter can be the default application for Python file types. It
 also does not automatically modify the PATH environment variable, so
 that you always have control over which copy of Python is run.
 
 Typing the full path name for a Python interpreter each time quickly
-gets tedious, so add the directories for your default Python version to
-the PATH. Assuming that your Python installation is in C:\\Python34\\,
+gets tedious, so either accept the option to add the directories for your default Python version to
+the PATH during installation, or manually edit your PATH later. Assuming that your Python installation is in C:\\Python36\\,
 add this to your PATH:
 
-    C:\Python34\;C:\Python34\Scripts\
+    C:\Python36\;C:\Python36\Scripts\
 
 You do not need to install or configure anything else to use Python.
 
-Briefly, the default Python package automatically provides you with:
+The default Python package automatically provides you with:
 
 * The *Python runtime*
 * An *interactive shell* (use the menu icon, or type **python** in a
@@ -50,18 +45,18 @@ Briefly, the default Python package automatically provides you with:
 * An extensive *tutorial*, to help you get started
 
 IDLE is intended as a basic and portable development environment that
-lets new programmers start without having to learn their way around a
-large IDE. It’s code completion is not perfect, and it’s integration
+lets new programmers start without having to learn their way around a powerful text editor or IDE. It’s code completion is not perfect, and it’s integration
 with the built-in Python debugger currently doesn’t work at all on
-Windows. If you already use IDEs, it’s probably best to ignore IDLE, and
-either buy a license for the [Wingware IDE](http://www.wingware.com/),
-or follow the instructions below to install the free Eclipse IDE. My
+Windows.
+
+My
 preferred text editor on Windows is
 [Atom](http://www.atom.io), but there are plenty
-of others that support Python.
+of others that support Python. If you want a full IDE, I would recommend either buying a license for the [Wingware IDE](http://www.wingware.com/),
+or following the instructions below to install the free Eclipse IDE.
 
-Whichever text editor or IDE you use, the supplied tutorial will walk
-you through the basics of Python. The documentation for the standard
+Whichever text editor or IDE you use, the tutorial that is supplied with Python  will walk
+you through the basics. The documentation for the standard
 library does give simple examples for many features, but it is
 specifically designed as a reference, rather than for learning. To
 understand particular features you should start with the supplied
@@ -112,10 +107,8 @@ out of it, and then delete the main directory for the environment.
 
 ## A Version Control System ##
 
-If you do not already use version control, you should also install either
-[Mercurial](http://mercurial.selenic.com/) or [Git](http://git-scm.com/) on your
-system. Git is now effectively the standard version control tool for developers,
-but the Python project itself uses Mercurial.
+If you do not already use version control, you should also install [Git](http://git-scm.com/) on your
+system. Git is now effectively the standard version control tool for developers.
 
 Version control is obviously useful for collaboration and protecting
 your code against loss. In addition, it is key to efficient testing and
@@ -202,7 +195,7 @@ The simplest answer: you do not need to install anything or setup a
 service to create a SQL database for a new Python application, because
 the Python standard library includes a version of
 [SQLite](http://www.sqlite.org/). To access a SQL database service such
-as MySQL or Oracle you will need to install the standard client software
+as PostgreSQL, MySQL or Oracle you will need to install the standard client software
 for that product, along with a separate Python adapter. Both the SQLite
 library and third-party database adapters follow the Python DB-API
 specification, which means that you can program with them all in the
@@ -220,7 +213,7 @@ the best database toolkit libraries available for any programming language. You
 may use the declarative portion of SQLAlchemy like a standard ORM, but it has
 many more capabilities.
 
-Django and SQLAlchemy ultimately rely on the standard client and DB-API adapter
+Both SQLAlchemy and the ORM for Django ultimately rely on the standard client and DB-API adapter
 for your database. When you use a database other than SQLite, ensure that these
 are present and current, as low-level configuration errors are harder to
 diagnose when you are not working directly with the DB-API adapters.
