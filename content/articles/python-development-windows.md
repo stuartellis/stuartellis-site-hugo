@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-01-25T21:00:00+00:00"
+Date = "2018-01-25T22:53:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -178,24 +178,13 @@ For a more detailed guide to configuring PyDev, with screenshots, use
 [this
 page](http://www.rose-hulman.edu/Class/csse/resources/Eclipse/eclipse-python-configuration.htm).
 
-Watch [this
-video](http://showmedo.com/videos/video?name=PydevEclipseFabio) to get a
-very quick introduction to using PyDev.
-
-The standard Eclipse builds include support for the CVS version control
-system. Third-party plugins exist to integrate both Git and
-Mercurial:
-
-* [Eclipse Git plugin](http://www.eclipse.org/egit/)
-* [Eclipse Mercurial plugin](http://javaforge.com/project/HGE)
-
 # Accessing Databases #
 
 The simplest answer: you do not need to install anything or setup a
 service to create a SQL database for a new Python application, because
 the Python standard library includes a version of
 [SQLite](http://www.sqlite.org/). To access a SQL database service such
-as PostgreSQL, MySQL or Oracle you will need to install the standard client software
+as PostgreSQL, MySQL, or Oracle you will need to install the standard client software
 for that product, along with a separate Python adapter. Both the SQLite
 library and third-party database adapters follow the Python DB-API
 specification, which means that you can program with them all in the
