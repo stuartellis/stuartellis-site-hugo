@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-01-26T21:33:00+00:00"
+Date = "2018-01-26T22:09:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -29,7 +29,7 @@ The default Python package automatically provides you with:
 * An extensive *tutorial*, to help you get started
 
 IDLE is intended as a basic and portable development environment that
-lets new programmers start without having to install a separate editor for their code. For a much better experience, install a text editor or IDE that supports Python. My preferred text editor on Windows is [Atom](http://www.atom.io), but there are plenty of others. If you want a full IDE, I would recommend either buying a license for the [Wingware IDE](http://www.wingware.com/),
+lets new programmers start without having to install a separate editor for their code. For a much better experience, install a text editor or IDE that supports Python. My preferred text editor on Windows is [Visual Studio Code](https://code.visualstudio.com), but there are plenty of others. If you want a full IDE, I would recommend either buying a license for the [Wingware IDE](http://www.wingware.com/),
 or following the instructions below to install the free Eclipse IDE.
 
 Whichever text editor or IDE you use, the tutorial that is supplied with Python  will walk you through the basics. The documentation for the standard
@@ -47,7 +47,7 @@ should install them even before you begin to write Python code.
 > *C Extensions Require a Compiler:* Setup a C compiler, such as MinGW,
 > if you need to install Python applications with C extensions.
 
-## Use pipenv for Virtual Environments ##
+## pipenv for Virtual Environments ##
 
 Install [pipenv](https://docs.pipenv.org/), so that each of your Python projects can have a separate environment and set of Python packages.
 
