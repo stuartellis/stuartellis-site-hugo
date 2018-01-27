@@ -1,14 +1,13 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-01-26T22:09:00+00:00"
+Date = "2018-01-27T13:30:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
 Type = "article"
 
 +++
-
 
 These are some notes on starting Python development on Windows.
 
@@ -29,8 +28,7 @@ The default Python package automatically provides you with:
 * An extensive *tutorial*, to help you get started
 
 IDLE is intended as a basic and portable development environment that
-lets new programmers start without having to install a separate editor for their code. For a much better experience, install a text editor or IDE that supports Python. My preferred text editor on Windows is [Visual Studio Code](https://code.visualstudio.com), but there are plenty of others. If you want a full IDE, I would recommend either buying a license for the [Wingware IDE](http://www.wingware.com/),
-or following the instructions below to install the free Eclipse IDE.
+lets new programmers start without having to install a separate editor for their code. For a much better experience, install a text editor or IDE that supports Python.
 
 Whichever text editor or IDE you use, the tutorial that is supplied with Python  will walk you through the basics. The documentation for the standard
 library does give simple examples for many features, but it is
@@ -55,7 +53,7 @@ In a PowerShell windows enter the following command:
 
     pip install pipenv
 
-This tool uses the *pip* and virtual environment facilities that are included with Python itself, so it is fully compatible with other Python utilities.
+The Python project now officially recommends pipenv. It uses the *pip* and virtual environment facilities that are included with Python itself, so it is fully compatible with other Python utilities.
 
 The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualenvs/) shows you how to work with *pipenv*.
 
@@ -69,7 +67,7 @@ your code against loss. In addition, it is key to efficient testing and
 deployment, particularly for server applications. Once code is version
 controlled you can synchronize copies across multiple virtualenv
 environments and computers, deploying or rolling back versions as you
-require.
+require A Code Editor or IDE.
 
 ## Other Popular Tools ##
 
@@ -78,6 +76,11 @@ A number of other tools are commonly used in Python development, such as
 [Flake8](http://flake8.readthedocs.org/en/latest/) for code quality, and
 [Sphinx](http://sphinx.pocoo.org/) for building documentation. You should
 probably install and learn these as you need them.
+
+# Choosing a Code Editor or IDE #
+
+ My preferred text editor on Windows is [Visual Studio Code](https://code.visualstudio.com), but there are plenty of others. If you want a full IDE, consider the [Wingware IDE](http://www.wingware.com/),
+or using the free Eclipse IDE with the [PyDev](http://www.pydev.org/) extension.
 
 # Accessing Databases #
 
@@ -158,10 +161,9 @@ use the [GTK+](http://www.gtk.org/) toolkit, or
 
 # Learning Resources #
 
-The supplied tutorial is pretty good, and enough for a committed student
-or someone with previous programming experience to learn the essentials.
-It also has the virtue of always being up to date, whilst third-party
-documentation becomes obsolete over time.
+Start with [The Hitchhiker’s Guide to Python](http://docs.python-guide.org), which provides clear advice on how to work with Python.
+
+The tutorial that is supplied with Python is pretty good, and enough for a committed student or someone with previous programming experience to learn the essentials of the language. It also has the virtue of always being up to date, whilst third-party documentation becomes obsolete over time.
 
 If you are using Python 3, try [Dive Into Python
 3](http://www.diveintopython3.net/) by Mark Pilgrim. The style of this book makes
