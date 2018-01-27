@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-01-27T14:30:00+00:00"
+Date = "2018-01-27T15:10:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -16,12 +16,14 @@ These are some notes on starting Python development on Windows.
 # Installing Python #
 
 First, download the latest version of Python from [the official
-Website](http://www.python.org/). Select the option to *Add Python to PATH*, so that you do not need to type the full path for Python commands.
+Website](http://www.python.org/). Choose the standard 64-bit installer for the latest version of Python 3, unless you know that you need a different system.
+
+Run the installer, and select the option to *Add Python to PATH*, so that you do not need to type the full path for Python commands. If prompted, choose the option to remove the path length limitation from Windows.
 
 The default Python package automatically provides you with:
 
 * The *Python runtime*
-* An *interactive shell* (use the menu icon, or type **python** in a
+* An *interactive shell* (use the menu icon, or type _python_ in a
     command prompt window)
 * A basic IDE, called *IDLE*
 * A large *standard library*, along with documentation
@@ -67,7 +69,7 @@ your code against loss. In addition, it is key to efficient testing and
 deployment, particularly for server applications. Once code is version
 controlled you can synchronize copies across multiple virtualenv
 environments and computers, deploying or rolling back versions as you
-require A Code Editor or IDE.
+require.
 
 ## Other Popular Tools ##
 
@@ -168,6 +170,8 @@ If you are using Python 3, try [Dive Into Python
 3](http://www.diveintopython3.net/) by Mark Pilgrim. The style of this book makes
 it particularly good for those people with some previous experience of
 programming, especially if they are impatient!
+
+If you are not a programmer, try [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/). The text of the book is free to read on the Website, and it does not require previous experience with programming.
 
 I know of two excellent books for Python 2 that are intended for learners: [Core
 Python Programming](http://www.corepython.com/), second edition, by Wesley J.
