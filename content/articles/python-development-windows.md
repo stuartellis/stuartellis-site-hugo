@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-01-27T13:30:00+00:00"
+Date = "2018-01-27T14:30:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -53,7 +53,7 @@ In a PowerShell windows enter the following command:
 
     pip install pipenv
 
-The Python project now officially recommends pipenv. It uses the *pip* and virtual environment facilities that are included with Python itself, so it is fully compatible with other Python utilities.
+The Python project now officially recommends pipenv. It uses the *pip* and [virtual environment](https://docs.python.org/3/tutorial/venv.html) facilities that are included with Python itself, so it is fully compatible with other Python utilities, whilst being much easier to use than other tools.
 
 The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualenvs/) shows you how to work with *pipenv*.
 
@@ -79,8 +79,9 @@ probably install and learn these as you need them.
 
 # Choosing a Code Editor or IDE #
 
- My preferred text editor on Windows is [Visual Studio Code](https://code.visualstudio.com), but there are plenty of others. If you want a full IDE, consider the [Wingware IDE](http://www.wingware.com/),
-or using the free Eclipse IDE with the [PyDev](http://www.pydev.org/) extension.
+ My preferred text editor on Windows is currently [Visual Studio Code](https://code.visualstudio.com). It is easy to use, and will automatically offer to download Python support the first time that you open a Python file. You may also consider [Atom](https://atom.io/), which is a high-quality editor that is designed to be customised, or [Notepad++](https://notepad-plus-plus.org/) for older computers with limited resources. All of these editors are free.
+
+ If you would like to use a full IDE, consider the [Wing IDE](http://www.wingware.com/), which is proprietary, or using the free Eclipse IDE with the [PyDev](http://www.pydev.org/) extension.
 
 # Accessing Databases #
 
@@ -123,7 +124,7 @@ For small applications, use [Flask](http://flask.pocoo.org/). If you need a full
 Model-View-Controller framework, try one of the following:
 
 * [Django](http://www.djangoproject.com/)
-* [Pyramid](http://www.pylonshq.com/)
+* [Pyramid](https://trypyramid.com/)
 
 Django is intended for building and managing groups of content-driven sites,
 rather than for producing individual Web applications. It incorporates custom
@@ -132,9 +133,7 @@ rather than using other popular Python libraries, such as SQLAlchemy. Pyramid
 offers a modular framework for integrating third-party Python libraries together
 when developing custom Web applications.
 
-If you work with more than one framework, I strongly recommend that you
-install each framework into a separate virtualenv environment, to avoid
-conflicts.
+If you work with more than one framework, I strongly recommend that you use *pipenv* or another tool, to avoid conflicts between libraries.
 
 # Windows Integration #
 
