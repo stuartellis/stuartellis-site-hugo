@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-01-27T15:10:00+00:00"
+Date = "2018-01-28T10:44:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -79,6 +79,8 @@ A number of other tools are commonly used in Python development, such as
 [Sphinx](http://sphinx.pocoo.org/) for building documentation. You should
 probably install and learn these as you need them.
 
+> *Use [requests](http://docs.python-requests.org/en/master/) for HTTP clients*: The HTTP support in the Python standard library is for low-level code.
+
 # Choosing a Code Editor or IDE #
 
  My preferred text editor on Windows is currently [Visual Studio Code](https://code.visualstudio.com). It is easy to use, and will automatically offer to download Python support the first time that you open a Python file. You may also consider [Atom](https://atom.io/), which is a high-quality editor that is designed to be customised, or [Notepad++](https://notepad-plus-plus.org/) for older computers with limited resources. All of these editors are free.
@@ -90,15 +92,16 @@ probably install and learn these as you need them.
 The simplest answer: you do not need to install anything or setup a
 service to create a SQL database for a new Python application, because
 the Python standard library includes a version of
-[SQLite](http://www.sqlite.org/). To access a SQL database service such
+[SQLite](http://www.sqlite.org/).
+
+To access a SQL database service such
 as PostgreSQL, MySQL, or Oracle you will need to install the standard client software
 for that product, along with a separate Python adapter. Both the SQLite
 library and third-party database adapters follow the Python DB-API
 specification, which means that you can program with them all in the
 same way.
 
-> *Connecting to Microsoft SQL Server*: Use the generic ODBC adapter to
-> connect to Microsoft SQL Server databases.
+> *Connecting to Microsoft SQL Server*: [Microsoft recommend that you use the ODBC adapter for SQL Server](https://docs.microsoft.com/en-us/sql/connect/python/python-driver-for-sql-server).
 
 In practice, most Python applications interact with databases through higher
 level libraries, rather than using the DB-API adapters directly. The Django
