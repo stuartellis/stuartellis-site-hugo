@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-01-28T10:44:00+00:00"
+Date = "2018-01-28T11:13:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -125,8 +125,9 @@ interfaces between individual components, and between the components and
 the host Web server. Any Web server that supports WSGI can host
 compliant applications.
 
-For small applications, use [Flask](http://flask.pocoo.org/). If you need a full
-Model-View-Controller framework, try one of the following:
+For small applications, use [Flask](http://flask.pocoo.org/). Like Express for Node, or Sinatra for Ruby, Flask provides the basic package of features that you need for a small Web application.
+
+If you need a full Model-View-Controller framework, try one of the following:
 
 * [Django](http://www.djangoproject.com/)
 * [Pyramid](https://trypyramid.com/)
@@ -139,6 +140,8 @@ offers a modular framework for integrating third-party Python libraries together
 when developing custom Web applications.
 
 If you work with more than one framework, I strongly recommend that you use *pipenv* or another tool, to avoid conflicts between libraries.
+
+[Full Stack Python](https://www.fullstackpython.com) provides a comprehensive guide to building Web applications with Python.
 
 # Windows Integration #
 
@@ -167,16 +170,15 @@ use the [GTK+](http://www.gtk.org/) toolkit, or
 
 Start with [The Hitchhiker’s Guide to Python](http://docs.python-guide.org), which provides clear advice on how to work with Python.
 
-The tutorial that is supplied with Python is pretty good, and enough for a committed student or someone with previous programming experience to learn the essentials of the language. It also has the virtue of always being up to date, whilst third-party documentation becomes obsolete over time.
+The tutorial that is supplied with Python is pretty good, and enough for a committed student or someone with previous programming experience to learn the essentials of the language. It also has the virtue of always being up to date, whilst third-party documentation becomes obsolete over time. The Internet provides many other resources, though.
 
-If you are using Python 3, try [Dive Into Python
-3](http://www.diveintopython3.net/) by Mark Pilgrim. The style of this book makes
-it particularly good for those people with some previous experience of
-programming, especially if they are impatient!
+There are two excellent books for learning Python 3 that you can read for free online. [Dive Into Python
+3](http://www.diveintopython3.net/) is particularly good for those people with some previous experience of
+programming, especially if they are impatient! If you are not a programmer, try [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/), which includes a gentle introduction to programming.
 
-If you are not a programmer, try [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/). The text of the book is free to read on the Website, and it does not require previous experience with programming.
+Once you have learned Python itself, go to [Full Stack Python](https://www.fullstackpython.com) for a comprehensive guide to building Web applications with Python.
 
-I know of two excellent books for Python 2 that are intended for learners: [Core
+If you need to understand Python 2 rather than the current Python 3, I know of two excellent books that are intended for learners: [Core
 Python Programming](http://www.corepython.com/), second edition, by Wesley J.
 Chun (Prentice Hall), and [Beginning Python: From Novice to
 Professional](http://www.apress.com/book/view/9781590599822), second edition, by
