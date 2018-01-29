@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-01-28T11:13:00+00:00"
+Date = "2018-01-29T22:19:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -9,14 +9,14 @@ Type = "article"
 
 +++
 
-These are some notes on starting Python development on Windows.
+Notes on starting Python development on Windows.
 
 <!--more-->
 
 # Installing Python #
 
 First, download the latest version of Python from [the official
-Website](http://www.python.org/). Choose the standard 64-bit installer for the latest version of Python 3, unless you know that you need a different system.
+Website](http://www.python.org/). Choose the *Windows x86-64 executable installer* for the latest version of Python 3, unless you know that you need a different option.
 
 Run the installer, and select the option to *Add Python to PATH*, so that you do not need to type the full path for Python commands. If prompted, choose the option to remove the path length limitation from Windows.
 
@@ -51,7 +51,7 @@ should install them even before you begin to write Python code.
 
 Install [pipenv](https://docs.pipenv.org/), so that each of your Python projects can have a separate environment and set of Python packages.
 
-In a PowerShell windows enter the following command:
+In a command prompt window enter the following command:
 
     pip install pipenv
 
@@ -127,21 +127,19 @@ compliant applications.
 
 For small applications, use [Flask](http://flask.pocoo.org/). Like Express for Node, or Sinatra for Ruby, Flask provides the basic package of features that you need for a small Web application.
 
-If you need a full Model-View-Controller framework, try one of the following:
-
-* [Django](http://www.djangoproject.com/)
-* [Pyramid](https://trypyramid.com/)
-
-Django is intended for building and managing groups of content-driven sites,
-rather than for producing individual Web applications. It incorporates custom
-libraries developed specifically for Django that closely integrate together,
-rather than using other popular Python libraries, such as SQLAlchemy. Pyramid
-offers a modular framework for integrating third-party Python libraries together
-when developing custom Web applications.
+If you need a full Model-View-Controller framework, use [Django](http://www.djangoproject.com/) or [Pyramid](https://trypyramid.com/). Django provides a set of custom tools and libraries that closely integrate together. Pyramid offers a modular framework for integrating third-party Python libraries together when developing custom Web applications.
 
 If you work with more than one framework, I strongly recommend that you use *pipenv* or another tool, to avoid conflicts between libraries.
 
 [Full Stack Python](https://www.fullstackpython.com) provides a comprehensive guide to building Web applications with Python.
+
+# Graphical Desktop Applications #
+
+If you are specifically interested in developing desktop applications,
+consider using [wxPython](http://wxpython.org/), rather than the basic
+Tk interface toolkit supplied with the standard library. Alternatively,
+use the [GTK+](http://www.gtk.org/) toolkit, or
+[Qt](http://trolltech.com/products).
 
 # Windows Integration #
 
@@ -159,12 +157,6 @@ build fully self-contained executable installers for Windows, use
 [py2exe](http://www.py2exe.org/). This method includes a Python
 interpreter within your application, removing the need to have a
 separate copy of Python installed on the target system.
-
-If you are specifically interested in developing desktop applications,
-consider using [wxPython](http://wxpython.org/), rather than the basic
-Tk interface toolkit supplied with the standard library. Alternatively,
-use the [GTK+](http://www.gtk.org/) toolkit, or
-[Qt](http://trolltech.com/products).
 
 # Learning Resources #
 
