@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-01-29T22:19:00+00:00"
+Date = "2018-01-29T22:46:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -106,9 +106,8 @@ same way.
 In practice, most Python applications interact with databases through higher
 level libraries, rather than using the DB-API adapters directly. The Django
 framework includes an Object-Relational Mapper (ORM), but for other types of
-application you should use [SQLAlchemy](http://www.sqlalchemy.org/), which
-become the standard Python library for database access, and is probably one of
-the best database toolkit libraries available for any programming language. You
+application you should use [SQLAlchemy](http://www.sqlalchemy.org/), which has 
+become the standard Python library for database programming, and is probably one of the best database toolkit libraries available for any programming language. You
 may use the declarative portion of SQLAlchemy like a standard ORM, but it has
 many more capabilities.
 
@@ -150,6 +149,8 @@ but does not include a full set of specialised features for popular
 operating systems. To get support for features that are specific to
 Microsoft Windows, such as COM and the Registry, install the [win32
 Extensions](https://sourceforge.net/projects/pywin32/).
+
+# Creating Application Installers #
 
 Similarly, the distutils package in the standard library provides a
 general-purpose system for building distributable Python packages. To
