@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-01-29T22:46:00+00:00"
+Date = "2018-01-30T19:50:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -152,12 +152,7 @@ Extensions](https://sourceforge.net/projects/pywin32/).
 
 # Creating Application Installers #
 
-Similarly, the distutils package in the standard library provides a
-general-purpose system for building distributable Python packages. To
-build fully self-contained executable installers for Windows, use
-[py2exe](http://www.py2exe.org/). This method includes a Python
-interpreter within your application, removing the need to have a
-separate copy of Python installed on the target system.
+To build fully self-contained executable installers for Windows, use [PyInstaller](http://www.pyinstaller.org/) or [py2exe](http://www.py2exe.org/). These package a Python interpreter with your application, removing the need to have a separate copy of Python installed on the target system.
 
 # Learning Resources #
 
