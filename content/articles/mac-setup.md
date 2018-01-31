@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2018-01-20T10:30:00+00:00"
+Date = "2018-01-31T17:18:00+00:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "javascript", "python", "ruby", "rust"]
@@ -9,11 +9,7 @@ Type = "article"
 
 +++
 
-This is a set of notes for setting up an Apple Mac, specifically as a
-development system. Current versions of macOS have a fairly good default
-configuration for general-purpose use, but you do need to to adjust some
-of the security settings. In addition, you need to install several
-pieces of software in order to make the system useful for development.
+This is a guide for setting up an Apple Mac for software development. Current versions of macOS have a fairly good default configuration for general-purpose use, but you do need to to adjust some of the security settings. In addition, you need to install several pieces of software in order to make the system useful for development.
 
 <!--more-->
 
@@ -317,9 +313,9 @@ window to install it:
 
 ## Developer Tools for Go ##
 
-Use Homebrew to install [Go](https://golang.org/):
+Use Homebrew to install [Go](https://golang.org/) and the [dep](https://golang.github.io/dep/) tool:
 
-    brew install golang
+    brew install golang dep
 
 ### Setting a GOPATH ###
 
@@ -373,31 +369,27 @@ home directory with the name *.gemrc* and put this line in it:
 
     gem: --no-ri --no-rdoc
 
-## pyenv for Python Development ##
+## pipenv for Python Development ##
 
-Unfortunately, macOS includes a copy of Python 2, not Python 3. To maintain current and clean
-Python environments, use the [pyenv](https://github.com/yyuu/pyenv) system and
-the [pyenv-virtualenv](https://github.com/yyuu/pyenv-virtualenv) plugin.
+Unfortunately, macOS includes a copy of Python 2, not Python 3. To maintain current and clean Python environments, install [pipenv](https://docs.pipenv.org/). It drives the [pip](https://pip.pypa.io/en/stable/) and [virtual environment](https://docs.python.org/3/tutorial/venv.html) features that are included with Python itself, but is more powerful and easier to use than working with these features directly.
 
-Enter this command to install pyenv using Homebrew:
+Enter this command to install pipenv using Homebrew:
 
-    brew install pyenv pyenv-virtualenv
+    brew install pipenv
 
-Next, add this line to the *~/.bash\_profile* file in your home directory:
+Homebrew will install Python 3 as well, because it is a dependency of pipenv. The pipenv tool itself will use this copy of Python 3 by default. To use the Python 3 interpreter without pipenv, specify *python3* on the command-line and in your scripts, rather than *python*:
 
-     if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+    python3 --version
 
-Close the Terminal and open it again for the changes to take effect.
+If you need to run the *pip* utility for Python 3, always use the command *pip3*:
 
-You can now *pyenv* to manage your Python environments. For example, to install Python 3.6.4 and make it the default version of Python for your user account, open a Terminal window and enter these commands:
+    pip3 --version
 
-    pyenv install 3.6.4
-    pyenv global 3.6.4
+The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualenvs/) shows you how to work with *pipenv*.
 
 ## A Lightweight Setup for Python 2 Development ##
 
-If you only need to work with Python 2, and prefer not to use *pyenv*, you can
-just use the copy of Python that is part of macOS, and add some tools.
+If you only need to work with Python 2, you can just use the copy of Python that is part of macOS, and add some tools.
 
 First, install *pip*:
 
