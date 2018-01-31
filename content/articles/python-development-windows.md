@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-01-31T16:55:00+00:00"
+Date = "2018-01-31T22:54:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -133,7 +133,7 @@ If you are specifically interested in developing desktop applications,
 consider using [wxPython](http://wxpython.org/), rather than the basic
 Tk interface toolkit supplied with the standard library. Alternatively,
 use the [GTK+](http://www.gtk.org/) toolkit, or
-[Qt](http://trolltech.com/products).
+[PySide](https://wiki.qt.io/PySide).
 
 # Windows Integration #
 
