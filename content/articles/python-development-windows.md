@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-01-30T19:50:00+00:00"
+Date = "2018-01-31T16:52:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -49,7 +49,7 @@ should install them even before you begin to write Python code.
 
 ## pipenv for Virtual Environments ##
 
-Install [pipenv](https://docs.pipenv.org/), so that each of your Python projects can have a separate environment and set of Python packages.
+Install [pipenv](https://docs.pipenv.org/) to manage your Python projects. It ensures that each of your Python projects use a separate set of packages, and provides other features to help you maintain your work, such as [checking the code](https://docs.pipenv.org/advanced/#code-style-checking) and [warning you about security issues in libraries](https://docs.pipenv.org/advanced/#detection-of-security-vulnerabilities).
 
 In a command prompt window enter the following command:
 
