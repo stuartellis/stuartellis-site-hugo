@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-01-31T16:52:00+00:00"
+Date = "2018-01-31T16:55:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -64,12 +64,7 @@ The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualen
 If you do not already use version control, you should also install [Git](http://git-scm.com/) on your
 system. Git is now effectively the standard version control tool for developers.
 
-Version control is obviously useful for collaboration and protecting
-your code against loss. In addition, it is key to efficient testing and
-deployment, particularly for server applications. Once code is version
-controlled you can synchronize copies across multiple virtualenv
-environments and computers, deploying or rolling back versions as you
-require.
+Version control is obviously vital for efficiently collaborating with other programmers. It also enables you to copy your application to other systems for testing or deployment.
 
 ## Other Popular Tools ##
 
