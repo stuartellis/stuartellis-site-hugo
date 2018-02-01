@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-01-31T22:54:00+00:00"
+Date = "2018-02-01T21:30:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -82,6 +82,18 @@ probably install and learn these as you need them.
 
  If you would like to use a full IDE, consider the [Wing IDE](http://www.wingware.com/), which is proprietary, or using the free Eclipse IDE with the [PyDev](http://www.pydev.org/) extension.
 
+# Web Applications #
+
+For small applications, use [Flask](http://flask.pocoo.org/). Like Express for Node, or Sinatra for Ruby, Flask provides the basic package of features that you need for a small Web application.
+
+If you need a full Model-View-Controller framework, use [Django](http://www.djangoproject.com/) or [Pyramid](https://trypyramid.com/). Django provides a set of custom tools and libraries that closely integrate together. Pyramid offers a modular framework for integrating third-party Python libraries together when developing custom Web applications.
+
+Python Web frameworks follow the WSGI standard, which provides consistent
+interfaces between individual components, and between the components and
+the host Web server. Any server that supports WSGI can host your Python applications. Cloud services such as [Heroku](https://www.heroku.com/) and [Google App Engine](https://cloud.google.com/appengine/) also provide hosting for Python Web applications.
+
+[Full Stack Python](https://www.fullstackpython.com) provides a comprehensive guide to building Web applications with Python.
+
 # Accessing Databases #
 
 The simplest answer: you do not need to install anything or setup a
@@ -91,49 +103,17 @@ the Python standard library includes a version of
 
 To access a SQL database service such
 as PostgreSQL, MySQL, or Oracle you will need to install the standard client software
-for that product, along with a separate Python adapter. Both the SQLite
-library and third-party database adapters follow the Python DB-API
-specification, which means that you can program with them all in the
-same way.
+for that product, along with a separate Python adapter.
 
 > *Connecting to Microsoft SQL Server*: [Microsoft recommend that you use the ODBC adapter for SQL Server](https://docs.microsoft.com/en-us/sql/connect/python/python-driver-for-sql-server).
 
-In practice, most Python applications interact with databases through higher
-level libraries, rather than using the DB-API adapters directly. The Django
-framework includes an Object-Relational Mapper (ORM), but for other types of
-application you should use [SQLAlchemy](http://www.sqlalchemy.org/), which has 
-become the standard Python library for database programming, and is probably one of the best database toolkit libraries available for any programming language. You
-may use the declarative portion of SQLAlchemy like a standard ORM, but it has
-many more capabilities.
-
-Both SQLAlchemy and the ORM for Django ultimately rely on the standard client and DB-API adapter
-for your database. When you use a database other than SQLite, ensure that these
-are present and current, as low-level configuration errors are harder to
-diagnose when you are not working directly with the DB-API adapters.
-
-# Web Applications #
-
-Today, most Python Web applications are built on a framework. Python Web
-frameworks follow the WSGI standard, which provides consistent
-interfaces between individual components, and between the components and
-the host Web server. Any Web server that supports WSGI can host
-compliant applications.
-
-For small applications, use [Flask](http://flask.pocoo.org/). Like Express for Node, or Sinatra for Ruby, Flask provides the basic package of features that you need for a small Web application.
-
-If you need a full Model-View-Controller framework, use [Django](http://www.djangoproject.com/) or [Pyramid](https://trypyramid.com/). Django provides a set of custom tools and libraries that closely integrate together. Pyramid offers a modular framework for integrating third-party Python libraries together when developing custom Web applications.
-
-If you work with more than one framework, I strongly recommend that you use *pipenv* or another tool, to avoid conflicts between libraries.
-
-[Full Stack Python](https://www.fullstackpython.com) provides a comprehensive guide to building Web applications with Python.
+The Django Web framework includes an Object-Relational Mapper (ORM). For other 
+applications use either [Records](https://pypi.python.org/pypi/records/) or [SQLAlchemy](http://www.sqlalchemy.org/). Records provides a simple interface for SQL queries. SQLAlchemy has become the standard Python library for database programming, and is probably one of the best database toolkit libraries available for any programming language. You may use the declarative portion of SQLAlchemy like a standard ORM, but it has many more capabilities.
 
 # Graphical Desktop Applications #
 
-If you are specifically interested in developing desktop applications,
-consider using [wxPython](http://wxpython.org/), rather than the basic
-Tk interface toolkit supplied with the standard library. Alternatively,
-use the [GTK+](http://www.gtk.org/) toolkit, or
-[PySide](https://wiki.qt.io/PySide).
+If you are specifically interested in developing desktop applications, use  [wxPython](http://wxpython.org/), rather than the basic and rather dated 
+Tk interface toolkit supplied with the standard library. Alternatively, try [PySide](https://wiki.qt.io/PySide) to make use of the advanced and powerful QT libraries.
 
 # Windows Integration #
 
@@ -147,7 +127,7 @@ Extensions](https://sourceforge.net/projects/pywin32/).
 
 # Creating Application Installers #
 
-To build fully self-contained executable installers for Windows, use [PyInstaller](http://www.pyinstaller.org/) or [py2exe](http://www.py2exe.org/). These package a Python interpreter with your application, removing the need to have a separate copy of Python installed on the target system.
+To build fully self-contained executable installers for Windows, use [PyInstaller](http://www.pyinstaller.org/) or [py2exe](http://www.py2exe.org/). These package a Python interpreter with your application, avoiding the need to have a separate copy of Python installed on the target system.
 
 # Learning Resources #
 
@@ -160,12 +140,3 @@ There are two excellent books for learning Python 3 that you can read for free o
 programming, especially if they are impatient! If you are not a programmer, try [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/), which includes a gentle introduction to programming.
 
 Once you have learned Python itself, go to [Full Stack Python](https://www.fullstackpython.com) for a comprehensive guide to building Web applications with Python.
-
-If you need to understand Python 2 rather than the current Python 3, I know of two excellent books that are intended for learners: [Core
-Python Programming](http://www.corepython.com/), second edition, by Wesley J.
-Chun (Prentice Hall), and [Beginning Python: From Novice to
-Professional](http://www.apress.com/book/view/9781590599822), second edition, by
-Magnus Lie Hetland (Apress). Core Python Programming is probably the definitive
-work on Python 2, and effectively explains even the most advanced features and
-concepts. If you have not programmed before, or are intimidated by thick books,
-you should probably start with Beginning Python.
