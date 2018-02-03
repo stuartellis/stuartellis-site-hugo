@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-02-01T21:30:00+00:00"
+Date = "2018-02-03T14:04:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -44,9 +44,6 @@ There are a number of de-facto standard utilities and libraries for
 Python software development, but a few tools are so fundamental that you
 should install them even before you begin to write Python code.
 
-> *C Extensions Require a Compiler:* Setup a C compiler, such as MinGW,
-> if you need to install Python applications with C extensions.
-
 ## pipenv for Virtual Environments ##
 
 Install [pipenv](https://docs.pipenv.org/) to manage your Python projects. It ensures that each of your Python projects use a separate set of packages, and provides other features to help you maintain your work, such as [checking the code](https://docs.pipenv.org/advanced/#code-style-checking) and [warning you about security issues in libraries](https://docs.pipenv.org/advanced/#detection-of-security-vulnerabilities).
@@ -64,35 +61,39 @@ The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualen
 If you do not already use version control, you should also install [Git](http://git-scm.com/) on your
 system. Git is now effectively the standard version control tool for developers.
 
-Version control is obviously vital for efficiently collaborating with other programmers. It also enables you to copy your application to other systems for testing or deployment.
+Version control is obviously vital for collaborating with other programmers. It also enables you to efficiently copy your application to other systems for testing or deployment.
 
 ## Other Popular Tools ##
 
 A number of other tools are commonly used in Python development, such as
 [Pytest](http://pytest.org) for running unit test suites,
-[Flake8](http://flake8.readthedocs.org/en/latest/) for code quality, and
-[Sphinx](http://sphinx.pocoo.org/) for building documentation. You should
+[Pylint](https://www.pylint.org) for code quality, [autopep8](https://pypi.python.org/pypi/autopep8/) for code formatting, and
+[Sphinx](http://sphinx.pocoo.org) for building documentation. You should
 probably install and learn these as you need them.
-
-> *Use [requests](http://docs.python-requests.org/en/master/) for HTTP clients*: The HTTP support in the Python standard library is for low-level code.
 
 # Choosing a Code Editor or IDE #
 
  My preferred text editor on Windows is currently [Visual Studio Code](https://code.visualstudio.com). It is easy to use, and will automatically offer to download Python support the first time that you open a Python file. You may also consider [Atom](https://atom.io/), which is a high-quality editor that is designed to be customised, or [Notepad++](https://notepad-plus-plus.org/) for older computers with limited resources. All of these editors are free.
 
- If you would like to use a full IDE, consider the [Wing IDE](http://www.wingware.com/), which is proprietary, or using the free Eclipse IDE with the [PyDev](http://www.pydev.org/) extension.
+ If you would like to use a full IDE, consider the [Wing IDE](http://www.wingware.com/), which is proprietary, or using the free Eclipse IDE with the [PyDev](http://www.pydev.org/) extension. Current versions of Microsoft Visual Studio also include support for Python.
 
 # Web Applications #
 
-For small applications, use [Flask](http://flask.pocoo.org/). Like Express for Node, or Sinatra for Ruby, Flask provides the basic package of features that you need for a small Web application.
+For very simple Websites and services, use [Flask](http://flask.pocoo.org/). The Flask framework provides the basic package of features that you need for a small Web application.
 
-If you need a full Model-View-Controller framework, use [Django](http://www.djangoproject.com/) or [Pyramid](https://trypyramid.com/). Django provides a set of custom tools and libraries that closely integrate together. Pyramid offers a modular framework for integrating third-party Python libraries together when developing custom Web applications.
+If you need a full Model-View-Controller framework, use either [Django](http://www.djangoproject.com/), or [Pyramid](https://trypyramid.com/). Django provides a set of custom tools and libraries that closely integrate together. Pyramid offers a modular framework for integrating third-party Python libraries together when developing custom Web applications.
 
 Python Web frameworks follow the WSGI standard, which provides consistent
 interfaces between individual components, and between the components and
 the host Web server. Any server that supports WSGI can host your Python applications. Cloud services such as [Heroku](https://www.heroku.com/) and [Google App Engine](https://cloud.google.com/appengine/) also provide hosting for Python Web applications.
 
 [Full Stack Python](https://www.fullstackpython.com) provides a comprehensive guide to building Web applications with Python.
+
+# Web Clients #
+
+Use the [requests](http://docs.python-requests.org/en/master/) library for your  Web client software, such as downloading files or working with APIs. The HTTP support in the Python standard library is for low-level code.
+
+If you need to get information from Websites that do not provide an API, use [Scrapy](https://doc.scrapy.org). You can then extract content from the pages with the [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/) library.
 
 # Accessing Databases #
 
@@ -108,22 +109,16 @@ for that product, along with a separate Python adapter.
 > *Connecting to Microsoft SQL Server*: [Microsoft recommend that you use the ODBC adapter for SQL Server](https://docs.microsoft.com/en-us/sql/connect/python/python-driver-for-sql-server).
 
 The Django Web framework includes an Object-Relational Mapper (ORM). For other 
-applications use either [Records](https://pypi.python.org/pypi/records/) or [SQLAlchemy](http://www.sqlalchemy.org/). Records provides a simple interface for SQL queries. SQLAlchemy has become the standard Python library for database programming, and is probably one of the best database toolkit libraries available for any programming language. You may use the declarative portion of SQLAlchemy like a standard ORM, but it has many more capabilities.
+applications use either [Records](https://pypi.python.org/pypi/records/), or [SQLAlchemy](http://www.sqlalchemy.org/). Records provides a simple interface for SQL queries. SQLAlchemy has become the standard Python library for database programming, and is probably one of the best database toolkit libraries available for any programming language. You may use the declarative portion of SQLAlchemy like a standard ORM, but it has many more capabilities.
 
 # Graphical Desktop Applications #
 
-If you are specifically interested in developing desktop applications, use  [wxPython](http://wxpython.org/), rather than the basic and rather dated 
-Tk interface toolkit supplied with the standard library. Alternatively, try [PySide](https://wiki.qt.io/PySide) to make use of the advanced and powerful QT libraries.
+If you are specifically interested in developing desktop applications, start with [wxPython](http://wxpython.org/). The Tk interface toolkit that is supplied with the Python standard library is rather basic and dated. If you have advanced needs, you may prefer [PySide](https://wiki.qt.io/PySide), which enables you to make use of the [QT](https://www.qt.io/) libraries.
 
 # Windows Integration #
 
-Python is specifically designed to be portable and consistent across
-operating systems, including obscure platforms. This means that the
-Python standard library provides support for cross-platform operations,
-but does not include a full set of specialised features for popular
-operating systems. To get support for features that are specific to
-Microsoft Windows, such as COM and the Registry, install the [win32
-Extensions](https://sourceforge.net/projects/pywin32/).
+Python includes support for some features that are unique to Microsoft Windows, but not all of them. To use Python with other features of Windows, such as COM and the Registry, install the [win32
+Extensions](https://github.com/mhammond/pywin32).
 
 # Creating Application Installers #
 
