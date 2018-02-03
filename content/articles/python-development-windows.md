@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-02-03T14:04:00+00:00"
+Date = "2018-02-03T18:00:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -93,7 +93,7 @@ the host Web server. Any server that supports WSGI can host your Python applicat
 
 Use the [requests](http://docs.python-requests.org/en/master/) library for your  Web client software, such as downloading files or working with APIs. The HTTP support in the Python standard library is for low-level code.
 
-If you need to get information from Websites that do not provide an API, use [Scrapy](https://doc.scrapy.org). You can then extract content from the pages with the [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/) library.
+If you need to get information from Websites that do not provide an API, use [Scrapy](https://doc.scrapy.org). You can then extract content from the pages with the [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/) library.
 
 # Accessing Databases #
 
@@ -130,7 +130,7 @@ Start with [The Hitchhiker’s Guide to Python](http://docs.python-guide.org), w
 
 The tutorial that is supplied with Python is pretty good, and enough for a committed student or someone with previous programming experience to learn the essentials of the language. It also has the virtue of always being up to date, whilst third-party documentation becomes obsolete over time. The Internet provides many other resources, though.
 
-There are two excellent books for learning Python 3 that you can read for free online. [Dive Into Python
+Google provide a [free course for learning Python](https://developers.google.com/edu/python/), consisting of video lectures and exercises. There are also two excellent books for learning Python 3 that you can read for free online. [Dive Into Python
 3](http://www.diveintopython3.net/) is particularly good for those people with some previous experience of
 programming, especially if they are impatient! If you are not a programmer, try [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/), which includes a gentle introduction to programming.
 
