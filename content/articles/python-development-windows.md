@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-02-03T18:00:00+00:00"
+Date = "2018-02-04T09:40:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -38,6 +38,12 @@ specifically designed as a reference, rather than for learning. To
 understand particular features you should start with the supplied
 tutorial, or one of the books mentioned below.
 
+# Choosing a Code Editor or IDE #
+
+ My preferred text editor on Windows is currently [Visual Studio Code](https://code.visualstudio.com). [This tutorial](https://code.visualstudio.com/docs/python/python-tutorial) shows you the features that Visual Studio Code has for Python development, including code quality checks, and support for debugging. You may prefer [Atom](https://atom.io/), which is a high-quality and customisable editor that has [plugins for Python](https://atom.io/packages/search?q=python), or [Notepad++](https://notepad-plus-plus.org/), which will be more suitable for older computers with limited resources. All of these editors are free.
+
+ If you would like to use a full IDE, consider the [Wing IDE](http://www.wingware.com/), which is proprietary, or using the free Eclipse IDE with the [PyDev](http://www.pydev.org/) extension. Current versions of Microsoft Visual Studio also include support for Python.
+
 # Essential Tools #
 
 There are a number of de-facto standard utilities and libraries for
@@ -61,7 +67,9 @@ The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualen
 If you do not already use version control, you should also install [Git](http://git-scm.com/) on your
 system. Git is now effectively the standard version control tool for developers.
 
-Version control is obviously vital for collaborating with other programmers. It also enables you to efficiently copy your application to other systems for testing or deployment.
+Version control is obviously vital for collaborating with other programmers. It also enables you to efficiently copy your application to other systems for testing, deployment and backup.
+
+If Git is installed, Atom and Visual Studio Code provide you with access to information and features from Git directly in their user interfaces. If you use Visual Studio Code, you should also consider installing the [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) extension, which enhances the integration with Git.
 
 ## Other Popular Tools ##
 
@@ -69,13 +77,7 @@ A number of other tools are commonly used in Python development, such as
 [Pytest](http://pytest.org) for running unit test suites,
 [Pylint](https://www.pylint.org) for code quality, [autopep8](https://pypi.python.org/pypi/autopep8/) for code formatting, and
 [Sphinx](http://sphinx.pocoo.org) for building documentation. You should
-probably install and learn these as you need them.
-
-# Choosing a Code Editor or IDE #
-
- My preferred text editor on Windows is currently [Visual Studio Code](https://code.visualstudio.com). It is easy to use, and will automatically offer to download Python support the first time that you open a Python file. You may also consider [Atom](https://atom.io/), which is a high-quality editor that is designed to be customised, or [Notepad++](https://notepad-plus-plus.org/) for older computers with limited resources. All of these editors are free.
-
- If you would like to use a full IDE, consider the [Wing IDE](http://www.wingware.com/), which is proprietary, or using the free Eclipse IDE with the [PyDev](http://www.pydev.org/) extension. Current versions of Microsoft Visual Studio also include support for Python.
+probably learn these as you need them.
 
 # Web Applications #
 
