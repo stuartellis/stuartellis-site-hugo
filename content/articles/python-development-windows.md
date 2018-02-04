@@ -62,7 +62,7 @@ The Python project now officially recommends pipenv. It uses the *pip* and [virt
 
 The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualenvs/) shows you how to work with *pipenv*.
 
-## A Version Control System ##
+## Git for Version Control ##
 
 If you do not already use version control, you should also install [Git](http://git-scm.com/) on your
 system. Git is now effectively the standard version control tool for developers.
