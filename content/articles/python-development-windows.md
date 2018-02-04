@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-02-04T09:40:00+00:00"
+Date = "2018-02-04T09:55:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -32,11 +32,7 @@ The default Python package automatically provides you with:
 IDLE is intended as a basic and portable development environment that
 lets new programmers start without having to install a separate editor for their code. For a much better experience, install a text editor or IDE that supports Python.
 
-Whichever text editor or IDE you use, the tutorial that is supplied with Python  will walk you through the basics. The documentation for the standard
-library does give simple examples for many features, but it is
-specifically designed as a reference, rather than for learning. To
-understand particular features you should start with the supplied
-tutorial, or one of the books mentioned below.
+The tutorial that is supplied with Python can walk you through the basics. The documentation for the standard library does provide simple examples for many features, but it is specifically designed as a reference, rather than for learning. The last section of this article gives you links to courses and books that you may find more helpful when starting with Python.
 
 # Choosing a Code Editor or IDE #
 
@@ -83,7 +79,7 @@ probably learn these as you need them.
 
 For very simple Websites and services, use [Flask](http://flask.pocoo.org/). The Flask framework provides the basic package of features that you need for a small Web application.
 
-If you need a full Model-View-Controller framework, use either [Django](http://www.djangoproject.com/), or [Pyramid](https://trypyramid.com/). Django provides a set of custom tools and libraries that closely integrate together. Pyramid offers a modular framework for integrating third-party Python libraries together when developing custom Web applications.
+Use either [Django](http://www.djangoproject.com/) or [Pyramid](https://trypyramid.com/) for larger Websites. Django provides a set of custom tools and libraries that closely integrate together. Pyramid offers a modular framework for integrating third-party Python libraries together when developing custom Web applications.
 
 Python Web frameworks follow the WSGI standard, which provides consistent
 interfaces between individual components, and between the components and
@@ -105,7 +101,7 @@ the Python standard library includes a version of
 [SQLite](http://www.sqlite.org/).
 
 To access a SQL database service such
-as PostgreSQL, MySQL, or Oracle you will need to install the standard client software
+as PostgreSQL, MySQL, or Oracle you will need to install the client software
 for that product, along with a separate Python adapter.
 
 > *Connecting to Microsoft SQL Server*: [Microsoft recommend that you use the ODBC adapter for SQL Server](https://docs.microsoft.com/en-us/sql/connect/python/python-driver-for-sql-server).
@@ -124,11 +120,9 @@ Extensions](https://github.com/mhammond/pywin32).
 
 # Creating Application Installers #
 
-To build fully self-contained executable installers for Windows, use [PyInstaller](http://www.pyinstaller.org/) or [py2exe](http://www.py2exe.org/). These package a Python interpreter with your application, avoiding the need to have a separate copy of Python installed on the target system.
+To build executable installers for Windows, use [PyInstaller](http://www.pyinstaller.org/) or [py2exe](http://www.py2exe.org/). These package a Python interpreter with your application, avoiding the need to have a separate copy of Python installed on the target system.
 
 # Learning Resources #
-
-The tutorial that is supplied with Python is pretty good, and enough for a committed student or someone with previous programming experience to learn the essentials of the language. It also has the virtue of always being up to date, whilst third-party documentation becomes obsolete over time. The Internet provides many other resources, though.
 
 Google provide a [free course for learning Python](https://developers.google.com/edu/python/), consisting of video lectures and exercises. There are also two excellent books for learning Python 3 that you can read for free online. [Dive Into Python
 3](http://www.diveintopython3.net/) is particularly good for those people with some previous experience of
