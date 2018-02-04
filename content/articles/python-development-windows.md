@@ -128,12 +128,10 @@ To build fully self-contained executable installers for Windows, use [PyInstalle
 
 # Learning Resources #
 
-Start with [The Hitchhiker’s Guide to Python](http://docs.python-guide.org), which provides clear advice on how to work with Python.
-
 The tutorial that is supplied with Python is pretty good, and enough for a committed student or someone with previous programming experience to learn the essentials of the language. It also has the virtue of always being up to date, whilst third-party documentation becomes obsolete over time. The Internet provides many other resources, though.
 
 Google provide a [free course for learning Python](https://developers.google.com/edu/python/), consisting of video lectures and exercises. There are also two excellent books for learning Python 3 that you can read for free online. [Dive Into Python
 3](http://www.diveintopython3.net/) is particularly good for those people with some previous experience of
 programming, especially if they are impatient! If you are not a programmer, try [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/), which includes a gentle introduction to programming.
 
-Once you have learned Python itself, go to [Full Stack Python](https://www.fullstackpython.com) for a comprehensive guide to building Web applications with Python.
+Once you have learned Python itself, visit [The Hitchhiker’s Guide to Python](http://docs.python-guide.org), which provides clear advice on daily work with Python, and [Full Stack Python](https://www.fullstackpython.com) for a comprehensive guide to building Web applications with Python.
