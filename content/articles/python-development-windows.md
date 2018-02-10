@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-02-04T09:55:00+00:00"
+Date = "2018-02-10T09:30:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -69,11 +69,15 @@ If Git is installed, Atom and Visual Studio Code provide you with access to info
 
 ## Other Popular Tools ##
 
-A number of other tools are commonly used in Python development, such as
-[Pytest](http://pytest.org) for running unit test suites,
-[Pylint](https://www.pylint.org) for code quality, [autopep8](https://pypi.python.org/pypi/autopep8/) for code formatting, and
-[Sphinx](http://sphinx.pocoo.org) for building documentation. You should
+A number of other tools are commonly used in Python development. You should
 probably learn these as you need them.
+
+* [Pytest](http://pytest.org) for testing
+* [Pylint](https://www.pylint.org) for code quality
+* [autopep8](https://pypi.python.org/pypi/autopep8/) for code formatting
+* [Sphinx](http://sphinx.pocoo.org) for building documentation
+* [Coverage](https://pypi.python.org/pypi/coverage/) for code coverage measurement
+* [Bandit](https://pypi.python.org/pypi/bandit) to check your code for security issues
 
 # Web Applications #
 
@@ -106,8 +110,7 @@ for that product, along with a separate Python adapter.
 
 > *Connecting to Microsoft SQL Server*: [Microsoft recommend that you use the ODBC adapter for SQL Server](https://docs.microsoft.com/en-us/sql/connect/python/python-driver-for-sql-server).
 
-The Django Web framework includes an Object-Relational Mapper (ORM). For other 
-applications use either [Records](https://pypi.python.org/pypi/records/), or [SQLAlchemy](http://www.sqlalchemy.org/). Records provides a simple interface for SQL queries. SQLAlchemy has become the standard Python library for database programming, and is probably one of the best database toolkit libraries available for any programming language. You may use the declarative portion of SQLAlchemy like a standard ORM, but it has many more capabilities.
+The Django Web framework includes an Object-Relational Mapper (ORM). For other applications use either [Records](https://pypi.python.org/pypi/records/), or [SQLAlchemy](http://www.sqlalchemy.org/). Records provides a simple interface for SQL queries. SQLAlchemy has become the standard Python library for database programming, and is probably one of the best database toolkit libraries available for any programming language. You may use the declarative portion of SQLAlchemy like a standard ORM, but it has many more capabilities.
 
 # Graphical Desktop Applications #
 
