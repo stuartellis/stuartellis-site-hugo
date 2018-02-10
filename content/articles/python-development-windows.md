@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-02-10T09:30:00+00:00"
+Date = "2018-02-10T11:10:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -72,12 +72,14 @@ If Git is installed, Atom and Visual Studio Code provide you with access to info
 A number of other tools are commonly used in Python development. You should
 probably learn these as you need them.
 
-* [Pytest](http://pytest.org) for testing
-* [Pylint](https://www.pylint.org) for code quality
 * [autopep8](https://pypi.python.org/pypi/autopep8/) for code formatting
+* [Pylint](https://www.pylint.org) for code quality
+* [Pytest](http://pytest.org) for testing
 * [Sphinx](http://sphinx.pocoo.org) for building documentation
 * [Coverage](https://pypi.python.org/pypi/coverage/) for code coverage measurement
 * [Bandit](https://pypi.python.org/pypi/bandit) to check your code for security issues
+
+If you install the Python extension, Visual Studio Code will offer to use Pylint and autopep8 to check and format your code.
 
 # Web Applications #
 
@@ -121,9 +123,9 @@ If you are specifically interested in developing desktop applications, start wit
 Python includes support for some features that are unique to Microsoft Windows, but not all of them. To use Python with other features of Windows, such as COM and the Registry, install the [win32
 Extensions](https://github.com/mhammond/pywin32).
 
-# Creating Application Installers #
+# Packaging Applications #
 
-To build executable installers for Windows, use [PyInstaller](http://www.pyinstaller.org/) or [py2exe](http://www.py2exe.org/). These package a Python interpreter with your application, avoiding the need to have a separate copy of Python installed on the target system.
+To build packaged applications for Windows, use [PyInstaller](http://www.pyinstaller.org/) or [py2exe](http://www.py2exe.org/). These create stand-alone executables that include both Python itself, your code, and any other dependencies.
 
 # Learning Resources #
 
