@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-02-10T11:10:00+00:00"
+Date = "2018-02-11T16:50:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -54,7 +54,7 @@ In a command prompt window enter the following command:
 
     pip install pipenv
 
-The Python project now officially recommends pipenv. It uses the *pip* and [virtual environment](https://docs.python.org/3/tutorial/venv.html) facilities that are included with Python itself, so it is fully compatible with other Python utilities, whilst being much easier to use than other tools.
+The pipenv tool uses the *pip* and [virtual environment](https://docs.python.org/3/tutorial/venv.html) facilities that are included with Python itself, so it is fully compatible with other Python utilities, whilst being much easier to use than other tools. The Python packaging documentation now officially recommends pipenv.
 
 The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualenvs/) shows you how to work with *pipenv*.
 
@@ -125,11 +125,11 @@ Extensions](https://github.com/mhammond/pywin32).
 
 # Packaging Applications #
 
-To build packaged applications for Windows, use [PyInstaller](http://www.pyinstaller.org/) or [py2exe](http://www.py2exe.org/). These create stand-alone executables that include both Python itself, your code, and any other dependencies.
+To build packaged applications for Windows, use [PyInstaller](http://www.pyinstaller.org/) or [py2exe](http://www.py2exe.org/). These create stand-alone executables that include Python itself, your code, and any other dependencies.
 
 # Learning Resources #
 
-Google provide a [free course for learning Python](https://developers.google.com/edu/python/), consisting of video lectures and exercises. There are also two excellent books for learning Python 3 that you can read for free online. [Dive Into Python
+Google provide a [free course for learning Python](https://developers.google.com/edu/python/), consisting of video lectures and exercises. There are also excellent books for learning Python 3 that you can read for free online. [Dive Into Python
 3](http://www.diveintopython3.net/) is particularly good for those people with some previous experience of
 programming, especially if they are impatient! If you are not a programmer, try [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/), which includes a gentle introduction to programming.
 
