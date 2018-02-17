@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the Python Language"
 Slug = "python-language"
-Date = "2018-02-10T09:10:00+00:00"
+Date = "2018-02-17T20:02:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -11,6 +11,8 @@ Draft = true
 +++
 
 Notes on the Python programming language.
+
+# Python
 
 ## Language Basics
 
@@ -113,31 +115,6 @@ To define an arbitrary number of positional parameters, create an input paramete
 
 ~~~python
     getattr(object,attribute,default)
-~~~
-
-## Classes
-
-Python supports classes. The built-in *__init__* function is the constructor:
-
-~~~python
-    class Foo(object):
-        def __init__(self, frob, frotz):
-            self.frobnicate = frob
-            self.frotz = frotz
-
-To call the constructor of a parent class inside the constructor of a sub-class, use the *super()* function to return the parent:
-
-~~~python
-    class Bar(Foo):
-        def __init__(self, frob, frizzle):
-            super(Bar, self).__init__(frob, frizzle)
-            self.frotz = 34
-            self.frazzle = frizzle
-
-To create an instance of a class, call the class:
-
-~~~python
-    bar = Bar(1,2)
 ~~~
 
 ## Modules and Packages
@@ -295,6 +272,8 @@ To filter the list operation, use "if":
 
 Note that the "is None" filter is faster than "== None" for finding nulls.
 
+To loop
+
 ## Dictionaries
 
 Python dictionaries are central to the language. Dictionaries are key:value lists. Each key/value pair is separated by a comma. For example, this defines the dictionary "d":
@@ -323,7 +302,19 @@ To delete a single key:
     d.clear()
 ~~~
 
-* Dictionaries are *not * ordered in any way.
+* To create a dictionary from a list of keys and a list of values, use *zip*:
+
+~~~python
+    k = ['a', 'b', 'c']
+    v = [1, 2, 3]
+    d = zip(k, v)
+~~~
+
+Do not assume the order of items in a dictionary. Python 3.6 maintains a consistent order, but this is an implementation detail.
+
+* To link several dictionaries together, use a *ChainMap*.
+* If you need to access dictionary items by index number, use a *Counter*, rather than a dictionary.
+* If you want to add or remove items at the start or end (e.g. a queue), use a *deque* (double-ended queue) object, rather than a dictionary or a list.
 
 ## Tuples
 
@@ -359,16 +350,32 @@ The "list" function takes a tuple and returns a list with the same elements.
 
 Use CamelCase for class names.
 
-To create a new class, use the class keyword:
+Python supports classes. The built-in *__init__* function is the constructor:
 
 ~~~python
-class MyClass(object):
-    my_class_var = "whatever"
-    def __init__(self):
-       self.my_instance_var = "something"
+    class Foo(object):
+        def __init__(self, frob, frotz):
+            self.frobnicate = frob
+            self.frotz = frotz
 ~~~
 
-Note that every user-created class is either directly or indirectly a subclass of the built-in "object" class. Specify the parent class as object if you do not need your class to inherit from a particular class.
+To call the constructor of a parent class inside the constructor of a sub-class, use the *super()* function to return the parent:
+
+~~~python
+    class Bar(Foo):
+        def __init__(self, frob, frizzle):
+            super(Bar, self).__init__(frob, frizzle)
+            self.frotz = 34
+            self.frazzle = frizzle
+~~~
+
+To create an instance of a class, call the class:
+
+~~~python
+    bar = Bar(1,2)
+~~~
+
+Every user-created class is either directly or indirectly a subclass of the built-in *object* class. Specify the parent class as object if you do not need your class to inherit from a particular class.
 
 For classes that are strings, lists or dictionaries, subclass from "string", "list", or "dict", rather than "object". These built-in classes subclass from the object class, and include methods for the recommended special methods.
 
@@ -415,7 +422,7 @@ If you need to call custom methods when getting or setting a variable, define a 
 
 If you need a class private variable, prepend the variable with two underscores, e.g. __myvariable.
 
-h2(#file-management). File Management
+## File Management
 
 File management functions come from the "os" module. Remember to import this module.
 
@@ -480,24 +487,6 @@ To specify a string as Unicode, prefix it with "u":
 ~~~python
     pagetitle = u'Title'
 ~~~
-
-### String Formatting
-
-FIXME: This is obsolete
-
-String formatting in Python works like printf (as in GNU find).
-
-Specify the replacements after the main string with %. You may use an existing list, tuple, etc. to provide the substitutions.
-
-~~~python
-    "%s=%s" % (k, v)
-~~~
-
-In a string, "%s" denotes that string replacement is required. A "%d" denotes that an integer will be substituted.
-
-Other replacement characters exist with specific purposes: http://www.python.org/doc/current/lib/typesseq-strings.html
-
-To format the case of a string use the functions lower() and upper().
 
 ### Joining and Splitting Strings
 
