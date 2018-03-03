@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the Python Language"
 Slug = "python-language"
-Date = "2018-02-17T20:02:00+00:00"
+Date = "2018-03-03T16:50:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -272,7 +272,19 @@ To filter the list operation, use "if":
 
 Note that the "is None" filter is faster than "== None" for finding nulls.
 
-To loop
+Use the *else* keyword to define behaviour for a loop that will happen if the code in the *for* loop does not execute a *break*.
+
+~~~python
+l = [2 ,4 , 5, 8,]
+for i in l:
+  if i % 2 == 0:
+    print('Even!')
+  else:
+    print('Odd!')
+    break
+else:
+  print('No odd numbers in list!')
+~~~
 
 ## Dictionaries
 
