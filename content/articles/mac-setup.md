@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2018-01-31T17:18:00+00:00"
+Date = "2018-03-09T20:10:00+00:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "javascript", "python", "ruby", "rust"]
@@ -199,14 +199,6 @@ well as TextEdit, a desktop text editor. TextEdit is designed for light-weight
 word processing, and has no support for programming. Unless you already have a
 preferred editor, I suggest that you install either [Atom](http://www.atom.io) or [Visual Studio Code](https://code.visualstudio.com), which are powerful graphical text editors.
 
-To install Atom, enter this command in a terminal window:
-
-    brew cask install atom
-
-To install Visual Studio Code, enter this command in a terminal window:
-
-    brew cask install visual-studio-code
-
 Whichever text editor you choose, remember to set the EDITOR environment
 variable in your *~/.bash\_profile* file, so that this editor is
 automatically invoked by command-line tools like your version control
@@ -215,23 +207,17 @@ favored text editor:
 
     export EDITOR="vim"
 
-To make Atom your default editor, use this line:
+### Setting Up Atom ###
+
+To install Atom, enter this command in a terminal window:
+
+    brew cask install atom
+
+To make Atom your default editor, use this line in your *~/.bash\_profile* file:
 
     export EDITOR="atom -w"
 
-To make Visual Studio Code your default editor, use this line instead:
-
-    export EDITOR="code -w"
-
-## Customizing Your Text Editor ##
-
-You will massively improve your experience with your text editor by adding a
-useful set of extensions to it. The exact extensions that will benefit the most
-you depend upon the work that you do, but you should always look at version
-control integration, convenient access to the terminal, and linters for your
-preferred programming languages and data file formats.
-
-Atom takes this further: you are expected to install extensions to customize the user interface. For example, these extensions provide some valuable enhancements to the user interface of Atom:
+You are expected to install extensions to customize the user interface. For example, these extensions provide some valuable enhancements to the user interface of Atom:
 
     apm install color-picker file-icons minimap
 
@@ -255,7 +241,23 @@ If you are a Ruby on Rails developer, use this command to install support for
 
     apm install linter-coffeelint linter-rubocop
 
-Similarly, if you use Visual Studio Code, consider installing the *Git Lens* extension to enhance the user interface, the extensions to support your preferred languages, the *Docker* extension if appropriate, and *ESLint* or *TSLint* for linter integration.
+### Setting Up Visual Studio Code ###
+
+To install Visual Studio Code, enter this command in a terminal window:
+
+    brew cask install visual-studio-code
+
+Consider installing these extensions:
+
+* Support for your preferred languages, e.g. [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.ruby) or [Go](https://marketplace.visualstudio.com/items?itemName=lukehoban.Go)
+* [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) or [TSLint](https://marketplace.visualstudio.com/items?itemName=eg2.tslint) for JavaScript linter integration
+* [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) to debug JavaScript
+* [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) to enhance the user interface
+* The [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker) extension
+
+To make Visual Studio Code your default editor, use this line in  *~/.bash\_profile* file:
+
+    export EDITOR="code -w"
 
 ## Setting Up A Directory Structure for Projects ##
 
