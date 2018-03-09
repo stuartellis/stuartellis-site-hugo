@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2018-03-09T20:10:00+00:00"
+Date = "2018-03-09T21:30:00+00:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "javascript", "python", "ruby", "rust"]
@@ -251,8 +251,8 @@ Consider installing these extensions:
 
 * Support for your preferred languages, e.g. [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.ruby) or [Go](https://marketplace.visualstudio.com/items?itemName=lukehoban.Go)
 * [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) or [TSLint](https://marketplace.visualstudio.com/items?itemName=eg2.tslint) for JavaScript linter integration
-* [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) to debug JavaScript
-* [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) to enhance the user interface
+* [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) to debug JavaScript in the Web browser
+* [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) to enhance the Git support in the user interface
 * The [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker) extension
 
 To make Visual Studio Code your default editor, use this line in  *~/.bash\_profile* file:
