@@ -375,11 +375,11 @@ home directory with the name *.gemrc* and put this line in it:
 
 Unfortunately, macOS includes a copy of Python 2, not Python 3. To maintain current and clean Python environments, install [pipenv](https://docs.pipenv.org/). It drives the [pip](https://pip.pypa.io/en/stable/) and [virtual environment](https://docs.python.org/3/tutorial/venv.html) features that are included with Python itself, but is more powerful and easier to use than working with these features directly.
 
-Enter this command to install pipenv using Homebrew:
+Enter this command to install Python 3 and pipenv using Homebrew:
 
-    brew install pipenv
+    brew install python3 pipenv
 
-Homebrew will install Python 3 as well, because it is a dependency of pipenv. The pipenv tool itself will use this copy of Python 3 by default. To use the Python 3 interpreter without pipenv, specify *python3* on the command-line and in your scripts, rather than *python*:
+The pipenv tool itself will use the copy of Python 3 from Homebrew by default. To use this Python 3 interpreter without pipenv, specify *python3* on the command-line and in your scripts, rather than *python*:
 
     python3 --version
 
