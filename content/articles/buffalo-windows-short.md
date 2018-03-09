@@ -6,6 +6,7 @@ Description = "Getting started with Buffalo on Windows"
 Categories = ["programming"]
 Tags = ["administration", "golang", "javascript", "windows"]
 Type = "article"
+Draft = true
 
 +++
 
