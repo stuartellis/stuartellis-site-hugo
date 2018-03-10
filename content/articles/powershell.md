@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2018-01-13T12:30:00+01:00"
+Date = "2018-03-10T12:20:00+00:00"
 Description = ""
 Categories = ["administration", "tools"]
 Tags = ["administration", "dotnet", "powershell", "windows"]
@@ -43,9 +43,11 @@ To install the latest version of PowerShell 5 on older Windows systems, install
 the Windows Management Framework (WMF). WMF is a package of the latest version
 of PowerShell, along with PowerShell Desired State Configuration (DSC).
 
+You may install PowerShell Core on Windows systems. If you install PowerShell Core on Windows it does not replace the version of Windows PowerShell that is already provided by the operating system.
+
 ## macOS and Linux ##
 
-To use PowerShell on Linux and macOS systems, install [.NET Core](https://www.microsoft.com/net/download/core) and [PowerShell Core](https://github.com/powershell/powershell).
+To use PowerShell on Linux and macOS systems, install [PowerShell Core](https://github.com/powershell/powershell).
 
 Follow [these instructions](https://github.com/powershell/powershell#telemetry) to disable the telemetry in PowerShell Core. The PowerShell Core installer creates a directory called `/usr/local/microsoft/`, with one subdirectory per PowerShell installation.
 
@@ -58,7 +60,7 @@ Once PowerShell Core is installed, type *pwsh* in a Terminal window to start a P
 The current versions of PowerShell include features to install extra modules from
 remote repositories. By default, the public [PowerShell Gallery](http://www.powershellgallery.com) is configured as a repository.
 
-To write and debug PowerShell scripts, install the [Visual Studio Code](https://code.visualstudio.com) editor and add the [PowerShell Language Support](https://marketplace.visualstudio.com/items?itemname=ms-vscode.powershell).
+To write and debug PowerShell scripts, install the [Visual Studio Code](https://code.visualstudio.com) editor and add the [PowerShell Language Support](https://marketplace.visualstudio.com/items?itemname=ms-vscode.powershell) extension. This extension includes support for [PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer), which is the recommended static code analyzer for PowerShell.
 
 # Running Scripts #
 
@@ -273,9 +275,11 @@ trap [System.Management.Automation.PSInvalidCastException] {
 
 # Extra Modules #
 
-* [AWS Tools for Windows PowerShell](https://aws.amazon.com/powershell/) - Modules for managing the Amazon Web Services.
-* [Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure/) - Modules for managing the Microsoft cloud services.
-* [PSWindowsUpdate](https://gallery.technet.microsoft.com/scriptcenter/2d191bcd-3308-4edd-9de2-88dff796b0bc) - Module to manage and run Microsoft Updates on Windows systems, as explained in [this tutorial](https://www.petri.com/manage-windows-updates-with-powershell-module)
+* [AWS Tools for Windows PowerShell](https://aws.amazon.com/powershell/) - Modules for managing Amazon Web Services
+* [Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure/) - Modules for managing Microsoft Azure cloud services
+* Google's [Cloud Tools for PowerShell](https://cloud.google.com/powershell/) - Modules for managing Google Cloud Platform services
+* [posh-git](https://dahlbyk.github.io/posh-git/) - Git integration for PowerShell
+* [PSWindowsUpdate](https://gallery.technet.microsoft.com/scriptcenter/2d191bcd-3308-4edd-9de2-88dff796b0bc) - Third-party module to manage and run Microsoft Updates on Windows systems, as explained in [this tutorial](https://www.petri.com/manage-windows-updates-with-powershell-module)
 
 # Common Commands #
 
