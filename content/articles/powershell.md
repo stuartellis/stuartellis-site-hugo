@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2018-03-10T12:20:00+00:00"
+Date = "2018-03-10T12:50:00+00:00"
 Description = ""
 Categories = ["administration", "tools"]
 Tags = ["administration", "dotnet", "powershell", "windows"]
@@ -60,7 +60,7 @@ Once PowerShell Core is installed, type *pwsh* in a Terminal window to start a P
 The current versions of PowerShell include features to install extra modules from
 remote repositories. By default, the public [PowerShell Gallery](http://www.powershellgallery.com) is configured as a repository.
 
-To write and debug PowerShell scripts, install the [Visual Studio Code](https://code.visualstudio.com) editor and add the [PowerShell Language Support](https://marketplace.visualstudio.com/items?itemname=ms-vscode.powershell) extension. This extension includes support for [PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer), which is the recommended static code analyzer for PowerShell.
+To write and debug PowerShell scripts, install the [Visual Studio Code](https://code.visualstudio.com) editor and add the [PowerShell Language Support](https://marketplace.visualstudio.com/items?itemname=ms-vscode.powershell) extension. This extension includes support for the [Pester](https://github.com/pester/Pester) testing framework, and [PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer), which is the recommended static code analyzer for PowerShell.
 
 # Running Scripts #
 
@@ -268,7 +268,7 @@ trap [System.Management.Automation.PSInvalidCastException] {
 
 # Resources #
 
-* [Microsoft introductory video tutorial ](http://www.microsoftvirtualacademy.com/training-courses/advanced-tools-scripting-with-powershell-3-0-jump-start)
+* [Microsoft introductory video course](https://mva.microsoft.com/en-US/training-courses/getting-started-with-microsoft-powershell-8276)
 * [PowerShell.org](https://powershell.org/) - Community forums for PowerShell users
 * [PowerShell Magazine](http://www.powershellmagazine.com/)
 * [PowerShell Notes for Professionals book](http://goalkicker.com/PowerShellBook/) - Free ebook
