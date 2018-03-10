@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-02-11T16:50:00+00:00"
+Date = "2018-03-10T20:50:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -9,7 +9,7 @@ Type = "article"
 
 +++
 
-Notes on starting Python development on Windows.
+Notes on starting Python development with Windows.
 
 <!--more-->
 
@@ -20,7 +20,7 @@ Website](http://www.python.org/). Choose the *Windows x86-64 executable installe
 
 Run the installer, and select the option to *Add Python to PATH*, so that you do not need to type the full path for Python commands. If prompted, choose the option to remove the path length limitation from Windows.
 
-The default Python package automatically provides you with:
+A standard Python installation provides you with:
 
 * The *Python runtime*
 * An *interactive shell* (use the menu icon, or type _python_ in a
@@ -112,7 +112,7 @@ for that product, along with a separate Python adapter.
 
 > *Connecting to Microsoft SQL Server*: [Microsoft recommend that you use the ODBC adapter for SQL Server](https://docs.microsoft.com/en-us/sql/connect/python/python-driver-for-sql-server).
 
-The Django Web framework includes an Object-Relational Mapper (ORM). For other applications use either [Records](https://pypi.python.org/pypi/records/), or [SQLAlchemy](http://www.sqlalchemy.org/). Records provides a simple interface for SQL queries. SQLAlchemy has become the standard Python library for database programming, and is probably one of the best database toolkit libraries available for any programming language. You may use the declarative portion of SQLAlchemy like a standard ORM, but it has many more capabilities.
+The Django Web framework includes an Object-Relational Mapper (ORM). For other applications, use [SQLAlchemy](http://www.sqlalchemy.org/), which has become the standard Python library for database programming. You may use the declarative portion of SQLAlchemy like a standard ORM, but it has many more capabilities. [Records](https://pypi.python.org/pypi/records/) provides a simple programming interface and command-line tool for SQLAlchemy.
 
 # Graphical Desktop Applications #
 
@@ -129,8 +129,7 @@ To build packaged applications for Windows, use [PyInstaller](http://www.pyinsta
 
 # Learning Resources #
 
-Google provide a [free course for learning Python](https://developers.google.com/edu/python/), consisting of video lectures and exercises. There are also excellent books for learning Python 3 that you can read for free online. [Dive Into Python
-3](http://www.diveintopython3.net/) is particularly good for those people with some previous experience of
+Google provide a [free course for learning Python](https://developers.google.com/edu/python/), consisting of video lectures and exercises for Python 2. There are also excellent books for learning Python 3 that you can read for free online. [Dive Into Python 3](http://www.diveintopython3.net/) is particularly good for those people with some previous experience of
 programming, especially if they are impatient! If you are not a programmer, try [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/), which includes a gentle introduction to programming.
 
 Once you have learned Python itself, visit [The Hitchhiker’s Guide to Python](http://docs.python-guide.org), which provides clear advice on daily work with Python, and [Full Stack Python](https://www.fullstackpython.com) for a comprehensive guide to building Web applications with Python.
