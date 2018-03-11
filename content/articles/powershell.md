@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2018-03-11T13:20:00+00:00"
+Date = "2018-03-11T13:44:00+00:00"
 Description = ""
 Categories = ["administration", "tools"]
 Tags = ["administration", "dotnet", "powershell", "windows"]
@@ -268,11 +268,20 @@ trap [System.Management.Automation.PSInvalidCastException] {
 
 # Resources #
 
+## Videos ##
+
 * [Microsoft introductory video course](https://mva.microsoft.com/en-US/training-courses/getting-started-with-microsoft-powershell-8276)
 * [Microsoft video course on using PowerShell with SQL Server](https://mva.microsoft.com/en-US/training-courses/powershell-for-sql-data-professionals-16532?l=XgA5w0PgC_8805121157)
 * [Microsoft video tutorial on testing with Pester](https://mva.microsoft.com/en-US/training-courses/testing-powershell-with-pester-17650?l=mg8oBM9vD_8811787177)
+
+## Websites ##
+
+* [Awesome PowerShell](https://github.com/janikvonrotz/awesome-powershell) - Curated list of resources and modules for PowerShell
 * [PowerShell.org](https://powershell.org/) - Community forums for PowerShell users
 * [PowerShell Magazine](http://www.powershellmagazine.com/)
+
+## Books ##
+
 * [PowerShell Notes for Professionals book](http://goalkicker.com/PowerShellBook/) - Free ebook
 
 # Extra Modules #
