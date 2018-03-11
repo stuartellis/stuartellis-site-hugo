@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2018-03-10T13:30:00+00:00"
+Date = "2018-03-11T13:20:00+00:00"
 Description = ""
 Categories = ["administration", "tools"]
 Tags = ["administration", "dotnet", "powershell", "windows"]
@@ -280,9 +280,10 @@ trap [System.Management.Automation.PSInvalidCastException] {
 * [AWS Tools for Windows PowerShell](https://aws.amazon.com/powershell/) - Modules for managing Amazon Web Services
 * [Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure/) - Modules for managing Microsoft Azure cloud services
 * Google's [Cloud Tools for PowerShell](https://cloud.google.com/powershell/) - Modules for managing Google Cloud Platform services
+* [dbatools](https://dbatools.io/) - Community module of tools for Microsoft SQL Server
 * [posh-git](https://dahlbyk.github.io/posh-git/) - Git integration for PowerShell
 * [PSWindowsUpdate](https://gallery.technet.microsoft.com/scriptcenter/2d191bcd-3308-4edd-9de2-88dff796b0bc) - Third-party module to manage and run Microsoft Updates on Windows systems, as explained in [this tutorial](https://www.petri.com/manage-windows-updates-with-powershell-module)
-* [SqlServer](https://www.powershellgallery.com/packages/Sqlserver/21.0.17224) - Current module for Microsoft SQL Server, which replaces SQLPS
+* [SqlServer](https://www.powershellgallery.com/packages/Sqlserver/21.0.17224) - Current official module for Microsoft SQL Server, which replaces SQLPS
 
 # Common Commands #
 
