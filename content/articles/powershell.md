@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2018-03-11T13:44:00+00:00"
+Date = "2018-03-17T21:34:00+00:00"
 Description = ""
 Categories = ["administration", "tools"]
 Tags = ["administration", "dotnet", "powershell", "windows"]
@@ -60,7 +60,7 @@ Once PowerShell Core is installed, type *pwsh* in a Terminal window to start a P
 The current versions of PowerShell include features to install extra modules from
 remote repositories. By default, the public [PowerShell Gallery](http://www.powershellgallery.com) is configured as a repository.
 
-To write and debug PowerShell scripts, install the [Visual Studio Code](https://code.visualstudio.com) editor and add the [PowerShell Language Support](https://marketplace.visualstudio.com/items?itemname=ms-vscode.powershell) extension. This extension includes support for the [Pester](https://github.com/pester/Pester) testing framework, and [PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer), which is the recommended static code analyzer for PowerShell.
+To write and debug PowerShell scripts, install the [Visual Studio Code](https://code.visualstudio.com) editor and add the [PowerShell Language Support](https://marketplace.visualstudio.com/items?itemname=ms-vscode.powershell) extension. This extension includes support for the [Pester](https://github.com/pester/Pester) testing framework, and [PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer), which is the recommended static code analyzer for PowerShell. Use [Plaster](https://github.com/PowerShell/Plaster) to generate new projects from standard templates.
 
 # Running Scripts #
 
@@ -84,7 +84,7 @@ Set-ExecutionPolicy RemoteSigned
 # Automating Windows Management with Ansible or Windows PowerShell DSC #
 
 The [Ansible](https://www.ansible.com) automation tool uses PowerShell to
-execute tasks on the Windows systems that it manages, with PowerShell Remoting and  [WinRM](https://msdn.microsoft.com/en-us/library/aa384426%28v=vs.85%29.aspx)
+execute tasks on the Windows systems that it manages, with PowerShell Remoting and [WinRM](https://msdn.microsoft.com/en-us/library/aa384426%28v=vs.85%29.aspx)
 (Windows Remote Management) to communicate between the controller and the
 targets.
 
@@ -146,6 +146,12 @@ Hash tables are defined with curly braces:
 
 ~~~powershell
 @{1='First', 2='Second'}
+~~~
+
+To access an environment variable, use *$env*. For example, to read the *PATH* environment variable:
+
+~~~powershell
+$env:PATH
 ~~~
 
 ## Conditionals #
@@ -284,13 +290,17 @@ trap [System.Management.Automation.PSInvalidCastException] {
 
 * [PowerShell Notes for Professionals book](http://goalkicker.com/PowerShellBook/) - Free ebook
 
-# Extra Modules #
+# Third-Party Modules #
 
 * [AWS Tools for Windows PowerShell](https://aws.amazon.com/powershell/) - Modules for managing Amazon Web Services
 * [Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure/) - Modules for managing Microsoft Azure cloud services
 * Google's [Cloud Tools for PowerShell](https://cloud.google.com/powershell/) - Modules for managing Google Cloud Platform services
+* [dbachecks](https://github.com/sqlcollaborative/dbachecks) - Microsoft SQL Server Environmental Validation
 * [dbatools](https://dbatools.io/) - Community module of tools for Microsoft SQL Server
 * [posh-git](https://dahlbyk.github.io/posh-git/) - Git integration for PowerShell
+* [psake](https://github.com/psake/psake) - Build tool
+* [Pscx](https://github.com/Pscx/Pscx) - PowerShell Community Extensions module repository
+* [PSSlack](https://github.com/RamblingCookieMonster/PSSlack/) - Third-party module for Slack
 * [PSWindowsUpdate](https://gallery.technet.microsoft.com/scriptcenter/2d191bcd-3308-4edd-9de2-88dff796b0bc) - Third-party module to manage and run Microsoft Updates on Windows systems, as explained in [this tutorial](https://www.petri.com/manage-windows-updates-with-powershell-module)
 * [SqlServer](https://www.powershellgallery.com/packages/Sqlserver/21.0.17224) - Current official module for Microsoft SQL Server, which replaces SQLPS
 
@@ -359,6 +369,7 @@ Use *Copy-Item* to transfer files over Windows file-sharing or PowerShell Remoti
 * *Get-ChildItem OBJECT* - List the child objects of an object
 * *Get-Member OBJECT* - List the members of an object
 * *Select-Object PROPERTY1,PROPERTY2* - Shows the specified properties for a collection of objects
+* *Select-String STRING* - Finds text in strings and files
 * *Where-Object { CODE }* - Filters a collection of objects
 * *Measure-Object -property* - Show aggregate statistics for *property*
 * *Sort-Object PROPERTY1 -descending* - Sorts a collection of objects by the given property
