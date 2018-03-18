@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2018-03-17T21:34:00+00:00"
+Date = "2018-03-18T20:49:00+00:00"
 Description = ""
 Categories = ["administration", "tools"]
 Tags = ["administration", "dotnet", "powershell", "windows"]
@@ -25,9 +25,7 @@ Windows PowerShell is the older, proprietary implementation of PowerShell that i
 shipped with most versions of Windows. It is sometimes referred to as the
 *Desktop* edition. Windows PowerShell is still maintained, but will receive no new features. The intention is to replace it with PowerShell Core.
 
-PowerShell Core is the latest implementation of PowerShell. It is built with .NET
-Core to be cross-platform and Open Source. For consistency with Windows PowerShell, the first full release of PowerShell Core has 6.0 as the version number. PowerShell Core 5.1 was a
-special edition that was shipped with Windows Nano Server.
+PowerShell Core is the latest implementation of PowerShell. It is built with .NET Core to be cross-platform and Open Source. For consistency with the version numbers of Windows PowerShell, the first full release of PowerShell Core has 6.0 as the version number.
 
 # Installing PowerShell #
 
@@ -303,6 +301,7 @@ trap [System.Management.Automation.PSInvalidCastException] {
 * [PSSlack](https://github.com/RamblingCookieMonster/PSSlack/) - Third-party module for Slack
 * [PSWindowsUpdate](https://gallery.technet.microsoft.com/scriptcenter/2d191bcd-3308-4edd-9de2-88dff796b0bc) - Third-party module to manage and run Microsoft Updates on Windows systems, as explained in [this tutorial](https://www.petri.com/manage-windows-updates-with-powershell-module)
 * [SqlServer](https://www.powershellgallery.com/packages/Sqlserver/21.0.17224) - Current official module for Microsoft SQL Server, which replaces SQLPS
+* [VMWare PowerCLI](https://www.vmware.com/support/developer/PowerCLI/index.html) - PowerShell modules for managing VMware products
 
 # Common Commands #
 
