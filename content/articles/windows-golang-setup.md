@@ -6,7 +6,6 @@ Description = "Setting up Windows for development with Go and Buffalo"
 Categories = ["administration", "programming"]
 Tags = ["administration", "golang", "javascript", "windows"]
 Type = "article"
-Draft = true
 
 +++
 
