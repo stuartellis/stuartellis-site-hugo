@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2018-03-18T20:49:00+00:00"
+Date = "2018-03-19T17:11:00+00:00"
 Description = ""
 Categories = ["administration", "tools"]
 Tags = ["administration", "dotnet", "powershell", "windows"]
@@ -53,7 +53,7 @@ Once PowerShell Core is installed, type *pwsh* in a Terminal window to start a P
 
     pwsh
 
-## Extra Tools and Modules ##
+## Tools ##
 
 The current versions of PowerShell include features to install extra modules from
 remote repositories. By default, the public [PowerShell Gallery](http://www.powershellgallery.com) is configured as a repository.
@@ -281,6 +281,7 @@ trap [System.Management.Automation.PSInvalidCastException] {
 ## Websites ##
 
 * [Awesome PowerShell](https://github.com/janikvonrotz/awesome-powershell) - Curated list of resources and modules for PowerShell
+* [Planet PowerShell](https://www.planetpowershell.com/) - Blog aggregator for the PowerShell community
 * [PowerShell.org](https://powershell.org/) - Community forums for PowerShell users
 * [PowerShell Magazine](http://www.powershellmagazine.com/)
 
@@ -288,7 +289,7 @@ trap [System.Management.Automation.PSInvalidCastException] {
 
 * [PowerShell Notes for Professionals book](http://goalkicker.com/PowerShellBook/) - Free ebook
 
-# Third-Party Modules #
+# Extra Modules #
 
 * [AWS Tools for Windows PowerShell](https://aws.amazon.com/powershell/) - Modules for managing Amazon Web Services
 * [Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure/) - Modules for managing Microsoft Azure cloud services
