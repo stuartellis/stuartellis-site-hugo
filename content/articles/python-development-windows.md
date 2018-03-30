@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-03-10T20:50:00+00:00"
+Date = "2018-03-30T19:11:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -13,7 +13,7 @@ Notes on starting Python development with Windows.
 
 <!--more-->
 
-# Installing Python #
+# Installing Python on Windows #
 
 First, download the latest version of Python from [the official
 Website](http://www.python.org/). Choose the *Windows x86-64 executable installer* for the latest version of Python 3, unless you know that you need a different option.
@@ -36,7 +36,7 @@ The tutorial that is supplied with Python can walk you through the basics. The d
 
 # Choosing a Code Editor or IDE #
 
- My preferred text editor on Windows is currently [Visual Studio Code](https://code.visualstudio.com). [This tutorial](https://code.visualstudio.com/docs/python/python-tutorial) shows you the features that Visual Studio Code has for Python development, including code quality checks, and support for debugging. You may prefer [Atom](https://atom.io/), which is a high-quality and customisable editor that has [plugins for Python](https://atom.io/packages/search?q=python), or [Notepad++](https://notepad-plus-plus.org/), which will be more suitable for older computers with limited resources. All of these editors are free.
+ My preferred text editor is currently [Visual Studio Code](https://code.visualstudio.com). [This tutorial](https://code.visualstudio.com/docs/python/python-tutorial) shows you the features that Visual Studio Code has for Python development, including code quality checks, and support for debugging. You may prefer [Atom](https://atom.io/), which is a high-quality and customisable editor that has [plugins for Python](https://atom.io/packages/search?q=python), or [Notepad++](https://notepad-plus-plus.org/), which will be more suitable for older computers with limited resources. All of these editors are free.
 
  If you would like to use a full IDE, consider the [Wing IDE](http://www.wingware.com/), which is proprietary, or using the free Eclipse IDE with the [PyDev](http://www.pydev.org/) extension. Current versions of Microsoft Visual Studio also include support for Python.
 
@@ -116,12 +116,11 @@ The Django Web framework includes an Object-Relational Mapper (ORM). For other a
 
 # Graphical Desktop Applications #
 
-If you are specifically interested in developing desktop applications, start with [wxPython](http://wxpython.org/). The Tk interface toolkit that is supplied with the Python standard library is rather basic and dated. If you have advanced needs, you may prefer [PySide](https://wiki.qt.io/PySide), which enables you to make use of the [QT](https://www.qt.io/) libraries.
+If you are specifically interested in developing desktop applications, start with [wxPython](http://wxpython.org/). The Tk interface toolkit that is supplied with the Python standard library is rather basic and dated. If you have advanced needs, you may prefer [PySide2](https://wiki.qt.io/PySide2), which enables you to make use of the [QT](https://www.qt.io/) libraries.
 
-# Windows Integration #
+# Microsoft Windows Integration #
 
-Python includes support for some features that are unique to Microsoft Windows, but not all of them. To use Python with other features of Windows, such as COM and the Registry, install the [win32
-Extensions](https://github.com/mhammond/pywin32).
+Python includes support for some features that are unique to Microsoft Windows, but not all of them. To use Python with other features of Windows, such as COM and the Registry, install the [win32 Extensions](https://github.com/mhammond/pywin32).
 
 # Packaging Applications #
 
