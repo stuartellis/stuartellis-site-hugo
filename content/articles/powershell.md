@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2018-03-19T17:11:00+00:00"
+Date = "2018-03-31T12:49:00+01:00"
 Description = ""
 Categories = ["administration", "tools"]
 Tags = ["administration", "dotnet", "powershell", "windows"]
@@ -49,10 +49,6 @@ To use PowerShell on Linux and macOS systems, install [PowerShell Core](https://
 
 Follow [these instructions](https://github.com/powershell/powershell#telemetry) to disable the telemetry in PowerShell Core. The PowerShell Core installer creates a directory called `/usr/local/microsoft/`, with one subdirectory per PowerShell installation.
 
-Once PowerShell Core is installed, type *pwsh* in a Terminal window to start a PowerShell session:
-
-    pwsh
-
 ## Tools ##
 
 The current versions of PowerShell include features to install extra modules from
@@ -60,7 +56,17 @@ remote repositories. By default, the public [PowerShell Gallery](http://www.powe
 
 To write and debug PowerShell scripts, install the [Visual Studio Code](https://code.visualstudio.com) editor and add the [PowerShell Language Support](https://marketplace.visualstudio.com/items?itemname=ms-vscode.powershell) extension. This extension includes support for the [Pester](https://github.com/pester/Pester) testing framework, and [PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer), which is the recommended static code analyzer for PowerShell. Use [Plaster](https://github.com/PowerShell/Plaster) to generate new projects from standard templates.
 
-# Running Scripts #
+# Running PowerShell #
+
+## Running an Interactive Session ##
+
+All current editions of Windows include a version of PowerShell, and display icons for it. PowerShell Core does not replace Windows PowerShell or other existing shells on your computer. You must specifically choose to run it.
+
+Type *pwsh* in a Terminal window to start a PowerShell Core session:
+
+    pwsh
+
+## Running Scripts ##
 
 PowerShell files have the file extension of *.ps1*, regardless of the version of
 PowerShell.
@@ -78,19 +84,6 @@ Internet to be signed, set the policy to *RemoteSigned*:
 ~~~powershell
 Set-ExecutionPolicy RemoteSigned
 ~~~
-
-# Automating Windows Management with Ansible or Windows PowerShell DSC #
-
-The [Ansible](https://www.ansible.com) automation tool uses PowerShell to
-execute tasks on the Windows systems that it manages, with PowerShell Remoting and [WinRM](https://msdn.microsoft.com/en-us/library/aa384426%28v=vs.85%29.aspx)
-(Windows Remote Management) to communicate between the controller and the
-targets.
-
-[Windows PowerShell Desired State
-Configuration](https://msdn.microsoft.com/en-us/PowerShell/DSC/overview) (DSC)
-provides extensions for managing multiple remote Windows systems using
-PowerShell, and also uses WinRM for communications. DSC does not need PowerShell
-Remoting to be enabled on the target systems, only WinRM.
 
 # Syntax #
 
@@ -269,6 +262,66 @@ trap [System.Management.Automation.PSInvalidCastException] {
   # code
 }
 ~~~
+
+# Accessing Remote Systems #
+
+By default, PowerShell accesses remote systems by connecting to the Windows Remote Management (WinRM) service on those systems, using the WS-MAN protocol. Microsoft are adding SSH support to Windows and PowerShell as an alternative to WinRM and WS-MAN.
+
+Current versions of Windows Server enable WinRM, and allow users with administrative rights to log in. For other versions of Windows, you must first run the *Enable-PSRemoting* cmdlet to set up remote access.
+
+By default, PowerShell uses the credentials of the logged in user.
+
+## Moving Between Local and Remote Systems ##
+
+First, create a *persistent session* on the remote system. You then either pass the session object to other commands as an option, or use *Enter-PSSession* to run an interactive session on the remote system.
+
+~~~powershell
+$session1 = New-PSSession -ComputerName server1
+Copy-Item '.\my-file.txt' 'C:\' -ToSession $session1
+~~~
+
+~~~powershell
+$session1 = New-PSSession -ComputerName server1
+Enter-PSSession $session1
+~~~
+
+This session remains active until you close it, which means that you can enter and exit the session as you wish. To close a session, use the *Remove-PSSession* commandlet:
+
+~~~powershell
+$session1 = New-PSSession -ComputerName server1
+Remove-PSSession $session1
+~~~
+
+Some PowerShell commandlets include specific options for remote systems. These create temporary connections that are automatically closed once the command is completed on the remote system.
+
+## Running Commands and Scripts on Remote Systems ##
+
+Use the *Invoke-Command* commandlet to run PowerShell commands on remote systems:
+
+~~~powershell
+Invoke-Command -ComputerName server1,server2,server3 -ScriptBlock { Get-Service }
+~~~
+
+To run a script, specify the name of the script with the *FilePath* option:
+
+~~~powershell
+Invoke-Command -ComputerName server1,server2,server3 -FilePath '.\my-script.ps1'
+~~~
+
+By default, *Invoke-Command* creates new temporary connections to run the command or script on each system. You may re-use persistent sessions if you wish.
+
+## Automating Management with Ansible or Windows PowerShell DSC ##
+
+The [Ansible](https://www.ansible.com) automation tool uses PowerShell to
+execute tasks on the Windows systems that it manages, with PowerShell Remoting and [WinRM](https://msdn.microsoft.com/en-us/library/aa384426%28v=vs.85%29.aspx)
+(Windows Remote Management) to communicate between the controller and the
+targets. This means that PowerShell Remoting must be enabled on all of the Windows systems that you woul like to manage with Ansible.
+
+[Windows PowerShell Desired State
+Configuration](https://msdn.microsoft.com/en-us/PowerShell/DSC/overview) (DSC)
+provides extensions for managing multiple remote Windows systems using
+PowerShell, and also uses WinRM for communications. DSC does not need PowerShell
+Remoting to be enabled on the target systems, only WinRM.
 
 # Resources #
 
