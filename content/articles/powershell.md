@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2018-03-31T12:49:00+01:00"
+Date = "2018-03-31T18:29:00+01:00"
 Description = ""
 Categories = ["administration", "tools"]
 Tags = ["administration", "dotnet", "powershell", "windows"]
@@ -308,6 +308,8 @@ To run a script, specify the name of the script with the *FilePath* option:
 Invoke-Command -ComputerName server1,server2,server3 -FilePath '.\my-script.ps1'
 ~~~
 
+The results of scripts and commands are returned to the PowerShell session as XML data objects. This means that results can be piped into other commandlets, but the result objects only have data properties.
+
 By default, *Invoke-Command* creates new temporary connections to run the command or script on each system. You may re-use persistent sessions if you wish.
 
 ## Automating Management with Ansible or Windows PowerShell DSC ##
@@ -341,6 +343,7 @@ Remoting to be enabled on the target systems, only WinRM.
 ## Books ##
 
 * [PowerShell Notes for Professionals book](http://goalkicker.com/PowerShellBook/) - Free ebook
+* [Secrets of PowerShell](https://www.penflip.com/powershellorg/) - A series of free short e-books from PowerShell.org
 
 # Extra Modules #
 
