@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2018-03-31T18:29:00+01:00"
+Date = "2018-04-03T18:39:00+01:00"
 Description = ""
 Categories = ["administration", "tools"]
 Tags = ["administration", "dotnet", "powershell", "windows"]
@@ -263,6 +263,14 @@ trap [System.Management.Automation.PSInvalidCastException] {
 }
 ~~~
 
+# The Shell Profile #
+
+Your PowerShell profile is a PowerShell script that runs each time that you start a PowerShell session. Use your profile to import modules that you use very frequently, or set useful variables. By default, your profile is empty.
+
+The $PROFILE variable stores the path to the profile for the current user. To edit your profile, start your editor from PowerShell and specify $PROFILE as the file to edit. For example, to edit your PowerShell profile with Visual Studio Code, start *code*:
+
+    code $PROFILE
+
 # Accessing Remote Systems #
 
 By default, PowerShell accesses remote systems by connecting to the Windows Remote Management (WinRM) service on those systems, using the WS-MAN protocol. Microsoft are adding SSH support to Windows and PowerShell as an alternative to WinRM and WS-MAN.
@@ -285,7 +293,7 @@ $session1 = New-PSSession -ComputerName server1
 Enter-PSSession $session1
 ~~~
 
-This session remains active until you close it, which means that you can enter and exit the session as you wish. To close a session, use the *Remove-PSSession* commandlet:
+This session remains active until you close it, which means that you can enter and exit the session as you wish. To close a session, use the *Remove-PSSession* cmdlet:
 
 ~~~powershell
 $session1 = New-PSSession -ComputerName server1
@@ -296,7 +304,7 @@ Some PowerShell commandlets include specific options for remote systems. These c
 
 ## Running Commands and Scripts on Remote Systems ##
 
-Use the *Invoke-Command* commandlet to run PowerShell commands on remote systems:
+Use the *Invoke-Command* cmdlet to run PowerShell commands on remote systems:
 
 ~~~powershell
 Invoke-Command -ComputerName server1,server2,server3 -ScriptBlock { Get-Service }
@@ -324,6 +332,40 @@ Configuration](https://msdn.microsoft.com/en-us/PowerShell/DSC/overview) (DSC)
 provides extensions for managing multiple remote Windows systems using
 PowerShell, and also uses WinRM for communications. DSC does not need PowerShell
 Remoting to be enabled on the target systems, only WinRM.
+
+# Managing Cloud Infrastructure with PowerShell #
+
+Amazon Web Services, Google Cloud Platform and Microsoft Azure all provide PowerShell modules for working with their infrastructure. You will need to install the modules for the platforms that you use.
+
+To install the AWS Tools for PowerShell Core:
+
+~~~powershell
+Install-Module -Scope CurrentUser -Name AWSPowerShell.NetCore -Force
+~~~
+
+Once you have installed the module, you will need to import it into your session, and set the necessary credentials. For AWS, this means that you must set an AWS profile, and specify the default AWS region for your operations.
+
+By default, PowerShell Core reads and writes credentials into an encrypted store. If you have already created AWS profiles in plain-text files with the AWS CLI or libraries, it will also read those files.
+
+~~~powershell
+# Import the module
+Import-Module AWSPowerShell.NetCore
+# Use the AWS profile named "default"
+Set-AWSCredential -ProfileName default
+# Set the default AWS region
+Set-DefaultAWSRegion -Region us-west-1
+~~~
+
+Once the module and credentials are in your session, you may use AWS cmdlets to manage your infrastructure. The module also defines [aliases for the cmdlets](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-discovery-aliases.html), and a special [$AWSHistory variable](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-pipelines.html).
+
+If you do not import the AWS module, it will automatically be loaded the first time that you use an AWS cmdlet.
+
+To upgrade the PowerShell module for AWS, you must uninstall the existing version, and then install the latest version:
+
+~~~powershell
+Uninstall-Module -Name AWSPowerShell.NetCore -AllVersions
+PS> Install-Module -Name AWSPowerShell.NetCore
+~~~
 
 # Resources #
 
