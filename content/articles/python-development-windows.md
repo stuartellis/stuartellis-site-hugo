@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-03-30T19:11:00+01:00"
+Date = "2018-04-04T10:59:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -72,6 +72,7 @@ If Git is installed, Atom and Visual Studio Code provide you with access to info
 A number of other tools are commonly used in Python development. You should
 probably learn these as you need them.
 
+* [Cookiecutter](https://cookiecutter.readthedocs.io/) to create new projects from templates
 * [autopep8](https://pypi.python.org/pypi/autopep8/) for code formatting
 * [Pylint](https://www.pylint.org) for code quality
 * [Pytest](http://pytest.org) for testing
