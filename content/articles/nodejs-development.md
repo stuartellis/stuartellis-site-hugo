@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-04-14T10:58:00+01:00"
+Date = "2018-04-14T12:22:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -29,7 +29,7 @@ A standard Node.js installation provides you with:
 
 # Choosing a Code Editor or IDE #
 
- My preferred text editor is currently [Visual Studio Code](https://code.visualstudio.com). [This tutorial](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial) shows you the features that Visual Studio Code has for JavaScript development, including code quality checks, and support for debugging. You may prefer [Atom](https://atom.io/), which is a high-quality and customisable editor that has plugisn for Node.js and JavaScript, or [Notepad++](https://notepad-plus-plus.org/), which will be more suitable for older computers with limited resources. All of these editors are free.
+ My preferred text editor is currently [Visual Studio Code](https://code.visualstudio.com). [This tutorial](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial) shows you the features that Visual Studio Code has for JavaScript development, including code quality checks, and support for debugging. You may prefer [Atom](https://atom.io/), which is a high-quality and customisable editor that has plugins for Node.js and JavaScript, or [Notepad++](https://notepad-plus-plus.org/), which will be more suitable for older computers with limited resources. All of these editors are free.
 
 # Essential Tools #
 
@@ -44,18 +44,29 @@ Version control is obviously vital for collaborating with other programmers. It 
 
 If Git is installed, Atom and Visual Studio Code provide you with access to information and features from Git directly in their user interfaces. If you use Visual Studio Code, you should also consider installing the [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) extension, which enhances the integration with Git.
 
+## Testing Tools ##
+
+[Jest](https://facebook.github.io/jest/) provides a comprehensive package for testing.
+
+The most popular solution is to use [Mocha](https://mochajs.org/) unit testing framework, in conjunction with [Sinon.js](http://sinonjs.org/) for mocks, [Chai](http://www.chaijs.com/) for assertions, [Karma](https://karma-runner.github.io) for running tests, and [Istanbul](https://istanbul.js.org/) to measure test coverage.
+
 ## Other Popular Tools ##
 
 A number of other tools are commonly used in JavaScript development. You should probably learn these as you need them.
 
 * [ESLint](http://eslint.org/) - Code quality checks
+* [JSDoc](http://usejsdoc.org/) - API documentation generator
 * [Prettier](https://github.com/prettier/prettier) - Code formatter for JavaScript and TypeScript
+
+# Essential Libraries #
+
+[Lodash](https://lodash.com/) provides a library of common utility functions.
 
 # Web Applications #
 
-[Express](https://expressjs.com/) is the most popular choice for very simple Websites and services. The Express framework provides the basic package of features that you need for a small Web application.
+[Express](https://expressjs.com/) is the most popular choice for very simple Websites and services. The Express framework provides a basic package of features that you need for a small Web application. [Fastify](https://www.fastify.io/) is an emerging alternative to Express.
 
-Cloud services such as [Heroku](https://www.heroku.com/) and [Google App Engine](https://cloud.google.com/appengine/) also provide hosting for Node.js Web applications.
+Cloud services such as [Heroku](https://www.heroku.com/), [Google App Engine](https://cloud.google.com/appengine/) and [Zeit Now](https://zeit.co/now) provide low-maintenance hosting for Node.js Web applications.
 
 For function-as-a-service applications, such as AWS Lambda, use the [Serverless](https://www.serverless.com) framework.
 
@@ -70,11 +81,15 @@ as PostgreSQL, MySQL, or Oracle you will need to install the client software for
 
 > *Connecting to Microsoft SQL Server*: [Microsoft recommend that you use the Node.js Driver for SQL Server](https://docs.microsoft.com/en-us/sql/connect/node-js/node-js-driver-for-sql-server).
 
-[TypeORM](http://typeorm.io) provides a Object Relational Mapper.
+[Objection.js](https://vincit.github.io/objection.js) provides a Object Relational Mapper. [TypeORM](http://typeorm.io) is an emerging alternative.
 
 # Graphical Desktop Applications #
 
 If you are interested in developing desktop applications, use [Electron](https://electronjs.org/).
+
+# Mobile Applications #
+
+To develop mobile applications with JavaScript, use either [Ionic](https://ionicframework.com/) or [React Native](http://reactnative.com/).
 
 # Packaging Applications #
 
