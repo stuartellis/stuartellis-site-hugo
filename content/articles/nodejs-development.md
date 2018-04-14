@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-04-14T12:22:00+01:00"
+Date = "2018-04-14T15:48:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -46,21 +46,23 @@ If Git is installed, Atom and Visual Studio Code provide you with access to info
 
 ## Testing Tools ##
 
-[Jest](https://facebook.github.io/jest/) provides a comprehensive package for testing.
+[Jest](https://facebook.github.io/jest/) provides a comprehensive set of tools for testing.
 
 The most popular solution is to use [Mocha](https://mochajs.org/) unit testing framework, in conjunction with [Sinon.js](http://sinonjs.org/) for mocks, [Chai](http://www.chaijs.com/) for assertions, [Karma](https://karma-runner.github.io) for running tests, and [Istanbul](https://istanbul.js.org/) to measure test coverage.
 
-## Other Popular Tools ##
+## Other Tools ##
 
 A number of other tools are commonly used in JavaScript development. You should probably learn these as you need them.
 
+* [Documentation.js](http://documentation.js.org/) - Documentation generator
 * [ESLint](http://eslint.org/) - Code quality checks
-* [JSDoc](http://usejsdoc.org/) - API documentation generator
 * [Prettier](https://github.com/prettier/prettier) - Code formatter for JavaScript and TypeScript
 
 # Essential Libraries #
 
-[Lodash](https://lodash.com/) provides a library of common utility functions.
+* [Lodash](https://lodash.com/) - Library of common utility functions
+* [Math.js](http://mathjs.org/) - Math library
+* [Moment.js](http://momentjs.com/) - Date and time library
 
 # Web Applications #
 
@@ -68,7 +70,7 @@ A number of other tools are commonly used in JavaScript development. You should 
 
 Cloud services such as [Heroku](https://www.heroku.com/), [Google App Engine](https://cloud.google.com/appengine/) and [Zeit Now](https://zeit.co/now) provide low-maintenance hosting for Node.js Web applications.
 
-For function-as-a-service applications, such as AWS Lambda, use the [Serverless](https://www.serverless.com) framework.
+To produce applications for function-as-a-service systems, such as AWS Lambda, use the [Serverless](https://www.serverless.com) framework.
 
 # Web Clients #
 
