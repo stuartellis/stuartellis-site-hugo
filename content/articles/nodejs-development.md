@@ -94,3 +94,15 @@ To develop mobile applications with JavaScript, use either [Ionic](https://ionic
 # Packaging Applications #
 
 To build packaged applications, use [pkg](https://www.npmjs.com/package/pkg). This creates stand-alone executables that include Node.js itself, your code, and any other dependencies.
+
+# Resources #
+
+* [NodeSchool](http://nodeschool.io/) - Interactive tutorials for Node.js
+* [Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
+* [Node.js Best Practices](https://github.com/i0natan/nodebestpractices)
+
+## Books ##
+
+* [Eloquent JavaScript](http://eloquentjavascript.net/) - Introduction to JavaScript and programming, by Marijn Haverbeke
+* [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS) - Book series on JavaScript internals, by Kyle Simpson
+* [Exploring JS](http://exploringjs.com/) - Book series by Dr. Axel Rauschmayer
