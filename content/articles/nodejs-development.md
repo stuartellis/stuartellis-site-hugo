@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-04-15T16:10:00+01:00"
+Date = "2018-04-15T19:52:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -9,24 +9,23 @@ Type = "article"
 
 +++
 
-Notes on starting Node.js development.
+Notes on development with Node.js and JavaScript.
 
 <!--more-->
 
 # Installing Node.js #
 
-To install Node.js on Windows, download the current version from [the official Website](https://nodejs.org). Choose the LTS version and *Windows installer* (64-bit), unless you know that you need a different option.
+To install Node.js on Windows, download it from [the official Website](https://nodejs.org). Choose the 64-bit *Windows installer* package for the current LTS version, unless you know that you need a different option.
 
 To install Node.js on macOS, use [Homebrew](http://brew.sh/).
 
-[Nodesource](https://nodesource.com/) maintain Node.js packages for the popular Linux distributions.
+To install Node.js on Linux, use the [package repositories](https://github.com/nodesource/distributions) that are maintained by   [Nodesource](https://nodesource.com/).
 
 A standard Node.js installation provides you with:
 
-* The Node.js runtime
+* Node.js itself
 * An *interactive shell* (use the menu icon in Windows, or type _node_ in a
-    command prompt window)
-* A small *standard library*, along with documentation
+    terminal window)
 * The *npm* package manager to install extra software
 
 # Choosing a Code Editor or IDE #
@@ -40,28 +39,29 @@ JavaScript software development, but a few tools are so fundamental that you sho
 
 ## Git for Version Control ##
 
-If you do not already use version control, you should also install [Git](http://git-scm.com/) on your system. Git is now effectively the standard version control tool for developers.
+If you do not already use version control, you should install [Git](http://git-scm.com/) on your system. Git is now effectively the standard version control tool for developers.
 
 Version control is obviously vital for collaborating with other programmers. It also enables you to efficiently copy your application to other systems for testing, deployment and backup.
 
 If Git is installed, Atom and Visual Studio Code provide you with access to information and features from Git directly in their user interfaces. If you use Visual Studio Code, you should also consider installing the [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) extension, which enhances the integration with Git.
 
-## Testing Tools ##
-
-[Jest](https://facebook.github.io/jest/) provides a comprehensive set of tools for testing.
-
-The most popular solution is to use [Mocha](https://mochajs.org/) unit testing framework, in conjunction with [Sinon.js](http://sinonjs.org/) for mocks, [Chai](http://www.chaijs.com/) for assertions, [Karma](https://karma-runner.github.io) for running tests, and [Istanbul](https://istanbul.js.org/) to measure test coverage.
-
 ## Code Quality ##
 
-Set up [ESLint](http://eslint.org/) in all of your projects to run code quality checks. Add [Prettier](https://prettier.io/), which will format your code, removing style issues.
+Set up [ESLint](http://eslint.org/) in all of your projects to run code quality checks. Add [Prettier](https://prettier.io/), which will format your code, removing style issues. [Prettier integrates with ESLint](https://prettier.io/docs/en/eslint.html), so that ESLint formats your code with Prettier, and then checks the reformatted code.
 
 Plugins enable the popular text editors and IDEs to integrate support for  ESLint and Prettier, so that your code can be formatted and checked as you work.
+
+## Testing Tools ##
+
+[Jest](https://facebook.github.io/jest/) provides a comprehensive set of tools for testing. If you do not already have a preference, add Jest to your project.
+
+Existing JavaScript projects may use a combination of libraries in their test suite. The most popular solution is to use the [Mocha](https://mochajs.org/) unit testing framework, in conjunction with [Sinon.js](http://sinonjs.org/) for mocks, [Chai](http://www.chaijs.com/) for assertions, [Karma](https://karma-runner.github.io) for running tests, and [Istanbul](https://istanbul.js.org/) to measure test coverage.
 
 ## Other Development Tools ##
 
 You should probably learn these as you need them.
 
+* [Babel](https://babeljs.io/) - Compiles JavaScript code into alternate  versions
 * [Documentation.js](http://documentation.js.org/) - Documentation generator that uses the standard JSDoc format
 * [Nodemon](https://nodemon.io/) - Instant code reloading during development
 * [Webpack](https://webpack.js.org/) - Web assets compiler
@@ -78,23 +78,21 @@ You should probably learn these as you need them.
 
 Cloud services such as [Heroku](https://www.heroku.com/), [Google App Engine](https://cloud.google.com/appengine/) and [Zeit Now](https://zeit.co/now) provide low-maintenance hosting for Node.js Web applications.
 
-To produce applications for function-as-a-service systems, such as AWS Lambda, use the [Serverless](https://www.serverless.com) framework.
+To produce applications for function-as-a-service infrastructure, such as [AWS Lambda](https://aws.amazon.com/lambda/), use the [Serverless](https://www.serverless.com) framework.
 
 # Web Clients #
 
-Use the [axios](https://github.com/axios/axios) library for your Web client software, such as downloading files or working with APIs. The HTTP software included with Node.js does not use Promises.
+Use the [axios](https://github.com/axios/axios) library for your Web client software, such as downloading files or working with APIs. The HTTP software included with Node.js uses callbacks, rather than the newer  promises style of API.
 
 # Accessing Databases #
 
-To access a SQL database service such as PostgreSQL, MySQL, or Oracle you will need to install the client software for that product, along with a separate Node.js adapter.
+[Objection.js](https://vincit.github.io/objection.js) provides a Object Relational Mapper (ORM) for working with SQL databases. [TypeORM](http://typeorm.io) is an emerging alternative to Objection.js. For MongoDB, use [Mongoose](http://mongoosejs.com/).
 
-> *Connecting to Microsoft SQL Server*: [Microsoft recommend that you use the Node.js Driver for SQL Server](https://docs.microsoft.com/en-us/sql/connect/node-js/node-js-driver-for-sql-server).
-
-[Objection.js](https://vincit.github.io/objection.js) provides a Object Relational Mapper. [TypeORM](http://typeorm.io) is an emerging alternative.
+> *Driver software required:* To access a database service such as PostgreSQL, MySQL, or MongoDB, you will need to install the appropriate Node.js driver.
 
 # Graphical Desktop Applications #
 
-If you are interested in developing desktop applications, use [Electron](https://electronjs.org/).
+To create desktop applications, use [Electron](https://electronjs.org/).
 
 # Mobile Applications #
 
@@ -102,11 +100,16 @@ To develop mobile applications with JavaScript, use either [Ionic](https://ionic
 
 # Packaging Applications #
 
-To build packaged applications, use [pkg](https://www.npmjs.com/package/pkg). This creates stand-alone executables that include Node.js itself, your code, and any other dependencies.
+The tools for mobile and desktop application development build installable packages in the appropriate formats. To package other types of application, such as command-line tools, use [pkg](https://www.npmjs.com/package/pkg). This creates stand-alone executables that include Node.js itself, your code, and any other dependencies.
 
 # Resources #
 
-* [NodeSchool](http://nodeschool.io/) - Interactive tutorials for Node.js
+## Interactive Tutorials ##
+
+* [NodeSchool](http://nodeschool.io/) - Free installable tutorials for Node.js
+
+## Documents ##
+
 * [Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
 * [Node.js Best Practices](https://github.com/i0natan/nodebestpractices)
 
