@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-04-14T15:48:00+01:00"
+Date = "2018-04-15T15:21:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -66,7 +66,7 @@ A number of other tools are commonly used in JavaScript development. You should 
 
 # Web Applications #
 
-[Express](https://expressjs.com/) is the most popular choice for very simple Websites and services. The Express framework provides a basic package of features that you need for a small Web application. [Fastify](https://www.fastify.io/) is an emerging alternative to Express.
+[Express](https://expressjs.com/) provides a basic package of features that you need for a Website or service, and is the most popular choice. The [Feather](https://feathersjs.com/) framework helps you to build and maintain APIs, and is based on Express. [Fastify](https://www.fastify.io/) is an emerging alternative to Express.
 
 Cloud services such as [Heroku](https://www.heroku.com/), [Google App Engine](https://cloud.google.com/appengine/) and [Zeit Now](https://zeit.co/now) provide low-maintenance hosting for Node.js Web applications.
 
@@ -78,8 +78,7 @@ Use the [axios](https://github.com/axios/axios) library for your Web client soft
 
 # Accessing Databases #
 
-To access a SQL database service such
-as PostgreSQL, MySQL, or Oracle you will need to install the client software for that product, along with a separate Node.js adapter.
+To access a SQL database service such as PostgreSQL, MySQL, or Oracle you will need to install the client software for that product, along with a separate Node.js adapter.
 
 > *Connecting to Microsoft SQL Server*: [Microsoft recommend that you use the Node.js Driver for SQL Server](https://docs.microsoft.com/en-us/sql/connect/node-js/node-js-driver-for-sql-server).
 
