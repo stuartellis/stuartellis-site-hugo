@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-04-15T19:52:00+01:00"
+Date = "2018-04-15T21:38:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -19,7 +19,7 @@ To install Node.js on Windows, download it from [the official Website](https://n
 
 To install Node.js on macOS, use [Homebrew](http://brew.sh/).
 
-To install Node.js on Linux, use the [package repositories](https://github.com/nodesource/distributions) that are maintained by   [Nodesource](https://nodesource.com/).
+ If you use a Linux system that supports snaps for your development work, such as the Ubuntu desktop, you can install the [Node.js snaps](https://nodesource.com/blog/announcing-node-js-snap-linux-users/) that are maintained by [Nodesource](https://nodesource.com/). Otherwise, use the [Nodesource package repositories](https://github.com/nodesource/distributions).
 
 A standard Node.js installation provides you with:
 
@@ -84,11 +84,13 @@ To produce applications for function-as-a-service infrastructure, such as [AWS L
 
 Use the [axios](https://github.com/axios/axios) library for your Web client software, such as downloading files or working with APIs. The HTTP software included with Node.js uses callbacks, rather than the newer  promises style of API.
 
+[Puppeteer](https://github.com/GoogleChrome/puppeteer) enables you to automate copies of Chrome and Chromium Web browsers.
+
 # Accessing Databases #
 
 [Objection.js](https://vincit.github.io/objection.js) provides a Object Relational Mapper (ORM) for working with SQL databases. [TypeORM](http://typeorm.io) is an emerging alternative to Objection.js. For MongoDB, use [Mongoose](http://mongoosejs.com/).
 
-> *Driver software required:* To access a database service such as PostgreSQL, MySQL, or MongoDB, you will need to install the appropriate Node.js driver.
+> *Driver software required:* To access a database service such as PostgreSQL, Redis, or MongoDB, you will need to install the appropriate Node.js driver.
 
 # Graphical Desktop Applications #
 
@@ -110,8 +112,10 @@ The tools for mobile and desktop application development build installable packa
 
 ## Documents ##
 
+* [Awesome Node.js](https://node.cool) - A huge list of software and resources for Node.js
 * [Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
 * [Node.js Best Practices](https://github.com/i0natan/nodebestpractices)
+* [Node.js Cheatsheet](https://github.com/LeCoupa/awesome-cheatsheets/blob/master/backend/node.js)
 
 ## Books ##
 
