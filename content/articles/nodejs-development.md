@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-04-15T15:21:00+01:00"
+Date = "2018-04-15T15:57:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -50,13 +50,18 @@ If Git is installed, Atom and Visual Studio Code provide you with access to info
 
 The most popular solution is to use [Mocha](https://mochajs.org/) unit testing framework, in conjunction with [Sinon.js](http://sinonjs.org/) for mocks, [Chai](http://www.chaijs.com/) for assertions, [Karma](https://karma-runner.github.io) for running tests, and [Istanbul](https://istanbul.js.org/) to measure test coverage.
 
-## Other Tools ##
+## Code Quality ##
 
-A number of other tools are commonly used in JavaScript development. You should probably learn these as you need them.
+Set up [ESLint](http://eslint.org/) in all of your projects to run code quality checks. Add [Prettier](https://prettier.io/), which will format your code, removing style issues.
 
-* [Documentation.js](http://documentation.js.org/) - Documentation generator
-* [ESLint](http://eslint.org/) - Code quality checks
-* [Prettier](https://github.com/prettier/prettier) - Code formatter for JavaScript and TypeScript
+Plugins enable the popular text editors and IDEs to integrate support for  ESLint and Prettier, so that your code can be formatted and checked as you work.
+
+## Other Development Tools ##
+
+You should probably learn these as you need them.
+
+* [Documentation.js](http://documentation.js.org/) - Documentation generator that uses the standard JSDoc format
+* [Nodemon](https://nodemon.io/) - Instant code reloading during development
 
 # Essential Libraries #
 
@@ -66,7 +71,7 @@ A number of other tools are commonly used in JavaScript development. You should 
 
 # Web Applications #
 
-[Express](https://expressjs.com/) provides a basic package of features that you need for a Website or service, and is the most popular choice. The [Feather](https://feathersjs.com/) framework helps you to build and maintain APIs, and is based on Express. [Fastify](https://www.fastify.io/) is an emerging alternative to Express.
+[Express](https://expressjs.com/) provides a basic package of features that you need for a Website or service, and is the most popular choice. The [Feathers](https://feathersjs.com/) framework builds on Express to support REST APIs, real-time messaging, database access, and other capabilities for more advanced Web applications. [Fastify](https://www.fastify.io/) is an emerging alternative to Express.
 
 Cloud services such as [Heroku](https://www.heroku.com/), [Google App Engine](https://cloud.google.com/appengine/) and [Zeit Now](https://zeit.co/now) provide low-maintenance hosting for Node.js Web applications.
 
