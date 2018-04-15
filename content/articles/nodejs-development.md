@@ -1,12 +1,11 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-04-15T15:57:00+01:00"
+Date = "2018-04-15T16:10:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
 Type = "article"
-Draft = true
 
 +++
 
@@ -14,15 +13,18 @@ Notes on starting Node.js development.
 
 <!--more-->
 
-# Installing Node.js on Windows #
+# Installing Node.js #
 
-First, download the latest version of Node.js from [the official
-Website](https://nodejs.org). Choose the LTS version and *Windows installer* (64-bit), unless you know that you need a different option.
+To install Node.js on Windows, download the current version from [the official Website](https://nodejs.org). Choose the LTS version and *Windows installer* (64-bit), unless you know that you need a different option.
+
+To install Node.js on macOS, use [Homebrew](http://brew.sh/).
+
+[Nodesource](https://nodesource.com/) maintain Node.js packages for the popular Linux distributions.
 
 A standard Node.js installation provides you with:
 
 * The Node.js runtime
-* An *interactive shell* (use the menu icon, or type _node_ in a
+* An *interactive shell* (use the menu icon in Windows, or type _node_ in a
     command prompt window)
 * A small *standard library*, along with documentation
 * The *npm* package manager to install extra software
@@ -62,6 +64,7 @@ You should probably learn these as you need them.
 
 * [Documentation.js](http://documentation.js.org/) - Documentation generator that uses the standard JSDoc format
 * [Nodemon](https://nodemon.io/) - Instant code reloading during development
+* [Webpack](https://webpack.js.org/) - Web assets compiler
 
 # Essential Libraries #
 
