@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-04-15T21:38:00+01:00"
+Date = "2018-04-16T22:59:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -66,7 +66,9 @@ You should probably learn these as you need them.
 * [Nodemon](https://nodemon.io/) - Instant code reloading during development
 * [Webpack](https://webpack.js.org/) - Web assets compiler
 
-# Essential Libraries #
+# Additional Libraries #
+
+By design, Node.js only includes a very minimal library of modules. These packages offer commonly used items:
 
 * [Lodash](https://lodash.com/) - Library of common utility functions
 * [Math.js](http://mathjs.org/) - Math library
@@ -74,7 +76,7 @@ You should probably learn these as you need them.
 
 # Web Applications #
 
-[Express](https://expressjs.com/) provides a basic package of features that you need for a Website or service, and is the most popular choice. The [Feathers](https://feathersjs.com/) framework builds on Express to support REST APIs, real-time messaging, database access, and other capabilities for more advanced Web applications. [Fastify](https://www.fastify.io/) is an emerging alternative to Express.
+[Express](https://expressjs.com/) offers a basic package of features that you need for a Website or service, and is the most popular choice. [Feathers](https://feathersjs.com/) builds on Express to provide support for REST APIs, real-time messaging, database access, and other capabilities. The [hapi](https://hapijs.com/) framework is designed for larger applications. [Fastify](https://www.fastify.io/) is an emerging alternative to Express and Hapi.
 
 Cloud services such as [Heroku](https://www.heroku.com/), [Google App Engine](https://cloud.google.com/appengine/) and [Zeit Now](https://zeit.co/now) provide low-maintenance hosting for Node.js Web applications.
 
@@ -84,11 +86,11 @@ To produce applications for function-as-a-service infrastructure, such as [AWS L
 
 Use the [axios](https://github.com/axios/axios) library for your Web client software, such as downloading files or working with APIs. The HTTP software included with Node.js uses callbacks, rather than the newer  promises style of API.
 
-[Puppeteer](https://github.com/GoogleChrome/puppeteer) enables you to automate copies of Chrome and Chromium Web browsers.
+[Puppeteer](https://github.com/GoogleChrome/puppeteer) enables you to automate copies of Google Chrome and Chromium Web browsers.
 
 # Accessing Databases #
 
-[Objection.js](https://vincit.github.io/objection.js) provides a Object Relational Mapper (ORM) for working with SQL databases. [TypeORM](http://typeorm.io) is an emerging alternative to Objection.js. For MongoDB, use [Mongoose](http://mongoosejs.com/).
+[Objection.js](https://vincit.github.io/objection.js) provides a Object Relational Mapper (ORM) for working with SQL databases. [TypeORM](http://typeorm.io) is an emerging alternative to Objection.js, with a broader range of features. To work with MongoDB, use [Mongoose](http://mongoosejs.com/).
 
 > *Driver software required:* To access a database service such as PostgreSQL, Redis, or MongoDB, you will need to install the appropriate Node.js driver.
 
