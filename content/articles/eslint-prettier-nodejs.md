@@ -1,7 +1,7 @@
 +++
 Title = "Using ESLint and Prettier with Node.js"
 Slug = "eslint-prettier-nodejs"
-Date = "2018-04-16T22:59:00+01:00"
+Date = "2018-04-17T17:36:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -16,8 +16,7 @@ This article shows how to set up ESLint and Prettier to format and check your Ja
 
 First, install the packages into your project:
 
-    npm install -D eslint-plugin-import eslint-plugin-node eslint-pl
-ugin-promise eslint
+    npm install -D eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint
 
 Next, add an *npm script* to provide a convenient way to run ESLint:
 
@@ -32,7 +31,8 @@ The default settings of Prettier do not support the new features of ES2017 that 
 ~~~json
 {
   "extends": [
-    "prettier"
+    "plugin:prettier/recommended",
+    "eslint:recommended"
   ],
   "parserOptions": {
     "ecmaVersion": 2017
@@ -49,6 +49,18 @@ You can now use run one command to format and check your code:
 
 # Visual Studio Code #
 
-To integrate ESLint with Visual Studio Code, install this extension:
+To integrate ESLint and Prettier with Visual Studio Code, install the *prettier-vscode* extension by Esben Petersen:
 
-dbaeumer.vscode-eslint
+    ext install dbaeumer.vscode-eslint prettier-vscode
+
+Finally, enable *editor.formatOnSave* for JavaScript files:
+
+~~~json
+{
+  "[javascript]": {
+    "editor.formatOnSave": true
+  }
+}
+~~~
+
+This will re-format your code each time that you save a Javascript file.
