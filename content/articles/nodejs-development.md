@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-04-16T22:59:00+01:00"
+Date = "2018-04-20T07:00:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -84,13 +84,13 @@ To produce applications for function-as-a-service infrastructure, such as [AWS L
 
 # Web Clients #
 
-Use the [axios](https://github.com/axios/axios) library for your Web client software, such as downloading files or working with APIs. The HTTP software included with Node.js uses callbacks, rather than the newer  promises style of API.
+Use the [axios](https://github.com/axios/axios) library for your Web client software, such as downloading files or working with APIs. The HTTP software that is included with Node.js uses callbacks, rather than the newer  promises style of API.
 
 [Puppeteer](https://github.com/GoogleChrome/puppeteer) enables you to automate copies of Google Chrome and Chromium Web browsers.
 
 # Accessing Databases #
 
-[Objection.js](https://vincit.github.io/objection.js) provides a Object Relational Mapper (ORM) for working with SQL databases. [TypeORM](http://typeorm.io) is an emerging alternative to Objection.js, with a broader range of features. To work with MongoDB, use [Mongoose](http://mongoosejs.com/).
+[Knex](http://knexjs.org/) provides a toolkit for working with SQL databases, including query building, connection handling, and schema migrations. [Objection.js](https://vincit.github.io/objection.js) is an Object Relational Mapper (ORM) that builds on Knex. [TypeORM](http://typeorm.io) is an emerging alternative to Knex and Objection.js, with a broader range of features. To work with MongoDB, use [Mongoose](http://mongoosejs.com/).
 
 > *Driver software required:* To access a database service such as PostgreSQL, Redis, or MongoDB, you will need to install the appropriate Node.js driver.
 
@@ -100,7 +100,7 @@ To create desktop applications, use [Electron](https://electronjs.org/).
 
 # Mobile Applications #
 
-To develop mobile applications with JavaScript, use either [Ionic](https://ionicframework.com/) or [React Native](http://reactnative.com/).
+To develop mobile applications with JavaScript, use either the  [Ionic](https://ionicframework.com/) framework or [React Native](http://reactnative.com/).
 
 # Packaging Applications #
 
