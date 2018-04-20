@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-04-20T07:00:00+01:00"
+Date = "2018-04-20T17:51:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -34,8 +34,7 @@ A standard Node.js installation provides you with:
 
 # Essential Tools #
 
-There are a number of de-facto standard utilities and libraries for
-JavaScript software development, but a few tools are so fundamental that you should install them even before you begin to write JavaScript code.
+There are a number of de-facto standard utilities and libraries for JavaScript software development, but a few tools are so fundamental that you should install them even before you begin to write JavaScript code.
 
 ## Git for Version Control ##
 
@@ -61,7 +60,7 @@ Existing JavaScript projects may use a combination of libraries in their test su
 
 You should probably learn these as you need them.
 
-* [Babel](https://babeljs.io/) - Compiles JavaScript code into alternate  versions
+* [Babel](https://babeljs.io/) - Compiles JavaScript code into alternate versions
 * [Documentation.js](http://documentation.js.org/) - Documentation generator that uses the standard JSDoc format
 * [Nodemon](https://nodemon.io/) - Instant code reloading during development
 * [Webpack](https://webpack.js.org/) - Web assets compiler
@@ -100,7 +99,11 @@ To create desktop applications, use [Electron](https://electronjs.org/).
 
 # Mobile Applications #
 
-To develop mobile applications with JavaScript, use either the  [Ionic](https://ionicframework.com/) framework or [React Native](http://reactnative.com/).
+To develop mobile applications with JavaScript, use either [Ionic](https://ionicframework.com/) or [React Native](http://reactnative.com/). Ionic creates hybrid mobile apps that use HTML, CSS and JavaScript with the [Angular](https://angular.io/) framework and [Apache Cordova](https://cordova.apache.org/). React Native translates JavaScript into instructions to the native APIs of each mobile operating system.
+
+# Developing Command-line Tools #
+
+To create command-line tools with Node.js, use [Commander](https://github.com/tj/commander.js) or [the Open CLI Framework](https://oclif.io/).
 
 # Packaging Applications #
 
