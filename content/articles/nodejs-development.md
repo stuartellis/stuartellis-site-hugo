@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-04-21T08:03:00+01:00"
+Date = "2018-04-21T13:03:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -109,7 +109,7 @@ To create command-line tools with Node.js, use [Commander](https://github.com/tj
 
 # Robotics and Internet of Things #
 
-[Johnny-Five](http://johnny-five.io/) is the main package for working with robotics and hardware.
+[Johnny-Five](http://johnny-five.io/) is the main package for working with robotics and hardware, such as [Arduino](https://www.arduino.cc/) boards. The [Espruino](https://www.espruino.com/) is a single-chip board with a microcontroller that is specifically designed to be programmed with JavaScript.
 
 # Packaging Applications #
 
@@ -120,7 +120,7 @@ The tools for mobile and desktop application development build installable packa
 ## Interactive ##
 
 * [NodeSchool](http://nodeschool.io/) - Free installable tutorials for Node.js
-* [Nodebots](http://nodebots.io/) - The community for JavaScript robotics and IoT
+* [Nodebots](http://nodebots.io/) - The community for JavaScript robotics and Internet of Things
 
 ## Documents ##
 
@@ -132,5 +132,5 @@ The tools for mobile and desktop application development build installable packa
 ## Books ##
 
 * [Eloquent JavaScript](http://eloquentjavascript.net/) - Introduction to JavaScript and programming, by Marijn Haverbeke
-* [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS) - Book series on JavaScript internals, by Kyle Simpson
 * [Exploring JS](http://exploringjs.com/) - Book series by Dr. Axel Rauschmayer
+* [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS) - Book series on JavaScript internals, by Kyle Simpson
