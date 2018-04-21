@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-04-21T13:03:00+01:00"
+Date = "2018-04-21T15:21:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -48,7 +48,7 @@ If Git is installed, Atom and Visual Studio Code provide you with access to info
 
 Set up [ESLint](http://eslint.org/) in all of your projects to run code quality checks. Add [Prettier](https://prettier.io/), which will format your code, removing style issues. [Prettier integrates with ESLint](https://prettier.io/docs/en/eslint.html), so that ESLint formats your code with Prettier, and then checks the reformatted code.
 
-Plugins enable the popular text editors and IDEs to integrate support for  ESLint and Prettier, so that your code can be formatted and checked as you work.
+Plugins enable the popular text editors and IDEs to integrate ESLint and Prettier, so that your code can be formatted and checked as you work.
 
 ## Testing Tools ##
 
@@ -83,7 +83,7 @@ To produce applications for function-as-a-service infrastructure, such as [AWS L
 
 # Web Clients #
 
-Use the [axios](https://github.com/axios/axios) library for your Web client software, such as downloading files or working with APIs. The HTTP software that is included with Node.js uses callbacks, rather than the newer  promises style of API.
+Use the [axios](https://github.com/axios/axios) library for your Web client software, such as downloading files or working with APIs. The HTTP software that is included with Node.js uses callbacks, rather than the newer promises style of API.
 
 [Cheerio](https://cheerio.js.org/) provides an implementation of the jQuery API for reading and processing HTML documents with Node.js.
 
@@ -119,11 +119,13 @@ The tools for mobile and desktop application development build installable packa
 
 ## Interactive ##
 
+* [freeCodeCamp](https://www.freecodecamp.org/) - Free courses for new programmers
 * [NodeSchool](http://nodeschool.io/) - Free installable tutorials for Node.js
 * [Nodebots](http://nodebots.io/) - The community for JavaScript robotics and Internet of Things
 
 ## Documents ##
 
+* [MDN Web Docs](https://developer.mozilla.org) - The standard resource for Web technologies, maintained by Mozilla
 * [Awesome Node.js](https://node.cool) - A huge list of software and resources for Node.js
 * [Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
 * [Node.js Best Practices](https://github.com/i0natan/nodebestpractices)
