@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-04-21T15:21:00+01:00"
+Date = "2018-04-21T15:28:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -75,7 +75,7 @@ By design, Node.js only includes a very minimal library of modules. These packag
 
 # Web Applications #
 
-[Express](https://expressjs.com/) offers the basic elements that you need for a Website or service, along with support for a large range of plug-ins, and is the most popular choice. [Feathers](https://feathersjs.com/) builds on Express to provide support for REST APIs, real-time messaging, database access, and other capabilities. The [hapi](https://hapijs.com/) framework is designed for larger applications. [Fastify](https://www.fastify.io/) is an emerging alternative to Express and Hapi that can use Express middleware.
+[Express](https://expressjs.com/) offers the basic elements that you need for a Website or service, along with support for a large range of plugins, and is the most popular choice. [Feathers](https://feathersjs.com/) builds on Express to provide support for REST APIs, real-time messaging, database access, and other capabilities. The [hapi](https://hapijs.com/) framework is designed for larger applications. [Fastify](https://www.fastify.io/) is an emerging alternative to Express and hapi that can use Express plugins.
 
 Cloud services such as [Heroku](https://www.heroku.com/), [Google App Engine](https://cloud.google.com/appengine/) and [Zeit Now](https://zeit.co/now) provide low-maintenance hosting for Node.js Web applications.
 
@@ -105,11 +105,13 @@ To develop mobile applications with JavaScript, use either [Ionic](https://ionic
 
 # Developing Command-line Tools #
 
-To create command-line tools with Node.js, use [Commander](https://github.com/tj/commander.js) or [the Open CLI Framework](https://oclif.io/). Commander is the most popular choice for building command-line utilities. The Open CLI Framework was developed by Heroku for their command-ine tools, and then released as an Open Source project in 2018.
+To create command-line tools with Node.js, use either [Commander](https://github.com/tj/commander.js), or [the Open CLI Framework](https://oclif.io/). Commander is the most popular choice for building command-line utilities. The Open CLI Framework was developed by Heroku for their command-ine tools, and then released as an Open Source project in 2018.
 
 # Robotics and Internet of Things #
 
-[Johnny-Five](http://johnny-five.io/) is the main package for working with robotics and hardware, such as [Arduino](https://www.arduino.cc/) boards. The [Espruino](https://www.espruino.com/) is a single-chip board with a microcontroller that is specifically designed to be programmed with JavaScript.
+[Johnny-Five](http://johnny-five.io/) is the main package for working with robotics and hardware, such as [Arduino](https://www.arduino.cc/) boards.
+
+The [Espruino](https://www.espruino.com/) is a single-chip board with a microcontroller that is specifically designed to be programmed with JavaScript.
 
 # Packaging Applications #
 
