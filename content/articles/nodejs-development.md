@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-04-21T20:29:00+01:00"
+Date = "2018-04-21T22:07:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -19,14 +19,7 @@ To install Node.js on Windows, download it from [the official Website](https://n
 
 To install Node.js on macOS, use [Homebrew](http://brew.sh/).
 
- If you use a Linux system that supports snaps for your development work, such as the Ubuntu desktop, you can install the [Node.js snaps](https://nodesource.com/blog/announcing-node-js-snap-linux-users/) that are maintained by [Nodesource](https://nodesource.com/). Otherwise, use the [recommended installation process for your distribution](https://nodejs.org/en/download/package-manager/).
-
-A standard Node.js installation provides you with:
-
-* Node.js itself
-* An *interactive shell* (use the menu icon in Windows, or type _node_ in a
-    terminal window)
-* The *npm* package manager to install extra software
+To install Node.js on Linux, use the [recommended installation process for your distribution](https://nodejs.org/en/download/package-manager/), or a [Docker image](https://store.docker.com/images/node). If the distribution supports snaps, you can also install [Node.js as a snap](https://nodesource.com/blog/announcing-node-js-snap-linux-users/). Snaps automatically update, so are not suitable for situations where you need a reproducible environment. [Nodesource](https://nodesource.com/) maintain the Linux packages for popular distributions, and Docker, Inc. maintain the Docker images.
 
 # Choosing a Code Editor or IDE #
 
