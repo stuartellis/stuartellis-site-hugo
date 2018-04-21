@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-04-20T17:51:00+01:00"
+Date = "2018-04-21T08:03:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -75,7 +75,7 @@ By design, Node.js only includes a very minimal library of modules. These packag
 
 # Web Applications #
 
-[Express](https://expressjs.com/) offers a basic package of features that you need for a Website or service, and is the most popular choice. [Feathers](https://feathersjs.com/) builds on Express to provide support for REST APIs, real-time messaging, database access, and other capabilities. The [hapi](https://hapijs.com/) framework is designed for larger applications. [Fastify](https://www.fastify.io/) is an emerging alternative to Express and Hapi.
+[Express](https://expressjs.com/) offers the basic elements that you need for a Website or service, along with support for a large range of plug-ins, and is the most popular choice. [Feathers](https://feathersjs.com/) builds on Express to provide support for REST APIs, real-time messaging, database access, and other capabilities. The [hapi](https://hapijs.com/) framework is designed for larger applications. [Fastify](https://www.fastify.io/) is an emerging alternative to Express and Hapi that can use Express middleware.
 
 Cloud services such as [Heroku](https://www.heroku.com/), [Google App Engine](https://cloud.google.com/appengine/) and [Zeit Now](https://zeit.co/now) provide low-maintenance hosting for Node.js Web applications.
 
@@ -84,6 +84,8 @@ To produce applications for function-as-a-service infrastructure, such as [AWS L
 # Web Clients #
 
 Use the [axios](https://github.com/axios/axios) library for your Web client software, such as downloading files or working with APIs. The HTTP software that is included with Node.js uses callbacks, rather than the newer  promises style of API.
+
+[Cheerio](https://cheerio.js.org/) provides an implementation of the jQuery API for reading and processing HTML documents with Node.js.
 
 [Puppeteer](https://github.com/GoogleChrome/puppeteer) enables you to automate copies of Google Chrome and Chromium Web browsers.
 
@@ -95,7 +97,7 @@ Use the [axios](https://github.com/axios/axios) library for your Web client soft
 
 # Graphical Desktop Applications #
 
-To create desktop applications, use [Electron](https://electronjs.org/).
+To create desktop applications, use [Electron](https://electronjs.org/). Applications made with Electron are cross-platform, and can be built for Windows, macOS, and Linux.
 
 # Mobile Applications #
 
@@ -103,7 +105,11 @@ To develop mobile applications with JavaScript, use either [Ionic](https://ionic
 
 # Developing Command-line Tools #
 
-To create command-line tools with Node.js, use [Commander](https://github.com/tj/commander.js) or [the Open CLI Framework](https://oclif.io/).
+To create command-line tools with Node.js, use [Commander](https://github.com/tj/commander.js) or [the Open CLI Framework](https://oclif.io/). Commander is the most popular choice for building command-line utilities. The Open CLI Framework was developed by Heroku for their command-ine tools, and then released as an Open Source project in 2018.
+
+# Robotics and Internet of Things #
+
+[Johnny-Five](http://johnny-five.io/) is the main package for working with robotics and hardware.
 
 # Packaging Applications #
 
@@ -111,9 +117,10 @@ The tools for mobile and desktop application development build installable packa
 
 # Resources #
 
-## Interactive Tutorials ##
+## Interactive ##
 
 * [NodeSchool](http://nodeschool.io/) - Free installable tutorials for Node.js
+* [Nodebots](http://nodebots.io/) - The community for JavaScript robotics and IoT
 
 ## Documents ##
 
