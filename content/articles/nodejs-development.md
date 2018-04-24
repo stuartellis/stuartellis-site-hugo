@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-04-21T22:07:00+01:00"
+Date = "2018-04-21T23:27:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -54,8 +54,9 @@ Existing JavaScript projects may use a combination of libraries in their test su
 You should probably learn these as you need them.
 
 * [Babel](https://babeljs.io/) - Compiles JavaScript code into alternate versions
-* [Documentation.js](http://documentation.js.org/) - Documentation generator that uses the standard JSDoc format
+* [Documentation.js](http://documentation.js.org/) - Documentation generator that uses the standard [JSDoc](http://usejsdoc.org/) format
 * [Nodemon](https://nodemon.io/) - Instant code reloading during development
+* [PM2](http://pm2.keymetrics.io/) - Process manager for Node.js applications
 * [Webpack](https://webpack.js.org/) - Web assets compiler
 
 # Additional Libraries #
@@ -72,7 +73,7 @@ By design, Node.js only includes a very minimal library of modules. These packag
 
 Cloud services such as [Heroku](https://www.heroku.com/), [Google App Engine](https://cloud.google.com/appengine/) and [Zeit Now](https://zeit.co/now) provide low-maintenance hosting for Node.js Web applications.
 
-To produce applications for function-as-a-service infrastructure, such as [AWS Lambda](https://aws.amazon.com/lambda/), use the [Serverless](https://www.serverless.com) framework.
+To produce applications for _function as a service_ infrastructure, such as [AWS Lambda](https://aws.amazon.com/lambda/), use the [Serverless](https://www.serverless.com) or [Claudia.js](https://claudiajs.com/) frameworks.
 
 # Web Clients #
 
