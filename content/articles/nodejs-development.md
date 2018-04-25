@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-04-21T23:27:00+01:00"
+Date = "2018-04-25T08:03:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -66,6 +66,7 @@ By design, Node.js only includes a very minimal library of modules. These packag
 * [Lodash](https://lodash.com/) - Library of common utility functions
 * [Math.js](http://mathjs.org/) - Math library
 * [Moment.js](http://momentjs.com/) - Date and time library
+* [Winston](https://github.com/winstonjs/winston) - Logging
 
 # Web Applications #
 
