@@ -1,8 +1,8 @@
 +++
-Title = "Backups with Restic"
+Title = "Backups with restic"
 Slug = "restic-backups"
-Date = "2018-04-11T16:49:00+01:00"
-Description = "Managing backups with Restic"
+Date = "2018-04-28T12:53:00+01:00"
+Description = "Managing backups with restic"
 Categories = ["administration"]
 Tags = ["administration"]
 Type = "article"
@@ -47,17 +47,17 @@ Before you run restic, ensure that the hostname for the system is set correctly.
 
 Run this command to set up the repository in the S3 bucket:
 
-restic -r s3:s3.amazonaws.com/$RESTIC_REPOSITORY init
+restic -r s3:s3.amazonaws.com/YOUR-BUCKET-NAME init
 
-Example script:
+A simple example script:
 
 ~~~bash
 #!/bin/sh
 
 AWS_ACCESS_KEY_ID="XXX"
 AWS_SECRET_ACCESS_KEY="XXX"
-RESTIC_REPOSITORY=staging-stuartellis-org-backups-eu-west-1
-RESTIC_PASSWORD_FILE=restic-password.txt
+RESTIC_REPOSITORY=YOUR-BUCKET-NAME
+RESTIC_PASSWORD_FILE=/path/to/your/restic-password.txt
 
 restic -r s3:s3.amazonaws.com/$RESTIC_REPOSITORY backup --exclude-file restic-exclusions.txt --password-file $RESTIC_PASSWORD_FILE --tag test1 /
 ~~~
