@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-05-06T17:20:00+01:00"
+Date = "2018-05-06T18:32:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["golang"]
@@ -62,12 +62,18 @@ can be formatted and checked as you work.
 
 # Web Applications #
 
-FIXME
+For simple Web applications, use [Echo](https://echo.labstack.com/) or
+[Gin](https://github.com/gin-gonic/gin). These frameworks offer the basic
+package of features that you need for a small Web application.
+[Buffalo](https://gobuffalo.io) provides a full set of features and tools for
+larger Web sites and applications. Use [chi](https://github.com/go-chi/chi) for
+very lightweight REST API services.
 
-Cloud services such as [Google App Engine](https://cloud.google.com/appengine/) and [Heroku](https://www.heroku.com/) provide low-maintenance hosting for Go
-Web applications.
+Cloud services such as [Google App Engine](https://cloud.google.com/appengine/)
+and [Heroku](https://www.heroku.com/) provide low-maintenance hosting for Go Web
+applications.
 
-To produce applications for _function as a service_ infrastructure, such as [AWS Lambda](https://aws.amazon.com/lambda/), use the [Apex](http://apex.run/) or [Sparta](http://gosparta.io/) frameworks.
+To produce applications for [AWS Lambda](https://aws.amazon.com/lambda/), use the [Apex](http://apex.run/) or [Sparta](http://gosparta.io/) frameworks.
 
 # Web Clients #
 
