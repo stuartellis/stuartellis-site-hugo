@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-04-04T10:59:00+01:00"
+Date = "2018-05-06T14:56:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -89,14 +89,19 @@ For very simple Websites and services, use [Flask](http://flask.pocoo.org/). The
 Use either [Django](http://www.djangoproject.com/) or [Pyramid](https://trypyramid.com/) for larger Websites. Django provides a set of custom tools and libraries that closely integrate together. Pyramid offers a modular framework for integrating third-party Python libraries together when developing custom Web applications.
 
 Python Web frameworks follow the WSGI standard, which provides consistent
-interfaces between individual components, and between the components and
-the host Web server. Any server that supports WSGI can host your Python applications. Cloud services such as [Heroku](https://www.heroku.com/) and [Google App Engine](https://cloud.google.com/appengine/) also provide hosting for Python Web applications.
+interfaces between individual components, and between the components and the
+host Web server. Any server that supports WSGI can host your Python
+applications. Cloud services such as [Google App
+Engine](https://cloud.google.com/appengine/), [Heroku](https://www.heroku.com/),
+[Python Anywhere](https://www.pythonanywhere.com/) and [Red Hat
+OpenShift](https://www.openshift.com/) provide low-maintenance hosting for
+Python Web applications.
 
 [Full Stack Python](https://www.fullstackpython.com) provides a comprehensive guide to building Web applications with Python.
 
 # Web Clients #
 
-Use the [requests](http://docs.python-requests.org/en/master/) library for your  Web client software, such as downloading files or working with APIs. The HTTP support in the Python standard library is for low-level code.
+Use the [requests](http://docs.python-requests.org/en/master/) library for your Web client software, such as downloading files or working with APIs. The HTTP support in the Python standard library is for low-level code.
 
 If you need to get information from Websites that do not provide an API, use [Scrapy](https://doc.scrapy.org). You can then extract content from the pages with the [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/) library.
 
@@ -129,7 +134,7 @@ To build packaged applications for Windows, use [PyInstaller](http://www.pyinsta
 
 # Learning Resources #
 
-Google provide a [free course for learning Python](https://developers.google.com/edu/python/), consisting of video lectures and exercises for Python 2. There are also excellent books for learning Python 3 that you can read for free online. [Dive Into Python 3](http://www.diveintopython3.net/) is particularly good for those people with some previous experience of
+There are several excellent books for learning Python 3 that you can read for free online. [Dive Into Python 3](http://www.diveintopython3.net/) is particularly good for those people with some previous experience of
 programming, especially if they are impatient! If you are not a programmer, try [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/), which includes a gentle introduction to programming.
 
 Once you have learned Python itself, visit [The Hitchhiker’s Guide to Python](http://docs.python-guide.org), which provides clear advice on daily work with Python, and [Full Stack Python](https://www.fullstackpython.com) for a comprehensive guide to building Web applications with Python.

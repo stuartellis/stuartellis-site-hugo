@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-04-25T08:03:00+01:00"
+Date = "2018-05-06T14:50:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -72,7 +72,10 @@ By design, Node.js only includes a very minimal library of modules. These packag
 
 [Express](https://expressjs.com/) offers the basic elements that you need for a Website or service, along with support for a large range of plugins, and is the most popular choice. [Feathers](https://feathersjs.com/) builds on Express to provide support for REST APIs, real-time messaging, database access, and other capabilities. The [hapi](https://hapijs.com/) framework is designed for larger applications. [Fastify](https://www.fastify.io/) is an emerging alternative to Express and hapi that can use Express plugins.
 
-Cloud services such as [Heroku](https://www.heroku.com/), [Google App Engine](https://cloud.google.com/appengine/) and [Zeit Now](https://zeit.co/now) provide low-maintenance hosting for Node.js Web applications.
+Cloud services such as [Google App
+Engine](https://cloud.google.com/appengine/), [Heroku](https://www.heroku.com/), [Red Hat
+OpenShift](https://www.openshift.com/) and [Zeit Now](https://zeit.co/now)
+provide low-maintenance hosting for Node.js Web applications.
 
 To produce applications for _function as a service_ infrastructure, such as [AWS Lambda](https://aws.amazon.com/lambda/), use the [Serverless](https://www.serverless.com) or [Claudia.js](https://claudiajs.com/) frameworks.
 
