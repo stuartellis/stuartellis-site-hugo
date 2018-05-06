@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-05-06T18:32:00+01:00"
+Date = "2018-05-06T18:54:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["golang"]
@@ -22,7 +22,10 @@ the current version, unless you know that you need a different option.
 
 To install Go on macOS, use [Homebrew](http://brew.sh/).
 
-To install the current version of Go on Linux, use FIXME, or a [Docker image](https://store.docker.com/images/golang). Docker, Inc. maintain the Docker images. Linux distributions supply older versions of Go.
+To install the current version of Go on Linux, use the package from the official
+Website, or a [Docker image](https://store.docker.com/images/golang). Docker,
+Inc. maintain the Docker images. Linux distributions supply versions of Go, but
+these will frequently be older than the current release.
 
 # Choosing a Code Editor or IDE #
 
@@ -56,9 +59,21 @@ extension, which enhances the integration with Git.
 
 ## Code Quality ##
 
-Set up [FIXME](XXX) in all of your projects to run code quality checks. Plugins
-enable the popular text editors and IDEs to integrate this, so that your code
-can be formatted and checked as you work.
+Use the [Go Meta Linter](https://github.com/alecthomas/gometalinter) to run code
+quality checks. Plugins enable some popular text editors and IDEs to integrate
+this, so that your code can be formatted and checked as you work. The Go plugin
+for Atom automatically installs Go Meta Linter.
+
+The [Go Report Card](https://goreportcard.com/) service will analyse any Go
+software in a public Git repository, using some standard tools. You do not need
+to do anything to enable the Go Report Card. If you wish, you may add a badge to
+the README that links to the Report Card report for your project.
+
+## Dependency Management ##
+
+Set up [dep](https://golang.github.io/dep/) in your projects to manage the
+dependencies. Future versions of Go may include a replacement for *dep*, but it
+is the current standard.
 
 # Web Applications #
 
