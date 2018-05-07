@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-05-06T18:54:00+01:00"
+Date = "2018-05-07T10:50:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["golang"]
@@ -75,6 +75,12 @@ Set up [dep](https://golang.github.io/dep/) in your projects to manage the
 dependencies. Future versions of Go may include a replacement for *dep*, but it
 is the current standard.
 
+# Error Handling #
+
+Go assumes that error objects should be designed to match the needs of the
+particular application. If you would like a simple implementation of these, use
+the [errors](https://godoc.org/github.com/pkg/errors) package.
+
 # Web Applications #
 
 For simple Web applications, use [Echo](https://echo.labstack.com/) or
@@ -92,14 +98,22 @@ To produce applications for [AWS Lambda](https://aws.amazon.com/lambda/), use th
 
 # Web Clients #
 
-Use the [FIXME]() library for your Web client software, such as downloading files or working with APIs. The HTTP software that is included with Go FIXME.
+The standard library for Go includes HTTP server and client software. These
+support both HTTP 1.1 and HTTP/2.
 
 # Accessing Databases #
 
-FIXME
+Go includes support for SQL in the standard library. Add
+[sqlx](http://jmoiron.github.io/sqlx/) to your project to extend this
+SQL support with additional features. Uou will need to
+install drivers for the specific brand of database that you use.
 
-> *Driver software required:* To access a database service such as PostgreSQL,
-> Redis, or MongoDB, you will need to install the appropriate Go driver.
+If you need an Object Relational Mapper(ORM), consider either
+[pop](https://github.com/gobuffalo/pop) or
+[sqlboiler](https://github.com/volatiletech/sqlboiler). Pop is similar to
+ActiveRecord for Rails: it offers an ORM that can create and fully manage an
+application database throughout the life of the system. SQLBoiler generates Go
+code from an existing database.
 
 # Developing Command-line Tools #
 
