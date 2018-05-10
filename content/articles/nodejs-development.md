@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-05-06T14:50:00+01:00"
+Date = "2018-05-10T19:25:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -95,7 +95,7 @@ Use the [axios](https://github.com/axios/axios) library for your Web client soft
 
 # Graphical Desktop Applications #
 
-To create desktop applications, use [Electron](https://electronjs.org/). Applications made with Electron are cross-platform, and can be built for Windows, macOS, and Linux.
+To create desktop applications, use [Electron](https://electronjs.org/). Applications made with Electron are cross-platform, and can be built for Windows, macOS, and Linux with [electron-builder](https://www.electron.build/).
 
 # Mobile Applications #
 
@@ -105,15 +105,13 @@ To develop mobile applications with JavaScript, use either [Ionic](https://ionic
 
 To create command-line tools with Node.js, use either [Commander](https://github.com/tj/commander.js), or [the Open CLI Framework](https://oclif.io/). Commander is the most popular choice for building command-line utilities. The Open CLI Framework was developed by Heroku for their command-ine tools, and then released as an Open Source project in 2018.
 
+To package command-line tools, use [pkg](https://www.npmjs.com/package/pkg). This creates stand-alone executables that include Node.js itself, your code, and any other dependencies.
+
 # Robotics and Internet of Things #
 
 [Johnny-Five](http://johnny-five.io/) is the main package for working with robotics and hardware, such as [Arduino](https://www.arduino.cc/) boards.
 
 The [Espruino](https://www.espruino.com/) is a single-chip board with a microcontroller that is specifically designed to be programmed with JavaScript.
-
-# Packaging Applications #
-
-The tools for mobile and desktop application development build installable packages in the appropriate formats. To package other types of application, such as command-line tools, use [pkg](https://www.npmjs.com/package/pkg). This creates stand-alone executables that include Node.js itself, your code, and any other dependencies.
 
 # Resources #
 
