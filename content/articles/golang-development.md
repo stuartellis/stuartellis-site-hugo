@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-05-28T09:17:00+01:00"
+Date = "2018-05-28T19:54:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["golang"]
@@ -29,10 +29,9 @@ these will frequently be older than the current release.
 
 # Choosing a Code Editor or IDE #
 
- My preferred text editor is currently [Visual Studio
- Code](https://code.visualstudio.com). You may prefer [Atom](https://atom.io/),
- which is a high-quality and customisable editor that has plugins for Go. Both
- of these editors are free.
+My current text editor is [Visual Studio Code](https://code.visualstudio.com).
+You may prefer [Atom](https://atom.io/), which is a high-quality and
+customisable editor that has plugins for Go. Both of these editors are free.
 
 # Essential Tools #
 
@@ -80,6 +79,7 @@ is the current standard.
 * [GoReleaser](https://goreleaser.com/) - Release automation for Go projects
 * [go-cmp](https://github.com/google/go-cmp) - Package for comparing Go values in tests
 * [Packr](https://github.com/gobuffalo/packr) - Embeds files into Go binaries
+* [Viper](https://github.com/spf13/viper) - Configuration for Go applications
 
 # Error Handling #
 
@@ -89,9 +89,10 @@ the [errors](https://godoc.org/github.com/pkg/errors) package.
 
 # Web Applications #
 
-For simple Web applications and API services, use
-[chi](https://github.com/go-chi/chi). [Buffalo](https://gobuffalo.io) provides a
-full set of features and tools for larger Web sites and applications. [Go kit](https://gokit.io/) is a toolkit for building microservices in Go.
+The [chi](https://github.com/go-chi/chi) router offers a minimal framework for
+Web API services. [Buffalo](https://gobuffalo.io) provides a full set of
+features and tools for larger Web sites and applications. [Go
+kit](https://gokit.io/) is a toolkit for building microservices in Go.
 
 Cloud services such as [Google App Engine](https://cloud.google.com/appengine/)
 and [Heroku](https://www.heroku.com/) provide low-maintenance hosting for Go Web
@@ -122,7 +123,7 @@ an ORM that can create and fully manage an application database throughout the
 life of the system. SQLBoiler generates Go code from an existing database.
 
 To embed a key-value database within your application, use
-[Bolt](https://github.com/coreos/bbolt).
+[bbolt](https://github.com/coreos/bbolt).
 
 # Developing Command-line Tools #
 
@@ -133,6 +134,9 @@ To create command-line tools with Go, use the
 
 [Gobot](http://gobot.io/) is the main package for working with robotics and
 hardware, such as [Arduino](https://www.arduino.cc/) boards.
+
+[EmGo](https://github.com/ziutek/emgo) is an implementation of Go for
+programming embedded systems.
 
 # Resources #
 
