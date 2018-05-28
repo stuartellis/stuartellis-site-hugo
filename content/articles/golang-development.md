@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-05-10T20:03:00+01:00"
+Date = "2018-05-28T09:17:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["golang"]
@@ -31,9 +31,8 @@ these will frequently be older than the current release.
 
  My preferred text editor is currently [Visual Studio
  Code](https://code.visualstudio.com). You may prefer [Atom](https://atom.io/),
- which is a high-quality and customisable editor that has plugins for Go, or
- [Notepad++](https://notepad-plus-plus.org/), which will be more suitable for
- older computers with limited resources. All of these editors are free.
+ which is a high-quality and customisable editor that has plugins for Go. Both
+ of these editors are free.
 
 # Essential Tools #
 
@@ -72,7 +71,7 @@ the README that links to the Report Card report for your project.
 ## Dependency Management ##
 
 Set up [dep](https://golang.github.io/dep/) in your projects to manage the
-dependencies. Future versions of Go may include a replacement for *dep*, but it
+dependencies. Future versions of Go will include a replacement for *dep*, but it
 is the current standard.
 
 # Other Popular Tools and Libraries #
@@ -80,7 +79,7 @@ is the current standard.
 * [Delve](https://github.com/derekparker/delve) - Debugger
 * [GoReleaser](https://goreleaser.com/) - Release automation for Go projects
 * [go-cmp](https://github.com/google/go-cmp) - Package for comparing Go values in tests
-* [Packr](https://github.com/gobuffalo/packr) - Embeds files into Go binaries 
+* [Packr](https://github.com/gobuffalo/packr) - Embeds files into Go binaries
 
 # Error Handling #
 
@@ -90,13 +89,9 @@ the [errors](https://godoc.org/github.com/pkg/errors) package.
 
 # Web Applications #
 
-For simple Web applications, use [Echo](https://echo.labstack.com/) or
-[Gin](https://github.com/gin-gonic/gin). These frameworks offer the basic
-package of features that you need for a small Web application.
-[Buffalo](https://gobuffalo.io) provides a full set of features and tools for
-larger Web sites and applications. Use [chi](https://github.com/go-chi/chi) for
-very lightweight REST API services. [Go kit](https://gokit.io/) provides a
-toolkit for building microservices in Go.
+For simple Web applications and API services, use
+[chi](https://github.com/go-chi/chi). [Buffalo](https://gobuffalo.io) provides a
+full set of features and tools for larger Web sites and applications. [Go kit](https://gokit.io/) is a toolkit for building microservices in Go.
 
 Cloud services such as [Google App Engine](https://cloud.google.com/appengine/)
 and [Heroku](https://www.heroku.com/) provide low-maintenance hosting for Go Web
@@ -110,6 +105,8 @@ The standard library for Go includes HTTP server and client software. These
 support both HTTP 1.1 and HTTP/2. Use
 [resty](https://godoc.org/github.com/go-resty/resty) if you would like a more
 convenient API for REST client software.
+
+[Colly](http://go-colly.org/) provides a framework for Web scraping.
 
 # Accessing Databases #
 
