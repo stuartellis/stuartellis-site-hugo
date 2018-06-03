@@ -1,4 +1,4 @@
-baseurl = "https://www.stuartellis.name"
+baseurl = "http://www.stuartellis.name"
 languageCode = "en-us"
 title = "Field Notes"
 theme = "liquorice"
@@ -7,7 +7,6 @@ disqusShortname = "fieldnotes-1"
 [params]
 author = "Stuart Ellis"
 copyright = "Contents © 2018 Stuart Ellis"
-googleAnalytics = "UA-23721911-2"
 
 [[menu.main]]
 name = "Articles"
