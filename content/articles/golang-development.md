@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-05-28T19:54:00+01:00"
+Date = "2018-06-03T09:49:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["golang"]
@@ -142,9 +142,11 @@ programming embedded systems.
 
 ## Interactive ##
 
-* [GoDoc](https://godoc.org/) - GoDoc has online copies of documentation for public Go projects
+* [GoDoc](https://godoc.org/) - Online copies of documentation for public Go projects
 * [GoSearch](https://go-search.org/) - Search engine for Go packages
 
 ## Documents ##
+
+* [Gophercises](https://gophercises.com/) - Programming exercises for learning Go
 
 ## Books ##
