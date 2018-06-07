@@ -16,11 +16,11 @@ identifier = "articles"
 url = "/articles/"
 
 [[menu.main]]
-name = "Projects on GitHub"
+name = "Projects on GitLab"
 pre = "<i class='fa fa-heart'></i>"
 weight = -90
-identifier = "github"
-url = "https://github.com/stuartellis"
+identifier = "gitlab"
+url = "https://gitlab.com/stuart-ellis"
 
 [[menu.main]]
 name = "Contact Me"
