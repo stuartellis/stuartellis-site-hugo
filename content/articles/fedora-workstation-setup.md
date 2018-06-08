@@ -155,8 +155,8 @@ the directory. The final directory structure looks like this:
         bitbucket.org/
           my-bitbucket-username/
             a-project/
-        github.com/
-          my-github-username/
+        gitlab.com/
+          my-gitlab-username/
             another-project/
 
 ## Creating SSH Keys ##

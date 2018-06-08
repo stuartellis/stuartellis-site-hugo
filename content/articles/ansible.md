@@ -210,6 +210,6 @@ Any YAML file that stores password variables should be encrypted using the [Vaul
 
 # Example Repositories #
 
-* [Ansible configuration for Linux and macOS](https://github.com/stuartellis/linux-ansible-config)
-* [Ansible configuration for Amazon Web Services](https://github.com/stuartellis/aws-ansible-config)
-* [Ansible configuration for Microsoft Windows](https://github.com/stuartellis/windows-ansible-config)
+* [Ansible configuration for Linux and macOS](https://gitlab.com/stuart-ellis/linux-ansible-config)
+* [Ansible configuration for Amazon Web Services](https://gitlab.com/stuart-ellis/aws-ansible-config)
+* [Ansible configuration for Microsoft Windows](https://gitlab.com/stuart-ellis/windows-ansible-config)
