@@ -20,7 +20,7 @@ name = "Projects on GitLab"
 pre = "<i class='fa fa-heart'></i>"
 weight = -90
 identifier = "gitlab"
-url = "https://gitlab.com/stuart-ellis"
+url = "https://gitlab.com/users/stuart-ellis/projects"
 
 [[menu.main]]
 name = "Contact Me"
