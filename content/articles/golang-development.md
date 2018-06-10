@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-10T15:47:00+01:00"
+Date = "2018-06-10T19:30:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["golang"]
@@ -141,6 +141,7 @@ programming embedded systems.
 ## Interactive
 
 * [GoDoc](https://godoc.org/) - Online copies of documentation for public Go projects
+* [Gophers Slack](https://gophers.slack.com) - Slack channels for Go programmers
 * [GoSearch](https://go-search.org/) - Search engine for Go packages
 
 ## Documentation
@@ -156,3 +157,4 @@ programming embedded systems.
 
 * [Go in 5 Minutes](https://www.goin5minutes.com) - Short screencasts
 * [Gophercises](https://gophercises.com/) - Programming exercises for learning Go
+* [Just for Func](https://www.youtube.com/channel/UC_BzFbxG2za3bp5NRRRXJSw) - YouTube channel on Go
