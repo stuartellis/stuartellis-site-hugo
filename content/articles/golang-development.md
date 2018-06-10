@@ -1,45 +1,43 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-03T09:49:00+01:00"
+Date = "2018-06-10T15:47:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["golang"]
 Type = "article"
 Draft = true
-
 +++
 
 Notes on development with the Go language.
 
 <!--more-->
 
-# Installing Go #
+# Installing Go
 
 To install Go on Windows, download it from [the official
-Website](https://golang.org/). Choose the 64-bit *Windows installer* package for
+Website](https://golang.org/). Choose the 64-bit _Windows installer_ package for
 the current version, unless you know that you need a different option.
 
 To install Go on macOS, use [Homebrew](http://brew.sh/).
 
-To install the current version of Go on Linux, use the package from the official
-Website, or a [Docker image](https://store.docker.com/images/golang). Docker,
+To install the current version of Go on Linux, use the package from the official Website, or a [Docker image](https://store.docker.com/images/golang). Docker,
 Inc. maintain the Docker images. Linux distributions supply versions of Go, but
 these will frequently be older than the current release.
 
-# Choosing a Code Editor or IDE #
+# Choosing a Code Editor or IDE
 
 My current text editor is [Visual Studio Code](https://code.visualstudio.com).
 You may prefer [Atom](https://atom.io/), which is a high-quality and
 customisable editor that has plugins for Go. Both of these editors are free.
 
-# Essential Tools #
+# Essential Tools
 
 There are a number of de-facto standard utilities and libraries for Go software
 development, but a few tools are so fundamental that you should install them
 even before you begin to write Go code.
 
-## Git for Version Control ##
+## Git for Version Control
 
 If you do not already use version control, you should install
 [Git](http://git-scm.com/) on your system. Git is now effectively the standard
@@ -55,7 +53,7 @@ Visual Studio Code, you should also consider installing the [Git
 Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 extension, which enhances the integration with Git.
 
-## Code Quality ##
+## Code Quality
 
 Use the [Go Meta Linter](https://github.com/alecthomas/gometalinter) to run code
 quality checks. Plugins enable some popular text editors and IDEs to integrate
@@ -67,13 +65,13 @@ software in a public Git repository, using some standard tools. You do not need
 to do anything to enable the Go Report Card. If you wish, you may add a badge to
 the README that links to the Report Card report for your project.
 
-## Dependency Management ##
+## Dependency Management
 
 Set up [dep](https://golang.github.io/dep/) in your projects to manage the
-dependencies. Future versions of Go will include a replacement for *dep*, but it
+dependencies. Future versions of Go will include a replacement for _dep_, but it
 is the current standard.
 
-# Other Popular Tools and Libraries #
+# Other Popular Tools and Libraries
 
 * [Delve](https://github.com/derekparker/delve) - Debugger
 * [GoReleaser](https://goreleaser.com/) - Release automation for Go projects
@@ -81,13 +79,13 @@ is the current standard.
 * [Packr](https://github.com/gobuffalo/packr) - Embeds files into Go binaries
 * [Viper](https://github.com/spf13/viper) - Configuration for Go applications
 
-# Error Handling #
+# Error Handling
 
 Go assumes that error objects should be designed to match the needs of the
 particular application. If you would like a simple implementation of these, use
 the [errors](https://godoc.org/github.com/pkg/errors) package.
 
-# Web Applications #
+# Web Applications
 
 The [chi](https://github.com/go-chi/chi) router offers a minimal framework for
 Web API services. [Buffalo](https://gobuffalo.io) provides a full set of
@@ -100,7 +98,7 @@ applications.
 
 To produce applications for [AWS Lambda](https://aws.amazon.com/lambda/), use the [Apex](http://apex.run/) or [Sparta](http://gosparta.io/) frameworks.
 
-# Web Clients #
+# Web Clients
 
 The standard library for Go includes HTTP server and client software. These
 support both HTTP 1.1 and HTTP/2. Use
@@ -109,7 +107,7 @@ convenient API for REST client software.
 
 [Colly](http://go-colly.org/) provides a framework for Web scraping.
 
-# Accessing Databases #
+# Accessing Databases
 
 Go includes support for SQL in the standard library. Add
 [sqlx](http://jmoiron.github.io/sqlx/) to your project to extend this
@@ -125,12 +123,12 @@ life of the system. SQLBoiler generates Go code from an existing database.
 To embed a key-value database within your application, use
 [bbolt](https://github.com/coreos/bbolt).
 
-# Developing Command-line Tools #
+# Developing Command-line Tools
 
 To create command-line tools with Go, use the
 [Cobra](https://github.com/spf13/cobra) framework.
 
-# Robotics and Internet of Things #
+# Robotics and Internet of Things
 
 [Gobot](http://gobot.io/) is the main package for working with robotics and
 hardware, such as [Arduino](https://www.arduino.cc/) boards.
@@ -138,15 +136,23 @@ hardware, such as [Arduino](https://www.arduino.cc/) boards.
 [EmGo](https://github.com/ziutek/emgo) is an implementation of Go for
 programming embedded systems.
 
-# Resources #
+# Resources
 
-## Interactive ##
+## Interactive
 
 * [GoDoc](https://godoc.org/) - Online copies of documentation for public Go projects
 * [GoSearch](https://go-search.org/) - Search engine for Go packages
 
-## Documents ##
+## Documentation
 
+* [Effective Go](https://golang.org/doc/effective_go.html) - Official best practices document
+
+## Books
+
+* [The Go Programming Language](http://www.gopl.io/)
+* [Go in Action](https://www.manning.com/books/go-in-action)
+
+## Videos
+
+* [Go in 5 Minutes](https://www.goin5minutes.com) - Short screencasts
 * [Gophercises](https://gophercises.com/) - Programming exercises for learning Go
-
-## Books ##
