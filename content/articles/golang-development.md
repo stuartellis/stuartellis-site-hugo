@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-10T19:30:00+01:00"
+Date = "2018-06-13T19:48:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["golang"]
@@ -87,10 +87,12 @@ the [errors](https://godoc.org/github.com/pkg/errors) package.
 
 # Web Applications
 
-The [chi](https://github.com/go-chi/chi) router offers a minimal framework for
-Web API services. [Buffalo](https://gobuffalo.io) provides a full set of
-features and tools for larger Web sites and applications. [Go
-kit](https://gokit.io/) is a toolkit for building microservices in Go.
+You can develop Web applications in Go with just the standard library and a few third-party packages, but this requires you to handle every feature and technical decision yourself. These frameworks provide a structure and sets of tested components for your applications:
+
+* [chi](https://github.com/go-chi/chi) offers a minimal but very high-performance framework for Web API services.
+* [Buffalo](https://gobuffalo.io) is a full set of integrated tools and components for Web sites and applications.
+* [Echo](https://echo.labstack.com/) provides a convenient framework for APIs. 
+* [Go kit](https://gokit.io/) is specifically for building individual microservices for enterprise architectures.
 
 Cloud services such as [Google App Engine](https://cloud.google.com/appengine/)
 and [Heroku](https://www.heroku.com/) provide low-maintenance hosting for Go Web
@@ -140,13 +142,14 @@ programming embedded systems.
 
 ## Interactive
 
-* [GoDoc](https://godoc.org/) - Online copies of documentation for public Go projects
 * [Gophers Slack](https://gophers.slack.com) - Slack channels for Go programmers
 * [GoSearch](https://go-search.org/) - Search engine for Go packages
 
 ## Documentation
 
 * [Effective Go](https://golang.org/doc/effective_go.html) - Official best practices document
+* [GoDoc](https://godoc.org/) - Online copies of documentation for public Go projects
+* [Go by Example](https://gobyexample.com) - Library of code examples
 
 ## Books
 
