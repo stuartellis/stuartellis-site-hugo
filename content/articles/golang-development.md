@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-13T19:48:00+01:00"
+Date = "2018-06-14T20:36:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["golang"]
@@ -148,6 +148,7 @@ programming embedded systems.
 ## Documentation
 
 * [Effective Go](https://golang.org/doc/effective_go.html) - Official best practices document
+* [Go Code Review Comments](https://github.com/golang/go/wiki/CodeReviewComments) - Supplement to Effective Go
 * [GoDoc](https://godoc.org/) - Online copies of documentation for public Go projects
 * [Go by Example](https://gobyexample.com) - Library of code examples
 
@@ -160,4 +161,5 @@ programming embedded systems.
 
 * [Go in 5 Minutes](https://www.goin5minutes.com) - Short screencasts
 * [Gophercises](https://gophercises.com/) - Programming exercises for learning Go
+* [Go Programming by Derek Banas](https://youtu.be/CF9S4QZuV30?list=PLKPKsJOCS_IkEu5FX3hzo_A7eMbHXF68L) - One hour rapid introduction to the language
 * [Just for Func](https://www.youtube.com/channel/UC_BzFbxG2za3bp5NRRRXJSw) - YouTube channel on Go
