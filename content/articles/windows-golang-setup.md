@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Windows for Go and Buffalo"
 Slug = "windows-golang-setup"
-Date = "2017-08-25T19:02:00+01:00"
+Date = "2018-06-16T18:06:00+01:00"
 Description = "Setting up Windows for development with Go and Buffalo"
 Categories = ["administration", "programming"]
 Tags = ["administration", "golang", "javascript", "windows"]
@@ -24,7 +24,7 @@ To work with Go, you only need three things:
 To develop Web applications with Buffalo, you will also need some other pieces of software:
 
 * [Node.js](https://nodejs.org/), the run-time for JavaScript
-* A database, such as [SQLite](https://sqlite.org/) or [PostgreSQL](https://www.postgresql.org/)
+* A database, such as [PostgreSQL](https://www.postgresql.org/)
 * A compiler for C, so that downloaded C libraries will build on your computer
 
 Go, Node.js and many other systems can use libraries that are written in C, so
@@ -159,27 +159,11 @@ and follow the link for *Downloads* to find a Windows installer.
 
 # Databases #
 
-If you are not sure which database product to use, install either
-[SQLite](https://sqlite.org/) or [PostgreSQL](https://www.postgresql.org/).
-
-SQLite creates SQL databases on demand, as files. This means that you can
-develop applications without running a database service on your computer. SQLite
-databases are intended for single-user systems, such as desktops and mobile
-devices. Avoid using SQLite for Web applications that will be deployed to
-servers. Use SQLite for desktop and command-line applications, or for learning
-purposes.
-
-PostgreSQL is a full SQL database product with support for advanced features
+If you are not sure which database product to use, install [PostgreSQL](https://www.postgresql.org/). PostgreSQL is a full SQL database product with support for advanced features
 such as full-text search and JSON document storage. Use PostgreSQL for Web
 applications. The default configuration of PostgreSQL only uses a small amount
 of memory and CPU, so you can install it even on computers with limited
 resources.
-
-## Installing SQLite ##
-
-To install SQLite using Scoop, enter this command in a PowerShell window:
-
-    scoop install sqlite
 
 ## Installing PostgreSQL ##
 
@@ -223,7 +207,7 @@ To install GCC using Scoop, enter this command in a PowerShell window:
 
 To install Buffalo, enter this command in a PowerShell window:
 
-    go get -u -v github.com/gobuffalo/buffalo/...
+    go get -u -v github.com/gobuffalo/buffalo/buffalo
 
 Once it is installed, use the *buffalo* utility to create and manage your Web applications.
 
@@ -251,6 +235,6 @@ packages that you have installed.
 
 To upgrade Buffalo, enter this command in a PowerShell window:
 
-    go get -u -v github.com/gobuffalo/buffalo/...
+    go get -u -v github.com/gobuffalo/buffalo/buffalo 
 
 The *-u* option means that if you already have a copy of Buffalo, it will be upgraded.
