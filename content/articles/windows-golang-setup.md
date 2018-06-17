@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Windows for Go and Buffalo"
 Slug = "windows-golang-setup"
-Date = "2018-06-16T18:06:00+01:00"
+Date = "2018-06-17:11:10+01:00"
 Description = "Setting up Windows for development with Go and Buffalo"
 Categories = ["administration", "programming"]
 Tags = ["administration", "golang", "javascript", "windows"]
@@ -21,14 +21,13 @@ To work with Go, you only need three things:
 * A text editor that understands Go, such as [Atom](https://atom.io/)
 * [Git](https://git-scm.com/), for version control
 
-To develop Web applications with Buffalo, you will also need some other pieces of software:
+To develop Web applications with Buffalo, you will also need two other pieces of software:
 
 * [Node.js](https://nodejs.org/), the run-time for JavaScript
 * A database, such as [PostgreSQL](https://www.postgresql.org/)
-* A compiler for C, so that downloaded C libraries will build on your computer
 
 Go, Node.js and many other systems can use libraries that are written in C, so
-you should install GCC even if you do not write C code.
+you should install a C compiler even if you do not write C code.
 
 Rather installing and updating these tools yourself, use a package manager.
 This tutorial explains how to set up the [Scoop](http://scoop.sh/)
