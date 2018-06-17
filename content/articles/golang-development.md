@@ -1,14 +1,14 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-17T17:17:00+01:00"
-Description = ""
+Date = "2018-06-17T17:31:00+01:00"
+Description = "Notes on develoing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
 Type = "article"
 +++
 
-Notes on development with the Go language.
+Notes on developing software with the [Go](https://golang.org/) language.
 
 <!--more-->
 
@@ -27,7 +27,9 @@ these will frequently be older than the current release.
 # Choosing a Code Editor or IDE
 
 My current text editor is [Oni](https://www.onivim.io/), a desktop version of Vim. You may prefer [Visual Studio Code](https://code.visualstudio.com) or [Atom](https://atom.io/), which are high-quality and
-customisable editors that have plugins for Go. All of these editors are free.
+customisable editors that have plugins for Go. All of these editors are free. JetBrains offer the [GoLand](https://www.jetbrains.com/go/) IDE as a commercial product. 
+
+If you currently use Vim, install the [vim-go](https://github.com/fatih/vim-go) package to add support for Go.
 
 # Essential Tools
 
@@ -69,19 +71,22 @@ Set up [dep](https://golang.github.io/dep/) in your projects to manage the
 dependencies. Future versions of Go will include a replacement for _dep_, but it
 is the current standard.
 
-# Other Popular Tools and Libraries
+# Other Popular Libraries
+
+* [go-cmp](https://github.com/google/go-cmp) - Package for comparing Go values in tests
+* [logrus](https://github.com/Sirupsen/logrus) - Structured logging for Go applications
+* [Viper](https://github.com/spf13/viper) - Configuration for Go applications
+
+# Other Useful Tools
 
 * [Delve](https://github.com/derekparker/delve) - Debugger
 * [GoReleaser](https://goreleaser.com/) - Release automation for Go projects
-* [go-cmp](https://github.com/google/go-cmp) - Package for comparing Go values in tests
 * [Packr](https://github.com/gobuffalo/packr) - Embeds files into Go binaries
-* [Viper](https://github.com/spf13/viper) - Configuration for Go applications
 
 # Error Handling
 
 Go assumes that error objects should be designed to match the needs of the
-particular application. If you would like a simple implementation of these, use
-the [errors](https://godoc.org/github.com/pkg/errors) package.
+particular application. The [errors](https://godoc.org/github.com/pkg/errors) package enables you to add stack traces to your errors.
 
 # Web Applications
 
