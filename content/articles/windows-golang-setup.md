@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Windows for Go and Buffalo"
 Slug = "windows-golang-setup"
-Date = "2018-06-17T11:13:00+01:00"
+Date = "2018-06-17T12:15:00+01:00"
 Description = "Setting up Windows for development with Go and Buffalo"
 Categories = ["administration", "programming"]
 Tags = ["administration", "golang", "javascript", "windows"]
@@ -201,7 +201,7 @@ To install GCC using Scoop, enter this command in a PowerShell window:
 
     scoop install gcc
 
-# Get Buffalo #
+# Installing Buffalo #
 
 To install Buffalo, enter this command in a PowerShell window:
 

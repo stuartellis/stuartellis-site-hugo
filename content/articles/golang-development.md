@@ -6,7 +6,6 @@ Description = ""
 Categories = ["programming"]
 Tags = ["golang"]
 Type = "article"
-Draft = true
 +++
 
 Notes on development with the Go language.
