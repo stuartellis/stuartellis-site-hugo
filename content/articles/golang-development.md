@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-14T20:36:00+01:00"
+Date = "2018-06-17T12:20:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["golang"]
@@ -26,9 +26,8 @@ these will frequently be older than the current release.
 
 # Choosing a Code Editor or IDE
 
-My current text editor is [Visual Studio Code](https://code.visualstudio.com).
-You may prefer [Atom](https://atom.io/), which is a high-quality and
-customisable editor that has plugins for Go. Both of these editors are free.
+My current text editor is [Oni](https://www.onivim.io/), a desktop version of Vim. You may prefer [Visual Studio Code](https://code.visualstudio.com) or [Atom](https://atom.io/), which are high-quality and
+customisable editors that have plugins for Go. All of these editors are free.
 
 # Essential Tools
 
