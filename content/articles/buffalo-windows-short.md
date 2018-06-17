@@ -1,12 +1,11 @@
 +++
 Title = "Get Rolling with Buffalo on Windows"
 Slug = "buffalo-windows-short"
-Date = "2017-08-25T19:04:00+01:00"
+Date = "2018-06-17T12:02:00+01:00"
 Description = "Getting started with Buffalo on Windows"
 Categories = ["programming"]
 Tags = ["administration", "golang", "javascript", "windows"]
 Type = "article"
-Draft = true
 
 +++
 
@@ -46,7 +45,8 @@ This installs:
 * [Git](https://git-scm.com/), for version control
 * [Node.js](https://nodejs.org/), the run-time for JavaScript
 
-These are all of the things that Buffalo will need.
+Buffalo will use GCC to compile SQLite, a database that requires no setting up or administration. SQLite is enough for learning Web development, but you should switch to PostgreSQL for production applications. The [Go on 
+Windows](http://www.stuartellis.name/articles/windows-golang-setup) article explains how to install PostgreSQL.
 
 The Go tool will automatically create a folder called *go* in your user account
 when it is needed. This is your [Go
@@ -59,8 +59,8 @@ applications that you compile in the workspace run correctly, enter this in a Po
 
 # Get Buffalo #
 
-To install Buffalo:
+To install Buffalo with SQLite, run this command:
 
-    go get -u -v github.com/gobuffalo/buffalo/...
+   go get -u -v -tags sqlite github.com/gobuffalo/buffalo/buffalo 
 
 Once it is installed, use the *buffalo* utility to create and manage your Web applications.
