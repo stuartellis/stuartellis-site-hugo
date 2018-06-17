@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-17T12:20:00+01:00"
+Date = "2018-06-17T16:14:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["golang"]
@@ -109,10 +109,8 @@ convenient API for REST client software.
 
 # Accessing Databases
 
-Go includes support for SQL in the standard library. Add
-[sqlx](http://jmoiron.github.io/sqlx/) to your project to extend this
-SQL support with additional features. You will need to
-install drivers for the specific brand of database that your code will access.
+Go includes support for SQL in the standard library. You will need to
+install drivers for the specific brand of database that your code will access. Add [sqlx](http://jmoiron.github.io/sqlx/) to your project to extend this SQL support with additional features.
 
 If you need an Object Relational Mapper(ORM), consider [GORM](http://gorm.io/),
 [pop](https://github.com/gobuffalo/pop) or
@@ -138,17 +136,29 @@ programming embedded systems.
 
 # Resources
 
-## Interactive
+## Community
 
 * [Gophers Slack](https://gophers.slack.com) - Slack channels for Go programmers
+
+## References
+
+* [Go by Example](https://gobyexample.com) - Library of code examples
+* [GoDoc](https://godoc.org/) - Online copies of documentation for public Go projects
+* [Go Report Card](https://goreportcard.com/) - Quality reports for public Go projects
 * [GoSearch](https://go-search.org/) - Search engine for Go packages
 
-## Documentation
+## Best Practices
 
 * [Effective Go](https://golang.org/doc/effective_go.html) - Official best practices document
 * [Go Code Review Comments](https://github.com/golang/go/wiki/CodeReviewComments) - Supplement to Effective Go
-* [GoDoc](https://godoc.org/) - Online copies of documentation for public Go projects
-* [Go by Example](https://gobyexample.com) - Library of code examples
+* [Idiomatic Go](https://dmitri.shuralyov.com/idiomatic-go) - More tips on code style
+* [Standard Package Layout](https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1)
+* [Structuring Applications in Go](https://medium.com/@benbjohnson/structuring-applications-in-go-3b04be4ff091)
+
+## Tutorials
+
+* [Golangbot](https://golangbot.com) - Beginner tutorials on aspects of Go
+* [Gophercises](https://gophercises.com/) - Programming exercises for learning Go
 
 ## Books
 
@@ -157,7 +167,7 @@ programming embedded systems.
 
 ## Videos
 
+* [Gophervids](http://gophervids.appspot.com/) - Index of online videos about Go
 * [Go in 5 Minutes](https://www.goin5minutes.com) - Short screencasts
-* [Gophercises](https://gophercises.com/) - Programming exercises for learning Go
 * [Go Programming by Derek Banas](https://youtu.be/CF9S4QZuV30?list=PLKPKsJOCS_IkEu5FX3hzo_A7eMbHXF68L) - One hour rapid introduction to the language
-* [Just for Func](https://www.youtube.com/channel/UC_BzFbxG2za3bp5NRRRXJSw) - YouTube channel on Go
+* [Just for Func](https://www.youtube.com/channel/UC_BzFbxG2za3bp5NRRRXJSw) - YouTube show on Go
