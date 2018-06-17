@@ -1,8 +1,8 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-17T17:31:00+01:00"
-Description = "Notes on develoing software with Go"
+Date = "2018-06-17T17:56:00+01:00"
+Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
 Type = "article"
@@ -110,7 +110,7 @@ support both the HTTP 1.1 and HTTP/2 protocols. Use
 [resty](https://godoc.org/github.com/go-resty/resty) if you would like a more
 convenient API for REST client software.
 
-The [goquery](https://github.com/puerkitobio/goquery) library provides an implemtation of the jQuery API for HTML parsing. [Colly](http://go-colly.org/) is a complete framework for Web scraping.
+The [goquery](https://github.com/puerkitobio/goquery) library provides an implementation of the jQuery API for HTML parsing. [Colly](http://go-colly.org/) is a complete framework for Web scraping.
 
 # Accessing Databases
 
