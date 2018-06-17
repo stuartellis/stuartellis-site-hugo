@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Windows for Go and Buffalo"
 Slug = "windows-golang-setup"
-Date = "2018-06-17:11:10+01:00"
+Date = "2018-06-17T11:13:00+01:00"
 Description = "Setting up Windows for development with Go and Buffalo"
 Categories = ["administration", "programming"]
 Tags = ["administration", "golang", "javascript", "windows"]
@@ -26,8 +26,7 @@ To develop Web applications with Buffalo, you will also need two other pieces of
 * [Node.js](https://nodejs.org/), the run-time for JavaScript
 * A database, such as [PostgreSQL](https://www.postgresql.org/)
 
-Go, Node.js and many other systems can use libraries that are written in C, so
-you should install a C compiler even if you do not write C code.
+You should also install a C compiler, even if you do not write C code. Go and Node.js packages can use libraries that are written in C, and these packages will require a C compiler to install themselves.
 
 Rather installing and updating these tools yourself, use a package manager.
 This tutorial explains how to set up the [Scoop](http://scoop.sh/)
