@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-17T17:56:00+01:00"
+Date = "2018-06-18T17:40:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -147,6 +147,7 @@ programming embedded systems.
 
 ## References
 
+* [Awesome Go](https://awesome-go.com) - List of online resources for Go
 * [Go by Example](https://gobyexample.com) - Library of code examples
 * [GoDoc](https://godoc.org/) - Online copies of documentation for public Go projects
 * [Go Report Card](https://goreportcard.com/) - Quality reports for public Go projects
