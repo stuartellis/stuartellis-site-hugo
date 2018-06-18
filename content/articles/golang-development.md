@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-18T17:40:00+01:00"
+Date = "2018-06-18T17:46:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -143,6 +143,7 @@ programming embedded systems.
 
 ## Community
 
+* [Go Nuts mailing list](https://groups.google.com/forum/#%21forum/golang-nuts) - Official mailing list for Go users
 * [Gophers Slack](https://gophers.slack.com) - Slack channels for Go programmers
 
 ## References
