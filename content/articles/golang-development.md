@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-18T17:46:00+01:00"
+Date = "2018-06-22:05:30+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -171,6 +171,7 @@ programming embedded systems.
 
 * [The Go Programming Language](http://www.gopl.io/)
 * [Go in Action](https://www.manning.com/books/go-in-action)
+* [Go Programming Blueprints](https://www.packtpub.com/application-development/go-programming-blueprints-second-edition)
 
 ## Videos
 
