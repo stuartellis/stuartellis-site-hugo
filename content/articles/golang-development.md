@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-22:05:30+01:00"
+Date = "2018-06-22:20:12+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -97,6 +97,8 @@ You can develop Web applications in Go with just the standard library and a few 
 * [Echo](https://echo.labstack.com/) provides a convenient framework for APIs. 
 * [Go kit](https://gokit.io/) is specifically for building individual microservices for enterprise architectures.
 
+The [Gorilla toolkit](http://www.gorillatoolkit.org/) is a popular set of packages for developers who prefer to assemble their applications from individual components, rather than use a framework.
+
 Cloud services such as [Google App Engine](https://cloud.google.com/appengine/)
 and [Heroku](https://www.heroku.com/) provide low-maintenance hosting for Go Web
 applications.
@@ -117,7 +119,7 @@ The [goquery](https://github.com/puerkitobio/goquery) library provides an implem
 Go includes support for SQL in the standard library. You will need to
 install drivers for the specific brand of database that your code will access. Add [sqlx](http://jmoiron.github.io/sqlx/) to your project to extend this SQL support with additional features.
 
-If you need an Object Relational Mapper(ORM), consider [GORM](http://gorm.io/),
+If you need an Object Relational Mapper (ORM), consider [GORM](http://gorm.io/),
 [pop](https://github.com/gobuffalo/pop) or
 [sqlboiler](https://github.com/volatiletech/sqlboiler). GORM and Pop both offer
 an ORM that can create and fully manage an application database throughout the
