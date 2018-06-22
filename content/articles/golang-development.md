@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-22:20:12+01:00"
+Date = "2018-06-22T20:24:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -71,22 +71,23 @@ Set up [dep](https://golang.github.io/dep/) in your projects to manage the
 dependencies. Future versions of Go will include a replacement for _dep_, but it
 is the current standard.
 
-# Other Popular Libraries
-
-* [go-cmp](https://github.com/google/go-cmp) - Package for comparing Go values in tests
-* [logrus](https://github.com/Sirupsen/logrus) - Structured logging for Go applications
-* [Viper](https://github.com/spf13/viper) - Configuration for Go applications
-
 # Other Useful Tools
 
 * [Delve](https://github.com/derekparker/delve) - Debugger
 * [GoReleaser](https://goreleaser.com/) - Release automation for Go projects
 * [Packr](https://github.com/gobuffalo/packr) - Embeds files into Go binaries
 
+# Useful Libraries
+
+* [etree](https://github.com/beevik/etree) - Parses and generates XML
+* [go-cmp](https://github.com/google/go-cmp) - Package for comparing Go values in tests
+* [logrus](https://github.com/Sirupsen/logrus) - Structured logging for Go applications
+* [Viper](https://github.com/spf13/viper) - Configuration for Go applications
+
 # Error Handling
 
 Go assumes that error objects should be designed to match the needs of the
-particular application. The [errors](https://godoc.org/github.com/pkg/errors) package enables you to add stack traces to your errors.
+particular application. The [errors](https://godoc.org/github.com/pkg/errors) package provides error objects that include stack traces.
 
 # Web Applications
 
