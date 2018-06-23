@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-23T10:00:00+01:00"
+Date = "2018-06-23T10:27:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -97,7 +97,7 @@ Cloud services such as [Google App Engine](https://cloud.google.com/appengine/)
 and [Heroku](https://www.heroku.com/) provide low-maintenance hosting for Go Web
 applications.
 
-To produce applications for [AWS Lambda](https://aws.amazon.com/lambda/), use the [Apex](http://apex.run/) or [Sparta](http://gosparta.io/) frameworks.
+To produce applications for [AWS Lambda](https://aws.amazon.com/lambda/), use the [Serverless](https://serverless.com/), [Sparta](http://gosparta.io/) or [Apex](http://apex.run/) frameworks.
 
 # Web Clients
 
