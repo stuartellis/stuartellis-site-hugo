@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-23T10:27:00+01:00"
+Date = "2018-06-23T14:44:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -29,7 +29,7 @@ these will frequently be older than the current release.
 My current text editor is [Oni](https://www.onivim.io/), a desktop version of Vim. You may prefer [Visual Studio Code](https://code.visualstudio.com) or [Atom](https://atom.io/), which are high-quality and
 customisable editors that have plugins for Go. All of these editors are free. JetBrains offer the [GoLand](https://www.jetbrains.com/go/) IDE as a commercial product. 
 
-If you currently use Vim, install the [vim-go](https://github.com/fatih/vim-go) package to add support for Go.
+If you use Vim, install the [vim-go](https://github.com/fatih/vim-go) package to add support for Go.
 
 # Essential Tools
 
@@ -55,20 +55,18 @@ extension, which enhances the integration with Git.
 
 ## Code Quality
 
-Use the [Go Meta Linter](https://github.com/alecthomas/gometalinter) to run code
-quality checks. Plugins enable some popular text editors and IDEs to integrate
-this, so that your code can be formatted and checked as you work. The Go plugin
-for Atom automatically installs Go Meta Linter.
+Use the [Go Meta Linter](https://github.com/alecthomas/gometalinter) to run a suite of 
+quality checks on your code, including the official [linter](https://github.com/golang/lint). The Go plugins for text editors and IDEs often support the Go Meta Linter. The Go plugins for Atom and Visual Studio Code both automatically install it as part of their setup process.
 
 The [Go Report Card](https://goreportcard.com/) service will analyse any Go
-software in a public Git repository, using some standard tools. You do not need
+software in a public Git repository, using some of the standard quality checks. You do not need
 to do anything to enable the Go Report Card. If you wish, you may add a badge to
-the README that links to the Report Card report for your project.
+the README in your repository that links to the Report Card for your project.
 
 ## Dependency Management
 
 Set up [dep](https://golang.github.io/dep/) in your projects to manage the
-dependencies. Future versions of Go will include a replacement for _dep_, but it
+dependencies. Future versions of Go will include a replacement for dep, but it
 is the current standard.
 
 # Other Useful Tools
