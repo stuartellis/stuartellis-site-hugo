@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-22T20:24:00+01:00"
+Date = "2018-06-23T10:00:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -77,13 +77,6 @@ is the current standard.
 * [GoReleaser](https://goreleaser.com/) - Release automation for Go projects
 * [Packr](https://github.com/gobuffalo/packr) - Embeds files into Go binaries
 
-# Useful Libraries
-
-* [etree](https://github.com/beevik/etree) - Parses and generates XML
-* [go-cmp](https://github.com/google/go-cmp) - Package for comparing Go values in tests
-* [logrus](https://github.com/Sirupsen/logrus) - Structured logging for Go applications
-* [Viper](https://github.com/spf13/viper) - Configuration for Go applications
-
 # Error Handling
 
 Go assumes that error objects should be designed to match the needs of the
@@ -91,14 +84,14 @@ particular application. The [errors](https://godoc.org/github.com/pkg/errors) pa
 
 # Web Applications
 
-You can develop Web applications in Go with just the standard library and a few third-party packages, but this requires you to handle every feature and technical decision yourself. These frameworks provide a structure and sets of tested components for your applications:
+You can develop Web applications in Go with just the standard library and a few third-party packages, but you will need to handle many features and technical decisions yourself. These frameworks provide a structure and sets of tested components for your applications:
 
 * [chi](https://github.com/go-chi/chi) offers a minimal but very high-performance framework for Web API services.
 * [Buffalo](https://gobuffalo.io) is a full set of integrated tools and components for Web sites and applications.
 * [Echo](https://echo.labstack.com/) provides a convenient framework for APIs. 
 * [Go kit](https://gokit.io/) is specifically for building individual microservices for enterprise architectures.
 
-The [Gorilla toolkit](http://www.gorillatoolkit.org/) is a popular set of packages for developers who prefer to assemble their applications from individual components, rather than use a framework.
+The [Gorilla toolkit](http://www.gorillatoolkit.org/) is a popular collection of packages for developers who prefer to assemble their applications from individual components, rather than use a framework.
 
 Cloud services such as [Google App Engine](https://cloud.google.com/appengine/)
 and [Heroku](https://www.heroku.com/) provide low-maintenance hosting for Go Web
@@ -141,6 +134,16 @@ hardware, such as [Arduino](https://www.arduino.cc/) boards.
 
 [EmGo](https://github.com/ziutek/emgo) is an implementation of Go for
 programming embedded systems.
+
+# Other Useful Libraries
+
+* [Blackfriday](https://github.com/russross/blackfriday) - Markdown processor
+* [etree](https://github.com/beevik/etree) - Parses and generates XML
+* [Fake](https://github.com/icrowley/fake) - Generates fake data
+* [go-cmp](https://github.com/google/go-cmp) - Package for comparing Go values in tests
+* [logrus](https://github.com/Sirupsen/logrus) - Structured logging for Go applications
+* [Plush](https://github.com/gobuffalo/plush) - Powerful templating system
+* [Viper](https://github.com/spf13/viper) - Configuration for Go applications
 
 # Resources
 
