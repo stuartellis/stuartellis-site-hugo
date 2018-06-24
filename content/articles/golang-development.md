@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-23T14:44:00+01:00"
+Date = "2018-06-24T09:06:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -24,18 +24,13 @@ To install the current version of Go on Linux, use the package from the official
 Inc. maintain the Docker images. Linux distributions supply versions of Go, but
 these will frequently be older than the current release.
 
-# Choosing a Code Editor or IDE
-
-My current text editor is [Oni](https://www.onivim.io/), a desktop version of Vim. You may prefer [Visual Studio Code](https://code.visualstudio.com) or [Atom](https://atom.io/), which are high-quality and
-customisable editors that have plugins for Go. All of these editors are free. JetBrains offer the [GoLand](https://www.jetbrains.com/go/) IDE as a commercial product. 
-
-If you use Vim, install the [vim-go](https://github.com/fatih/vim-go) package to add support for Go.
-
 # Essential Tools
 
-There are a number of de-facto standard utilities and libraries for Go software
-development, but a few tools are so fundamental that you should install them
-even before you begin to write Go code.
+# The Go Plugin for Your Code Editor
+
+Go benefits from an editor that can use the powerful tools that are available to check and refactor your code as you work. Every popular editor has a plugin for Go support. If you do not have a favourite text editor, [Visual Studio Code](https://code.visualstudio.com) and [Atom](https://atom.io/) are high-quality and customisable editors that have well-maintained plugins for Go.
+
+If you would prefer to use an IDE, JetBrains offer [GoLand](https://www.jetbrains.com/go/) as a commercial product. 
 
 ## Git for Version Control
 
@@ -56,7 +51,7 @@ extension, which enhances the integration with Git.
 ## Code Quality
 
 Use the [Go Meta Linter](https://github.com/alecthomas/gometalinter) to run a suite of 
-quality checks on your code, including the official [linter](https://github.com/golang/lint). The Go plugins for text editors and IDEs often support the Go Meta Linter. The Go plugins for Atom and Visual Studio Code both automatically install it as part of their setup process.
+quality checks on your code, including the official [linter](https://github.com/golang/lint). The Go plugins for text editors and IDEs often support the Go Meta Linter. The Go plugins for Atom and Visual Studio Code both automatically install it as part of their setup process. You should also add the Meta Linter to your Continuous Integration process, to ensure that the code that is submitted passes quality checks.
 
 The [Go Report Card](https://goreportcard.com/) service will analyse any Go
 software in a public Git repository, using some of the standard quality checks. You do not need
@@ -72,8 +67,11 @@ is the current standard.
 # Other Useful Tools
 
 * [Delve](https://github.com/derekparker/delve) - Debugger
+* [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports) - Removes ununsed import statements from Go code 
 * [GoReleaser](https://goreleaser.com/) - Release automation for Go projects
 * [Packr](https://github.com/gobuffalo/packr) - Embeds files into Go binaries
+
+Editors with a Go plugin will integrate with Delve and goimports.
 
 # Error Handling
 
@@ -153,6 +151,7 @@ programming embedded systems.
 ## References
 
 * [Awesome Go](https://awesome-go.com) - List of online resources for Go
+* [Go 101](https://go101.org) - Online book for learning Go
 * [Go by Example](https://gobyexample.com) - Library of code examples
 * [GoDoc](https://godoc.org/) - Online copies of documentation for public Go projects
 * [Go Report Card](https://goreportcard.com/) - Quality reports for public Go projects
