@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-24T09:06:00+01:00"
+Date = "2018-06-24T09:44:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -26,9 +26,9 @@ these will frequently be older than the current release.
 
 # Essential Tools
 
-# The Go Plugin for Your Code Editor
+## The Go Plugin for Your Code Editor
 
-Go benefits from an editor that can use the powerful tools that are available to check and refactor your code as you work. Every popular editor has a plugin for Go support. If you do not have a favourite text editor, [Visual Studio Code](https://code.visualstudio.com) and [Atom](https://atom.io/) are high-quality and customisable editors that have well-maintained plugins for Go.
+Go programming benefits from an editor that can use the powerful tools that are available to check and refactor your code as you work. Every popular editor has a plugin for Go support. If you do not have a favourite text editor, [Visual Studio Code](https://code.visualstudio.com) and [Atom](https://atom.io/) are high-quality and customisable editors that have well-maintained plugins for Go.
 
 If you would prefer to use an IDE, JetBrains offer [GoLand](https://www.jetbrains.com/go/) as a commercial product. 
 
