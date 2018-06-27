@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-27T07:46:00+01:00"
+Date = "2018-06-27T10:27:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -113,9 +113,9 @@ The [Gorilla toolkit](http://www.gorillatoolkit.org/) is a popular collection of
 packages for developers who prefer to assemble their applications from individual
 components, rather than use a framework.
 
-Cloud services such as [Google App Engine](https://cloud.google.com/appengine/) and
-[Heroku](https://www.heroku.com/) provide low-maintenance hosting for Go Web
-applications.
+Cloud services such as [Google App Engine](https://cloud.google.com/appengine/),
+[Heroku](https://www.heroku.com/) and [Red Hat OpenShift](https://www.openshift.com)
+provide low-maintenance hosting for Go Web applications.
 
 To produce applications for [AWS Lambda](https://aws.amazon.com/lambda/), use the
 [Serverless](https://serverless.com/), [Sparta](http://gosparta.io/) or
@@ -198,7 +198,8 @@ embedded systems.
 * [Idiomatic Go](https://dmitri.shuralyov.com/idiomatic-go) - More tips on code style
 * [Standard Package Layout](https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1)
 * [Structuring Applications in Go](https://medium.com/@benbjohnson/structuring-applications-in-go-3b04be4ff091)
-* [Industrial Programming in Go](https://peter.bourgon.org/go-for-industrial-programming/) - Summarises current best practices in the design of Go applications
+* [Industrial Programming in Go](https://peter.bourgon.org/go-for-industrial-programming/) -
+  Summarises current best practices in the design of Go applications
 
 ## Tutorials
 
