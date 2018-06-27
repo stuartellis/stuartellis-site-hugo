@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-24T14:53:00+01:00"
+Date = "2018-06-27T07:46:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -178,6 +178,7 @@ embedded systems.
 * [Go Nuts mailing list](https://groups.google.com/forum/#%21forum/golang-nuts) -
   Official mailing list for Go users
 * [Gophers Slack](https://gophers.slack.com) - Slack channels for Go programmers
+* [GoBridge Forum](https://forum.golangbridge.org/)
 
 ## References
 
@@ -197,6 +198,7 @@ embedded systems.
 * [Idiomatic Go](https://dmitri.shuralyov.com/idiomatic-go) - More tips on code style
 * [Standard Package Layout](https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1)
 * [Structuring Applications in Go](https://medium.com/@benbjohnson/structuring-applications-in-go-3b04be4ff091)
+* [Industrial Programming in Go](https://peter.bourgon.org/go-for-industrial-programming/) - Summarises current best practices in the design of Go applications
 
 ## Tutorials
 
