@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-30T15:23:00+01:00"
+Date = "2018-06-30T17:00:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -176,6 +176,7 @@ embedded systems.
 - [etree](https://github.com/beevik/etree) - Parses and generates XML
 - [Fake](https://github.com/icrowley/fake) - Generates fake data
 - [go-cmp](https://github.com/google/go-cmp) - Package for comparing Go values in tests
+- [gonum](https://www.gonum.org/) - Packages for numeric and scientific work
 - [logrus](https://github.com/Sirupsen/logrus) - Structured logging for Go applications
 - [Plush](https://github.com/gobuffalo/plush) - Powerful templating system
 - [Viper](https://github.com/spf13/viper) - Configuration for Go applications
