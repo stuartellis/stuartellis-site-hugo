@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-27T10:27:00+01:00"
+Date = "2018-06-30T15:23:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -67,10 +67,10 @@ automatically install it as part of their setup process. You should also add the
 Linter to your Continuous Integration process, to ensure that the code that is submitted
 passes quality checks.
 
-The [Go Report Card](https://goreportcard.com/) service will analyse any Go software in
-a public Git repository, using some of the standard quality checks. You do not need to
-do anything to enable the Go Report Card. If you wish, you may add a badge to the README
-in your repository that links to the Report Card for your project.
+The [Go Report Card](https://goreportcard.com/) service analyses the Go software in
+public Git repositories, using some of the standard quality checks. You do not need to
+do anything to enable the service to analyse your project. If you wish, you may add a
+badge to the README in your repository that links to the Report Card for your project.
 
 ## Dependency Management
 
@@ -80,11 +80,11 @@ standard.
 
 # Other Useful Tools
 
-* [Delve](https://github.com/derekparker/delve) - Debugger
-* [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports) - Removes ununsed
+- [Delve](https://github.com/derekparker/delve) - Debugger
+- [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports) - Removes ununsed
   import statements from Go code
-* [GoReleaser](https://goreleaser.com/) - Release automation for Go projects
-* [Packr](https://github.com/gobuffalo/packr) - Embeds files into Go binaries
+- [GoReleaser](https://goreleaser.com/) - Release automation for Go projects
+- [Packr](https://github.com/gobuffalo/packr) - Embeds files into Go binaries
 
 Editors with a Go plugin will integrate with Delve and goimports.
 
@@ -101,17 +101,18 @@ third-party packages, but you will need to handle many features and technical de
 yourself. These frameworks provide a structure and sets of tested components for your
 applications:
 
-* [chi](https://github.com/go-chi/chi) offers a minimal but very high-performance
-  framework for Web API services.
-* [Buffalo](https://gobuffalo.io) is a full set of integrated tools and components for
+- [chi](https://github.com/go-chi/chi) - A minimal router and middleware framework for
+  Web API services.
+- [Buffalo](https://gobuffalo.io) - A full set of integrated tools and components for
   Web sites and applications.
-* [Echo](https://echo.labstack.com/) provides a convenient framework for APIs.
-* [Go kit](https://gokit.io/) is specifically for building individual microservices for
-  enterprise architectures.
+- [Echo](https://echo.labstack.com/) - A convenient framework for APIs
+- [Go kit](https://gokit.io/) - For microservices in enterprise architectures
 
 The [Gorilla toolkit](http://www.gorillatoolkit.org/) is a popular collection of
 packages for developers who prefer to assemble their applications from individual
-components, rather than use a framework.
+components, rather than use a framework. The _mux_ package from the Gorilla toolkit is
+often used as a direct replacement for the router that is provided by the Go standard
+library, because it is more flexible.
 
 Cloud services such as [Google App Engine](https://cloud.google.com/appengine/),
 [Heroku](https://www.heroku.com/) and [Red Hat OpenShift](https://www.openshift.com)
@@ -134,19 +135,26 @@ framework for Web scraping.
 
 # Accessing Databases
 
-Go includes support for SQL in the standard library. You will need to install drivers
-for the specific brand of database that your code will access. Add
-[sqlx](http://jmoiron.github.io/sqlx/) to your project to extend this SQL support with
-additional features.
+Go includes support for SQL in the standard library. This enables third-party developers
+to build drivers and libraries for specific purposes. You may use the standard library
+to write the data access code in your applications, but you will find that this is
+time-consuming, and you will have to implement various features yourself. Instead, use
+one of the following packages:
 
-If you need an Object Relational Mapper (ORM), consider [GORM](http://gorm.io/),
-[pop](https://github.com/gobuffalo/pop) or
-[sqlboiler](https://github.com/volatiletech/sqlboiler). GORM and Pop both offer an ORM
-that can create and fully manage an application database throughout the life of the
-system. SQLBoiler generates Go code from an existing database.
+- [sqlx](http://jmoiron.github.io/sqlx/) - Extends the standard library SQL support with
+  some additional features.
+- [sqlboiler](https://github.com/volatiletech/sqlboiler) - A set of tools for generating
+  Go code for an existing database.
+- [GORM](http://gorm.io/) - The most popular Object Relational Mapper (ORM) for Go
+- [pop](https://github.com/gobuffalo/pop) - An Object Relational Mapper (ORM) inspired
+  by ActiveRecord
 
-To embed a key-value database within your application, use
-[bbolt](https://github.com/coreos/bbolt).
+You will need to install drivers for the specific brand of database that your code will
+access. Follow the instructions that are provided for the package that you use.
+
+If you only need to cache sets of data on the computer that runs your application,
+consider using the [bbolt](https://github.com/coreos/bbolt) package, which implements a
+file-based key-value database system in pure Go.
 
 # Developing Command-line Tools
 
@@ -163,60 +171,61 @@ embedded systems.
 
 # Other Useful Libraries
 
-* [Blackfriday](https://github.com/russross/blackfriday) - Markdown processor
-* [etree](https://github.com/beevik/etree) - Parses and generates XML
-* [Fake](https://github.com/icrowley/fake) - Generates fake data
-* [go-cmp](https://github.com/google/go-cmp) - Package for comparing Go values in tests
-* [logrus](https://github.com/Sirupsen/logrus) - Structured logging for Go applications
-* [Plush](https://github.com/gobuffalo/plush) - Powerful templating system
-* [Viper](https://github.com/spf13/viper) - Configuration for Go applications
+- [Blackfriday](https://github.com/russross/blackfriday) - Markdown processor
+- [decimal](https://godoc.org/github.com/ericlagergren/decimal) - Decimal support for Go
+- [etree](https://github.com/beevik/etree) - Parses and generates XML
+- [Fake](https://github.com/icrowley/fake) - Generates fake data
+- [go-cmp](https://github.com/google/go-cmp) - Package for comparing Go values in tests
+- [logrus](https://github.com/Sirupsen/logrus) - Structured logging for Go applications
+- [Plush](https://github.com/gobuffalo/plush) - Powerful templating system
+- [Viper](https://github.com/spf13/viper) - Configuration for Go applications
 
 # Resources
 
 ## Community
 
-* [Go Nuts mailing list](https://groups.google.com/forum/#%21forum/golang-nuts) -
+- [Go Nuts mailing list](https://groups.google.com/forum/#%21forum/golang-nuts) -
   Official mailing list for Go users
-* [Gophers Slack](https://gophers.slack.com) - Slack channels for Go programmers
-* [GoBridge Forum](https://forum.golangbridge.org/)
+- [Gophers Slack](https://gophers.slack.com) - Slack channels for Go programmers
+- [GoBridge Forum](https://forum.golangbridge.org/)
 
 ## References
 
-* [Awesome Go](https://awesome-go.com) - List of online resources for Go
-* [Go 101](https://go101.org) - Online book for learning Go
-* [Go by Example](https://gobyexample.com) - Library of code examples
-* [GoDoc](https://godoc.org/) - Online copies of documentation for public Go projects
-* [Go Report Card](https://goreportcard.com/) - Quality reports for public Go projects
-* [GoSearch](https://go-search.org/) - Search engine for Go packages
+- [Awesome Go](https://awesome-go.com) - List of online resources for Go
+- [Go 101](https://go101.org) - Online book for learning Go
+- [Go by Example](https://gobyexample.com) - Library of code examples
+- [GoDoc](https://godoc.org/) - Online copies of documentation for public Go projects
+- [Go Report Card](https://goreportcard.com/) - Quality reports for public Go projects
+- [GoSearch](https://go-search.org/) - Search engine for Go packages
 
 ## Best Practices
 
-* [Effective Go](https://golang.org/doc/effective_go.html) - Official best practices
+- [Effective Go](https://golang.org/doc/effective_go.html) - Official best practices
   document
-* [Go Code Review Comments](https://github.com/golang/go/wiki/CodeReviewComments) -
+- [Go Code Review Comments](https://github.com/golang/go/wiki/CodeReviewComments) -
   Supplement to Effective Go
-* [Idiomatic Go](https://dmitri.shuralyov.com/idiomatic-go) - More tips on code style
-* [Standard Package Layout](https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1)
-* [Structuring Applications in Go](https://medium.com/@benbjohnson/structuring-applications-in-go-3b04be4ff091)
-* [Industrial Programming in Go](https://peter.bourgon.org/go-for-industrial-programming/) -
+- [Idiomatic Go](https://dmitri.shuralyov.com/idiomatic-go) - More tips on code style
+- [Standard Package Layout](https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1)
+- [Structuring Applications in Go](https://medium.com/@benbjohnson/structuring-applications-in-go-3b04be4ff091)
+- [Industrial Programming in Go](https://peter.bourgon.org/go-for-industrial-programming/) -
   Summarises current best practices in the design of Go applications
 
 ## Tutorials
 
-* [Golangbot](https://golangbot.com) - Beginner tutorials on aspects of Go
-* [Gophercises](https://gophercises.com/) - Programming exercises for learning Go
+- [Golangbot](https://golangbot.com) - Beginner tutorials on aspects of Go
+- [Gophercises](https://gophercises.com/) - Programming exercises for learning Go
 
 ## Books
 
-* [The Go Programming Language](http://www.gopl.io/)
-* [Go in Action](https://www.manning.com/books/go-in-action)
-* [Go Programming Blueprints](https://www.packtpub.com/application-development/go-programming-blueprints-second-edition)
+- [The Go Programming Language](http://www.gopl.io/)
+- [Go in Action](https://www.manning.com/books/go-in-action)
+- [Go Programming Blueprints](https://www.packtpub.com/application-development/go-programming-blueprints-second-edition)
 
 ## Videos
 
-* [Gophervids](http://gophervids.appspot.com/) - Index of online videos about Go
-* [Go in 5 Minutes](https://www.goin5minutes.com) - Short screencasts
-* [Go Programming by Derek Banas](https://youtu.be/CF9S4QZuV30?list=PLKPKsJOCS_IkEu5FX3hzo_A7eMbHXF68L) -
+- [Gophervids](http://gophervids.appspot.com/) - Index of online videos about Go
+- [Go in 5 Minutes](https://www.goin5minutes.com) - Short screencasts
+- [Go Programming by Derek Banas](https://youtu.be/CF9S4QZuV30?list=PLKPKsJOCS_IkEu5FX3hzo_A7eMbHXF68L) -
   One hour rapid introduction to the language
-* [Just for Func](https://www.youtube.com/channel/UC_BzFbxG2za3bp5NRRRXJSw) - YouTube
+- [Just for Func](https://www.youtube.com/channel/UC_BzFbxG2za3bp5NRRRXJSw) - YouTube
   show about Go
