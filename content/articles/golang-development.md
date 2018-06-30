@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-30T17:00:00+01:00"
+Date = "2018-06-30T18:44:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -51,9 +51,9 @@ Version control is obviously vital for collaborating with other programmers. It 
 enables you to efficiently copy your application to other systems for testing,
 deployment and backup.
 
-If Git is installed, Atom and Visual Studio Code provide you with access to information
-and features from Git directly in their user interfaces. If you use Visual Studio Code,
-you should also consider installing the
+If you have installed Git, Atom and Visual Studio Code will provide you with access to
+information and features from Git directly in their user interfaces. If you use Visual
+Studio Code, you should also consider adding the
 [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 extension, which enhances the integration with Git.
 
@@ -86,7 +86,7 @@ standard.
 - [GoReleaser](https://goreleaser.com/) - Release automation for Go projects
 - [Packr](https://github.com/gobuffalo/packr) - Embeds files into Go binaries
 
-Editors with a Go plugin will integrate with Delve and goimports.
+Code editors with a Go plugin will integrate with Delve and goimports.
 
 # Error Handling
 
@@ -137,14 +137,14 @@ framework for Web scraping.
 
 Go includes support for SQL in the standard library. This enables third-party developers
 to build drivers and libraries for specific purposes. You may use the standard library
-to write the data access code in your applications, but you will find that this is
-time-consuming, and you will have to implement various features yourself. Instead, use
-one of the following packages:
+to write the data access code in your applications, but this is time-consuming, and you
+will have to implement various features yourself. Instead, use one of the following
+packages:
 
-- [sqlx](http://jmoiron.github.io/sqlx/) - Extends the standard library SQL support with
-  some additional features.
-- [sqlboiler](https://github.com/volatiletech/sqlboiler) - A set of tools for generating
-  Go code for an existing database.
+- [sqlx](http://jmoiron.github.io/sqlx/) - Extends the standard library support for SQL
+  with additional features
+- [sqlboiler](https://github.com/volatiletech/sqlboiler) - A tool that generates full
+  sets of Go data access code for existing databases
 - [GORM](http://gorm.io/) - The most popular Object Relational Mapper (ORM) for Go
 - [pop](https://github.com/gobuffalo/pop) - An Object Relational Mapper (ORM) inspired
   by ActiveRecord
@@ -152,7 +152,7 @@ one of the following packages:
 You will need to install drivers for the specific brand of database that your code will
 access. Follow the instructions that are provided for the package that you use.
 
-If you only need to cache sets of data on the computer that runs your application,
+If you only need to store sets of data on the computer that runs your application,
 consider using the [bbolt](https://github.com/coreos/bbolt) package, which implements a
 file-based key-value database system in pure Go.
 
@@ -165,9 +165,6 @@ framework.
 
 [Gobot](http://gobot.io/) is the main package for working with robotics and hardware,
 such as [Arduino](https://www.arduino.cc/) boards.
-
-[EmGo](https://github.com/ziutek/emgo) is an implementation of Go for programming
-embedded systems.
 
 # Other Useful Libraries
 
