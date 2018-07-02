@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-06-30T18:44:00+01:00"
+Date = "2018-07-02T22:05:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -135,11 +135,10 @@ framework for Web scraping.
 
 # Accessing Databases
 
-Go includes support for SQL in the standard library. This enables third-party developers
-to build drivers and libraries for specific purposes. You may use the standard library
-to write the data access code in your applications, but this is time-consuming, and you
-will have to implement various features yourself. Instead, use one of the following
-packages:
+Go includes support for SQL in the standard library. This package provides the basic
+components that are needed for database access, so you can use it in your own
+applications, but it is most valuable for the authors of libraries. In most cases, you
+should use a third-party database library, such as:
 
 - [sqlx](http://jmoiron.github.io/sqlx/) - Extends the standard library support for SQL
   with additional features
@@ -149,8 +148,13 @@ packages:
 - [pop](https://github.com/gobuffalo/pop) - An Object Relational Mapper (ORM) inspired
   by ActiveRecord
 
-You will need to install drivers for the specific brand of database that your code will
-access. Follow the instructions that are provided for the package that you use.
+Whichever package you choose, you will also need a driver for the specific brand of
+database that your code will access. The most popular drivers are:
+
+- [Microsoft SQL Server](https://github.com/denisenkom/go-mssqldb)
+- [MySQL](https://github.com/go-sql-driver/mysql)
+- [PostgreSQL](https://github.com/lib/pq) (also recommended for CockroachDB)
+- [SQLite](https://mattn.github.io/go-sqlite3/)
 
 If you only need to store sets of data on the computer that runs your application,
 consider using the [bbolt](https://github.com/coreos/bbolt) package, which implements a
