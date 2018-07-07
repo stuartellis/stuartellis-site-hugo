@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-07-02T22:05:00+01:00"
+Date = "2018-07-07T15:51:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -98,7 +98,7 @@ error objects that include stack traces.
 
 You can develop Web applications in Go with just the standard library and a few
 third-party packages, but you will need to handle many features and technical decisions
-yourself. These frameworks provide a structure and sets of tested components for your
+yourself. These frameworks provide conventions and sets of tested components for your
 applications:
 
 - [chi](https://github.com/go-chi/chi) - A minimal router and middleware framework for
@@ -110,13 +110,18 @@ applications:
 
 The [Gorilla toolkit](http://www.gorillatoolkit.org/) is a popular collection of
 packages for developers who prefer to assemble their applications from individual
-components, rather than use a framework. The _mux_ package from the Gorilla toolkit is
-often used as a direct replacement for the router that is provided by the Go standard
-library, because it is more flexible.
+components, rather than use a framework.
 
-Cloud services such as [Google App Engine](https://cloud.google.com/appengine/),
+Many developers find that the router that is included in the standard library for Go is
+not flexible enough to support their applications, and decide to use other routers. The
+_mux_ package from the Gorilla toolkit is often used as a direct replacement for the
+router that is provided by the Go standard library.
+
+Go Web applications can be deployed on a very wide variety of infrastructure. Cloud
+services such as [Google App Engine](https://cloud.google.com/appengine/),
 [Heroku](https://www.heroku.com/) and [Red Hat OpenShift](https://www.openshift.com)
-provide low-maintenance hosting for Go Web applications.
+provide low-maintenance hosting, but you can set up any Linux server to run Go
+applications.
 
 To produce applications for [AWS Lambda](https://aws.amazon.com/lambda/), use the
 [Serverless](https://serverless.com/), [Sparta](http://gosparta.io/) or
@@ -219,9 +224,14 @@ such as [Arduino](https://www.arduino.cc/) boards.
 
 ## Books
 
-- [The Go Programming Language](http://www.gopl.io/)
-- [Go in Action](https://www.manning.com/books/go-in-action)
-- [Go Programming Blueprints](https://www.packtpub.com/application-development/go-programming-blueprints-second-edition)
+- [The Go Programming Language](http://www.gopl.io/) - The textbook
+- [Go in Action](https://www.manning.com/books/go-in-action) - A tour of Go
+- [Learning Go](https://miek.nl/go/#) - A very concise introduction to Go for working
+  programmers
+- [Go Programming Blueprints](https://www.packtpub.com/application-development/go-programming-blueprints-second-edition) -
+  Go programming techniques demonstrated by examples
+- [Webapps in Go](https://github.com/thewhitetulip/web-dev-golang-anti-textbook/) - How
+  to write Web applications with only the Go standard library
 
 ## Videos
 
