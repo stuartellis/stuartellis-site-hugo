@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-07-07T15:51:00+01:00"
+Date = "2018-07-13T19:37:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -74,15 +74,15 @@ badge to the README in your repository that links to the Report Card for your pr
 
 ## Dependency Management
 
-Set up [dep](https://golang.github.io/dep/) in your projects to manage the dependencies.
-Future versions of Go will include a replacement for dep, but it is the current
-standard.
+Version 1.11 of Go will include initial support for modules, but
+[dep](https://golang.github.io/dep/) is the current standard for managing dependencies.
 
 # Other Useful Tools
 
 - [Delve](https://github.com/derekparker/delve) - Debugger
 - [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports) - Removes ununsed
   import statements from Go code
+- [Gomacro](https://github.com/cosmos72/gomacro) - Interactive interpreter for Go
 - [GoReleaser](https://goreleaser.com/) - Release automation for Go projects
 - [Packr](https://github.com/gobuffalo/packr) - Embeds files into Go binaries
 
