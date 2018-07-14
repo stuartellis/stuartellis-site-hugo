@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-07-13T19:37:00+01:00"
+Date = "2018-07-14T19:29:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -105,8 +105,9 @@ applications:
   Web API services.
 - [Buffalo](https://gobuffalo.io) - A full set of integrated tools and components for
   Web sites and applications.
-- [Echo](https://echo.labstack.com/) - A convenient framework for APIs
-- [Go kit](https://gokit.io/) - For microservices in enterprise architectures
+- [Echo](https://echo.labstack.com/) - A small, convenient framework for Web
+  applications
+- [Go kit](https://gokit.io/) - Microservices in enterprise architectures
 
 The [Gorilla toolkit](http://www.gorillatoolkit.org/) is a popular collection of
 packages for developers who prefer to assemble their applications from individual
@@ -120,8 +121,7 @@ router that is provided by the Go standard library.
 Go Web applications can be deployed on a very wide variety of infrastructure. Cloud
 services such as [Google App Engine](https://cloud.google.com/appengine/),
 [Heroku](https://www.heroku.com/) and [Red Hat OpenShift](https://www.openshift.com)
-provide low-maintenance hosting, but you can set up any Linux server to run Go
-applications.
+provide low-maintenance hosting, but you can set up any server to run Go applications.
 
 To produce applications for [AWS Lambda](https://aws.amazon.com/lambda/), use the
 [Serverless](https://serverless.com/), [Sparta](http://gosparta.io/) or
@@ -141,16 +141,16 @@ framework for Web scraping.
 # Accessing Databases
 
 Go includes support for SQL in the standard library. This package provides the basic
-components that are needed for database access, so you can use it in your own
+components that are needed for database access, and you can use it in your own
 applications, but it is most valuable for the authors of libraries. In most cases, you
-should use a third-party database library, such as:
+should use a third-party database library.
 
-- [sqlx](http://jmoiron.github.io/sqlx/) - Extends the standard library support for SQL
-  with additional features
+- [sqlx](http://jmoiron.github.io/sqlx/) - A convenient data access API that follows the
+  conventions of the Go standard library
 - [sqlboiler](https://github.com/volatiletech/sqlboiler) - A tool that generates full
   sets of Go data access code for existing databases
-- [GORM](http://gorm.io/) - The most popular Object Relational Mapper (ORM) for Go
-- [pop](https://github.com/gobuffalo/pop) - An Object Relational Mapper (ORM) inspired
+- [GORM](http://gorm.io/) - The most popular Object Relational Mapper for Go
+- [pop](https://github.com/gobuffalo/pop) - An Object Relational Mapper that is inspired
   by ActiveRecord
 
 Whichever package you choose, you will also need a driver for the specific brand of
