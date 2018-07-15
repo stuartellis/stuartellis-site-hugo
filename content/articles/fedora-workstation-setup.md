@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Fedora Workstation for Software Development"
 Slug = "fedora-workstation-setup"
-Date = "2018-07-15T09:07:00+00:00"
+Date = "2018-07-15T10:17:00+00:00"
 Description = "Setting up a Fedora Workstation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "fedora", "golang", "javascript", "python", "rust"]
@@ -150,7 +150,7 @@ terminal window:
 
 ## Developer Tools for Go
 
-Use _dnf_ to install [Go](https://golang.org/):
+Use the _dnf_ tool to install [Go](https://golang.org/):
 
     sudo dnf install golang
 
@@ -172,6 +172,25 @@ Close the terminal and open it again for the changes to take effect.
 Once you have installed Go, add [dep](https://github.com/golang/dep), which is currently
 the recommended dependency manager for Go projects.
 
+## Python Development
+
+Fedora includes both Python 2 and Python 3. To run Python 3, be sure to specify
+_python3_ as the interpreter:
+
+    python3 --version
+
+The _python_ interpreter is Python 2, which you should not use for new software.
+
+To maintain current and clean Python environments, install
+[pipenv](https://docs.pipenv.org/). It drives the [pip](https://pip.pypa.io/en/stable/)
+and [virtual environment](https://docs.python.org/3/tutorial/venv.html) features that
+are included with Python itself, but is more powerful and easier to use than working
+with these features directly.
+
+Enter this command to install pipenv:
+
+    sudo dnf install pipenv
+
 ## rustup for Rust Development
 
 The official _rustup_ utility enables you to install the tools for building software
@@ -190,23 +209,6 @@ Close the terminal and open it again for the changes to take effect.
 
 The Rust packages from Fedora may provide older versions of Rust, and do install the
 Rust tools into system directories.
-
-## Python Development
-
-Fedora includes both Python 2 and Python 3.
-
-> To run Python 3, be sure to specify _python3_ as the interpreter, instead of _python_.
-> The _python_ interpreter is Python 2.
-
-To maintain current and clean Python environments, install
-[pipenv](https://docs.pipenv.org/). It drives the [pip](https://pip.pypa.io/en/stable/)
-and [virtual environment](https://docs.python.org/3/tutorial/venv.html) features that
-are included with Python itself, but is more powerful and easier to use than working
-with these features directly.
-
-Enter this command to install pipenv:
-
-    sudo dnf install pipenv
 
 # Containers and Virtual Machines
 
