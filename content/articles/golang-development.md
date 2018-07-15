@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-07-14T19:29:00+01:00"
+Date = "2018-07-15T12:20:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -216,6 +216,7 @@ such as [Arduino](https://www.arduino.cc/) boards.
 - [Structuring Applications in Go](https://medium.com/@benbjohnson/structuring-applications-in-go-3b04be4ff091)
 - [Industrial Programming in Go](https://peter.bourgon.org/go-for-industrial-programming/) -
   Summarises current best practices in the design of Go applications
+- [50 Shades of Go: Traps, Gotchas, and Common Mistakes for New Golang Devs](http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/)
 
 ## Tutorials
 
