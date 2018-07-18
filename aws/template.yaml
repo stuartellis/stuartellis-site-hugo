@@ -1,0 +1,11 @@
+Parameters:
+  KeyName:
+    Description: Domain name for site
+    Type: String
+    MinLength: 6
+    MaxLength: 500
+Resources:
+  ContentBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      AccessControl: PublicRead
