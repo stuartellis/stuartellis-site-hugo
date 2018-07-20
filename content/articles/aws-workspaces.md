@@ -1,7 +1,7 @@
 +++
 Title = "Notes on AWS WorkSpaces"
 Slug = "aws-workspaces"
-Date = "2017-08-04T18:20:00+01:00"
+Date = "2018-07-20T21:35:00+01:00"
 Description = "Notes on AWS WorkSpaces"
 Categories = ["administration", "cloud"]
 Tags = ["administration", "aws", "cloud", "windows"]
@@ -12,13 +12,13 @@ Draft = true
 
 
 This is a set of notes for setting up AWS WorkSpaces, a service for running one
-or more Windows desktops on the AWS cloud.
+or more desktops on the AWS cloud.
 
 <!--more-->
 
 # Technical Details #
 
-Each workspace uses a copy of a Windows Server operating system. This means that
+Each Windows workspace uses a copy of a Windows Server operating system. This means that
 you cannot use applications that specifically require a Windows desktop
 operating system. For example, Microsoft Edge is not available in a workspace.
 
@@ -44,8 +44,7 @@ Remember that you cannot expand a VPC. If you destroy a VPC you will lose all of
 ## Directories ##
 
 For many scenarios, you need to use the full *AWS Directory Service for Active
-Directory*. The Simple AD does not support features such as Group Policy or
-trust relationships between Active Directory domains.
+Directory*. The Simple AD does not support features such as Group Policy and trust relationships between Active Directory domains.
 
 Use [Group Policy](https://technet.microsoft.com/en-us/library/hh831791.aspx) to
 manage settings. For example, you can [manage the Settings app with Group
