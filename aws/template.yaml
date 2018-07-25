@@ -1,11 +1,94 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Static website 
+
 Parameters:
-  KeyName:
-    Description: Domain name for site
+
+  # Name of S3 Bucket
+  # All S3 bucket names must be unique,
+  # and between 3 and 63 characters long
+  BucketName:
+    Description: 'S3 bucket name'
+    Type: 'String'
+    MinLength: '3'
+    MaxLength: '63'
+    AllowedPattern: '[-a-zA-Z0-9]*'
+
+  DefaultRootObject:
+    Description: 'The name of the index document for the website.'
     Type: String
-    MinLength: 6
-    MaxLength: 500
+    Default: 'index.html'
+
 Resources:
-  ContentBucket:
-    Type: AWS::S3::Bucket
+
+######## S3 Bucket for content
+
+  S3ContentBucket:
+    Type: 'AWS::S3::Bucket'
     Properties:
-      AccessControl: PublicRead
+      BucketName: !Ref BucketName 
+      AccessControl: Private
+      VersioningConfiguration:
+        Status: Suspended
+  
+  S3ContentBucketPolicy:
+      Type: 'AWS::S3::BucketPolicy'
+      Properties:
+        Bucket: !Ref S3ContentBucket
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Sid: 'AddGetObject'
+            Action: 's3:GetObject'
+            Effect: Allow
+            Resource: !Join
+                        - ''
+                        - - !GetAtt S3ContentBucket.Arn
+                          - '/*'
+            Principal:
+              CanonicalUser: '*' 
+
+######## CloudFront distribution
+
+  CloudFrontOriginAccessIdentity:
+    Type: 'AWS::CloudFront::CloudFrontOriginAccessIdentity'
+    Properties:
+      CloudFrontOriginAccessIdentityConfig:
+        Comment: 'FIXME'
+    
+  CloudFrontDistribution:
+    Type: 'AWS::CloudFront::Distribution'
+    Properties:
+      DistributionConfig:
+        Aliases: 
+          - 'www.stuartellis.org'
+        Comment: 'FIXME'
+        DefaultCacheBehavior: 
+          AllowedMethods:
+          - GET
+          - HEAD
+          - OPTIONS
+          CachedMethods:
+          - GET
+          - HEAD
+          - OPTIONS
+          Compress: true
+          DefaultTTL: 3600
+          ForwardedValues:
+            Cookies:
+              Forward: none
+            QueryString: false
+          MaxTTL: 86400
+          MinTTL: 60
+          TargetOriginId: s3contentbucket
+          ViewerProtocolPolicy: 'allow-all'
+        DefaultRootObject: !Ref 'DefaultRootObject'
+        Enabled: true
+        HttpVersion: http2
+        Origins:
+        - DomainName: !GetAtt 'S3ContentBucket.DomainName'
+          Id: s3contentbucket
+          S3OriginConfig:
+            OriginAccessIdentity: !Sub 'origin-access-identity/cloudfront/${CloudFrontOriginAccessIdentity}' 
+        PriceClass: 'PriceClass_All'
+

@@ -1,0 +1,18 @@
+[
+  {
+    "Key": "Environment",
+    "Value": "Production"
+  },
+  {
+    "Key": "ManagedBy",
+    "Value": "CloudFormation"
+  },
+  {
+    "Key": "Project",
+    "Value": "WWWStuartEllisOrg"
+  },
+  {
+    "Key": "Tier",
+    "Value": "Web"
+  }
+]
