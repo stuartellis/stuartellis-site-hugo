@@ -1,7 +1,7 @@
 +++
 Title = "10 Best Practices for Software Projects"
 Slug = "project-best-practices"
-Date = "2018-07-28T08:19:00+01:00"
+Date = "2018-07-28T09:31:00+01:00"
 Description = "A checklist of best practices for software projects"
 Categories = ["programming"]
 Tags = ["practices"]
@@ -41,12 +41,15 @@ Source license from the list of
 the software to be proprietary.
 
 There is no standard for the README file.
-[This project](https://github.com/jehna/readme-best-practices) providea an example
+[This project](https://github.com/jehna/readme-best-practices) provides an example
 README.
 
 # Ensure That The Project Builds Cleanly
 
 TODO
+
+Consider using [pre-commit](https://pre-commit.com/) or another tool to automatically
+apply formatting and linting.
 
 # Use Consistent Version Numbering
 
@@ -68,10 +71,9 @@ Add an [Editor Config](https://editorconfig.org/) file to automatically specify 
 formatting to code editors.
 
 Include [Prettier](https://prettier.io/) or another code formatter in the recommended
-workflow for your project.
-
-Consider using [pre-commit](https://pre-commit.com/) or another tool to automatically
-apply formatting and linting.
+workflow for your project. If there is a standard method of code formatting for a
+programming language, such as _gofmt_ for Go, then use it when you work with that
+language.
 
 # Use Code Quality Checks
 
