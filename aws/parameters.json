@@ -2,5 +2,13 @@
   {
     "ParameterKey": "BucketName",
     "ParameterValue": "www-stuartellis-name-eu-west-2"
+  },
+  {
+    "ParameterKey": "SiteName",
+    "ParameterValue": "www"
+  },
+  {
+    "ParameterKey": "DomainName",
+    "ParameterValue": "stuartellis.org"
   }
 ]

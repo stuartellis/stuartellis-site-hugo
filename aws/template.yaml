@@ -1,6 +1,6 @@
 ---
 AWSTemplateFormatVersion: '2010-09-09'
-Description: Static website 
+Description: 'Static website'
 
 Parameters:
 
@@ -16,8 +16,17 @@ Parameters:
 
   DefaultRootObject:
     Description: 'The name of the index document for the website.'
-    Type: String
+    Type: 'String'
     Default: 'index.html'
+
+  SiteName:
+    Description: 'The DNS name for the site, e.g. www'
+    Type: 'String'
+    Default: 'www'
+
+  DomainName:
+    Description: 'The DNS domain for the site, e.g. example.com'
+    Type: 'String'
 
 Resources:
 
@@ -26,18 +35,18 @@ Resources:
   S3ContentBucket:
     Type: 'AWS::S3::Bucket'
     Properties:
-      BucketName: !Ref BucketName 
+      BucketName: !Ref BucketName
       AccessControl: Private
       VersioningConfiguration:
         Status: Suspended
-  
+
   S3ContentBucketPolicy:
-      Type: 'AWS::S3::BucketPolicy'
-      Properties:
-        Bucket: !Ref S3ContentBucket
-        PolicyDocument:
-          Version: '2012-10-17'
-          Statement:
+    Type: 'AWS::S3::BucketPolicy'
+    Properties:
+      Bucket: !Ref S3ContentBucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
           - Sid: 'AddGetObject'
             Action: 's3:GetObject'
             Effect: Allow
@@ -46,7 +55,7 @@ Resources:
                         - - !GetAtt S3ContentBucket.Arn
                           - '/*'
             Principal:
-              CanonicalUser: '*' 
+              CanonicalUser: '*'
 
 ######## CloudFront distribution
 
@@ -55,23 +64,26 @@ Resources:
     Properties:
       CloudFrontOriginAccessIdentityConfig:
         Comment: 'FIXME'
-    
+
   CloudFrontDistribution:
     Type: 'AWS::CloudFront::Distribution'
     Properties:
       DistributionConfig:
-        Aliases: 
-          - 'www.stuartellis.org'
+        Aliases:
+          - !Join
+              - '.'
+              - - !Ref 'SiteName'
+                - !Ref 'DomainName'
         Comment: 'FIXME'
-        DefaultCacheBehavior: 
+        DefaultCacheBehavior:
           AllowedMethods:
-          - GET
-          - HEAD
-          - OPTIONS
+            - GET
+            - HEAD
+            - OPTIONS
           CachedMethods:
-          - GET
-          - HEAD
-          - OPTIONS
+            - GET
+            - HEAD
+            - OPTIONS
           Compress: true
           DefaultTTL: 3600
           ForwardedValues:
@@ -86,9 +98,18 @@ Resources:
         Enabled: true
         HttpVersion: http2
         Origins:
-        - DomainName: !GetAtt 'S3ContentBucket.DomainName'
-          Id: s3contentbucket
-          S3OriginConfig:
-            OriginAccessIdentity: !Sub 'origin-access-identity/cloudfront/${CloudFrontOriginAccessIdentity}' 
+          - DomainName: !GetAtt 'S3ContentBucket.DomainName'
+            Id: s3contentbucket
+            S3OriginConfig:
+              OriginAccessIdentity: !Sub 'origin-access-identity/cloudfront/${CloudFrontOriginAccessIdentity}' 
         PriceClass: 'PriceClass_All'
-
+  Route53RecordSet:
+    Type: 'AWS::Route53::RecordSetGroup'
+    Properties:
+      HostedZoneName: !Sub "${DomainName}."
+      RecordSets:
+        - Name: !Sub '${SiteName}.${DomainName}.'
+          Type: A
+          AliasTarget:
+            HostedZoneId: Z2FDTNDATAQYW2 # Generic ID for any CloudFront
+            DNSName: !GetAtt 'CloudFrontDistribution.DomainName'
