@@ -1,7 +1,7 @@
 +++
 Title = "DevOps Skills"
 Slug = "devops-skills-list"
-Date = "2018-07-30T20:19:00+01:00"
+Date = "2018-07-30T22:49:00+01:00"
 Description = "List of skills for DevOps"
 Categories = ["administration", "programming"]
 Tags = ["administration", "cloud", "linux", "golang", "javascript", "python"]
@@ -16,25 +16,26 @@ A list of the skills that are needed for DevOps practitioners.
 
 ## Tools
 
-- A text editor (Vim)
+- Text editor (Vim)
 - Version control (Git)
 - SSH (OpenSSH)
 - UNIX shell (bash)
+- Build tool (Make)
 - Containerisation (Docker)
 
 ## Systems and Services
 
 - Linux system internals
 - SQL (PostgreSQL)
-- A key-value database (Redis) - https://try.redis.io/
-- A Web server (nginx)
+- Key-value database (Redis) - https://try.redis.io/
+- Web server (nginx)
+- Continuous Integration (Jenkins)
 
 ## Software Development
 
 - JavaScript
 - Node.js and npm
 - A server-side programming language (Python or Go)
-- A build tool (Make)
 - Regular expressions
 
 ## Markup and Formatting
@@ -49,6 +50,7 @@ A list of the skills that are needed for DevOps practitioners.
 
 - DNS
 - HTTP
+- TLS
 - SMTP
 - Authentication (OAuth2)
 
@@ -57,3 +59,4 @@ A list of the skills that are needed for DevOps practitioners.
 - Authentication and authorisation (IAM)
 - Networking (VPC)
 - Orchestration (Ansible, CloudFormation)
+- Monitoring (CloudWatch, ELK)
