@@ -1,7 +1,7 @@
 +++
 Title = "DevOps Skills"
 Slug = "devops-skills-list"
-Date = "2018-07-15T10:52:00+01:00"
+Date = "2018-07-30T20:19:00+01:00"
 Description = "List of skills for DevOps"
 Categories = ["administration", "programming"]
 Tags = ["administration", "cloud", "linux", "golang", "javascript", "python"]
@@ -31,15 +31,17 @@ A list of the skills that are needed for DevOps practitioners.
 
 ## Software Development
 
-- JavaScript and JSON
+- JavaScript
 - Node.js and npm
 - A server-side programming language (Python or Go)
 - A build tool (Make)
+- Regular expressions
 
 ## Markup and Formatting
 
 - HTML
 - CSS
+- JSON
 - Markdown
 - YAML
 
@@ -47,6 +49,7 @@ A list of the skills that are needed for DevOps practitioners.
 
 - DNS
 - HTTP
+- SMTP
 - Authentication (OAuth2)
 
 ## Cloud Administration
