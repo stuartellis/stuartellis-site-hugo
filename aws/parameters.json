@@ -1,14 +1,19 @@
 [
   {
-    "ParameterKey": "BucketName",
-    "ParameterValue": "www-stuartellis-name-eu-west-2"
-  },
-  {
     "ParameterKey": "SiteName",
     "ParameterValue": "www"
   },
   {
     "ParameterKey": "DomainName",
     "ParameterValue": "stuartellis.org"
+  },
+  {
+    "ParameterKey": "AcmCertificateArn",
+    "ParameterValue":
+      "arn:aws:acm:us-east-1:119559809358:certificate/a544cc15-1ef3-497e-b46f-27180a9bae39"
+  },
+  {
+    "ParameterKey": "DefaultRootObject",
+    "ParameterValue": "index.html"
   }
 ]

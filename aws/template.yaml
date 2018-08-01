@@ -4,21 +4,6 @@ Description: 'Static website'
 
 Parameters:
 
-  # Name of S3 Bucket
-  # All S3 bucket names must be unique,
-  # and between 3 and 63 characters long
-  BucketName:
-    Description: 'S3 bucket name'
-    Type: 'String'
-    MinLength: '3'
-    MaxLength: '63'
-    AllowedPattern: '[-a-zA-Z0-9]*'
-
-  DefaultRootObject:
-    Description: 'The name of the index document for the website.'
-    Type: 'String'
-    Default: 'index.html'
-
   SiteName:
     Description: 'The DNS name for the site, e.g. www'
     Type: 'String'
@@ -28,6 +13,15 @@ Parameters:
     Description: 'The DNS domain for the site, e.g. example.com'
     Type: 'String'
 
+  AcmCertificateArn:
+    Description: 'The ARN for the TLS certificate used by CloudFront'
+    Type: 'String'
+
+  DefaultRootObject:
+    Description: 'The name of the index document for the website.'
+    Type: 'String'
+    Default: 'index.html'
+
 Resources:
 
 ######## S3 Bucket for content
@@ -35,7 +29,7 @@ Resources:
   S3ContentBucket:
     Type: 'AWS::S3::Bucket'
     Properties:
-      BucketName: !Ref BucketName
+      BucketName: !Sub '${SiteName}.${DomainName}'
       AccessControl: Private
       VersioningConfiguration:
         Status: Suspended
@@ -55,7 +49,7 @@ Resources:
                         - - !GetAtt S3ContentBucket.Arn
                           - '/*'
             Principal:
-              CanonicalUser: '*'
+              CanonicalUser: !GetAtt CloudFrontOriginAccessIdentity.S3CanonicalUserId   
 
 ######## CloudFront distribution
 
@@ -63,7 +57,10 @@ Resources:
     Type: 'AWS::CloudFront::CloudFrontOriginAccessIdentity'
     Properties:
       CloudFrontOriginAccessIdentityConfig:
-        Comment: 'FIXME'
+        Comment: !Join
+                   - '.'
+                   - - !Ref 'SiteName'
+                     - !Ref 'DomainName'
 
   CloudFrontDistribution:
     Type: 'AWS::CloudFront::Distribution'
@@ -74,7 +71,10 @@ Resources:
               - '.'
               - - !Ref 'SiteName'
                 - !Ref 'DomainName'
-        Comment: 'FIXME'
+        Comment: !Join
+                   - '.'
+                   - - !Ref 'SiteName'
+                     - !Ref 'DomainName'
         DefaultCacheBehavior:
           AllowedMethods:
             - GET
@@ -93,7 +93,7 @@ Resources:
           MaxTTL: 86400
           MinTTL: 60
           TargetOriginId: s3contentbucket
-          ViewerProtocolPolicy: 'allow-all'
+          ViewerProtocolPolicy: 'redirect-to-https'
         DefaultRootObject: !Ref 'DefaultRootObject'
         Enabled: true
         HttpVersion: http2
@@ -103,6 +103,10 @@ Resources:
             S3OriginConfig:
               OriginAccessIdentity: !Sub 'origin-access-identity/cloudfront/${CloudFrontOriginAccessIdentity}' 
         PriceClass: 'PriceClass_All'
+        ViewerCertificate:
+          AcmCertificateArn: !Ref 'AcmCertificateArn'
+          MinimumProtocolVersion: 'TLSv1.2_2018'
+          SslSupportMethod: 'sni-only'
   Route53RecordSet:
     Type: 'AWS::Route53::RecordSetGroup'
     Properties:
