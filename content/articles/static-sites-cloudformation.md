@@ -1,7 +1,7 @@
 +++
 Title = "Static Websites with AWS CloudFormation"
 Slug = "static-sites-cloudformation"
-Date = "2018-08-02T21:55:00+01:00"
+Date = "2018-08-07T21:04:00+01:00"
 Description = "Managing static Websites with AWS CloudFormation"
 Categories = ["administration", "cloud"]
 Tags = ["administration", "aws", "cloud"]
@@ -37,11 +37,6 @@ You can use a CloudFormation template to manage all of these resources.
 ## Static Websites on AWS
 
 - [Hosting a Static Website on Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html) - Official documentation
-
-## AWS CloudFormation
-
-- [YAML in One Video](https://www.youtube.com/watch?v=cdLNKUoMc6c)
-- [Cloudonauts free templates for CloudFormation](https://cloudonaut.io/templates-for-aws-cloudformation/)
 
 ## Tools
 

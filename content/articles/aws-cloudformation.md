@@ -1,7 +1,7 @@
 +++
 Title = "Notes on AWS CloudFormation"
 Slug = "aws-cloudformation"
-Date = "2018-07-28T08:16:00+01:00"
+Date = "2018-08-03T20:13:00+01:00"
 Description = "Notes on AWS CloudFormation"
 Categories = ["administration", "cloud"]
 Tags = ["administration", "aws", "cloud"]
@@ -10,12 +10,11 @@ Draft = true
 
 +++
 
-CloudFormation
+Notes on AWS CloudFormation.
 
 <!--more-->
 
-CloudFormation uses _templates_ to define _stacks_. Each stack is a set of AWS resources
-that work together and have the same lifecycle.
+CloudFormation uses _templates_ to define _stacks_. Each stack is a set of AWS resources that work together and have the same lifecycle.
 
 Once a stack is running, use _change sets_ to define modifications.
 
@@ -58,8 +57,11 @@ The version section should be one line that reads:
 
 This enables you to restrict how resources can be changed.
 
-If you give someone permissions to update a resource, ensure that you also grant them
-permissions to rollback.
+If you give someone permissions to update a resource, ensure that you also grant them permissions to rollback.
+
+## YAML
+
+- [YAML in One Video](https://www.youtube.com/watch?v=cdLNKUoMc6c)
 
 ## Tools
 
@@ -67,4 +69,6 @@ permissions to rollback.
 
 ## Resources
 
-- [AWS CloudFormation Best Practices](https://www.youtube.com/watch?v=sAqkN0vIhAY)
+- [AWS CloudFormation Best Practices](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/best-practices.html) - Documentation
+- [AWS CloudFormation Best Practices](https://www.youtube.com/watch?v=sAqkN0vIhAY) - Video
+- [Cloudonauts free templates for CloudFormation](https://cloudonaut.io/templates-for-aws-cloudformation/)
