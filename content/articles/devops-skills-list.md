@@ -1,7 +1,7 @@
 +++
 Title = "DevOps Skills"
 Slug = "devops-skills-list"
-Date = "2018-07-30T22:49:00+01:00"
+Date = "2018-08-03T19:11:00+01:00"
 Description = "List of skills for DevOps"
 Categories = ["administration", "programming"]
 Tags = ["administration", "cloud", "linux", "golang", "javascript", "python"]
@@ -60,3 +60,11 @@ A list of the skills that are needed for DevOps practitioners.
 - Networking (VPC)
 - Orchestration (Ansible, CloudFormation)
 - Monitoring (CloudWatch, ELK)
+
+# Architectures
+
+- Static Website (without servers)
+- Single server
+- Auto-scaling group (with database)
+- Resilient controller-agents (e.g. Jenkins)
+- Serverless
