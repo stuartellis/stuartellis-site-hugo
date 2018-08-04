@@ -1,7 +1,7 @@
 +++
 Title = "Notes on AWS CloudFormation"
 Slug = "aws-cloudformation"
-Date = "2018-08-03T20:13:00+01:00"
+Date = "2018-08-04T11:49:00+01:00"
 Description = "Notes on AWS CloudFormation"
 Categories = ["administration", "cloud"]
 Tags = ["administration", "aws", "cloud"]
@@ -66,9 +66,12 @@ If you give someone permissions to update a resource, ensure that you also grant
 ## Tools
 
 - [CloudFormation Linter](https://github.com/awslabs/cfn-python-lint)
+- [Up your AWS CloudFormation game with Visual Studio Code](https://hodgkins.io/up-your-cloudformation-game-with-vscode)
 
 ## Resources
 
 - [AWS CloudFormation Best Practices](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/best-practices.html) - Documentation
 - [AWS CloudFormation Best Practices](https://www.youtube.com/watch?v=sAqkN0vIhAY) - Video
+- [Making CloudFormation Awesome](https://dev.solita.fi/2018/06/14/making-cloudformation-awesome.html)
 - [Cloudonauts free templates for CloudFormation](https://cloudonaut.io/templates-for-aws-cloudformation/)
+- [A Step-by-Step Guide to "continuously" Qualify AWS](https://valimation.com/blog/2018/1/18/a-step-by-step-guide-to-continuously-qualify-aws)
