@@ -1,7 +1,7 @@
 +++
 Title = "DevOps Skills"
 Slug = "devops-skills-list"
-Date = "2018-08-03T19:11:00+01:00"
+Date = "2018-08-04T12:11:00+01:00"
 Description = "List of skills for DevOps"
 Categories = ["administration", "programming"]
 Tags = ["administration", "cloud", "linux", "golang", "javascript", "python"]
@@ -65,6 +65,6 @@ A list of the skills that are needed for DevOps practitioners.
 
 - Static Website (without servers)
 - Single server
-- Auto-scaling group (with database)
+- Auto-scaling group (with SQL database and Redis queue)
 - Resilient controller-agents (e.g. Jenkins)
 - Serverless
