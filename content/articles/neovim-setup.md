@@ -1,7 +1,7 @@
-++
++++
 Title = "Setting up the Neovim Text Editor"
 Slug = "neovim-setup"
-Date = "2018-07-30T21:03:00+01:00"
+Date = "2018-08-09T20:47:00+01:00"
 Description = "Setting up the Neovim text editor for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["javascript"]
@@ -66,8 +66,10 @@ silent! helptags ALL
 
 You can now install plugins by using Git to download them to the packages directory. For example, this command installs the [ALE](https://github.com/w0rp/ale) plugin:
 
-git clone https://github.com/w0rp/ale.git ~/.local/share/nvim/site/pack/git-plugins/start/ale
+    git clone https://github.com/w0rp/ale.git ~/.local/share/nvim/site/pack/git-plugins/start/ale
 
 # Resources
 
 - [Vimcasts](http://vimcasts.org/) - Screencasts on using Vim
+- [Mastering the Vim Language](https://www.youtube.com/watch?v=wlR5gYd6um0)
+- [How to Do 90% of What Plugins Do (With Just Vim)](https://www.youtube.com/watch?v=XA2WjJbmmoM)
