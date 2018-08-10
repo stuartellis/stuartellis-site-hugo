@@ -1,7 +1,7 @@
 +++
 Title = "Setting up the Neovim Text Editor"
 Slug = "neovim-setup"
-Date = "2018-08-09T20:47:00+01:00"
+Date = "2018-08-09T20:59:00+01:00"
 Description = "Setting up the Neovim text editor for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["javascript"]
@@ -41,7 +41,11 @@ This command creates a _init.vim_ file with the _set number_ option specified:
 
 # Setting the Leader Key
 
-Many packages use the _leader_ key. You must specify which key that you want to use as the leader key, because this is not set by default.
+Many packages use the _leader_ key. You must specify which key that you want to use as the leader key, because this is not set by default. This directive sets the comma key as the leader:
+
+```vim
+let mapleader = ","
+```
 
 # Packages
 
@@ -68,8 +72,9 @@ You can now install plugins by using Git to download them to the packages direct
 
     git clone https://github.com/w0rp/ale.git ~/.local/share/nvim/site/pack/git-plugins/start/ale
 
-# Resources
+# Videos
 
+- [Learning Vim in a Week](https://www.youtube.com/watch?v=_NUO4JEtkDw)
 - [Vimcasts](http://vimcasts.org/) - Screencasts on using Vim
 - [Mastering the Vim Language](https://www.youtube.com/watch?v=wlR5gYd6um0)
 - [How to Do 90% of What Plugins Do (With Just Vim)](https://www.youtube.com/watch?v=XA2WjJbmmoM)
