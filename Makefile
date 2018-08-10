@@ -9,8 +9,8 @@ help:
 			@echo "make setup   - Install the development dependencies"
 
 deploy:
-			hugo build -v
-			s3deploy -source=public/ -region=eu-west-2 -bucket=www.stuartellis.org
+			hugo -v
+			s3deploy -source=public/ -region=eu-west-2 -bucket=www.stuartellis.name
 
 clean:
 			if [ -d public ]; then rm -r public; fi
