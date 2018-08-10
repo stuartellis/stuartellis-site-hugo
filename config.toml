@@ -1,4 +1,4 @@
-baseurl = "http://www.stuartellis.name"
+baseurl = "https://www.stuartellis.name"
 languageCode = "en-us"
 title = "Field Notes"
 theme = "liquorice"
