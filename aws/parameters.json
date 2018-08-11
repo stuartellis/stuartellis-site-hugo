@@ -11,9 +11,5 @@
     "ParameterKey": "AcmCertificateArn",
     "ParameterValue":
       "arn:aws:acm:us-east-1:119559809358:certificate/e24ffc54-e0e8-47fd-ba6f-30a90fb04582"
-  },
-  {
-    "ParameterKey": "DefaultRootObject",
-    "ParameterValue": "index.html"
   }
 ]

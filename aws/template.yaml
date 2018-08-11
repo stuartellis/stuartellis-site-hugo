@@ -17,11 +17,6 @@ Parameters:
     Description: 'The ARN for the TLS certificate used by CloudFront'
     Type: 'String'
 
-  DefaultRootObject:
-    Description: 'The name of the index document for the website.'
-    Type: 'String'
-    Default: 'index.html'
-
 Resources:
 
 ######## S3 Bucket for content
@@ -30,37 +25,14 @@ Resources:
     Type: 'AWS::S3::Bucket'
     Properties:
       BucketName: !Sub '${SiteName}.${DomainName}'
-      AccessControl: Private
+      AccessControl:  PublicRead
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: error.html
       VersioningConfiguration:
         Status: Suspended
 
-  S3ContentBucketPolicy:
-    Type: 'AWS::S3::BucketPolicy'
-    Properties:
-      Bucket: !Ref S3ContentBucket
-      PolicyDocument:
-        Version: '2012-10-17'
-        Statement:
-          - Sid: 'AddGetObject'
-            Action: 's3:GetObject'
-            Effect: Allow
-            Resource: !Join
-                        - ''
-                        - - !GetAtt S3ContentBucket.Arn
-                          - '/*'
-            Principal:
-              CanonicalUser: !GetAtt CloudFrontOriginAccessIdentity.S3CanonicalUserId   
-
 ######## CloudFront distribution
-
-  CloudFrontOriginAccessIdentity:
-    Type: 'AWS::CloudFront::CloudFrontOriginAccessIdentity'
-    Properties:
-      CloudFrontOriginAccessIdentityConfig:
-        Comment: !Join
-                   - '.'
-                   - - !Ref 'SiteName'
-                     - !Ref 'DomainName'
 
   CloudFrontDistribution:
     Type: 'AWS::CloudFront::Distribution'
@@ -94,18 +66,25 @@ Resources:
           MinTTL: 60
           TargetOriginId: s3contentbucket
           ViewerProtocolPolicy: 'redirect-to-https'
-        DefaultRootObject: !Ref 'DefaultRootObject'
         Enabled: true
         HttpVersion: http2
         Origins:
-          - DomainName: !GetAtt 'S3ContentBucket.DomainName'
-            Id: s3contentbucket
-            S3OriginConfig:
-              OriginAccessIdentity: !Sub 'origin-access-identity/cloudfront/${CloudFrontOriginAccessIdentity}' 
+        - DomainName: !Join
+                          - '.'
+                          - - !Ref 'SiteName'
+                            - !Ref 'DomainName'
+                            - 's3-website'
+                            - !Ref 'AWS::Region'
+                            - 'amazonaws.com'
+          Id: s3contentbucket
+          CustomOriginConfig:
+            HTTPPort: 80
+            HTTPSPort: 443
+            OriginProtocolPolicy: http-only
         PriceClass: 'PriceClass_All'
         ViewerCertificate:
           AcmCertificateArn: !Ref 'AcmCertificateArn'
-          MinimumProtocolVersion: 'TLSv1.2_2018'
+          MinimumProtocolVersion: 'TLSv1.1_2016'
           SslSupportMethod: 'sni-only'
   Route53RecordSet:
     Type: 'AWS::Route53::RecordSetGroup'
