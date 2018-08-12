@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-07-15T12:20:00+01:00"
+Date = "2018-08-12T16:30:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -18,12 +18,9 @@ To install Go on Windows, download it from [the official Website](https://golang
 Choose the 64-bit _Windows installer_ package for the current version, unless you know
 that you need a different option.
 
-To install Go on macOS, use [Homebrew](http://brew.sh/).
+To install Go on macOS or Linux, use [gimme](https://github.com/travis-ci/gimme). The _gimme_ tool enables you to choose which versions of Go to install on your system. Linux distributions supply versions of Go, but these will frequently be older than the current release.
 
-To install the current version of Go on Linux, use the package from the official
-Website, or a [Docker image](https://store.docker.com/images/golang). Docker, Inc.
-maintain the Docker images. Linux distributions supply versions of Go, but these will
-frequently be older than the current release.
+Docker, Inc. maintain [Docker images](https://store.docker.com/images/golang) for Go. These are useful for Continuous Integration, where you need containers that include a Go compiler to build releases of your software.
 
 # Essential Tools
 
@@ -34,11 +31,10 @@ refactoring that are designed to be integrated with both editors and automated b
 processes. Every popular editor has a plugin for Go support, which can use these
 standard utilities to check and refactor your code as you work.
 
-I currently use [Oni](https://www.onivim.io/), a version of Vim for graphical desktops,
+I currently use [Neovim](https://neovim.io/),
 with the [vim-go](https://github.com/fatih/vim-go) plugin. If you do not have a
-favourite text editor, [Visual Studio Code](https://code.visualstudio.com) and
-[Atom](https://atom.io/) are high-quality and customisable editors that have
-well-maintained plugins for Go. All of these editors are provided free of charge. If you
+favourite text editor, [Visual Studio Code](https://code.visualstudio.com) is a high-quality and customisable editor that has a
+well-maintained plugin for Go. Both of these editors are provided free of charge. If you
 would prefer to use an IDE, JetBrains offer [GoLand](https://www.jetbrains.com/go/) as a
 commercial product.
 
@@ -63,7 +59,7 @@ Use the [Go Meta Linter](https://github.com/alecthomas/gometalinter) to run a su
 quality checks on your code, including the official
 [linter](https://github.com/golang/lint). The Go plugins for text editors and IDEs often
 support the Go Meta Linter. The Go plugins for Atom and Visual Studio Code both
-automatically install it as part of their setup process. You should also add the Meta
+automatically install it as part of their setup process, and _vim-go_ has features to set up and use the Meta Linter. You should also add the Meta
 Linter to your Continuous Integration process, to ensure that the code that is submitted
 passes quality checks.
 
