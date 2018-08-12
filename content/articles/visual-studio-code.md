@@ -1,7 +1,7 @@
 +++
 Title = "Setting up the Visual Studio Code Text Editor"
 Slug = "visual-studio-code"
-Date = "2018-07-18T19:39:00+01:00"
+Date = "2018-08-12T15:44:00+01:00"
 Description = "Setting up the Visual Studio Code text editor for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["golang", "javascript", "python", "ruby"]
@@ -23,19 +23,33 @@ window:
 
     brew cask install visual-studio-code
 
+## The EDITOR Environment Variable
+
+Remember to set the EDITOR environment variable in your shell profile, so that this
+editor is automatically invoked by command-line tools like your version control system.
+
+To make Visual Studio Code your default editor, use this line:
+
+    export EDITOR="code -w"
+
 ## Extensions
 
 Install code linters for the languages that you use. Code automatically runs the
 appropriate linter for the files that you are editing.
 
-## Extensions for Development
+### Extensions for Writing
+
+- [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+- [Spell Right](https://marketplace.visualstudio.com/items?itemName=ban.spellright)
+
+### Extensions for Software Development
 
 - [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) to
   enhance the Git support in the user interface
 - The
   [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
   extension
-- [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+- [VSCodeVim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) to emulate Vim
 
 ### Extensions for Popular Programming Languages
 
@@ -45,8 +59,7 @@ extension:
 
     code --install-extension ms-python.python
 
-You will need to install some additional tools into the environment to use all of the
-features of this extension.
+You will need to install some additional tools into the environment to use all of the features of this extension.
 
 Run this command to add the
 [Go](https://marketplace.visualstudio.com/items?itemName=ms-vscode.Go) extension, which
@@ -78,12 +91,3 @@ features of this extension.
 - [Ansible](https://marketplace.visualstudio.com/items?itemName=dvscoss.vscode-ansible)
 - [Microsoft SQL Server](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql)
 - [PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.powershell)
-
-## The EDITOR Environment Variable
-
-Remember to set the EDITOR environment variable in your shell profile, so that this
-editor is automatically invoked by command-line tools like your version control system.
-
-To make Visual Studio Code your default editor, use this line:
-
-    export EDITOR="code -w"
