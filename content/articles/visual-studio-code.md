@@ -1,7 +1,7 @@
 +++
 Title = "Setting up the Visual Studio Code Text Editor"
 Slug = "visual-studio-code"
-Date = "2018-08-12T15:44:00+01:00"
+Date = "2018-08-13T17:44:00+01:00"
 Description = "Setting up the Visual Studio Code text editor for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["golang", "javascript", "python", "ruby"]
@@ -50,6 +50,7 @@ appropriate linter for the files that you are editing.
   [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
   extension
 - [VSCodeVim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) to emulate Vim
+- [YAML Support](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 
 ### Extensions for Popular Programming Languages
 
@@ -89,5 +90,6 @@ features of this extension.
 ### Useful Extensions for Operations
 
 - [Ansible](https://marketplace.visualstudio.com/items?itemName=dvscoss.vscode-ansible)
+- [CloudFormation Lint](https://marketplace.visualstudio.com/items?itemName=kddejong.vscode-cfn-lint)
 - [Microsoft SQL Server](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql)
 - [PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.powershell)
