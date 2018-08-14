@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-06-30T14:29:00+01:00"
+Date = "2018-08-14T18:34:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -32,11 +32,8 @@ packages for popular distributions, and Docker, Inc. maintain the Docker images.
 
 # Choosing a Code Editor or IDE
 
-I currently use [Oni](https://www.onivim.io/), a version of Vim for graphical desktops.
-If you do not have a favourite text editor,
-[Visual Studio Code](https://code.visualstudio.com) and [Atom](https://atom.io/) are
-both high-quality and customisable editors.
-[This tutorial](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial) shows you the
+I currently use [Neovim](https://neovim.io/). If you do not have a
+favourite text editor, [Visual Studio Code](https://code.visualstudio.com) is a high-quality and customisable editor that includes support for Node.js and JavaScript. [This tutorial](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial) shows you the
 features that Visual Studio Code has for JavaScript development, including code quality
 checks, and support for debugging. All of these editors are provided free of charge.
 
