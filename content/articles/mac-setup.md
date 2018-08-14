@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2018-08-14T20:31:00+01:00"
+Date = "2018-08-14T20:38:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "javascript", "python", "ruby", "rust"]
@@ -140,7 +140,7 @@ to quickly install and update the tools and libraries that you need. Follow the
 instructions on the site.
 
 You should also amend your PATH, so that the versions of tools that are installed with
-Homebrew take precedence over others. To do this, edit the file _~/.bash\_profile_ in
+Homebrew take precedence over others. To do this, edit the file _~/.bash_profile_ in
 your home directory to include this line:
 
     export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
@@ -194,7 +194,7 @@ suggest that you install either [Visual Studio Code](https://code.visualstudio.c
 ### Setting The EDITOR Environment Variable
 
 Whichever text editor you choose, remember to set the EDITOR environment variable in
-your _~/.bash\_profile_ file, so that this editor is automatically invoked by
+your _~/.bash_profile_ file, so that this editor is automatically invoked by
 command-line tools like your version control system. For example, put this line in your
 profile to make Neovim (_nvim_) the favored text editor:
 
@@ -223,18 +223,17 @@ Consider installing these extensions:
   [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
   extension
 
-To make Visual Studio Code your default editor, use this line in _~/.bash\_profile_ file:
+To make Visual Studio Code your default editor, use this line in _~/.bash_profile_ file:
 
     export EDITOR="code -w"
 
-Visual Studio Code enables telemetry and crash reporting by default. To disable these, set these options in *Preferences > Settings*:
+Visual Studio Code enables telemetry and crash reporting by default. To disable these, set these options in _Preferences > Settings_:
 
-~~~json
+```json
 "telemetry.enableTelemetry": false,
 "telemetry.enableCrashReporter": false
-~~~
+```
 
-## Extensions
 ### Setting Up Neovim
 
 To install Neovim on macOS with Homebrew, run this command:
@@ -242,7 +241,7 @@ To install Neovim on macOS with Homebrew, run this command:
     brew install neovim
 
 Remember to set the EDITOR environment
-variable in your _~/.bash\_profile_ file, so that this editor is
+variable in your _~/.bash_profile_ file, so that this editor is
 automatically invoked by command-line tools like your version control
 system.
 
@@ -255,7 +254,6 @@ Once you have installed Neovim, create a file called _~/.config/nvim/init.vim_. 
 This command creates a _init.vim_ file with the _leader_ option specified to set a leader key:
 
     echo 'let mapleader = ","' >> ~/.config/nvim/init.vim
-
 
 Neovim and Vim 8 include support for plugins, which means that you do not need to use a third-party plugin manager.
 
