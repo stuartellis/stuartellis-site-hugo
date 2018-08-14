@@ -1,12 +1,11 @@
 +++
 Title = "Setting up the Neovim Text Editor"
 Slug = "neovim-setup"
-Date = "2018-08-09T20:59:00+01:00"
+Date = "2018-08-14T20:04:00+01:00"
 Description = "Setting up the Neovim text editor for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["javascript"]
 Type = "article"
-Draft = true
 
 +++
 
@@ -23,7 +22,7 @@ To install Neovim on macOS with Homebrew, run this command:
 ## The EDITOR Environment Variable
 
 Remember to set the EDITOR environment
-variable in your _~/.bash_profile_ file, so that this editor is
+variable in your _~/.bash\_profile_ file, so that this editor is
 automatically invoked by command-line tools like your version control
 system.
 

@@ -185,20 +185,20 @@ To enable colors in the output, which can be very helpful, enter this command:
 
 ## Text Editors
 
-Current versions of macOS include command-line versions of both
+Installations of macOS include older command-line versions of both
 [Emacs](http://www.gnu.org/software/emacs/) and [vim](http://www.vim.org/), as well as
 TextEdit, a desktop text editor. TextEdit is designed for light-weight word processing,
 and has no support for programming. Unless you already have a preferred editor, I
-suggest that you install [Visual Studio Code](https://code.visualstudio.com) or [Oni](https://www.onivim.io/), which are powerful graphical text editors.
+suggest that you install either [Visual Studio Code](https://code.visualstudio.com) or [Oni](https://www.onivim.io/), which are powerful graphical text editors, or [Neovim](https://neovim.io) for a console Vim editor.
 
 ### Setting The EDITOR Environment Variable
 
 Whichever text editor you choose, remember to set the EDITOR environment variable in
 your _~/.bash_profile_ file, so that this editor is automatically invoked by
 command-line tools like your version control system. For example, put this line in your
-profile to make _vim_ the favored text editor:
+profile to make Neovim (_nvim_) the favored text editor:
 
-    export EDITOR="vim"
+    export EDITOR="nvim"
 
 ### Setting Up Visual Studio Code
 
@@ -226,6 +226,51 @@ Consider installing these extensions:
 To make Visual Studio Code your default editor, use this line in _~/.bash_profile_ file:
 
     export EDITOR="code -w"
+
+### Setting Up Neovim
+
+To install Neovim on macOS with Homebrew, run this command:
+
+    brew install neovim
+
+Remember to set the EDITOR environment
+variable in your _~/.bash_profile_ file, so that this editor is
+automatically invoked by command-line tools like your version control
+system.
+
+To make Neovim your default editor, use this line:
+
+    export EDITOR="nvim"
+
+Once you have installed Neovim, create a file called _~/.config/nvim/init.vim_. This is your configuration file for Neovim.
+
+This command creates a _init.vim_ file with the _leader_ option specified to set a leader key:
+
+    echo 'let mapleader = ","' >> ~/.config/nvim/init.vim
+
+
+Neovim and Vim 8 include support for plugins, which means that you do not need to use a third-party plugin manager.
+
+To add plugins to current versions, first create a directory for plugins:
+
+    mkdir -p ~/.local/share/nvim/site/pack/git-plugins/start
+
+Then add these lines to your _init.vim_ file:
+
+```vim
+" Put these lines at the very end of your vimrc file.
+
+" Load all plugins now.
+" Plugins need to be added to runtimepath before helptags can be generated.
+packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL
+```
+
+You can now install plugins by using Git to download them to the packages directory. For example, this command installs the [ALE](https://github.com/w0rp/ale) plugin:
+
+    git clone https://github.com/w0rp/ale.git ~/.local/share/nvim/site/pack/git-plugins/start/ale
 
 ## Setting Up A Directory Structure for Projects
 
