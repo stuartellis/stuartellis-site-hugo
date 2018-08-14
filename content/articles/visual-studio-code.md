@@ -1,7 +1,7 @@
 +++
 Title = "Setting up the Visual Studio Code Text Editor"
 Slug = "visual-studio-code"
-Date = "2018-08-13T17:44:00+01:00"
+Date = "2018-08-14T17:51:00+01:00"
 Description = "Setting up the Visual Studio Code text editor for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["golang", "javascript", "python", "ruby"]
@@ -18,10 +18,16 @@ editor.
 
 ## Installing Visual Studio Code
 
+### Installing Code on macOS
+
 To install Visual Studio Code on macOS with Homebrew, enter this command in a terminal
 window:
 
     brew cask install visual-studio-code
+
+### Installing Visual Studio Code to a USB Drive
+
+To run Visual Studio Code directly from a USB device, without installing it on the computer, use [portable mode](https://code.visualstudio.com/docs/editor/portable).
 
 ## The EDITOR Environment Variable
 
@@ -32,10 +38,22 @@ To make Visual Studio Code your default editor, use this line:
 
     export EDITOR="code -w"
 
-## Extensions
+## Setting up Collaborative Edting with Live Share
 
-Install code linters for the languages that you use. Code automatically runs the
-appropriate linter for the files that you are editing.
+Use the [Live Share service](https://visualstudio.microsoft.com/services/live-share/) for collaborative editing between copies of Visual Studio and Visual Studio Code.
+
+## Disabling Telemetry
+
+Visual Studio Code enables telemetry by default, and connects to remote services for various features. The FAQ explains [how Code complies with the GDPR](https://code.visualstudio.com/docs/supporting/faq#_gdpr-and-vs-code). 
+
+To disable telemetry and crash reporting, set these options in *Preferences > Settings*:
+
+~~~json
+"telemetry.enableTelemetry": false
+"telemetry.enableCrashReporter": false
+~~~
+
+## Extensions
 
 ### Extensions for Writing
 
@@ -53,6 +71,8 @@ appropriate linter for the files that you are editing.
 - [YAML Support](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 
 ### Extensions for Popular Programming Languages
+
+Visual Studio Code includes support for JavaScript, TypeScript and Node.js. To add support for other programming languages, install the extension for the languages that you would like to use.
 
 Run this command to add the
 [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
@@ -90,6 +110,6 @@ features of this extension.
 ### Useful Extensions for Operations
 
 - [Ansible](https://marketplace.visualstudio.com/items?itemName=dvscoss.vscode-ansible)
-- [CloudFormation Lint](https://marketplace.visualstudio.com/items?itemName=kddejong.vscode-cfn-lint)
+- [AWS CloudFormation Linter](https://marketplace.visualstudio.com/items?itemName=kddejong.vscode-cfn-lint)
 - [Microsoft SQL Server](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql)
 - [PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.powershell)
