@@ -1,7 +1,7 @@
 +++
 Title = "Setting up the Visual Studio Code Text Editor"
 Slug = "visual-studio-code"
-Date = "2018-08-14T17:51:00+01:00"
+Date = "2018-08-14T20:08:00+01:00"
 Description = "Setting up the Visual Studio Code text editor for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["golang", "javascript", "python", "ruby"]
@@ -20,8 +20,7 @@ editor.
 
 ### Installing Code on macOS
 
-To install Visual Studio Code on macOS with Homebrew, enter this command in a terminal
-window:
+To install Visual Studio Code on macOS with Homebrew, enter this command in a terminal window:
 
     brew cask install visual-studio-code
 
@@ -113,3 +112,8 @@ features of this extension.
 - [AWS CloudFormation Linter](https://marketplace.visualstudio.com/items?itemName=kddejong.vscode-cfn-lint)
 - [Microsoft SQL Server](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql)
 - [PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.powershell)
+
+# Resources
+
+- [Visual Studio Code documentation](https://code.visualstudio.com/Docs)
+- [Up your AWS CloudFormation game with Visual Studio Code](https://hodgkins.io/up-your-cloudformation-game-with-vscode)
