@@ -1,7 +1,7 @@
 +++
 Title = "Setting up the Visual Studio Code Text Editor"
 Slug = "visual-studio-code"
-Date = "2018-08-14T20:08:00+01:00"
+Date = "2018-08-14T20:30:00+01:00"
 Description = "Setting up the Visual Studio Code text editor for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["golang", "javascript", "python", "ruby"]
@@ -43,12 +43,12 @@ Use the [Live Share service](https://visualstudio.microsoft.com/services/live-sh
 
 ## Disabling Telemetry
 
-Visual Studio Code enables telemetry by default, and connects to remote services for various features. The FAQ explains [how Code complies with the GDPR](https://code.visualstudio.com/docs/supporting/faq#_gdpr-and-vs-code). 
+Visual Studio Code enables telemetry by default, and connects to remote services for various features. The FAQ explains [how Code complies with the GDPR](https://code.visualstudio.com/docs/supporting/faq#_gdpr-and-vs-code).
 
 To disable telemetry and crash reporting, set these options in *Preferences > Settings*:
 
 ~~~json
-"telemetry.enableTelemetry": false
+"telemetry.enableTelemetry": false,
 "telemetry.enableCrashReporter": false
 ~~~
 
@@ -108,7 +108,7 @@ features of this extension.
 
 ### Useful Extensions for Operations
 
-- [Ansible](https://marketplace.visualstudio.com/items?itemName=dvscoss.vscode-ansible)
+- [Ansible](https://marketplace.visualstudio.com/items?itemName=vscoss.vscode-ansible)
 - [AWS CloudFormation Linter](https://marketplace.visualstudio.com/items?itemName=kddejong.vscode-cfn-lint)
 - [Microsoft SQL Server](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql)
 - [PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.powershell)

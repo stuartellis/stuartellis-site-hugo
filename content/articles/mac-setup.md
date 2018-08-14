@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2018-08-14T18:50:00+01:00"
+Date = "2018-08-14T20:31:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "javascript", "python", "ruby", "rust"]
@@ -211,7 +211,7 @@ Consider installing these extensions:
 - Support for your preferred languages, e.g.
   [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python),
   [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.ruby) or
-  [Go](https://marketplace.visualstudio.com/items?itemName=lukehoban.Go)
+  [Go](https://marketplace.visualstudio.com/items?itemName=ms-vscode.Go)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
   or [TSLint](https://marketplace.visualstudio.com/items?itemName=eg2.tslint) for
   JavaScript linter integration
@@ -227,6 +227,14 @@ To make Visual Studio Code your default editor, use this line in _~/.bash\_profi
 
     export EDITOR="code -w"
 
+Visual Studio Code enables telemetry and crash reporting by default. To disable these, set these options in *Preferences > Settings*:
+
+~~~json
+"telemetry.enableTelemetry": false,
+"telemetry.enableCrashReporter": false
+~~~
+
+## Extensions
 ### Setting Up Neovim
 
 To install Neovim on macOS with Homebrew, run this command:
