@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Solus for Software Development"
 Slug = "solus-setup"
-Date = "2018-07-15T10:45:00+01:00"
+Date = "2018-08-14T18:43:00+01:00"
 Description = "Setting up a Solus installation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "solus", "golang", "javascript", "python", "rust"]
@@ -67,30 +67,11 @@ To enable colors in the output, which can be very helpful, enter this command:
 
     git config --global color.ui auto
 
-## Choosing a Text Editor
+## Text Editors
 
 Solus includes a command-line version of [nano](https://www.nano-editor.org/), as well
 as a desktop text editor. These text editors have some support for programming, but are
-more useful for light-weight word processing. Unless you already have a preferred
-editor, I suggest that you install [Atom](http://www.atom.io), which is a powerful
-graphical text editor that is specifically designed for programming.
-
-To install Atom, enter this command in a terminal window:
-
-    sudo eopkg install atom
-
-Whichever text editor you choose, remember to set the EDITOR environment variable in
-your _~/.bashrc_ file, so that this editor is automatically invoked by command-line
-tools like your version control system. For example, put this line in your profile to
-make _nano_ the favored text editor:
-
-    export EDITOR="nano"
-
-To make Atom your default editor, use this line instead:
-
-    export EDITOR="atom -w"
-
-## Customizing Your Text Editor
+more useful for light-weight word processing. The package repositories include other editors and IDEs.
 
 You will massively improve your experience with your text editor by adding a useful set
 of extensions to it. The exact extensions that will benefit the most you depend upon the
@@ -98,29 +79,14 @@ work that you do, but you should always look at version control integration, con
 access to the terminal, and linters for your preferred programming languages and data
 file formats.
 
-Atom takes this further: you are expected to install extensions to customize the user
-interface. For example, these extensions provide some valuable enhancements to the user
-interface of Atom:
+### Setting The EDITOR Environment Variable
 
-    apm install color-picker file-icons minimap
+Whichever text editor you choose, remember to set the EDITOR environment variable in
+your _~/.bashrc_ file, so that this editor is automatically invoked by command-line
+tools like your version control system. For example, put this line in your profile to
+make _nano_ the favored text editor:
 
-The [file-icons](https://atom.io/packages/file-icons) package requires no configuration.
-Refer to the pages for [color-picker](https://atom.io/packages/color-picker) and
-[minimap](https://atom.io/packages/minimap) for details on how to use them.
-
-Install code linters for the languages that you use. Atom automatically runs the
-appropriate linter for the files that you are editing.
-
-This command installs support into Atom for [CSSLint](http://csslint.net/),
-[ESLint](http://eslint.org/) and [yaml-js](http://nodeca.github.com/js-yaml/):
-
-    apm install linter-csslint linter-eslint linter-js-yaml
-
-If you are a Ruby on Rails developer, use this command to install support for
-[CoffeeLint](http://www.coffeelint.org/) and [Rubocop](http://batsov.com/rubocop/) into
-Atom:
-
-    apm install linter-coffeelint linter-rubocop
+    export EDITOR="nano"
 
 ## Setting Up A Directory Structure for Projects
 

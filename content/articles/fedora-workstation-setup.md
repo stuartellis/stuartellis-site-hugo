@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Fedora Workstation for Software Development"
 Slug = "fedora-workstation-setup"
-Date = "2018-07-15T10:47:00+01:00"
+Date = "2018-08-14T18:43:00+01:00"
 Description = "Setting up a Fedora Workstation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "fedora", "golang", "javascript", "python", "rust"]
@@ -52,10 +52,18 @@ install the text editor or IDE of your choice.
 Fedora Workstation also includes the GCC compiler and toolchain, so that you can compile
 C programs and native extensions for languages like Python and JavaScript.
 
-## Choosing a Text Editor
+## Text Editors
 
-Fedora includes a small command-line version of [vim](http://www.vim.org/), as well as a
-desktop text editor. Install whichever code editor you prefer.
+Fedora includes a small command-line version of [vim](http://www.vim.org/) with a limited set of features, as well as a
+desktop text editor with basic support for programming. The package repositories include other editors and IDEs.
+
+You will massively improve your experience with your text editor by adding a useful set
+of extensions to it. The exact extensions that will benefit the most you depend upon the
+work that you do, but you should always look at version control integration, convenient
+access to the terminal, and linters for your preferred programming languages and data
+file formats.
+
+### Setting The EDITOR Environment Variable
 
 Whichever text editor you choose, remember to set the EDITOR environment variable in
 your _~/.bashrc_ file, so that this editor is automatically invoked by command-line
@@ -63,12 +71,6 @@ tools like your version control system. For example, put this line in your profi
 make _nano_ the favored text editor:
 
     export EDITOR="nano"
-
-You will massively improve your experience with your text editor by adding a useful set
-of extensions to it. The exact extensions that will benefit the most you depend upon the
-work that you do, but you should always look at version control integration, convenient
-access to the terminal, and linters for your preferred programming languages and data
-file formats.
 
 ## Configuring Git
 

@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Windows for Go and Buffalo"
 Slug = "windows-golang-setup"
-Date = "2018-06-30T14:20:00+01:00"
+Date = "2018-08-14T18:20:00+01:00"
 Description = "Setting up Windows for development with Go and Buffalo"
 Categories = ["administration", "programming"]
 Tags = ["administration", "golang", "javascript", "windows"]
@@ -118,36 +118,9 @@ GitHub also provide
 
 The Notepad text editor in Windows is designed for light-weight word processing, and has
 no support for programming. If you do not have a favourite text editor,
-[Visual Studio Code](https://code.visualstudio.com) and [Atom](https://atom.io/) are
-high-quality and customisable editors that have well-maintained plugins for Go. All of
-these editors are provided free of charge. If you would prefer to use an IDE, JetBrains
+[Visual Studio Code](https://code.visualstudio.com) is a
+high-quality and customisable editor that has a well-maintained plugin for Go. If you would prefer to use an IDE, JetBrains
 offer [GoLand](https://www.jetbrains.com/go/) as a commercial product.
-
-## Setting Up Atom
-
-To install Atom, download the latest version from the project Website.
-
-Current versions of Atom include support for Git. You will massively improve your
-experience with your text editor by installing a few more plugins to it.
-
-To install Atom packages, either choose or use the _apm_ command in a terminal window.
-Run this command to add the [go-plus](https://atom.io/packages/go-plus) package, which
-turns Atom into a development environment for Go:
-
-    apm install go-plus
-
-The next time that you open Atom, you will see go-plus automatically download and
-configure all of the tools that it needs. go-plus will ask you to restart Atom once for
-the changes to take effect.
-
-Run this command to install other useful packages for Atom:
-
-    apm install file-icons linter-csslint linter-eslint linter-js-yaml
-
-The [file-icons](https://atom.io/packages/file-icons) package adds colourful icons for
-different types of file. Linter packages automatically check your files for errors and
-other potential problems. Each linter works with specific types of file. For example,
-the ESLint plugin checks JavaScript files.
 
 # Installing Node.js
 

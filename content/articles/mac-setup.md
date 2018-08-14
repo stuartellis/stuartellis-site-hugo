@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2018-03-09T21:30:00+00:00"
+Date = "2018-08-14T18:50:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "javascript", "python", "ruby", "rust"]
@@ -183,15 +183,15 @@ To enable colors in the output, which can be very helpful, enter this command:
 
     git config --global color.ui auto
 
-## Choosing a Text Editor
+## Text Editors
 
 Current versions of macOS include command-line versions of both
 [Emacs](http://www.gnu.org/software/emacs/) and [vim](http://www.vim.org/), as well as
 TextEdit, a desktop text editor. TextEdit is designed for light-weight word processing,
 and has no support for programming. Unless you already have a preferred editor, I
-suggest that you install either [Atom](http://www.atom.io) or
-[Visual Studio Code](https://code.visualstudio.com), which are powerful graphical text
-editors.
+suggest that you install [Visual Studio Code](https://code.visualstudio.com) or [Oni](https://www.onivim.io/), which are powerful graphical text editors.
+
+### Setting The EDITOR Environment Variable
 
 Whichever text editor you choose, remember to set the EDITOR environment variable in
 your _~/.bash_profile_ file, so that this editor is automatically invoked by
@@ -199,39 +199,6 @@ command-line tools like your version control system. For example, put this line 
 profile to make _vim_ the favored text editor:
 
     export EDITOR="vim"
-
-### Setting Up Atom
-
-To install Atom, enter this command in a terminal window:
-
-    brew cask install atom
-
-To make Atom your default editor, use this line in your _~/.bash_profile_ file:
-
-    export EDITOR="atom -w"
-
-You are expected to install extensions to customize the user interface. For example,
-these extensions provide some valuable enhancements to the user interface of Atom:
-
-    apm install color-picker file-icons minimap
-
-The [file-icons](https://atom.io/packages/file-icons) package requires no configuration.
-Refer to the pages for [color-picker](https://atom.io/packages/color-picker) and
-[minimap](https://atom.io/packages/minimap) for details on how to use them.
-
-Install code linters for the languages that you use. Atom automatically runs the
-appropriate linter for the files that you are editing.
-
-This command installs support into Atom for [CSSLint](http://csslint.net/),
-[ESLint](http://eslint.org/) and [yaml-js](http://nodeca.github.com/js-yaml/):
-
-    apm install linter-csslint linter-eslint linter-js-yaml
-
-If you are a Ruby on Rails developer, use this command to install support for
-[CoffeeLint](http://www.coffeelint.org/) and [Rubocop](http://batsov.com/rubocop/) into
-Atom:
-
-    apm install linter-coffeelint linter-rubocop
 
 ### Setting Up Visual Studio Code
 
