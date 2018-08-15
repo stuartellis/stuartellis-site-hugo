@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-08-12T16:30:00+01:00"
+Date = "2018-08-15T18:33:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -34,7 +34,7 @@ standard utilities to check and refactor your code as you work.
 I currently use [Neovim](https://neovim.io/),
 with the [vim-go](https://github.com/fatih/vim-go) plugin. If you do not have a
 favourite text editor, [Visual Studio Code](https://code.visualstudio.com) is a high-quality and customisable editor that has a
-well-maintained plugin for Go. Both of these editors are provided free of charge. If you
+well-maintained [plugin for Go](https://marketplace.visualstudio.com/items?itemName=ms-vscode.Go). Both of these editors are provided free of charge. If you
 would prefer to use an IDE, JetBrains offer [GoLand](https://www.jetbrains.com/go/) as a
 commercial product.
 
@@ -55,13 +55,10 @@ extension, which enhances the integration with Git.
 
 ## Code Quality
 
-Use the [Go Meta Linter](https://github.com/alecthomas/gometalinter) to run a suite of
+Use either [Go Meta Linter](https://github.com/alecthomas/gometalinter) or [golangci-lint](https://github.com/golangci/golangci-lint) to run a suite of
 quality checks on your code, including the official
 [linter](https://github.com/golang/lint). The Go plugins for text editors and IDEs often
-support the Go Meta Linter. The Go plugins for Atom and Visual Studio Code both
-automatically install it as part of their setup process, and _vim-go_ has features to set up and use the Meta Linter. You should also add the Meta
-Linter to your Continuous Integration process, to ensure that the code that is submitted
-passes quality checks.
+support the Go Meta Linter, and may support golangci-lint. For example, the Go plugin for Visual Studio Code installs the official linter and Go Meta Linter, but you must [enable quality check suites](https://github.com/Microsoft/vscode-go#linter). You should also add Go Meta Linter or golangci-lint to your Continuous Integration process, to ensure that the code that is submitted passes quality checks. 
 
 The [Go Report Card](https://goreportcard.com/) service analyses the Go software in
 public Git repositories, using some of the standard quality checks. You do not need to
@@ -70,8 +67,7 @@ badge to the README in your repository that links to the Report Card for your pr
 
 ## Dependency Management
 
-Version 1.11 of Go will include initial support for modules, but
-[dep](https://golang.github.io/dep/) is the current standard for managing dependencies.
+Version 1.11 of Go includes initial support for [modules](https://github.com/golang/go/wiki/Modules). The previous standard for managing dependencies was [dep](https://golang.github.io/dep/). 
 
 # Other Useful Tools
 
