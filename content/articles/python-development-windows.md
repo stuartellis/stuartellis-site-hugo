@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-08-12T08:49:00+01:00"
+Date = "2018-08-16T19:55:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -77,7 +77,8 @@ These tools are also commonly used in Python development. You should probably le
 - [Pytest](http://pytest.org) for testing
 - [Sphinx](http://sphinx.pocoo.org) for building documentation
 - [Coverage](https://pypi.python.org/pypi/coverage/) for code coverage measurement
-- [Bandit](https://pypi.python.org/pypi/bandit) to check your code for security issues
+- [Bandit](https://pypi.python.org/pypi/bandit) to check your code for common security issues
+- [Safety](https://pyup.io/safety/) to check your project dependencies for known security vulnerabilities 
 
 If you install the Python extension, Visual Studio Code will offer to use Pylint and autopep8 to check and format your code.
 
