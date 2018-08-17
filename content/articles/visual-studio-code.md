@@ -1,7 +1,7 @@
 +++
 Title = "Setting up the Visual Studio Code Text Editor"
 Slug = "visual-studio-code"
-Date = "2018-08-14T22:25:00+01:00"
+Date = "2018-08-17T22:06:00+01:00"
 Description = "Setting up the Visual Studio Code text editor for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["golang", "javascript", "python", "ruby"]
@@ -63,6 +63,7 @@ To disable telemetry and crash reporting, set these options in _Preferences > Se
 - The
   [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
   extension
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - Integration for the [Prettier](https://github.com/prettier/prettier) code formatter
 - [VSCodeVim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) to emulate Vim
 - [YAML Support](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 
