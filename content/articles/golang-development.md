@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-08-15T18:33:00+01:00"
+Date = "2018-08-18T15:33:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -18,7 +18,7 @@ To install Go on Windows, download it from [the official Website](https://golang
 Choose the 64-bit _Windows installer_ package for the current version, unless you know
 that you need a different option.
 
-To install Go on macOS or Linux, use [gimme](https://github.com/travis-ci/gimme). The _gimme_ tool enables you to choose which versions of Go to install on your system. Linux distributions supply versions of Go, but these will frequently be older than the current release.
+To install Go on macOS or Linux, use [gimme](https://github.com/travis-ci/gimme). The _gimme_ tool enables you to choose which versions of Go to install on your system, and switch between them. [Homebrew](http://brew.sh/) on macOS also provides current versions of Go. Linux distributions supply versions of Go, but these will frequently be older than the current release.
 
 Docker, Inc. maintain [Docker images](https://store.docker.com/images/golang) for Go. These are useful for Continuous Integration, where you need containers that include a Go compiler to build releases of your software.
 
@@ -72,8 +72,7 @@ Version 1.11 of Go includes initial support for [modules](https://github.com/gol
 # Other Useful Tools
 
 - [Delve](https://github.com/derekparker/delve) - Debugger
-- [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports) - Removes ununsed
-  import statements from Go code
+- [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports) - Removes unused import statements from Go code
 - [Gomacro](https://github.com/cosmos72/gomacro) - Interactive interpreter for Go
 - [GoReleaser](https://goreleaser.com/) - Release automation for Go projects
 - [Packr](https://github.com/gobuffalo/packr) - Embeds files into Go binaries
