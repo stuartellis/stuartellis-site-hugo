@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-08-19T17:06:00+01:00"
+Date = "2018-08-19T18:13:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -46,6 +46,15 @@ There are a number of de-facto standard utilities and libraries for
 Python software development, but a few tools are so fundamental that you
 should install them even before you begin to write Python code.
 
+## Git for Version Control
+
+If you do not already use version control, you should also install [Git](http://git-scm.com/) on your
+system. Git is now effectively the standard version control tool for developers.
+
+Version control is obviously vital for collaborating with other programmers. It also enables you to efficiently copy your application to other systems for testing, deployment and backup.
+
+If Git is installed, Atom and Visual Studio Code provide you with access to information and features from Git directly in their user interfaces. If you use Visual Studio Code, you should also consider installing the [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) extension, which enhances the integration with Git.
+
 ## pipenv for Virtual Environments
 
 Install [pipenv](https://docs.pipenv.org/) to manage your Python projects. It ensures that each of your Python projects use a separate set of packages, and provides other features to help you maintain your work, such as [checking the code](https://docs.pipenv.org/advanced/#code-style-checking) and [warning you about security issues in libraries](https://docs.pipenv.org/advanced/#detection-of-security-vulnerabilities).
@@ -58,38 +67,34 @@ The pipenv tool uses the _pip_ and [virtual environment](https://docs.python.org
 
 The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualenvs/) shows you how to work with _pipenv_.
 
-## Git for Version Control
-
-If you do not already use version control, you should also install [Git](http://git-scm.com/) on your
-system. Git is now effectively the standard version control tool for developers.
-
-Version control is obviously vital for collaborating with other programmers. It also enables you to efficiently copy your application to other systems for testing, deployment and backup.
-
-If Git is installed, Atom and Visual Studio Code provide you with access to information and features from Git directly in their user interfaces. If you use Visual Studio Code, you should also consider installing the [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) extension, which enhances the integration with Git.
-
-## Other Popular Tools
+# Other Tools
 
 These tools are also commonly used in Python development. You should probably learn these as you need them.
+
+## Tools for Python Projects
 
 - [Cookiecutter](https://cookiecutter.readthedocs.io/) to create new projects from templates
 - [autopep8](https://pypi.python.org/pypi/autopep8/) for code formatting
 - [Pylint](https://www.pylint.org) for code quality
-- [Pytest](http://pytest.org) for testing
-- [Tox](https://tox.readthedocs.io/) - Runs sets of tests in multiple Python environments
 - [Sphinx](http://sphinx.pocoo.org) for building documentation
-- [Coverage](https://pypi.python.org/pypi/coverage/) for code coverage measurement
-- [Bandit](https://pypi.python.org/pypi/bandit) to check your code for common security issues
-- [Safety](https://pyup.io/safety/) to check your project dependencies for known security vulnerabilities 
 
 If you install the Python extension, Visual Studio Code will offer to use Pylint and autopep8 to check and format your code.
 
-# Command-line Applications
+## Tools for Testing Python Code 
+
+- [Pytest](http://pytest.org) for testing
+- [Tox](https://tox.readthedocs.io/) runs sets of tests in multiple Python environments
+- [Coverage](https://pypi.python.org/pypi/coverage/) for measuring the test coverage of code
+- [Bandit](https://pypi.python.org/pypi/bandit) to check your code for common security issues
+- [Safety](https://pyup.io/safety/) to check your project dependencies for known security vulnerabilities 
+
+# Developing Command-line Applications
 
 Use the [Click](http://click.pocoo.org) framework to build command-line tools with Python.
 
 [Python Fire](https://github.com/google/python-fire) enables you to add a command-line interface to existing code.
 
-# Web Applications
+# Building Web Applications
 
 For very simple Websites and services, use [Flask](http://flask.pocoo.org/). The Flask framework provides the basic package of features that you need for a small Web application.
 
@@ -106,7 +111,7 @@ Python Web applications.
 
 [Full Stack Python](https://www.fullstackpython.com) provides a comprehensive guide to building Web applications with Python.
 
-# Web Clients
+# Developing Web Clients
 
 Use the [requests](http://docs.python-requests.org/en/master/) library for your Web client software, such as downloading files or working with APIs. The HTTP support in the Python standard library is for low-level code.
 
