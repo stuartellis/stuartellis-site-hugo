@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-08-16T19:55:00+01:00"
+Date = "2018-08-19T08:18:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -81,6 +81,12 @@ These tools are also commonly used in Python development. You should probably le
 - [Safety](https://pyup.io/safety/) to check your project dependencies for known security vulnerabilities 
 
 If you install the Python extension, Visual Studio Code will offer to use Pylint and autopep8 to check and format your code.
+
+# Command-line Applications
+
+Use the [Click](http://click.pocoo.org) framework to build command-line tools with Python.
+
+[Python Fire](https://github.com/google/python-fire) enables you to add a command-line interface to existing code.
 
 # Web Applications
 
