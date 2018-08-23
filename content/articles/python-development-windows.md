@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-08-19T18:13:00+01:00"
+Date = "2018-08-23T18:20:05+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -85,6 +85,8 @@ If you install the Python extension, Visual Studio Code will offer to use Pylint
 - [Pytest](http://pytest.org) for testing
 - [Tox](https://tox.readthedocs.io/) runs sets of tests in multiple Python environments
 - [Coverage](https://pypi.python.org/pypi/coverage/) for measuring the test coverage of code
+- [Faker](http://faker.rtfd.org/) - Generates fake data
+- [mypy](http://www.mypy-lang.org/) - Static type checking, using Python type annotations
 - [Bandit](https://pypi.python.org/pypi/bandit) to check your code for common security issues
 - [Safety](https://pyup.io/safety/) to check your project dependencies for known security vulnerabilities 
 
@@ -142,9 +144,22 @@ Python includes support for some features that are unique to Microsoft Windows, 
 
 To build packaged applications for Windows, use [PyInstaller](http://www.pyinstaller.org/) or [py2exe](http://www.py2exe.org/). These create stand-alone executables that include Python itself, your code, and any other dependencies.
 
+To package a Python application for systems that already have Python installed, consider using [pex](https://github.com/pantsbuild/pex/).
+
+# Other Useful Libraries
+
+- [Bokeh](https://bokeh.pydata.org) - Interactive charts and other visualizations
+- [Pendulum](https://pendulum.eustace.io/) - Date and time parsing
+- [Pillow](https://python-pillow.org/) - Image processing
+- [PyYAML](https://pyyaml.org/) - YAML support for Python
+- [Reportlab](https://www.reportlab.com/opensource/) - PDF generation
+- [uvloop](https://uvloop.readthedocs.io/) - Extremely fast replacement for the standard Python asyncio event loop
+
 # Learning Resources
 
 There are several excellent books for learning Python 3 that you can read for free online. [Dive Into Python 3](http://www.diveintopython3.net/) is particularly good for those people with some previous experience of
 programming, especially if they are impatient! If you are not a programmer, try [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/), which includes a gentle introduction to programming.
 
 Once you have learned Python itself, visit [The Hitchhiker’s Guide to Python](http://docs.python-guide.org), which provides clear advice on daily work with Python, and [Full Stack Python](https://www.fullstackpython.com) for a comprehensive guide to building Web applications with Python.
+
+If you are a programmer or systems administrator, consider [replacing bash scripting with Python](https://github.com/ninjaaron/replacing-bash-scripting-with-python).
