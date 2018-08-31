@@ -1,16 +1,15 @@
 +++
 Title = "Backups with restic"
 Slug = "restic-backups"
-Date = "2018-05-27T21:26:00+01:00"
+Date = "2018-08-31T06:50:00+01:00"
 Description = "Managing backups with restic"
 Categories = ["administration"]
 Tags = ["administration"]
 Type = "article"
-Draft = true
 
 +++
 
-The [restic](https://restic.net/) utility provides a convenient and well-designed command-line tool for backing up files and directories. This article shows how to use restic with other utilities to create a data backup facility.
+The [restic](https://restic.net/) utility provides a convenient and well-designed command-line tool for backing up files and directories. 
 
 <!--more-->
 
@@ -20,10 +19,10 @@ For efficiency and de-deplication, restic creates and manages snapshots, which a
 
 To use restic you need these things:
 
-1) A copy of restic. The restic tool itself is a single executable file.
-2) The address or location of the repository. This can be provided as an environment variable.
-3) Any secret(s) that are needed for accessing the remote storage that holds the repository
-4) The password for decrypting the repository. This can be provided as an environment variable or in a file.
+1. A copy of restic. The restic tool itself is a single executable file.
+2. The address or location of the repository. This can be provided as an environment variable.
+3. Any secret(s) that are needed for accessing the remote storage that holds the repository
+4. The password for decrypting the repository. This can be provided as an environment variable or in a file.
 
 Since restic only handles the back up and restoration of files, we will need to set up other tools to handle database exports, scheduling, logging, and notifications.
 
@@ -44,7 +43,7 @@ Create the S3 bucket. We need to do this first, because the current version of r
 Download the file for restic from GitHub, and then set permissions on it:
 
     mkdir -p $HOME/.restic/bin
-    curl -L https://github.com/restic/restic/releases/download/v0.9.0/restic_0.9.0_linux_amd64.bz2 | bunzip2 > $HOME/.restic/bin/restic
+    curl -L https://github.com/restic/restic/releases/download/v0.9.2/restic_0.9.2_linux_amd64.bz2 | bunzip2 > $HOME/.restic/bin/restic
     chown -R $USER:$USER $HOME/.restic/bin
     chmod -R 750 $HOME/.restic/bin
 
@@ -52,7 +51,7 @@ Download the file for restic from GitHub, and then set permissions on it:
 
 Download the file for restic from GitHub. Once the file is downloaded, set the permissions to limit who can use it, and then give it the capabilities to access the whole system:
 
-    curl -L https://github.com/restic/restic/releases/download/v0.9.0/restic_0.9.0_linux_amd64.bz2 | bunzip2 > restic
+    curl -L https://github.com/restic/restic/releases/download/v0.9.2/restic_0.9.2_linux_amd64.bz2 | bunzip2 > restic
     mkdir -p /opt/restic/bin
     mv restic /opt/restic/bin
     chown -R root:$USER /opt/restic/bin
@@ -65,11 +64,13 @@ All of these commands apart from the first require administrative privileges.
 
 Set environment variables in the *.profile* for your account, or in the script.
 
+~~~bash
 export AWS_ACCESS_KEY_ID="XXX"
 export AWS_SECRET_ACCESS_KEY="XXX"
 
 export RESTIC_REPOSITORY=s3:s3.amazonaws.com/YOUR-BUCKET-NAME
 export RESTIC_PASSWORD=YOUR-REPOSITORY-PASSWORD
+~~~
 
 # Running restic
 
