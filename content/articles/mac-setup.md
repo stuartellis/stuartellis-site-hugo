@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2018-08-14T20:38:00+01:00"
+Date = "2018-08-31T05:48:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "javascript", "python", "ruby", "rust"]
@@ -105,7 +105,7 @@ provides full details.
 
 ## Setting Up Time Machine Backups
 
-Time Machine is simple to setup. Just take a suitably large external hard drive, plug it
+Time Machine is simple to set up. Just take a suitably large external hard drive, plug it
 in to your Mac, and agree when prompted. The drive setup process will reformat the hard
 drive. The only settings that may need to change are the exclusions.
 
@@ -140,7 +140,7 @@ to quickly install and update the tools and libraries that you need. Follow the
 instructions on the site.
 
 You should also amend your PATH, so that the versions of tools that are installed with
-Homebrew take precedence over others. To do this, edit the file _~/.bash_profile_ in
+Homebrew take precedence over others. To do this, edit the file _.bash\_profile_ in
 your home directory to include this line:
 
     export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
@@ -155,13 +155,16 @@ To update the index of available packages, run this command in a terminal window
 
     brew update
 
+Once you have set up Homebrew, use the _brew install_ command to add command-line software to your Mac, and _brew cask install_ to add graphical software. For example, this command installs the Slack app:
+
+    brew cask install slack
+
 ## Installing the Git Version Control System
 
 The Xcode Command Line Tools include a copy of [Git](http://www.git-scm.com/), which is
 now the standard for Open Source development, but this will be out of date.
 
-To install a newer version of Git than Apple provide, use Homebrew. Enter this command
-in a terminal window:
+To install a newer version of Git than Apple provide, use Homebrew. Enter this command in a terminal window:
 
     brew install git
 
@@ -194,7 +197,7 @@ suggest that you install either [Visual Studio Code](https://code.visualstudio.c
 ### Setting The EDITOR Environment Variable
 
 Whichever text editor you choose, remember to set the EDITOR environment variable in
-your _~/.bash_profile_ file, so that this editor is automatically invoked by
+your _~/.bash\_profile_ file, so that this editor is automatically invoked by
 command-line tools like your version control system. For example, put this line in your
 profile to make Neovim (_nvim_) the favored text editor:
 
@@ -517,11 +520,10 @@ various types of invalid data to be entered.
 
 # Other Useful Desktop Applications for Developers
 
-- Office suite: [LibreOffice](http://www.libreoffice.org/)
-- Virtual machine management: [VirtualBox](http://www.virtualbox.org/)
-- Docker container management:
-  [Docker for Mac](http://www.docker.com/products/docker#/mac)
-- MySQL database management: [MySQL Workbench](http://wb.mysql.com/)
+- [LibreOffice](http://www.libreoffice.org/) suite: _brew cask install libreoffice_ 
+- [VirtualBox](http://www.virtualbox.org/) virtual machine management: _brew cask install virtualbox_ 
+- [Docker for Mac](http://www.docker.com/products/docker#/mac)  container management: _brew cask install docker_
+- [MySQL Workbench](http://wb.mysql.com/): _brew cask install mysqlworkbench_
 
 # Online Resources
 
