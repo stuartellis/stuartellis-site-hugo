@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2018-08-31T05:48:00+01:00"
+Date = "2018-08-31T18:46:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "javascript", "python", "ruby", "rust"]
@@ -140,7 +140,7 @@ to quickly install and update the tools and libraries that you need. Follow the
 instructions on the site.
 
 You should also amend your PATH, so that the versions of tools that are installed with
-Homebrew take precedence over others. To do this, edit the file _.bash\_profile_ in
+Homebrew take precedence over others. To do this, edit the file _.bash_profile_ in
 your home directory to include this line:
 
     export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
@@ -197,7 +197,7 @@ suggest that you install either [Visual Studio Code](https://code.visualstudio.c
 ### Setting The EDITOR Environment Variable
 
 Whichever text editor you choose, remember to set the EDITOR environment variable in
-your _~/.bash\_profile_ file, so that this editor is automatically invoked by
+your _~/.bash_profile_ file, so that this editor is automatically invoked by
 command-line tools like your version control system. For example, put this line in your
 profile to make Neovim (_nvim_) the favored text editor:
 
@@ -226,7 +226,7 @@ Consider installing these extensions:
   [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
   extension
 
-To make Visual Studio Code your default editor, use this line in _~/.bash_profile_ file:
+To make Visual Studio Code your default editor, use this line in your _~/.bash_profile_ file:
 
     export EDITOR="code -w"
 
@@ -342,6 +342,8 @@ Use Homebrew to install [Go](https://golang.org/) and the
 [dep](https://golang.github.io/dep/) tool:
 
     brew install golang dep
+
+The current version of Go includes experimental support for dependency management with modules, but existing projects are likely to either use dep, or an older tool.
 
 ### Setting a GOPATH
 
@@ -520,9 +522,9 @@ various types of invalid data to be entered.
 
 # Other Useful Desktop Applications for Developers
 
-- [LibreOffice](http://www.libreoffice.org/) suite: _brew cask install libreoffice_ 
-- [VirtualBox](http://www.virtualbox.org/) virtual machine management: _brew cask install virtualbox_ 
-- [Docker for Mac](http://www.docker.com/products/docker#/mac)  container management: _brew cask install docker_
+- [LibreOffice](http://www.libreoffice.org/) suite: _brew cask install libreoffice_
+- [VirtualBox](http://www.virtualbox.org/) virtual machine management: _brew cask install virtualbox_
+- [Docker](https://store.docker.com/editions/community/docker-ce-desktop-mac) container management: _brew cask install docker_
 - [MySQL Workbench](http://wb.mysql.com/): _brew cask install mysqlworkbench_
 
 # Online Resources
