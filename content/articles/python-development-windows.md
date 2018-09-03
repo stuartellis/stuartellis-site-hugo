@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-08-23T18:20:05+01:00"
+Date = "2018-09-03T20:48:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -157,8 +157,18 @@ To package a Python application for systems that already have Python installed, 
 
 # Learning Resources
 
+## Online Videos
+
+The [PyVideo](https://pyvideo.org/) site is an index of free videos on Python and related topics.
+
+[Corey Schafer's YouTube channel](https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g) provides introductory tutorials for getting started with Python and programming.
+
+## Books
+
 There are several excellent books for learning Python 3 that you can read for free online. [Dive Into Python 3](http://www.diveintopython3.net/) is particularly good for those people with some previous experience of
 programming, especially if they are impatient! If you are not a programmer, try [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/), which includes a gentle introduction to programming.
+
+## Online Guides
 
 Once you have learned Python itself, visit [The Hitchhiker’s Guide to Python](http://docs.python-guide.org), which provides clear advice on daily work with Python, and [Full Stack Python](https://www.fullstackpython.com) for a comprehensive guide to building Web applications with Python.
 
