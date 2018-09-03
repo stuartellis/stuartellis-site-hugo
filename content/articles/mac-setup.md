@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2018-08-31T18:46:00+01:00"
+Date = "2018-09-03T21:07:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "javascript", "python", "ruby", "rust"]
@@ -197,7 +197,7 @@ suggest that you install either [Visual Studio Code](https://code.visualstudio.c
 ### Setting The EDITOR Environment Variable
 
 Whichever text editor you choose, remember to set the EDITOR environment variable in
-your _~/.bash_profile_ file, so that this editor is automatically invoked by
+your _~/.bash\_profile_ file, so that this editor is automatically invoked by
 command-line tools like your version control system. For example, put this line in your
 profile to make Neovim (_nvim_) the favored text editor:
 
@@ -225,8 +225,9 @@ Consider installing these extensions:
 - The
   [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
   extension
+- [YAML Support](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 
-To make Visual Studio Code your default editor, use this line in your _~/.bash_profile_ file:
+To make Visual Studio Code your default editor, use this line in your _~/.bash\_profile_ file:
 
     export EDITOR="code -w"
 
@@ -237,6 +238,8 @@ Visual Studio Code enables telemetry and crash reporting by default. To disable 
 "telemetry.enableCrashReporter": false
 ```
 
+If you would like to enable Vim keybindings in Visual Studio Code, install the [VSCodeVim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) extension.
+
 ### Setting Up Neovim
 
 To install Neovim on macOS with Homebrew, run this command:
@@ -244,7 +247,7 @@ To install Neovim on macOS with Homebrew, run this command:
     brew install neovim
 
 Remember to set the EDITOR environment
-variable in your _~/.bash_profile_ file, so that this editor is
+variable in your _~/.bash\_profile_ file, so that this editor is
 automatically invoked by command-line tools like your version control
 system.
 
@@ -281,6 +284,8 @@ You can now install plugins by using Git to download them to the packages direct
 
     git clone https://github.com/w0rp/ale.git ~/.local/share/nvim/site/pack/git-plugins/start/ale
 
+> Oni automatically detects an existing Neovim configuration, and will offer to use instead of the default settings.
+
 ## Setting Up A Directory Structure for Projects
 
 To keep your projects tidy, I would recommend following the
@@ -308,6 +313,11 @@ The final directory structure looks like this:
 
 You will frequently use SSH to access Git repositories or remote UNIX systems. macOS
 includes the standard OpenSSH suite of tools.
+
+OpenSSH stores your SSH keys in a _.ssh_ directory. To create this directory, run these commands in a terminal window:
+
+    mkdir $HOME/.ssh
+    chmod 0700 $HOME/.ssh
 
 To create an SSH key, run the _ssh-keygen_ command in a terminal window. For example:
 
@@ -398,8 +408,8 @@ _.gemrc_ and put this line in it:
 
 ## pipenv for Python Development
 
-Unfortunately, macOS includes a copy of Python 2, not Python 3. To maintain current and
-clean Python environments, install [pipenv](https://docs.pipenv.org/). It drives the
+Unfortunately, macOS includes a copy of Python 2, so you will need to install Python 3 yourself. To maintain current and
+clean Python environments, you should also install [pipenv](https://docs.pipenv.org/). It drives the
 [pip](https://pip.pypa.io/en/stable/) and
 [virtual environment](https://docs.python.org/3/tutorial/venv.html) features that are
 included with Python itself, but is more powerful and easier to use than working with
@@ -415,33 +425,12 @@ your scripts, rather than _python_:
 
     python3 --version
 
-If you need to run the _pip_ utility for Python 3, always use the command _pip3_:
+If you need to run the _pip_ utility, rather than setting up a development environment with pipenv, always use the command _pip3_:
 
     pip3 --version
 
 The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
 shows you how to work with _pipenv_.
-
-## A Lightweight Setup for Python 2 Development
-
-If you only need to work with Python 2, you can just use the copy of Python that is part
-of macOS, and add some tools.
-
-First, install _pip_:
-
-    easy_install --user pip
-
-Then add this to your $PATH:
-
-    $HOME/Library/Python/2.7/bin
-
-Use _pip_ to install [virtualenv](https://virtualenv.pypa.io/en/stable/):
-
-    pip install --user virtualenv
-
-You can now use _virtualenv_ to create Python 2 virtual environments and manage the
-packages within them using _pip_, all inside your home directory, and without modifying
-any system files.
 
 # SQL Databases
 
