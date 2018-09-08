@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-09-08T14:56:00+01:00"
+Date = "2018-09-08T15:03:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
