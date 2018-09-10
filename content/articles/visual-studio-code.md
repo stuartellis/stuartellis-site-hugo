@@ -1,7 +1,7 @@
 +++
 Title = "Setting up the Visual Studio Code Text Editor"
 Slug = "visual-studio-code"
-Date = "2018-08-17T22:06:00+01:00"
+Date = "2018-09-10T21:30:00+01:00"
 Description = "Setting up the Visual Studio Code text editor for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["golang", "javascript", "python", "ruby"]
@@ -93,6 +93,13 @@ Run this command to add the
     code --install-extension rebornix.ruby
 
 You will need to install some additional tools into the environment to use all of the features of this extension.
+
+Run this command to add the
+[Ruby](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck) extension:
+
+    code --install-extension timonwong.shellcheck
+
+You will need to install [Shellcheck](https://www.shellcheck.net/) into the environment to use all of the features of this extension.
 
 ## Useful Extensions for Web Development
 
