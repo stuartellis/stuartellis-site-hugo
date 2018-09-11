@@ -1,7 +1,7 @@
 +++
 Title = "Backups with restic"
 Slug = "restic-backups"
-Date = "2018-08-31T06:50:00+01:00"
+Date = "2018-09-11T07:18:00+01:00"
 Description = "Managing backups with restic"
 Categories = ["administration"]
 Tags = ["administration"]
@@ -9,13 +9,13 @@ Type = "article"
 
 +++
 
-The [restic](https://restic.net/) utility provides a convenient and well-designed command-line tool for backing up files and directories. 
+The [restic](https://restic.net/) utility provides a convenient and well-designed command-line tool for backing up files and directories.
 
 <!--more-->
 
 # Overview
 
-For efficiency and de-deplication, restic creates and manages snapshots, which are stored in a set of data files, known as a repository. The repository can be in a directory on the same computer as the source files, or on remote storage, such as AWS S3. The files in a restic repository are automatically encrypted with a passphrase. Once the repository has been initialised and a backup has been made, you can view and restore files with the command-line utility.
+For efficiency and de-deplication, restic creates and manages snapshots. These are stored in a set of data files, known as a repository. The repository can be in a directory on the same computer as the source files, or on remote storage, such as AWS S3. The files in a restic repository are automatically encrypted with a passphrase. Once the repository has been initialised and a backup has been made, you can view and restore files with the restic command-line utility.
 
 To use restic you need these things:
 
@@ -24,7 +24,7 @@ To use restic you need these things:
 3. Any secret(s) that are needed for accessing the remote storage that holds the repository
 4. The password for decrypting the repository. This can be provided as an environment variable or in a file.
 
-Since restic only handles the back up and restoration of files, we will need to set up other tools to handle database exports, scheduling, logging, and notifications.
+Since restic only handles the back up and restoration of files, you will need to set up other tools to handle database exports, scheduling, logging, and notifications.
 
 # Approach
 
@@ -32,7 +32,7 @@ For this article, we will use AWS S3 to host the repository. The built-in suppor
 
 You can install restic with the package manager of your Linux distribution, or Homebrew on macOS. To ensure that we have the latest version of restic, we will download it directly from GitHub.
 
-The simplest way to orchestrate backups with restic is to write a script.
+The simplest way to orchestrate backups with restic is to write a shell script.
 
 # Setting Up the Remote Repository
 
@@ -47,7 +47,7 @@ Download the file for restic from GitHub, and then set permissions on it:
     chown -R $USER:$USER $HOME/.restic/bin
     chmod -R 750 $HOME/.restic/bin
 
-# Installing restic for System-Level Use  
+# Installing restic for System-Level Use
 
 Download the file for restic from GitHub. Once the file is downloaded, set the permissions to limit who can use it, and then give it the capabilities to access the whole system:
 
@@ -62,15 +62,15 @@ All of these commands apart from the first require administrative privileges.
 
 # Environment Variables
 
-Set environment variables in the *.profile* for your account, or in the script.
+Set environment variables in the _.profile_ for your account, or in the script.
 
-~~~bash
+```bash
 export AWS_ACCESS_KEY_ID="XXX"
 export AWS_SECRET_ACCESS_KEY="XXX"
 
 export RESTIC_REPOSITORY=s3:s3.amazonaws.com/YOUR-BUCKET-NAME
 export RESTIC_PASSWORD=YOUR-REPOSITORY-PASSWORD
-~~~
+```
 
 # Running restic
 
@@ -82,11 +82,11 @@ restic init
 
 A simple example script:
 
-~~~bash
-#!/bin/bash
+```bash
+#!/bin/sh
 
 restic backup --exclude={.aws,.ssh} --tag test1 /home
-~~~
+```
 
 To view the snapshots that are in the repository:
 
@@ -94,7 +94,7 @@ To view the snapshots that are in the repository:
 
 # Resources
 
-* [Fedora Magazine article: Use restic on Fedora for encrypted backups](https://fedoramagazine.org/use-restic-encrypted-backups/)
-* [Official documentation: Setting up restic with Amazon S3](https://restic.readthedocs.io/en/stable/080_examples.html#setting-up-restic-with-amazon-s3) - Official restic documentation for using S3 storage
-* [System Backups with restic](https://kula.tproa.net/lnt/computers/backups/restic-systems-backups/) - Blog series on using restic for centralized server backup, by Thomas A. Kula
-* [GoTime episode on restic](https://changelog.com/gotime/48) - Audio of interview with Alexander Neumann, the developer of restic
+- [Fedora Magazine article: Use restic on Fedora for encrypted backups](https://fedoramagazine.org/use-restic-encrypted-backups/)
+- [Official documentation: Setting up restic with Amazon S3](https://restic.readthedocs.io/en/stable/080_examples.html#setting-up-restic-with-amazon-s3) - Official restic documentation for using S3 storage
+- [System Backups with restic](https://kula.tproa.net/lnt/computers/backups/restic-systems-backups/) - Blog series on using restic for centralized server backup, by Thomas A. Kula
+- [GoTime episode on restic](https://changelog.com/gotime/48) - Audio of interview with Alexander Neumann, the developer of restic
