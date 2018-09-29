@@ -1,7 +1,7 @@
 +++
 Title = "Using AWS CloudTrail"
 Slug = "aws-cloudtrail"
-Date = "2018-08-21T22:13:00+01:00"
+Date = "2018-08-30T18:39:00+01:00"
 Description = "An introduction to AWS CloudTrail"
 Categories = ["administration"]
 Tags = ["administration", "aws", "cloudtrail"]
@@ -23,7 +23,7 @@ CloudTrail tracks _management events_ and _data events_. Data events are operati
 
 AWS do not charge for the first trail that you configure in an account, provided that it only tracks management events.
 
-Typically, you would use CloudTrail in conjunction with several other services. 
+Typically, you would use CloudTrail in conjunction with other services. 
 
 By default, CloudTrail uses S3 to store captured data. Trails deliver logs to the specified S3 bucket every five minutes.
 
