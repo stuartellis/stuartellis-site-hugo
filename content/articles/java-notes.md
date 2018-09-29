@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the Java Language"
 Slug = "java-language"
-Date = "2018-08-31T21:10:00+01:00"
+Date = "2018-09-29T12:36:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -21,6 +21,8 @@ The _javac_ compiler turns _.java_ source files into _.class_ files.
 The _jar_ tool works with _.jar_ files, which contain _.class_ files.
 
 The _jarsigner_ tool is for digitally signing JAR files.
+
+The _jshell_ command-line shell was introduced in Java 9.
 
 ## Language Basics
 
