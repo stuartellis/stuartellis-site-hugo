@@ -88,7 +88,7 @@ You should probably learn these as you need them.
   the standard [JSDoc](http://usejsdoc.org/) format
 - [Husky](https://github.com/typicode/husky) - Convenient Git hooks
 - [Nodemon](https://nodemon.io/) - Instant code reloading during development
-- [nvm](https://github.com/creationix/nvm) - Enables you to manage multiple versions of Node.js on the same system 
+- [nvm](https://github.com/creationix/nvm) - Enables you to manage multiple versions of Node.js on the same system
 - [PM2](http://pm2.keymetrics.io/) - Process manager for Node.js applications
 - [Webpack](https://webpack.js.org/) - Web assets compiler
 
@@ -107,7 +107,7 @@ commonly used items:
 # Web Applications
 
 The most popular frameworks are [Express](https://expressjs.com/), which offers the basic elements that you need for a Website
-or service, and 
+or service, and
 [hapi](https://hapijs.com/), which is designed for larger applications.
 [Fastify](https://www.fastify.io/) is an emerging alternative to Express and hapi that can use Express plugins. [Restify](http://restify.com/) is a well-known framework that is specialized for REST APIs.
 
@@ -207,7 +207,7 @@ that is specifically designed to be programmed with JavaScript.
 - [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS) - Book series on
   JavaScript internals, by Kyle Simpson
 
-## Videos 
+## Videos
 
 - [Traversy Media](http://www.traversymedia.com/) - High quality free YouTube videos and paid courses for Node.js and JavaScript
 - [The Net Ninja](https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg) - Free YouTube videos and paid courses for Node.js and JavaScript
