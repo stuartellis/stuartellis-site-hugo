@@ -30,6 +30,8 @@ Snaps automatically update, so are not suitable for situations where you need a
 reproducible environment. [Nodesource](https://nodesource.com/) maintain the Linux
 packages for popular distributions, and Docker, Inc. maintain the Docker images.
 
+If you need to have multiple versions of Node.js on the same Linux or macOS system, use [nvm](https://github.com/creationix/nvm). 
+
 # Choosing a Code Editor or IDE
 
 If you do not have a
@@ -80,16 +82,18 @@ framework, in conjunction with [Sinon.js](http://sinonjs.org/) for mocks,
 [Chai](http://www.chaijs.com/) for assertions, [Karma](https://karma-runner.github.io)
 for running tests, and [Istanbul](https://istanbul.js.org/) to measure test coverage.
 
+## Writing Documentation
+
+Use Markdown for documents, such as README files, and the [JSDoc](http://usejsdoc.org/) format for documentation in code. The  [Documentation.js](http://documentation.js.org/) generator uses JSDoc.
+
 ## Other Development Tools
 
 You should probably learn these as you need them.
 
 - [Babel](https://babeljs.io/) - Compiles JavaScript code into alternate versions
-- [Documentation.js](http://documentation.js.org/) - Documentation generator that uses
-  the standard [JSDoc](http://usejsdoc.org/) format
+- [Concurrently](https://www.npmjs.com/package/concurrently) - Runs multiple commands concurrently
 - [Husky](https://github.com/typicode/husky) - Convenient Git hooks
 - [Nodemon](https://nodemon.io/) - Instant code reloading during development
-- [nvm](https://github.com/creationix/nvm) - Enables you to manage multiple versions of Node.js on the same system
 - [PM2](http://pm2.keymetrics.io/) - Process manager for Node.js applications
 - [Webpack](https://webpack.js.org/) - Web assets compiler
 
@@ -191,15 +195,20 @@ that is specifically designed to be programmed with JavaScript.
 - [Nodebots](http://nodebots.io/) - The community for JavaScript robotics and Internet
   of Things
 
-## Documentation
+## JavaScript Documentation
 
 - [MDN Web Docs](https://developer.mozilla.org) - The standard resource for Web
   technologies, maintained by Mozilla
 - [Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
+
+## Node.js Documentation
+
+- [The Node Way](http://thenodeway.io/)
 - [Node.js Best Practices](https://github.com/i0natan/nodebestpractices)
 - [Node.js Cheatsheet](https://github.com/LeCoupa/awesome-cheatsheets/blob/master/backend/node.js)
+- [Microsoft + Node.js Guidelines](https://github.com/Microsoft/nodejs-guidelines)
 
-## Books
+## JavaScript Books
 
 - [Eloquent JavaScript](http://eloquentjavascript.net/) - Introduction to JavaScript and
   programming, by Marijn Haverbeke
