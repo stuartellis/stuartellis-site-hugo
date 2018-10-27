@@ -30,7 +30,7 @@ Snaps automatically update, so are not suitable for situations where you need a
 reproducible environment. [Nodesource](https://nodesource.com/) maintain the Linux
 packages for popular distributions, and Docker, Inc. maintain the Docker images.
 
-If you need to have multiple versions of Node.js on the same Linux or macOS system, use [nvm](https://github.com/creationix/nvm). 
+If you need to have multiple versions of Node.js on the same Linux or macOS system, use [nvm](https://github.com/creationix/nvm).
 
 # Choosing a Code Editor or IDE
 
@@ -84,7 +84,7 @@ for running tests, and [Istanbul](https://istanbul.js.org/) to measure test cove
 
 ## Writing Documentation
 
-Use Markdown for documents, such as README files, and the [JSDoc](http://usejsdoc.org/) format for documentation in code. The  [Documentation.js](http://documentation.js.org/) generator uses JSDoc.
+Use Markdown for documents, such as README files, and the [JSDoc](http://usejsdoc.org/) format for documentation in code. The [Documentation.js](http://documentation.js.org/) generator uses JSDoc.
 
 ## Other Development Tools
 
