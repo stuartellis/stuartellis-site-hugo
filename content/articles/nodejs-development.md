@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-10-27T12:41:00+01:00"
+Date = "2018-10-27T16:35:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -60,13 +60,14 @@ extension, which enhances the integration with Git.
 
 ## Code Quality
 
-Set up [ESLint](http://eslint.org/) in all of your projects to run code quality checks.
-Add [Prettier](https://prettier.io/), which will format your code, removing style
+Set up [ESLint](http://eslint.org/) in all of your projects to run code quality checks. Add the [ESLint plugin for Node](https://www.npmjs.com/package/eslint-plugin-node) and the [Node.js security plugin](https://www.npmjs.com/package/eslint-plugin-security).
+
+Use [Prettier](https://prettier.io/), which will format your code, removing style
 issues. [Prettier integrates with ESLint](https://prettier.io/docs/en/eslint.html), so
 that ESLint formats your code with Prettier, and then checks the reformatted code.
 
 Plugins enable the popular text editors and IDEs to integrate ESLint and Prettier, so
-that your code can be formatted and checked as you work.
+that your code can be formatted and checked as you work. If you use Visual Studio Code, install the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and the [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode). The Prettier extension includes a copy of Prettier, so it will work immediately.
 
 ## Testing Tools
 
@@ -139,8 +140,9 @@ Google Chrome and Chromium Web browsers.
 query building, connection handling, and schema migrations.
 [Objection.js](https://vincit.github.io/objection.js) is an Object Relational Mapper
 (ORM) that builds on Knex. [TypeORM](http://typeorm.io) is an emerging alternative to
-Knex and Objection.js, with a broader range of features. To work with MongoDB, use
-[Mongoose](http://mongoosejs.com/).
+Knex and Objection.js, with a broader range of features.
+
+To work with MongoDB, use [Mongoose](http://mongoosejs.com/). Avoid using MongoDB for new projects, because current versions are not Open Source.
 
 > _Driver software required:_ To access a database service such as PostgreSQL, Redis, or
 > MongoDB, you will need to install the appropriate Node.js driver.
@@ -182,19 +184,17 @@ that is specifically designed to be programmed with JavaScript.
 
 # Resources
 
-## Interactive
+## Communities
 
 - [freeCodeCamp](https://www.freecodecamp.org/) - Free courses for new programmers
 - [NodeSchool](http://nodeschool.io/) - Free installable tutorials for Node.js
 - [Nodebots](http://nodebots.io/) - The community for JavaScript robotics and Internet
   of Things
 
-## Documents
+## Documentation
 
 - [MDN Web Docs](https://developer.mozilla.org) - The standard resource for Web
   technologies, maintained by Mozilla
-- [Awesome Node.js](https://node.cool) - A huge list of software and resources for
-  Node.js
 - [Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js)
 - [Node.js Best Practices](https://github.com/i0natan/nodebestpractices)
 - [Node.js Cheatsheet](https://github.com/LeCoupa/awesome-cheatsheets/blob/master/backend/node.js)
