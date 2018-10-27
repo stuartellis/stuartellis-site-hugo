@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-08-14T18:34:00+01:00"
+Date = "2018-10-27T12:41:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -23,7 +23,7 @@ To install Node.js on macOS, use [Homebrew](http://brew.sh/).
 
 To install Node.js on Linux, use the
 [recommended installation process for your distribution](https://nodejs.org/en/download/package-manager/),
-or a [Docker image](https://store.docker.com/images/node). If the distribution supports
+or a [Docker image](https://store.docker.com/images/node). If the Linux distribution supports
 snaps, you can also install
 [Node.js as a snap](https://nodesource.com/blog/announcing-node-js-snap-linux-users/).
 Snaps automatically update, so are not suitable for situations where you need a
@@ -32,10 +32,10 @@ packages for popular distributions, and Docker, Inc. maintain the Docker images.
 
 # Choosing a Code Editor or IDE
 
-I currently use [Neovim](https://neovim.io/). If you do not have a
-favourite text editor, [Visual Studio Code](https://code.visualstudio.com) is a high-quality and customisable editor that includes support for Node.js and JavaScript. [This tutorial](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial) shows you the
+If you do not have a
+favourite text editor, [Visual Studio Code](https://code.visualstudio.com) is a free, high-quality and customisable editor that includes support for Node.js and JavaScript. [This tutorial](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial) shows you the
 features that Visual Studio Code has for JavaScript development, including code quality
-checks, and support for debugging. All of these editors are provided free of charge.
+checks, and support for debugging.
 
 # Essential Tools
 
@@ -86,7 +86,9 @@ You should probably learn these as you need them.
 - [Babel](https://babeljs.io/) - Compiles JavaScript code into alternate versions
 - [Documentation.js](http://documentation.js.org/) - Documentation generator that uses
   the standard [JSDoc](http://usejsdoc.org/) format
+- [Husky](https://github.com/typicode/husky) - Convenient Git hooks
 - [Nodemon](https://nodemon.io/) - Instant code reloading during development
+- [nvm](https://github.com/creationix/nvm) - Enables you to manage multiple versions of Node.js on the same system 
 - [PM2](http://pm2.keymetrics.io/) - Process manager for Node.js applications
 - [Webpack](https://webpack.js.org/) - Web assets compiler
 
@@ -95,20 +97,19 @@ You should probably learn these as you need them.
 By design, Node.js only includes a very minimal library of modules. These packages offer
 commonly used items:
 
+- [date-fns](https://date-fns.org/) - Date and time library
 - [Lodash](https://lodash.com/) - Library of common utility functions
 - [Math.js](http://mathjs.org/) - Math library
-- [Moment.js](http://momentjs.com/) - Date and time library
+- [Nodemailer](https://nodemailer.com) - Email sending
+- [Passport](http://www.passportjs.org/) - Authentication
 - [Winston](https://github.com/winstonjs/winston) - Logging
 
 # Web Applications
 
-[Express](https://expressjs.com/) offers the basic elements that you need for a Website
-or service, along with support for a large range of plugins, and is the most popular
-choice. [Feathers](https://feathersjs.com/) builds on Express to provide support for
-REST APIs, real-time messaging, database access, and other capabilities. The
-[hapi](https://hapijs.com/) framework is designed for larger applications.
-[Fastify](https://www.fastify.io/) is an emerging alternative to Express and hapi that
-can use Express plugins.
+The most popular frameworks are [Express](https://expressjs.com/), which offers the basic elements that you need for a Website
+or service, and 
+[hapi](https://hapijs.com/), which is designed for larger applications.
+[Fastify](https://www.fastify.io/) is an emerging alternative to Express and hapi that can use Express plugins. [Restify](http://restify.com/) is a well-known framework that is specialized for REST APIs.
 
 Cloud services such as [Google App Engine](https://cloud.google.com/appengine/),
 [Heroku](https://www.heroku.com/), [Red Hat OpenShift](https://www.openshift.com/) and
@@ -205,3 +206,9 @@ that is specifically designed to be programmed with JavaScript.
 - [Exploring JS](http://exploringjs.com/) - Book series by Dr. Axel Rauschmayer
 - [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS) - Book series on
   JavaScript internals, by Kyle Simpson
+
+## Videos 
+
+- [Traversy Media](http://www.traversymedia.com/) - High quality free YouTube videos and paid courses for Node.js and JavaScript
+- [The Net Ninja](https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg) - Free YouTube videos and paid courses for Node.js and JavaScript
+- [FunFunFunction](https://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q) - Weekly show on programming with JavaScript
