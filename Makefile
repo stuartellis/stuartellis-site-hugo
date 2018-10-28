@@ -1,4 +1,4 @@
-.PHONY: clean deploy help setup 
+.PHONY: clean deploy help shell 
 
 default: help
 
@@ -6,15 +6,13 @@ help:
 			@echo "make clean   - Clean the project working directory"
 			@echo "make deploy  - Deploy the site to AWS"
 			@echo "make help    - Display this message"
-			@echo "make setup   - Install the development dependencies"
+			@echo "make shell   - Run a shell in a toolbox container"
 
 deploy:
-			hugo -v
-			s3deploy -source=public/ -region=eu-west-2 -bucket=www.stuartellis.name
+			docker run --rm -it --mount "type=bind,source=${PWD},destination=/var/local" --mount "type=bind,source=${HOME}/.aws,destination=/root/.aws,readonly" hugo-toolbox /var/local/deploy.sh
 
 clean:
 			if [ -d public ]; then rm -r public; fi
 
-setup:
-			go get -u -v github.com/bep/s3deploy
-
+shell:
+			docker run --rm -it --mount "type=bind,source=${PWD},destination=/var/local" --mount "type=bind,source=${HOME}/.aws,destination=/root/.aws,readonly" hugo-toolbox /bin/sh

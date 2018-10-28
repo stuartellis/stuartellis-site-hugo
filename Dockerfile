@@ -3,28 +3,33 @@ FROM alpine:3.8
 ## Image metadata ##
 
 LABEL maintainer="stuart@stuartellis.name" \
-     version="0.1.0" \
+     version="0.2.0" \
     description="Hugo ToolBox"
 
 ENV HUGO_VERSION 0.49.2
 ENV HUGO_BINARY hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
 
-## Install Hugo ##
+ENV S3DEPLOY_VERSION 2.2.0
+ENV S3DEPLOY_BINARY s3deploy_${S3DEPLOY_VERSION}_Linux-64bit.tar.gz
 
-RUN set -x && \
-  apk add --update wget ca-certificates && \
-  wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} && \
-  tar xzf ${HUGO_BINARY} && \
-  rm -r ${HUGO_BINARY} && \
-  mv hugo /usr/bin && \
-  apk del wget ca-certificates && \
+RUN apk add --update wget ca-certificates && \
   rm /var/cache/apk/*
 
-## Import source files ##
+## Install Hugo ##
 
-COPY ./ /site
-WORKDIR /site
+RUN wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} && \
+  tar xzf ${HUGO_BINARY} && \
+  rm -r ${HUGO_BINARY} && \
+  mv hugo /usr/local/bin
 
-## Run Hugo ##
+## Install s3deploy ##
 
-RUN /usr/bin/hugo
+RUN wget https://github.com/bep/s3deploy/releases/download/v${S3DEPLOY_VERSION}/${S3DEPLOY_BINARY} && \
+  tar xzf ${S3DEPLOY_BINARY} && \
+  rm -r ${S3DEPLOY_BINARY} && \
+  mv s3deploy /usr/local/bin
+
+## Run Hugo server ##
+WORKDIR /var/local
+EXPOSE 1313
+CMD [ "hugo", "server", "--bind=0.0.0.0" ] 
