@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-10-27T16:35:00+01:00"
+Date = "2018-10-29T20:06:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -23,19 +23,19 @@ To install Node.js on macOS, use [Homebrew](http://brew.sh/).
 
 To install Node.js on Linux, use the
 [recommended installation process for your distribution](https://nodejs.org/en/download/package-manager/),
-or a [Docker image](https://store.docker.com/images/node). If the Linux distribution supports
+or a [Docker image](https://hub.docker.com/_/node/). If the Linux distribution supports
 snaps, you can also install
 [Node.js as a snap](https://nodesource.com/blog/announcing-node-js-snap-linux-users/).
 Snaps automatically update, so are not suitable for situations where you need a
 reproducible environment. [Nodesource](https://nodesource.com/) maintain the Linux
-packages for popular distributions, and Docker, Inc. maintain the Docker images.
+packages for popular distributions, and The Node.js Foundation maintain the Docker images.
 
-If you need to have multiple versions of Node.js on the same Linux or macOS system, use [nvm](https://github.com/creationix/nvm).
+If you need to have multiple versions of Node.js on the same system, use [nvm](https://github.com/creationix/nvm) on Linux or macOS, and [nvm-windows](https://github.com/coreybutler/nvm-windows) for Microsoft Windows.
 
 # Choosing a Code Editor or IDE
 
 If you do not have a
-favourite text editor, [Visual Studio Code](https://code.visualstudio.com) is a free, high-quality and customisable editor that includes support for Node.js and JavaScript. [This tutorial](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial) shows you the
+favourite text editor, consider [Visual Studio Code](https://code.visualstudio.com), which is a free of charge, high-quality and customisable editor that includes support for Node.js and JavaScript. [This tutorial](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial) shows you the
 features that Visual Studio Code has for JavaScript development, including code quality
 checks, and support for debugging.
 
@@ -84,7 +84,7 @@ for running tests, and [Istanbul](https://istanbul.js.org/) to measure test cove
 
 ## Writing Documentation
 
-Use Markdown for documents, such as README files, and the [JSDoc](http://usejsdoc.org/) format for documentation in code. The [Documentation.js](http://documentation.js.org/) generator uses JSDoc.
+Use Markdown for documents, such as README files, and the [JSDoc](http://usejsdoc.org/) format for documentation in code. The [Documentation.js](http://documentation.js.org/) generator builds sets of documentation from JSDoc.
 
 ## Other Development Tools
 
