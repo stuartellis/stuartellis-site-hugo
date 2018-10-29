@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-10-29T20:06:00+01:00"
+Date = "2018-10-29T20:50:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -41,7 +41,7 @@ checks, and support for debugging.
 
 # Essential Tools
 
-There are a number of de-facto standard utilities and libraries for JavaScript software
+There are a number of very popular utilities and libraries for JavaScript software
 development, but a few tools are so fundamental that you should install them even before
 you begin to write JavaScript code.
 
@@ -91,7 +91,7 @@ Use Markdown for documents, such as README files, and the [JSDoc](http://usejsdo
 You should probably learn these as you need them.
 
 - [Babel](https://babeljs.io/) - Compiles JavaScript code into alternate versions
-- [Concurrently](https://www.npmjs.com/package/concurrently) - Runs multiple commands concurrently
+- [Concurrently](https://www.npmjs.com/package/concurrently) - Runs multiple commands simultaneously
 - [Husky](https://github.com/typicode/husky) - Convenient Git hooks
 - [Nodemon](https://nodemon.io/) - Instant code reloading during development
 - [PM2](http://pm2.keymetrics.io/) - Process manager for Node.js applications
