@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the Java Language"
 Slug = "java-language"
-Date = "2018-09-29T12:36:00+01:00"
+Date = "2018-11-05T21:46:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -13,6 +13,15 @@ Draft = true
 Notes on the Java programming language.
 
 # Java
+
+## Setup 
+
+To install a copy of the JDK:
+
+1. Download the LTS version of the JDK from AdoptOpenJDK
+2. Unzip the download
+3. Copy the JDK directory to /usr/local/lib
+4. Add /usr/local/lib/<JDK_DIRECTORY> to your PATH environment variable
 
 ## Tools
 
@@ -34,7 +43,7 @@ If a package is marked as _sealed_, then all of the classes must be in the same 
 
 The exceptions that a method can throw are part of the public API.
 
-A checked exception is an error that can reasonably be excepted to occur in the application. An unchecked exception is an error that the application cannot reasonably recover from.
+A checked exception is an error that can reasonably be expected to occur in the application. An unchecked exception is an error that the application cannot reasonably recover from.
 
 Exceptions are instances of _Error_ or _RuntimeError_ classes, or subclasses of these. Both _Error_ and _RuntimeError_ are subclasses of _Throwable_.
 
@@ -88,6 +97,8 @@ You can have a _finally_ statement without an _except_ statement.
 
 # Resources
 
+- [Official Java Tutorials](https://docs.oracle.com/javase/tutorial/)
 - [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)
 - [Maven Package Search](https://search.maven.org/)
 - [MVP Java YouTube channel](https://www.youtube.com/channel/UCrgOYeQyZ_V62XDYKCfh8TQ)
+- [Java with Visual Studio Code](https://code.visualstudio.com/docs/java/java-tutorial)
