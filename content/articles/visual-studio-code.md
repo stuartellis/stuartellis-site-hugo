@@ -1,7 +1,7 @@
 +++
 Title = "Setting up the Visual Studio Code Text Editor"
 Slug = "visual-studio-code"
-Date = "2018-09-10T21:30:00+01:00"
+Date = "2018-11-07T21:32:00+01:00"
 Description = "Setting up the Visual Studio Code text editor for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["golang", "javascript", "python", "ruby"]
@@ -20,6 +20,8 @@ Notes on customizing the [Visual Studio Code](https://code.visualstudio.com) tex
 To install Visual Studio Code on macOS with Homebrew, enter this command in a terminal window:
 
     brew cask install visual-studio-code
+
+If you manually install Visual Studio Code, rather than using Homebrew, you will need to add the *code* executable to your PATH. To do this, start Visual Studio Code, open the command palette, and choose *Shell Command: Install 'code' command in PATH*. 
 
 ## Installing Visual Studio Code to a USB Drive
 
@@ -94,8 +96,8 @@ Run this command to add the
 
 You will need to install some additional tools into the environment to use all of the features of this extension.
 
-Run this command to add the
-[Ruby](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck) extension:
+For UNIX shell scripts, use [Shellcheck](https://www.shellcheck.net/). Run this command to add the
+[Shellcheck](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck) extension:
 
     code --install-extension timonwong.shellcheck
 
