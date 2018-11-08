@@ -30,6 +30,8 @@ Install [Maven](https://maven.apache.org/) for managing builds and dependencies.
 3. Copy the Maven directory to /usr/local/lib
 4. Add /usr/local/lib/<MAVEN_DIRECTORY> to your PATH environment variable
 
+Alternatively, use [SDKMAN](https://sdkman.io/), which enables you to maintain multiple versions of Java products on the same system.
+
 ## Tools
 
 OpenJDK packages include a JVM (Oracle HotSpot or Eclipse OpenJ9), a standard library (the _Java Class Library_), and these tools:
@@ -66,7 +68,7 @@ Use _try-with-resources_ for things like I/O.
 
 You can have a _finally_ statement without an _except_ statement.
 
-# JVM Implementations
+# Java Implementations
 
 - [AdoptOpenJDK](https://adoptopenjdk.net/) - Pre-built versions of the OpenJDK
 
