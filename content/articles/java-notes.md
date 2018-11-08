@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the Java Language"
 Slug = "java-language"
-Date = "2018-11-07T21:57:00+01:00"
+Date = "2018-11-08T20:41:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -84,10 +84,11 @@ You can have a _finally_ statement without an _except_ statement.
 
 # Code Quality
 
+- [CheckStyle](https://checkstyle.org/) - Code style checks
+- [JaCoCo](https://www.jacoco.org/jacoco/) - Test coverage
+- [PMD](https://pmd.github.io/) - Code quality checks for Java and Salesforce.com
 - [SonarQube](https://www.sonarqube.org/) - Code analysis framework
 - [SpotBugs](https://spotbugs.github.io/) - Static analysis of code
-- [CheckStyle](https://checkstyle.org/) - Code style checks
-- [PMD](https://pmd.github.io/) - Code quality checks for Java and Salesforce.com
 
 # Frameworks
 
