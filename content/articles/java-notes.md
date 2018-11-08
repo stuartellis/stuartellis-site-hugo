@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the Java Language"
 Slug = "java-language"
-Date = "2018-11-05T21:46:00+01:00"
+Date = "2018-11-07T21:57:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -14,7 +14,7 @@ Notes on the Java programming language.
 
 # Java
 
-## Setup 
+## Setup
 
 To install a copy of the JDK:
 
@@ -23,15 +23,21 @@ To install a copy of the JDK:
 3. Copy the JDK directory to /usr/local/lib
 4. Add /usr/local/lib/<JDK_DIRECTORY> to your PATH environment variable
 
+Install [Maven](https://maven.apache.org/) for managing builds and dependencies. This is a Java tool, so the same package will run on any operating system that has a JDK installed.
+
+1. Download the latest version of Maven
+2. Unzip the download
+3. Copy the Maven directory to /usr/local/lib
+4. Add /usr/local/lib/<MAVEN_DIRECTORY> to your PATH environment variable
+
 ## Tools
 
-The _javac_ compiler turns _.java_ source files into _.class_ files.
+OpenJDK packages include a JVM (Oracle HotSpot or Eclipse OpenJ9), a standard library (the _Java Class Library_), and these tools:
 
-The _jar_ tool works with _.jar_ files, which contain _.class_ files.
-
-The _jarsigner_ tool is for digitally signing JAR files.
-
-The _jshell_ command-line shell was introduced in Java 9.
+- The _javac_ compiler turns _.java_ source files into _.class_ files.
+- The _jar_ tool works with _.jar_ files, which contain _.class_ files.
+- The _jarsigner_ tool is for digitally signing JAR files.
+- The _jshell_ command-line shell, which was introduced in Java 9.
 
 ## Language Basics
 
@@ -74,6 +80,14 @@ You can have a _finally_ statement without an _except_ statement.
 
 - [JUnit 5](https://junit.org/junit5/) - Unit testing
 - [Hamcrest](http://hamcrest.org/JavaHamcrest/) - Matchers
+- [Mockito](https://site.mockito.org/) - Mocking
+
+# Code Quality
+
+- [SonarQube](https://www.sonarqube.org/) - Code analysis framework
+- [SpotBugs](https://spotbugs.github.io/) - Static analysis of code
+- [CheckStyle](https://checkstyle.org/) - Code style checks
+- [PMD](https://pmd.github.io/) - Code quality checks for Java and Salesforce.com
 
 # Frameworks
 
@@ -91,7 +105,8 @@ You can have a _finally_ statement without an _except_ statement.
 
 - [Google Guice](https://github.com/google/guice) - Dependency injection framework
 - [Hibernate](http://hibernate.org/) - Database toolkit and ORM
-  [Hystrix](https://github.com/Netflix/Hystrix) - Fault tolerance
+- [Hystrix](https://github.com/Netflix/Hystrix) - Fault tolerance
+- [Micrometer](http://micrometer.io/) - Metrics collection agent library
 - [OpenPDF](https://github.com/LibrePDF/OpenPDF)
 - [Thymeleaf](https://www.thymeleaf.org/) - Templating
 
