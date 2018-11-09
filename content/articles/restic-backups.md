@@ -1,7 +1,7 @@
 +++
 Title = "Backups with restic"
 Slug = "restic-backups"
-Date = "2018-09-11T07:18:00+01:00"
+Date = "2018-11-09T20:33:00+01:00"
 Description = "Managing backups with restic"
 Categories = ["administration"]
 Tags = ["administration"]
@@ -43,7 +43,7 @@ Create the S3 bucket. We need to do this first, because the current version of r
 Download the file for restic from GitHub, and then set permissions on it:
 
     mkdir -p $HOME/.restic/bin
-    curl -L https://github.com/restic/restic/releases/download/v0.9.2/restic_0.9.2_linux_amd64.bz2 | bunzip2 > $HOME/.restic/bin/restic
+    curl -L https://github.com/restic/restic/releases/download/v0.9.3/restic_0.9.3_linux_amd64.bz2 | bunzip2 > $HOME/.restic/bin/restic
     chown -R $USER:$USER $HOME/.restic/bin
     chmod -R 750 $HOME/.restic/bin
 
@@ -51,7 +51,7 @@ Download the file for restic from GitHub, and then set permissions on it:
 
 Download the file for restic from GitHub. Once the file is downloaded, set the permissions to limit who can use it, and then give it the capabilities to access the whole system:
 
-    curl -L https://github.com/restic/restic/releases/download/v0.9.2/restic_0.9.2_linux_amd64.bz2 | bunzip2 > restic
+    curl -L https://github.com/restic/restic/releases/download/v0.9.3/restic_0.9.3_linux_amd64.bz2 | bunzip2 > restic
     mkdir -p /opt/restic/bin
     mv restic /opt/restic/bin
     chown -R root:$USER /opt/restic/bin
