@@ -58,7 +58,7 @@ extension, which enhances the integration with Git.
 Use either [Go Meta Linter](https://github.com/alecthomas/gometalinter) or [golangci-lint](https://github.com/golangci/golangci-lint) to run a suite of
 quality checks on your code, including the official
 [linter](https://github.com/golang/lint). The Go plugins for text editors and IDEs often
-support the Go Meta Linter, and may support golangci-lint. For example, the Go plugin for Visual Studio Code installs the official linter and Go Meta Linter, but you must [enable quality check suites](https://github.com/Microsoft/vscode-go#linter). You should also add Go Meta Linter or golangci-lint to your Continuous Integration process, to ensure that the code that is submitted passes quality checks. 
+support the Go Meta Linter, and may support golangci-lint. For example, the Go plugin for Visual Studio Code installs the official linter and Go Meta Linter, but you must [enable quality check suites](https://github.com/Microsoft/vscode-go#linter). You should also add Go Meta Linter or golangci-lint to your Continuous Integration process, to ensure that the code that is submitted passes quality checks.
 
 The [Go Report Card](https://goreportcard.com/) service analyses the Go software in
 public Git repositories, using some of the standard quality checks. You do not need to
@@ -67,7 +67,7 @@ badge to the README in your repository that links to the Report Card for your pr
 
 ## Dependency Management
 
-Version 1.11 of Go includes initial support for [modules](https://github.com/golang/go/wiki/Modules). The previous standard for managing dependencies was [dep](https://golang.github.io/dep/). 
+Version 1.11 of Go includes initial support for [modules](https://github.com/golang/go/wiki/Modules). The previous standard for managing dependencies was [dep](https://golang.github.io/dep/).
 
 # Other Useful Tools
 
@@ -102,11 +102,7 @@ applications:
 
 The [Gorilla toolkit](http://www.gorillatoolkit.org/) is a popular collection of
 packages for developers who prefer to assemble their applications from individual
-components, rather than use a framework.
-
-Many developers find that the router that is included in the standard library for Go is
-not flexible enough to support their applications, and decide to use other routers. The
-_mux_ package from the Gorilla toolkit is often used as a direct replacement for the
+components, rather than use one of the frameworks. For example, the _mux_ package from the Gorilla toolkit is often used as a direct replacement for the
 router that is provided by the Go standard library.
 
 Go Web applications can be deployed on a very wide variety of infrastructure. Cloud
@@ -144,7 +140,7 @@ should use a third-party database library.
 - [pop](https://github.com/gobuffalo/pop) - An Object Relational Mapper that is inspired
   by ActiveRecord
 
-Whichever package you choose, you will also need a driver for the specific brand of
+Whichever option you choose, you will also need a driver for the specific brand of
 database that your code will access. The most popular drivers are:
 
 - [Microsoft SQL Server](https://github.com/denisenkom/go-mssqldb)
@@ -158,8 +154,7 @@ file-based key-value database system in pure Go.
 
 # Developing Command-line Tools
 
-To create command-line tools with Go, use the [Cobra](https://github.com/spf13/cobra)
-framework.
+The Go standard library includes the basic elements that you need to build your own command-line tools. Use the [Cobra](https://github.com/spf13/cobra) framework to create command-line tools with features such as sub-commands and autocompletion.
 
 # Robotics and Internet of Things
 
