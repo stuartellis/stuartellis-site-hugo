@@ -20,19 +20,13 @@ These are notes on the Java language and platform.
 
 Each _Java Virtual Machine_ runs compiled binary Java _bytecode_. This bytecode is platform-independent.
 
-The bytecode is enclosed in _.class_ files. _Java ARchive (JAR)_ files enable you to ship many class files in a single package.
+The bytecode is enclosed in _.class_ files. _Java ARchive (JAR)_ files enable you to ship many class files in a single package. A JAR is a ZIP file archive that should contain a directory named _META-INF_, and inside that a manifest file, which will be named _MANIFEST.MF_. The manifest file provides data about the files that are contained in the JAR.  
 
-The JVM does not find classes itself. Instead, _Java Class Loaders_ look for the appropriate class file when the class is first used. By default, a JVM will use three class loaders: the _boot class loader_ (for core libraries supplied with the JVM), the _extension class loader_ (for libraries in the extensions directory), and a _system class loader_ , which looks on the _classpath_, a list of directories and JARs. A classpath can specify any combination of directories, paths to individual JARs, and paths with wildcards to load multiple JARs. Web application servers use additional class loaders. The _boot class loader_ is written in platform-specific native code, and all other class loaders are written in Java.
+The JVM does not find classes itself. Instead, _Java Class Loaders_ look for the appropriate class file when the class is first used. By default, a JVM will use three class loaders: the _boot class loader_ (for core libraries that are supplied with the JVM), the _extension class loader_ (for libraries in the extensions directory), and a _system class loader_, which looks on the _classpath_, a list of directories and JARs. A classpath can specify any combination of directories, paths to individual JARs, and paths with wildcards to load multiple JARs. Web application servers use additional class loaders. The _boot class loader_ is written in platform-specific native code, and all other class loaders are written in Java.
 
 _Agents_ are plugins for the JVM. For example, _JRebel_ is an agent that enables hot-code reloading.
 
-## Packaging Java Code
-
-Java compiled classes are packed into _Java ARchive (JAR)_ files. A JAR is a ZIP file archive that should contain a directory named _META-INF_, and inside that a file named _MANIFEST.MF_.
-
-The Java runtime loads classes from JAR files. Java automatically reads JAR files in the directories that are specified by the CLASSPATH environment variable.
-
-## Monitoring and Debugging
+# Monitoring and Debugging
 
 Java Virtual Machines accept connections from debuggers, which may either be on the same system, or connecting from a remote system. The OpenJDK includes _jdb_, a command-line debugger, and IDEs for Java include graphical debuggers.
 
