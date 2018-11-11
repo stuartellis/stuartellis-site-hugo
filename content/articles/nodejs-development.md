@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-10-29T20:50:00+01:00"
+Date = "2018-11-11T08:55:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -128,9 +128,7 @@ frameworks.
 
 # Web Clients
 
-Use the [axios](https://github.com/axios/axios) library for your Web client software,
-such as downloading files or working with APIs. The HTTP software that is included with
-Node.js uses callbacks, rather than the newer promises style of API.
+To connect with APIs, transfer files, and other Web tasks, use either [request](https://github.com/request/request), or the more minimal [axios](https://github.com/axios/axios) library. The HTTP software that is included with Node.js uses callbacks, rather than the newer promises style of API.
 
 [Cheerio](https://cheerio.js.org/) provides an implementation of the jQuery API for
 reading and processing HTML documents with Node.js.
