@@ -40,6 +40,7 @@ To manually install a copy of Apache Maven:
 OpenJDK packages include a JVM (such as HotSpot or OpenJ9), a standard library (the _Java Class Library_), and these tools:
 
 - The _javac_ compiler turns _.java_ source files into _.class_ files.
+- The _javap_ de-compiler reads the contents of class files.
 - The _jar_ tool works with _.jar_ files, which contain the compiled _.class_ files.
 - The _jarsigner_ tool is for digitally signing JAR files.
 - The _jshell_ command-line shell, which was introduced in Java 9.
@@ -71,6 +72,12 @@ This applies to _checked exceptions_. It does not apply to _unchecked exceptions
 Use _try-with-resources_ for things like I/O.
 
 You can have a _finally_ statement without an _except_ statement.
+
+## Packaging
+
+Java compiled classes are packed into JAR files. A JAR is a ZIP file archive that should contain a directory named *META-INF*, and inside that a file named *MANIFEST.MF*.
+
+The Java runtime loads classes from JAR files. Java automatically reads JAR files in the directories that are specified by the CLASSPATH environment variable.
 
 # Java Implementations
 
