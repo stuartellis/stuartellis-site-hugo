@@ -14,13 +14,13 @@ Notes on the Java programming language.
 
 # Overview
 
-These are notes on the Java language and platform. 
+These are notes on the Java language and platform.
 
 # The Java Virtual Machine
 
 Each _Java Virtual Machine_ runs compiled binary Java _bytecode_. This bytecode is platform-independent.
 
-The bytecode is enclosed in _.class_ files. _Java ARchive (JAR)_ files enable you to ship many class files in a single package. A JAR is a ZIP file archive that should contain a directory named _META-INF_, and inside that a manifest file, which will be named _MANIFEST.MF_. The manifest file provides data about the files that are contained in the JAR.  
+The bytecode is enclosed in _.class_ files. _Java ARchive (JAR)_ files enable you to ship many class files in a single package. A JAR is a ZIP file archive that should contain a directory named _META-INF_, and inside that a manifest file, which will be named _MANIFEST.MF_. The manifest file provides data about the files that are contained in the JAR.
 
 The JVM does not find classes itself. Instead, _Java Class Loaders_ look for the appropriate class file when the class is first used. By default, a JVM will use three class loaders: the _boot class loader_ (for core libraries that are supplied with the JVM), the _extension class loader_ (for libraries in the extensions directory), and a _system class loader_, which looks on the _classpath_, a list of directories and JARs. A classpath can specify any combination of directories, paths to individual JARs, and paths with wildcards to load multiple JARs. Web application servers use additional class loaders. The _boot class loader_ is written in platform-specific native code, and all other class loaders are written in Java.
 
@@ -75,9 +75,43 @@ To manually install a copy of Apache Maven:
 3. Copy the Maven directory to /usr/local/lib
 4. Add /usr/local/lib/<MAVEN_DIRECTORY> to your PATH environment variable
 
-# Language Basics
+# Distinctive Language Features
 
-Every application must have a _main()_ method as an entry point.
+Java follows the conventions of C-like languages, so much of the syntax will be obvious to a developer who has worked with any of these languages, such as JavaScript.
+
+Java always passes arguments by value.
+
+Java supports method overloading, where the same method name can be used with multiple signatures. You should avoid using theis feature, as it can confuses other developers.
+
+Modern Java applications usually use dependency injection. For this reason, avoid static methods.
+
+Fields can be marked as _transient_ if they should not included when the object is serialized.
+
+## Application Entry Point
+
+Every application must have a _main()_ method as an entry point. A _main()_ method must be public.
+
+## The Keyword "Final"
+
+Variables that are declared as _final_ can only have a value assigned once within the scope that they belong to, and are not accessible outside of that scope. If the scope is a loop, then the final variable can be assigned a value once per iteration.
+
+It is good practice to declare variables as _final_ unless you have a specific reason not to do so.
+
+A _final_ class cannot be extended. A method that has been marked as _final_ cannot be overridden in an extending class.
+
+## Constructors
+
+A _constructor_ is a method in the class that has the same name as the class itself. Constructors must have no return value.
+
+The special behavior of constructors is that they work on objects whilst the object is being initialized.
+
+Static constructors run only once, when a class is first loaded.
+
+## Packages
+
+A package is a namespace for classes. Packages are heirarchical, with a path of elements separated by the period (full-stop) character. The full name of a class includes the package that it belongs to.
+
+Always specify a package for your classes. If you do not specify a package, the class will be assigned to the default package.
 
 If a package is marked as _sealed_, then all of the classes must be in the same JAR file.
 
