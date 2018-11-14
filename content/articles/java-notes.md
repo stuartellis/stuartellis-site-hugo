@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the Java Language"
 Slug = "java-language"
-Date = "2018-11-11T16:37:00+01:00"
+Date = "2018-11-14T21:14:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -46,9 +46,12 @@ OpenJDK packages include a JVM (such as HotSpot or OpenJ9), a standard library (
 
 Each implementation of Java includes a Java Virtual Machine (JVM), and a Java Developers Kit (JDK) which provides the tools and class libraries. Most JVMs are now distributed with versions of the OpenJDK.
 
-- [AdoptOpenJDK](https://adoptopenjdk.net/) - Pre-built versions of the OpenJDK with HotSpot or OpenJ9 Java Virtual Machines
-- [OpenJ9](https://www.eclipse.org/openj9/) - Open Source JVM maintained by IBM and the Eclipse Foundation
+- [AdoptOpenJDK](https://adoptopenjdk.net/) - Versions of the OpenJDK with HotSpot or OpenJ9 Java Virtual Machines
+- [Amazon Corretto](https://aws.amazon.com/corretto/) - OpenJDK with HotSpot Java Virtual Machine, supported by AWS
 - [JamaicaVM](https://www.aicas.com/cms/en/JamaicaVM) - Proprietary JVM for real-time systems
+- [OpenJ9](https://www.eclipse.org/openj9/) - Open Source JVM maintained by IBM and the Eclipse Foundation
+- [Red Hat OpenJDK](https://developers.redhat.com/products/openjdk/overview/) - Windows and Linux Java distributions for JBoss users
+- [SapMachine](https://sap.github.io/SapMachine/) - OpenJDK and JVM, provided by SAP for their customers
 - [Zing](https://www.azul.com/products/zing/) - High-performance proprietary JVM maintained by Azul Systems
 - [Zulu](https://www.azul.com/downloads/zulu/) - OpenJDK builds maintained by Azul Systems
 
