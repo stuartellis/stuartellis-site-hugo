@@ -1,10 +1,10 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2018-09-03T21:07:00+01:00"
+Date = "2018-11-14T21:24:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
-Tags = ["administration", "macos", "golang", "javascript", "python", "ruby", "rust"]
+Tags = ["administration", "macos", "golang", "java", "javascript", "python", "ruby", "rust"]
 Type = "article"
 
 +++
@@ -212,8 +212,8 @@ To install Visual Studio Code, enter this command in a terminal window:
 Consider installing these extensions:
 
 - Support for your preferred languages, e.g.
-  [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python),
-  [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.ruby) or
+  [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), [Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack), 
+  [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.ruby), or
   [Go](https://marketplace.visualstudio.com/items?itemName=ms-vscode.Go)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
   or [TSLint](https://marketplace.visualstudio.com/items?itemName=eg2.tslint) for
@@ -333,13 +333,13 @@ To create an SSH key, run the _ssh-keygen_ command in a terminal window. For exa
 Homebrew provides separate packages for each version of [Node.js](https://nodejs.org).
 To ensure that you are using the version of Node.js that you expect, specify the version
 when you install it. For example, enter this command in a Terminal window to install the
-Node.js 8, the current LTS release:
+Node.js 10, the current LTS release:
 
-    brew install node@8
+    brew install node@10
 
 Add the _bin/_ directory for this Node.js installation to your PATH:
 
-    /usr/local/opt/node@8/bin
+    /usr/local/opt/node@10/bin
 
 If you need [yarn](https://yarnpkg.com/en/), enter this command in a Terminal window to
 install it:
@@ -370,6 +370,59 @@ Then, add this to your PATH:
     $GOPATH/bin
 
 Close the Terminal and open it again for the changes to take effect.
+
+## AdoptOpenJDK for Java Development
+
+Install the macOS package of the OpenJDK from the [AdoptOpenJDK](https://adoptopenjdk.net/) project to avoid potential licensing and support issues. The versions of Java on the OpenJDK Website are for testers, and the Oracle JDK is a proprietary product that requires license fees.
+
+Use the _LTS_ version of the OpenJDK, unless you need features that are in the latest releases.
+
+To manually install a copy of the JDK:
+
+1. Download the version of the JDK that you need from AdoptOpenJDK
+2. Unzip the download
+3. Copy the JDK directory to _/usr/local/lib_
+4. Edit your shell profile to add a _JAVA_HOME_ environment variable set to _/usr/local/lib/JDK-DIRECTORY_
+5. Add _/usr/local/lib/JDK-DIRECTORY/Contents/Home/bin_ to your PATH environment variable
+
+Replace _JDK-DIRECTORY_ with the name of the directory that the OpenJDK uses, such as _jdk-11.0.1+13_.
+
+Most Java projects use the Apache Maven build tool. To manually install a copy of [Apache Maven](https://maven.apache.org):
+
+1. Download the latest version of Maven
+2. Unzip the download
+3. Copy the Maven directory to _/usr/local/lib/_
+4. Add _/usr/local/lib/MAVEN-DIRECTORY_ to your PATH environment variable
+
+Replace _MAVEN-DIRECTORY_ with the name of the directory that Maven uses, such as _apache-maven-3.6.0_.
+
+Apache Maven is written in Java, which means that the same package works on any operating system that has a JVM installed.
+
+## pipenv for Python Development
+
+Unfortunately, macOS includes a copy of Python 2, so you will need to install Python 3 yourself. To maintain current and
+clean Python environments, you should also install [pipenv](https://docs.pipenv.org/). It drives the
+[pip](https://pip.pypa.io/en/stable/) and
+[virtual environment](https://docs.python.org/3/tutorial/venv.html) features that are
+included with Python itself, but is more powerful and easier to use than working with
+these features directly.
+
+Enter this command to install Python 3 and pipenv using Homebrew:
+
+    brew install python3 pipenv
+
+The pipenv tool itself will use the copy of Python 3 from Homebrew by default. To use
+this Python 3 interpreter without pipenv, specify _python3_ on the command-line and in
+your scripts, rather than _python_:
+
+    python3 --version
+
+If you need to run the _pip_ utility, rather than setting up a development environment with pipenv, always use the command _pip3_:
+
+    pip3 --version
+
+The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
+shows you how to work with _pipenv_.
 
 ## rustup for Rust Development
 
@@ -405,32 +458,6 @@ local documentation. To do this, create a file in your home directory with the n
 _.gemrc_ and put this line in it:
 
     gem: --no-ri --no-rdoc
-
-## pipenv for Python Development
-
-Unfortunately, macOS includes a copy of Python 2, so you will need to install Python 3 yourself. To maintain current and
-clean Python environments, you should also install [pipenv](https://docs.pipenv.org/). It drives the
-[pip](https://pip.pypa.io/en/stable/) and
-[virtual environment](https://docs.python.org/3/tutorial/venv.html) features that are
-included with Python itself, but is more powerful and easier to use than working with
-these features directly.
-
-Enter this command to install Python 3 and pipenv using Homebrew:
-
-    brew install python3 pipenv
-
-The pipenv tool itself will use the copy of Python 3 from Homebrew by default. To use
-this Python 3 interpreter without pipenv, specify _python3_ on the command-line and in
-your scripts, rather than _python_:
-
-    python3 --version
-
-If you need to run the _pip_ utility, rather than setting up a development environment with pipenv, always use the command _pip3_:
-
-    pip3 --version
-
-The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
-shows you how to work with _pipenv_.
 
 # SQL Databases
 
