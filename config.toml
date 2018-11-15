@@ -23,8 +23,15 @@ identifier = "gitlab"
 url = "https://gitlab.com/users/stuart-ellis/projects"
 
 [[menu.main]]
-name = "Contact Me"
+name = "Privacy"
 pre = "<i class='fa fa-heart'></i>"
 weight = -80
+identifier = "privacy"
+url = "/privacy/policy/"
+
+[[menu.main]]
+name = "Contact Me"
+pre = "<i class='fa fa-heart'></i>"
+weight = -70
 identifier = "contact"
 url = "/contact/me/"
