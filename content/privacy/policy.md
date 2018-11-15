@@ -1,6 +1,6 @@
 +++
 Title = "Privacy Policy"
-Date = "2018-11-15T21:41:01+01:00"
+Date = "2018-11-15T21:53:00+01:00"
 Description = "Privacy policy"
 Type = "plain"
 Categories = []
