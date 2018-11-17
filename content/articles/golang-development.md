@@ -32,8 +32,7 @@ processes. Every popular editor has a plugin for Go support, which can use these
 standard utilities to check and refactor your code as you work.
 
 I currently use [Neovim](https://neovim.io/),
-with the [vim-go](https://github.com/fatih/vim-go) plugin. If you do not have a
-favourite text editor, [Visual Studio Code](https://code.visualstudio.com) is a high-quality and customisable editor that has a
+with the [vim-go](https://github.com/fatih/vim-go) plugin. [Visual Studio Code](https://code.visualstudio.com) has a
 well-maintained [plugin for Go](https://marketplace.visualstudio.com/items?itemName=ms-vscode.Go). Both of these editors are provided free of charge. If you
 would prefer to use an IDE, JetBrains offer [GoLand](https://www.jetbrains.com/go/) as a
 commercial product.

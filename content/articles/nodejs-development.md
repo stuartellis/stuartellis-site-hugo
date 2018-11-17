@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-11-11T08:55:00+01:00"
+Date = "2018-11-17T20:32:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
@@ -31,13 +31,6 @@ reproducible environment. [Nodesource](https://nodesource.com/) maintain the Lin
 packages for popular distributions, and The Node.js Foundation maintain the Docker images.
 
 If you need to have multiple versions of Node.js on the same system, use [nvm](https://github.com/creationix/nvm) on Linux or macOS, and [nvm-windows](https://github.com/coreybutler/nvm-windows) for Microsoft Windows.
-
-# Choosing a Code Editor or IDE
-
-If you do not have a
-favourite text editor, consider [Visual Studio Code](https://code.visualstudio.com), which is a free of charge, high-quality and customisable editor that includes support for Node.js and JavaScript. [This tutorial](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial) shows you the
-features that Visual Studio Code has for JavaScript development, including code quality
-checks, and support for debugging.
 
 # Essential Tools
 

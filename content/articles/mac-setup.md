@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2018-11-14T21:24:00+01:00"
+Date = "2018-11-17T19:47:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "java", "javascript", "python", "ruby", "rust"]
@@ -191,13 +191,14 @@ To enable colors in the output, which can be very helpful, enter this command:
 Installations of macOS include older command-line versions of both
 [Emacs](http://www.gnu.org/software/emacs/) and [vim](http://www.vim.org/), as well as
 TextEdit, a desktop text editor. TextEdit is designed for light-weight word processing,
-and has no support for programming. Unless you already have a preferred editor, I
-suggest that you install either [Visual Studio Code](https://code.visualstudio.com) or [Oni](https://www.onivim.io/), which are powerful graphical text editors, or [Neovim](https://neovim.io) for a console Vim editor.
+and has no support for programming. This means that you will probably install your own preferred editor.
+
+The most popular desktop text editor is now probably [Visual Studio Code](https://code.visualstudio.com). [Oni](https://www.onivim.io/) is a powerful graphical text editor built on [Neovim](https://neovim.io). Use Neovim if you would like a modern console Vim editor.
 
 ### Setting The EDITOR Environment Variable
 
 Whichever text editor you choose, remember to set the EDITOR environment variable in
-your _~/.bash\_profile_ file, so that this editor is automatically invoked by
+your _~/.bash_profile_ file, so that this editor is automatically invoked by
 command-line tools like your version control system. For example, put this line in your
 profile to make Neovim (_nvim_) the favored text editor:
 
@@ -205,14 +206,29 @@ profile to make Neovim (_nvim_) the favored text editor:
 
 ### Setting Up Visual Studio Code
 
+> Both Visual Studio Code itself and many extensions from Microsoft use telemetry. Avoid using Visual Studio Code if you have concerns about privacy.
+
 To install Visual Studio Code, enter this command in a terminal window:
 
     brew cask install visual-studio-code
 
-Consider installing these extensions:
+To make Visual Studio Code your default editor, use this line in your _~/.bash_profile_ file:
+
+    export EDITOR="code -w"
+
+Visual Studio Code enables telemetry and crash reporting by default. To disable these, set these options in _Preferences > Settings_:
+
+```json
+"telemetry.enableTelemetry": false,
+"telemetry.enableCrashReporter": false
+```
+
+Microsoft and some other providers add telemetry to their extensions to Visual Studio Code. This means that you must check the description of each extension to know whether it will send data to remote services, even if you have disabled telemetry for Visual Studio Code itself.
+
+If you use extensions, consider these:
 
 - Support for your preferred languages, e.g.
-  [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), [Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack), 
+  [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), [Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack),
   [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.ruby), or
   [Go](https://marketplace.visualstudio.com/items?itemName=ms-vscode.Go)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
@@ -227,17 +243,6 @@ Consider installing these extensions:
   extension
 - [YAML Support](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 
-To make Visual Studio Code your default editor, use this line in your _~/.bash\_profile_ file:
-
-    export EDITOR="code -w"
-
-Visual Studio Code enables telemetry and crash reporting by default. To disable these, set these options in _Preferences > Settings_:
-
-```json
-"telemetry.enableTelemetry": false,
-"telemetry.enableCrashReporter": false
-```
-
 If you would like to enable Vim keybindings in Visual Studio Code, install the [VSCodeVim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) extension.
 
 ### Setting Up Neovim
@@ -247,7 +252,7 @@ To install Neovim on macOS with Homebrew, run this command:
     brew install neovim
 
 Remember to set the EDITOR environment
-variable in your _~/.bash\_profile_ file, so that this editor is
+variable in your _~/.bash_profile_ file, so that this editor is
 automatically invoked by command-line tools like your version control
 system.
 
@@ -382,7 +387,7 @@ To manually install a copy of the JDK:
 1. Download the version of the JDK that you need from AdoptOpenJDK
 2. Unzip the download
 3. Copy the JDK directory to _/usr/local/lib_
-4. Edit your shell profile to add a _JAVA_HOME_ environment variable set to _/usr/local/lib/JDK-DIRECTORY_
+4. Edit your shell profile to add a JAVA*HOME environment variable set to */usr/local/lib/JDK-DIRECTORY\_
 5. Add _/usr/local/lib/JDK-DIRECTORY/Contents/Home/bin_ to your PATH environment variable
 
 Replace _JDK-DIRECTORY_ with the name of the directory that the OpenJDK uses, such as _jdk-11.0.1+13_.

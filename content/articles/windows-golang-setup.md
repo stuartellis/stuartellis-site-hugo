@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Windows for Go and Buffalo"
 Slug = "windows-golang-setup"
-Date = "2018-08-14T18:20:00+01:00"
+Date = "2018-11-17T20:40:00+01:00"
 Description = "Setting up Windows for development with Go and Buffalo"
 Categories = ["administration", "programming"]
 Tags = ["administration", "golang", "javascript", "windows"]
@@ -18,10 +18,9 @@ Web framework. It does not use the
 
 # What You Need
 
-To work with Go, you only need three things:
+To work with Go, you only need two things:
 
 - [Go](https://golang.org/) itself
-- A text editor that understands Go, such as [Atom](https://atom.io/)
 - [Git](https://git-scm.com/), for version control
 
 To develop Web applications with Buffalo, you will also need two other pieces of
@@ -117,9 +116,7 @@ GitHub also provide
 # Installing a Text Editor
 
 The Notepad text editor in Windows is designed for light-weight word processing, and has
-no support for programming. If you do not have a favourite text editor,
-[Visual Studio Code](https://code.visualstudio.com) is a
-high-quality and customisable editor that has a well-maintained plugin for Go. If you would prefer to use an IDE, JetBrains
+no support for programming, so you will have to install a code editor. If you would like to use an IDE, JetBrains
 offer [GoLand](https://www.jetbrains.com/go/) as a commercial product.
 
 # Installing Node.js

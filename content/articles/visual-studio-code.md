@@ -1,7 +1,7 @@
 +++
 Title = "Setting up the Visual Studio Code Text Editor"
 Slug = "visual-studio-code"
-Date = "2018-11-07T21:32:00+01:00"
+Date = "2018-11-17T20:32:00+01:00"
 Description = "Setting up the Visual Studio Code text editor for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["golang", "javascript", "python", "ruby"]
@@ -9,11 +9,13 @@ Type = "article"
 
 +++
 
-Notes on customizing the [Visual Studio Code](https://code.visualstudio.com) text editor.
+Notes on customizing the [Visual Studio Code](https://code.visualstudio.com) text editor. 
 
 <!--more-->
 
 # Installing Visual Studio Code
+
+> Both Visual Studio Code and extensions from Microsoft use telemetry. Avoid using Visual Studio Code if you have concerns about privacy.
 
 ## Installing Code on macOS
 
@@ -21,7 +23,7 @@ To install Visual Studio Code on macOS with Homebrew, enter this command in a te
 
     brew cask install visual-studio-code
 
-If you manually install Visual Studio Code, rather than using Homebrew, you will need to add the *code* executable to your PATH. To do this, start Visual Studio Code, open the command palette, and choose *Shell Command: Install 'code' command in PATH*. 
+If you manually install Visual Studio Code, rather than using Homebrew, you will need to add the _code_ executable to your PATH. To do this, start Visual Studio Code, open the command palette, and choose _Shell Command: Install 'code' command in PATH_.
 
 ## Installing Visual Studio Code to a USB Drive
 
@@ -50,6 +52,8 @@ To disable telemetry and crash reporting, set these options in _Preferences > Se
 "telemetry.enableTelemetry": false,
 "telemetry.enableCrashReporter": false
 ```
+
+Microsoft also add telemetry to some of their extensions to Visual Studio Code. This means that you must check the description of each extension to know whether it will send data to Microsoft, even if you have disabled telemetry for Visual Studio Code itself.
 
 # Extensions
 

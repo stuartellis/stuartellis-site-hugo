@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-09-08T15:03:00+01:00"
+Date = "2018-11-17T20:34:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -36,7 +36,7 @@ The tutorial that is supplied with Python can walk you through the basics. The d
 
 # Choosing a Code Editor or IDE
 
-If you are new to programming, start with [Mu](https://codewith.mu/), which is specifically designed to help new developers work with Python. Otherwise, if you do not already have a preferred editor, consider [Visual Studio Code](https://code.visualstudio.com). [This tutorial](https://code.visualstudio.com/docs/python/python-tutorial) shows you the features that Visual Studio Code has for Python development, including code quality checks, and support for debugging. Both of these editors are free.
+If you are new to programming, start with [Mu](https://codewith.mu/), which is specifically designed to help new developers work with Python.
 
 If you would like to use a full IDE, there are several options available. [Wing IDE](http://www.wingware.com/) and [PyCharm](https://www.jetbrains.com/pycharm/) are proprietary, commercial products. The free Eclipse IDE can be be used for Python development with the [PyDev](http://www.pydev.org/) extension. Current versions of Microsoft Visual Studio also include support for Python.
 
