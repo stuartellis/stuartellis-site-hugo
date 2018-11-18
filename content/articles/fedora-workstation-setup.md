@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Fedora Workstation for Software Development"
 Slug = "fedora-workstation-setup"
-Date = "2018-11-18T16:00:00+01:00"
+Date = "2018-11-18T20:48:00+01:00"
 Description = "Setting up a Fedora Workstation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "fedora", "golang", "javascript", "python", "rust"]
@@ -55,13 +55,9 @@ C programs and native extensions for languages like Python and JavaScript.
 ## Text Editors
 
 Fedora includes a small command-line version of [vim](http://www.vim.org/) with a limited set of features, as well as a
-desktop text editor with basic support for programming. The package repositories include other editors and IDEs.
+desktop text editor with basic support for programming. The package repositories include a number of other editors and IDEs.
 
-You will massively improve your experience with your text editor by adding a useful set
-of extensions to it. The exact extensions that will benefit the most you depend upon the
-work that you do, but you should always look at version control integration, convenient
-access to the terminal, and linters for your preferred programming languages and data
-file formats.
+If you would like a modern Vim editor with a good default configuration, [set up Neovim](https://www.stuartellis.name/articles/neovim-setup/).
 
 ### Setting The EDITOR Environment Variable
 
@@ -171,9 +167,6 @@ Then, add this to your PATH:
 
 Close the terminal and open it again for the changes to take effect.
 
-Once you have installed Go, add [dep](https://github.com/golang/dep), which is currently
-the recommended dependency manager for Go projects.
-
 ## Python Development
 
 Fedora includes both Python 2 and Python 3. To run Python 3, be sure to specify
@@ -220,9 +213,9 @@ Fedora Workstation installs [GNOME Boxes](https://wiki.gnome.org/Apps/Boxes) by 
 
 ## Podman for Containers
 
-Use [Podman](https://podman.io/) to work with containers on Fedora. The podman tool does not run a background service, or use root privileges, so it is more robust and secure than [Docker](https://www.docker.com/).
+Use [Podman](https://podman.io/) to work with containers on Fedora. Podman is a command-line tool that does not run a background service, or require root privileges, so it is more robust and secure than [Docker](https://www.docker.com/).
 
-The _podman_ command-line tool accepts the same syntax as Docker, and will read Dockerfiles. Podman also uses the same OCI image format as Docker, so that images created either product will work with the other. By default, Podman will check the Docker public registry for container images, as well as the [Quay](https://quay.io/) registry.
+Podman accepts the same syntax as the _docker_ command-line tool, and will read Dockerfiles. Both Docker and Podman use the OCI image format, so that images created either product will work with the other. By default, Podman will check the Docker public registry for container images, as well as [Quay](https://quay.io/) registries.
 
 Enter this command to install Podman:
 
@@ -232,7 +225,9 @@ For convenience, create a shell alias that replaces Docker with podman:
 
     alias docker="podman"
 
-Podman does not currently provide an equivalent to _docker\-compose_.
+The [Usage Transfer](https://github.com/containers/libpod/blob/master/transfer.md) page lists Docker commands, and the equivalents for Podman.
+
+> Podman does not currently provide an equivalent to _docker\-compose_.
 
 # SQL Databases
 
