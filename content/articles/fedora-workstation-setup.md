@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Fedora Workstation for Software Development"
 Slug = "fedora-workstation-setup"
-Date = "2018-11-18T20:48:00+01:00"
+Date = "2018-11-23T21:32:00+01:00"
 Description = "Setting up a Fedora Workstation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "fedora", "golang", "javascript", "python", "rust"]
@@ -43,6 +43,10 @@ the latest updates. After all of the updates have been applied, restart the comp
 Select _Settings \> Privacy_, and review the settings. Depending upon your needs, you
 may decide to turn off _Location Services_ or _Usage & History_.
 
+# Installing Desktop Applications with Flatpak
+
+Use [Flatpak](https://flatpak.org) packages to install extra desktop software, such as VLC or Skype. For legal reasons, you must enable access to the public [Flathub repository](https://flathub.org) yourself. Follow the instructions to [set up access to the Flathub repository](https://flatpak.org/setup/Fedora/).
+
 # Setting Up for Development
 
 Every developer needs a text editor and a version control system. Fedora Workstation
@@ -57,7 +61,23 @@ C programs and native extensions for languages like Python and JavaScript.
 Fedora includes a small command-line version of [vim](http://www.vim.org/) with a limited set of features, as well as a
 desktop text editor with basic support for programming. The package repositories include a number of other editors and IDEs.
 
+Development environments should be installed with RPMs, rather than Flatpaks. Many extensions will not work correctly with Flatpak, because they require access to tools that are installed on the host system.
+
+### Neovim
+
 If you would like a modern Vim editor with a good default configuration, [set up Neovim](https://www.stuartellis.name/articles/neovim-setup/).
+
+### Visual Studio Code
+
+The Microsoft releases of Visual Studio Code are proprietary software with telemetry enabled by default. Use the RPM packages that are provided by the [vscodium](https://github.com/VSCodium/vscodium) project.
+
+Visual Studio Code requires the library _libXss_, which is provided by the _libXScrnSaver_ package. Install this package before you install Visual Studio Code:
+
+    sudo dnf install libXScrnSaver
+
+If you would prefer to use Flatpak packages, use [Visual Studio Code OSS](https://flathub.org/apps/details/com.visualstudio.code.oss).
+
+> Always review the documentation for extensions before you install them. Visual Studio Code extensions from Microsoft frequently use telemetry.
 
 ### Setting The EDITOR Environment Variable
 
