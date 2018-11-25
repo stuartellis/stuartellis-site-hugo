@@ -63,9 +63,9 @@ C programs and native extensions for languages like Python and JavaScript.
 ## Text Editors
 
 Fedora includes a small command-line version of [vim](http://www.vim.org/) with a limited set of features, as well as a
-desktop text editor with basic support for programming. The package repositories include a number of other editors and IDEs.
+desktop text editor with basic support for programming. You should install the code editors and development environments that you prefer.
 
-Development environments should be installed with RPMs, rather than Flatpaks. Many extensions will not work correctly with Flatpak, because they require access to tools that are installed on the host system.
+At the moment, Flatpak packages of code editors and IDEs may not support some plugins and extensions, because of security restrictions in Flatpak. Install these applications with RPMs if the Flatpak version does not support features that you need.
 
 ### Neovim
 
@@ -88,9 +88,9 @@ If you would prefer to use Flatpak packages, use [Visual Studio Code OSS](https:
 Whichever text editor you choose, remember to set the EDITOR environment variable in
 your _~/.bashrc_ file, so that this editor is automatically invoked by command-line
 tools like your version control system. For example, put this line in your profile to
-make _nano_ the favored text editor:
+make Neovim (_nvim_) the favored text editor:
 
-    export EDITOR="nano"
+    export EDITOR="nvim"
 
 ## Configuring Git
 
