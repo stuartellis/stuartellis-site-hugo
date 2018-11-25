@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Fedora Workstation for Software Development"
 Slug = "fedora-workstation-setup"
-Date = "2018-11-23T21:32:00+01:00"
+Date = "2018-11-25T13:41:00+01:00"
 Description = "Setting up a Fedora Workstation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "fedora", "golang", "javascript", "python", "rust"]
@@ -45,7 +45,11 @@ may decide to turn off _Location Services_ or _Usage & History_.
 
 # Installing Desktop Applications with Flatpak
 
-Use [Flatpak](https://flatpak.org) packages to install extra desktop software, such as VLC or Skype. For legal reasons, you must enable access to the public [Flathub repository](https://flathub.org) yourself. Follow the instructions to [set up access to the Flathub repository](https://flatpak.org/setup/Fedora/).
+[Flatpak](https://flatpak.org) is the new standard for desktop software packages. The Fedora project still provides RPM packages for many Open Source desktop applications, but Flatpak already offers newer versions of products, and software that is not available from Fedora, such as Slack.
+
+For legal reasons, you must enable access to the public [Flathub repository](https://flathub.org) yourself. Follow the instructions to [set up access to the Flathub repository](https://flatpak.org/setup/Fedora/). The desktp _Software_ utility will then show flatpak packages as well as RPMs.
+
+A small number of proprietary software products are currently provided as RPM packages, such as Google Chrome and the nVidia graphics drivers. To enable access to these, open the _Software_ utility, choose _Software Repositories_ and click the _Install_ button for _Third Party Repositories_.
 
 # Setting Up for Development
 
