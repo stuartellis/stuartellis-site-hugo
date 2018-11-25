@@ -1,20 +1,19 @@
 +++
 Title = "Shell Scripting for UNIX-like Systems"
 Slug = "shell-scripting"
-Date = "2018-11-25T15:13:00+00:00"
+Date = "2018-11-25T20:29:00+00:00"
 Description = "Shell scripting"
 Categories = ["administration", "programming"]
 Tags = ["administration", "shell", "bash"]
 Type = "article"
-Draft = true
 
 +++
 
-Notes on shell scripting for Bash and other UNIX shells.
+Notes on shell scripting with Bash and other UNIX shells.
 
 <!--more-->
 
-# The Shebang Line: /bin/sh Vs. /bin/bash
+# The Shebang Line: /bin/sh and /bin/bash
 
 Start your shell scripts with the shebang for either _sh_ or _bash_.
 The _bash_ shebang means that the script may use syntax that is specific to Bash. The _sh_ shebang means that the script should follow the syntax of the [Bourne shell](https://en.wikipedia.org/wiki/Bourne_shell), which implemented by many shells, including Bash, and the [Almquist](https://en.wikipedia.org/wiki/Almquist_shell) shell that is part of Busybox.
@@ -61,17 +60,16 @@ The [ShellCheck](https://www.shellcheck.net/) utility will spot common mistakes 
 
 The [sh](https://github.com/mvdan/sh) utility will format your shell scripts to be consistent.
 
-# Preparing the Environment
+# Startup Scripts
 
 Each UNIX shell runs a specific set of scripts each time that starts. Use these default scripts to set environment variables.
 
-If Bash is started as an interactive non-login shell, it runs the .bashrc scripts. The terminal windows on a Linux graphical desktop are non-login shells.
+Bash runs different scripts, depending on how is started:
 
-If Bash is started as an interactive login shell, it runs .bash_profile, .bash_login, and .profile (in that order).
-
-If Bash is started as a non-interactive, non-login shell, it runs the script specified by the BASH_ENV environment variable.
-
-If Bash is started with _sh_, it runs /etc/profile and ~/.profile scripts.
+- Started as an interactive non-login shell, it runs the .bashrc scripts. The terminal windows on a Linux graphical desktop are non-login shells.
+- Started as an interactive login shell, it runs .bash_profile, .bash_login, and .profile (in that order).
+- Started as a non-interactive, non-login shell, it runs the script specified by the BASH_ENV environment variable.
+- Started with _sh_, it runs /etc/profile and ~/.profile scripts.
 
 The global system copy of each default script will be in the _/etc_ directory, and there may be a second script with the same name in the home directory of the current user. Both of these scripts will run.
 
