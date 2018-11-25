@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the Java Language"
 Slug = "java-language"
-Date = "2018-11-14T21:14:00+01:00"
+Date = "2018-11-25T10:38:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -11,6 +11,8 @@ Draft = true
 +++
 
 Notes on the Java programming language.
+
+<!--more-->
 
 # Overview
 
