@@ -1,7 +1,7 @@
 +++
-Title = "Shell Scripting"
+Title = "Shell Scripting for UNIX-like Systems"
 Slug = "shell-scripting"
-Date = "2018-10-13T17:59:00+00:00"
+Date = "2018-11-25T15:13:00+00:00"
 Description = "Shell scripting"
 Categories = ["administration", "programming"]
 Tags = ["administration", "shell", "bash"]
@@ -16,33 +16,33 @@ Notes on shell scripting for Bash and other UNIX shells.
 
 # The Shebang Line: /bin/sh Vs. /bin/bash
 
-[Stack Overflow answer on bash vs .sh](https://stackoverflow.com/questions/5725296/difference-between-sh-and-bash)
+Start your shell scripts with the shebang for either _sh_ or _bash_. Most Linux systems use Bash for user shell scripts. Current versions of macOS also use Bash. Use _sh_ if you need the script to run in other shells. For example, Debian-based systems use the Dash shell for system scripts, and Alpine Linux uses the shell implementation that is part of Busybox.
 
-[checkbashisms](http://manpages.ubuntu.com/manpages/cosmic/en/man1/checkbashisms.1.html)
+This [Stack Overflow answer on bash vs .sh](https://stackoverflow.com/questions/5725296/difference-between-sh-and-bash) provides more details.
 
-Debian-based systems use the Dash shell for system scripts, and Alpine Linux uses the shell implementation that is part of Busybox.
+Debian-based systems, such as Ubuntu, provide the [checkbashisms](http://manpages.ubuntu.com/manpages/cosmic/en/man1/checkbashisms.1.html) tool for you to be able to test scripts for portability.
 
 # Enabling Better Error Handling with set
 
-Always use a *set* command at the start of your scripts, immediately after the shebang line:
+Always use a _set_ command at the start of your scripts, immediately after the shebang line:
 
-~~~bash
+```bash
 set -euo pipefail
-~~~
+```
 
-Bash and some other shells provide the *-o pipefail* option, but it is not part of the POSIX standard.  
+Bash and some other shells provide the _-o pipefail_ option, but it is not part of the POSIX standard.
 
-In addition, add the *-E* option to ensure that *ERR* traps catch errors from functions and subshells:
+In addition, add the _-E_ option to ensure that _ERR_ traps catch errors from functions and subshells:
 
-~~~bash
+```bash
 set -Eeuo pipefail
-~~~
+```
 
-To print each command that the shell runs as it executes, add the *-x* option:
+To print each command that the shell runs as it executes, add the _-x_ option:
 
-~~~bash
+```bash
 set -xeuo pipefail
-~~~
+```
 
 # Use ShellCheck to Validate Your Scripts
 
@@ -52,10 +52,37 @@ The [ShellCheck](https://www.shellcheck.net/) utility will spot common mistakes 
 
 The [sh](https://github.com/mvdan/sh) utility will format your shell scripts to be consistent.
 
+# Preparing the Environment
+
+Each UNIX shell runs a specific set of scripts each time that starts. Use these default scripts to set environment variables.
+
+If Bash is started as an interactive non-login shell, it runs the .bashrc scripts. The terminal windows on a Linux graphical desktop are non-login shells.
+
+If Bash is started as an interactive login shell, it runs .bash_profile, .bash_login, and .profile (in that order).
+
+If Bash is started as a non-interactive, non-login shell, it runs the script specified by the BASH_ENV environment variable.
+
+If Bash is started with _sh_, it runs /etc/profile and ~/.profile scripts.
+
+The global system copy of each default script will be in the _/etc_ directory, and there may be a second script with the same name in the home directory of the current user. Both of these scripts will run.
+
+> For convenience, operating system vendors provide default scripts that call other scripts.
+
+# Standard Environment Variables on Linux
+
+The [Debian Wiki](https://wiki.debian.org/EnvironmentVariables) page says:
+
+- _PATH_ Colon separated list of directories to search for commands.
+- _HOME_ Current user's home directory.
+- _LOGNAME_ Current user's name.
+- _SHELL_ The user's preferred shell.
+- _EDITOR_ The user's preferred text editor.
+- _MAIL_ The user's electronic mail inbox location.
+
 # Online Resources
 
-* [Ryan Chadwick's Tutorial for Bash Scripting](https://ryanstutorials.net/bash-scripting-tutorial) - A gentle introduction to Bash
-* [GreyCat's Bash Guide](http://mywiki.wooledge.org/FullBashGuide) - A more comprehensive guide to Bash
-* [Progrium notes on good Bash style](https://github.com/progrium/bashstyle)
-* [Google Style Guide for Shell](https://google.github.io/styleguide/shell.xml)
-* [Explainshell](https://explainshell.com/) - enter a command-line on this site to see the help text that matches each argument 
+- [Ryan Chadwick's Tutorial for Bash Scripting](https://ryanstutorials.net/bash-scripting-tutorial) - A gentle introduction to Bash
+- [GreyCat's Bash Guide](http://mywiki.wooledge.org/FullBashGuide) - A more comprehensive guide to Bash
+- [Progrium notes on good Bash style](https://github.com/progrium/bashstyle)
+- [Google Style Guide for Shell](https://google.github.io/styleguide/shell.xml)
+- [Explainshell](https://explainshell.com/) - enter a command-line on this site to see the help text that matches each argument
