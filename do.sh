@@ -10,10 +10,13 @@ case $1 in
   serve)
     docker run --rm -p 1313:1313 --mount "type=bind,source=${PWD},destination=/var/local" hugo-toolbox
     ;;
+  setup)
+    docker build .
+    ;;
   shell)
     docker run --rm -it --mount "type=bind,source=${PWD},destination=/var/local" --mount "type=bind,source=${HOME}/.aws,destination=/root/.aws,readonly" hugo-toolbox /bin/sh
     ;;
   *)
-    echo "Not a valid command"
+    echo "$1 is not a valid command"
     ;;
 esac
