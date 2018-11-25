@@ -16,7 +16,16 @@ Notes on shell scripting for Bash and other UNIX shells.
 
 # The Shebang Line: /bin/sh Vs. /bin/bash
 
-Start your shell scripts with the shebang for either _sh_ or _bash_. Most Linux systems use Bash for user shell scripts. Current versions of macOS also use Bash. Use _sh_ if you need the script to run in other shells. For example, Debian-based systems use the Dash shell for system scripts, and Alpine Linux uses the shell implementation that is part of Busybox.
+Start your shell scripts with the shebang for either _sh_ or _bash_.
+The _bash_ shebang means that the script may use syntax that is specific to Bash. The _sh_ shebang means that the script should follow the syntax of the [Bourne shell](https://en.wikipedia.org/wiki/Bourne_shell), which implemented by many shells, including Bash, and the [Almquist](https://en.wikipedia.org/wiki/Almquist_shell) shell that is part of Busybox.
+
+The shebang line for _sh_ is:
+
+```bash
+#!/bin/sh
+```
+
+Most Linux systems use Bash for shell scripts. Current versions of macOS also use Bash. Debian-based systems include Bash, but use the Dash shell for _sh_ scripts. Alpine Linux uses Busybox.
 
 This [Stack Overflow answer on bash vs .sh](https://stackoverflow.com/questions/5725296/difference-between-sh-and-bash) provides more details.
 
@@ -70,7 +79,7 @@ The global system copy of each default script will be in the _/etc_ directory, a
 
 # Standard Environment Variables on Linux
 
-The [Debian Wiki](https://wiki.debian.org/EnvironmentVariables) page says:
+The [Debian Wiki](https://wiki.debian.org/EnvironmentVariables) page lists these standard environment variables:
 
 - _PATH_ Colon separated list of directories to search for commands.
 - _HOME_ Current user's home directory.
