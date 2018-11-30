@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the Java Language"
 Slug = "java-language"
-Date = "2018-11-25T10:38:00+01:00"
+Date = "2018-11-30T08:07:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -179,9 +179,9 @@ You can have a _finally_ statement without an _except_ statement.
 
 - [Google Guice](https://github.com/google/guice) - Dependency injection framework
 - [Hibernate](http://hibernate.org/) - Database toolkit and ORM
-- [Hystrix](https://github.com/Netflix/Hystrix) - Fault tolerance
 - [Micrometer](http://micrometer.io/) - Metrics collection agent library
 - [OpenPDF](https://github.com/LibrePDF/OpenPDF)
+- [resilience4j](https://github.com/resilience4j/resilience4j) - Fault tolerance
 - [Thymeleaf](https://www.thymeleaf.org/) - Templating
 
 # Online Resources
