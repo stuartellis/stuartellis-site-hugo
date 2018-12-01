@@ -29,19 +29,57 @@ Similarly, the [Java Compatibility Kit](https://openjdk.java.net/groups/conforma
 
 # The Java Virtual Machine
 
-Each _Java Virtual Machine_ runs compiled binary Java _bytecode_. This bytecode is platform-independent.
+Each _Java Virtual Machine_ (JVM) runs compiled binary Java _bytecode_. This bytecode is platform-independent. Bytecode is enclosed in _.class_ files.
 
-The bytecode is enclosed in _.class_ files. _Java ARchive (JAR)_ files enable you to ship many class files in a single package. A JAR is a ZIP file archive that should contain a directory named _META-INF_, and inside that a manifest file, which will be named _MANIFEST.MF_. The manifest file provides data about the files that are contained in the JAR.
+## Components of the JVM
+
+- Compiler - Interprets bytecode, and automatically applies JIT compilation (using C1 fast compiler and C2 optimized compiler)
+- Runtime - Loads class files into memory, concurrency, interacts with the operating system (threads, memory allocation, sockets), works with external monitoring, handles logging
+- Garbage Collector - Memory management
+
+## Garbage Collector
+
+[G1](https://www.oracle.com/technetwork/tutorials/tutorials-1876574.html) is now the default garbage collector for OpenJDK 10 and above. It implements a parallel mark-sweep-compact algorithm. The default pause time goal for G1 is 200 milliseconds, but this is adjustable.
+
+## Java ARchives (JARs)
+
+_Java ARchive (JAR)_ files enable you to ship many class files inside a single compressed file. A JAR can also contain other types of files, such as the HTML, CSS and JavaScript for a Web application.
+
+A JAR is a ZIP file archive that should contain a directory named _META-INF_, and inside that a manifest file, which will be named _MANIFEST.MF_. The manifest file provides data about the files that are contained in the JAR.
+
+## Java Class Loaders
 
 The JVM does not find classes itself. Instead, _Java Class Loaders_ look for the appropriate class file when the class is first used. By default, a JVM will use three class loaders: the _boot class loader_ (for core libraries that are supplied with the JVM), the _extension class loader_ (for libraries in the extensions directory), and a _system class loader_, which looks on the _classpath_, a list of directories and JARs. A classpath can specify any combination of directories, paths to individual JARs, and paths with wildcards to load multiple JARs. Web application servers use additional class loaders. The _boot class loader_ is written in platform-specific native code, and all other class loaders are written in Java.
 
+## Agents
+
 _Agents_ are plugins for the JVM. For example, _JRebel_ is an agent that enables hot-code reloading.
 
-## Monitoring and Debugging
+# Java Distributions
 
-Java Virtual Machines accept connections from debuggers, which may either be on the same system, or connecting from a remote system. The OpenJDK includes _jdb_, a command-line debugger, and IDEs for Java include graphical debuggers.
+Each distribution of Java includes a Java Virtual Machine (JVM), and a Java Developers Kit (JDK) which provides the tools and class libraries. Compatibility tests verify whether distribution comply with Java standards.
 
-# Standard Tools of the Platform
+Most distributions use the [HotSpot](https://openjdk.java.net/groups/hotspot/) JVM. For example, both Amazon Corretto and Azul Zulu include versions of the HotSpot JVM. [OpenJ9](https://www.eclipse.org/openj9/) is an alternative Open Source JVM that is maintained by IBM and the Eclipse Foundation. Most Java distributions now use versions of the OpenJDK tools and libraries.
+
+> Android uses the Java language, but Android software development kits (SDKs) are not fully compatible with Java standards.
+
+## Free, Open Source Distributions
+
+- [AdoptOpenJDK](https://adoptopenjdk.net/) - Provides free versions of the OpenJDK with either HotSpot or OpenJ9 Java Virtual Machines
+- [Amazon Corretto](https://aws.amazon.com/corretto/) - OpenJDK with HotSpot Java Virtual Machine, supported by AWS
+- [Eclipse OpenJ9](https://www.eclipse.org/openj9/) - OpenJDK with the OpenJ9 JVM
+- [Red Hat OpenJDK](https://developers.redhat.com/products/openjdk/overview/) - Java distributions for JBoss users (Linux and Windows only)
+- [SapMachine](https://sap.github.io/SapMachine/) - OpenJDK and JVM, provided by SAP for their customers
+- [Zulu](https://www.azul.com/downloads/zulu/) - OpenJDK with the Zulu JVM, maintained by Azul Systems
+
+## Proprietary Distributions
+
+- [IBM Java SDK](https://www.ibm.com/developerworks/java/jdk/)
+- [JamaicaVM](https://www.aicas.com/cms/en/JamaicaVM) - A proprietary Java implementation for real-time systems.
+- [Oracle JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html) - Proprietary builds of HotSpot and OpenJDK, supported by Oracle
+- [Zing](https://www.azul.com/products/zing/) - High-performance proprietary Java implementation maintained by Azul Systems
+
+# Standard Tools
 
 OpenJDK packages include a JVM (such as HotSpot or OpenJ9), a standard library (the _Java Class Library_), and various tools, including:
 
@@ -53,22 +91,15 @@ OpenJDK packages include a JVM (such as HotSpot or OpenJ9), a standard library (
 - _jshell_ command-line shell, which was introduced in Java 9.
 - _jlink_ tool create image files that include both code modules and a Java run-time. This was introduced in Java 9.
 
-# Java Implementations
+JDK 9 introduced _jaotc_, an experimental alternative compiler to _javac_ that produces Ahead Of Time Compiled code, rather than generic bytecode. This is based on [Graal](https://openjdk.java.net/projects/graal/).
 
-Each implementation of Java includes a Java Virtual Machine (JVM), and a Java Developers Kit (JDK) which provides the tools and class libraries. Most JVMs are now distributed with versions of the OpenJDK.
+# Monitoring and Debugging
 
-- [AdoptOpenJDK](https://adoptopenjdk.net/) - Versions of the OpenJDK with HotSpot or OpenJ9 Java Virtual Machines
-- [Amazon Corretto](https://aws.amazon.com/corretto/) - OpenJDK with HotSpot Java Virtual Machine, supported by AWS
-- [JamaicaVM](https://www.aicas.com/cms/en/JamaicaVM) - Proprietary JVM for real-time systems
-- [OpenJ9](https://www.eclipse.org/openj9/) - Open Source JVM maintained by IBM and the Eclipse Foundation
-- [Red Hat OpenJDK](https://developers.redhat.com/products/openjdk/overview/) - Windows and Linux Java distributions for JBoss users
-- [SapMachine](https://sap.github.io/SapMachine/) - OpenJDK and JVM, provided by SAP for their customers
-- [Zing](https://www.azul.com/products/zing/) - High-performance proprietary JVM maintained by Azul Systems
-- [Zulu](https://www.azul.com/downloads/zulu/) - OpenJDK builds maintained by Azul Systems
+Java Virtual Machines accept connections from debuggers, which may either be on the same system, or connecting from a remote system. The OpenJDK includes _jdb_, a command-line debugger, and IDEs for Java include graphical debuggers.
 
-Android uses the Java language, but Android software development kits (SDKs) are not fully compatible with the OpenJDK.
+[Java Flight Recorder and Java Mission Control](https://www.oracle.com/technetwork/java/javaseproducts/mission-control/java-mission-control-1998576.html) provide a data collection and profiling system for the OracleJDK.
 
-# Popular Software
+# Popular Third-Party Software
 
 ## Build Tools
 
@@ -113,9 +144,22 @@ Android uses the Java language, but Android software development kits (SDKs) are
 
 # Online Resources
 
+## Package Index
+
+- [Maven Package Search](https://search.maven.org/)
+
+## Tutorials
+
 - [Official Java Tutorials](https://docs.oracle.com/javase/tutorial/)
 - [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)
-- [Maven Package Search](https://search.maven.org/)
-- [MVP Java YouTube channel](https://www.youtube.com/channel/UCrgOYeQyZ_V62XDYKCfh8TQ)
 - [Java with Visual Studio Code](https://code.visualstudio.com/docs/java/java-tutorial)
+
+## News
+
 - [DZone Java Zone](https://dzone.com/java-jdk-development-tutorials-tools-news) - News and tips
+- [Baeldung](https://www.baeldung.com/) - Articles and a weekly newsletter on Java and Spring topics
+
+## Videos
+
+- [Devoxx YouTube channel](https://www.youtube.com/channel/UCCBVCTuk6uJrN3iFV_3vurg) - Talks from the largest independent annual Java conference
+- [MVP Java YouTube channel](https://www.youtube.com/channel/UCrgOYeQyZ_V62XDYKCfh8TQ)
