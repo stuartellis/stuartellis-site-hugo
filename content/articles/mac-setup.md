@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2018-11-17T19:47:00+01:00"
+Date = "2018-12-01T20:49:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "java", "javascript", "python", "ruby", "rust"]
@@ -140,7 +140,7 @@ to quickly install and update the tools and libraries that you need. Follow the
 instructions on the site.
 
 You should also amend your PATH, so that the versions of tools that are installed with
-Homebrew take precedence over others. To do this, edit the file _.bash_profile_ in
+Homebrew take precedence over others. To do this, edit the file _.bashrc_ in
 your home directory to include this line:
 
     export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
@@ -198,9 +198,8 @@ The most popular desktop text editor is now probably [Visual Studio Code](https:
 ### Setting The EDITOR Environment Variable
 
 Whichever text editor you choose, remember to set the EDITOR environment variable in
-your _~/.bash_profile_ file, so that this editor is automatically invoked by
-command-line tools like your version control system. For example, put this line in your
-profile to make Neovim (_nvim_) the favored text editor:
+your _~/.bashrc_ file, so that this editor is automatically invoked by
+command-line tools like your version control system. For example, put this line in your profile to make Neovim (_nvim_) the favored text editor:
 
     export EDITOR="nvim"
 
@@ -212,7 +211,7 @@ To install Visual Studio Code, enter this command in a terminal window:
 
     brew cask install visual-studio-code
 
-To make Visual Studio Code your default editor, use this line in your _~/.bash_profile_ file:
+To make Visual Studio Code your default editor, use this line in your _~/.bashrc_ file:
 
     export EDITOR="code -w"
 
@@ -252,7 +251,7 @@ To install Neovim on macOS with Homebrew, run this command:
     brew install neovim
 
 Remember to set the EDITOR environment
-variable in your _~/.bash_profile_ file, so that this editor is
+variable in your _~/.bashrc_ file, so that this editor is
 automatically invoked by command-line tools like your version control
 system.
 
@@ -387,10 +386,12 @@ To manually install a copy of the JDK:
 1. Download the version of the JDK that you need from AdoptOpenJDK
 2. Unzip the download
 3. Copy the JDK directory to _/usr/local/lib_
-4. Edit your shell profile to add a JAVA*HOME environment variable set to */usr/local/lib/JDK-DIRECTORY\_
-5. Add _/usr/local/lib/JDK-DIRECTORY/Contents/Home/bin_ to your PATH environment variable
+4. Edit your _~/.bashrc_ file to set environment variables. For example, to use jdk-11.0.1+13 as the Java version:
 
-Replace _JDK-DIRECTORY_ with the name of the directory that the OpenJDK uses, such as _jdk-11.0.1+13_.
+```bash
+JAVA_HOME=/usr/local/lib/jdk-11.0.1+13/Contents/Home
+PATH=$PATH:/usr/local/lib/jdk-11.0.1+13/Contents/Home/bin
+```
 
 Most Java projects use the Apache Maven build tool. To manually install a copy of [Apache Maven](https://maven.apache.org):
 
@@ -401,7 +402,7 @@ Most Java projects use the Apache Maven build tool. To manually install a copy o
 
 Replace _MAVEN-DIRECTORY_ with the name of the directory that Maven uses, such as _apache-maven-3.6.0_.
 
-Apache Maven is written in Java, which means that the same package works on any operating system that has a JVM installed.
+Maven is written in Java, which means that the same package works on any operating system that has a JVM installed.
 
 ## pipenv for Python Development
 
