@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the Java Programming Language"
 Slug = "java-language"
-Date = "2018-12-01T16:48:00+01:00"
+Date = "2018-12-01T20:08:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -79,6 +79,12 @@ Always specify a package for your classes. If you do not specify a package, the 
 
 If a package is marked as _sealed_, then all of the classes must be in the same JAR file.
 
+## Modules
+
+Modules encapsulate sets of packages. Packages in a module are only available to code outside of the module if the definition of the module specifies that they should be exposed.
+
+The Java run-time in JDK 9 and above can use modules instead of a classpath.
+
 ## Exceptions
 
 The exceptions that a method can throw are part of the public API.
@@ -99,4 +105,3 @@ This applies to _checked exceptions_. It does not apply to _unchecked exceptions
 Use _try-with-resources_ for things like I/O.
 
 You can have a _finally_ statement without an _except_ statement.
-
