@@ -1,7 +1,7 @@
 +++
 Title = "Shell Scripting for UNIX-like Systems"
 Slug = "shell-scripting"
-Date = "2018-11-25T20:29:00+00:00"
+Date = "2018-11-26T18:47:00+00:00"
 Description = "Shell scripting"
 Categories = ["administration", "programming"]
 Tags = ["administration", "shell", "bash"]
@@ -16,7 +16,7 @@ Notes on shell scripting with Bash and other UNIX shells.
 # The Shebang Line: /bin/sh and /bin/bash
 
 Start your shell scripts with the shebang for either _sh_ or _bash_.
-The _bash_ shebang means that the script may use syntax that is specific to Bash. The _sh_ shebang means that the script should follow the syntax of the [Bourne shell](https://en.wikipedia.org/wiki/Bourne_shell), which implemented by many shells, including Bash, and the [Almquist](https://en.wikipedia.org/wiki/Almquist_shell) shell that is part of Busybox.
+The _bash_ shebang means that the script may use syntax that is specific to Bash. The _sh_ shebang means that the script should follow the syntax of the [Bourne shell](https://en.wikipedia.org/wiki/Bourne_shell), which is implemented by many shells. The shells that support Bourne syntax include Bash, and the [Almquist](https://en.wikipedia.org/wiki/Almquist_shell) shell that is part of Busybox.
 
 The shebang line for _sh_ is:
 
@@ -85,6 +85,31 @@ The [Debian Wiki](https://wiki.debian.org/EnvironmentVariables) page lists these
 - _SHELL_ The user's preferred shell.
 - _EDITOR_ The user's preferred text editor.
 - _MAIL_ The user's electronic mail inbox location.
+
+# Running Commands on Remote Systems with SSH
+
+To run a single command, use the _ssh_ utility:
+
+```bash
+ssh user1@server1.example "command"
+```
+
+To run multiple commands, use a HERE-doc:
+
+```bash
+ssh user1@server1.example << HERE
+ command1
+ command2
+HERE
+```
+
+To run a script on a remote system: pipe the contents of the script to the _ssh_ command:
+
+```bash
+cat script1.sh | ssh user1@server1.example
+```
+
+> ssh exits with either the exit status of the remote command, or with status number 255 if an error occurred.
 
 # Online Resources
 
