@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Fedora Workstation for Software Development"
 Slug = "fedora-workstation-setup"
-Date = "2018-11-25T13:41:00+01:00"
+Date = "2018-12-02T11:10:00+01:00"
 Description = "Setting up a Fedora Workstation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "fedora", "golang", "javascript", "python", "rust"]
@@ -149,26 +149,62 @@ To create an SSH key, run the _ssh-keygen_ command in a terminal window. For exa
 
 # Setting Up Environments
 
-## nvm for Node.js Development
+## Setting Up Node.js
 
-To install versions of Node.js on your system, use the
-[nvm](https://github.com/creationix/nvm) utility.
+To install versions of Node.js on your system, either use the
+[nvm](https://github.com/creationix/nvm) utility, or install the Fedora package.
 
-Enter this command to install nvm:
+The nvm tool enables you to install multiple versions of Node.js, including the latest versions. The Fedora packages install a specific version of Node.js.
+
+### Using Fedora Packages for Node.js
+
+To install Node.js with Fedora packages, use dnf:
+
+    sudo dnf install nodejs
+
+This installs both Node.js and the npm package manager.
+
+### Using nvm to Manage Node.js
+
+To install nvm, use this command:
 
      curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
-Open a new terminal window and enter this command:
+Then, open a new terminal window and enter this command:
 
     nvm install --lts
 
 This installs the latest LTS release of Node.js, and makes it the default Node.js
 run-time.
 
-To upgrade the copy of _npm_ that is provided with Node.js, run this command in a
+If you use nvm, you can upgrade the npm package manager with npm itself. To upgrade the copy of _npm_ that is provided with Node.js, run this command in a
 terminal window:
 
     npm -g upgrade npm
+
+## OpenJDK for Java
+
+Fedora provides packages for OpenJDK versions 8 and 11, as well as other Java tools and libraries.
+
+To install OpenJDK 11 on a developer desktop, use dnf:
+
+    sudo dnf install java-11-openjdk
+
+Similarly, to install OpenJDK 8 on a developer desktop:
+
+    sudo dnf install java-1.8.0-openjdk
+
+To install a Java runtime on a system, use the _headless_ version of the packages. For example:
+
+    sudo dnf install java-11-openjdk-headless
+
+> Use the _alternatives_ command to [switch between multiple Java versions](https://fedoraproject.org/wiki/Java#Switching_alternatives).
+
+To use the [Apache Maven](https://maven.apache.org) build tool, either download the latest version from the Maven project Website, or install the Fedora package:
+
+    sudo dnf install maven
+
+The current version of the Fedora package for Maven depends on OpenJDK 8. This means that it will install OpenJDK 8, even if another version of Java has been installed.
 
 ## Developer Tools for Go
 
