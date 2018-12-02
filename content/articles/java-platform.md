@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the Java Platform"
 Slug = "java-platform"
-Date = "2018-12-01T16:48:00+01:00"
+Date = "2018-12-02T10:45:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -18,6 +18,8 @@ Notes on the Java platform.
 These are notes on the Java platform and tools.
 
 # Specifications
+
+The [Java Community Process](https://www.jcp.org) defines standards for these areas:
 
 - The Java Language
 - The Java Virtual Machine
@@ -50,6 +52,24 @@ A JAR is a ZIP file archive that should contain a directory named _META-INF_, an
 ## Java Class Loaders
 
 The JVM does not find classes itself. Instead, _Java Class Loaders_ look for the appropriate class file when the class is first used. By default, a JVM will use three class loaders: the _boot class loader_ (for core libraries that are supplied with the JVM), the _extension class loader_ (for libraries in the extensions directory), and a _system class loader_, which looks on the _classpath_, a list of directories and JARs. A classpath can specify any combination of directories, paths to individual JARs, and paths with wildcards to load multiple JARs. Web application servers use additional class loaders. The _boot class loader_ is written in platform-specific native code, and all other class loaders are written in Java.
+
+## The Classpath
+
+The system class loader looks for class files in the locations that are specified by the classpath. Each location can either be a directory, the path to a specific JAR file, or a directory with a wildcard. In the last case, the loader uses all of the JAR files in the specified directory.
+
+The classpath is either defined by a CLASSPATH environment variable, or set by a command-line option to the _java_ run-time, or specified in a manifest file. It is a colon-separatedlist on UNIX-like systems, a semi-colon separated list on Windows, and space separated list in manifest files. This example sets the classpath at the command-line on a UNIX-like system:
+
+    java -classpath ".:../java-classes/*:/usr/local/lib/java-classes/*"
+
+The default value of classpath is _._, which means that it checks the current directory.
+
+## Properties
+
+Java uses the concept of [Properties](https://docs.oracle.com/javase/tutorial/essential/environment/properties.html) objects to hold configuration information. A Properties object is an instance of the _java.util.Properties_ class. Each Properties object can hold multiple properties. A _property_ is a key-value pair that is held within a Properties object.
+
+Properties objects are stored as _.properties_ files, usually alongside the the _.class_ files for the application. Developers write code in the application to load properties objects from the appropriate properties files when the application starts.
+
+The Java platform itself uses a Properties object for global configuration. This object provides [system properties](https://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html). The system properties are accessed through methods on the _System_ class.
 
 ## Agents
 
