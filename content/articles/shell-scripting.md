@@ -1,7 +1,7 @@
 +++
 Title = "Shell Scripting for UNIX-like Systems"
 Slug = "shell-scripting"
-Date = "2018-11-26T18:47:00+00:00"
+Date = "2018-12-15T15:36:00+00:00"
 Description = "Shell scripting"
 Categories = ["administration", "programming"]
 Tags = ["administration", "shell", "bash"]
@@ -103,11 +103,13 @@ ssh user1@server1.example << HERE
 HERE
 ```
 
-To run a script on a remote system: pipe the contents of the script to the _ssh_ command:
+To run a script on a remote system, use SSH to send the contents of the script file to a script interpreter on the remote system. This example uses the bash shell:
 
 ```bash
-cat script1.sh | ssh user1@server1.example
+ssh user1@server1.example '/bin/bash -s' < scriptfile.sh
 ```
+
+The _-s_ option means that the bash shell will run what is sent to it from the standard input.
 
 > ssh exits with either the exit status of the remote command, or with status number 255 if an error occurred.
 
