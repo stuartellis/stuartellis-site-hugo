@@ -1,12 +1,11 @@
 +++
-Title = "Notes on AWS WorkSpaces"
+Title = "Getting Started with AWS WorkSpaces"
 Slug = "aws-workspaces"
 Date = "2018-07-20T21:35:00+01:00"
 Description = "Notes on AWS WorkSpaces"
 Categories = ["administration", "cloud"]
 Tags = ["administration", "aws", "cloud", "windows"]
 Type = "article"
-Draft = true
 
 +++
 
@@ -30,6 +29,10 @@ AWS WorkSpaces uses the proprietary
 by [Teradici](http://www.teradici.com/). You connect to a
 workspace with either a AWS WorkSpaces client application, or another system
 that uses PCoIP, such as a thin client unit.
+
+# Before You Start, Request a New Service Limit #
+
+AWS limit your account to just 1 workspace, until you request a larger limit.
 
 # Networking and Directories #
 
@@ -55,32 +58,17 @@ for settings that are specific to WorkSpaces. The AWS documentation explains [ho
 
 # Managing Images and Bundles #
 
-At the time of writing, you cannot create an image from a workspace that has encrypted drives.
+An image can be attached to multiple bundles. For safety, you cannot delete a bundle with active workspaces.
 
-An image can be attached to multiple bundles.
+At the time of writing, you cannot create an image from a workspace that has encrypted drives. This means that the simplest way to create images for your bundles is to follow this process:
 
-You cannot delete a bundle with active workspaces.
-
-Create new images frequently.
-
-Keep a log of your changes!
-
-To create an useful process:
-
-* Launch a workspace without disk encryption
+* Create a clean user account
+* Launch a workspace for the new user, without disk encryption
 * Update the workspace and add any management agents
 * Create an image from this workspace
 * Create a custom bundle that uses the new image
 * Destroy the original workspace
 * Ensure that you only create workspaces from your custom bundles
-
-# Request a New Service Limit #
-
-AWS limit your account to just 1 workspace, until you request a larger limit.
-
-# Limitations #
-
-At the time of writing, Windows 10 workspaces do not support Web access.
 
 # Resources #
 
