@@ -24,24 +24,25 @@ Packer itself is just a command-line tool. This means that it can be installed o
 
 Each Packer project includes a template file, in JSON format. This defines the tasks that run to create a set of images. If you define multiple types of image in the same template, Packer can builld them in parallel.
 
-Packer also reads configuration settings from environment variables. Several run-time [configuration options are environment variables](https://packer.io/docs/other/environment-variables.html). 
+Packer also reads configuration settings from environment variables. Several run-time [configuration options are environment variables](https://packer.io/docs/other/environment-variables.html).
 
-Environment variables also enables you to avoid writing API keys such as AWS Access IDs in the template file: you can either specify the path to an AWS client configuration file as an environment variable, or specify individual settings as environment variables.  
+Environment variables also enables you to avoid writing API keys such as AWS Access IDs in the template file: you can either specify the path to an AWS client configuration file as an environment variable, or specify individual settings as environment variables.
 
 ## Example Configuration
 
-This example assumes that you will either provide the AWS Access Key, Secret Key and Region settings through environment variables, or run the process on an EC2 instance with an [appropriate IAM Role](https://packer.io/docs/builders/amazon.html#iam-task-or-instance-role). 
+This example assumes that you will either provide the AWS Access Key, Secret Key and Region settings through environment variables, or run the process on an EC2 instance with an [appropriate IAM Role](https://packer.io/docs/builders/amazon.html#iam-task-or-instance-role).
 
 ```json
 {
-  "description" : "Packer Template Example",
+  "description": "Packer Template Example",
   "builders": [
     {
       "type": "amazon-ebs",
-      "source_ami": "ami-0274e11dced17bb5b",
+      "source_ami": "ami-09693313102a30b2",
       "instance_type": "t3.micro",
       "ssh_username": "ec2-user",
-      "ami_name": "example {{timestamp}}"
+      "ami_name": "example {{timestamp}}",
+      "region": "eu-west-1"
     }
   ],
 
