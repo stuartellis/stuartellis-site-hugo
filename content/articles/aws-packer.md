@@ -6,11 +6,10 @@ Description = ""
 Categories = ["administration", "cloud"]
 Tags = ["administration", "aws", "cloud"]
 Type = "article"
-Draft = true
 
 +++
 
-This article describes how to use [Packer](https://packer.io/) to provide images for deployment with AWS EC2.
+Notes on using [Packer](https://packer.io/) to provide images for deployment with AWS EC2.
 
 <!--more-->
 
