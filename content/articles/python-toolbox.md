@@ -1,7 +1,7 @@
 +++
 Title = "Useful Python Tools and Libraries"
 Slug = "python-toolbox"
-Date = "2018-09-08T14:21:00+01:00"
+Date = "2018-12-20T13:43:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -88,7 +88,7 @@ The Django Web framework includes an Object-Relational Mapper (ORM). For other a
 
 # Building Graphical Desktop Applications
 
-If you are specifically interested in developing desktop applications, start with [wxPython](http://wxpython.org/). The Tk interface toolkit that is supplied with the Python standard library is rather basic and dated. If you have advanced needs, you may prefer [PySide2](https://wiki.qt.io/PySide2), which enables you to make use of the [QT](https://www.qt.io/) libraries.
+If you are specifically interested in developing desktop applications, start with [wxPython](http://wxpython.org/). The Tk interface toolkit that is supplied with the Python standard library is rather basic and dated. If you have advanced needs, you may prefer [QT for Python](https://www.qt.io/qt-for-python), which enables you to make use of the [QT](https://www.qt.io/) libraries.
 
 # Microsoft Windows Integration
 
