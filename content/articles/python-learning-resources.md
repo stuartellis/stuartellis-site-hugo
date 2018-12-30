@@ -1,7 +1,7 @@
 +++
 Title = "Resources for Learning Python"
 Slug = "python-learning-resources"
-Date = "2018-12-30T21:00:00+01:00"
+Date = "2018-12-30T21:09:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -21,14 +21,10 @@ The [PyVideo](https://pyvideo.org/) site is an index of free videos on Python an
 
 # Books
 
-There are several excellent books for learning Python 3, and there are twothat you can read for free online.
+There are several excellent books for learning Python 3, and there are two that you can read for free online:
 
-[Dive Into Python 3](http://www.diveintopython3.net/) is particularly good for those people with some previous experience of
-programming, especially if they are impatient!
-
-If you are not a programmer, try [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/), which includes a gentle introduction to programming.
-
-After you have worked with Python for a while, read [Fluent Python](https://www.oreilly.com/library/view/fluent-python/9781491946237/) and [High Performance Python](https://www.oreilly.com/library/view/high-performance-python/9781449361747/).
+- [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/), which includes a gentle introduction to programming.
+- [Dive Into Python 3](https://www.diveinto.org/python3/) provides a quick start for those people with some previous experience of programming
 
 # Online Guides
 
@@ -37,3 +33,9 @@ Once you have learned Python itself, visit [The Hitchhiker’s Guide to Python](
 If you are a programmer or systems administrator, consider [replacing bash scripting with Python](https://github.com/ninjaaron/replacing-bash-scripting-with-python).
 
 [This article](https://www.stuartellis.name/articles/python-toolbox) lists useful tools and libraries for Python.
+
+# Beyond the Basics
+
+After you have worked with Python for a while, buy a copy of [Fluent Python](https://www.oreilly.com/library/view/fluent-python/9781491946237/). This book will enable you to write idiomatic and efficient code.
+
+If you use Python for data science or other demanding applications, read [High Performance Python](https://www.oreilly.com/library/view/high-performance-python/9781449361747/).
