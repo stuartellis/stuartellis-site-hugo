@@ -1,7 +1,7 @@
 +++
 Title = "Useful Python Tools and Libraries"
 Slug = "python-toolbox"
-Date = "2018-12-20T13:43:00+01:00"
+Date = "2018-12-30T18:12:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -9,7 +9,7 @@ Type = "article"
 
 +++
 
-Notes on useful tools and libraries for Python.
+Notes on useful tools and libraries for the [Python](https://www.python.org/) programming language.
 
 <!--more-->
 
@@ -108,3 +108,7 @@ To package a Python application for systems that already have Python installed, 
 - [PyYAML](https://pyyaml.org/) - YAML support for Python
 - [Reportlab](https://www.reportlab.com/opensource/) - PDF generation
 - [uvloop](https://uvloop.readthedocs.io/) - Extremely fast replacement for the standard Python asyncio event loop
+
+# Learning Resources
+
+[This article](https://www.stuartellis.name/articles/python-learning-resources) lists useful learning resources for Python.

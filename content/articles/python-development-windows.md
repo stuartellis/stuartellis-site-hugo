@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development on Windows"
 Slug = "python-development-windows"
-Date = "2018-11-17T20:34:00+01:00"
+Date = "2018-12-30T18:11:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python", "windows"]
@@ -9,7 +9,7 @@ Type = "article"
 
 +++
 
-Notes on starting Python development, with specific details on using Microsoft Windows.
+Notes on starting [Python](https://www.python.org/) development, with specific details on using Microsoft Windows.
 
 <!--more-->
 
@@ -69,7 +69,7 @@ The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualen
 
 # Building Graphical Desktop Applications
 
-If you are specifically interested in developing desktop applications, start with [wxPython](http://wxpython.org/). The Tk interface toolkit that is supplied with the Python standard library is rather basic and dated. If you have advanced needs, you may prefer [PySide2](https://wiki.qt.io/PySide2), which enables you to make use of the [QT](https://www.qt.io/) libraries.
+If you are specifically interested in developing desktop applications, start with [wxPython](http://wxpython.org/). The Tk interface toolkit that is supplied with the Python standard library is rather basic and dated. If you have advanced needs, consider [QT for Python](https://www.qt.io/qt-for-python), which enables you to make use of the [QT](https://www.qt.io/) libraries. 
 
 # Microsoft Windows Integration
 
@@ -81,21 +81,4 @@ To build packaged applications for Windows, use [PyInstaller](http://www.pyinsta
 
 # Learning Resources
 
-## Online Videos
-
-The [PyVideo](https://pyvideo.org/) site is an index of free videos on Python and related topics.
-
-[Corey Schafer's YouTube channel](https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g) provides introductory tutorials for getting started with Python and programming.
-
-## Books
-
-There are several excellent books for learning Python 3 that you can read for free online. [Dive Into Python 3](http://www.diveintopython3.net/) is particularly good for those people with some previous experience of
-programming, especially if they are impatient! If you are not a programmer, try [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/), which includes a gentle introduction to programming.
-
-## Online Guides
-
-Once you have learned Python itself, visit [The Hitchhiker’s Guide to Python](http://docs.python-guide.org), which provides clear advice on daily work with Python, and [Full Stack Python](https://www.fullstackpython.com) for a comprehensive guide to building Web applications with Python.
-
-If you are a programmer or systems administrator, consider [replacing bash scripting with Python](https://github.com/ninjaaron/replacing-bash-scripting-with-python).
-
-[This article](https://www.stuartellis.name/articles/python-toolbox) lists useful tools and libraries for Python.
+[This article](https://www.stuartellis.name/articles/python-learning-resources) lists useful learning resources for Python.
