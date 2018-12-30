@@ -1,7 +1,7 @@
 +++
 Title = "Resources for Learning Python"
 Slug = "python-learning-resources"
-Date = "2018-12-30T18:49:00+01:00"
+Date = "2018-12-30T21:00:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -9,7 +9,7 @@ Type = "article"
 
 +++
 
-Useful learning resources for the [Python](https://www.python.org/) programming language. 
+Useful learning resources for the [Python](https://www.python.org/) programming language.
 
 <!--more-->
 
@@ -21,8 +21,14 @@ The [PyVideo](https://pyvideo.org/) site is an index of free videos on Python an
 
 # Books
 
-There are several excellent books for learning Python 3 that you can read for free online. [Dive Into Python 3](http://www.diveintopython3.net/) is particularly good for those people with some previous experience of
-programming, especially if they are impatient! If you are not a programmer, try [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/), which includes a gentle introduction to programming.
+There are several excellent books for learning Python 3, and there are twothat you can read for free online.
+
+[Dive Into Python 3](http://www.diveintopython3.net/) is particularly good for those people with some previous experience of
+programming, especially if they are impatient!
+
+If you are not a programmer, try [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/), which includes a gentle introduction to programming.
+
+After you have worked with Python for a while, read [Fluent Python](https://www.oreilly.com/library/view/fluent-python/9781491946237/) and [High Performance Python](https://www.oreilly.com/library/view/high-performance-python/9781449361747/).
 
 # Online Guides
 
