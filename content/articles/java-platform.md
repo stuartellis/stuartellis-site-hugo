@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the Java Platform"
 Slug = "java-platform"
-Date = "2018-12-02T10:45:00+01:00"
+Date = "2019-01-26T11:00:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -181,5 +181,8 @@ Java Virtual Machines accept connections from debuggers, which may either be on 
 
 ## Videos
 
+- [Official Java YouTube channel](https://www.youtube.com/user/java)
+- [Spring YouTube channel](https://www.youtube.com/user/SpringSourceDev) - Official YouTube channel for Spring
 - [Devoxx YouTube channel](https://www.youtube.com/channel/UCCBVCTuk6uJrN3iFV_3vurg) - Talks from the largest independent annual Java conference
+- [Virtual Java User Group](https://www.youtube.com/user/virtualJUG) - YouTube channel with a variety of talks 
 - [MVP Java YouTube channel](https://www.youtube.com/channel/UCrgOYeQyZ_V62XDYKCfh8TQ)
