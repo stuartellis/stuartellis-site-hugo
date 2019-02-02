@@ -1,7 +1,7 @@
 +++
 Title = "Resources for Learning Python"
 Slug = "python-learning-resources"
-Date = "2018-12-30T21:09:00+01:00"
+Date = "2019-02-02T10:50:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -33,6 +33,12 @@ Once you have learned Python itself, visit [The Hitchhiker’s Guide to Python](
 If you are a programmer or systems administrator, consider [replacing bash scripting with Python](https://github.com/ninjaaron/replacing-bash-scripting-with-python).
 
 [This article](https://www.stuartellis.name/articles/python-toolbox) lists useful tools and libraries for Python.
+
+# Podcasts
+
+* [Python Bytes](https://pythonbytes.fm/) - Weekly news
+* [Podcast.__init__](https://www.pythonpodcast.com/) - Interviews with software project leaders and key community members 
+* [Talk Python to Me](https://talkpython.fm/) - Interviews
 
 # Beyond the Basics
 

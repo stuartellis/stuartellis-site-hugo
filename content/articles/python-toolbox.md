@@ -1,7 +1,7 @@
 +++
 Title = "Useful Python Tools and Libraries"
 Slug = "python-toolbox"
-Date = "2018-12-30T18:12:00+01:00"
+Date = "2019-02-02T11:09:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -13,7 +13,16 @@ Notes on useful tools and libraries for the [Python](https://www.python.org/) pr
 
 <!--more-->
 
-# Use pipenv for Virtual Environments
+# Online Development Environments
+
+* [Python Anywhere](https://www.pythonanywhere.com/)
+* [repl.it](https://repl.it/)
+
+To quickly share pieces of code, use [Pastebin](https://pastebin.com/).
+
+# Working on Python Projects
+
+## Use pipenv for Virtual Environments
 
 Install [pipenv](https://docs.pipenv.org/) to manage your Python projects. It ensures that each of your Python projects use a separate set of packages, and provides other features to help you maintain your work, such as [checking the code](https://docs.pipenv.org/advanced/#code-style-checking) and [warning you about security issues in libraries](https://docs.pipenv.org/advanced/#detection-of-security-vulnerabilities).
 
@@ -25,16 +34,19 @@ The pipenv tool uses the _pip_ and [virtual environment](https://docs.python.org
 
 The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualenvs/) shows you how to work with _pipenv_.
 
-# Tools for Python Projects
+## Managing Projects
 
 - [Cookiecutter](https://cookiecutter.readthedocs.io/) to create new projects from templates
-- [autopep8](https://pypi.python.org/pypi/autopep8/) for code formatting
-- [Pylint](https://www.pylint.org) for code quality
 - [Sphinx](http://sphinx.pocoo.org) for building documentation
 
-If you install the Python extension, Visual Studio Code will offer to use Pylint and autopep8 to check and format your code.
+## Code Quality
 
-# Tools for Testing Python Code
+- [autopep8](https://pypi.python.org/pypi/autopep8/) for code formatting
+- [Pylint](https://www.pylint.org) for code quality
+
+If you install the Python extension for Visual Studio Code, it will offer to use Pylint and autopep8 to check and format your code.
+
+## Tools for Testing Python Code
 
 - [Pytest](http://pytest.org) for testing
 - [Tox](https://tox.readthedocs.io/) runs sets of tests in multiple Python environments
