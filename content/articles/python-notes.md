@@ -96,7 +96,27 @@ The first thing that you define in each function is the "doc string" - a triple 
 
 To return a value from a function, simply use a "return" statement within a function. If a functions does not include any "return" statement, it automatically returns "None" (Python's null value).
 
-To define an arbitrary number of positional parameters, create an input parameter whose name is prefixed by an asterisk (\*). The parameters will be collected as a tuple. Similarly, prefix a parameter with \*\* to accept an arbitrary number of keyword parameters: they will be collected in a dictionary.
+## *args and **kwargs
+
+To allow an arbitrary number of positional parameters, define an input parameter whose name is prefixed by an asterisk (\*). The parameters will be collected as a tuple. By convention, you should call this parameter \*args.
+
+Similarly, prefix a parameter with \*\* to accept an arbitrary number of keyword parameters: they will be collected in a dictionary. By convention, you should call this parameter \*\*kwargs.
+
+## Using * and ** to Convert Collections into Parameters
+
+To apply the items in a list directly as positional parameters to a function, prefix the variable for the list with a single asterisk.
+
+~~~python
+>>> def some_args(a1, a2, a3):
+...   print("arg 1:", a1)
+...   print("arg 2:", a2)
+...   print("arg 3:", a3)
+... 
+>>> args = ('a', 'b', 'c')
+>>> some_args(*args)
+~~~
+
+To apply the items in a dictionary directly as named parameters to a function, prefix the variable for the dictionary with two asterisks.
 
 ## Lambda Functions
 
