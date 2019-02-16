@@ -1,20 +1,19 @@
 +++
 Title = "Notes on the Python Language"
 Slug = "python-language"
-Date = "2018-09-12T07:18:00+01:00"
+Date = "2019-02-16T11:24:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
 Type = "article"
-Draft = true
 
 +++
 
 Notes on the Python programming language.
 
-# Python
+<!--more-->
 
-## Language Basics
+# Language Basics
 
 - Python is case-sensitive.
 - In Python, everything is an object.
@@ -40,7 +39,7 @@ Notes on the Python programming language.
     pass
 ```
 
-## Documentation
+# Documentation
 
 You need to install the python-doc package on Debian and Ubuntu to add a copy of the Python documentation to your system.
 
@@ -58,7 +57,7 @@ Ubuntu provides both the text and example programs of the _Dive Into Python_ boo
 
 To install _Dive Into Python_ on Debian systems, use the package diveintopython.
 
-## Variables
+# Variables
 
 - Variables are declared by being assigned a value, and are automatically destroyed when they go out of scope.
 - In Python variables are not explicitly typed - Python works out the data type itself.
@@ -75,7 +74,7 @@ The variable "x" now has the value "1", the variable "y" is "2", etc.
 
 _Numeric coercion_ means that if you perform an operation with integers and floating point numbers then the integers are normalized to floats, and the result is a float. Python 2 returns integers from division operations involving integers (_floor division_).
 
-## Functions
+# Functions
 
 All code that does work should be enclosed within a function. Code outside of a function is not handled as quickly.
 
@@ -85,7 +84,7 @@ Arguments are declared after the function name. To provide a default value, spec
     def info(object, spacing=10, collapse=1):
 ```
 
-If you feed arguments to a function by name then you can put those arguments in any order:
+If you pass arguments to a function by name then you can put those arguments in any order:
 
 ```python
     info(odbchelper, collapse=0)
@@ -119,7 +118,7 @@ A lambda function is an in-line function that you can include within code to get
     getattr(object,attribute,default)
 ```
 
-## Modules and Packages
+# Modules and Packages
 
 A module is just a file that contains Python code. You refer to modules by then name of their file, without the extension.
 
@@ -161,7 +160,7 @@ All modules have the built-in attribute **name**.
 
 The **future** module contains experimental features that may become available in future versions of Python.
 
-## Lists
+# Lists
 
 Python lists equate to arrays: they are an ordered set of elements. The items in a list are indexed numerically, starting with 0. So the second item in a list has the index of 1. Each list element may be of any data type, including a list!
 
@@ -250,7 +249,7 @@ You may use "in" to return whether or not a value exists in the tuple or list:
     "example" in lista
 ```
 
-h3(#list-comprehension). List Comprehension
+## List Comprehension
 
 You may perform tasks with or on all of the elements in a list.
 
@@ -288,7 +287,7 @@ else:
   print('No odd numbers in list!')
 ```
 
-## Dictionaries
+# Dictionaries
 
 Python dictionaries are central to the language. Dictionaries are key:value lists. Each key/value pair is separated by a comma. For example, this defines the dictionary "d":
 
@@ -330,7 +329,7 @@ Python 3.6 and above maintain the items in each dictionary in a consistent order
 - If you need to access dictionary items by index number, use a _Counter_, rather than a dictionary.
 - If you want to add or remove items at the start or end (e.g. a queue), use a _deque_ (double-ended queue) object, rather than a dictionary or a list.
 
-## Tuples
+# Tuples
 
 A tuple is an immutable list: it cannot be changed once created. Tuples are faster to read than lists.
 
@@ -352,7 +351,7 @@ The "tuple" function takes a list and returns a tuple with the same elements.
 
 The "list" function takes a tuple and returns a list with the same elements.
 
-## Comparators
+# Comparators
 
 - The "and" comparator returns the first false value.
 - If all values are true, "and" returns the last value.
@@ -360,7 +359,7 @@ The "list" function takes a tuple and returns a list with the same elements.
 - If all values are false, "and" returns the last value.
 - An empty string is false in Python boolean, so add a value to a list if you want to ensure that "or" "and" statements against it will return a value, rather than an empty string.
 
-## Classes
+# Classes
 
 Use CamelCase for class names.
 
@@ -436,7 +435,7 @@ If you need to call custom methods when getting or setting a variable, define a 
 
 If you need a class private variable, prepend the variable with two underscores, e.g. \_\_myvariable.
 
-## File Management
+# File Management
 
 File management functions come from the "os" module. Remember to import this module.
 
@@ -453,7 +452,7 @@ The "glob" module takes a wildcard and returns the full path of all files and di
 
 Notice that glob lets you have wildcards in both the paths and the filenames.
 
-h3(#handing-paths). Handling Paths
+## Handling Paths
 
 - "os.path" functions enable you to handle pathnames in an OS independent manner.
 - "os.listdir" lists the files in a given directory.
@@ -466,9 +465,9 @@ h3(#handing-paths). Handling Paths
     os.path.expanduser("~")
 ```
 
-## Working with Strings
+# Working with Strings
 
-### Taking Input
+## Taking Input
 
 The input command takes the input _as a Python expression_. For this reason use "raw_input" instead for string provided by the user:
 
@@ -476,7 +475,7 @@ The input command takes the input _as a Python expression_. For this reason use 
 x = raw_input(value to calculate: )
 ```
 
-h3(#string-conversion). Converting Other Data Types Into Strings
+## Converting Other Data Types Into Strings
 
 To convert variables of other data types into strings, either enclose them in str("item"), or in backticks ():
 
@@ -488,7 +487,7 @@ To convert variables of other data types into strings, either enclose them in st
     print `temp`
 ```
 
-### Special String Types
+## Special String Types
 
 Raw strings keep the characters exactly as they were inputed, rather than interpreting escape characters. To make a raw string prefix it with "r":
 
@@ -502,7 +501,7 @@ To specify a string as Unicode, prefix it with "u":
     pagetitle = u'Title'
 ```
 
-### Joining and Splitting Strings
+## Joining and Splitting Strings
 
 - Use the split() method on a string to return a list. By default split() uses whitespace to separate values.
 - The join method creates a string from a list of values.
@@ -518,7 +517,7 @@ As the split default for split() is any kind of whitespace, use split() and join
 print " ".join(stringa.split())
 ```
 
-## Regular Expressions
+# Regular Expressions
 
 Regular expressions use the "re" module.
 
@@ -559,18 +558,18 @@ Returns the matches as a tuple:
     ('800', '555', '1212', '1234')
 ```
 
-## Generators
+# Generators
 
 TODO
 
-## Decorators
+# Decorators
 
 TODO
 
-## Descriptors
+# Descriptors
 
 TODO
 
-## Metaclasses
+# Metaclasses
 
 TODO
