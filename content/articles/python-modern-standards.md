@@ -36,15 +36,23 @@ TODO
 
 SQL database access... 
 
-## Use Black to Format Your Code
+## Use Automatic Code Formatting
 
-TODO
+[PEP 8](https://www.python.org/dev/peps/pep-0008/) provides the accepted style guide for Python code. Use a formatting tool with a plugin to your editor, so that your code is automatically formatted to meet the standards of PEP 8. 
+
+[Black](https://black.readthedocs.io/en/stable/) is replacing *autopep8* as the standard formatting tool for Python code.
 
 # Libraries
 
 ## Use pathlib for File and Directory Paths
 
-The [pathlib](https://docs.python.org/3/library/pathlib.html) module was added to the standard library in version 3.4 of Python. Use _pathlib_ objects instead of strings whenever you need to work with file and directory pathnames. The existing methods in the standard library have been updated to support _pathlib_, such as _os.scandir()_.
+Use [pathlib](https://docs.python.org/3/library/pathlib.html) objects instead of strings whenever you need to work with file and directory pathnames. 
+
+Use the [the pathlib equivalents for os functions](https://docs.python.org/3/library/pathlib.html#correspondence-to-tools-in-the-os-module).
+
+The existing methods in the standard library have been updated to support _pathlib_, such as _os.scandir()_.
+
+The *pathlib* module was added to the standard library in version 3.4 of Python. 
 
 ## Use popen3
 
@@ -56,7 +64,7 @@ TODO
 
 ## Use pytest for Testing
 
-TODO
+[pytest](http://pytest.org) has superceded *nose* as the most popular testing system for Python. Use the *unittest* module in the standard library for situations where you cannot add pytest to the project.
 
 # Possibly Controversial 
 
@@ -75,5 +83,9 @@ TODO
 The combination of _pip_ and virtual environments help to make Python software easier to work with.
 
 Docker...
+
+TODO
+
+## Pickle, Shelve, and Serialization
 
 TODO
