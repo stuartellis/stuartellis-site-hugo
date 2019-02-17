@@ -1,7 +1,7 @@
 +++
 Title = "Resources for Learning Python"
 Slug = "python-learning-resources"
-Date = "2019-02-02T11:59:00+01:00"
+Date = "2019-02-17T10:51:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -9,7 +9,7 @@ Type = "article"
 
 +++
 
-Useful free learning resources for the [Python](https://www.python.org/) programming language.
+Useful learning resources for the [Python](https://www.python.org/) programming language.
 
 <!--more-->
 
@@ -21,11 +21,15 @@ The [PyVideo](https://pyvideo.org/) site is an index of free videos on Python an
 
 # Books
 
+The official documentation is provided with many distributions of Python, and you can download the documentation set as an [ebook in PDF or EPUB formats](https://docs.python.org/3/download.html).
+
 There are several excellent books for learning Python 3, and there are three that you can read for free online:
 
 - [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/), which includes a gentle introduction to programming, before explaining specific projects
 - [How to Code in Python](https://www.digitalocean.com/community/tutorials/digitalocean-ebook-how-to-code-in-python) offers more detailed tutorials for learners 
 - [Dive Into Python 3](https://www.diveinto.org/python3/) provides a quick start for those people with some previous experience of programming
+
+If you are teaching children, buy a copy of [Teach Your Kids to Code](https://nostarch.com/teachkids) by Bryson Payne.
 
 # Courses
 
