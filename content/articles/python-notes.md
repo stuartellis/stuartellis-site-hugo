@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the Python Language"
 Slug = "python-language"
-Date = "2019-02-16T11:24:00+01:00"
+Date = "2019-02-17T08:46:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -593,3 +593,19 @@ TODO
 # Metaclasses
 
 TODO
+
+# The Debugger
+
+Import the *pdb* module at run-time to enable debugging:
+
+```shell
+python -m pdb <script>
+```
+
+In the debugger, type *help* for a list of commands. The most useful include:
+
+- *step* - Execute the current line, stopping at first possible occasion  
+- *next* - Continue executing until either the next line, or a return
+- *breakpoint*
+- *jump* - adds a bypass into the code, so that sections
+- *quit* - exit the debugger
