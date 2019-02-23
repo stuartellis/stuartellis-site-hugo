@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Fedora Workstation for Software Development"
 Slug = "fedora-workstation-setup"
-Date = "2018-12-02T11:10:00+01:00"
+Date = "2019-02-23T08:46:00+01:00"
 Description = "Setting up a Fedora Workstation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "fedora", "golang", "javascript", "python", "rust"]
@@ -149,85 +149,13 @@ To create an SSH key, run the _ssh-keygen_ command in a terminal window. For exa
 
 # Setting Up Environments
 
-## Setting Up Node.js
+## Using Modules
 
-To install versions of Node.js on your system, either use the
-[nvm](https://github.com/creationix/nvm) utility, or install the Fedora package.
+Fedora now includes the optional [modularity](https://docs.fedoraproject.org/en-US/modularity/) feature to provide sets of software packages that are updated independently of the operating system. 
 
-The nvm tool enables you to install multiple versions of Node.js, including the latest versions. The Fedora packages install a specific version of Node.js.
+This feature allows to you to switch a product between different streams of releases, such as LTS and current. It will not enable you to have multiple versions of the same product on the same system at the same time. Use containers or tools such as [nvm](https://github.com/creationix/nvm) and [rustup](https://rustup.rs/) to run multiple versions of the same product at the same time.
 
-### Using Fedora Packages for Node.js
-
-To install Node.js with Fedora packages, use dnf:
-
-    sudo dnf install nodejs
-
-This installs both Node.js and the npm package manager.
-
-### Using nvm to Manage Node.js
-
-To install nvm, use this command:
-
-     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-
-Then, open a new terminal window and enter this command:
-
-    nvm install --lts
-
-This installs the latest LTS release of Node.js, and makes it the default Node.js
-run-time.
-
-If you use nvm, you can upgrade the npm package manager with npm itself. To upgrade the copy of _npm_ that is provided with Node.js, run this command in a
-terminal window:
-
-    npm -g upgrade npm
-
-## OpenJDK for Java
-
-Fedora provides packages for OpenJDK versions 8 and 11, as well as other Java tools and libraries.
-
-To install OpenJDK 11 on a developer desktop, use dnf:
-
-    sudo dnf install java-11-openjdk
-
-Similarly, to install OpenJDK 8 on a developer desktop:
-
-    sudo dnf install java-1.8.0-openjdk
-
-To install a Java runtime on a system, use the _headless_ version of the packages. For example:
-
-    sudo dnf install java-11-openjdk-headless
-
-> Use the _alternatives_ command to [switch between multiple Java versions](https://fedoraproject.org/wiki/Java#Switching_alternatives).
-
-To use the [Apache Maven](https://maven.apache.org) build tool, either download the latest version from the Maven project Website, or install the Fedora package:
-
-    sudo dnf install maven
-
-The current version of the Fedora package for Maven depends on OpenJDK 8. This means that it will install OpenJDK 8, even if another version of Java has been installed.
-
-## Developer Tools for Go
-
-Use the _dnf_ tool to install [Go](https://golang.org/):
-
-    sudo dnf install golang
-
-By default, current versions of Go automatically create and use a _go_ directory in your
-home directory as the GOPATH. To ensure that third-party tools and terminal
-auto-completion features work, you should still explicitly set the environment
-variables.
-
-Set a GOPATH environment variable in your _~/.bashrc_ file:
-
-    export GOPATH="$HOME/go"
-
-Then, add this to your PATH:
-
-    $GOPATH/bin
-
-Close the terminal and open it again for the changes to take effect.
-
-## Python Development
+## Working with Python on Fedora
 
 Fedora includes both Python 2 and Python 3. To run Python 3, be sure to specify
 _python3_ as the interpreter:
@@ -246,10 +174,31 @@ Enter this command to install pipenv:
 
     sudo dnf install pipenv
 
-## rustup for Rust Development
+## Using nvm to Manage Node.js
 
-The official _rustup_ utility enables you to install the tools for building software
-with the Rust programming language. Click on the Install button on the front page of the
+The [nvm](https://github.com/creationix/nvm) tool enables you to install multiple versions of Node.js, including the latest versions.
+
+To install nvm, use this command:
+
+     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+
+Then, open a new terminal window and enter this command:
+
+    nvm install --lts
+
+This installs the latest LTS release of Node.js, and makes it the default Node.js run-time.
+
+If you use nvm, you can upgrade the npm package manager with npm itself. To upgrade the copy of _npm_ that is provided with Node.js, run this command in a
+terminal window:
+
+    npm -g upgrade npm
+
+## Installing rustup for Rust Development
+
+Use the official [rustup](https://rustup.rs/) utility to install the tools for building software
+with the Rust programming language. It supports using multiple versions of Rust on the same system, and has other features to assist with software development. 
+
+To install _rustup_, click on the Install button on the front page of the
 [Rust Website](https://www.rust-lang.org), and follow the instructions.
 
 This process installs all of the tools into your home directory, and does not add any
@@ -273,7 +222,7 @@ Fedora Workstation installs [GNOME Boxes](https://wiki.gnome.org/Apps/Boxes) by 
 
 ## Podman for Containers
 
-Use [Podman](https://podman.io/) to work with containers on Fedora. Podman is a command-line tool that does not run a background service, or require root privileges, so it is more robust and secure than [Docker](https://www.docker.com/).
+Use [Podman](https://podman.io/) to work with containers on Fedora. Podman is a command-line tool that does not run a background service, or require root privileges, so it is more robust and secure than [Docker](https://www.docker.com/). 
 
 Podman accepts the same syntax as the _docker_ command-line tool, and will read Dockerfiles. Both Docker and Podman use the OCI image format, so that images created either product will work with the other. By default, Podman will check the Docker public registry for container images, as well as [Quay](https://quay.io/) registries.
 
@@ -285,14 +234,14 @@ For convenience, create a shell alias that replaces Docker with podman:
 
     alias docker="podman"
 
-The [Usage Transfer](https://github.com/containers/libpod/blob/master/transfer.md) page lists Docker commands, and the equivalents for Podman.
+The [Usage Transfer](https://github.com/containers/libpod/blob/master/transfer.md) page lists Docker commands, and the equivalents for Podman. [This article](https://developers.redhat.com/blog/2019/02/21/podman-and-buildah-for-docker-users/) explains the relationship between Podman, Buildah and Docker in more detail.
 
 > Podman does not currently provide an equivalent to _docker\-compose_.
 
 # SQL Databases
 
 Consider using containers to provide the database services for your Web applications.
-This enables you to use different versions of the database servers for different
+This will enable you to use different versions of the database servers for different
 projects, and ensure that you are running the same versions as the database instances on
 your production systems.
 
