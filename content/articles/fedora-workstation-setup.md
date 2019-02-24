@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Fedora Workstation for Software Development"
 Slug = "fedora-workstation-setup"
-Date = "2019-02-23T08:46:00+01:00"
+Date = "2019-02-24T17:49:00+01:00"
 Description = "Setting up a Fedora Workstation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "fedora", "golang", "javascript", "python", "rust"]
@@ -47,9 +47,11 @@ may decide to turn off _Location Services_ or _Usage & History_.
 
 [Flatpak](https://flatpak.org) is the new standard for desktop software packages. The Fedora project still provides RPM packages for many Open Source desktop applications, but Flatpak already offers newer versions of products, and software that is not available from Fedora, such as Slack.
 
-For legal reasons, you must enable access to the public [Flathub repository](https://flathub.org) yourself. Follow the instructions to [set up access to the Flathub repository](https://flatpak.org/setup/Fedora/). The desktp _Software_ utility will then show flatpak packages as well as RPMs.
+For legal reasons, you must enable access to the public [Flathub repository](https://flathub.org) yourself. Follow the instructions to [set up access to the Flathub repository](https://flatpak.org/setup/Fedora/). The desktp _Software_ utility will then show Flatpak packages as well as RPMs.
 
 A small number of proprietary software products are currently provided as RPM packages, such as Google Chrome and the nVidia graphics drivers. To enable access to these, open the _Software_ utility, choose _Software Repositories_ and click the _Install_ button for _Third Party Repositories_.
+
+> Install code editors and IDEs with RPM packages, not Flatpak. Currently, Flatpak packages may prevent application plugins from working correctly.
 
 # Setting Up for Development
 
@@ -57,15 +59,12 @@ Every developer needs a text editor and a version control system. Fedora Worksta
 includes the [Git version control system](http://www.git-scm.com/), but you will want to
 install the text editor or IDE of your choice.
 
-Fedora Workstation also includes the GCC compiler and toolchain, so that you can compile
-C programs and native extensions for languages like Python and JavaScript.
-
 ## Text Editors
 
 Fedora includes a small command-line version of [vim](http://www.vim.org/) with a limited set of features, as well as a
 desktop text editor with basic support for programming. You should install the code editors and development environments that you prefer.
 
-At the moment, Flatpak packages of code editors and IDEs may not support some plugins and extensions, because of security restrictions in Flatpak. Install these applications with RPMs if the Flatpak version does not support features that you need.
+> Install code editors and IDEs with RPM packages, not Flatpak. Currently, Flatpak packages may prevent application plugins from working correctly.
 
 ### Neovim
 
@@ -73,15 +72,13 @@ If you would like a modern Vim editor with a good default configuration, [set up
 
 ### Visual Studio Code
 
-The Microsoft releases of Visual Studio Code are proprietary software with telemetry enabled by default. Use the RPM packages that are provided by the [vscodium](https://github.com/VSCodium/vscodium) project.
+The Microsoft releases of Visual Studio Code are proprietary software with telemetry enabled by default. Use the RPM packages that are provided by the [vscodium](https://github.com/VSCodium/vscodium) project. If you would prefer to use Flatpak packages, use [Visual Studio Code OSS](https://flathub.org/apps/details/com.visualstudio.code.oss).
 
-Visual Studio Code requires the library _libXss_, which is provided by the _libXScrnSaver_ package. Install this package before you install Visual Studio Code:
+Visual Studio Code and VSCodium require the library _libXss_, which is provided by the _libXScrnSaver_ package. Install this package before you install Visual Studio Code:
 
     sudo dnf install libXScrnSaver
 
-If you would prefer to use Flatpak packages, use [Visual Studio Code OSS](https://flathub.org/apps/details/com.visualstudio.code.oss).
-
-> Always review the documentation for extensions before you install them. Visual Studio Code extensions from Microsoft frequently use telemetry.
+Once you have installed Visual Studio Code or VSCodium, read [this article](https://www.stuartellis.name/articles/visual-studio-code/) for more information about using the editor.
 
 ### Setting The EDITOR Environment Variable
 
@@ -147,13 +144,11 @@ To create an SSH key, run the _ssh-keygen_ command in a terminal window. For exa
 > Use 4096-bit RSA keys for all systems. The older DSA standard only supports 1024-bit
 > keys, which are now too small to be considered secure.
 
-# Setting Up Environments
+# Support for Programming Languages 
 
-## Using Modules
+## Default Languages: Python and C 
 
-Fedora now includes the optional [modularity](https://docs.fedoraproject.org/en-US/modularity/) feature to provide sets of software packages that are updated independently of the operating system. 
-
-This feature allows to you to switch a product between different streams of releases, such as LTS and current. It will not enable you to have multiple versions of the same product on the same system at the same time. Use containers or tools such as [nvm](https://github.com/creationix/nvm) and [rustup](https://rustup.rs/) to run multiple versions of the same product at the same time.
+Fedora Workstation includes Python 3. It also has the GCC compiler and toolchain, for working with C. The GCC tools enable languages like Python and JavaScript to compile native extensions that are written in C code.
 
 ## Working with Python on Fedora
 
@@ -174,13 +169,19 @@ Enter this command to install pipenv:
 
     sudo dnf install pipenv
 
+## Using Modules to Add Extra Languages
+
+Fedora now includes the optional [modularity](https://docs.fedoraproject.org/en-US/modularity/) feature to provide sets of software packages that are updated independently of the operating system. Use modules to install packages for extra programming languages, such as Java and Go. 
+
+Modules allow to you to switch the installed packages between different streams of releases, such as LTS and current. This feature will not enable you to have multiple versions of the same product on the same system at the same time. Use containers or tools such as [nvm](https://github.com/creationix/nvm) and [rustup](https://rustup.rs/) to run multiple versions of the same product at the same time.
+
 ## Using nvm to Manage Node.js
 
-The [nvm](https://github.com/creationix/nvm) tool enables you to install multiple versions of Node.js, including the latest versions.
+The [nvm](https://github.com/creationix/nvm) tool enables you to use multiple versions of Node.js, including the latest versions.
 
 To install nvm, use this command:
 
-     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 
 Then, open a new terminal window and enter this command:
 
@@ -216,13 +217,9 @@ Rust tools into system directories.
 
 # Containers and Virtual Machines
 
-## Managing Virtual Machines
+## Using Podman for Containers
 
-Fedora Workstation installs [GNOME Boxes](https://wiki.gnome.org/Apps/Boxes) by default, to enable you to create and manage virtual machines. GNOME Boxes provides a graphical interface for the standard KVM and QEMU software. You can also use these directly on the command-line.
-
-## Podman for Containers
-
-Use [Podman](https://podman.io/) to work with containers on Fedora. Podman is a command-line tool that does not run a background service, or require root privileges, so it is more robust and secure than [Docker](https://www.docker.com/). 
+Use [Podman](https://podman.io/) to work with containers on Fedora. Podman is a command-line tool that is designed to be more robust and secure than [Docker](https://www.docker.com/). Unlike Docker, Podman does not run a background service, or require root privileges.
 
 Podman accepts the same syntax as the _docker_ command-line tool, and will read Dockerfiles. Both Docker and Podman use the OCI image format, so that images created either product will work with the other. By default, Podman will check the Docker public registry for container images, as well as [Quay](https://quay.io/) registries.
 
@@ -230,13 +227,19 @@ Enter this command to install Podman:
 
     sudo dnf install podman
 
-For convenience, create a shell alias that replaces Docker with podman:
+For convenience, define a shell alias in your _.bashrc_ file: 
 
     alias docker="podman"
 
+This will redirect any call to Docker, so that it uses Podman instead.
+
 The [Usage Transfer](https://github.com/containers/libpod/blob/master/transfer.md) page lists Docker commands, and the equivalents for Podman. [This article](https://developers.redhat.com/blog/2019/02/21/podman-and-buildah-for-docker-users/) explains the relationship between Podman, Buildah and Docker in more detail.
 
-> Podman does not currently provide an equivalent to _docker\-compose_.
+> Use [pods](https://developers.redhat.com/blog/2019/01/15/podman-managing-containers-pods/) to run groups of containers. This feature of Podman replaces _docker\-compose_.
+
+## Working with Virtual Machines
+
+Fedora Workstation installs [GNOME Boxes](https://wiki.gnome.org/Apps/Boxes) by default, to enable you to create and manage virtual machines. GNOME Boxes provides a graphical interface for the standard KVM and QEMU software. You can also use these directly on the command-line.
 
 # SQL Databases
 
