@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2018-12-01T20:49:00+01:00"
+Date = "2019-02-24T17:48:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "java", "javascript", "python", "ruby", "rust"]
@@ -120,10 +120,7 @@ The first step is to install a compiler. The easiest way to install one is with 
 _Xcode Command Line Tools_ package.
 
 Once you have the compiler that is provided by Xcode, you can use
-[Homebrew](http://brew.sh/) to install everything else that you need. Homebrew itself
-manages packages for command-line tools and services. The
-[Cask](https://caskroom.github.io/) extension to Homebrew enables you to install
-graphical desktop applications.
+[Homebrew](http://brew.sh/) to install everything else that you need. 
 
 ## Getting Xcode
 
@@ -191,104 +188,30 @@ To enable colors in the output, which can be very helpful, enter this command:
 Installations of macOS include older command-line versions of both
 [Emacs](http://www.gnu.org/software/emacs/) and [vim](http://www.vim.org/), as well as
 TextEdit, a desktop text editor. TextEdit is designed for light-weight word processing,
-and has no support for programming. This means that you will probably install your own preferred editor.
+and has no support for programming. Add the code editors or IDEs that you would prefer to use.
 
-The most popular desktop text editor is now probably [Visual Studio Code](https://code.visualstudio.com). [Oni](https://www.onivim.io/) is a powerful graphical text editor built on [Neovim](https://neovim.io). Use Neovim if you would like a modern console Vim editor.
+If you do not have a preferred editor, consider using a version of [Visual Studio Code](https://code.visualstudio.com). To work with a modern Vim editor, install [Neovim](https://neovim.io).
+
+### Visual Studio Code
+
+[Visual Studio Code](https://code.visualstudio.com) is a powerful desktop editor for programming, with built-in support for version control and debugging. The large range of extensions for Visual Studio Code enable it to work with every popular programming language and framework. It is available free of charge. 
+
+The Microsoft releases of Visual Studio Code are proprietary software with telemetry enabled by default. To avoid these issues, use the packages that are provided by the [vscodium](https://github.com/VSCodium/vscodium) project instead.
+
+Once you have installed Visual Studio Code or VSCodium, read [this article](https://www.stuartellis.name/articles/visual-studio-code/) for more information about using the editor.
+
+### Neovim
+
+If you would like a modern Vim editor with a good default configuration, [set up Neovim](https://www.stuartellis.name/articles/neovim-setup/).
 
 ### Setting The EDITOR Environment Variable
 
 Whichever text editor you choose, remember to set the EDITOR environment variable in
-your _~/.bashrc_ file, so that this editor is automatically invoked by
-command-line tools like your version control system. For example, put this line in your profile to make Neovim (_nvim_) the favored text editor:
+your _~/.bashrc_ file, so that this editor is automatically invoked by command-line
+tools like your version control system. For example, put this line in your profile to
+make Neovim (_nvim_) the favored text editor:
 
     export EDITOR="nvim"
-
-### Setting Up Visual Studio Code
-
-> Both Visual Studio Code itself and many extensions from Microsoft use telemetry. Avoid using Visual Studio Code if you have concerns about privacy.
-
-To install Visual Studio Code, enter this command in a terminal window:
-
-    brew cask install visual-studio-code
-
-To make Visual Studio Code your default editor, use this line in your _~/.bashrc_ file:
-
-    export EDITOR="code -w"
-
-Visual Studio Code enables telemetry and crash reporting by default. To disable these, set these options in _Preferences > Settings_:
-
-```json
-"telemetry.enableTelemetry": false,
-"telemetry.enableCrashReporter": false
-```
-
-Microsoft and some other providers add telemetry to their extensions to Visual Studio Code. This means that you must check the description of each extension to know whether it will send data to remote services, even if you have disabled telemetry for Visual Studio Code itself.
-
-If you use extensions, consider these:
-
-- Support for your preferred languages, e.g.
-  [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), [Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack),
-  [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.ruby), or
-  [Go](https://marketplace.visualstudio.com/items?itemName=ms-vscode.Go)
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-  or [TSLint](https://marketplace.visualstudio.com/items?itemName=eg2.tslint) for
-  JavaScript linter integration
-- [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
-  to debug JavaScript in the Web browser
-- [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) to
-  enhance the Git support in the user interface
-- The
-  [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
-  extension
-- [YAML Support](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
-
-If you would like to enable Vim keybindings in Visual Studio Code, install the [VSCodeVim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) extension.
-
-### Setting Up Neovim
-
-To install Neovim on macOS with Homebrew, run this command:
-
-    brew install neovim
-
-Remember to set the EDITOR environment
-variable in your _~/.bashrc_ file, so that this editor is
-automatically invoked by command-line tools like your version control
-system.
-
-To make Neovim your default editor, use this line:
-
-    export EDITOR="nvim"
-
-Once you have installed Neovim, create a file called _~/.config/nvim/init.vim_. This is your configuration file for Neovim.
-
-This command creates a _init.vim_ file with the _leader_ option specified to set a leader key:
-
-    echo 'let mapleader = ","' >> ~/.config/nvim/init.vim
-
-Neovim and Vim 8 include support for plugins, which means that you do not need to use a third-party plugin manager.
-
-To add plugins to current versions, first create a directory for plugins:
-
-    mkdir -p ~/.local/share/nvim/site/pack/git-plugins/start
-
-Then add these lines to your _init.vim_ file:
-
-```vim
-" Put these lines at the very end of your vimrc file.
-
-" Load all plugins now.
-" Plugins need to be added to runtimepath before helptags can be generated.
-packloadall
-" Load all of the helptags now, after plugins have been loaded.
-" All messages and errors will be ignored.
-silent! helptags ALL
-```
-
-You can now install plugins by using Git to download them to the packages directory. For example, this command installs the [ALE](https://github.com/w0rp/ale) plugin:
-
-    git clone https://github.com/w0rp/ale.git ~/.local/share/nvim/site/pack/git-plugins/start/ale
-
-> Oni automatically detects an existing Neovim configuration, and will offer to use instead of the default settings.
 
 ## Setting Up A Directory Structure for Projects
 

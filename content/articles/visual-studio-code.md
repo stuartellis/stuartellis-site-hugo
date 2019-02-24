@@ -1,7 +1,7 @@
 +++
 Title = "Setting up the Visual Studio Code Text Editor"
 Slug = "visual-studio-code"
-Date = "2018-11-17T20:32:00+01:00"
+Date = "2019-02-24T18:07:00+01:00"
 Description = "Setting up the Visual Studio Code text editor for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["golang", "javascript", "python", "ruby"]
@@ -13,9 +13,13 @@ Notes on customizing the [Visual Studio Code](https://code.visualstudio.com) tex
 
 <!--more-->
 
-# Installing Visual Studio Code
+# Software Ethics and Visual Studio Code
 
-> Both Visual Studio Code and extensions from Microsoft use telemetry. Avoid using Visual Studio Code if you have concerns about privacy.
+The Microsoft releases of Visual Studio Code are proprietary software with telemetry enabled by default. If you prefer to avoid proprietary software, consider using the packages that are provided by the [vscodium](https://github.com/VSCodium/vscodium) project instead.
+
+> Both Visual Studio Code and a number of extensions use telemetry. Always review the documentation for an extension before you install it, and look for notes about telemetry. 
+
+# Installing Visual Studio Code
 
 ## Installing Code on macOS
 

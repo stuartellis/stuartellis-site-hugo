@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Fedora Workstation for Software Development"
 Slug = "fedora-workstation-setup"
-Date = "2019-02-24T17:49:00+01:00"
+Date = "2019-02-24T19:44:00+01:00"
 Description = "Setting up a Fedora Workstation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "fedora", "golang", "javascript", "python", "rust"]
@@ -62,23 +62,27 @@ install the text editor or IDE of your choice.
 ## Text Editors
 
 Fedora includes a small command-line version of [vim](http://www.vim.org/) with a limited set of features, as well as a
-desktop text editor with basic support for programming. You should install the code editors and development environments that you prefer.
+desktop text editor with basic support for programming. Add the code editors or IDEs that you would prefer to use.
+
+If you do not have a preferred editor, consider using a version of [Visual Studio Code](https://code.visualstudio.com). To work with a modern Vim editor, install [Neovim](https://neovim.io).
 
 > Install code editors and IDEs with RPM packages, not Flatpak. Currently, Flatpak packages may prevent application plugins from working correctly.
 
-### Neovim
-
-If you would like a modern Vim editor with a good default configuration, [set up Neovim](https://www.stuartellis.name/articles/neovim-setup/).
-
 ### Visual Studio Code
 
-The Microsoft releases of Visual Studio Code are proprietary software with telemetry enabled by default. Use the RPM packages that are provided by the [vscodium](https://github.com/VSCodium/vscodium) project. If you would prefer to use Flatpak packages, use [Visual Studio Code OSS](https://flathub.org/apps/details/com.visualstudio.code.oss).
+[Visual Studio Code](https://code.visualstudio.com) is a powerful desktop editor for programming, with built-in support for version control and debugging. The large range of extensions for Visual Studio Code enable it to work with every popular programming language and framework. It is available free of charge.  
 
-Visual Studio Code and VSCodium require the library _libXss_, which is provided by the _libXScrnSaver_ package. Install this package before you install Visual Studio Code:
+The Microsoft releases of Visual Studio Code are proprietary software with telemetry enabled by default. To avoid these issues, use the RPM packages that are provided by the [vscodium](https://github.com/VSCodium/vscodium) project. If you would prefer to use a Flatpak package, install [Visual Studio Code OSS](https://flathub.org/apps/details/com.visualstudio.code.oss).
+
+The RPM packages for Visual Studio Code and VSCodium require the library _libXss_, which is provi0ded by the _libXScrnSaver_ package. Install this package before you install Visual Studio Code:
 
     sudo dnf install libXScrnSaver
 
 Once you have installed Visual Studio Code or VSCodium, read [this article](https://www.stuartellis.name/articles/visual-studio-code/) for more information about using the editor.
+
+### Neovim
+
+If you would like a modern Vim editor with a good default configuration, [set up Neovim](https://www.stuartellis.name/articles/neovim-setup/).
 
 ### Setting The EDITOR Environment Variable
 
@@ -157,7 +161,7 @@ _python3_ as the interpreter:
 
     python3 --version
 
-The _python_ interpreter is Python 2, which you should not use for new software.
+The _python_ command runs Python 2, which you should not use for new software.
 
 To maintain current and clean Python environments, install
 [pipenv](https://docs.pipenv.org/). It drives the [pip](https://pip.pypa.io/en/stable/)
