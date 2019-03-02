@@ -1,7 +1,7 @@
 +++
 Title = "Resources for Learning Python"
 Slug = "python-learning-resources"
-Date = "2019-02-17T10:51:00+01:00"
+Date = "2019-03-02T20:57:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -21,15 +21,29 @@ The [PyVideo](https://pyvideo.org/) site is an index of free videos on Python an
 
 # Books
 
-The official documentation is provided with many distributions of Python, and you can download the documentation set as an [ebook in PDF or EPUB formats](https://docs.python.org/3/download.html).
+## The Official Python Documentation 
 
-There are several excellent books for learning Python 3, and there are three that you can read for free online:
+The official documentation for Python includes both reference guides and tutorials for the language and the standard library.  
+
+This documentation is provided with many distributions of Python, and you can download the whole set as an [ebook in PDF or EPUB formats](https://docs.python.org/3/download.html).
+
+## Learning Python
+
+There are several excellent books for learning Python, including three that you can read for free online:
 
 - [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/), which includes a gentle introduction to programming, before explaining specific projects
 - [How to Code in Python](https://www.digitalocean.com/community/tutorials/digitalocean-ebook-how-to-code-in-python) offers more detailed tutorials for learners 
 - [Dive Into Python 3](https://www.diveinto.org/python3/) provides a quick start for those people with some previous experience of programming
 
 If you are teaching children, buy a copy of [Teach Your Kids to Code](https://nostarch.com/teachkids) by Bryson Payne.
+
+## Beyond the Basics
+
+Once you are ready to build your own projects, read [Serious Python](https://serious-python.com/). This book provides practical guidance for writing, testing and delivering Python applications.
+
+After you have worked with Python for a while, buy a copy of [Fluent Python](https://www.oreilly.com/library/view/fluent-python/9781491946237/). This book will enable you to write idiomatic and efficient code.
+
+If you use Python for data science or other demanding applications, read [High Performance Python](https://www.oreilly.com/library/view/high-performance-python/9781449361747/).
 
 # Courses
 
@@ -39,7 +53,9 @@ There too many to list!
 
 # Online Guides
 
-Once you have learned Python itself, visit [The Hitchhiker’s Guide to Python](http://docs.python-guide.org), which provides clear advice on daily work with Python, and [Full Stack Python](https://www.fullstackpython.com) for a comprehensive guide to building Web applications with Python.
+Once you have learned Python itself, visit [The Hitchhiker’s Guide to Python](http://docs.python-guide.org), which provides clear advice on daily work with Python.
+
+[Full Stack Python](https://www.fullstackpython.com) explains the tools and options for building Web applications with Python. If you decide to work with the [Flask](http://flask.pocoo.org/) framework, use the [The Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world) to learn the essentials. 
 
 If you are a programmer or systems administrator, consider [replacing bash scripting with Python](https://github.com/ninjaaron/replacing-bash-scripting-with-python).
 
@@ -50,9 +66,3 @@ If you are a programmer or systems administrator, consider [replacing bash scrip
 [Python Bytes](https://pythonbytes.fm/) is a weekly news show for Python, with episodes that are about 15 minutes long.
 
 [Podcast.__init__](https://www.pythonpodcast.com/) and [Talk Python to Me](https://talkpython.fm/) both run interviews with software project leaders and key community members. Episodes are usually just over 60 minutes long. 
-
-# Beyond the Basics
-
-After you have worked with Python for a while, buy a copy of [Fluent Python](https://www.oreilly.com/library/view/fluent-python/9781491946237/). This book will enable you to write idiomatic and efficient code.
-
-If you use Python for data science or other demanding applications, read [High Performance Python](https://www.oreilly.com/library/view/high-performance-python/9781449361747/).
