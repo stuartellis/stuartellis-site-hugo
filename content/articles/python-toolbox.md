@@ -1,7 +1,7 @@
 +++
 Title = "Useful Python Tools and Libraries"
 Slug = "python-toolbox"
-Date = "2019-02-02T11:09:00+01:00"
+Date = "2019-03-02T21:27:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -64,18 +64,13 @@ Use the [Click](http://click.pocoo.org) framework to build command-line tools wi
 
 # Building Web Applications
 
-For very simple Websites and services, use [Flask](http://flask.pocoo.org/). The Flask framework provides the basic package of features that you need for a small Web application.
+For simple Websites and services, use the [Flask](http://flask.pocoo.org/) framework. Flask itself provides the basic package of features that you need for a Web application, and the framework has [a wide range of extensions](http://flask.pocoo.org/extensions/) to add more capabilities.
 
-Use either [Django](http://www.djangoproject.com/) or [Pyramid](https://trypyramid.com/) for larger projects. Django provides a set of custom tools and libraries that closely integrate together. Pyramid offers a modular framework for integrating third-party Python libraries together when developing custom Web applications.
+Use either [Django](http://www.djangoproject.com/) or [Pyramid](https://trypyramid.com/) for larger projects. Django provides a set of custom tools and libraries that closely integrate together. Pyramid offers a modular framework for integrating third-party Python libraries together into custom Web applications.
 
-Python Web frameworks follow the WSGI standard, which provides consistent
-interfaces between individual components, and between the components and the
-host Web server. Any server that supports WSGI can host your Python
-applications. Cloud services such as [Google App
-Engine](https://cloud.google.com/appengine/), [Heroku](https://www.heroku.com/),
-[Python Anywhere](https://www.pythonanywhere.com/) and [Red Hat
-OpenShift](https://www.openshift.com/) provide low-maintenance hosting for
-Python Web applications.
+These Web frameworks follow the WSGI standard. Any server that supports WSGI can run Python Web applications, which means that there are many options for hosting your projects. You can either set up your own systems with the software of your choice, or use cloud services for application hosting.
+
+[Google App Engine](https://cloud.google.com/appengine/), [Heroku](https://www.heroku.com/) and [Python Anywhere](https://www.pythonanywhere.com/) enable you to run Python Web applications without managing systems. If you need more control over the infrastructure that your application uses, consider using containers and a Kubernetes service, such as [Red Hat OpenShift](https://www.openshift.com/), [DigitalOcean Kubernetes](https://www.digitalocean.com/products/kubernetes/) or [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/).
 
 [Full Stack Python](https://www.fullstackpython.com) provides a comprehensive guide to building Web applications with Python.
 
@@ -114,12 +109,13 @@ To package a Python application for systems that already have Python installed, 
 
 # Other Useful Libraries
 
-- [Bokeh](https://bokeh.pydata.org) - Interactive charts and other visualizations
+- [Gunicorn](https://gunicorn.org/) - Fast Web server for Python WSGI applications
+- [Matplotlib](https://matplotlib.org/) - Plotting 2D graphs and charts 
 - [Pendulum](https://pendulum.eustace.io/) - Date and time parsing
 - [Pillow](https://python-pillow.org/) - Image processing
+- [python-dotenv](https://github.com/theskumar/python-dotenv) - Load environment variables from files
 - [PyYAML](https://pyyaml.org/) - YAML support for Python
 - [Reportlab](https://www.reportlab.com/opensource/) - PDF generation
-- [uvloop](https://uvloop.readthedocs.io/) - Extremely fast replacement for the standard Python asyncio event loop
 
 # Learning Resources
 
