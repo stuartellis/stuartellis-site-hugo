@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2018-08-18T15:33:00+01:00"
+Date = "2019-03-03T17:15:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -31,9 +31,7 @@ refactoring that are designed to be integrated with both editors and automated b
 processes. Every popular editor has a plugin for Go support, which can use these
 standard utilities to check and refactor your code as you work.
 
-I currently use [Neovim](https://neovim.io/),
-with the [vim-go](https://github.com/fatih/vim-go) plugin. [Visual Studio Code](https://code.visualstudio.com) has a
-well-maintained [plugin for Go](https://marketplace.visualstudio.com/items?itemName=ms-vscode.Go). Both of these editors are provided free of charge. If you
+If you use [Visual Studio Code](https://code.visualstudio.com), install the Microsoft [plugin for Go](https://marketplace.visualstudio.com/items?itemName=ms-vscode.Go). Use the [vim-go](https://github.com/fatih/vim-go) plugin for Vim. If you
 would prefer to use an IDE, JetBrains offer [GoLand](https://www.jetbrains.com/go/) as a
 commercial product.
 
@@ -66,7 +64,7 @@ badge to the README in your repository that links to the Report Card for your pr
 
 ## Dependency Management
 
-Version 1.11 of Go includes initial support for [modules](https://github.com/golang/go/wiki/Modules). The previous standard for managing dependencies was [dep](https://golang.github.io/dep/).
+Version 1.11 of Go and above include support for [modules](https://github.com/golang/go/wiki/Modules). The previous standard for managing dependencies was [dep](https://golang.github.io/dep/).
 
 # Other Useful Tools
 
@@ -74,7 +72,7 @@ Version 1.11 of Go includes initial support for [modules](https://github.com/gol
 - [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports) - Removes unused import statements from Go code
 - [Gomacro](https://github.com/cosmos72/gomacro) - Interactive interpreter for Go
 - [GoReleaser](https://goreleaser.com/) - Release automation for Go projects
-- [Packr](https://github.com/gobuffalo/packr) - Embeds files into Go binaries
+- [Packr2](https://github.com/gobuffalo/packr/tree/master/v2) - Embeds files into Go binaries
 
 Code editors with a Go plugin will integrate with Delve and goimports.
 
@@ -148,7 +146,7 @@ database that your code will access. The most popular drivers are:
 - [SQLite](https://mattn.github.io/go-sqlite3/)
 
 If you only need to store sets of data on the computer that runs your application,
-consider using the [bbolt](https://github.com/coreos/bbolt) package, which implements a
+consider using [bbolt](https://godoc.org/go.etcd.io/bbolt) instead of a separate database. The bbolt package implements a
 file-based key-value database system in pure Go.
 
 # Developing Command-line Tools
