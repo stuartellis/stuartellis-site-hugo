@@ -1,7 +1,7 @@
 +++
 Title = "Useful Python Tools and Libraries"
 Slug = "python-toolbox"
-Date = "2019-03-03T13:38:00+01:00"
+Date = "2019-03-03T17:48:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -14,6 +14,8 @@ Notes on useful tools and libraries for the [Python](https://www.python.org/) pr
 <!--more-->
 
 # Online Development Environments
+
+These services enable you to work on Python projects in a cloud-based environment:
 
 * [Python Anywhere](https://www.pythonanywhere.com/)
 * [repl.it](https://repl.it/)
@@ -33,6 +35,10 @@ In a command prompt window enter the following command:
 The pipenv tool uses the _pip_ and [virtual environment](https://docs.python.org/3/tutorial/venv.html) facilities that are included with Python itself, so it is fully compatible with other Python utilities, whilst being much easier to use than other tools. The Python packaging documentation now officially recommends pipenv.
 
 The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualenvs/) shows you how to work with _pipenv_.
+
+## Working with Multiple Versions of Python 
+
+If you need to develop with several different versions of Python, use [pyenv](https://github.com/pyenv/pyenv). This tool enables you to install multiple versions of Python on the same system, and switch between them.
 
 ## Managing Projects
 
