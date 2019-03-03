@@ -1,7 +1,7 @@
 +++
 Title = "Useful Python Tools and Libraries"
 Slug = "python-toolbox"
-Date = "2019-03-02T21:27:00+01:00"
+Date = "2019-03-03T13:38:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -74,28 +74,33 @@ These Web frameworks follow the WSGI standard. Any server that supports WSGI can
 
 [Full Stack Python](https://www.fullstackpython.com) provides a comprehensive guide to building Web applications with Python.
 
+> Whichever Web framework you use, add the [secure.py](https://secure.readthedocs.io/en/latest/) extension to implement Web security features.
+
 # Developing Web Clients
 
 Use the [requests](http://docs.python-requests.org/en/master/) library for your Web client software, such as downloading files or working with APIs. The HTTP support in the Python standard library is for low-level code.
 
 If you need to get information from Websites that do not provide an API, use [Scrapy](https://doc.scrapy.org). You can then extract content from the pages with the [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/) library.
 
-# Accessing Databases
+# Working with SQL Databases
 
-The simplest answer: you do not need to install anything or setup a
-service to create a SQL database for a new Python application, because
-the Python standard library includes a version of
-[SQLite](http://www.sqlite.org/).
+The Python standard library includes a version of [SQLite](http://www.sqlite.org/). This means that you can use SQL databases in any Python project without installing a separate database product. Avoid underestimating SQLite: it is a robust and efficient database that will handle gigabytes of data.
 
-To access a SQL database service such as PostgreSQL, MySQL, or Oracle you will need to install the client software for that product, along with a separate Python adapter.
+To access other types of SQL databases such as PostgreSQL, MySQL, or Oracle, install the Python driver that the vendor of the database recommends. Each Python driver will require a particular client library. For example, the recommended Python driver for PostgreSQL is [psycopg](http://initd.org/psycopg/), which requires a copy of the libpq library.   
 
 > _Connecting to Microsoft SQL Server_: [Microsoft recommend that you use the ODBC adapter for SQL Server](https://docs.microsoft.com/en-us/sql/connect/python/python-driver-for-sql-server).
 
-The Django Web framework includes an Object-Relational Mapper (ORM). For other applications, use [SQLAlchemy](http://www.sqlalchemy.org/), which has become the standard Python library for database programming. You may use the declarative portion of SQLAlchemy like a standard ORM, but it has many more capabilities. [Records](https://pypi.python.org/pypi/records/) provides a simple programming interface and command-line tool for SQLAlchemy.
+Whichever brand of SQL database you work with, use a database toolkit, rather than writing data access and schema management code yourself. 
+
+[SQLAlchemy](http://www.sqlalchemy.org/) is the standard Python library for database programming. You may use the declarative portion of SQLAlchemy like a standard ORM, but it has many more capabilities. [Records](https://pypi.python.org/pypi/records/) provides a simple programming interface and command-line tool for SQLAlchemy.
+
+If your project has limited or specific needs, consider alternatives to SQLAlchemy. [Peewee](http://docs.peewee-orm.com/) offers a lightweight alternative to SQLAlchemy for accessing the most popular brands of Open Source database. For Django projects, use the Object-Relational Mapper (ORM) that is provided with Django, because this is integrated with the other features of the framework.
 
 # Building Graphical Desktop Applications
 
-If you are specifically interested in developing desktop applications, start with [wxPython](http://wxpython.org/). The Tk interface toolkit that is supplied with the Python standard library is rather basic and dated. If you have advanced needs, you may prefer [QT for Python](https://www.qt.io/qt-for-python), which enables you to make use of the [QT](https://www.qt.io/) libraries.
+Consider using [wxPython](http://wxpython.org/) to build graphical interfaces for your applications. The Tk interface toolkit that is supplied with the Python standard library is rather basic and dated. If you have advanced needs, you may prefer [QT for Python](https://www.qt.io/qt-for-python), which enables you to make use of the [QT](https://www.qt.io/) libraries.
+
+If you are building 2D games, try [pygame](https://www.pygame.org). This provides a simple toolkit for games and multimedia applications.
 
 # Microsoft Windows Integration
 
@@ -103,13 +108,14 @@ Python includes support for some features that are unique to Microsoft Windows, 
 
 # Packaging Applications
 
-To build packaged applications, use [PyInstaller](http://www.pyinstaller.org/). This creates stand-alone executables that include Python itself, your code, and any other dependencies.
+To package applications for distributing to users, add [PyInstaller](http://www.pyinstaller.org/) to your project. This creates stand-alone executables that include Python itself, your code, and any other dependencies.
 
 To package a Python application for systems that already have Python installed, consider using [pex](https://github.com/pantsbuild/pex/).
 
 # Other Useful Libraries
 
 - [Gunicorn](https://gunicorn.org/) - Fast Web server for Python WSGI applications
+- [Jinja2](http://jinja.pocoo.org/) - Text templating, for generating HTML and other formats
 - [Matplotlib](https://matplotlib.org/) - Plotting 2D graphs and charts 
 - [Pendulum](https://pendulum.eustace.io/) - Date and time parsing
 - [Pillow](https://python-pillow.org/) - Image processing
