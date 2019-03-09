@@ -1,7 +1,7 @@
 +++
 Title = "Modern Python Practices"
 Slug = "python-modern-practices"
-Date = "2019-02-17T08:49:00+01:00"
+Date = "2019-03-09T11:25:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -105,6 +105,8 @@ The *pathlib* module was added to the standard library in version 3.4 of Python.
 ## Use subprocess for Running External Commands
 
 The [subprocess](https://docs.python.org/3/library/subprocess.html) module provides a safe way to run external commands. Use _subprocess_ rather than shell backquoting or the functions in _os_, such as _spawn_, _popen2_ and _popen3_. 
+
+The _subprocess.run()_ function in current versions of Python is sufficient for most cases.
 
 [PEP 324](https://www.python.org/dev/peps/pep-0324/) explains the technical details in depth. 
 
