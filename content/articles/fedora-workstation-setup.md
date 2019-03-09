@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Fedora Workstation for Software Development"
 Slug = "fedora-workstation-setup"
-Date = "2019-02-24T19:44:00+01:00"
+Date = "2019-03-09T13:36:00+01:00"
 Description = "Setting up a Fedora Workstation for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "linux", "fedora", "golang", "javascript", "python", "rust"]
@@ -45,9 +45,9 @@ may decide to turn off _Location Services_ or _Usage & History_.
 
 # Installing Desktop Applications with Flatpak
 
-[Flatpak](https://flatpak.org) is the new standard for desktop software packages. The Fedora project still provides RPM packages for many Open Source desktop applications, but Flatpak already offers newer versions of products, and software that is not available from Fedora, such as Slack.
+[Flatpak](https://flatpak.org) is the new standard for desktop software packages. The Fedora project still provides RPM packages for many Open Source desktop applications, but Flatpak already offers newer versions of products, as well as software that is not available from Fedora repositories, such as Slack.
 
-For legal reasons, you must enable access to the public [Flathub repository](https://flathub.org) yourself. Follow the instructions to [set up access to the Flathub repository](https://flatpak.org/setup/Fedora/). The desktp _Software_ utility will then show Flatpak packages as well as RPMs.
+For legal reasons, you must enable access to the public [Flathub repository](https://flathub.org) yourself. Follow the instructions to [set up access to the Flathub repository](https://flatpak.org/setup/Fedora/). The desktop _Software_ utility will then show Flatpak packages as well as RPMs.
 
 A small number of proprietary software products are currently provided as RPM packages, such as Google Chrome and the nVidia graphics drivers. To enable access to these, open the _Software_ utility, choose _Software Repositories_ and click the _Install_ button for _Third Party Repositories_.
 
@@ -72,13 +72,16 @@ If you do not have a preferred editor, consider using a version of [Visual Studi
 
 [Visual Studio Code](https://code.visualstudio.com) is a powerful desktop editor for programming, with built-in support for version control and debugging. The large range of extensions for Visual Studio Code enable it to work with every popular programming language and framework. It is available free of charge.  
 
-The Microsoft releases of Visual Studio Code are proprietary software with telemetry enabled by default. To avoid these issues, use the RPM packages that are provided by the [vscodium](https://github.com/VSCodium/vscodium) project. If you would prefer to use a Flatpak package, install [Visual Studio Code OSS](https://flathub.org/apps/details/com.visualstudio.code.oss).
+The Microsoft releases of Visual Studio Code are proprietary software with telemetry enabled by default. To avoid these issues, use the RPM packages that are provided by the [vscodium](https://github.com/VSCodium/vscodium) project. 
 
 The RPM packages for Visual Studio Code and VSCodium require the library _libXss_, which is provi0ded by the _libXScrnSaver_ package. Install this package before you install Visual Studio Code:
 
     sudo dnf install libXScrnSaver
 
 Once you have installed Visual Studio Code or VSCodium, read [this article](https://www.stuartellis.name/articles/visual-studio-code/) for more information about using the editor.
+
+> Extensions may fail if you use the [Visual Studio Code OSS](https://flathub.org/apps/details/com.visualstudio.code.oss) Flatpak. 
+
 
 ### Neovim
 
@@ -95,7 +98,7 @@ make Neovim (_nvim_) the favored text editor:
 
 ## Configuring Git
 
-Always set your details before you create or clone repositories on a new system. This
+Always set your details for Git before you create or clone repositories on a new system. This
 requires two commands in a terminal window:
 
     git config --global user.name "Your Name"
