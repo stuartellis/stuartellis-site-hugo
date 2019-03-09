@@ -78,7 +78,7 @@ SQL database access...
 
 ## Read the Functional Programming HOWTO
 
-The official documentation includes a [Functional Programming HOWTO](???)
+The official documentation includes a [Functional Programming HOWTO](https://docs.python.org/3/howto/functional.html)
 
 FIXME
 
@@ -96,11 +96,37 @@ Refer to [the argparse tutorial](https://docs.python.org/3/howto/argparse.html) 
 
 Use [pathlib](https://docs.python.org/3/library/pathlib.html) objects instead of strings whenever you need to work with file and directory pathnames. 
 
-Use the [the pathlib equivalents for os functions](https://docs.python.org/3/library/pathlib.html#correspondence-to-tools-in-the-os-module).
+Consider using the [the pathlib equivalents for os functions](https://docs.python.org/3/library/pathlib.html#correspondence-to-tools-in-the-os-module).
 
-The existing methods in the standard library have been updated to support _pathlib_, such as _os.scandir()_.
+The existing methods in the standard library have been updated to support Path objects.
 
-The *pathlib* module was added to the standard library in version 3.4 of Python. 
+To list all of the the files in a directory, use either the _.iterdir()_ function of a Path object, or the _os.scandir()_ function.
+
+This [RealPython article](https://realpython.com/working-with-files-in-python/#directory-listing-in-modern-python-versions) provides a full explanation of the different Python functions for working with files and directories.
+
+The *pathlib* module was added to the standard library in Python 3.4, and other standard library functions were updated to support Path objects in version 3.5 of Python.
+
+## Use os.scandir() Instead of os.listdir()
+
+The _os.scandir()_ function is significantly faster and more efficient than  _os.listdir()_. Use _os.scandir()_ wherever you previously used the _os.listdir()_ function.
+
+This function provides an iterator, and works with a context manager:
+
+```python
+import os
+
+with os.scandir('some_directory/') as entries:
+    for entry in entries:
+        print(entry.name)
+```
+
+The context manager frees resources as soon as the function completes. Use this option if you are concerned about performance or concurrency. 
+
+The _os.walk()_ function now calls _os.scandir()_, so it automatically has the same improved performance as this function.
+
+[PEP 471](https://www.python.org/dev/peps/pep-0471/) explains _os.scandir()_.
+
+The _os.scandir()_ function was added in version 3.5 of Python.
 
 ## Use subprocess for Running External Commands
 
