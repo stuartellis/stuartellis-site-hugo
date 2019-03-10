@@ -1,7 +1,7 @@
 +++
 Title = "Useful Python Tools and Libraries"
 Slug = "python-toolbox"
-Date = "2019-03-03T17:48:00+01:00"
+Date = "2019-03-10T15:09:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -114,9 +114,9 @@ Python includes support for some features that are unique to Microsoft Windows, 
 
 # Packaging Applications
 
-To package applications for distributing to users, add [PyInstaller](http://www.pyinstaller.org/) to your project. This creates stand-alone executables that include Python itself, your code, and any other dependencies.
+Use [PyInstaller](http://www.pyinstaller.org/) to create applications that you can give to other people. PyInstaller creates stand-alone executables that include Python itself, your code, and any other dependencies. Follow the steps described in the [RealPython.com tutorial](https://realpython.com/pyinstaller-python/) to add PyInstaller to your project.
 
-To package a Python application for systems that already have Python installed, consider using [pex](https://github.com/pantsbuild/pex/).
+If you only need to deploy your application to systems that you know will have a suitable version of Python, use [shiv](https://github.com/linkedin/shiv). The shiv utility packages your application and dependencies into a ZIP file that Python interpreters will run. 
 
 # Other Useful Libraries
 
