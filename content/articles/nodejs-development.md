@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2019-03-23T10:18:00+01:00"
+Date = "2019-03-23T10:48:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["javascript", "node.js"]
@@ -97,6 +97,8 @@ commonly used items:
 
 - [date-fns](https://date-fns.org/) - Date and time library
 - [Decimal.js](https://mikemcl.github.io/decimal.js/) - Decimal library
+- [dotenv](https://github.com/motdotla/doten) - Loads environment variables from files
+- [Format.js](https://formatjs.io/) - String formatting for internationalization
 - [Handlebars](http://www.handlebarsjs.com/) - Templating, based on [Mustache](https://mustache.github.io/)
 - [Lodash](https://lodash.com/) - Library of common utility functions
 - [Math.js](http://mathjs.org/) - Library of standard mathematical functions
@@ -108,10 +110,7 @@ commonly used items:
 
 [Express](https://expressjs.com/) is still most popular Web framework for Node.js, but it is arguably not the best option. The [hapi](https://hapijs.com/) framework is the second most popular, has a strong emphasis on quality and security, and it is particularly suited for larger applications. [Fastify](https://www.fastify.io/) is an alternative to Express and hapi that can use Express plugins. Consider using Fastify for smaller Websites and services.
 
-Cloud services such as [Google App Engine](https://cloud.google.com/appengine/),
-[Heroku](https://www.heroku.com/), [Red Hat OpenShift](https://www.openshift.com/) and
-[Zeit Now](https://zeit.co/now) provide low-maintenance hosting for Node.js Web
-applications.
+Cloud services such as [Zeit Now](https://zeit.co/now), [Google App Engine](https://cloud.google.com/appengine/), [Heroku](https://www.heroku.com/) and [Red Hat OpenShift](https://www.openshift.com/) provide low-maintenance hosting for Node.js Web applications.
 
 To produce applications for _function as a service_ infrastructure, such as
 [AWS Lambda](https://aws.amazon.com/lambda/), use the
