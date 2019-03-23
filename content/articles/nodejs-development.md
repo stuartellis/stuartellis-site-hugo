@@ -133,9 +133,11 @@ query building, connection handling, and schema migrations.
 [Objection.js](https://vincit.github.io/objection.js) is an Object Relational Mapper
 (ORM) that builds on Knex. 
 
-To work with MongoDB, use [Mongoose](http://mongoosejs.com/). Avoid using MongoDB for new projects, because current versions are not Open Source.
+To work with MongoDB, use [Mongoose](http://mongoosejs.com/). Avoid using MongoDB for new projects, because current versions of MongoDB are not Open Source. 
 
-> _Driver software required:_ To access a database service such as PostgreSQL, Redis, or
+In many cases there is no need to use a specialized document database like MongoDB, because modern SQL databases handle JSON documents. For example, PostgreSQL includes [data types for JSON](https://www.postgresql.org/docs/11/datatype-json.html), which means that it can store and query JSON documents alongside any other data type. 
+
+> _Driver software required:_ To access a database service such as PostgreSQL or 
 > MongoDB, you will need to install the appropriate Node.js driver.
 
 # Graphical Desktop Applications
