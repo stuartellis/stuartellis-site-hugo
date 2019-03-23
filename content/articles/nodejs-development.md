@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2019-03-23T12:31:00+01:00"
+Date = "2019-03-23T12:56:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["javascript", "node.js"]
@@ -74,9 +74,9 @@ extension, which enhances the integration with Git.
 
 ## ESLint for Code Quality
 
-Set up [ESLint](http://eslint.org/) in all of your projects to run code quality checks. Add the [ESLint plugin for Node](https://www.npmjs.com/package/eslint-plugin-node) and the [Node.js security plugin](https://www.npmjs.com/package/eslint-plugin-security).
+Set up [ESLint](http://eslint.org/) in all of your projects to run code quality checks. Add the [ESLint plugin for Node](https://www.npmjs.com/package/eslint-plugin-node) to include specific checks for Node.js code.
 
-Use ESLint with [Prettier](https://prettier.io/), which will format your code to automatically remove style issues. [Prettier integrates with ESLint](https://prettier.io/docs/en/eslint.html), so that ESLint formats your code with Prettier first, and then checks the reformatted code.
+Consider using ESLint with [Prettier](https://prettier.io/), a code formatting tool. [Prettier integrates with ESLint](https://prettier.io/docs/en/eslint.html), so that ESLint formats your code with Prettier first to remove style issues, and then checks the reformatted code for errors.
 
 Plugins enable the popular text editors and IDEs to integrate ESLint and Prettier, so
 that your code can be formatted and checked as you work. If you use Visual Studio Code, install the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and the [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode). The Prettier extension includes a copy of Prettier, so it will work immediately.
