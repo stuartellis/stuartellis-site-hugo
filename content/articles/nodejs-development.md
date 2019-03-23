@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2019-03-23T12:56:00+01:00"
+Date = "2019-03-23T18:59:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["javascript", "node.js"]
@@ -50,9 +50,9 @@ you begin to write JavaScript code.
 
 ## npm for Managing Projects
 
-Every Node.js installation includes [npm](https://www.npmjs.com/). This tool helps you manage your project throughout the development process. 
+Every Node.js installation includes [npm](https://www.npmjs.com/). This tool helps you manage your project throughout the development process.
 
-To start a new project, use the _npm init_ command. This creates the _package.json_ file that describes your project.
+To start a new project, use the _npm init_ command. This creates the [package.json](https://docs.npmjs.com/files/package.json.html) file that describes your project.
 
 You then use npm for your tasks, including [installing other packages](https://docs.npmjs.com/cli/install.html), [running the test suite](https://docs.npmjs.com/cli/test.html), [auditing for package dependencies that have known security issues](https://docs.npmjs.com/cli/audit.html), and [setting project version numbers](https://docs.npmjs.com/cli/version.html).
 
@@ -61,6 +61,18 @@ You then use npm for your tasks, including [installing other packages](https://d
 You also use npm to [publish to package registries](https://docs.npmjs.com/cli/publish.html). Remember to use the [shrinkwrap](https://docs.npmjs.com/cli/shrinkwrap) command on an  application project before you publish it to a registry.
 
 The npm tool is intended for use by automated systems as well as humans. Use the [ci command](https://docs.npmjs.com/cli/ci.html) to install clean versions of your projects for automated testing and deployment.
+
+## npx for Running Commands 
+
+Current versions of Node.js and npm include [npx](https://www.npmjs.com/package/npx). This utility automatically finds and runs command-line tools that you specify.
+
+This means that you can type _npx_, followed by the commands for any tool that is available in the npm registry, and npx should run the correct version of that tool, even if you have not installed the tool before. 
+
+When you run npx in the working directory of a JavaScript project, it checks the commands that have been installed by the packages for that project. If the project has the command, npx runs that copy of the command. 
+
+If npx cannot find the specified command in the project, or you run npx outside of a project directory, then npx downloads the most recent package for the command from the npm registry, and then runs the command. These downloaded packages are cached.
+
+You can override the default behaviour of npx with command-line options. The optional flags for npx enable you to specify the name or version of the package that you want to provide the command, or disable the feature to automatically download packages from the npm registry. 
 
 ## Git for Version Control
 
@@ -104,6 +116,7 @@ You should probably learn these as you need them.
 
 - [Babel](https://babeljs.io/) - Compiles JavaScript code into alternate versions
 - [Concurrently](https://www.npmjs.com/package/concurrently) - Runs multiple commands simultaneously
+- [Faker.js](https://github.com/Marak/faker.js) - Generates fake data 
 - [Husky](https://github.com/typicode/husky) - Convenient Git hooks
 - [Nodemon](https://nodemon.io/) - Instant code reloading during development
 - [PM2](http://pm2.keymetrics.io/) - Process manager for Node.js applications
@@ -111,9 +124,9 @@ You should probably learn these as you need them.
 
 # Additional Libraries
 
-By design, Node.js only includes a very minimal library of modules. These packages offer
-commonly used items:
+By design, Node.js only includes a very minimal library of modules. These packages offer commonly used items:
 
+- [CSV for Node.js](https://csv.js.org/) - Suite of modules for working with CSV files 
 - [date-fns](https://date-fns.org/) - Date and time library
 - [Decimal.js](https://mikemcl.github.io/decimal.js/) - Decimal library
 - [dotenv](https://github.com/motdotla/doten) - Loads environment variables from files
