@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2018-11-17T20:32:00+01:00"
+Date = "2019-03-22T20:47:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["javascript", "node.js"]
@@ -104,10 +104,7 @@ commonly used items:
 
 # Web Applications
 
-The most popular frameworks are [Express](https://expressjs.com/), which offers the basic elements that you need for a Website
-or service, and
-[hapi](https://hapijs.com/), which is designed for larger applications.
-[Fastify](https://www.fastify.io/) is an emerging alternative to Express and hapi that can use Express plugins. [Restify](http://restify.com/) is a well-known framework that is specialized for REST APIs.
+[Express](https://expressjs.com/) is still most popular Web framework for Node.js, but it is arguably not the best option. The [hapi](https://hapijs.com/) framework is the second most popular, has a strong emphasis on quality and security, and it is particularly suited for larger applications. [Fastify](https://www.fastify.io/) is an alternative to Express and hapi that can use Express plugins. Consider using Fastify for smaller Websites and services.
 
 Cloud services such as [Google App Engine](https://cloud.google.com/appengine/),
 [Heroku](https://www.heroku.com/), [Red Hat OpenShift](https://www.openshift.com/) and
@@ -134,8 +131,7 @@ Google Chrome and Chromium Web browsers.
 [Knex](http://knexjs.org/) provides a toolkit for working with SQL databases, including
 query building, connection handling, and schema migrations.
 [Objection.js](https://vincit.github.io/objection.js) is an Object Relational Mapper
-(ORM) that builds on Knex. [TypeORM](http://typeorm.io) is an emerging alternative to
-Knex and Objection.js, with a broader range of features.
+(ORM) that builds on Knex. 
 
 To work with MongoDB, use [Mongoose](http://mongoosejs.com/). Avoid using MongoDB for new projects, because current versions are not Open Source.
 
@@ -160,10 +156,8 @@ instructions to the native APIs of each mobile operating system.
 # Developing Command-line Tools
 
 To create command-line tools with Node.js, use either
-[Commander](https://github.com/tj/commander.js), or
-[the Open CLI Framework](https://oclif.io/). Commander is the most popular choice for
-building command-line utilities. The Open CLI Framework was developed by Heroku for
-their command-ine tools, and then released as an Open Source project in 2018.
+[yargs](http://yargs.js.org/), or
+[the Open CLI Framework](https://oclif.io/). The yargs library provides the necessary features for a command-line tool with very little code. The Open CLI Framework was developed by Heroku for their command-line tools, and is a good choice for larger applications.
 
 To package command-line tools, use [pkg](https://www.npmjs.com/package/pkg). This
 creates stand-alone executables that include Node.js itself, your code, and any other
