@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2019-03-23T10:48:00+01:00"
+Date = "2019-03-23T12:31:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["javascript", "node.js"]
@@ -30,6 +30,16 @@ Snaps automatically update, so are not suitable for situations where you need a
 reproducible environment. [Nodesource](https://nodesource.com/) maintain the Linux
 packages for popular distributions, and The Node.js Foundation maintain the Docker images.
 
+## Post-Installation Check
+
+Once you have installed Node.js, run the _npm doctor_ command in a terminal window:
+
+    npm doctor
+
+This run various checks to verify that Node.js and Git are installed correctly, and tests whether the system can access the package registry for npm. 
+
+## Managing Multiple Versions of Node.js
+
 If you need to have multiple versions of Node.js on the same system, use [nvm](https://github.com/creationix/nvm) on Linux or macOS, and [nvm-windows](https://github.com/coreybutler/nvm-windows) for Microsoft Windows.
 
 # Essential Tools
@@ -38,28 +48,35 @@ There are a number of very popular utilities and libraries for JavaScript softwa
 development, but a few tools are so fundamental that you should install them even before
 you begin to write JavaScript code.
 
+## npm for Managing Projects
+
+Every Node.js installation includes [npm](https://www.npmjs.com/). This tool helps you manage your project throughout the development process. 
+
+To start a new project, use the _npm init_ command. This creates the _package.json_ file that describes your project.
+
+You then use npm for your tasks, including [installing other packages](https://docs.npmjs.com/cli/install.html), [running the test suite](https://docs.npmjs.com/cli/test.html), [auditing for package dependencies that have known security issues](https://docs.npmjs.com/cli/audit.html), and [setting project version numbers](https://docs.npmjs.com/cli/version.html).
+
+> Use the [run-script](https://docs.npmjs.com/cli/run-script) feature to add appropriate custom npm commands to your project.
+
+You also use npm to [publish to package registries](https://docs.npmjs.com/cli/publish.html). Remember to use the [shrinkwrap](https://docs.npmjs.com/cli/shrinkwrap) command on an  application project before you publish it to a registry.
+
+The npm tool is intended for use by automated systems as well as humans. Use the [ci command](https://docs.npmjs.com/cli/ci.html) to install clean versions of your projects for automated testing and deployment.
+
 ## Git for Version Control
 
-If you do not already use version control, you should install [Git](http://git-scm.com/)
-on your system. Git is now effectively the standard version control tool for developers.
+Ensure that [Git](http://git-scm.com/) is installed on your system. Git is now effectively the standard version control tool for developers, and npm also uses it for some operations.
 
-Version control is obviously vital for collaborating with other programmers. It also
-enables you to efficiently copy your application to other systems for testing,
-deployment and backup.
-
-If Git is installed, Atom and Visual Studio Code provide you with access to information
+Once Git is installed, IDEs and editor like Visual Studio Code will provide you with access to information
 and features from Git directly in their user interfaces. If you use Visual Studio Code,
 you should also consider installing the
 [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 extension, which enhances the integration with Git.
 
-## Code Quality
+## ESLint for Code Quality
 
 Set up [ESLint](http://eslint.org/) in all of your projects to run code quality checks. Add the [ESLint plugin for Node](https://www.npmjs.com/package/eslint-plugin-node) and the [Node.js security plugin](https://www.npmjs.com/package/eslint-plugin-security).
 
-Use [Prettier](https://prettier.io/), which will format your code, removing style
-issues. [Prettier integrates with ESLint](https://prettier.io/docs/en/eslint.html), so
-that ESLint formats your code with Prettier, and then checks the reformatted code.
+Use ESLint with [Prettier](https://prettier.io/), which will format your code to automatically remove style issues. [Prettier integrates with ESLint](https://prettier.io/docs/en/eslint.html), so that ESLint formats your code with Prettier first, and then checks the reformatted code.
 
 Plugins enable the popular text editors and IDEs to integrate ESLint and Prettier, so
 that your code can be formatted and checked as you work. If you use Visual Studio Code, install the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and the [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode). The Prettier extension includes a copy of Prettier, so it will work immediately.
@@ -77,7 +94,9 @@ for running tests, and [Istanbul](https://istanbul.js.org/) to measure test cove
 
 ## Writing Documentation
 
-Use Markdown for documents, such as README files, and the [JSDoc](http://usejsdoc.org/) format for documentation in code. The [Documentation.js](http://documentation.js.org/) generator builds sets of documentation from JSDoc.
+Use Markdown for separate documents, such as README files, and the [JSDoc](http://usejsdoc.org/) format for writing documentation in code. Many tools understand these formats.
+
+The [Documentation.js](http://documentation.js.org/) generator builds sets of documentation from JSDoc.
 
 ## Other Development Tools
 
