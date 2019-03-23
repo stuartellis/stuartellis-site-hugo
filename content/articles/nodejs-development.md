@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2019-03-22T20:47:00+01:00"
+Date = "2019-03-23T10:18:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["javascript", "node.js"]
@@ -96,8 +96,10 @@ By design, Node.js only includes a very minimal library of modules. These packag
 commonly used items:
 
 - [date-fns](https://date-fns.org/) - Date and time library
+- [Decimal.js](https://mikemcl.github.io/decimal.js/) - Decimal library
+- [Handlebars](http://www.handlebarsjs.com/) - Templating, based on [Mustache](https://mustache.github.io/)
 - [Lodash](https://lodash.com/) - Library of common utility functions
-- [Math.js](http://mathjs.org/) - Math library
+- [Math.js](http://mathjs.org/) - Library of standard mathematical functions
 - [Nodemailer](https://nodemailer.com) - Email sending
 - [Passport](http://www.passportjs.org/) - Authentication
 - [Winston](https://github.com/winstonjs/winston) - Logging
