@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2019-03-23T23:44:00+01:00"
+Date = "2019-03-24T07:49:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["javascript", "node.js"]
@@ -42,15 +42,13 @@ This run various checks to verify that Node.js and Git are installed correctly, 
 
 If you need to have multiple versions of Node.js on the same system, use [nvm](https://github.com/creationix/nvm) on Linux or macOS, and [nvm-windows](https://github.com/coreybutler/nvm-windows) for Microsoft Windows.
 
-# Essential Tools
+# Tools Provided with Node.js
 
-There are a number of very popular utilities and libraries for JavaScript software
-development, but a few tools are so fundamental that you should install them even before
-you begin to write JavaScript code.
+Every current Node.js installation includes the [npm](https://docs.npmjs.com/cli/npm) and [npx](https://www.npmjs.com/package/npx) command-line tools. 
 
 ## npm for Managing Projects
 
-Every Node.js installation includes [npm](https://www.npmjs.com/). This tool helps you manage your project throughout the development process.
+The [npm](https://docs.npmjs.com/cli/npm) tool helps you to manage your project throughout the development process.
 
 To start a new project, use the _npm init_ command. This creates the [package.json](https://docs.npmjs.com/files/package.json.html) file that describes your project.
 
@@ -58,15 +56,15 @@ You then use npm for your tasks, including [installing other packages](https://d
 
 > Use the [run-script](https://docs.npmjs.com/cli/run-script) feature to add appropriate custom npm commands to your project.
 
-You also use npm to [publish to package registries](https://docs.npmjs.com/cli/publish.html). Remember to use the [shrinkwrap](https://docs.npmjs.com/cli/shrinkwrap) command on an  application project before you publish it to a registry.
+You also use npm to [publish to package registries](https://docs.npmjs.com/cli/publish.html). If you are developing an application, remember to run the [shrinkwrap](https://docs.npmjs.com/cli/shrinkwrap) command on the project before you publish it to a registry.
 
 The npm tool is intended for use by automated systems as well as humans. Use the [ci command](https://docs.npmjs.com/cli/ci.html) to install clean versions of your projects for automated testing and deployment.
 
 ## npx for Running Commands 
 
-Current versions of Node.js and npm include [npx](https://www.npmjs.com/package/npx). This utility automatically finds and runs JavaScript command-line tools that you specify.
+The [npx](https://www.npmjs.com/package/npx) utility automatically finds and runs JavaScript command-line tools that you specify. If the tool is not already installed on your computer, npx automatically downloads and runs a temporary copy, without permanently installing it. 
 
-This means that you can type _npx_, followed by the commands for any tool that is available in the npm package registry, and npx should run the tool. For example, type this in a terminal to run [learnyounode](https://github.com/workshopper/learnyounode), an interactive tutorial program:
+This means that you can type _npx_, followed by the commands for any tool that is available in the npm package registry, and npx should run that tool. For example, type this in a terminal to run [learnyounode](https://github.com/workshopper/learnyounode), an interactive tutorial program:
 
     npx learnyounode
 
@@ -74,13 +72,19 @@ The _npx_ utility only works with tools that have npm packages. However, you can
 
     npx shx ls
 
-This works because the [ShellJS project](https://documentup.com/shelljs/shelljs) publishes JavaScript implementations of the standard UNIX tools to the npm registry in a package called [shx](https://www.npmjs.com/package/shx).
+This is not a special feature of the npx utility. It works because the [ShellJS project](https://documentup.com/shelljs/shelljs) publishes JavaScript implementations of the standard UNIX tools to the npm registry in a package called [shx](https://www.npmjs.com/package/shx).
 
 When you run npx in the working directory of a JavaScript project, it checks the commands that have been installed by the packages for that project. If the project has the command, npx runs that copy of the command. 
 
-If npx cannot find the specified command in the project, or you run npx outside of a project directory, then npx downloads the most recent package for the command from the npm registry, and then runs the command. These downloaded packages are cached.
+If npx cannot find the specified command in the project, or you run npx outside of a project directory, then npx downloads a package for the command from the npm registry, and then runs the command. By default, npx downloads the latest version of the package. The packages that npx downloads are cached, so that each package is only downloaded once.
 
-You can override the default behaviour of npx with command-line options. The optional flags for npx enable you to specify the name or version of the package that you want to provide the command, or disable the feature to automatically download packages from the npm registry. 
+You can override the default behaviour of npx with command-line options. The optional _-p_ flag for npx enables you to specify the name and specific of the package that you want to provide the command. Use the _--no-install_ flag to disable the feature to automatically download packages from the npm registry.
+
+# Essential Tools
+
+There are a number of very popular utilities and libraries for JavaScript software
+development, but a few tools are so fundamental that you should install them even before
+you begin to write JavaScript code.
 
 ## Git for Version Control
 
@@ -114,11 +118,11 @@ for running tests, and [Istanbul](https://istanbul.js.org/) to measure test cove
 
 ## Writing Documentation
 
-Use Markdown for separate documents, such as README files, and the [JSDoc](http://usejsdoc.org/) format for writing documentation in code. Many tools understand these formats.
+Use the [Markdown](https://commonmark.org/) format for separate documents, such as README files, and the [JSDoc](http://usejsdoc.org/) format for writing documentation in code. Many tools understand these formats.
 
 The [Documentation.js](http://documentation.js.org/) generator builds sets of documentation from JSDoc.
 
-## Other Development Tools
+# Other Development Tools
 
 You should probably learn these as you need them.
 
@@ -130,25 +134,25 @@ You should probably learn these as you need them.
 - [PM2](http://pm2.keymetrics.io/) - Process manager for Node.js applications
 - [Webpack](https://webpack.js.org/) - Web assets compiler
 
-# Additional Libraries
+# Popular Libraries
 
 By design, Node.js only includes a very minimal library of modules. These packages offer commonly used items:
 
 - [CSV for Node.js](https://csv.js.org/) - Suite of modules for working with CSV files 
 - [date-fns](https://date-fns.org/) - Date and time library
-- [Decimal.js](https://mikemcl.github.io/decimal.js/) - Decimal library
+- [Decimal.js](https://mikemcl.github.io/decimal.js/) - A Decimal type for JavaScript
 - [dotenv](https://github.com/motdotla/doten) - Loads environment variables from files
 - [Format.js](https://formatjs.io/) - String formatting for internationalization
 - [Handlebars](http://www.handlebarsjs.com/) - Templating, based on [Mustache](https://mustache.github.io/)
 - [Lodash](https://lodash.com/) - Library of common utility functions
 - [Math.js](http://mathjs.org/) - Library of standard mathematical functions
-- [Nodemailer](https://nodemailer.com) - Email sending
+- [Nodemailer](https://nodemailer.com) - Sending emails
 - [Passport](http://www.passportjs.org/) - Authentication
 - [Winston](https://github.com/winstonjs/winston) - Logging
 
-# Web Applications
+# Developing Web Applications
 
-[Express](https://expressjs.com/) is still most popular Web framework for Node.js, but it is arguably not the best option. The [hapi](https://hapijs.com/) framework is the second most popular, has a strong emphasis on quality and security, and it is particularly suited for larger applications. [Fastify](https://www.fastify.io/) is an alternative to Express and hapi that can use Express plugins. Consider using Fastify for smaller Websites and services.
+[Express](https://expressjs.com/) is still most popular Web framework for Node.js, but it is arguably not the best option. The [hapi](https://hapijs.com/) framework is the second most popular in the community, has a strong emphasis on quality and security, and it is particularly suited for larger applications. [Fastify](https://www.fastify.io/) is an alternative to Express and hapi that can use Express plugins. Consider using Fastify for smaller Websites and services.
 
 Cloud services such as [Zeit Now](https://zeit.co/now), [Google App Engine](https://cloud.google.com/appengine/), [Heroku](https://www.heroku.com/) and [Red Hat OpenShift](https://www.openshift.com/) provide low-maintenance hosting for Node.js Web applications.
 
@@ -157,12 +161,11 @@ To produce applications for _function as a service_ infrastructure, such as
 [Serverless](https://www.serverless.com) or [Claudia.js](https://claudiajs.com/)
 frameworks.
 
-# Web Clients
+# Developing Web Clients
 
 To connect with APIs, transfer files, and other Web tasks, use either [request](https://github.com/request/request), or the more minimal [axios](https://github.com/axios/axios) library. The HTTP software that is included with Node.js uses callbacks, rather than the newer promises style of API.
 
-[Cheerio](https://cheerio.js.org/) provides an implementation of the jQuery API for
-reading and processing HTML documents with Node.js.
+[Cheerio](https://cheerio.js.org/) provides an implementation of the jQuery API for reading and processing HTML documents with Node.js.
 
 [Puppeteer](https://github.com/GoogleChrome/puppeteer) enables you to automate copies of
 Google Chrome and Chromium Web browsers.
@@ -181,13 +184,13 @@ In many cases there is no need to use a specialized document database like Mongo
 > _Driver software required:_ To access a database service such as PostgreSQL or 
 > MongoDB, you will need to install the appropriate Node.js driver.
 
-# Graphical Desktop Applications
+# Creating Graphical Desktop Applications
 
 To create desktop applications, use [Electron](https://electronjs.org/). Applications
 made with Electron are cross-platform, and can be built for Windows, macOS, and Linux
 with [electron-builder](https://www.electron.build/).
 
-# Mobile Applications
+# Developing Mobile Applications
 
 To develop mobile applications with JavaScript, use either
 [Ionic](https://ionicframework.com/) or [React Native](http://reactnative.com/). Ionic
