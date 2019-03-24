@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2019-03-23T18:59:00+01:00"
+Date = "2019-03-23T23:44:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["javascript", "node.js"]
@@ -64,9 +64,17 @@ The npm tool is intended for use by automated systems as well as humans. Use the
 
 ## npx for Running Commands 
 
-Current versions of Node.js and npm include [npx](https://www.npmjs.com/package/npx). This utility automatically finds and runs command-line tools that you specify.
+Current versions of Node.js and npm include [npx](https://www.npmjs.com/package/npx). This utility automatically finds and runs JavaScript command-line tools that you specify.
 
-This means that you can type _npx_, followed by the commands for any tool that is available in the npm registry, and npx should run the correct version of that tool, even if you have not installed the tool before. 
+This means that you can type _npx_, followed by the commands for any tool that is available in the npm package registry, and npx should run the tool. For example, type this in a terminal to run [learnyounode](https://github.com/workshopper/learnyounode), an interactive tutorial program:
+
+    npx learnyounode
+
+The _npx_ utility only works with tools that have npm packages. However, you can use _npx shx_ to run UNIX tools like _ls_ on any operating system: 
+
+    npx shx ls
+
+This works because the [ShellJS project](https://documentup.com/shelljs/shelljs) publishes JavaScript implementations of the standard UNIX tools to the npm registry in a package called [shx](https://www.npmjs.com/package/shx).
 
 When you run npx in the working directory of a JavaScript project, it checks the commands that have been installed by the packages for that project. If the project has the command, npx runs that copy of the command. 
 
