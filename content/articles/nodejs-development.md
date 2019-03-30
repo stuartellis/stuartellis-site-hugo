@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2019-03-24T07:49:00+01:00"
+Date = "2019-03-30T15:16:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["javascript", "node.js"]
@@ -38,6 +38,14 @@ Once you have installed Node.js, run the _npm doctor_ command in a terminal wind
 
 This run various checks to verify that Node.js and Git are installed correctly, and tests whether the system can access the package registry for npm. 
 
+## Linux and macOS: Adjusting Global Package Installation
+
+If you use macOS or Linux, follow the instructions in this [guide to npm global without sudo](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md) to make global package installation use your home directory.
+
+On these operating systems, the default configuration of Node.js causes the _global_ option of npm to install packages to a shared location. This location requires administrator privileges to access, which means that every command will need unsafe levels of privileges. 
+
+> Use npx to run commands, rather than installing them globally. 
+
 ## Managing Multiple Versions of Node.js
 
 If you need to have multiple versions of Node.js on the same system, use [nvm](https://github.com/creationix/nvm) on Linux or macOS, and [nvm-windows](https://github.com/coreybutler/nvm-windows) for Microsoft Windows.
@@ -52,7 +60,12 @@ The [npm](https://docs.npmjs.com/cli/npm) tool helps you to manage your project 
 
 To start a new project, use the _npm init_ command. This creates the [package.json](https://docs.npmjs.com/files/package.json.html) file that describes your project.
 
-You then use npm for your tasks, including [installing other packages](https://docs.npmjs.com/cli/install.html), [running the test suite](https://docs.npmjs.com/cli/test.html), [auditing for package dependencies that have known security issues](https://docs.npmjs.com/cli/audit.html), and [setting project version numbers](https://docs.npmjs.com/cli/version.html).
+You then use npm for your tasks, including:
+
+- [Installing other packages](https://docs.npmjs.com/cli/install.html) 
+- [Running the project test suite](https://docs.npmjs.com/cli/test.html)
+- [Auditing for package dependencies that have known security issues](https://docs.npmjs.com/cli/audit.html) 
+- [Setting project version numbers](https://docs.npmjs.com/cli/version.html).
 
 > Use the [run-script](https://docs.npmjs.com/cli/run-script) feature to add appropriate custom npm commands to your project.
 
@@ -68,7 +81,7 @@ This means that you can type _npx_, followed by the commands for any tool that i
 
     npx learnyounode
 
-The _npx_ utility only works with tools that have npm packages. However, you can use _npx shx_ to run UNIX tools like _ls_ on any operating system: 
+The npx utility only works with tools that have npm packages. However, you can use _npx shx_ to run UNIX tools like _ls_ on any operating system: 
 
     npx shx ls
 
@@ -78,7 +91,7 @@ When you run npx in the working directory of a JavaScript project, it checks the
 
 If npx cannot find the specified command in the project, or you run npx outside of a project directory, then npx downloads a package for the command from the npm registry, and then runs the command. By default, npx downloads the latest version of the package. The packages that npx downloads are cached, so that each package is only downloaded once.
 
-You can override the default behaviour of npx with command-line options. The optional _-p_ flag for npx enables you to specify the name and specific of the package that you want to provide the command. Use the _--no-install_ flag to disable the feature to automatically download packages from the npm registry.
+You can override the default behaviour of npx with command-line options. The optional _-p_ flag for npx enables you to specify the name and specific version of the package that contains the command that you want to run. Use the _--no-install_ flag to disable the feature to automatically download packages from the npm registry.
 
 # Essential Tools
 
@@ -217,6 +230,10 @@ hardware, such as [Arduino](https://www.arduino.cc/) boards.
 The [Espruino](https://www.espruino.com/) is a single-chip board with a microcontroller
 that is specifically designed to be programmed with JavaScript.
 
-# Resources
+# Learning Node.js
 
-[This article](https://www.stuartellis.name/articles/javascript-learning-resources) lists useful learning resources for JavaScript.
+The [NodeSchool](http://nodeschool.io/) project offers free interactive tutorials for Node.js and JavaScript. These include [learnyounode](https://github.com/workshopper/learnyounode), a tutorial for learning the basics of Node.js itself. Type this in a terminal to run learnyounode:
+
+    npx learnyounode
+
+[This article](https://www.stuartellis.name/articles/javascript-learning-resources) lists other useful learning resources for JavaScript.
