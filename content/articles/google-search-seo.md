@@ -24,7 +24,9 @@ Google are consolidating their information to the site [web.dev](https://web.dev
 
 ## Online Tools
 
-- [Google "mobile-friendly" test](https://search.google.com/test/mobile-friendly)
+- [Google "mobile-friendly" test](https://search.google.com/test/mobile-friendly) can also show the source code of a page, as rendered by Googlebot. 
+- [Google "rich results" test](https://search.google.com/test/rich-results) shows how Googlebot sees your page when rendering as a desktop browser
+- The Google Search Console includes a _Fetch as Google_ feature, so that you seee what Googlebot receives from your site, before rendering
 - Google provide search data with the Search Console API
 - Google also provide an API for fast link submission
 
@@ -54,13 +56,15 @@ Pages that are served to Googlebot crawlers should be designed with the crawler 
 
 Search renderers use Chrome 41 (so ES5 JavaScript, *not* ES2015), and default to rendering as if for mobile.
 
-Use "a href" for links, rather than just JS .onclick() event handlers.
+Use _a href_ for links, rather than just JS .onclick() event handlers.
 
-Google recommend "dynamic rendering" which means detecting Googlebot and serving fully rendered pages to it, to transition to "hybrid rendering".
+For images, either use _img_ tags, or list the images in JSON-LD markup for the page. Googlebot will not see lazy loaded images. References to images in CSS are not followed.
+
+For large or rapidly changing sites, Google recommend "dynamic rendering" which means detecting Googlebot and serving fully rendered pages to it. They also suggest transitioning to "hybrid rendering".
 
 Your code can spot "Googlebot" by looking for that string in the User Agent: it may be claiming to be either desktop or mobile.
 
-Ensure that all of the assets that are needed to render a page are accessible to the crawlers.
+Ensure that all of the assets that are needed to render a page are accessible to the crawlers. If assets are slow to load, then they might timeout when Googlebot fetches the page, and some of the page might not be indexed. Avoid timed interstitials, because these are effectively timeouts.
 
 ## URLs
 
