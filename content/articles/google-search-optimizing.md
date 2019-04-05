@@ -1,7 +1,7 @@
 +++
 Title = "Optimizing Websites for Google Search"
 Slug = "google-search-optimizing"
-Date = "2019-04-02T08:06:00+00:00"
+Date = "2019-04-04T21:34:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["google", "web"]
@@ -12,6 +12,16 @@ Type = "article"
 Notes summarizing [Google](https://www.google.com/) recommendations for Web developers.
 
 <!--more-->
+
+# Overview
+
+In the U.S. and many other regions, Google is the dominant search provider. [Moz](https://www.moz.com) claim that in 2018, 62.6% of searches in the U.S. are through Google, a further 22.6% are Google Images, and 4.3% are on YouTube. These Google properties are the top three search providers in the U.S. region. 
+
+In addition, voice search is now a growing trend. Google are a leading provider of voice search services through Android phones, and other devices. The answers and results that Google voice search systems provide are based on the main search engine.
+
+Today, about half of searches now result in no further clicks. This is partly because of the information that Google now shows directly on the results page. In these cases, Google is the last page that the user visits, but most of the content has been retrieved from third-party Websites by Google systems.
+
+> This information is from the presentation by Sarah Bird, [the SEO trends for 2019 you need to know about](https://www.youtube.com/watch?v=-8MU_cIhL0g).
 
 # How Google Indexing Works
 
@@ -44,7 +54,7 @@ The indexer avoid activating JavaScript events. To ensure that the indexer notic
 
 For images, either use _img_ tags, or list the images in JSON-LD markup for the page. Googlebot will not see lazy loaded images. References to images in CSS are not followed.
 
-If you have a large or rapidly changing site that relies on JavaScript, Google suggest that you add [dynamic rendering](https://developers.google.com/search/docs/guides/dynamic-rendering), which means detecting Googlebot and serving fully rendered pages to it. They also recommend that you transition to "hybrid rendering".
+If you have a large or rapidly changing site that relies on JavaScript, Google suggest that you add [dynamic rendering](https://developers.google.com/search/docs/guides/dynamic-rendering), which means detecting Googlebot and serving fully rendered pages to it. They also recommend that you transition to _hybrid rendering_.
 
 Your code can spot "Googlebot" by looking for that string in the User Agent: it may be claiming to be either desktop or mobile.
 
@@ -66,9 +76,9 @@ Google use the URL and these other items to populate the listing for your in sea
 
 - Page title: Use a "title" element in the HEAD section
 - Description: Use a element of "meta" with name set as "description"
-- JSON-LD structured data: https://codelabs.developers.google.com/codelabs/structured-data/index.html
+- [JSON-LD](https://json-ld.org/) structured data embedded in the page
 
-Embedding JSON-LD data in the page enables Google to extract meaning from the page and show rich results.
+Embedding JSON-LD data in the source of a page enables Google to extract meaning from the page and show rich results.
 
 ## Sitemaps
 
@@ -78,13 +88,17 @@ Embedding JSON-LD data in the page enables Google to extract meaning from the pa
 
 ## Robots.txt
 
-Google crawlers honour robots.txt "strictly".
+Google crawlers honour robots.txt files. The expected format for these files is described in the [Robots.txt Specifications](https://developers.google.com/search/reference/robots_txt).
 
 # Resources
 
 ## Google Documentation
 
 Google are consolidating their information to the site [web.dev](https://web.dev/). [The Google Developers Website](https://developers.google.com/web/) still has a large amount of content.
+
+The details of the page ranking systems are secret. To help content creators understand the criteria that are applied, the [Google Search Quality Guidelines](https://static.googleusercontent.com/media/www.google.com/en//insidesearch/howsearchworks/assets/searchqualityevaluatorguidelines.pdf) are published. This document is the handbook for Google staff who check the results of the search engine.
+
+The [Webmaster Guidelines](https://support.google.com/webmasters/answer/35769?hl=en) are a brief summary of good practice.
 
 ## Videos 
 
@@ -99,3 +113,9 @@ Google are consolidating their information to the site [web.dev](https://web.dev
 - The Google Search Console includes a _Fetch as Google_ feature, so that you see what Googlebot receives from your site, before rendering
 - Google provide search data with the Search Console API
 - Google now also provide an API for fast link submission
+
+## Third-Party Resources
+
+- [The Beginner's Guide to SEO](https://moz.com/beginners-guide-to-seo), from Moz.
+- [SEO Capability Maturity Model](https://moz.com/blog/seo-client-maturity), from Moz.
+- [The Science Behind Google PageSpeed Insights & What It Actually Measures](https://wpsmackdown.com/google-pagespeed-insights-explained/)
