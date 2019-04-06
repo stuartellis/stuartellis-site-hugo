@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2019-04-06T08:56:00+00:00"
+Date = "2019-04-06T09:56:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["javascript", "node.js"]
@@ -189,9 +189,10 @@ query building, connection handling, and schema migrations.
 [Objection.js](https://vincit.github.io/objection.js) is an Object Relational Mapper
 (ORM) that builds on Knex. 
 
-To work with MongoDB, use [Mongoose](http://mongoosejs.com/). Avoid using MongoDB for new projects, because current versions of MongoDB are not Open Source. 
+Modern SQL databases support JSON documents. For example, PostgreSQL includes [data types for JSON](https://www.postgresql.org/docs/11/datatype-json.html), which means that it can store and query JSON documents alongside any other data type. For most projects, a SQL database with JSON support may be more appropriate than a document database.
 
-In many cases there is no need to use a specialized document database like MongoDB, because modern SQL databases handle JSON documents. For example, PostgreSQL includes [data types for JSON](https://www.postgresql.org/docs/11/datatype-json.html), which means that it can store and query JSON documents alongside any other data type. 
+To access existing MongoDB services, use [Mongoose](http://mongoosejs.com/). 
+Avoid using MongoDB for new projects, because current versions of MongoDB are not Open Source. 
 
 > _Driver software required:_ To access a database service such as PostgreSQL or 
 > MongoDB, you will need to install the appropriate Node.js driver.
@@ -221,11 +222,11 @@ dependencies.
 
 # Robotics and Internet of Things
 
-[Johnny-Five](http://johnny-five.io/) is the main package for working with robotics and
-hardware, such as [Arduino](https://www.arduino.cc/) boards.
+[Johnny-Five](http://johnny-five.io/) is the main platform for working with robotics and hardware, such as [Arduino](https://www.arduino.cc/) boards.
 
-The [Espruino](https://www.espruino.com/) is a single-chip board with a microcontroller
-that is specifically designed to be programmed with JavaScript.
+Use the [Node SerialPort](https://serialport.io/) packages to communicate with devices over serial connections.
+
+[Espruino](https://www.espruino.com/) provide single-chip boards and devices that are specifically designed to be programmed with JavaScript.
 
 # Learning Node.js
 
