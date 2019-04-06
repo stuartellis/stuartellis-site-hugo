@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2019-02-24T17:48:00+01:00"
+Date = "2019-04-06T07:34:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "java", "javascript", "python", "ruby", "rust"]
@@ -58,11 +58,11 @@ folder.
 Whether or not you regularly use Safari, you should open it once, and adjust the
 settings in case that you use it later.
 
-First, choose _Safari \> Preferences \> General_ and deselect the option _Open “safe”
-files after downloading_.
+First, choose _Safari \> Preferences \> General_ and deselect the option _Open “safe” files after downloading_.
 
-Then, check the plug-in settings. Go to _Safari \> Preferences \> Security \> Plug-in
-Settings..._ and review the plug-ins and settings.
+Second, go to _Safari \> Preferences \> Search_. Decide which search engine that you want to use. Ensure that _Safari Suggestions_ is not enabled.
+
+Then, check the plug-in settings. Go to _Safari \> Preferences \> Security \> Plug-in Settings..._ and review the plug-ins and settings.
 
 # Configuring Security
 
@@ -80,6 +80,13 @@ Select _System Preferences \> Security & Privacy_, and set the following:
 - Click _Advanced..._ and select _Require an administrator password to access
   system-wide preferences_
 - Under _Firewall_, click _Turn Firewall On_.
+- Under _Privacy_, select _Analytics_ and ensure that the options are not enabled.
+
+## Disable Spotlight
+
+By default, Spotlight sends queries to Apple. Unless you want this feature, turn it off. 
+
+Select _System Preferences \> Spotlight \> Search Results_, and ensure that  _Spotlight Suggestions_ is not enabled.
 
 ## Enable File Vault NOW
 
@@ -275,18 +282,16 @@ install it:
 
 ## Developer Tools for Go
 
-Use Homebrew to install [Go](https://golang.org/) and the
-[dep](https://golang.github.io/dep/) tool:
+Use Homebrew to install [Go](https://golang.org/):
 
-    brew install golang dep
+    brew install golang
 
-The current version of Go includes experimental support for dependency management with modules, but existing projects are likely to either use dep, or an older tool.
+The current version of Go includes experimental support for dependency management with modules, but existing projects may use [dep](https://golang.github.io/dep/), or an older tool.
 
 ### Setting a GOPATH
 
-By default, current versions of Go automatically create and use a _go_ directory in your
-home directory as the GOPATH. To ensure that third-party tools and Terminal
-auto-completion work, you should still explicitly set the environment variables.
+By default, current versions of Go use the GOPATH. To ensure that third-party tools and Terminal
+auto-completion work, you should explicitly set two environment variables.
 
 Set a GOPATH environment variable in your _~/.bashrc_ file:
 
@@ -479,3 +484,5 @@ Apple offer overviews and task-orientated help on their
 
 Every new user should probably read
 [How to switch to the Mac](http://taoofmac.com/space/HOWTO/Switch), by Rui Carmo.
+
+The [macOS Privacy and Security Guide](https://github.com/drduh/macOS-Security-and-Privacy-Guide) by Dr Doh provides extensive information about those topics.
