@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2019-03-30T15:16:00+01:00"
+Date = "2019-04-06T08:56:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["javascript", "node.js"]
@@ -176,12 +176,11 @@ frameworks.
 
 # Developing Web Clients
 
-To connect with APIs, transfer files, and other Web tasks, use either [request](https://github.com/request/request), or the more minimal [axios](https://github.com/axios/axios) library. The HTTP software that is included with Node.js uses callbacks, rather than the newer promises style of API.
+To connect with APIs, transfer files, and other Web tasks, use either [got](https://github.com/sindresorhus/got), which provides a lightweight interface over the Node.js HTTP client library, or the larger [axios](https://github.com/axios/axios) library. You can use the HTTP client library that is included with Node.js without any third-party modules, although it uses an API that is based on callbacks, rather than promises.
 
 [Cheerio](https://cheerio.js.org/) provides an implementation of the jQuery API for reading and processing HTML documents with Node.js.
 
-[Puppeteer](https://github.com/GoogleChrome/puppeteer) enables you to automate copies of
-Google Chrome and Chromium Web browsers.
+[Puppeteer](https://github.com/GoogleChrome/puppeteer) enables you to automate copies of Google Chrome and Chromium Web browsers.
 
 # Accessing Databases
 
@@ -207,9 +206,7 @@ with [electron-builder](https://www.electron.build/).
 
 To develop mobile applications with JavaScript, use either
 [Ionic](https://ionicframework.com/) or [React Native](http://reactnative.com/). Ionic
-creates hybrid mobile apps that use HTML, CSS and JavaScript with the
-[Angular](https://angular.io/) framework and
-[Apache Cordova](https://cordova.apache.org/). React Native translates JavaScript into
+creates mobile apps that use HTML, CSS and JavaScript. React Native translates JavaScript into
 instructions to the native APIs of each mobile operating system.
 
 # Developing Command-line Tools
