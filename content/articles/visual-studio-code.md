@@ -1,7 +1,7 @@
 +++
 Title = "Setting up the Visual Studio Code Text Editor"
 Slug = "visual-studio-code"
-Date = "2019-02-24T18:07:00+01:00"
+Date = "2019-02-24T18:08:00+01:00"
 Description = "Setting up the Visual Studio Code text editor for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["golang", "javascript", "python", "ruby"]
@@ -9,7 +9,7 @@ Type = "article"
 
 +++
 
-Notes on customizing the [Visual Studio Code](https://code.visualstudio.com) text editor. 
+Notes on customizing the [Visual Studio Code](https://code.visualstudio.com) text editor.
 
 <!--more-->
 
@@ -17,7 +17,7 @@ Notes on customizing the [Visual Studio Code](https://code.visualstudio.com) tex
 
 The Microsoft releases of Visual Studio Code are proprietary software with telemetry enabled by default. If you prefer to avoid proprietary software, consider using the packages that are provided by the [vscodium](https://github.com/VSCodium/vscodium) project instead.
 
-> Both Visual Studio Code and a number of extensions use telemetry. Always review the documentation for an extension before you install it, and look for notes about telemetry. 
+> Both Visual Studio Code and a number of extensions use telemetry. Always review the documentation for an extension before you install it, and look for notes about telemetry.
 
 # Installing Visual Studio Code
 
@@ -58,6 +58,16 @@ To disable telemetry and crash reporting, set these options in _Preferences > Se
 ```
 
 Microsoft also add telemetry to some of their extensions to Visual Studio Code. This means that you must check the description of each extension to know whether it will send data to Microsoft, even if you have disabled telemetry for Visual Studio Code itself.
+
+# Formatting on Save
+
+Visual Studio Code automatically recognises if a formatter is available for the type of file that you are currently editing. The _Format Document_ command runs the appropriate formatter on the current file.
+
+To automatically format files on save, enable this setting:
+
+```
+"editor.formatOnSave": true
+```
 
 # Extensions
 
