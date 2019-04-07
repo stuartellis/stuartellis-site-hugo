@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2019-04-06T09:56:00+00:00"
+Date = "2019-04-07T11:30:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["javascript", "node.js"]
@@ -15,20 +15,41 @@ Notes on development with Node.js and JavaScript.
 
 # Installing Node.js
 
+## Node.js on Windows
+
 To install Node.js on Windows, download it from
 [the official Website](https://nodejs.org). Choose the 64-bit _Windows installer_
 package for the current LTS version, unless you know that you need a different option.
 
+## Node.js on macOS
+
 To install Node.js on macOS, use [Homebrew](http://brew.sh/).
 
+## Node.js on Linux
+
 To install Node.js on Linux, use the
-[recommended installation process for your distribution](https://nodejs.org/en/download/package-manager/),
-or a [Docker image](https://hub.docker.com/_/node/). If the Linux distribution supports
-snaps, you can also install
+[recommended installation process for your distribution](https://nodejs.org/en/download/package-manager/). [Nodesource](https://nodesource.com/) maintain the Linux packages for popular distributions.
+
+If the Linux distribution supports snaps, you can also install
 [Node.js as a snap](https://nodesource.com/blog/announcing-node-js-snap-linux-users/).
 Snaps automatically update, so are not suitable for situations where you need a
-reproducible environment. [Nodesource](https://nodesource.com/) maintain the Linux
-packages for popular distributions, and The Node.js Foundation maintain the Docker images.
+reproducible environment.
+
+## Node.js with Docker
+
+Use the [official Docker image for Node.js](https://hub.docker.com/_/node/). The Node.js Foundation maintain these Docker images.
+
+## Linux and macOS: Global Package Installation
+
+If you use macOS or Linux, follow the instructions in this [guide to npm global without sudo](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md) to make global package installation use your home directory.
+
+On these operating systems, the default configuration of Node.js causes the _global_ option of npm to install packages to a shared location. This location requires administrator privileges to access, which means that every command will need unsafe levels of privileges.
+
+> Whenever possible use npx to run commands, rather than installing them globally.
+
+## Using Multiple Versions of Node.js
+
+If you need to have multiple versions of Node.js on the same system, use [nvm](https://github.com/creationix/nvm) on Linux or macOS, and [nvm-windows](https://github.com/coreybutler/nvm-windows) for Microsoft Windows.
 
 ## Post-Installation Check
 
@@ -36,23 +57,11 @@ Once you have installed Node.js, run the _npm doctor_ command in a terminal wind
 
     npm doctor
 
-This run various checks to verify that Node.js and Git are installed correctly, and tests whether the system can access the package registry for npm. 
-
-## Linux and macOS: Adjusting Global Package Installation
-
-If you use macOS or Linux, follow the instructions in this [guide to npm global without sudo](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md) to make global package installation use your home directory.
-
-On these operating systems, the default configuration of Node.js causes the _global_ option of npm to install packages to a shared location. This location requires administrator privileges to access, which means that every command will need unsafe levels of privileges. 
-
-> Use npx to run commands, rather than installing them globally. 
-
-## Managing Multiple Versions of Node.js
-
-If you need to have multiple versions of Node.js on the same system, use [nvm](https://github.com/creationix/nvm) on Linux or macOS, and [nvm-windows](https://github.com/coreybutler/nvm-windows) for Microsoft Windows.
+This run various checks to verify that Node.js and Git are installed correctly, and tests whether the system can access the package registry for npm.
 
 # Tools Provided with Node.js
 
-Every current Node.js installation includes the [npm](https://docs.npmjs.com/cli/npm) and [npx](https://www.npmjs.com/package/npx) command-line tools. 
+Every current Node.js installation includes the [npm](https://docs.npmjs.com/cli/npm) and [npx](https://www.npmjs.com/package/npx) command-line tools.
 
 ## npm for Managing Projects
 
@@ -62,9 +71,9 @@ To start a new project, use the _npm init_ command. This creates the [package.js
 
 You then use npm for your tasks, including:
 
-- [Installing other packages](https://docs.npmjs.com/cli/install.html) 
+- [Installing other packages](https://docs.npmjs.com/cli/install.html)
 - [Running the project test suite](https://docs.npmjs.com/cli/test.html)
-- [Auditing for package dependencies that have known security issues](https://docs.npmjs.com/cli/audit.html) 
+- [Auditing for package dependencies that have known security issues](https://docs.npmjs.com/cli/audit.html)
 - [Setting project version numbers](https://docs.npmjs.com/cli/version.html).
 
 > Use the [run-script](https://docs.npmjs.com/cli/run-script) feature to add appropriate custom npm commands to your project.
@@ -73,21 +82,21 @@ You also use npm to [publish to package registries](https://docs.npmjs.com/cli/p
 
 The npm tool is intended for use by automated systems as well as humans. Use the [ci command](https://docs.npmjs.com/cli/ci.html) to install clean versions of your projects for automated testing and deployment.
 
-## npx for Running Commands 
+## npx for Running Commands
 
-The [npx](https://www.npmjs.com/package/npx) utility automatically finds and runs JavaScript command-line tools that you specify. If the tool is not already installed on your computer, npx automatically downloads and runs a temporary copy, without permanently installing it. 
+The [npx](https://www.npmjs.com/package/npx) utility automatically finds and runs JavaScript command-line tools that you specify. If the tool is not already installed on your computer, npx automatically downloads and runs a temporary copy, without permanently installing it.
 
 This means that you can type _npx_, followed by the commands for any tool that is available in the npm package registry, and npx should run that tool. For example, type this in a terminal to run [learnyounode](https://github.com/workshopper/learnyounode), an interactive tutorial program:
 
     npx learnyounode
 
-The npx utility only works with tools that have npm packages. However, you can use _npx shx_ to run UNIX tools like _ls_ on any operating system: 
+The npx utility only works with tools that have npm packages. However, you can use _npx shx_ to run UNIX tools like _ls_ on any operating system:
 
     npx shx ls
 
 This is not a special feature of the npx utility. It works because the [ShellJS project](https://documentup.com/shelljs/shelljs) publishes JavaScript implementations of the standard UNIX tools to the npm registry in a package called [shx](https://www.npmjs.com/package/shx).
 
-When you run npx in the working directory of a JavaScript project, it checks the commands that have been installed by the packages for that project. If the project has the command, npx runs that copy of the command. 
+When you run npx in the working directory of a JavaScript project, it checks the commands that have been installed by the packages for that project. If the project has the command, npx runs that copy of the command.
 
 If npx cannot find the specified command in the project, or you run npx outside of a project directory, then npx downloads a package for the command from the npm registry, and then runs the command. By default, npx downloads the latest version of the package. The packages that npx downloads are cached, so that each package is only downloaded once.
 
@@ -141,7 +150,7 @@ You should probably learn these as you need them.
 
 - [Babel](https://babeljs.io/) - Compiles JavaScript code into alternate versions
 - [Concurrently](https://www.npmjs.com/package/concurrently) - Runs multiple commands simultaneously
-- [Faker.js](https://github.com/Marak/faker.js) - Generates fake data 
+- [Faker.js](https://github.com/Marak/faker.js) - Generates fake data
 - [Husky](https://github.com/typicode/husky) - Convenient Git hooks
 - [Nodemon](https://nodemon.io/) - Instant code reloading during development
 - [PM2](http://pm2.keymetrics.io/) - Process manager for Node.js applications
@@ -151,7 +160,7 @@ You should probably learn these as you need them.
 
 By design, Node.js only includes a very minimal library of modules. These packages offer commonly used items:
 
-- [CSV for Node.js](https://csv.js.org/) - Suite of modules for working with CSV files 
+- [CSV for Node.js](https://csv.js.org/) - Suite of modules for working with CSV files
 - [date-fns](https://date-fns.org/) - Date and time library
 - [Decimal.js](https://mikemcl.github.io/decimal.js/) - A Decimal type for JavaScript
 - [dotenv](https://github.com/motdotla/doten) - Loads environment variables from files
@@ -187,14 +196,14 @@ To connect with APIs, transfer files, and other Web tasks, use either [got](http
 [Knex](http://knexjs.org/) provides a toolkit for working with SQL databases, including
 query building, connection handling, and schema migrations.
 [Objection.js](https://vincit.github.io/objection.js) is an Object Relational Mapper
-(ORM) that builds on Knex. 
+(ORM) that builds on Knex.
 
 Modern SQL databases support JSON documents. For example, PostgreSQL includes [data types for JSON](https://www.postgresql.org/docs/11/datatype-json.html), which means that it can store and query JSON documents alongside any other data type. For most projects, a SQL database with JSON support may be more appropriate than a document database.
 
-To access existing MongoDB services, use [Mongoose](http://mongoosejs.com/). 
-Avoid using MongoDB for new projects, because current versions of MongoDB are not Open Source. 
+To access existing MongoDB services, use [Mongoose](http://mongoosejs.com/).
+Avoid using MongoDB for new projects, because current versions of MongoDB are not Open Source.
 
-> _Driver software required:_ To access a database service such as PostgreSQL or 
+> _Driver software required:_ To access a database service such as PostgreSQL or
 > MongoDB, you will need to install the appropriate Node.js driver.
 
 # Creating Graphical Desktop Applications
