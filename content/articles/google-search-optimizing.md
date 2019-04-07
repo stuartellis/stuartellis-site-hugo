@@ -1,7 +1,7 @@
 +++
 Title = "Optimizing Websites for Google Search"
 Slug = "google-search-optimizing"
-Date = "2019-04-06T09:18:00+00:00"
+Date = "2019-04-07T09:02:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["google", "web"]
@@ -21,7 +21,7 @@ In addition, voice search is a growing trend. Google are a leading provider of v
 
 Today, about half of searches now result in no further clicks. This is partly because of the information that Google now shows directly on the results page. In these cases, Google is the last page that the user visits, but most of the content has been retrieved from third-party Websites by Google systems.
 
-> Statistics are from the presentation [the SEO trends for 2019 you need to know about](https://www.youtube.com/watch?v=-8MU_cIhL0g)i, by Sarah Bird, CEO of Moz.
+> Statistics are from the presentation [the SEO trends for 2019 you need to know about](https://www.youtube.com/watch?v=-8MU_cIhL0g), by Sarah Bird, CEO of Moz.
 
 Google prioritise sites by many factors, but pages must be fast, mobile-friendly and provide relevant information.
 
@@ -44,7 +44,7 @@ JavaScript pages must be rendered before they can be go to a second indexing, an
 * *Evaluable*: Help Google understand the content
 * *Speed* is a ranking factor
 
-Google research indicates that users consider speed to be the most important factor in how they feel about a site. 
+Google research indicates that users consider speed to be the most important factor in how they feel about a site. The break-point is five seconds: In 2018, DoubleClick analytics show a 53% lower bounce rate for mobile sites that have load times of less than five seconds.
 
 # URLs
 
@@ -96,7 +96,17 @@ Ensure that all of the assets that are needed to render a page are accessible to
 
 ## Finding Performance Issues
 
-The [Lighthouse](https://developers.google.com/web/tools/lighthouse/) tool provides recommendations. These are based on a set of good practices that have been defined by Google. You can run this in Chrome, as an online service, or as a command-line tool. 
+Collect field data first, and then use that to calibrate your lab data. _Real User Monitoring_ services provide field data from your own site. The [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (CrUX) measures popular Websites across the Internet. 
+
+The [Lighthouse](https://developers.google.com/web/tools/lighthouse/) tool also provides recommendations. These are based on a set of good practices that have been defined by Google. You can run this in Chrome, as an online service, or as a command-line tool. 
+
+## Using Metrics 
+
+There are two types of metrics: _visual metrics_ and _interactivity metrics_. Visual metrics include _First Contenful Paint_ (FCP) and _Speed Index_. Interactivity metrics include _Time to Interactive_ (TTI) and _First Input Delay_, which is the response time of the code that handles the very first input from the user.
+
+The Speed Index measures the period between FCP and TTI. It rewards pages that load assets early. The relationship between these three key metrics is:
+
+First Contenful Paint -> Speed Index -> Time to Interactive 
 
 ## Reducing Payload
 
@@ -121,9 +131,9 @@ You should decide a strategy for loading the Web fonts for your pages. Use _font
 
 To manage your CSS, split the CSS by priority. Consider inlining critical CSS styles, and using _preload_ to fetch a stylesheet with the rest of the CSS that is needed for the page. Then use the _defer_ attribute or lazy-loading to get stylesheets for less important styles. This enables the Web browser to provide a working page to the user much more quickly.
 
-If you are developing a Progressive Web Application, Google recommend that you follow the [PRPL pattern](https://developers.google.com/web/fundamentals/performance/prpl-pattern/). This combines Push, Render, Pre-cache, and Lazy Load. 
+If you are developing a Progressive Web Application, Google recommend that you follow the [PRPL pattern](https://developers.google.com/web/fundamentals/performance/prpl-pattern/). This combines _Push_, _Render_, _Pre-cache_, and _Lazy Load_. 
 
-# Resources
+# Online Tools
 
 ## Google Search Console
 
@@ -133,6 +143,19 @@ The [Google Search Console](https://search.google.com/search-console/about) is y
 - Google provide search data with the Search Console API
 - Google now also provide an API for fast link submission
 
+## The Chrome User Experience Report
+
+The [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (CrUX) measures user experiences on popular Websites. 
+
+The CrUX dataset is updated monthly. Aggregate data for origins (Websites) is published on Google BigQuery, so that you can query that data yourself with Google Data Studio or other tools. [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) uses URL-level data.
+
+## Website Testing Tools
+
+- [Google "mobile-friendly" test](https://search.google.com/test/mobile-friendly) can also show the source code of a page, as rendered by Googlebot. 
+- [Google "rich results" test](https://search.google.com/test/rich-results) shows how Googlebot sees your page when rendering as a desktop browser
+
+# Resources
+
 ## Google Documentation
 
 Google are consolidating their information to the site [web.dev](https://web.dev/). [The Google Developers Website](https://developers.google.com/web/) still has a large amount of content.
@@ -141,17 +164,15 @@ The details of the page ranking systems are secret. To help content creators und
 
 The [Webmaster Guidelines](https://support.google.com/webmasters/answer/35769?hl=en) are a brief summary of good practice.
 
+Google provide an [infographic and page to summarize their performance tools](https://developers.google.com/web/fundamentals/performance/speed-tools/).
+
 ## Videos 
 
 - [Build a successful web presence with Google Search (Google I/O '18)](https://www.youtube.com/watch?v=NO-sdBzb1Hc) 
 - [Deliver search-friendly JavaScript-powered websites (Google I/O '18)](https://www.youtube.com/watch?v=PFwUbgvpdaQ)
 - [Web performance made easy (Google I/O '18)](https://www.youtube.com/watch?v=Mv-l3-tJgGk&list=PLOU2XLYxmsIInFRc3M44HUTQc3b_YJ4-Y)
+- [Use Lighthouse and Chrome UX Report to optimize web app performance (Google I/O '18)](https://www.youtube.com/watch?v=UvK9zAsSM8Q)
 - [SEO Snippets series](https://www.youtube.com/watch?v=p74HC4x5AUE&list=PLKoqnv2vTMUPhLQ054sMg3vgzy9md9tWg)
-
-## Online Tools
-
-- [Google "mobile-friendly" test](https://search.google.com/test/mobile-friendly) can also show the source code of a page, as rendered by Googlebot. 
-- [Google "rich results" test](https://search.google.com/test/rich-results) shows how Googlebot sees your page when rendering as a desktop browser
 
 ## Third-Party Resources
 
