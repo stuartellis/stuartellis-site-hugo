@@ -1,7 +1,7 @@
 +++
 Title = "Managing Systems with Ansible"
 Slug = "ansible"
-Date = "2016-09-22T20:52:00+01:00"
+Date = "2019-04-13T15:48:00+01:00"
 Description = "An introduction to Ansible"
 Categories = ["administration"]
 Tags = ["administration", "python"]
@@ -9,25 +9,18 @@ Type = "article"
 
 +++
 
-
-[Ansible](http://www.ansible.com) provides an Open Source tool for provisioning,
-configuring and orchestrating changes on systems that is fundamentally much
-simpler and more flexible than older tools such Puppet and Chef. This makes it
-suitable for a very wide range of requirements, from setting up a few
-workstations to deploying applications and updates across hundreds or thousands
-of servers.
+[Ansible](http://www.ansible.com) provides an Open Source tool for automation. It is used for managing servers and network devices, as well as other tasks.
 
 <!--more-->
 
-# How Ansible Works #
+# How Ansible Works
 
-Unlike most other products in this area, Ansible does not require a central
-service or use dedicated agents on each system. Instead, you only install
-Ansible and your configuration on a *control machine*, which can just be the
+Ansible runs task on either the local computer, or remote systems. It does not require a central
+service or use dedicated agents on each system. Instead, you install
+Ansible and your configuration on a _control machine_, which can just be the
 workstation of an administrator. Each time that you perform an operation with
-Ansible, it connects to the required systems and streams code to a standard
-run-time that is already installed on the target. The managed systems are
-referred to as *nodes*.
+Ansible, it connects to the required systems and streams code to one of the standard run-times that are already installed on the target. The managed systems are
+referred to as _nodes_.
 
 Most Ansible modules connect to the target systems with SSH and run Python 2,
 both of which are installed on most Linux systems, and are part of macOS.
@@ -38,148 +31,142 @@ PowerShell, using the PowerShell remoting facility. This means that you can
 manage almost any system with Ansible, possibly starting with low-level modules,
 and using them to install the prerequisites for the more complex operations.
 
-If you do need a central service for coordinating changes or maintaining
+If you need a central service for coordinating changes or maintaining
 detailed inventories of systems, Red Hat offer
-[Ansible Tower](http://www.ansible.com/tower), but this product is not needed for any of
-the features of Ansible itself.
+[Ansible Tower](https://www.ansible.com/products/tower). This is developed as an Open Source project, called [AWX](https://github.com/ansible/awx). You may use AWX, but there are no guarantees of support or stability. None of the features of Ansible itself rely on Ansible Tower or AWX.
 
-# Setting Up A macOS Control Machine #
+# Setting Up A macOS Control Machine
 
 To set up Ansible on a macOS workstation using [Homebrew](http://brew.sh/)
 enter these commands in a terminal window:
 
     brew update && brew install ansible
 
-Ansible modules from *extras* may require additional Python packages. If you
-need to install more Python packages, use *pip*. To install *pip*, enter this
-command in a terminal window:
-
-    sudo easy_install pip
-
+Ansible modules from _extras_ may require additional Python packages. If you
+need to install more Python packages, use _pip_.
 Install Python modules into your home directory, rather than globally. If you
-use *pip*, add the *--user* option. For example, this command installs the
-*passlib* module into your home directory:
+use _pip_, add the _--user_ option. For example, this command installs the
+_passlib_ module into your home directory:
 
     pip install --user passlib
 
-# Creating A Repository #
+# Creating A Repository
 
 You should always store your Ansible configuration in version control. Git is
 effectively the standard version control tool, and works perfectly for this
 purpose.
 
 For convenience, I would put the Ansible playbooks in the root of your
-repository, along with a copy of *ansible.cfg*, the configuration file.
+repository, along with a copy of _ansible.cfg_, the configuration file.
 
-Use the [Vault](http://docs.ansible.com/playbooks_vault.html) feature to encrypt
+Use the [Vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html) feature to encrypt
 any YAML file that stores password variables.
 
-# An Example Ansible Configuration File #
+# An Example Ansible Configuration File
 
-This is a simple *ansible.cfg* file:
+This is a simple _ansible.cfg_ file:
 
     [defaults]
 
     # SSH settings
-    remote_user = ansibler
+    remote_user = ansibleuser
     remote_port = 1234
     pipelining = True
 
-Replace *ansibler* with the name of a user account that has administrative
-privileges on the target systems (this means *sudo* for UNIX-based systems).
-Replace *1234* with the port number of the SSH service on the target systems.
+Replace _ansibleuser_ with the name of a user account that has administrative
+privileges on the target systems (this means _sudo_ for UNIX-based systems).
+Replace _1234_ with the port number of the SSH service on the target systems.
 
 The
 [pipelining](http://docs.ansible.com/ansible/intro_configuration.html#pipelining)
 option significantly increases the performance of Ansible over SSH.
 Unfortunately, it means that commands that require root access will fail if
-*sudo* has the *requiretty* option enabled.
+_sudo_ has the _requiretty_ option enabled.
 
-# Source Control Exclusions #
+# Source Control Exclusions
 
-If you are using Git, create a *.gitignore* file, otherwise define exclusions
+If you are using Git, create a _.gitignore_ file, otherwise define exclusions
 however is appropriate for your version control system (for example, a
-*.hgignore* file for Mercurial).
+_.hgignore_ file for Mercurial).
 
-I would recommend that you always exclude the *ansible.cfg* file from version
-control, and put an example configuration file in the repository instead. This
+Always exclude the _ansible.cfg_ file from version control, and put an example configuration file in the repository instead. This
 allows each administrator that works with the repository to use their own
 configuration file.
 
-# The Repository Directory Structure #
+# The Repository Directory Structure
 
 Create the following directories within the repository:
 
-* examples/ - Various other templates and examples
-* filter_plugins/ - Custom filter plugins
-* host_vars/ - Variables for individual host systems
-* inventory/ - Lists of host systems
-* group_vars/ - Variables for groups of systems  
-* library/ - Custom Ansible modules
-* roles/ - Custom roles used by the Ansible playbooks
-* scripts/ - Utility scripts
+- examples/ - Various other templates and examples
+- filter_plugins/ - Custom filter plugins
+- host_vars/ - Variables for individual host systems
+- inventory/ - Lists of host systems
+- group_vars/ - Variables for groups of systems
+- library/ - Custom Ansible modules
+- roles/ - Custom roles used by the Ansible playbooks
+- scripts/ - Utility scripts
 
-The *examples/* and *scripts/* directories are useful for storing your own work,
+The _examples/_ and _scripts/_ directories are useful for storing your own work,
 but are not essential. These directories are not used by Ansible itself.
 
-# Using Ansible #
+# Using Ansible
 
 Ansible provides three main commands:
 
-* *ansible-playbook* - to execute all of an Ansible playbook on the specified
-systems
-* *ansible* - to execute an individual shell command or Ansible module
- on the specified systems
-* *ansible-vault* - to encrypt or decrypt any individual YAML file that Ansible uses.
+- _ansible-playbook_ - to execute all of an Ansible playbook on the specified
+  systems
+- _ansible_ - to execute an individual shell command or Ansible module
+  on the specified systems
+- _ansible-vault_ - to encrypt or decrypt any individual YAML file that Ansible uses.
 
-Both *ansible-playbook* and *ansible* require you to specify the group of
-systems that the commands will run on, and use *-i* to specify the *inventory*,
-which is the file or directory that lists the specified systems. The *all* group
+Both _ansible-playbook_ and _ansible_ require you to specify the group of
+systems that the commands will run on, and use _-i_ to specify the _inventory_,
+which is the file or directory that lists the specified systems. The _all_ group
 is a built-in group that automatically includes all of the systems in the
 specified inventory.
 
     COMMAND GROUP -i INVENTORY OPTIONS
 
 Each utility will connect to each of the nodes in the group and execute the
-required commands. If a command fails on one or more of the nodes, a *retry*
+required commands. If a command fails on one or more of the nodes, a _retry_
 file is created to enable you to run the commands again on only the failed
 nodes.
 
-Use the *ansible* command with the *-a* option to execute a shell command:
+Use the _ansible_ command with the _-a_ option to execute a shell command:
 
     ansible all -i inventory -a /usr/bin/uptime
 
-Use *-m* to execute an Ansible module:
+Use _-m_ to execute an Ansible module:
 
     ansible all -i inventory -m ping
     ansible all -i inventory -m setup
 
-The *ping* module checks that Ansible can connect to the remote system. The
-*setup* module returns information about the remote system.
+The _ping_ module checks that Ansible can connect to the remote system. The
+_setup_ module returns information about the remote system.
 
 To run a playbook:
 
     ansible-playbook -K -i inventory my_playbook.yml
 
-The *-K* option means that Ansible will prompt you for the password of your
-account on the remote system in order to use *sudo*.
+The _-K_ option means that Ansible will prompt you for the password of your
+account on the remote system in order to use _sudo_.
 
-Add *--syntax-check* to test the Ansible playbook without running it:
+Add _--syntax-check_ to test the Ansible playbook without running it:
 
     ansible-playbook --syntax-check -K -i inventory my_playbook.yml
 
-Add *--check* to simulate the effect without making changes to the target systems:
+Add _--check_ to simulate the effect without making changes to the target systems:
 
     ansible-playbook --check -K -i inventory my_playbook.yml
 
 If the playbook requires data from a file that has been encrypted with
-*ansible-vault*, add  *--ask-vault-pass*:
+_ansible-vault_, add _--ask-vault-pass_:
 
     ansible-playbook --ask-vault-pass -K -i inventory my_playbook.yml
 
 Enter the password for the encrypted files when prompted.
 
-# Using Ansible to Manage Microsoft Windows Systems #
+# Using Ansible to Manage Microsoft Windows Systems
 
 Ansible 2.1 and above support managing Windows systems. This means that they may
 communicate with Windows nodes using the WinRM and PowerShell Remoting
@@ -188,19 +175,19 @@ specific modules for Windows features.
 
 Each Windows node must meet these requirements to be managed with Ansible:
 
-* PowerShell 3.0 or above must be installed
-* PowerShell Remoting with WinRM must be enabled
-* The firewall must allow remote TCP connections to port 5986 (WinRM over HTTPS)
+- PowerShell 3.0 or above must be installed
+- PowerShell Remoting with WinRM must be enabled
+- The firewall must allow remote TCP connections to port 5986 (WinRM over HTTPS)
 
 The [Ansible documentation on Windows](http://docs.ansible.com/ansible/intro_windows.html) includes a PowerShell script to set up remote access for you.
 
-# A Note on Generating Passwords #
+# A Note on Generating Passwords
 
 You must specify the SHA512 hashed version of a user password when you set it
 through Ansible. By default, macOS does not generate the same hashes as
-Linux, so you should install the Python module *passlib* to provide a hash
+Linux, so you should install the Python module _passlib_ to provide a hash
 generator that behaves consistently across operating systems. To generate a
-valid hash with *passlib* enter this command in a terminal window:
+valid hash with _passlib_ enter this command in a terminal window:
 
     python -c "from passlib.hash import sha512_crypt; import getpass; print sha512_crypt.encrypt(getpass.getpass())"
 
@@ -208,8 +195,18 @@ Enter the password that you would like to use at the prompt.
 
 Any YAML file that stores password variables should be encrypted using the [Vault](http://docs.ansible.com/playbooks_vault.html) feature of Ansible.
 
-# Example Repositories #
+# Official Tools
 
-* [Ansible configuration for Linux and macOS](https://gitlab.com/stuart-ellis/linux-ansible-config)
-* [Ansible configuration for Amazon Web Services](https://gitlab.com/stuart-ellis/aws-ansible-config)
-* [Ansible configuration for Microsoft Windows](https://gitlab.com/stuart-ellis/windows-ansible-config)
+- [Ansible Lint](https://docs.ansible.com/ansible-lint/)
+- [Molecule](https://molecule.readthedocs.io/) - Official test framework for Ansible roles
+- [Visual Studio Code extension for Ansible](https://marketplace.visualstudio.com/items?itemName=vscoss.vscode-ansible)
+
+# Third-Party Tools
+
+- [Ansible interactive tutorial](https://github.com/turkenh/ansible-interactive-tutorial)
+- [ARA](https://ara.recordsansible.org/) - Ansible plugin to record playbook activity for support and troubleshooting
+
+# Resources
+
+- [Ansible for DevOps](https://www.ansiblefordevops.com), by Jeff Geerling - The most popular book on Ansible
+- [Ansible Lightbulb](https://ansible.github.io/lightbulb/) - Material for running training workshops on Ansible
