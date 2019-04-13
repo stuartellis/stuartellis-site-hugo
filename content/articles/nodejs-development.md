@@ -1,7 +1,7 @@
 +++
 Title = "Starting Node.js Development"
 Slug = "nodejs-development"
-Date = "2019-04-07T11:30:00+00:00"
+Date = "2019-04-13T08:30:00+00:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["javascript", "node.js"]
@@ -208,9 +208,7 @@ Avoid using MongoDB for new projects, because current versions of MongoDB are no
 
 # Creating Graphical Desktop Applications
 
-To create desktop applications, use [Electron](https://electronjs.org/). Applications
-made with Electron are cross-platform, and can be built for Windows, macOS, and Linux
-with [electron-builder](https://www.electron.build/).
+To create desktop applications, use [Electron](https://electronjs.org/). The [Electron Forge](https://electronforge.io/) utility provides a complete set of features for developing and testing your application, including support for building installation packages.
 
 # Developing Mobile Applications
 
