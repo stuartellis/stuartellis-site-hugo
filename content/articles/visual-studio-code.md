@@ -1,7 +1,7 @@
 +++
 Title = "Setting up the Visual Studio Code Text Editor"
 Slug = "visual-studio-code"
-Date = "2019-02-24T18:08:00+01:00"
+Date = "2019-04-13T08:11:00+01:00"
 Description = "Setting up the Visual Studio Code text editor for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["golang", "javascript", "python", "ruby"]
@@ -48,7 +48,7 @@ Use the [Live Share service](https://visualstudio.microsoft.com/services/live-sh
 
 # Disabling Telemetry
 
-Visual Studio Code enables telemetry by default, and connects to remote services for various features. The FAQ explains [how Code complies with the GDPR](https://code.visualstudio.com/docs/supporting/faq#_gdpr-and-vs-code).
+Visual Studio Code enables telemetry by default, and connects to remote services for various features, such as natural language search in settings. The FAQ explains [how Code complies with the GDPR](https://code.visualstudio.com/docs/supporting/faq#_gdpr-and-vs-code).
 
 To disable telemetry and crash reporting, set these options in _Preferences > Settings_:
 
@@ -57,7 +57,11 @@ To disable telemetry and crash reporting, set these options in _Preferences > Se
 "telemetry.enableCrashReporter": false
 ```
 
+To see settings for online services, search for _@tag:usesOnlineServices_ in _Preferences > Settings_.
+
 Microsoft also add telemetry to some of their extensions to Visual Studio Code. This means that you must check the description of each extension to know whether it will send data to Microsoft, even if you have disabled telemetry for Visual Studio Code itself.
+
+Third-party extensions may also send telemetry data. Check the specific settings that each extension uses, because settings may not be correctly tagged.
 
 # Formatting on Save
 
@@ -135,6 +139,7 @@ You will need to install [Shellcheck](https://www.shellcheck.net/) into the envi
 - [AWS CloudFormation Linter](https://marketplace.visualstudio.com/items?itemName=kddejong.vscode-cfn-lint)
 - [Microsoft SQL Server](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql)
 - [PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.powershell)
+- [Terraform](https://marketplace.visualstudio.com/items?itemName=mauve.terraform)
 
 # Resources
 
