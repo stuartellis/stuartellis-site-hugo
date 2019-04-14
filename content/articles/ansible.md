@@ -1,7 +1,7 @@
 +++
-Title = "Managing Systems with Ansible"
+Title = "Task Automation with Ansible"
 Slug = "ansible"
-Date = "2019-04-14T07:46:00+01:00"
+Date = "2019-04-14T12:38:00+01:00"
 Description = "An introduction to Ansible"
 Categories = ["administration"]
 Tags = ["administration", "python"]
@@ -9,7 +9,7 @@ Type = "article"
 
 +++
 
-[Ansible](http://www.ansible.com) provides an Open Source framework for automation. It is used for managing servers and network devices, as well as many other tasks.
+[Ansible](http://www.ansible.com) provides an Open Source framework for automation. It is most well-known for managing servers and network devices, but it can be used for many other workflows.
 
 <!--more-->
 
@@ -58,7 +58,9 @@ If you use _pip_, add the _--user_ option to install Python packages into your h
 
 You should always store your Ansible code in version control. For convenience, you may put the Ansible playbooks in the root of your repository.
 
-Exclude the _ansible.cfg_ file itself from version control. Consider putting an example of the expected _ansible.cfg_ file in the repository. This enables each person that works with the repository to use their own configuration file, by copying the example file.
+Always exclude _\*.retry_ files from version control. Ansible generates temporary files on the control station and the nodes, but only the retry files appear in the working directory.
+
+Consider excluding the _ansible.cfg_ file itself from version control, and just putting an example of the expected _ansible.cfg_ file in the repository. This enables each person that works with the repository to use their own configuration file, by copying the example file.
 
 > Use the [Vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html) feature to encrypt
 > any YAML file that stores password variables.
@@ -110,17 +112,16 @@ Ansible provides three main commands:
   systems
 - _ansible_ - to execute an individual shell command or Ansible module
   on the specified systems
+- _ansible-console_ - to provide an interactive shell for working with Ansible
 - _ansible-vault_ - to encrypt or decrypt any individual YAML file that Ansible uses.
 
-Both _ansible-playbook_ and _ansible_ require you to specify the group of
-systems that the commands will run on, and use _-i_ to specify the _inventory_,
-which is the file or directory that lists the specified systems. The _all_ group
+Use _-i_ to specify the _inventory_ that has the specified systems. The _all_ group
 is a built-in group that automatically includes all of the systems in the
 specified inventory.
 
     COMMAND GROUP -i INVENTORY OPTIONS
 
-Each utility will connect to each of the nodes in the group and execute the
+Each utility will connect to each of the specified nodes and execute the
 required commands. If a command fails on one or more of the nodes, a _retry_
 file is created to enable you to run the commands again on only the failed
 nodes.
