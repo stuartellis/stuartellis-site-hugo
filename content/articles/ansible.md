@@ -1,7 +1,7 @@
 +++
 Title = "Managing Systems with Ansible"
 Slug = "ansible"
-Date = "2019-04-13T15:48:00+01:00"
+Date = "2019-04-14T07:46:00+01:00"
 Description = "An introduction to Ansible"
 Categories = ["administration"]
 Tags = ["administration", "python"]
@@ -9,58 +9,59 @@ Type = "article"
 
 +++
 
-[Ansible](http://www.ansible.com) provides an Open Source tool for automation. It is used for managing servers and network devices, as well as other tasks.
+[Ansible](http://www.ansible.com) provides an Open Source framework for automation. It is used for managing servers and network devices, as well as many other tasks.
 
 <!--more-->
 
 # How Ansible Works
 
-Ansible runs task on either the local computer, or remote systems. It does not require a central
-service or use dedicated agents on each system. Instead, you install
-Ansible and your configuration on a _control machine_, which can just be the
-workstation of an administrator. Each time that you perform an operation with
-Ansible, it connects to the required systems and streams code to one of the standard run-times that are already installed on the target. The managed systems are
-referred to as _nodes_.
+First, you set up Ansible and the required configuration files on a _control machine_, which can just be the workstation of an administrator.
 
-Most Ansible modules connect to the target systems with SSH and run Python 2,
-both of which are installed on most Linux systems, and are part of macOS.
-There are also modules to execute actions with more basic methods, such as the
+Ansible runs tasks on either the control machine, or remote systems. Tasks are usually defined in _playbooks_. The tasks in a playbook are run in order, from the first task to the last. Playbooks are YAML files.
+
+Each time that you run a task, this calls a _module_ of code that connects to the relevant systems, and sends the appropriate commands to carry out the task. The list of available systems is known as the _inventory_, and individual systems are referred to as _nodes_.
+
+Modules for managing UNIX-like systems connect to the target nodes with SSH and then send Python code to the nodes. The Python interpreter on each node executes the code. Both SSH and Python are installed on most Linux systems, and are part of macOS. There are also modules to execute actions with more basic methods, such as the
 Bash shell that is the default for both macOS and GNU/Linux distributions.
-The Ansible modules for managing Microsoft Windows systems send commands to
-PowerShell, using the PowerShell remoting facility. This means that you can
-manage almost any system with Ansible, possibly starting with low-level modules,
-and using them to install the prerequisites for the more complex operations.
 
-If you need a central service for coordinating changes or maintaining
-detailed inventories of systems, Red Hat offer
-[Ansible Tower](https://www.ansible.com/products/tower). This is developed as an Open Source project, called [AWX](https://github.com/ansible/awx). You may use AWX, but there are no guarantees of support or stability. None of the features of Ansible itself rely on Ansible Tower or AWX.
+Other types of modules use the appropriate network protocols and commands for their purpose. For example, the Ansible modules for Microsoft Windows send commands to PowerShell, using the PowerShell remoting facility.
 
-# Setting Up A macOS Control Machine
+This means that you can
+manage almost any system with Ansible, possibly starting with tasks that use low-level modules to install the prerequisites for the more complex operations.
 
-To set up Ansible on a macOS workstation using [Homebrew](http://brew.sh/)
-enter these commands in a terminal window:
+Ansible modules for online services work slightly differently. These modules connect from the control machine to the relevant server or cloud, and use the API that the service provides to send commands to it.
+
+If you need a central service for managing tasks and nodes, Red Hat offer
+[Ansible Tower](https://www.ansible.com/products/tower). The software for Ansible Tower is developed as an Open Source project, called [AWX](https://github.com/ansible/awx). You may use AWX, rather than pay for Ansible Tower, but the project does not provide user support or long-term maintenance for releases. None of the features of Ansible itself rely on Ansible Tower or AWX.
+
+# Setting Up a Control Machine
+
+To set up Ansible on a macOS or Linux system using [Homebrew](http://brew.sh/), enter these commands in a terminal window:
 
     brew update && brew install ansible
 
-Ansible modules from _extras_ may require additional Python packages. If you
-need to install more Python packages, use _pip_.
-Install Python modules into your home directory, rather than globally. If you
-use _pip_, add the _--user_ option. For example, this command installs the
-_passlib_ module into your home directory:
+Alternatively, use [pipx](https://pypi.org/project/pipx/) to install Ansible:
+
+    pipx install ansible
+
+## Installing Extra Packages
+
+Ansible modules from _extras_ may require additional Python packages. If you installed Ansible with pipx, use the _inject_ subcommand to add the package to the correct virtual environment. For example, this command adds _boto3_ to the Ansible installation:
+
+    pipx inject ansible boto3
+
+If you use _pip_, add the _--user_ option to install Python packages into your home directory, rather than globally. For example, this command installs _passlib_ into your home directory with _pip_:
 
     pip install --user passlib
 
 # Creating A Repository
 
-You should always store your Ansible configuration in version control. Git is
-effectively the standard version control tool, and works perfectly for this
-purpose.
+You should always store your Ansible code in version control. For convenience, you may put the Ansible playbooks in the root of your repository.
 
-For convenience, I would put the Ansible playbooks in the root of your
-repository, along with a copy of _ansible.cfg_, the configuration file.
+Exclude the _ansible.cfg_ file itself from version control. Consider putting an example of the expected _ansible.cfg_ file in the repository. This enables each person that works with the repository to use their own configuration file, by copying the example file.
 
-Use the [Vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html) feature to encrypt
-any YAML file that stores password variables.
+> Use the [Vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html) feature to encrypt
+> any YAML file that stores password variables.
 
 # An Example Ansible Configuration File
 
@@ -83,24 +84,16 @@ option significantly increases the performance of Ansible over SSH.
 Unfortunately, it means that commands that require root access will fail if
 _sudo_ has the _requiretty_ option enabled.
 
-# Source Control Exclusions
-
-If you are using Git, create a _.gitignore_ file, otherwise define exclusions
-however is appropriate for your version control system (for example, a
-_.hgignore_ file for Mercurial).
-
-Always exclude the _ansible.cfg_ file from version control, and put an example configuration file in the repository instead. This
-allows each administrator that works with the repository to use their own
-configuration file.
-
 # The Repository Directory Structure
 
-Create the following directories within the repository:
+Create the directories that you need within the repository. You can define playbooks as single YAML files, so in some cases, you do not need to create any directories at all.
+
+These are standard directories for Ansible projects:
 
 - examples/ - Various other templates and examples
 - filter_plugins/ - Custom filter plugins
 - host_vars/ - Variables for individual host systems
-- inventory/ - Lists of host systems
+- inventory/ - Lists of nodes
 - group_vars/ - Variables for groups of systems
 - library/ - Custom Ansible modules
 - roles/ - Custom roles used by the Ansible playbooks
@@ -166,7 +159,7 @@ _ansible-vault_, add _--ask-vault-pass_:
 
 Enter the password for the encrypted files when prompted.
 
-# Using Ansible to Manage Microsoft Windows Systems
+# Managing Microsoft Windows Systems
 
 Ansible 2.1 and above support managing Windows systems. This means that they may
 communicate with Windows nodes using the WinRM and PowerShell Remoting
@@ -179,7 +172,7 @@ Each Windows node must meet these requirements to be managed with Ansible:
 - PowerShell Remoting with WinRM must be enabled
 - The firewall must allow remote TCP connections to port 5986 (WinRM over HTTPS)
 
-The [Ansible documentation on Windows](http://docs.ansible.com/ansible/intro_windows.html) includes a PowerShell script to set up remote access for you.
+The [Ansible documentation on Windows](https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html) includes a PowerShell script to set up remote access for you.
 
 # A Note on Generating Passwords
 
@@ -195,11 +188,11 @@ Enter the password that you would like to use at the prompt.
 
 Any YAML file that stores password variables should be encrypted using the [Vault](http://docs.ansible.com/playbooks_vault.html) feature of Ansible.
 
-# Official Tools
+# Recommended Tools
 
-- [Ansible Lint](https://docs.ansible.com/ansible-lint/)
+- [Ansible Lint](https://docs.ansible.com/ansible-lint/) - Maintained by the Ansible team
 - [Molecule](https://molecule.readthedocs.io/) - Official test framework for Ansible roles
-- [Visual Studio Code extension for Ansible](https://marketplace.visualstudio.com/items?itemName=vscoss.vscode-ansible)
+- [Visual Studio Code extension for Ansible](https://marketplace.visualstudio.com/items?itemName=vscoss.vscode-ansible) - Maintained by Microsoft
 
 # Third-Party Tools
 
@@ -208,5 +201,7 @@ Any YAML file that stores password variables should be encrypted using the [Vaul
 
 # Resources
 
+- [Ansible Documentation](https://docs.ansible.com/)
+- [Ansible Module Index](https://docs.ansible.com/ansible/latest/modules/modules_by_category.html) - Documentation for the modules that are provided with Ansible
 - [Ansible for DevOps](https://www.ansiblefordevops.com), by Jeff Geerling - The most popular book on Ansible
 - [Ansible Lightbulb](https://ansible.github.io/lightbulb/) - Material for running training workshops on Ansible
