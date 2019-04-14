@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2019-04-06T07:34:00"
+Date = "2019-04-13T20:57:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "java", "javascript", "python", "ruby", "rust"]
@@ -84,9 +84,9 @@ Select _System Preferences \> Security & Privacy_, and set the following:
 
 ## Disable Spotlight
 
-By default, Spotlight sends queries to Apple. Unless you want this feature, turn it off. 
+By default, Spotlight sends queries to Apple. Unless you want this feature, turn it off.
 
-Select _System Preferences \> Spotlight \> Search Results_, and ensure that  _Spotlight Suggestions_ is not enabled.
+Select _System Preferences \> Spotlight \> Search Results_, and ensure that _Spotlight Suggestions_ is not enabled.
 
 ## Enable File Vault NOW
 
@@ -127,7 +127,7 @@ The first step is to install a compiler. The easiest way to install one is with 
 _Xcode Command Line Tools_ package.
 
 Once you have the compiler that is provided by Xcode, you can use
-[Homebrew](http://brew.sh/) to install everything else that you need. 
+[Homebrew](http://brew.sh/) to install everything else that you need.
 
 ## Getting Xcode
 
@@ -201,7 +201,7 @@ If you do not have a preferred editor, consider using a version of [Visual Studi
 
 ### Visual Studio Code
 
-[Visual Studio Code](https://code.visualstudio.com) is a powerful desktop editor for programming, with built-in support for version control and debugging. The large range of extensions for Visual Studio Code enable it to work with every popular programming language and framework. It is available free of charge. 
+[Visual Studio Code](https://code.visualstudio.com) is a powerful desktop editor for programming, with built-in support for version control and debugging. The large range of extensions for Visual Studio Code enable it to work with every popular programming language and framework. It is available free of charge.
 
 The Microsoft releases of Visual Studio Code are proprietary software with telemetry enabled by default. To avoid these issues, use the packages that are provided by the [vscodium](https://github.com/VSCodium/vscodium) project instead.
 
@@ -334,19 +334,18 @@ Maven is written in Java, which means that the same package works on any operati
 
 ## pipenv for Python Development
 
-Unfortunately, macOS includes a copy of Python 2, so you will need to install Python 3 yourself. To maintain current and
-clean Python environments, you should also install [pipenv](https://docs.pipenv.org/). It drives the
-[pip](https://pip.pypa.io/en/stable/) and
-[virtual environment](https://docs.python.org/3/tutorial/venv.html) features that are
-included with Python itself, but is more powerful and easier to use than working with
-these features directly.
+Unfortunately, macOS includes a copy of Python 2, so you will need to install Python 3 yourself.
+
+To maintain current and clean Python environments, you should also use [pipenv](https://docs.pipenv.org/). This builds on two features of Python: the [virtual environments](https://docs.python.org/3/tutorial/venv.html) and the [pip](https://pip.pypa.io/en/stable/) utility.
 
 Enter this command to install Python 3 and pipenv using Homebrew:
 
     brew install python3 pipenv
 
-The pipenv tool itself will use the copy of Python 3 from Homebrew by default. To use
-this Python 3 interpreter without pipenv, specify _python3_ on the command-line and in
+Use pipenv to manage your Python projects. The pipenv tool itself will automatically work with the copy of Python 3 from Homebrew.
+
+To use
+the Python 3 interpreter outside of projects that are managed by pipenv, specify _python3_ on the command-line and in
 your scripts, rather than _python_:
 
     python3 --version
