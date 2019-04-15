@@ -1,7 +1,7 @@
 +++
 Title = "Task Automation with Ansible"
 Slug = "ansible"
-Date = "2019-04-14T12:38:00+01:00"
+Date = "2019-04-15T21:04:00+01:00"
 Description = "An introduction to Ansible"
 Categories = ["administration"]
 Tags = ["administration", "python"]
@@ -15,7 +15,7 @@ Type = "article"
 
 # How Ansible Works
 
-First, you set up Ansible and the required configuration files on a _control machine_, which can just be the workstation of an administrator.
+First, set up a copy of Ansible and the required configuration files on a _control machine_, which can just be the workstation of an administrator.
 
 Ansible runs tasks on either the control machine, or remote systems. Tasks are usually defined in _playbooks_. The tasks in a playbook are run in order, from the first task to the last. Playbooks are YAML files.
 
@@ -54,20 +54,11 @@ If you use _pip_, add the _--user_ option to install Python packages into your h
 
     pip install --user passlib
 
-# Creating A Repository
+# Ansible Configuration Files
 
-You should always store your Ansible code in version control. For convenience, you may put the Ansible playbooks in the root of your repository.
+Ansible does not require a configuration file. It does check for [configuration files in several locations](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#the-configuration-file), so that you can customize the behavior of Ansible at the project, user or system level.
 
-Always exclude _\*.retry_ files from version control. Ansible generates temporary files on the control station and the nodes, but only the retry files appear in the working directory.
-
-Consider excluding the _ansible.cfg_ file itself from version control, and just putting an example of the expected _ansible.cfg_ file in the repository. This enables each person that works with the repository to use their own configuration file, by copying the example file.
-
-> Use the [Vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html) feature to encrypt
-> any YAML file that stores password variables.
-
-# An Example Ansible Configuration File
-
-This is a simple _ansible.cfg_ file:
+This is a simple Ansible configuration file:
 
     [defaults]
 
@@ -86,9 +77,20 @@ option significantly increases the performance of Ansible over SSH.
 Unfortunately, it means that commands that require root access will fail if
 _sudo_ has the _requiretty_ option enabled.
 
-# The Repository Directory Structure
+# Ansible and Version Control
 
-Create the directories that you need within the repository. You can define playbooks as single YAML files, so in some cases, you do not need to create any directories at all.
+You should always store your Ansible code in a source code repository. Ansible files can be placed in the same repository as the other files for a project.
+
+For convenience, you may put the Ansible playbooks in the root of your repository. You can define playbooks as single YAML files, so in some cases, you do not need to create any directories at all for Ansible code.
+
+Always exclude _\*.retry_ files from version control. Ansible generates temporary files on the control station and the nodes, but only the retry files appear in the working directory.
+
+If you expect to use an Ansible configuration file in the root directory of a project, consider excluding the _ansible.cfg_ file itself from version control, and just putting an example of the expected _ansible.cfg_ file in the repository. This enables each person that works with the repository to use their own configuration file, by copying the example file.
+
+> Use the [Vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html) feature to encrypt
+> any YAML file that stores password variables.
+
+# Directory Conventions for Ansible
 
 These are standard directories for Ansible projects:
 
@@ -106,57 +108,71 @@ but are not essential. These directories are not used by Ansible itself.
 
 # Using Ansible
 
-Ansible provides three main commands:
+## The Ansible Tools
 
-- _ansible-playbook_ - to execute all of an Ansible playbook on the specified
+Ansible provides three main tools:
+
+- _ansible-playbook_ - Execute an Ansible playbook on the specified
   systems
-- _ansible_ - to execute an individual shell command or Ansible module
+- _ansible_ - Executes an individual shell command or Ansible module
   on the specified systems
-- _ansible-console_ - to provide an interactive shell for working with Ansible
-- _ansible-vault_ - to encrypt or decrypt any individual YAML file that Ansible uses.
+- _ansible-console_ - Provides an interactive shell for working with Ansible
 
-Use _-i_ to specify the _inventory_ that has the specified systems. The _all_ group
-is a built-in group that automatically includes all of the systems in the
-specified inventory.
+You should also make use of these commands:
 
-    COMMAND GROUP -i INVENTORY OPTIONS
+- _ansible-galaxy_ - Manages Ansible roles that are provided from shared repositories
+- _ansible-vault_ - Encrypts and decrypts any individual YAML file that Ansible uses.
 
-Each utility will connect to each of the specified nodes and execute the
+Ansible includes [several other specialized tools](https://docs.ansible.com/ansible/latest/user_guide/command_line_tools.html).
+
+## Specifying The Target Nodes
+
+Use _-i_ to specify the inventory that has the target nodes. Optionally, you can also specify a group, to limit the targets to the nodes in a particular group.
+
+    TOOL GROUP -i INVENTORY OPTIONS
+
+The tool will connect to each of the specified nodes and execute the
 required commands. If a command fails on one or more of the nodes, a _retry_
 file is created to enable you to run the commands again on only the failed
 nodes.
 
+> The _all_ group is a built-in group that automatically includes all of the systems in the specified inventory.
+
+## The ansible Tool
+
 Use the _ansible_ command with the _-a_ option to execute a shell command:
 
-    ansible all -i inventory -a /usr/bin/uptime
+    ansible all -i INVENTORY -a /usr/bin/uptime
 
 Use _-m_ to execute an Ansible module:
 
-    ansible all -i inventory -m ping
-    ansible all -i inventory -m setup
+    ansible all -i INVENTORY -m ping
+    ansible all -i INVENTORY -m setup
 
 The _ping_ module checks that Ansible can connect to the remote system. The
 _setup_ module returns information about the remote system.
 
+## The ansible-playbook Tool
+
 To run a playbook:
 
-    ansible-playbook -K -i inventory my_playbook.yml
+    ansible-playbook -K -i INVENTORY MY_PLAYBOOK.YML
 
 The _-K_ option means that Ansible will prompt you for the password of your
 account on the remote system in order to use _sudo_.
 
 Add _--syntax-check_ to test the Ansible playbook without running it:
 
-    ansible-playbook --syntax-check -K -i inventory my_playbook.yml
+    ansible-playbook --syntax-check -K -i INVENTORY MY_PLAYBOOK.YML
 
 Add _--check_ to simulate the effect without making changes to the target systems:
 
-    ansible-playbook --check -K -i inventory my_playbook.yml
+    ansible-playbook --check -K -i INVENTORY MY_PLAYBOOK.YML
 
 If the playbook requires data from a file that has been encrypted with
 _ansible-vault_, add _--ask-vault-pass_:
 
-    ansible-playbook --ask-vault-pass -K -i inventory my_playbook.yml
+    ansible-playbook --ask-vault-pass -K -i INVENTORY MY_PLAYBOOK.YML
 
 Enter the password for the encrypted files when prompted.
 
