@@ -1,7 +1,7 @@
 +++
 Title = "Task Automation with Ansible"
 Slug = "ansible"
-Date = "2019-04-15T21:04:00+01:00"
+Date = "2019-04-15T22:04:00+01:00"
 Description = "An introduction to Ansible"
 Categories = ["administration"]
 Tags = ["administration", "python"]
@@ -21,15 +21,20 @@ Ansible runs tasks on either the control machine, or remote systems. Tasks are u
 
 Each time that you run a task, this calls a _module_ of code that connects to the relevant systems, and sends the appropriate commands to carry out the task. The list of available systems is known as the _inventory_, and individual systems are referred to as _nodes_.
 
-Modules for managing UNIX-like systems connect to the target nodes with SSH and then send Python code to the nodes. The Python interpreter on each node executes the code. Both SSH and Python are installed on most Linux systems, and are part of macOS. There are also modules to execute actions with more basic methods, such as the
-Bash shell that is the default for both macOS and GNU/Linux distributions.
+## Managing Systems with Ansible
+
+Modules for managing UNIX-like systems connect to the target nodes with SSH and then send Python code to the nodes. The Python interpreter on each node executes the code. Both SSH and Python are installed on most Linux systems, and are part of macOS. There are also modules to execute actions with more basic methods, such as the Bash shell that is the default for both macOS and GNU/Linux distributions.
 
 Other types of modules use the appropriate network protocols and commands for their purpose. For example, the Ansible modules for Microsoft Windows send commands to PowerShell, using the PowerShell remoting facility.
 
 This means that you can
 manage almost any system with Ansible, possibly starting with tasks that use low-level modules to install the prerequisites for the more complex operations.
 
+## Ansible and API Services
+
 Ansible modules for online services work slightly differently. These modules connect from the control machine to the relevant server or cloud, and use the API that the service provides to send commands to it.
+
+## Ansible Tower and AWX
 
 If you need a central service for managing tasks and nodes, Red Hat offer
 [Ansible Tower](https://www.ansible.com/products/tower). The software for Ansible Tower is developed as an Open Source project, called [AWX](https://github.com/ansible/awx). You may use AWX, rather than pay for Ansible Tower, but the project does not provide user support or long-term maintenance for releases. None of the features of Ansible itself rely on Ansible Tower or AWX.
@@ -44,17 +49,19 @@ Alternatively, use [pipx](https://pypi.org/project/pipx/) to install Ansible:
 
     pipx install ansible
 
-## Installing Extra Packages
+## Installing Extra Packages on the Control Machine
 
-Ansible modules from _extras_ may require additional Python packages. If you installed Ansible with pipx, use the _inject_ subcommand to add the package to the correct virtual environment. For example, this command adds _boto3_ to the Ansible installation:
+Some Ansible modules require additional Python packages on either the control machine or the nodes. You can use an Ansible task to install packages on nodes, but should avoid trying to manage the Ansible installation on the control machine with Ansible.
+
+If you installed Ansible on the control machine with pipx, use the _inject_ subcommand to add packages. This subcommand will install the specified package into the Python virtual environment that pipx maintains for Ansible. For example, this command adds _boto3_ to the Ansible installation:
 
     pipx inject ansible boto3
 
-If you use _pip_, add the _--user_ option to install Python packages into your home directory, rather than globally. For example, this command installs _passlib_ into your home directory with _pip_:
+If you used _pip_ to install Ansible, add the _--user_ option to install Python packages into your home directory, rather than globally. For example, this command installs _passlib_ into your home directory with _pip_:
 
     pip install --user passlib
 
-# Ansible Configuration Files
+## Ansible Configuration Files
 
 Ansible does not require a configuration file. It does check for [configuration files in several locations](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#the-configuration-file), so that you can customize the behavior of Ansible at the project, user or system level.
 
