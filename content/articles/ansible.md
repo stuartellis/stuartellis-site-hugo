@@ -1,7 +1,7 @@
 +++
 Title = "Task Automation with Ansible"
 Slug = "ansible"
-Date = "2019-04-15T22:04:00+01:00"
+Date = "2019-04-20T18:21:00+01:00"
 Description = "An introduction to Ansible"
 Categories = ["administration"]
 Tags = ["administration", "python"]
@@ -86,7 +86,7 @@ _sudo_ has the _requiretty_ option enabled.
 
 # Ansible and Version Control
 
-You should always store your Ansible code in a source code repository. Ansible files can be placed in the same repository as the other files for a project.
+Store your Ansible code in a source code repository. Ansible files can be placed in the same repository as the other files for a project.
 
 For convenience, you may put the Ansible playbooks in the root of your repository. You can define playbooks as single YAML files, so in some cases, you do not need to create any directories at all for Ansible code.
 
@@ -158,6 +158,10 @@ Use _-m_ to execute an Ansible module:
 
 The _ping_ module checks that Ansible can connect to the remote system. The
 _setup_ module returns information about the remote system.
+
+To specify the arguments to use with the module, add the _-a_ option. For example, this command uses the _get_url_ module to download the file that is specified by the _url_ argument to the directory that is specified by the _dest_ argument:
+
+    ansible all -i INVENTORY -m get_url -a "url='https://github.com/restic/restic/releases/download/v0.9.4/restic_0.9.4_linux_amd64.bz2' dest='~'"
 
 ## The ansible-playbook Tool
 
