@@ -1,7 +1,7 @@
 +++
 Title = "Backups with restic"
 Slug = "restic-backups"
-Date = "2018-11-09T20:33:00+01:00"
+Date = "2019-04-20T18:59:00+01:00"
 Description = "Managing backups with restic"
 Categories = ["administration"]
 Tags = ["administration"]
@@ -15,43 +15,55 @@ The [restic](https://restic.net/) utility provides a convenient and well-designe
 
 # Overview
 
-For efficiency and de-deplication, restic creates and manages snapshots. These are stored in a set of data files, known as a repository. The repository can be in a directory on the same computer as the source files, or on remote storage, such as AWS S3. The files in a restic repository are automatically encrypted with a passphrase. Once the repository has been initialised and a backup has been made, you can view and restore files with the restic command-line utility.
+The restic utility is a single executable file that provides all of the features to backup and restore data. The restic developers publish versions of the utility for Linux, macOS and Windows.
 
-To use restic you need these things:
+To backup your data, restic creates and manages snapshots. Each snapshot records a set of files and directories. These snapshots are stored in a set of data files, known as a repository. The data in each snapshot is de-duplicated before it is stored in the repository.
 
-1. A copy of restic. The restic tool itself is a single executable file.
+A restic repository can be in a directory on the same computer as the source files, or on remote storage, such as AWS S3. For security, each restic repository is always encrypted with a passphrase.
+
+You also view and restore files from a repository with the restic command-line utility. This means that you can restore files from a repository to any computer that has a copy of restic.
+
+Since restic only handles the back up and restoration of files, you will need to use other tools to handle database exports, scheduling, logging, and notifications. You can [pipe the output of commands to restic](https://restic.readthedocs.io/en/stable/040_backup.html#reading-data-from-stdin), which enables you to turn data exports directly into snapshots.
+
+To use restic you only need these things:
+
+1. A copy of the restic utility. It is a single file, so there is no setup or installation process
 2. The address or location of the repository. This can be provided as an environment variable.
 3. Any secret(s) that are needed for accessing the remote storage that holds the repository
 4. The password for decrypting the repository. This can be provided as an environment variable or in a file.
 
-Since restic only handles the back up and restoration of files, you will need to set up other tools to handle database exports, scheduling, logging, and notifications.
+# Setting Up restic
 
-# Approach
+## Creating a Remote Repository on S3
 
-For this article, we will use AWS S3 to host the repository. The built-in support for AWS S3 enables restic to use an S3 bucket to store a repository. Multiple systems can back up to the same repository, but for security, you should use separate buckets for different sets of computers.
+The built-in support for AWS S3 enables restic to use an S3 bucket to store a repository. Multiple systems can back up to the same repository, but for security, you should use separate buckets for different sets of computers.
 
-You can install restic with the package manager of your Linux distribution, or Homebrew on macOS. To ensure that we have the latest version of restic, we will download it directly from GitHub.
+Create the S3 bucket first, before you setup restic. We need to do this, because the current version of restic will check whether the specified bucket exists, and if it does not, restic will create the a new bucket with that name on AWS in the US East region.
+
+> Multiple systems can back up to the same repository, but for security, you should use separate buckets for different sets of computers.
+
+## Installing restic
+
+You can install restic with the package manager of your Linux distribution, or Homebrew on macOS. To ensure that you have the latest version of restic, you should download it directly from GitHub instead.
 
 The simplest way to orchestrate backups with restic is to write a shell script.
 
-# Setting Up the Remote Repository
+Alternatively, use this [Ansible role for restic](https://galaxy.ansible.com/paulfantom/restic), which can install restic for system-wide use, and set up scheduled backups.
 
-Create the S3 bucket. We need to do this first, because the current version of restic will check whether the specified bucket exists, and if it does not, restic will create the a new bucket with that name on AWS in the US East region.
-
-# Installing restic Into A Home Directory
+## Manually Installing restic Into A Home Directory
 
 Download the file for restic from GitHub, and then set permissions on it:
 
     mkdir -p $HOME/.restic/bin
-    curl -L https://github.com/restic/restic/releases/download/v0.9.3/restic_0.9.3_linux_amd64.bz2 | bunzip2 > $HOME/.restic/bin/restic
+    curl -L https://github.com/restic/restic/releases/download/v0.9.4/restic_0.9.4_linux_amd64.bz2 | bunzip2 > $HOME/.restic/bin/restic
     chown -R $USER:$USER $HOME/.restic/bin
     chmod -R 750 $HOME/.restic/bin
 
-# Installing restic for System-Level Use
+## Manually Installing restic for System-Level Use
 
 Download the file for restic from GitHub. Once the file is downloaded, set the permissions to limit who can use it, and then give it the capabilities to access the whole system:
 
-    curl -L https://github.com/restic/restic/releases/download/v0.9.3/restic_0.9.3_linux_amd64.bz2 | bunzip2 > restic
+    curl -L https://github.com/restic/restic/releases/download/v0.9.4/restic_0.9.4_linux_amd64.bz2 | bunzip2 > restic
     mkdir -p /opt/restic/bin
     mv restic /opt/restic/bin
     chown -R root:$USER /opt/restic/bin
@@ -60,9 +72,11 @@ Download the file for restic from GitHub. Once the file is downloaded, set the p
 
 All of these commands apart from the first require administrative privileges.
 
-# Environment Variables
+## Environment Variables for restic
 
 Set environment variables in the _.profile_ for your account, or in the script.
+
+If you use S3 for the remote repository, you will need to provide four variables:
 
 ```bash
 export AWS_ACCESS_KEY_ID="XXX"
@@ -78,7 +92,7 @@ export RESTIC_PASSWORD=YOUR-REPOSITORY-PASSWORD
 
 Run this command to set up the repository in the S3 bucket:
 
-restic init
+    restic init
 
 A simple example script:
 
@@ -98,3 +112,4 @@ To view the snapshots that are in the repository:
 - [Official documentation: Setting up restic with Amazon S3](https://restic.readthedocs.io/en/stable/080_examples.html#setting-up-restic-with-amazon-s3) - Official restic documentation for using S3 storage
 - [System Backups with restic](https://kula.tproa.net/lnt/computers/backups/restic-systems-backups/) - Blog series on using restic for centralized server backup, by Thomas A. Kula
 - [GoTime episode on restic](https://changelog.com/gotime/48) - Audio of interview with Alexander Neumann, the developer of restic
+- [Ansible role for restic](https://galaxy.ansible.com/paulfantom/restic), by Paul Fantom
