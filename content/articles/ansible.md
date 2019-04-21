@@ -1,7 +1,7 @@
 +++
 Title = "Task Automation with Ansible"
 Slug = "ansible"
-Date = "2019-04-20T18:21:00+01:00"
+Date = "2019-04-21T17:17:00+01:00"
 Description = "An introduction to Ansible"
 Categories = ["administration"]
 Tags = ["administration", "python"]
@@ -19,7 +19,7 @@ First, set up a copy of Ansible and the required configuration files on a _contr
 
 Ansible runs tasks on either the control machine, or remote systems. Tasks are usually defined in _playbooks_. The tasks in a playbook are run in order, from the first task to the last. Playbooks are YAML files.
 
-Each time that you run a task, this calls a _module_ of code that connects to the relevant systems, and sends the appropriate commands to carry out the task. The list of available systems is known as the _inventory_, and individual systems are referred to as _nodes_.
+Each time that you run a task, this calls a _module_ of code that connects to the relevant systems, and sends the appropriate commands to carry out the task. The list of available systems is known as the [inventory](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html), and individual systems are referred to as _nodes_.
 
 ## Managing Systems with Ansible
 
@@ -86,7 +86,7 @@ _sudo_ has the _requiretty_ option enabled.
 
 # Ansible and Version Control
 
-Store your Ansible code in a source code repository. Ansible files can be placed in the same repository as the other files for a project.
+Store your Ansible playbooks and roles in a source code repository. Ansible files can be placed in the same repository as the other files for a project.
 
 For convenience, you may put the Ansible playbooks in the root of your repository. You can define playbooks as single YAML files, so in some cases, you do not need to create any directories at all for Ansible code.
 
@@ -130,13 +130,15 @@ You should also make use of these commands:
 - _ansible-galaxy_ - Manages Ansible roles that are provided from shared repositories
 - _ansible-vault_ - Encrypts and decrypts any individual YAML file that Ansible uses.
 
-Ansible includes [several other specialized tools](https://docs.ansible.com/ansible/latest/user_guide/command_line_tools.html).
+Ansible includes [several other specialized tools](https://docs.ansible.com/ansible/latest/user_guide/command_line_tools.html). For example, [ansible-pull](https://docs.ansible.com/ansible/latest/cli/ansible-pull.html) configures a system to pull Ansible playbooks from a source code repository and run them on a schedule.
 
 ## Specifying The Target Nodes
 
-Use _-i_ to specify the inventory that has the target nodes. Optionally, you can also specify a group, to limit the targets to the nodes in a particular group.
+Use _-i_ to specify the inventory that has the target nodes. If you do not provide an inventory, Ansible will run, as if you had specified an inventory that only contains _localhost_, and print a warning.
 
-    TOOL GROUP -i INVENTORY OPTIONS
+Optionally, you can also specify a [pattern](https://docs.ansible.com/ansible/latest/user_guide/intro_patterns.html#intro-patterns), to limit the targets to the nodes that are either in a particular group, or whose names match the specified pattern.
+
+    TOOL PATTERN -i INVENTORY OPTIONS
 
 The tool will connect to each of the specified nodes and execute the
 required commands. If a command fails on one or more of the nodes, a _retry_
@@ -161,7 +163,13 @@ _setup_ module returns information about the remote system.
 
 To specify the arguments to use with the module, add the _-a_ option. For example, this command uses the _get_url_ module to download the file that is specified by the _url_ argument to the directory that is specified by the _dest_ argument:
 
-    ansible all -i INVENTORY -m get_url -a "url='https://github.com/restic/restic/releases/download/v0.9.4/restic_0.9.4_linux_amd64.bz2' dest='~'"
+    ansible all -i INVENTORY -m get_url -a "url='https://github.com/restic/restic/releases/download/v0.9.4/restic_0.9.4_linux_amd64.bz2' dest='/tmp'"
+
+Use this feature to copy files between the control station and the nodes. The [copy](https://docs.ansible.com/ansible/latest/modules/copy_module.html) module transfers files from the control station over an SSH connection, the [fetch](https://docs.ansible.com/ansible/latest/modules/fetch_module.html) module downloads files from the nodes to the control station, and the [synchronize](https://docs.ansible.com/ansible/latest/modules/synchronize_module.html) module uses rsync for synchronization.
+
+This example copies the _~/Downloads/example.txt_ file to the nodes:
+
+    ansible all -i INVENTORY -m copy -a "src=~/Downloads/example.txt dest=/tmp/example.txt"
 
 ## The ansible-playbook Tool
 
