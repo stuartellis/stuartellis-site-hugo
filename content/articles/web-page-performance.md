@@ -1,7 +1,7 @@
 +++
 Title = "Optimizing Web Page Performance"
 Slug = "web-page-performance"
-Date = "2019-04-22T13:02:00+01:00"
+Date = "2019-04-22T13:05:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["google", "web"]

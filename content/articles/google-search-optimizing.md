@@ -1,7 +1,7 @@
 +++
 Title = "Optimizing Websites for Google Search"
 Slug = "google-search-optimizing"
-Date = "2019-04-22T13:01:00+01:00"
+Date = "2019-04-22T13:06:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["google", "web"]
