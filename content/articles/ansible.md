@@ -1,7 +1,7 @@
 +++
 Title = "Task Automation with Ansible"
 Slug = "ansible"
-Date = "2019-04-21T17:17:00+01:00"
+Date = "2019-04-27T15:35:00+01:00"
 Description = "An introduction to Ansible"
 Categories = ["administration"]
 Tags = ["administration", "python"]
@@ -101,17 +101,12 @@ If you expect to use an Ansible configuration file in the root directory of a pr
 
 These are standard directories for Ansible projects:
 
-- examples/ - Various other templates and examples
 - filter_plugins/ - Custom filter plugins
 - host_vars/ - Variables for individual host systems
 - inventory/ - Lists of nodes
 - group_vars/ - Variables for groups of systems
 - library/ - Custom Ansible modules
 - roles/ - Custom roles used by the Ansible playbooks
-- scripts/ - Utility scripts
-
-The _examples/_ and _scripts/_ directories are useful for storing your own work,
-but are not essential. These directories are not used by Ansible itself.
 
 # Using Ansible
 
@@ -151,25 +146,25 @@ nodes.
 
 Use the _ansible_ command with the _-a_ option to execute a shell command:
 
-    ansible all -i INVENTORY -a /usr/bin/uptime
+    ansible PATTERN -i INVENTORY -a /usr/bin/uptime
 
 Use _-m_ to execute an Ansible module:
 
-    ansible all -i INVENTORY -m ping
-    ansible all -i INVENTORY -m setup
+    ansible PATTERN -i INVENTORY -m ping
+    ansible PATTERN -i INVENTORY -m setup
 
 The _ping_ module checks that Ansible can connect to the remote system. The
 _setup_ module returns information about the remote system.
 
 To specify the arguments to use with the module, add the _-a_ option. For example, this command uses the _get_url_ module to download the file that is specified by the _url_ argument to the directory that is specified by the _dest_ argument:
 
-    ansible all -i INVENTORY -m get_url -a "url='https://github.com/restic/restic/releases/download/v0.9.4/restic_0.9.4_linux_amd64.bz2' dest='/tmp'"
+    ansible PATTERN -i INVENTORY -m get_url -a "url='https://github.com/restic/restic/releases/download/v0.9.4/restic_0.9.4_linux_amd64.bz2' dest='/tmp'"
 
 Use this feature to copy files between the control station and the nodes. The [copy](https://docs.ansible.com/ansible/latest/modules/copy_module.html) module transfers files from the control station over an SSH connection, the [fetch](https://docs.ansible.com/ansible/latest/modules/fetch_module.html) module downloads files from the nodes to the control station, and the [synchronize](https://docs.ansible.com/ansible/latest/modules/synchronize_module.html) module uses rsync for synchronization.
 
 This example copies the _~/Downloads/example.txt_ file to the nodes:
 
-    ansible all -i INVENTORY -m copy -a "src=~/Downloads/example.txt dest=/tmp/example.txt"
+    ansible PATTERN -i INVENTORY -m copy -a "src=~/Downloads/example.txt dest=/tmp/example.txt"
 
 ## The ansible-playbook Tool
 
@@ -234,6 +229,11 @@ Any YAML file that stores password variables should be encrypted using the [Vaul
 
 - [Ansible interactive tutorial](https://github.com/turkenh/ansible-interactive-tutorial)
 - [ARA](https://ara.recordsansible.org/) - Ansible plugin to record playbook activity for support and troubleshooting
+
+# Additional Ansible Roles
+
+- [Ansible Lockdown](https://ansiblelockdown.io/) - Project to maintain roles that configure systems to meet security standards
+- [Linux System Roles](https://linux-system-roles.github.io/) - Project to provide a standard set of Ansible roles for configuring Linux systems
 
 # Resources
 
