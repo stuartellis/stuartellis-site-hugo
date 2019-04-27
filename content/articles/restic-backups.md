@@ -1,7 +1,7 @@
 +++
 Title = "Backups with restic"
 Slug = "restic-backups"
-Date = "2019-04-20T18:59:00+01:00"
+Date = "2019-04-27T15:00:00+01:00"
 Description = "Managing backups with restic"
 Categories = ["administration"]
 Tags = ["administration"]
@@ -46,7 +46,7 @@ Create the S3 bucket first, before you setup restic. We need to do this, because
 
 You can install restic with the package manager of your Linux distribution, or Homebrew on macOS. To ensure that you have the latest version of restic, you should download it directly from GitHub instead.
 
-The simplest way to orchestrate backups with restic is to write a shell script.
+The simplest ways to orchestrate backups with restic are to write a shell script or [systemd unit files](https://fedoramagazine.org/automate-backups-with-restic-and-systemd/).
 
 Alternatively, use this [Ansible role for restic](https://galaxy.ansible.com/paulfantom/restic), which can install restic for system-wide use, and set up scheduled backups.
 
@@ -55,7 +55,7 @@ Alternatively, use this [Ansible role for restic](https://galaxy.ansible.com/pau
 Download the file for restic from GitHub, and then set permissions on it:
 
     mkdir -p $HOME/.restic/bin
-    curl -L https://github.com/restic/restic/releases/download/v0.9.4/restic_0.9.4_linux_amd64.bz2 | bunzip2 > $HOME/.restic/bin/restic
+    curl -L https://github.com/restic/restic/releases/download/v0.9.5/restic_0.9.5_linux_amd64.bz2 | bunzip2 > $HOME/.restic/bin/restic
     chown -R $USER:$USER $HOME/.restic/bin
     chmod -R 750 $HOME/.restic/bin
 
@@ -63,7 +63,7 @@ Download the file for restic from GitHub, and then set permissions on it:
 
 Download the file for restic from GitHub. Once the file is downloaded, set the permissions to limit who can use it, and then give it the capabilities to access the whole system:
 
-    curl -L https://github.com/restic/restic/releases/download/v0.9.4/restic_0.9.4_linux_amd64.bz2 | bunzip2 > restic
+    curl -L https://github.com/restic/restic/releases/download/v0.9.5/restic_0.9.5_linux_amd64.bz2 | bunzip2 > restic
     mkdir -p /opt/restic/bin
     mv restic /opt/restic/bin
     chown -R root:$USER /opt/restic/bin
@@ -90,7 +90,7 @@ export RESTIC_PASSWORD=YOUR-REPOSITORY-PASSWORD
 
 > Before you run restic, ensure that the hostname for the system is set correctly. Each restic snapshot includes the hostname of the source.
 
-Run this command to set up the repository in the S3 bucket:
+Run this command to set up the repository:
 
     restic init
 
@@ -102,6 +102,8 @@ A simple example script:
 restic backup --exclude={.aws,.ssh} --tag test1 /home
 ```
 
+> If you use S3, restic create objects with the _STANDARD_ storage class by default. Use the _s3.storage-class_ option to specify a different storage class for objects.
+
 To view the snapshots that are in the repository:
 
     restic snapshots
@@ -109,6 +111,7 @@ To view the snapshots that are in the repository:
 # Resources
 
 - [Fedora Magazine article: Use restic on Fedora for encrypted backups](https://fedoramagazine.org/use-restic-encrypted-backups/)
+- [Fedora Magazine article: Automate backups with restic and systemd](https://fedoramagazine.org/automate-backups-with-restic-and-systemd/)
 - [Official documentation: Setting up restic with Amazon S3](https://restic.readthedocs.io/en/stable/080_examples.html#setting-up-restic-with-amazon-s3) - Official restic documentation for using S3 storage
 - [System Backups with restic](https://kula.tproa.net/lnt/computers/backups/restic-systems-backups/) - Blog series on using restic for centralized server backup, by Thomas A. Kula
 - [GoTime episode on restic](https://changelog.com/gotime/48) - Audio of interview with Alexander Neumann, the developer of restic
