@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development"
 Slug = "python-getting-started"
-Date = "2019-02-03T09:13:00+01:00"
+Date = "2019-05-05T08:47:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -39,20 +39,15 @@ The tutorial that is supplied with Python can walk you through the basics. The d
 
 If you are new to programming, start with [Mu](https://codewith.mu/), which is specifically designed to help new developers work with Python.
 
-Once you have become comfortable with programming, you should move on to a text editor for programmers, such as [Visual Studio Code](https://code.visualstudio.com), [Neovim](https://neovim.io), or [Oni](https://www.onivim.io/).
+Once you have become comfortable with programming, you should move on to a text editor for programmers, such as [Visual Studio Code](https://code.visualstudio.com) or [Neovim](https://neovim.io).
 
-## Visual Studio Code 
+## Visual Studio Code
 
-[Visual Studio Code](https://code.visualstudio.com) is arguably the best desktop editor for programming, and is available free of charge. [The Python tutorial](https://code.visualstudio.com/docs/python/python-tutorial) explains how to use the features of Visual Studio Code with Python. 
+[Visual Studio Code](https://code.visualstudio.com) is arguably the best desktop editor for programming, and is available free of charge. [The Python tutorial](https://code.visualstudio.com/docs/python/python-tutorial) explains how to use the features of Visual Studio Code with Python.
 
-Unfortunately, the Microsoft releases of Visual Studio Code are proprietary software with telemetry enabled by default. To disable telemetry and crash reporting, set these options in _Preferences > Settings_:
+The Microsoft releases of Visual Studio Code are proprietary software with telemetry enabled by default. To avoid these issues, use the packages that are provided by the [vscodium](https://github.com/VSCodium/vscodium) project.
 
-```json
-"telemetry.enableTelemetry": false,
-"telemetry.enableCrashReporter": false
-```
-
-> Always review the documentation for Visual Studio Code extensions before you install them. Extensions from Microsoft frequently use telemetry.
+Once you have installed Visual Studio Code or VSCodium, read [this article](https://www.stuartellis.name/articles/visual-studio-code/) for more information about using the editor.
 
 ## Integrated Development Environments
 
@@ -87,7 +82,7 @@ The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualen
 
 # Building Graphical Desktop Applications
 
-If you are specifically interested in developing desktop applications, start with [wxPython](http://wxpython.org/). The Tk interface toolkit that is supplied with the Python standard library is rather basic and dated. If you have advanced needs, consider [QT for Python](https://www.qt.io/qt-for-python), which enables you to make use of the [QT](https://www.qt.io/) libraries. 
+If you are specifically interested in developing desktop applications, start with [wxPython](http://wxpython.org/). The Tk interface toolkit that is supplied with the Python standard library is rather basic and dated. If you have advanced needs, consider [QT for Python](https://www.qt.io/qt-for-python), which enables you to make use of the [QT](https://www.qt.io/) libraries.
 
 # Microsoft Windows Integration
 
@@ -95,7 +90,9 @@ Python includes support for some features that are unique to Microsoft Windows, 
 
 # Packaging Applications
 
-To build packaged applications for Windows, use [PyInstaller](http://www.pyinstaller.org/). This creates stand-alone executables that include Python itself, your code, and any other dependencies.
+To build packages for desktop and command-line applications, use [PyInstaller](http://www.pyinstaller.org/). This creates stand-alone executables that include Python itself, your code, and any other dependencies.
+
+If you need to deploy server applications to multiple locations, consider packaging the applications in containers. [Docker](https://www.docker.com/) is currently the most popular set of tools for building containers.
 
 # Learning Resources
 
