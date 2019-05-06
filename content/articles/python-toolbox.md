@@ -1,7 +1,7 @@
 +++
 Title = "Useful Python Tools and Libraries"
 Slug = "python-toolbox"
-Date = "2019-03-10T15:09:00+01:00"
+Date = "2019-05-06T13:41:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -17,8 +17,8 @@ Notes on useful tools and libraries for the [Python](https://www.python.org/) pr
 
 These services enable you to work on Python projects in a cloud-based environment:
 
-* [Python Anywhere](https://www.pythonanywhere.com/)
-* [repl.it](https://repl.it/)
+- [Python Anywhere](https://www.pythonanywhere.com/)
+- [repl.it](https://repl.it/)
 
 To quickly share pieces of code, use [Pastebin](https://pastebin.com/).
 
@@ -32,11 +32,11 @@ In a command prompt window enter the following command:
 
     pip install pipenv
 
-The pipenv tool uses the _pip_ and [virtual environment](https://docs.python.org/3/tutorial/venv.html) facilities that are included with Python itself, so it is fully compatible with other Python utilities, whilst being much easier to use than other tools. The Python packaging documentation now officially recommends pipenv.
+The pipenv tool uses the _pip_ and [virtual environment](https://docs.python.org/3/tutorial/venv.html) facilities that are included with Python itself, so it is compatible with other Python utilities.
 
 The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualenvs/) shows you how to work with _pipenv_.
 
-## Working with Multiple Versions of Python 
+## Working with Multiple Versions of Python
 
 If you need to develop with several different versions of Python, use [pyenv](https://github.com/pyenv/pyenv). This tool enables you to install multiple versions of Python on the same system, and switch between them.
 
@@ -92,11 +92,11 @@ If you need to get information from Websites that do not provide an API, use [Sc
 
 The Python standard library includes a version of [SQLite](http://www.sqlite.org/). This means that you can use SQL databases in any Python project without installing a separate database product. Avoid underestimating SQLite: it is a robust and efficient database that will handle gigabytes of data.
 
-To access other types of SQL databases such as PostgreSQL, MySQL, or Oracle, install the Python driver that the vendor of the database recommends. Each Python driver will require a particular client library. For example, the recommended Python driver for PostgreSQL is [psycopg](http://initd.org/psycopg/), which requires a copy of the libpq library.   
+To access other types of SQL databases such as PostgreSQL, MySQL, or Oracle, install the Python driver that the vendor of the database recommends. Each Python driver will require a particular client library. For example, the recommended Python driver for PostgreSQL is [psycopg](http://initd.org/psycopg/), which requires a copy of the libpq library.
 
 > _Connecting to Microsoft SQL Server_: [Microsoft recommend that you use the ODBC adapter for SQL Server](https://docs.microsoft.com/en-us/sql/connect/python/python-driver-for-sql-server).
 
-Whichever brand of SQL database you work with, use a database toolkit, rather than writing data access and schema management code yourself. 
+Whichever brand of SQL database you work with, use a database toolkit, rather than writing data access and schema management code yourself.
 
 [SQLAlchemy](http://www.sqlalchemy.org/) is the standard Python library for database programming. You may use the declarative portion of SQLAlchemy like a standard ORM, but it has many more capabilities. [Records](https://pypi.python.org/pypi/records/) provides a simple programming interface and command-line tool for SQLAlchemy.
 
@@ -116,13 +116,13 @@ Python includes support for some features that are unique to Microsoft Windows, 
 
 Use [PyInstaller](http://www.pyinstaller.org/) to create applications that you can give to other people. PyInstaller creates stand-alone executables that include Python itself, your code, and any other dependencies. Follow the steps described in the [RealPython.com tutorial](https://realpython.com/pyinstaller-python/) to add PyInstaller to your project.
 
-If you only need to deploy your application to systems that you know will have a suitable version of Python, use [shiv](https://github.com/linkedin/shiv). The shiv utility packages your application and dependencies into a ZIP file that Python interpreters will run. 
+If you only need to deploy your application to systems that you know will have a suitable version of Python, use [shiv](https://github.com/linkedin/shiv). The shiv utility packages your application and dependencies into a ZIP file that Python interpreters will run.
 
 # Other Useful Libraries
 
 - [Gunicorn](https://gunicorn.org/) - Fast Web server for Python WSGI applications
 - [Jinja2](http://jinja.pocoo.org/) - Text templating, for generating HTML and other formats
-- [Matplotlib](https://matplotlib.org/) - Plotting 2D graphs and charts 
+- [Matplotlib](https://matplotlib.org/) - Plotting 2D graphs and charts
 - [Pendulum](https://pendulum.eustace.io/) - Date and time parsing
 - [Pillow](https://python-pillow.org/) - Image processing
 - [python-dotenv](https://github.com/theskumar/python-dotenv) - Load environment variables from files

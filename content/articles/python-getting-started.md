@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development"
 Slug = "python-getting-started"
-Date = "2019-05-05T08:47:00+01:00"
+Date = "2019-05-06T13:41:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -76,7 +76,7 @@ In a command prompt window enter the following command:
 
     pip install pipenv
 
-The pipenv tool uses the _pip_ and [virtual environment](https://docs.python.org/3/tutorial/venv.html) facilities that are included with Python itself, so it is fully compatible with other Python utilities, whilst being much easier to use than other tools. The Python packaging documentation now officially recommends pipenv.
+The pipenv tool uses the _pip_ and [virtual environment](https://docs.python.org/3/tutorial/venv.html) facilities that are included with Python itself, so it is compatible with other Python utilities.
 
 The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualenvs/) shows you how to work with _pipenv_.
 
