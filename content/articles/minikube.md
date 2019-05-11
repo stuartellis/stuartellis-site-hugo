@@ -1,7 +1,7 @@
 +++
 Title = "Kubernetes on a Single Computer with Minikube"
 Slug = "minikube"
-Date = "2019-05-05T15:24:00+01:00"
+Date = "2019-05-11T11:30:00+01:00"
 Description = "Using Minikube for developing with Kubernetes"
 Categories = ["administration"]
 Tags = ["administration", "kubernetes"]
@@ -16,7 +16,7 @@ Draft = true
 
 # Overview
 
-Minikube sets up and manage Kubernetes on a single system. This system could be a developer laptop, but it could also be a Linux server. For example, Minikube can be run on a CI system, to provide a cluster for integration tests.
+Minikube sets up and manage Kubernetes on a single system. This system could be a developer laptop, but it could also be a Linux server. For example, you can run Minikube on a CI system, to provide a cluster for integration tests.
 
 Use Minikube to develop applications that will be deployed on Kubernetes clusters. You can also use it to develop and test cluster configurations.
 
@@ -39,11 +39,13 @@ In either case, Minikube uses _kubeadm_ to set up the Kubernetes installation on
 5. Install VirtualBox or hyperkit
 6. Install Docker
 
+Optionally, install [Helm](https://helm.sh/) and [Skaffold](https://skaffold.dev) to deploy your applications. Download the versions for macOS and copy them to the _~/.local/bin/_ directory. Minikube itself does not use or require these tools.
+
+### Shell autocompletion
+
 To enable auto-completion for the Bash shell, add this line to your _~/.bashrc_ file:
 
     eval "$(minikube completion bash)"
-
-Optionally, install [Helm](https://helm.sh/) and [Skaffold](https://skaffold.dev/) to deploy your applications. Download the versions for macOS and copy them to the _~/.local/bin/_ directory. Minikube itself does not use or require these tools.
 
 ## Creating a Cluster on Minikube
 
@@ -88,7 +90,7 @@ You can also use the container run-time in the Minikube virtual machine to build
 
 > Understand the data storage that your application uses.
 
-# Generating a Configuration
+# Generating a Configuration File
 
 To share a Minikube configuration between developers, use the features to export and import configurations. The configuration can be in a JSON file, or environment variables.
 
@@ -102,20 +104,33 @@ Refer to [Minikube on Travis CI](https://kinvolk.io/blog/2017/10/running-kuberne
 
 # Customizing Minikube
 
-Minikube includes an add-on manager:
+Minikube includes an add-on manager. Several features are provided as addons. For example, the _ingress_ add-on allows access to services that are running on the cluster:
 
-     minikube addons list
+To list the addons:
 
-FIXME: The _ingress_ add-on
+    minikube addons list
+
+To enable an addon:
+
+    minikube addons enable ingress
+
+To disable an addon:
+
+    minikube addons disable ingress
+
+## Editing the Configuration
+
+Minikube also mounts directories from ~/.minikube/ to the virtual machine. This enables you to customize the virtual machine or the Kubernetes installation.
+
+## Using Alternate Run-Times
 
 You can switch Minikube to another type of container run-time, such as CRI-O.
-
-Minikube mounts directories from ~/.minikube/ to the virtual machine. This enables you to customize the virtual machine or the Kubernetes installation.
 
 # Extra Tools
 
 - [Helm](https://helm.sh/) - Package manager for Kubernetes
 - [Skaffold](https://skaffold.dev/) - Deployment tool for Kubernetes
+- [Ansible Role for Minikube](https://galaxy.ansible.com/gantsign/minikube)
 
 The [Visual Studio Code extension for Kubernetes](ms-kubernetes-tools.vscode-kubernetes-tools) supports Minikube. For example, it automatically detects the Kubernetes cluster that is provided by Minikube, and includes commands to start and stop Minikube.
 
@@ -124,3 +139,7 @@ The [Visual Studio Code extension for Kubernetes](ms-kubernetes-tools.vscode-kub
 - [Minikube Intro](https://www.youtube.com/watch?v=4x0CZmF_U5o), by Dan Lorenc, Minikube developer at Google
 - Developing Locally with Kubernetes, by Ryan Jarvinen - [Video](https://www.youtube.com/watch?v=_W6O_pfA00s) and [slides](http://gist-reveal.it/bit.ly/kubecon-dev)
 - [Deep Dive: Minikube](https://www.youtube.com/watch?v=46-FXiSEfE4), Bálint Pató & Thomas Strömberg - covers the architecture of Minikube, and future directions for the project
+
+# Articles
+
+- [Sharing a Local Container Registry with Minikube](https://blog.hasura.io/sharing-a-local-registry-for-minikube-37c7240d0615/)
