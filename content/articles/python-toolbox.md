@@ -1,7 +1,7 @@
 +++
 Title = "Useful Python Tools and Libraries"
 Slug = "python-toolbox"
-Date = "2019-05-06T13:41:00+01:00"
+Date = "2019-05-11T10:20:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -12,6 +12,10 @@ Type = "article"
 Notes on useful tools and libraries for the [Python](https://www.python.org/) programming language.
 
 <!--more-->
+
+# Using Python Command-Line Applications
+
+Use [pipx](https://pypi.org/project/pipx/) to install Python command-line tools. The pipx utility uses the _pip_ and [virtual environment](https://docs.python.org/3/tutorial/venv.html) facilities that are included with Python itself.
 
 # Online Development Environments
 
@@ -47,10 +51,10 @@ If you need to develop with several different versions of Python, use [pyenv](ht
 
 ## Code Quality
 
-- [autopep8](https://pypi.python.org/pypi/autopep8/) for code formatting
+- [Black](https://black.readthedocs.io/en/stable/) for code formatting
 - [Pylint](https://www.pylint.org) for code quality
 
-If you install the Python extension for Visual Studio Code, it will offer to use Pylint and autopep8 to check and format your code.
+If you install the Python extension for Visual Studio Code, it will offer to use Pylint and autopep8 to check and format your code. Use Black instead of autopep8 for new projects.
 
 ## Tools for Testing Python Code
 
@@ -74,7 +78,7 @@ For simple Websites and services, use the [Flask](http://flask.pocoo.org/) frame
 
 Use either [Django](http://www.djangoproject.com/) or [Pyramid](https://trypyramid.com/) for larger projects. Django provides a set of custom tools and libraries that closely integrate together. Pyramid offers a modular framework for integrating third-party Python libraries together into custom Web applications.
 
-These Web frameworks follow the WSGI standard. Any server that supports WSGI can run Python Web applications, which means that there are many options for hosting your projects. You can either set up your own systems with the software of your choice, or use cloud services for application hosting.
+These Web frameworks follow the WSGI standard. WSGI defines the interface for synchronous Python Web applications. Any server that supports WSGI can run Python Web applications, which means that there are many options for hosting your projects. You can either set up your own systems with the software of your choice, or use cloud services for application hosting.
 
 [Google App Engine](https://cloud.google.com/appengine/), [Heroku](https://www.heroku.com/) and [Python Anywhere](https://www.pythonanywhere.com/) enable you to run Python Web applications without managing systems. If you need more control over the infrastructure that your application uses, consider using containers and a Kubernetes service, such as [Red Hat OpenShift](https://www.openshift.com/), [DigitalOcean Kubernetes](https://www.digitalocean.com/products/kubernetes/) or [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/).
 
@@ -98,7 +102,7 @@ To access other types of SQL databases such as PostgreSQL, MySQL, or Oracle, ins
 
 Whichever brand of SQL database you work with, use a database toolkit, rather than writing data access and schema management code yourself.
 
-[SQLAlchemy](http://www.sqlalchemy.org/) is the standard Python library for database programming. You may use the declarative portion of SQLAlchemy like a standard ORM, but it has many more capabilities. [Records](https://pypi.python.org/pypi/records/) provides a simple programming interface and command-line tool for SQLAlchemy.
+[SQLAlchemy](http://www.sqlalchemy.org/) is the standard Python library for database programming. You may use the declarative portion of SQLAlchemy like a standard ORM, but it has many more capabilities.
 
 If your project has limited or specific needs, consider alternatives to SQLAlchemy. [Peewee](http://docs.peewee-orm.com/) offers a lightweight alternative to SQLAlchemy for accessing the most popular brands of Open Source database. For Django projects, use the Object-Relational Mapper (ORM) that is provided with Django, because this is integrated with the other features of the framework.
 
@@ -118,9 +122,11 @@ Use [PyInstaller](http://www.pyinstaller.org/) to create applications that you c
 
 If you only need to deploy your application to systems that you know will have a suitable version of Python, use [shiv](https://github.com/linkedin/shiv). The shiv utility packages your application and dependencies into a ZIP file that Python interpreters will run.
 
+To run your Python server applications on Kubernetes, package them as containers.
+
 # Other Useful Libraries
 
-- [Gunicorn](https://gunicorn.org/) - Fast Web server for Python WSGI applications
+- [Gunicorn](https://gunicorn.org/) - Web server for Python applications
 - [Jinja2](http://jinja.pocoo.org/) - Text templating, for generating HTML and other formats
 - [Matplotlib](https://matplotlib.org/) - Plotting 2D graphs and charts
 - [Pendulum](https://pendulum.eustace.io/) - Date and time parsing
