@@ -13,11 +13,27 @@ Type = "article"
 
 <!--more-->
 
-# Language
+# Tooling
 
 ## Use Python 3
 
-Use Python 3 for all new work. Python 2 will no longer be supported, as of 2020. All of the major libraries and frameworks now support Python 3. Several will remove support for Python 2 in upcoming releases.
+Use Python 3 for all new work. Python 2 will no longer be supported, as of 2020. All of the major libraries and frameworks now support Python 3. Some projects have removed support for Python 2 in their latest releases.
+
+## Use Virtual Environments for Development
+
+The [virtual environments](https://docs.python.org/3/tutorial/venv.html) feature enables you to define separate sets of packages for each Python project, so that they do not conflict with each other.
+
+There are several tools that help you to manage your Python projects, and use virtual environments. The most popular are [pipenv](https://docs.pipenv.org/) and [poetry](https://poetry.eustace.io/). You can also manually set up and manage virtual environments.
+
+Decide on the workflow for your project, and document it.
+
+## Use Automatic Code Formatting
+
+[PEP 8](https://www.python.org/dev/peps/pep-0008/) provides the accepted style guide for Python code. Use a formatting tool with a plugin to your editor, so that your code is automatically formatted to meet the guidelines in PEP 8.
+
+[Black](https://black.readthedocs.io/en/stable/) is becoming the standard code formatting tool for Python projects. Use Black for new projects.
+
+# Language Syntax
 
 ## Use f-strings to Format Strings
 
@@ -29,13 +45,15 @@ The older features for formatting strings will not be removed, to avoid breaking
 
 The f-strings feature was added in version 3.6 of Python. Alternate implementations of Python may include this specific feature, even when they do not support version 3.6 syntax.
 
-## Use Data Classes
+## Use enum or Named Tuples for Immutable Sets of Key-Value Pairs
+
+Use the _enum_ type in Python 3.4 or above for immutable collections of key-value pairs. Python 3 also has _collections.namedtuple()_ for immutable key-value pairs.
+
+## Use Data Classes for Custom Data Objects
 
 The data classes feature enables you to reduce the amount of code that you need to define classes for objects that exist to store values. The new syntax for data classes does not affect the behavior of the classes that you define with it. Each data class is a standard Python class.
 
 [PEP 557](https://www.python.org/dev/peps/pep-0557/) describes data classes.
-
-Note that you can use the _enum_ type in Python 3.4 or above for immutable collections of key-value pairs. Python 3 also has _collections.namedtuple()_ for immutable key-value pairs.
 
 Data classes were introduced in version 3.7 of Python.
 
@@ -53,25 +71,25 @@ This function drops you into the debugger at the point where it is called. Both 
 
 The [breakpoint()](https://docs.python.org/3/library/functions.html#breakpoint) feature was added in version 3.7 of Python.
 
+# Application Design
+
 ## Use Logging for Diagnostic Messages, Rather Than print()
 
 The built-in _print()_ statement is convenient for adding debugging information, but you should include logging in your scripts and applications. Use the [logging](https://docs.python.org/3/library/logging.html#logrecord-attributes) module in the standard library, or a third-party logging module.
 
 ## Use asyncio Where It Makes Sense
 
-There are multiple ways to achieve concurrency with Python. In many cases, the appropriate solution uses multiple processes, such as a WSGI Web server like [Gunicorn](https://gunicorn.org/), or the [multiprocessing](https://docs.python.org/3/library/multiprocessing.html) package in the standard library. The [asynchronous features of Python](https://docs.python.org/3/library/asyncio.html) enable a single process to avoid blocking on I/O operations.
+The [asynchronous features of Python](https://docs.python.org/3/library/asyncio.html) enable a single process to avoid blocking on I/O operations. You can achieve concurrency by running multiple Python processes, with or without asynchronous I/O.
+
+To run multiple Web application processes, use [Gunicorn](https://gunicorn.org/) or another WSGI server. Use the [multiprocessing](https://docs.python.org/3/library/multiprocessing.html) package in the Python standard library to build custom applications that run as multiple processes.
+
+Code that needs asynchronous I/O must not call any function in the standard library that synchronous I/O, such as _open()_, or the _logging_ module.
 
 If you would like to work with _asyncio_, always use the most recent version of Python. Each new version of Python has improved the performance and features of async. For example, version 3.7 of Python introduced [context variables](https://docs.python.org/3/library/contextvars.html), which enable you to have data that is local to a specific _task_.
 
 [PEP 0567](https://www.python.org/dev/peps/pep-0567/) describes context variables.
 
 The initial version of _asyncio_ was included in version 3.4 of Python. Keywords for _async_ and _await_ were added in Python 3.5. Context variables and the _asyncio.run()_ function were introduced in version 3.7 of Python.
-
-## Use Automatic Code Formatting
-
-[PEP 8](https://www.python.org/dev/peps/pep-0008/) provides the accepted style guide for Python code. Use a formatting tool with a plugin to your editor, so that your code is automatically formatted to meet the standards of PEP 8.
-
-[Black](https://black.readthedocs.io/en/stable/) is replacing _autopep8_ as the popular formatting tool for Python code, even though Black is officially in beta testing.
 
 # Libraries
 
@@ -123,7 +141,7 @@ The _os.scandir()_ function was added in version 3.5 of Python.
 
 The [subprocess](https://docs.python.org/3/library/subprocess.html) module provides a safe way to run external commands. Use _subprocess_ rather than shell backquoting or the functions in _os_, such as _spawn_, _popen2_ and _popen3_. The _subprocess.run()_ function in current versions of Python is sufficient for most cases.
 
-[PEP 324](https://www.python.org/dev/peps/pep-0324/) explains the technical details of subprocess in depth.
+[PEP 324](https://www.python.org/dev/peps/pep-0324/) explains the technical details of subprocess in detail.
 
 ## Use Requests for HTTP Clients
 
@@ -132,9 +150,3 @@ Use the [requests](http://docs.python-requests.org/en/master/) package for HTTP,
 ## Use pytest for Testing
 
 The [pytest](http://pytest.org) package has superceded _nose_ as the most popular testing system for Python. Use the _unittest_ module in the standard library for situations where you cannot add pytest to the project.
-
-# Use Virtual Environments for Development
-
-The [virtual environments](https://docs.python.org/3/tutorial/venv.html) feature enables you to define separate sets of packages for each Python project, so that they do not conflict with each other.
-
-Several tools use virtual environments to help you to manage your Python projects. The most popular are [pipenv](https://docs.pipenv.org/) and [poetry](https://poetry.eustace.io/).
