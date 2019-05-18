@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development"
 Slug = "python-getting-started"
-Date = "2019-05-06T13:41:00+01:00"
+Date = "2019-05-18T19:20:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -71,10 +71,6 @@ If Git is installed, Atom and Visual Studio Code provide you with access to info
 ## pipenv for Virtual Environments
 
 Install [pipenv](https://docs.pipenv.org/) to manage your Python projects. It ensures that each of your Python projects use a separate set of packages, and provides other features to help you maintain your work, such as [checking the code](https://docs.pipenv.org/advanced/#code-style-checking) and [warning you about security issues in libraries](https://docs.pipenv.org/advanced/#detection-of-security-vulnerabilities).
-
-In a command prompt window enter the following command:
-
-    pip install pipenv
 
 The pipenv tool uses the _pip_ and [virtual environment](https://docs.python.org/3/tutorial/venv.html) facilities that are included with Python itself, so it is compatible with other Python utilities.
 
