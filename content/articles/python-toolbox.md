@@ -1,7 +1,7 @@
 +++
 Title = "Useful Python Tools and Libraries"
 Slug = "python-toolbox"
-Date = "2019-05-11T10:20:00+01:00"
+Date = "2019-05-18T19:21:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["python"]
@@ -15,7 +15,9 @@ Notes on useful tools and libraries for the [Python](https://www.python.org/) pr
 
 # Using Python Command-Line Applications
 
-Use [pipx](https://pypi.org/project/pipx/) to install Python command-line tools. The pipx utility uses the _pip_ and [virtual environment](https://docs.python.org/3/tutorial/venv.html) facilities that are included with Python itself.
+Use [pipx](https://pypi.org/project/pipx/) to install Python command-line tools.
+
+The pipx utility uses the _pip_ and [virtual environment](https://docs.python.org/3/tutorial/venv.html) facilities that are included with Python itself.
 
 # Online Development Environments
 
@@ -31,10 +33,6 @@ To quickly share pieces of code, use [Pastebin](https://pastebin.com/).
 ## Use pipenv for Virtual Environments
 
 Install [pipenv](https://docs.pipenv.org/) to manage your Python projects. It ensures that each of your Python projects use a separate set of packages, and provides other features to help you maintain your work, such as [checking the code](https://docs.pipenv.org/advanced/#code-style-checking) and [warning you about security issues in libraries](https://docs.pipenv.org/advanced/#detection-of-security-vulnerabilities).
-
-In a command prompt window enter the following command:
-
-    pip install pipenv
 
 The pipenv tool uses the _pip_ and [virtual environment](https://docs.python.org/3/tutorial/venv.html) facilities that are included with Python itself, so it is compatible with other Python utilities.
 
@@ -78,13 +76,25 @@ For simple Websites and services, use the [Flask](http://flask.pocoo.org/) frame
 
 Use either [Django](http://www.djangoproject.com/) or [Pyramid](https://trypyramid.com/) for larger projects. Django provides a set of custom tools and libraries that closely integrate together. Pyramid offers a modular framework for integrating third-party Python libraries together into custom Web applications.
 
-These Web frameworks follow the WSGI standard. WSGI defines the interface for synchronous Python Web applications. Any server that supports WSGI can run Python Web applications, which means that there are many options for hosting your projects. You can either set up your own systems with the software of your choice, or use cloud services for application hosting.
+All of these Web frameworks follow the WSGI standard for synchronous Python Web applications. This enables you to choose between many options for hosting your Python projects. In each case, a WSGI server such as [Gunicorn](https://gunicorn.org/) runs your code on the host system.
 
-[Google App Engine](https://cloud.google.com/appengine/), [Heroku](https://www.heroku.com/) and [Python Anywhere](https://www.pythonanywhere.com/) enable you to run Python Web applications without managing systems. If you need more control over the infrastructure that your application uses, consider using containers and a Kubernetes service, such as [Red Hat OpenShift](https://www.openshift.com/), [DigitalOcean Kubernetes](https://www.digitalocean.com/products/kubernetes/) or [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/).
+Several commercial services provide fully managed systems, so that you can deploy Python applications without any setting up or maintaining any servers yourself. These services include [Google App Engine](https://cloud.google.com/appengine/), [Heroku](https://www.heroku.com/) and [Python Anywhere](https://www.pythonanywhere.com/).
+
+If you need more control over the infrastructure that your application uses, consider using containers and a Kubernetes service, rather than setting up a cluster of Web servers. [Red Hat OpenShift](https://www.openshift.com/), [DigitalOcean Kubernetes](https://www.digitalocean.com/products/kubernetes/) or [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/).
 
 [Full Stack Python](https://www.fullstackpython.com) provides a comprehensive guide to building Web applications with Python.
 
 > Whichever Web framework you use, add the [secure.py](https://secure.readthedocs.io/en/latest/) extension to implement Web security features.
+
+## Asynchronous Web Applications
+
+Treat Python asynchronous Web frameworks as experimental technology. The standards and libraries are still being developed for asynchronous Python.
+
+[Starlette](https://www.starlette.io/), [Sanic](https://sanicframework.org/) and [Quart](https://pgjones.gitlab.io/quart/) are probably the most well-known asynchronous frameworks.
+
+Starlette and Quart implement the [ASGI](https://asgi.readthedocs.io/en/latest/) standard. [Uvicorn](http://www.uvicorn.org/) is a server for ASGI applications.
+
+The [aiohttp](https://docs.aiohttp.org/en/stable) library provides an asynchronous HTTP client and server, but does not currently support ASGI.
 
 # Developing Web Clients
 
@@ -126,7 +136,6 @@ To run your Python server applications on Kubernetes, package them as containers
 
 # Other Useful Libraries
 
-- [Gunicorn](https://gunicorn.org/) - Web server for Python applications
 - [Jinja2](http://jinja.pocoo.org/) - Text templating, for generating HTML and other formats
 - [Matplotlib](https://matplotlib.org/) - Plotting 2D graphs and charts
 - [Pendulum](https://pendulum.eustace.io/) - Date and time parsing
