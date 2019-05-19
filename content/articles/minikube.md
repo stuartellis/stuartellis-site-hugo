@@ -1,12 +1,11 @@
 +++
-Title = "Kubernetes on a Single Computer with Minikube"
+Title = "Minikube - Kubernetes on a Single Computer"
 Slug = "minikube"
-Date = "2019-05-11T11:30:00+01:00"
+Date = "2019-05-18T13:20:00+01:00"
 Description = "Using Minikube for developing with Kubernetes"
 Categories = ["administration"]
 Tags = ["administration", "kubernetes"]
 Type = "article"
-Draft = true
 
 +++
 
@@ -16,7 +15,7 @@ Draft = true
 
 # Overview
 
-Minikube sets up and manage Kubernetes on a single system. This system could be a developer laptop, but it could also be a Linux server. For example, you can run Minikube on a CI system, to provide a cluster for integration tests.
+Minikube sets up and manage Kubernetes on a single system. This system could be a developer laptop, but it could also be a Linux server. For example, you can run Minikube on a CI system, to provide clusters for your integration tests.
 
 Use Minikube to develop applications that will be deployed on Kubernetes clusters. You can also use it to develop and test cluster configurations.
 
@@ -28,7 +27,11 @@ By default, Minikube uses the virtual machine manager to create a new virtual ma
 
 If Minikube runs on a Linux operating system, it can set up Kubernetes directly on this system, instead of creating a virtual machine. In this case, you must install a container run-time on the host system yourself.
 
-In either case, Minikube uses _kubeadm_ to set up the Kubernetes installation on the target machine. First, Minikube installs the minimum set of Kubernetes components to operate a cluster, including the _etcd_ and _kubelet_ services. All of the other components of Kubernetes are then deployed as containers on the cluster, such as the API server and the Scheduler.
+In either case, Minikube uses _kubeadm_ to set up a Kubernetes cluster on the target machine. First, Minikube installs the minimum set of Kubernetes components to operate a cluster, including the _etcd_ and _kubelet_ services. All of the other components of Kubernetes are then deployed as containers on the cluster, such as the API server and the Scheduler.
+
+Finally, Minikube creates a kubectl context called _minikube_. This means that the copy of kubectl on the host system automatically connects to the Minikube cluster.
+
+You can use Minikube to set up several different Kubernetes clusters on the same host system.
 
 # Setting up Minikube on macOS
 
@@ -36,35 +39,35 @@ In either case, Minikube uses _kubeadm_ to set up the Kubernetes installation on
 2. Add _~/.local/bin/_ to your PATH
 3. Download kubectl for macOS, and copy it to _~/.local/bin/_
 4. Download minikube for macOS, and copy it to _~/.local/bin/_
-5. Install VirtualBox or hyperkit
+5. Install [hyperkit](https://github.com/moby/hyperkit) (unless you have already installed VirtualBox)
 6. Install Docker
+
+The Minikube documentation recommends that you use Hyperkit as the virtual machine manager on macOS. If you already use VirtualBox on macOS, you do not need to install Hyperkit, because Minikube supports both types of virtual machine manager.
+
+Install Docker on the macOS host system, so that you can use the command-line tool when you need it. Avoid starting the Docker service, because you will be using Minikube to host your containers.
 
 Optionally, install [Helm](https://helm.sh/) and [Skaffold](https://skaffold.dev) to deploy your applications. Download the versions for macOS and copy them to the _~/.local/bin/_ directory. Minikube itself does not use or require these tools.
 
-### Shell autocompletion
-
-To enable auto-completion for the Bash shell, add this line to your _~/.bashrc_ file:
-
-    eval "$(minikube completion bash)"
-
 ## Creating a Cluster on Minikube
 
-FIXME
+Minikube downloads images and sets up a cluster the first time that you run the _minikube start_ command. Configure Minikube before you start the cluster.
 
-Configure Minikube:
+Always specify resource limits before you run the _start_ command:
 
     minikube config set memory 4096
     minikube config set cpus 2
 
-To pin the Kubernetes version that Minikube uses:
+To pin the Kubernetes version that Minikube uses, add the _--k8s-version_ option:
 
     minikube start --k8s-version=
 
-Use the _--extra-config_ option to pass settings to Kubernetes components:
+Use the _--extra-config_ option to pass other settings to Kubernetes components:
 
     minikube start --extra-config=
 
-This feature use kubeadm, so the available settings are the same as using kubeadm directly.
+This feature uses kubeadm, so you can use the same settings as kubeadm.
+
+By default, clusters use Docker as the container run-time. You can [configure a Minikube cluster to use another type of container run-time](https://kubernetes.io/docs/setup/minikube/#alternative-container-runtimes), such as CRI-O.
 
 # Using Minikube for Local Development
 
@@ -122,10 +125,6 @@ To disable an addon:
 
 Minikube also mounts directories from ~/.minikube/ to the virtual machine. This enables you to customize the virtual machine or the Kubernetes installation.
 
-## Using Alternate Run-Times
-
-You can switch Minikube to another type of container run-time, such as CRI-O.
-
 # Extra Tools
 
 - [Helm](https://helm.sh/) - Package manager for Kubernetes
@@ -142,4 +141,5 @@ The [Visual Studio Code extension for Kubernetes](ms-kubernetes-tools.vscode-kub
 
 # Articles
 
-- [Sharing a Local Container Registry with Minikube](https://blog.hasura.io/sharing-a-local-registry-for-minikube-37c7240d0615/)
+- [Sharing a Local Container Registry with Minikube](https://blog.hasura.io/sharing-a-local-registry-for-minikube-37c7240d0615/), Hasura
+- [Run multiple minikube Kubernetes clusters on Ubuntu Linux with KVM](https://gist.github.com/alexellis/eec21a96906726d08a071d58aee66ab9), Alex Ellis
