@@ -1,7 +1,7 @@
 +++
 Title = "Minikube - Kubernetes on a Single Computer"
 Slug = "minikube"
-Date = "2019-05-18T13:20:00+01:00"
+Date = "2019-05-19T14:41:00+01:00"
 Description = "Using Minikube for developing with Kubernetes"
 Categories = ["administration"]
 Tags = ["administration", "kubernetes"]
@@ -31,7 +31,7 @@ In either case, Minikube uses _kubeadm_ to set up a Kubernetes cluster on the ta
 
 Finally, Minikube creates a kubectl context called _minikube_. This means that the copy of kubectl on the host system automatically connects to the Minikube cluster.
 
-You can use Minikube to set up several different Kubernetes clusters on the same host system.
+> You can use Minikube to set up several different Kubernetes clusters on the same host system.
 
 # Setting up Minikube on macOS
 
@@ -91,8 +91,6 @@ You can also use the container run-time in the Minikube virtual machine to build
 
     eval $(minikube docker-env)
 
-> Understand the data storage that your application uses.
-
 # Generating a Configuration File
 
 To share a Minikube configuration between developers, use the features to export and import configurations. The configuration can be in a JSON file, or environment variables.
@@ -100,10 +98,6 @@ To share a Minikube configuration between developers, use the features to export
 Use the _kubectl_ command with the _--dry-run_ option and the _-o_ option to create a manifest for a pod in JSON or YAML formats.
 
 Remember to add resource constraints to your pod definitions.
-
-# Using Minikube for CI
-
-Refer to [Minikube on Travis CI](https://kinvolk.io/blog/2017/10/running-kubernetes-on-travis-ci-with-minikube/) blog post.
 
 # Customizing Minikube
 
@@ -121,7 +115,7 @@ To disable an addon:
 
     minikube addons disable ingress
 
-## Editing the Configuration
+# Editing the Minikube Configuration
 
 Minikube also mounts directories from ~/.minikube/ to the virtual machine. This enables you to customize the virtual machine or the Kubernetes installation.
 
@@ -136,10 +130,11 @@ The [Visual Studio Code extension for Kubernetes](ms-kubernetes-tools.vscode-kub
 # Videos
 
 - [Minikube Intro](https://www.youtube.com/watch?v=4x0CZmF_U5o), by Dan Lorenc, Minikube developer at Google
-- Developing Locally with Kubernetes, by Ryan Jarvinen - [Video](https://www.youtube.com/watch?v=_W6O_pfA00s) and [slides](http://gist-reveal.it/bit.ly/kubecon-dev)
+- [Developing Locally with Kubernetes](https://www.youtube.com/watch?v=_W6O_pfA00s), by Ryan Jarvinen, with [slides](http://gist-reveal.it/bit.ly/kubecon-dev)
 - [Deep Dive: Minikube](https://www.youtube.com/watch?v=46-FXiSEfE4), Bálint Pató & Thomas Strömberg - covers the architecture of Minikube, and future directions for the project
 
 # Articles
 
-- [Sharing a Local Container Registry with Minikube](https://blog.hasura.io/sharing-a-local-registry-for-minikube-37c7240d0615/), Hasura
-- [Run multiple minikube Kubernetes clusters on Ubuntu Linux with KVM](https://gist.github.com/alexellis/eec21a96906726d08a071d58aee66ab9), Alex Ellis
+- [Sharing a Local Container Registry with Minikube](https://blog.hasura.io/sharing-a-local-registry-for-minikube-37c7240d0615/), by Hasura
+- [Run multiple minikube Kubernetes clusters on Ubuntu Linux with KVM](https://gist.github.com/alexellis/eec21a96906726d08a071d58aee66ab9), by Alex Ellis
+- [Minikube on Travis CI](https://kinvolk.io/blog/2017/10/running-kubernetes-on-travis-ci-with-minikube/), by Kinvolk
