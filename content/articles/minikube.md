@@ -1,7 +1,7 @@
 +++
 Title = "Minikube - Kubernetes on a Single Computer"
 Slug = "minikube"
-Date = "2019-05-19T14:41:00+01:00"
+Date = "2019-05-25T09:08:00+01:00"
 Description = "Using Minikube for developing with Kubernetes"
 Categories = ["administration"]
 Tags = ["administration", "kubernetes"]
@@ -33,7 +33,9 @@ Finally, Minikube creates a kubectl context called _minikube_. This means that t
 
 > You can use Minikube to set up several different Kubernetes clusters on the same host system.
 
-# Setting up Minikube on macOS
+# Manually Setting up Minikube on macOS
+
+If possible, use Homebrew to manage the software on macOS 
 
 1. Create a _~/.local/bin/_ directory
 2. Add _~/.local/bin/_ to your PATH
@@ -57,9 +59,9 @@ Always specify resource limits before you run the _start_ command:
     minikube config set memory 4096
     minikube config set cpus 2
 
-To pin the Kubernetes version that Minikube uses, add the _--k8s-version_ option:
+To pin the Kubernetes version that Minikube uses, add the _--kubernetes-version_ option:
 
-    minikube start --k8s-version=
+    minikube start --kubernetes-version=1.14.2
 
 Use the _--extra-config_ option to pass other settings to Kubernetes components:
 
