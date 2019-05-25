@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2019-05-25T09:35:00+01:00"
+Date = "2019-05-25T08:55:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "java", "javascript", "python", "ruby", "rust"]
@@ -486,6 +486,21 @@ If you intend to duplicate a production environment for testing, create a config
 file on your Mac. Production installations of MySQL should be configured with
 appropriate _SQL modes_ to enable data integrity safeguards. By default, MySQL permits
 various types of invalid data to be entered.
+
+# Running Kubernetes with Minikube
+
+[Minikube](https://kubernetes.io/docs/setup/minikube/) sets up and manages Kubernetes on a single system, so that you can develop and test without needing a set of servers.
+
+To install Minikube with Homebrew, run these commands in a terminal window: 
+
+    brew install kubernetes-cli
+    brew cask install minikube
+
+By default, Minikube uses a virtual machine manager. If you do not need VirtualBox, install [hyperkit](https://github.com/moby/hyperkit), which provides a minimal virtual machine manager.
+
+    brew install hyperkit
+
+[This article explains Minikube in more detail](https://www.stuartellis.name/articles/minikube).
 
 # Other Useful Desktop Applications for Developers
 
