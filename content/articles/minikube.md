@@ -9,7 +9,7 @@ Type = "article"
 
 +++
 
-[Minikube](https://kubernetes.io/docs/setup/minikube/) sets up and manages Kubernetes on a single system, so that you can develop and test without needing a set of servers.
+[Minikube](https://kubernetes.io/docs/setup/minikube/) sets up and manages Kubernetes on a single host system, so that you can develop and test clusters on a laptop or a stand-alone server.
 
 <!--more-->
 
