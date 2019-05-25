@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2019-04-13T20:57:00+01:00"
+Date = "2019-05-25T09:35:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["administration", "programming"]
 Tags = ["administration", "macos", "golang", "java", "javascript", "python", "ruby", "rust"]
@@ -305,23 +305,42 @@ Close the Terminal and open it again for the changes to take effect.
 
 ## AdoptOpenJDK for Java Development
 
-Install the macOS package of the OpenJDK from the [AdoptOpenJDK](https://adoptopenjdk.net/) project to avoid potential licensing and support issues. The versions of Java on the OpenJDK Website are for testers, and the Oracle JDK is a proprietary product that requires license fees.
+### Which Version of Java?
+
+Install the macOS package of the OpenJDK that are provided by the [AdoptOpenJDK](https://adoptopenjdk.net/) project to avoid potential licensing and support issues. The versions of Java on the OpenJDK Website are for testers, and the Oracle JDK is a proprietary product that requires license fees.
 
 Use the _LTS_ version of the OpenJDK, unless you need features that are in the latest releases.
+
+Most Java projects use the Apache Maven build tool. This is provided by the Maven project itself, and is not part of the OpenJDK. Maven is written in Java, which means that the project provides one package, which works on any operating system, with any OpenJDK.
+
+### Setting Up Java with Homebrew
+
+Run these commands in a terminal window:
+
+    brew tap adoptopenjdk/openjdk
+    brew cask install adoptopenjdk11
+
+This installs version 11 of the OpenJDK, from the AdoptOpenJDK project.
+
+Run this command in a terminal window to install Maven:
+
+    brew install maven
+
+### Manual Setup
 
 To manually install a copy of the JDK:
 
 1. Download the version of the JDK that you need from AdoptOpenJDK
 2. Unzip the download
 3. Copy the JDK directory to _/usr/local/lib_
-4. Edit your _~/.bashrc_ file to set environment variables. For example, to use jdk-11.0.1+13 as the Java version:
+4. Edit your _~/.bashrc_ file to set environment variables. For example, to use jdk-11.0.3+7 as the Java version:
 
 ```bash
-JAVA_HOME=/usr/local/lib/jdk-11.0.1+13/Contents/Home
-PATH=$PATH:/usr/local/lib/jdk-11.0.1+13/Contents/Home/bin
+JAVA_HOME=/usr/local/lib/jdk-11.0.3+7/Contents/Home
+PATH=$PATH:/usr/local/lib/jdk-11.0.3+7/Contents/Home/bin
 ```
 
-Most Java projects use the Apache Maven build tool. To manually install a copy of [Apache Maven](https://maven.apache.org):
+ To manually install a copy of [Apache Maven](https://maven.apache.org):
 
 1. Download the latest version of Maven
 2. Unzip the download
@@ -330,7 +349,6 @@ Most Java projects use the Apache Maven build tool. To manually install a copy o
 
 Replace _MAVEN-DIRECTORY_ with the name of the directory that Maven uses, such as _apache-maven-3.6.0_.
 
-Maven is written in Java, which means that the same package works on any operating system that has a JVM installed.
 
 ## pipenv for Python Development
 
