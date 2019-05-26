@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the Java Platform"
 Slug = "java-platform"
-Date = "2019-05-26T09:37:00+01:00"
+Date = "2019-05-26T12:10:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -161,6 +161,7 @@ Java Virtual Machines accept connections from debuggers, which may either be on 
 
 - [Google Guice](https://github.com/google/guice) - Dependency injection framework
 - [Hibernate](http://hibernate.org/) - Database toolkit and ORM
+- [Jackson](https://github.com/FasterXML/jackson) - Libraries for JSON and other data formats
 - [Logback](https://logback.qos.ch/) - Logging
 - [Micrometer](http://micrometer.io/) - Metrics collection agent library
 - [OpenPDF](https://github.com/LibrePDF/OpenPDF)
