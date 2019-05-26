@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the Java Programming Language"
 Slug = "java-language"
-Date = "2018-12-01T20:08:00+01:00"
+Date = "2019-05-26T12:09:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -63,6 +63,8 @@ It is good practice to declare variables as _final_ unless you have a specific r
 
 A _final_ class cannot be extended. A method that has been marked as _final_ cannot be overridden in an extending class.
 
+By convention, the name of a final variable should be in uppercase.
+
 ## Constructors
 
 A _constructor_ is a method in the class that has the same name as the class itself. Constructors must have no return value.
@@ -105,3 +107,15 @@ This applies to _checked exceptions_. It does not apply to _unchecked exceptions
 Use _try-with-resources_ for things like I/O.
 
 You can have a _finally_ statement without an _except_ statement.
+
+## JavaBeans
+
+JavaBeans are classes that encapsulate many objects into a single object (the bean). To be a valid bean, the class must be:
+
+- Serializable
+- Have a default public constructor that takes no arguments
+- Allow access to properties using getter and setter methods which follow a standard naming convention
+
+The [JavaBeans Specification](https://www.oracle.com/technetwork/java/javase/documentation/spec-136004.html) was designed to enable code reuse, by setting out standards for reusable classes.
+
+Since the properties of a bean are accessible, beans are inherently mutable.
