@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the Java Platform"
 Slug = "java-platform"
-Date = "2019-01-26T11:00:00+01:00"
+Date = "2019-05-26T09:37:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -88,7 +88,7 @@ Most distributions use the [HotSpot](https://openjdk.java.net/groups/hotspot/) J
 - [AdoptOpenJDK](https://adoptopenjdk.net/) - Provides free versions of the OpenJDK with either HotSpot or OpenJ9 Java Virtual Machines
 - [Amazon Corretto](https://aws.amazon.com/corretto/) - OpenJDK with HotSpot Java Virtual Machine, supported by AWS
 - [Eclipse OpenJ9](https://www.eclipse.org/openj9/) - OpenJDK with the OpenJ9 JVM
-- [Red Hat OpenJDK](https://developers.redhat.com/products/openjdk/overview/) - Java distributions for JBoss users (Linux and Windows only)
+- [Red Hat OpenJDK](https://developers.redhat.com/products/openjdk/overview/) - OpenJDK with HotSpot Java Virtual Machine, supported by Red Hat, Linux and Windows only
 - [SapMachine](https://sap.github.io/SapMachine/) - OpenJDK and JVM, provided by SAP for their customers
 - [Zulu](https://www.azul.com/downloads/zulu/) - OpenJDK with the Zulu JVM, maintained by Azul Systems
 
@@ -153,10 +153,15 @@ Java Virtual Machines accept connections from debuggers, which may either be on 
 - [Apache Tomcat](https://tomcat.apache.org/) - De-facto standard Web server for Java
 - [Eclipse Jetty](https://www.eclipse.org/jetty/) - Often embedded in applications
 
+## Databases
+
+- [H2](https://h2database.com) - SQL database in pure Java
+
 ## Libraries
 
 - [Google Guice](https://github.com/google/guice) - Dependency injection framework
 - [Hibernate](http://hibernate.org/) - Database toolkit and ORM
+- [Logback](https://logback.qos.ch/) - Logging
 - [Micrometer](http://micrometer.io/) - Metrics collection agent library
 - [OpenPDF](https://github.com/LibrePDF/OpenPDF)
 - [resilience4j](https://github.com/resilience4j/resilience4j) - Fault tolerance
@@ -184,5 +189,5 @@ Java Virtual Machines accept connections from debuggers, which may either be on 
 - [Official Java YouTube channel](https://www.youtube.com/user/java)
 - [Spring YouTube channel](https://www.youtube.com/user/SpringSourceDev) - Official YouTube channel for Spring
 - [Devoxx YouTube channel](https://www.youtube.com/channel/UCCBVCTuk6uJrN3iFV_3vurg) - Talks from the largest independent annual Java conference
-- [Virtual Java User Group](https://www.youtube.com/user/virtualJUG) - YouTube channel with a variety of talks 
+- [Virtual Java User Group](https://www.youtube.com/user/virtualJUG) - YouTube channel with a variety of talks
 - [MVP Java YouTube channel](https://www.youtube.com/channel/UCrgOYeQyZ_V62XDYKCfh8TQ)
