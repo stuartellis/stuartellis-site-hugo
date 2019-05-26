@@ -1,7 +1,7 @@
 +++
 Title = "Using Apache Maven"
 Slug = "apache-maven"
-Date = "2019-05-26T13:02:00+01:00
+Date = "2019-05-26T13:02:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
