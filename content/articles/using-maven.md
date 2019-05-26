@@ -1,7 +1,7 @@
 +++
 Title = "Using Apache Maven"
 Slug = "apache-maven"
-Date = "2019-04-13T07:53:00"
+Date = "2019-05-26T13:02:00+01:00
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -80,3 +80,5 @@ Maven assumes a specific project structure:
 
 - [Maven tutorial for beginners](https://www.tutorialspoint.com/maven)
 - [Maven project documentation](https://maven.apache.org/)
+- [Maven By Example](https://books.sonatype.com/mvnex-book/reference/index.html), by Sonatype
+- [Maven: The Complete Reference](https://books.sonatype.com/mvnref-book/reference/index.html), by Sonatype
