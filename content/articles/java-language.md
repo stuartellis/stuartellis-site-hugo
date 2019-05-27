@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the Java Programming Language"
 Slug = "java-language"
-Date = "2019-05-26T12:09:00+01:00"
+Date = "2019-05-27T15:46:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -120,3 +120,7 @@ JavaBeans are classes that encapsulate many objects into a single object (the be
 The [JavaBeans Specification](https://www.oracle.com/technetwork/java/javase/documentation/spec-136004.html) was designed to enable code reuse, by setting out standards for reusable classes.
 
 Since the properties of a bean are accessible, beans are inherently mutable.
+
+# Coding Style
+
+[Google document their Java style](https://google.github.io/styleguide/javaguide.html)
