@@ -1,7 +1,7 @@
 +++
 Title = "Modern Python Practices"
 Slug = "python-modern-practices"
-Date = "2019-04-27T10:58:00+01:00"
+Date = "2019-04-27T11:19:00+01:00"
 Description = ""
 Categories = ["programming", "python"]
 Tags = ["python"]
@@ -23,15 +23,13 @@ Use Python 3 for all new work. Python 2 will no longer be supported, as of 2020.
 
 The [virtual environments](https://docs.python.org/3/tutorial/venv.html) feature enables you to define separate sets of packages for each Python project, so that they do not conflict with each other.
 
-There are several tools that help you to manage your Python projects, and use virtual environments. The most popular are [pipenv](https://docs.pipenv.org/) and [poetry](https://poetry.eustace.io/). You can also manually set up and manage virtual environments.
-
-Decide on the workflow for your project, and document it.
+There are several tools that help you to manage your Python projects, and use virtual environments. The most popular are [pipenv](https://docs.pipenv.org/) and [poetry](https://poetry.eustace.io/). Poetry is considered to be better designed, but pipenv is more widely supported. If you prefer, you can also manually set up and manage virtual environments.
 
 ## Format Your Code
 
 [PEP 8](https://www.python.org/dev/peps/pep-0008/) provides the accepted style guide for Python code. Use a formatting tool with a plugin to your editor, so that your code is automatically formatted to meet the guidelines in PEP 8.
 
-[Black](https://black.readthedocs.io/en/stable/) is becoming the standard code formatting tool for Python projects. Use Black for new projects.
+> [Black](https://black.readthedocs.io/en/stable/) is becoming the standard code formatting tool for Python projects. Use Black for new projects.
 
 # Language Syntax
 
@@ -133,15 +131,15 @@ The context manager frees resources as soon as the function completes. Use this 
 
 The _os.walk()_ function now calls _os.scandir()_, so it automatically has the same improved performance as this function.
 
-[PEP 471](https://www.python.org/dev/peps/pep-0471/) explains _os.scandir()_.
-
 The _os.scandir()_ function was added in version 3.5 of Python.
+
+> [PEP 471](https://www.python.org/dev/peps/pep-0471/) explains _os.scandir()_.
 
 ## Run External Commands with subprocess
 
 The [subprocess](https://docs.python.org/3/library/subprocess.html) module provides a safe way to run external commands. Use _subprocess_ rather than shell backquoting or the functions in _os_, such as _spawn_, _popen2_ and _popen3_. The _subprocess.run()_ function in current versions of Python is sufficient for most cases.
 
-[PEP 324](https://www.python.org/dev/peps/pep-0324/) explains the technical details of subprocess in detail.
+> [PEP 324](https://www.python.org/dev/peps/pep-0324/) explains the technical details of subprocess in detail.
 
 ## Use Requests for HTTP Clients
 
