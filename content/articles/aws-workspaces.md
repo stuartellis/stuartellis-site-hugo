@@ -3,8 +3,8 @@ Title = "Getting Started with AWS WorkSpaces"
 Slug = "aws-workspaces"
 Date = "2018-07-20T21:35:00+01:00"
 Description = "Notes on AWS WorkSpaces"
-Categories = ["AWS", "devops"]
-Tags = ["AWS", "cloud", "devops", "windows"]
+Categories = ["devops"]
+Tags = ["devops", "windows"]
 Type = "article"
 Toc = true
 

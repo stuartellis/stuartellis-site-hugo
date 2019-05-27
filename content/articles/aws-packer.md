@@ -3,8 +3,8 @@ Title = "Deployments with AWS EC2 and Packer"
 Slug = "aws-packer"
 Date = "2018-12-16T18:18:00+01:00"
 Description = "Using Packer to provide machine images for AWS EC2"
-Categories = ["AWS", "devops"]
-Tags = ["AWS", "devops", "cloud", "packer"]
+Categories = ["devops"]
+Tags = ["devops", "packer"]
 Type = "article"
 Toc = true
 
