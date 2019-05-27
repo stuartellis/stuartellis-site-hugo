@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the Java Platform"
 Slug = "java-platform"
-Date = "2019-05-27T10:36:00+01:00"
+Date = "2019-05-27T15:33:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -112,9 +112,20 @@ JDK 9 introduced _jaotc_, an experimental alternative compiler to _javac_ that p
 
 # Monitoring and Debugging
 
+## Debugging
+
 Java Virtual Machines accept connections from debuggers, which may either be on the same system, or connecting from a remote system. The OpenJDK includes _jdb_, a command-line debugger, and IDEs for Java include graphical debuggers.
 
+## Monitoring
+
 [Java Flight Recorder and Java Mission Control](https://www.oracle.com/technetwork/java/javaseproducts/mission-control/java-mission-control-1998576.html) provide a data collection and profiling system for the OracleJDK.
+
+The OpenJDK also includes these tools for monitoring and diagnostics:
+
+- _jconsole_ - Graphical utility for monitoring and managing Java applications
+- _jinfo_ - Provides configuration information for a specified Java process
+- _jps_ - Java process viewer
+- _jstat_ - Java statistics monitoring
 
 # Popular Third-Party Software
 
@@ -122,7 +133,7 @@ Java Virtual Machines accept connections from debuggers, which may either be on 
 
 - [Gradle](https://gradle.org/)
 - [Maven](https://maven.apache.org/)
-- [Jib](https://github.com/GoogleContainerTools/jib) - Containerization
+- [Jib](https://github.com/GoogleContainerTools/jib) - Container builder
 
 ## Testing Tools
 
@@ -133,6 +144,7 @@ Java Virtual Machines accept connections from debuggers, which may either be on 
 ## Code Quality
 
 - [CheckStyle](https://checkstyle.org/) - Code style checks
+- [Google Java Format](https://github.com/google/google-java-format) - Reformats Java code to [Google Java Style](https://google.github.io/styleguide/javaguide.html), can be automated with the [Maven plugin](https://github.com/coveo/fmt-maven-plugin)
 - [JaCoCo](https://www.jacoco.org/jacoco/) - Test coverage
 - [PMD](https://pmd.github.io/) - Code quality checks for Java and Salesforce.com
 - [SonarQube](https://www.sonarqube.org/) - Code analysis framework
@@ -147,17 +159,18 @@ Java Virtual Machines accept connections from debuggers, which may either be on 
 
 ## HTTP Servers
 
-- [Apache Tomcat](https://tomcat.apache.org/) - De-facto standard Web server for Java
+- [Apache Tomcat](https://tomcat.apache.org/) - De-facto standard Web applications server for Java
 - [Eclipse Jetty](https://www.eclipse.org/jetty/) - Often embedded in applications
+- [Undertow](http://undertow.io) - High performance, embeddable Web server
 
 ## Databases
 
 - [H2](https://h2database.com) - SQL database in pure Java
+- [Hibernate](http://hibernate.org/) - Database toolkit and ORM
 
-## Libraries
+## Other Libraries
 
 - [Google Guice](https://github.com/google/guice) - Dependency injection framework
-- [Hibernate](http://hibernate.org/) - Database toolkit and ORM
 - [Jackson](https://github.com/FasterXML/jackson) - Libraries for JSON and other data formats
 - [Logback](https://logback.qos.ch/) - Logging
 - [Micrometer](http://micrometer.io/) - Metrics collection agent library
