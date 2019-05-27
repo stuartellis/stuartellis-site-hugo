@@ -3,8 +3,8 @@ Title = "Backups with restic"
 Slug = "restic-backups"
 Date = "2019-04-27T15:00:00+01:00"
 Description = "Managing backups with restic"
-Categories = ["devops"]
-Tags = ["devops"]
+Categories = ["automation", "devops"]
+Tags = ["ansible", "automation", "devops"]
 Type = "article"
 Toc = true
 
