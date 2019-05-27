@@ -11,7 +11,7 @@ bio = "DevOps Engineer"
 avatar = "img/avatar.png"
 
 [Params]
-subtitle = "What, Where, How" # Subtitle of your site. Used in site header
+subtitle = "DevOps at work" # Subtitle of your site. Used in site header
 description = "Notes from a DevOps" # Site description. Used in meta description
 copyright = "Stuart Ellis" # copyright holder, otherwise will use site title
 opengraph = false # Enable OpenGraph if true
