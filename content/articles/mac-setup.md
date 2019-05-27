@@ -3,8 +3,8 @@ Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
 Date = "2019-05-25T08:55:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
-Categories = ["administration", "programming"]
-Tags = ["administration", "macos", "golang", "java", "javascript", "python", "ruby"]
+Categories = ["devops", "programming"]
+Tags = ["devops", "macos", "golang", "java", "javascript", "python", "ruby"]
 Type = "article"
 Toc = true
 

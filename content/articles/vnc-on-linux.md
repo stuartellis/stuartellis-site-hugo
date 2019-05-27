@@ -3,8 +3,8 @@ Title = "Linux Remote Desktop Access with VNC"
 Slug = "vnc-on-linux"
 Date = "2016-07-01T01:00:00+01:00"
 Description = ""
-Categories = ["administration"]
-Tags = ["administration", "linux", "VNC"]
+Categories = ["devops"]
+Tags = ["devops", "linux", "VNC"]
 Type = "article"
 Toc = true
 

@@ -3,8 +3,8 @@ Title = "Setting Up Windows for Go and Buffalo"
 Slug = "windows-golang-setup"
 Date = "2018-11-17T20:40:00+01:00"
 Description = "Setting up Windows for development with Go and Buffalo"
-Categories = ["administration", "programming"]
-Tags = ["administration", "golang", "javascript", "windows"]
+Categories = ["devops", "programming"]
+Tags = ["devops", "golang", "javascript", "windows"]
 Type = "article"
 Toc = true
 

@@ -3,8 +3,8 @@ Title = "Securing a Linux System"
 Slug = "securing-linux"
 Date = "2016-07-01T01:00:00+01:00"
 Description = ""
-Categories = ["administration"]
-Tags = ["administration", "linux", "security"]
+Categories = ["devops"]
+Tags = ["devops", "linux", "security"]
 Type = "article"
 Toc = true
 
