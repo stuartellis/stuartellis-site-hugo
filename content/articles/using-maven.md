@@ -1,7 +1,7 @@
 +++
 Title = "Using Apache Maven"
 Slug = "apache-maven"
-Date = "2019-05-27T10:40:00+01:00"
+Date = "2019-05-27T16:49:00+01:00"
 Description = ""
 Categories = ["automation", "programming"]
 Tags = ["automation", "java", "maven"]
@@ -77,9 +77,40 @@ Maven assumes a specific project structure:
 - Compiled byte code: _target/_
 - Distributable JAR: _target/classes/_
 
+# Project Object Model (POM)
+
+Each POM file must have these properties defined:
+
+- _modelVersion_ - The version of the POM that the file uses
+- _groupId_ - The identifier for the team or group that maintains the project
+- _artifactId_ - The identifier for the project
+- _version_ - The version of the project
+
+Maven 2 and Maven 3 both use _modelVersion_ 4.0, which means that every POM file should use this version.
+
+Maven always uses an _effective POM_. This is a combination of the settings from:
+
+- The project pom.xml
+- All parent POMs
+- The Super POM
+- Any user-defined settings
+- The active profiles
+
+To see the effective POM for a project, run this command:
+
+    mvn help:effective-pom
+
+Each POM uses the _Super POM_ that is provided by Maven, unless you declare a different Super POM.
+
+# Maven Plugins
+
+- [Assembly](https://maven.apache.org/plugins/maven-assembly-plugin/) - Packs multiple outputs into a single compressed archive, such as a JAR, WAR, or ZIP file
+- [FMT](https://github.com/coveo/fmt-maven-plugin) - Reformats Java code to [Google Java Style](https://google.github.io/styleguide/javaguide.html)
+- [Jib](https://github.com/GoogleContainerTools/jib) - Container builder
+
 # Online Resources
 
-- [Maven tutorial for beginners](https://www.tutorialspoint.com/maven)
-- [Maven project documentation](https://maven.apache.org/)
+- [Maven tutorial for beginners](https://www.tutorialspoint.com/maven), by Tutorials Point
+- [Official Maven project documentation](https://maven.apache.org/)
 - [Maven By Example](https://books.sonatype.com/mvnex-book/reference/index.html), by Sonatype
 - [Maven: The Complete Reference](https://books.sonatype.com/mvnref-book/reference/index.html), by Sonatype
