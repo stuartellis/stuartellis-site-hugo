@@ -3,8 +3,8 @@ Title = "Basics of Git Version Control"
 Slug = "git-basics"
 Date = "2016-07-01T01:00:00+01:00"
 Description = ""
-Categories = ["devops", "programming"]
-Tags = ["devops", "git"]
+Categories = ["automation", "devops", "programming"]
+Tags = ["automation", "devops", "git"]
 Type = "article"
 Toc = true
 
