@@ -1,7 +1,7 @@
 +++
 Title = "Task Automation with Ansible"
 Slug = "ansible"
-Date = "2019-04-27T10:57:00+01:00"
+Date = "2019-04-27T13:47:00+01:00"
 Description = "The Ansible task automation framework"
 Categories = ["automation", "python"]
 Tags = ["ansible", "automation", "devops", "python"]
@@ -42,17 +42,20 @@ If you need a central service for managing tasks and nodes, Red Hat offer
 
 # Setting Up a Control Machine
 
-To set up Ansible on a macOS or Linux system using [Homebrew](http://brew.sh/), enter these commands in a terminal window:
+To set up Ansible on a macOS or Linux system, first ensure that Python 3 and the pip utility are installed. Homebrew includes pip in the _python_ package, but some Linux distributions provide it in a separate package.
 
-    brew update && brew install ansible
+To install Ansible with pip, run this command in a terminal:
 
-Alternatively, use [pipx](https://pypi.org/project/pipx/) to install Ansible:
+    pip3 install --user ansible
+
+If you use [pipx](https://pypi.org/project/pipx/) to manage Python utilities, use this command to install Ansible:
 
     pipx install ansible
 
 ## Installing Extra Packages on the Control Machine
 
-Some Ansible modules require additional Python packages on either the control machine or the nodes. You can use an Ansible task to install packages on nodes, but should avoid trying to manage the Ansible installation on the control machine with Ansible.
+Some Ansible modules require additional Python packages on either the control machine or the nodes. You can use an Ansible task to install packages on nodes, but you should avoid trying to manage the Ansible installation on the control machine with Ansible itself:w
+.
 
 If you installed Ansible on the control machine with pipx, use the _inject_ subcommand to add packages. This subcommand will install the specified package into the Python virtual environment that pipx maintains for Ansible. For example, this command adds _boto3_ to the Ansible installation:
 
