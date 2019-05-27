@@ -3,7 +3,7 @@ Title = "Resources for Learning Python"
 Slug = "python-learning-resources"
 Date = "2019-03-02T20:57:00+01:00"
 Description = ""
-Categories = ["programming"]
+Categories = ["programming", "python"]
 Tags = ["python"]
 Type = "article"
 

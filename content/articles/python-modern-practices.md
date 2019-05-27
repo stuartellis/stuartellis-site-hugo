@@ -3,7 +3,7 @@ Title = "Modern Python Practices"
 Slug = "python-modern-practices"
 Date = "2019-05-06T13:43:00+01:00"
 Description = ""
-Categories = ["programming"]
+Categories = ["programming", "python"]
 Tags = ["python"]
 Type = "article"
 
