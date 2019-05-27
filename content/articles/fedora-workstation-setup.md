@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Fedora Workstation for Software Development"
 Slug = "fedora-workstation-setup"
-Date = "2019-03-09T13:36:00+01:00"
+Date = "2019-04-27T10:45:00+01:00"
 Description = "Setting up a Fedora Workstation for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["devops", "linux", "fedora", "golang", "javascript", "python"]
@@ -10,7 +10,7 @@ Toc = true
 
 +++
 
-This is a set of notes for setting up an installation of the
+How to set up an installation of the
 [Fedora Workstation](https://getfedora.org/) Linux distribution on your PC, specifically
 for systems administration and Web development.
 
@@ -71,9 +71,9 @@ If you do not have a preferred editor, consider using a version of [Visual Studi
 
 ### Visual Studio Code
 
-[Visual Studio Code](https://code.visualstudio.com) is a powerful desktop editor for programming, with built-in support for version control and debugging. The large range of extensions for Visual Studio Code enable it to work with every popular programming language and framework. It is available free of charge.  
+[Visual Studio Code](https://code.visualstudio.com) is a powerful desktop editor for programming, with built-in support for version control and debugging. The large range of extensions for Visual Studio Code enable it to work with every popular programming language and framework. It is available free of charge.
 
-The Microsoft releases of Visual Studio Code are proprietary software with telemetry enabled by default. To avoid these issues, use the RPM packages that are provided by the [vscodium](https://github.com/VSCodium/vscodium) project. 
+The Microsoft releases of Visual Studio Code are proprietary software with telemetry enabled by default. To avoid these issues, use the RPM packages that are provided by the [vscodium](https://github.com/VSCodium/vscodium) project.
 
 The RPM packages for Visual Studio Code and VSCodium require the library _libXss_, which is provi0ded by the _libXScrnSaver_ package. Install this package before you install Visual Studio Code:
 
@@ -81,8 +81,7 @@ The RPM packages for Visual Studio Code and VSCodium require the library _libXss
 
 Once you have installed Visual Studio Code or VSCodium, read [this article](https://www.stuartellis.name/articles/visual-studio-code/) for more information about using the editor.
 
-> Extensions may fail if you use the [Visual Studio Code OSS](https://flathub.org/apps/details/com.visualstudio.code.oss) Flatpak. 
-
+> Extensions may fail if you use the [Visual Studio Code OSS](https://flathub.org/apps/details/com.visualstudio.code.oss) Flatpak.
 
 ### Neovim
 
@@ -152,9 +151,9 @@ To create an SSH key, run the _ssh-keygen_ command in a terminal window. For exa
 > Use 4096-bit RSA keys for all systems. The older DSA standard only supports 1024-bit
 > keys, which are now too small to be considered secure.
 
-# Support for Programming Languages 
+# Support for Programming Languages
 
-## Default Languages: Python and C 
+## Default Languages: Python and C
 
 Fedora Workstation includes Python 3. It also has the GCC compiler and toolchain, for working with C. The GCC tools enable languages like Python and JavaScript to compile native extensions that are written in C code.
 
@@ -179,7 +178,7 @@ Enter this command to install pipenv:
 
 ## Using Modules to Add Extra Languages
 
-Fedora now includes the optional [modularity](https://docs.fedoraproject.org/en-US/modularity/) feature to provide sets of software packages that are updated independently of the operating system. Use modules to install packages for extra programming languages, such as Java and Go. 
+Fedora now includes the optional [modularity](https://docs.fedoraproject.org/en-US/modularity/) feature to provide sets of software packages that are updated independently of the operating system. Use modules to install packages for extra programming languages, such as Java and Go.
 
 Modules allow to you to switch the installed packages between different streams of releases, such as LTS and current. This feature will not enable you to have multiple versions of the same product on the same system at the same time. Use containers or tools such as [nvm](https://github.com/creationix/nvm) and [rustup](https://rustup.rs/) to run multiple versions of the same product at the same time.
 
@@ -205,7 +204,7 @@ terminal window:
 ## Installing rustup for Rust Development
 
 Use the official [rustup](https://rustup.rs/) utility to install the tools for building software
-with the Rust programming language. It supports using multiple versions of Rust on the same system, and has other features to assist with software development. 
+with the Rust programming language. It supports using multiple versions of Rust on the same system, and has other features to assist with software development.
 
 To install _rustup_, click on the Install button on the front page of the
 [Rust Website](https://www.rust-lang.org), and follow the instructions.
@@ -235,7 +234,7 @@ Enter this command to install Podman:
 
     sudo dnf install podman
 
-For convenience, define a shell alias in your _.bashrc_ file: 
+For convenience, define a shell alias in your _.bashrc_ file:
 
     alias docker="podman"
 

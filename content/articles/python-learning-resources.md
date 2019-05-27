@@ -1,7 +1,7 @@
 +++
 Title = "Resources for Learning Python"
 Slug = "python-learning-resources"
-Date = "2019-03-02T20:57:00+01:00"
+Date = "2019-04-27T10:54:00+01:00"
 Description = ""
 Categories = ["programming", "python"]
 Tags = ["python"]
@@ -21,9 +21,9 @@ The [PyVideo](https://pyvideo.org/) site is an index of free videos on Python an
 
 # Books
 
-## The Official Python Documentation 
+## The Official Python Documentation
 
-The official documentation for Python includes both reference guides and tutorials for the language and the standard library.  
+The official documentation for Python includes both reference guides and tutorials for the language and the standard library.
 
 This documentation is provided with many distributions of Python, and you can download the whole set as an [ebook in PDF or EPUB formats](https://docs.python.org/3/download.html).
 
@@ -32,7 +32,7 @@ This documentation is provided with many distributions of Python, and you can do
 There are several excellent books for learning Python, including three that you can read for free online:
 
 - [Automate the Boring Stuff with Python](http://automatetheboringstuff.com/), which includes a gentle introduction to programming, before explaining specific projects
-- [How to Code in Python](https://www.digitalocean.com/community/tutorials/digitalocean-ebook-how-to-code-in-python) offers more detailed tutorials for learners 
+- [How to Code in Python](https://www.digitalocean.com/community/tutorials/digitalocean-ebook-how-to-code-in-python) offers more detailed tutorials for learners
 - [Dive Into Python 3](https://www.diveinto.org/python3/) provides a quick start for those people with some previous experience of programming
 
 If you are teaching children, buy a copy of [Teach Your Kids to Code](https://nostarch.com/teachkids) by Bryson Payne.
@@ -49,13 +49,13 @@ If you use Python for data science or other demanding applications, read [High P
 
 There too many to list!
 
-[Python for Everybody](https://www.py4e.com/) provides a complete course on the basics of Python. The course is available online at [Coursera](https://www.coursera.org/specializations/python) and [EdX](https://www.edx.org/course/programming-for-everybody-getting-started-with-python). The textbook and course material are available for free. This course is also designed to be taught by other educators and trainers, so the materials include assessment autograders and integrations for learning management systems. 
+[Python for Everybody](https://www.py4e.com/) provides a complete course on the basics of Python. The course is available online at [Coursera](https://www.coursera.org/specializations/python) and [EdX](https://www.edx.org/course/programming-for-everybody-getting-started-with-python). The textbook and course material are available for free. This course is also designed to be taught by other educators and trainers, so the materials include assessment autograders and integrations for learning management systems.
 
 # Online Guides
 
 Once you have learned Python itself, visit [The Hitchhiker’s Guide to Python](http://docs.python-guide.org), which provides clear advice on daily work with Python.
 
-[Full Stack Python](https://www.fullstackpython.com) explains the tools and options for building Web applications with Python. If you decide to work with the [Flask](http://flask.pocoo.org/) framework, use the [The Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world) to learn the essentials. 
+[Full Stack Python](https://www.fullstackpython.com) explains the tools and options for building Web applications with Python. If you decide to work with the [Flask](http://flask.pocoo.org/) framework, use the [The Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world) to learn the essentials.
 
 If you are a programmer or systems administrator, consider [replacing bash scripting with Python](https://github.com/ninjaaron/replacing-bash-scripting-with-python).
 
@@ -65,4 +65,4 @@ If you are a programmer or systems administrator, consider [replacing bash scrip
 
 [Python Bytes](https://pythonbytes.fm/) is a weekly news show for Python, with episodes that are about 15 minutes long.
 
-[Podcast.__init__](https://www.pythonpodcast.com/) and [Talk Python to Me](https://talkpython.fm/) both run interviews with software project leaders and key community members. Episodes are usually just over 60 minutes long. 
+[Podcast.**init**](https://www.pythonpodcast.com/) and [Talk Python to Me](https://talkpython.fm/) both run interviews with software project leaders and key community members. Episodes are usually just over 60 minutes long.

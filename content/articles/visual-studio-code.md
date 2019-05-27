@@ -1,7 +1,7 @@
 +++
-Title = "Setting up the Visual Studio Code Text Editor"
+Title = "Setting Up Visual Studio Code"
 Slug = "visual-studio-code"
-Date = "2019-04-13T08:11:00+01:00"
+Date = "2019-05-27T11:05:00+01:00"
 Description = "Setting up the Visual Studio Code text editor for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["golang", "javascript", "python", "ruby", "VS Code"]
@@ -10,7 +10,7 @@ Toc = true
 
 +++
 
-Notes on customizing the [Visual Studio Code](https://code.visualstudio.com) text editor.
+[Visual Studio Code](https://code.visualstudio.com) is becoming a standard text editor for developers.
 
 <!--more-->
 
@@ -83,8 +83,7 @@ To automatically format files on save, enable this setting:
 
 ## Extensions for Software Development
 
-- [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) to
-  enhance the Git support in the user interface
+- [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) to enhance the Git support in the user interface
 - The
   [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
   extension

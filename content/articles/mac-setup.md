@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2019-05-25T08:55:00+01:00"
+Date = "2019-05-26T11:39:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["devops", "macos", "golang", "java", "javascript", "python", "ruby"]
@@ -10,10 +10,7 @@ Toc = true
 
 +++
 
-This is a guide for setting up an Apple Mac for software development. Current versions
-of macOS have a fairly good default configuration for general-purpose use, but you do
-need to to adjust some of the security settings. In addition, you need to install
-several pieces of software in order to make the system useful for development.
+A guide to setting up an Apple Mac for DevOps and software development.
 
 <!--more-->
 

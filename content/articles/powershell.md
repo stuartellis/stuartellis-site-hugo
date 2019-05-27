@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2018-04-03T18:39:00+01:00"
+Date = "2019-04-03T18:39:00+01:00"
 Description = ""
 Categories = ["automation", "devops"]
 Tags = [".NET", "automation", "devops", "powershell", "windows"]
@@ -10,15 +10,20 @@ Toc = true
 
 +++
 
-[PowerShell](https://microsoft.com/powershell) is an object-oriented
-shell that is built on .NET, and the custom programming language that runs
+The least that you need to know about [PowerShell](https://microsoft.com/powershell).
+
+<!--more-->
+
+# Why PowerShell Matters
+
+PowerShell is both an object-oriented shell that is built on .NET, and a custom programming language that runs
 within that shell. Third-parties such as VMWare and Amazon Web Services provide
-modules to enable users to work with their products through PowerShell. You can
+modules to enable users to work with their products through PowerShell.
+
+You can
 also supplement the capabilities of PowerShell modules by directly accessing
 classes from the underlying installation of .NET, and by running standard
 commands and scripts from the host operating system.
-
-<!--more-->
 
 # PowerShell Editions #
 

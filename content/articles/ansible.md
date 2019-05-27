@@ -1,7 +1,7 @@
 +++
 Title = "Task Automation with Ansible"
 Slug = "ansible"
-Date = "2019-04-27T15:35:00+01:00"
+Date = "2019-04-27T10:57:00+01:00"
 Description = "The Ansible task automation framework"
 Categories = ["automation", "python"]
 Tags = ["ansible", "automation", "devops", "python"]
@@ -10,7 +10,7 @@ Toc = true
 
 +++
 
-[Ansible](http://www.ansible.com) provides an Open Source framework for automation. It is most well-known for managing servers and network devices, but it can be used for many other workflows.
+[Ansible](http://www.ansible.com) provides an Open Source framework for automation. It is most well-known for managing servers and network devices, but you can use Ansible to automate almost any task.
 
 <!--more-->
 

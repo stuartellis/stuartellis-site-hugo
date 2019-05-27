@@ -1,7 +1,7 @@
 +++
 Title = "Modern Python Practices"
 Slug = "python-modern-practices"
-Date = "2019-05-06T13:43:00+01:00"
+Date = "2019-04-27T10:58:00+01:00"
 Description = ""
 Categories = ["programming", "python"]
 Tags = ["python"]
@@ -27,7 +27,7 @@ There are several tools that help you to manage your Python projects, and use vi
 
 Decide on the workflow for your project, and document it.
 
-## Use Automatic Code Formatting
+## Format Your Code
 
 [PEP 8](https://www.python.org/dev/peps/pep-0008/) provides the accepted style guide for Python code. Use a formatting tool with a plugin to your editor, so that your code is automatically formatted to meet the guidelines in PEP 8.
 
@@ -35,27 +35,27 @@ Decide on the workflow for your project, and document it.
 
 # Language Syntax
 
-## Use f-strings to Format Strings
+## Format Strings with f-strings
 
 The new [f-string](https://docs.python.org/3/reference/lexical_analysis.html#f-strings) syntax is both more readable and has better performance than older methods. Use f-strings instead of _%_ formatting, _str.format()_ or _str.Template()_.
 
 The older features for formatting strings will not be removed, to avoid breaking backward compatibility.
 
-[PEP 498](https://www.python.org/dev/peps/pep-0498/) explains f-strings in detail.
-
 The f-strings feature was added in version 3.6 of Python. Alternate implementations of Python may include this specific feature, even when they do not support version 3.6 syntax.
+
+> [PEP 498](https://www.python.org/dev/peps/pep-0498/) explains f-strings in detail.
 
 ## Use enum or Named Tuples for Immutable Sets of Key-Value Pairs
 
 Use the _enum_ type in Python 3.4 or above for immutable collections of key-value pairs. Python 3 also has _collections.namedtuple()_ for immutable key-value pairs.
 
-## Use Data Classes for Custom Data Objects
+## Create Data Classes for Custom Data Objects
 
 The data classes feature enables you to reduce the amount of code that you need to define classes for objects that exist to store values. The new syntax for data classes does not affect the behavior of the classes that you define with it. Each data class is a standard Python class.
 
-[PEP 557](https://www.python.org/dev/peps/pep-0557/) describes data classes.
-
 Data classes were introduced in version 3.7 of Python.
+
+> [PEP 557](https://www.python.org/dev/peps/pep-0557/) describes data classes.
 
 ## Use collections.abc for Custom Collection Types
 
@@ -67,9 +67,9 @@ Use these classes, because they are fast and well-tested. The implementations in
 
 This function drops you into the debugger at the point where it is called. Both the [built-in debugger](https://docs.python.org/3/library/pdb.html) and external debuggers can use these breakpoints.
 
-[PEP 553](https://www.python.org/dev/peps/pep-0553/) describes the _breakpoint()_ function.
-
 The [breakpoint()](https://docs.python.org/3/library/functions.html#breakpoint) feature was added in version 3.7 of Python.
+
+> [PEP 553](https://www.python.org/dev/peps/pep-0553/) describes the _breakpoint()_ function.
 
 # Application Design
 
@@ -77,7 +77,7 @@ The [breakpoint()](https://docs.python.org/3/library/functions.html#breakpoint) 
 
 The built-in _print()_ statement is convenient for adding debugging information, but you should include logging in your scripts and applications. Use the [logging](https://docs.python.org/3/library/logging.html#logrecord-attributes) module in the standard library, or a third-party logging module.
 
-## Use asyncio Where It Makes Sense
+## Only Use asyncio Where It Makes Sense
 
 The [asynchronous features of Python](https://docs.python.org/3/library/asyncio.html) enable a single process to avoid blocking on I/O operations. You can achieve concurrency by running multiple Python processes, with or without asynchronous I/O.
 
@@ -87,13 +87,13 @@ Code that needs asynchronous I/O must not call any function in the standard libr
 
 If you would like to work with _asyncio_, always use the most recent version of Python. Each new version of Python has improved the performance and features of async. For example, version 3.7 of Python introduced [context variables](https://docs.python.org/3/library/contextvars.html), which enable you to have data that is local to a specific _task_.
 
-[PEP 0567](https://www.python.org/dev/peps/pep-0567/) describes context variables.
-
 The initial version of _asyncio_ was included in version 3.4 of Python. Keywords for _async_ and _await_ were added in Python 3.5. Context variables and the _asyncio.run()_ function were introduced in version 3.7 of Python.
+
+> [PEP 0567](https://www.python.org/dev/peps/pep-0567/) describes context variables.
 
 # Libraries
 
-## Use argparse for Command-line Parsing
+## Handle Command-line Input with argparse
 
 The [argparse](https://docs.python.org/3/library/argparse.html) module is now the recommended way to process command-line input. Use _argparse_, rather than the older _optparse_ and _getopt_.
 
@@ -137,7 +137,7 @@ The _os.walk()_ function now calls _os.scandir()_, so it automatically has the s
 
 The _os.scandir()_ function was added in version 3.5 of Python.
 
-## Use subprocess for Running External Commands
+## Run External Commands with subprocess
 
 The [subprocess](https://docs.python.org/3/library/subprocess.html) module provides a safe way to run external commands. Use _subprocess_ rather than shell backquoting or the functions in _os_, such as _spawn_, _popen2_ and _popen3_. The _subprocess.run()_ function in current versions of Python is sufficient for most cases.
 
@@ -147,6 +147,6 @@ The [subprocess](https://docs.python.org/3/library/subprocess.html) module provi
 
 Use the [requests](http://docs.python-requests.org/en/master/) package for HTTP, rather than the _urllib.request_ in the standard library.
 
-## Use pytest for Testing
+## Test with pytest
 
 The [pytest](http://pytest.org) package has superceded _nose_ as the most popular testing system for Python. Use the _unittest_ module in the standard library for situations where you cannot add pytest to the project.

@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Solus for Software Development"
 Slug = "solus-setup"
-Date = "2018-08-14T18:43:00+01:00"
+Date = "2018-08-14T18:44:00+01:00"
 Description = "Setting up a Solus installation for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["devops", "linux", "solus", "golang", "javascript", "python"]
@@ -10,9 +10,7 @@ Toc = true
 
 +++
 
-This is a set of notes for setting up an installation of the
-[Solus](https://solus-project.com/) Linux distribution on your PC, specifically for
-systems administration and Web development.
+How to set up an installation of the [Solus](https://solus-project.com/) Linux distribution on your PC for systems administration and Web development.
 
 <!--more-->
 

@@ -1,7 +1,7 @@
 +++
 Title = "Starting Python Development"
 Slug = "python-getting-started"
-Date = "2019-05-18T19:20:00+01:00"
+Date = "2019-04-27T10:58:00+01:00"
 Description = ""
 Categories = ["programming", "python"]
 Tags = ["python"]
@@ -10,13 +10,17 @@ Toc = true
 
 +++
 
-Notes on starting [Python](https://www.python.org/) development.
+How to get started with [Python](https://www.python.org/) development.
 
 <!--more-->
 
 # Installing Python on Windows
 
 [This article](https://www.stuartellis.name/articles/python-development-windows) explains how to setup Python on Windows.
+
+# Installing Python on macOS
+
+[This article](https://www.stuartellis.name/articles/mac-setup) explains how to setup Python on macOS.
 
 # The Standard Tools
 

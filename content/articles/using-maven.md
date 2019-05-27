@@ -1,16 +1,16 @@
 +++
 Title = "Using Apache Maven"
 Slug = "apache-maven"
-Date = "2019-05-26T13:02:00+01:00"
+Date = "2019-05-27T10:40:00+01:00"
 Description = ""
 Categories = ["automation", "programming"]
-Tags = ["automation", "java"]
+Tags = ["automation", "java", "maven"]
 Type = "article"
 Toc = true
 
 +++
 
-Notes on the [Maven](https://maven.apache.org/) tool for Java projects.
+Notes on using the [Maven](https://maven.apache.org/) tool for Java projects.
 
 <!--more-->
 

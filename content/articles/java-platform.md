@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the Java Platform"
 Slug = "java-platform"
-Date = "2019-05-26T12:10:00+01:00"
+Date = "2019-05-27T10:36:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -10,13 +10,9 @@ Toc = true
 
 +++
 
-Notes on the Java platform.
+An overview of the Java platform.
 
 <!--more-->
-
-# Overview
-
-These are notes on the Java platform and tools.
 
 # Specifications
 

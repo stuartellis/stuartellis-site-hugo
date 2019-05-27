@@ -1,7 +1,7 @@
 +++
 Title = "Useful Python Tools and Libraries"
 Slug = "python-toolbox"
-Date = "2019-05-19T09:17:00+01:00"
+Date = "2019-04-27T10:59:00+01:00"
 Description = ""
 Categories = ["programming", "python"]
 Tags = ["python"]
@@ -10,7 +10,7 @@ Toc = true
 
 +++
 
-Notes on useful tools and libraries for the [Python](https://www.python.org/) programming language.
+Key tools and libraries for the [Python](https://www.python.org/) programming language.
 
 <!--more-->
 
