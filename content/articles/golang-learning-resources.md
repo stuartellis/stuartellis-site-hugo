@@ -6,6 +6,8 @@ Description = "Learning resources for Go"
 Categories = ["programming"]
 Tags = ["golang"]
 Type = "article"
+Toc = true
+
 +++
 
 Resources for learning the [Go](https://golang.org/) programming language.

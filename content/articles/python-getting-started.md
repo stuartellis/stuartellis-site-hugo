@@ -3,9 +3,10 @@ Title = "Starting Python Development"
 Slug = "python-getting-started"
 Date = "2019-05-18T19:20:00+01:00"
 Description = ""
-Categories = ["programming"]
+Categories = ["programming", "python"]
 Tags = ["python"]
 Type = "article"
+Toc = true
 
 +++
 

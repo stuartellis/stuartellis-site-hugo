@@ -6,6 +6,7 @@ Description = "A checklist of best practices for software projects"
 Categories = ["programming"]
 Tags = ["practices"]
 Type = "article"
+Toc = true
 Draft = true
 
 +++

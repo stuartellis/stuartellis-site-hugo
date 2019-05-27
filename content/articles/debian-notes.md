@@ -3,9 +3,10 @@ Title = "Notes on Debian"
 Slug = "using-debian"
 Date = "2018-11-25T10:45:00+01:00"
 Description = ""
-Categories = ["administration"]
+Categories = ["devops"]
 Tags = ["debian"]
 Type = "article"
+Toc = true
 Draft = true
 
 +++

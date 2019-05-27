@@ -6,6 +6,7 @@ Description = ""
 Categories = ["databases"]
 Tags = ["database", "marklogic", "nosql"]
 Type = "article"
+Toc = true
 Draft = true 
 
 +++

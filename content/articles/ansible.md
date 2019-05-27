@@ -2,10 +2,11 @@
 Title = "Task Automation with Ansible"
 Slug = "ansible"
 Date = "2019-04-27T15:35:00+01:00"
-Description = "An introduction to Ansible"
-Categories = ["administration"]
-Tags = ["administration", "python"]
+Description = "The Ansible task automation framework"
+Categories = ["automation", "python"]
+Tags = ["ansible", "automation", "devops", "python"]
 Type = "article"
+Toc = true
 
 +++
 

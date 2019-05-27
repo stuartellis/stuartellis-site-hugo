@@ -3,16 +3,15 @@ Title = "Basics of Git Version Control"
 Slug = "git-basics"
 Date = "2016-07-01T01:00:00+01:00"
 Description = ""
-Categories = ["tools"]
-Tags = ["git"]
+Categories = ["automation", "devops", "programming"]
+Tags = ["automation", "devops", "git"]
 Type = "article"
+Toc = true
 
 +++
 
 
-Git is fairly logical once you have learned the ideas behind it, so this
-articles has quite a lot on concepts, and much more abbreviated notes on the
-important commands.
+Git concepts, and abbreviated notes on the important commands.
 
 <!--more-->
 

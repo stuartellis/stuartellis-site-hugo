@@ -6,6 +6,7 @@ Description = ""
 Categories = ["databases"]
 Tags = ["database", "linux", "postgresql", "sql"]
 Type = "article"
+Toc = true
 
 +++
 

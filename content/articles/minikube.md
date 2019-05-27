@@ -3,9 +3,10 @@ Title = "Minikube - Kubernetes on a Single Computer"
 Slug = "minikube"
 Date = "2019-05-25T09:08:00+01:00"
 Description = "Using Minikube for developing with Kubernetes"
-Categories = ["administration"]
-Tags = ["administration", "kubernetes"]
+Categories = ["devops"]
+Tags = ["ansible", "devops", "kubernetes"]
 Type = "article"
+Toc = true
 
 +++
 

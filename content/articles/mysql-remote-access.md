@@ -6,6 +6,7 @@ Description = "Setting up remote access to MySQL with SSL encryption"
 Categories = ["databases"]
 Tags = ["database", "mysql", "sql"]
 Type = "article"
+Toc = true
 
 +++
 

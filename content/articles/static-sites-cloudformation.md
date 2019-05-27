@@ -3,8 +3,8 @@ Title = "Static Websites with AWS CloudFormation"
 Slug = "static-sites-cloudformation"
 Date = "2018-08-11T12:41:00+01:00"
 Description = "Managing static Websites with AWS CloudFormation"
-Categories = ["administration", "cloud"]
-Tags = ["administration", "aws", "cloud"]
+Categories = ["devops", "cloud"]
+Tags = ["devops", "aws", "cloud"]
 Type = "article"
 Draft = true
 

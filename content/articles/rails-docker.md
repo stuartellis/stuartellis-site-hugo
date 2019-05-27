@@ -3,9 +3,10 @@ Title = "Deploying a Ruby on Rails Application with Docker"
 Slug = "rails-docker"
 Date = "2016-09-09T20:20:00+01:00"
 Description = "Deploying a Ruby on Rails Application with Docker"
-Categories = ["administration"]
-Tags = ["administration", "rails", "docker"]
+Categories = ["devops"]
+Tags = ["devops", "rails", "docker"]
 Type = "article"
+Toc = true
 Draft = true
 
 +++

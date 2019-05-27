@@ -3,9 +3,10 @@ Title = "Shell Scripting for UNIX-like Systems"
 Slug = "shell-scripting"
 Date = "2018-12-15T15:36:00+00:00"
 Description = "Shell scripting"
-Categories = ["administration", "programming"]
-Tags = ["administration", "shell", "bash"]
+Categories = ["automation", "devops", "programming"]
+Tags = ["automation", "devops", "shell", "bash"]
 Type = "article"
+Toc = true
 
 +++
 

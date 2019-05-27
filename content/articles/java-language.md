@@ -6,6 +6,7 @@ Description = ""
 Categories = ["programming"]
 Tags = ["java"]
 Type = "article"
+Toc = true
 Draft = true
 
 +++

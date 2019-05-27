@@ -3,9 +3,10 @@ Title = "Setting Up Python on Microsoft Windows"
 Slug = "python-development-windows"
 Date = "2019-02-17T12:10:00+01:00"
 Description = ""
-Categories = ["programming"]
+Categories = ["programming", "python"]
 Tags = ["python", "windows"]
 Type = "article"
+Toc = true
 
 +++
 

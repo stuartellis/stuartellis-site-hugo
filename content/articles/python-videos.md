@@ -3,9 +3,10 @@ Title = "Classic Videos on Python"
 Slug = "python-videos"
 Date = "2019-05-18T14:55:00+01:00"
 Description = ""
-Categories = ["programming"]
+Categories = ["programming", "python"]
 Tags = ["python"]
 Type = "article"
+Toc = true
 Draft = true
 
 +++

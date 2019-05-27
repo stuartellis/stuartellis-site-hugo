@@ -3,19 +3,18 @@ Title = "Using Rake to Automate Tasks"
 Slug = "rake"
 Date = "2016-07-01T01:00:00+01:00"
 Description = ""
-Categories = ["tools"]
-Tags = ["rake", "ruby"]
+Categories = ["automation"]
+Tags = ["automation", "rake", "ruby"]
 Type = "article"
+Toc = true
 
 +++
 
 
 Rake enables you to define a set of tasks and the dependencies between
 them in a file, and then have the right thing happen when you run any
-given task. Each task may be either one of the built-in types, or a
-block of your own Ruby code. It was originally created to handle
-software build processes, but the combination of convenience and
-flexibility that it provides has made it the standard method of job
+given task. The combination of convenience and
+flexibility that Rake provides has made it the standard method of job
 automation for Ruby projects.
 
 <!--more-->

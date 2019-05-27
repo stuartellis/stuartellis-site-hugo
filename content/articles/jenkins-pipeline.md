@@ -3,9 +3,10 @@ Title = "Using Jenkins Pipelines with Docker"
 Slug = "jenkins-pipeline"
 Date = "2016-09-22T11:50:00+01:00"
 Description = "Using the Pipeline feature of Jenkins CI with Docker containers"
-Categories = ["administration"]
-Tags = ["administration", "jenkins"]
+Categories = ["devops", "automation"]
+Tags = ["automation", "devops", "jenkins"]
 Type = "article"
+Toc = true
 
 +++
 

@@ -6,19 +6,21 @@ Description = ""
 Categories = ["programming"]
 Tags = ["rails", "ruby"]
 Type = "article"
+Toc = true
 
 +++
 
 
 ERB (Embedded RuBy) is a feature of Ruby that enables you to
 conveniently generate any kind of text, in any quantity, from templates.
-The templates themselves combine plain text with Ruby code for variable
-substitution and flow control, making them easy to write and
-maintain.
 
 <!--more-->
 
 # Overview #
+
+ERB templates combine plain text with Ruby code for variable
+substitution and flow control, making them easy to write and
+maintain.
 
 Although ERB is most commonly seen generating Web pages, it is also used
 to produce XML documents, RSS feeds, source code, and other forms of

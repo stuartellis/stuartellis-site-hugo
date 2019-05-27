@@ -6,6 +6,7 @@ Description = ""
 Categories = ["programming"]
 Tags = ["node.js"]
 Type = "article"
+Toc = true
 Draft = true
 
 +++

@@ -6,6 +6,7 @@ Description = ""
 Categories = ["programming"]
 Tags = ["ruby"]
 Type = "article"
+Toc = true
 
 +++
 

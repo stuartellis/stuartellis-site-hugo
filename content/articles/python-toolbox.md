@@ -3,9 +3,10 @@ Title = "Useful Python Tools and Libraries"
 Slug = "python-toolbox"
 Date = "2019-05-19T09:17:00+01:00"
 Description = ""
-Categories = ["programming"]
+Categories = ["programming", "python"]
 Tags = ["python"]
 Type = "article"
+Toc = true
 
 +++
 

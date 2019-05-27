@@ -4,8 +4,10 @@ Slug = "buffalo-windows-short"
 Date = "2018-06-24T14:58:00+01:00"
 Description = "Getting started with Buffalo on Windows"
 Categories = ["programming"]
-Tags = ["administration", "golang", "javascript", "windows"]
+Tags = ["golang", "javascript", "windows"]
 Type = "article"
+Toc = true
+
 +++
 
 This is the short summary of how to start developing Web applications on Windows with

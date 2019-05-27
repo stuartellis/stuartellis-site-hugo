@@ -3,9 +3,10 @@ Title = "Managing Infrastructure with Terraform"
 Slug = "terraform"
 Date = "2019-04-21T13:44:00+01:00"
 Description = "An introduction to Terraform"
-Categories = ["administration"]
-Tags = ["administration", "terraform"]
+Categories = ["devops"]
+Tags = ["devops", "terraform"]
 Type = "article"
+Toc = true
 Draft = true
 
 +++

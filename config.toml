@@ -1,37 +1,47 @@
-baseurl = "https://www.stuartellis.name"
+baseURL = "https://www.stuartellis.name/"
 languageCode = "en-us"
 title = "Field Notes"
-theme = "liquorice"
+theme = "mainroad"
+paginate = "10"
 disqusShortname = "fieldnotes-1"
 
-[params]
-author = "Stuart Ellis"
-copyright = "Contents © 2019 Stuart Ellis"
+[Author]
+name = "Stuart Ellis"
+bio = "DevOps Engineer"
+avatar = "img/avatar.png"
 
-[[menu.main]]
-name = "Articles"
-pre = "<i class='fa fa-heart'></i>"
-weight = -100
-identifier = "articles"
-url = "/articles/"
+[Params]
+subtitle = "What, Where, How" # Subtitle of your site. Used in site header
+description = "Notes from a DevOps" # Site description. Used in meta description
+copyright = "Stuart Ellis" # copyright holder, otherwise will use site title
+opengraph = false # Enable OpenGraph if true
+twitter_cards = false # Enable Twitter Cards if true
+readmore = false # Show "Read more" button in list if true
+authorbox = false # Show authorbox at bottom of pages if true
+toc = true # Enable Table of Contents
+post_navigation = true # Show post navigation at bottom of pages if true
+post_meta = ["date", "categories", "translations"] # Order of post meta information
+mainSections = ["article"] # specify section pages to show on home page and the "Recent articles" widget
+#dateformat = "2006-01-02" # change the format of dates
+#mathjax = true # Enable MathJax
+#mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" # Specify MathJax path
+#mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config
+#customCSS = ["css/custom.css"] # Include custom CSS files
 
-[[menu.main]]
-name = "Projects on GitLab"
-pre = "<i class='fa fa-heart'></i>"
-weight = -90
-identifier = "gitlab"
-url = "https://gitlab.com/users/stuart-ellis/projects"
+[Params.sidebar]
+home = "right" # Configure layout for home page
+list = "right"  # Configure layout for list pages
+single = false # Configure layout for single pages
+# Enable widgets in given order
+widgets = ["search", "recent", "categories", "taglist", "social", "languages"]
 
-[[menu.main]]
-name = "Privacy"
-pre = "<i class='fa fa-heart'></i>"
-weight = -80
-identifier = "privacy"
-url = "/privacy/policy/"
+[Params.widgets]
+recent_num = 5 # Set the number of articles in the "Recent articles" widget
+tags_counter = false # Enable counter for each tag in "Tags" widget (disabled by default)
 
-[[menu.main]]
-name = "Contact Me"
-pre = "<i class='fa fa-heart'></i>"
-weight = -70
-identifier = "contact"
-url = "/contact/me/"
+[Params.widgets.social]
+# Enable parts of social widget
+linkedin = "stuart-ellis"
+github = "stuartellis"
+gitlab = "stuart-ellis"
+email = "stuart@stuartellis.name"

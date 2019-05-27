@@ -4,23 +4,25 @@ Slug = "derby-javadb"
 Date = "2016-07-01T01:00:00+01:00"
 Description = ""
 Categories = ["databases"]
-Tags = ["database", "java", "sql"]
+Tags = ["java", "sql"]
 Type = "article"
+Toc = true
 
 +++
-
 
 Apache Derby (or Java DB) provides a small set of libraries that can be
 added directly to any Java program that needs database storage
 capabilities, such as a desktop application, network service, or Web
-application. Generated Derby databases may also be bundled with your
-application, to remove the need for any separate installation or
-configuration. In *embedded* mode, the Derby libraries can directly read
-database files that are held in JAR archives.
+application.
 
 <!--more-->
 
 # More on Derby #
+
+Generated Derby databases can be bundled with your
+application, to remove the need for any separate installation or
+configuration. In *embedded* mode, the Derby libraries can directly read
+database files that are held in JAR archives.
 
 Used as a stand-alone network server, Derby supports online backup,
 replication between a master and multiple slaves, XA transactions, LDAP

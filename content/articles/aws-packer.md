@@ -2,20 +2,21 @@
 Title = "Deployments with AWS EC2 and Packer"
 Slug = "aws-packer"
 Date = "2018-12-16T18:18:00+01:00"
-Description = ""
-Categories = ["administration", "cloud"]
-Tags = ["administration", "aws", "cloud"]
+Description = "Using Packer to provide machine images for AWS EC2"
+Categories = ["devops"]
+Tags = ["devops", "packer"]
 Type = "article"
+Toc = true
 
 +++
 
-Notes on using [Packer](https://packer.io/) to provide images for deployment with AWS EC2.
+Notes on using [Packer](https://packer.io/) to provide machine images for deployment with AWS EC2.
 
 <!--more-->
 
 # Overview
 
-Packer enables you to build machine images, which you can then deploy through whatever process that you decide. It includes support for Amazon Machine Images, Docker, Vagrant, VMWare, and several other popular image formats.
+[Packer](https://packer.io/) enables you to build machine images, which you can then deploy through whatever process that you decide. It includes support for Amazon Machine Images, Docker, Vagrant, VMWare, and several other popular image formats.
 
 Packer itself is just a command-line tool. This means that it can be installed on an existing system.
 

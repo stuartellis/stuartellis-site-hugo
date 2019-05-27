@@ -3,9 +3,10 @@ Title = "Setting Up Fedora Workstation for Software Development"
 Slug = "fedora-workstation-setup"
 Date = "2019-03-09T13:36:00+01:00"
 Description = "Setting up a Fedora Workstation for development and systems administration"
-Categories = ["administration", "programming"]
-Tags = ["administration", "linux", "fedora", "golang", "javascript", "python", "rust"]
+Categories = ["devops", "programming"]
+Tags = ["devops", "linux", "fedora", "golang", "javascript", "python"]
 Type = "article"
+Toc = true
 
 +++
 

@@ -6,6 +6,8 @@ Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
 Type = "article"
+Toc = true
+
 +++
 
 Notes on developing software with the [Go](https://golang.org/) language.

@@ -2,10 +2,11 @@
 Title = "An Introduction to Cross-Platform .NET"
 Slug = "dotnet-crossplatform"
 Date = "2017-08-23T12:40:00+01:00"
-Description = "The .NET Core and supporting tools"
+Description = ".NET Core and supporting tools"
 Categories = ["programming"]
-Tags = ["csharp", "dotnet"]
+Tags = ["C#", ".NET"]
 Type = "article"
+Toc = true
 
 +++
 

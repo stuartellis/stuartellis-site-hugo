@@ -6,6 +6,7 @@ Description = ""
 Categories = ["databases"]
 Tags = ["database", "mysql", "sql"]
 Type = "article"
+Toc = true
 
 +++
 

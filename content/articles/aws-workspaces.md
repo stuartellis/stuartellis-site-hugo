@@ -3,15 +3,14 @@ Title = "Getting Started with AWS WorkSpaces"
 Slug = "aws-workspaces"
 Date = "2018-07-20T21:35:00+01:00"
 Description = "Notes on AWS WorkSpaces"
-Categories = ["administration", "cloud"]
-Tags = ["administration", "aws", "cloud", "windows"]
+Categories = ["devops"]
+Tags = ["devops", "windows"]
 Type = "article"
+Toc = true
 
 +++
 
-
-This is a set of notes for setting up AWS WorkSpaces, a service for running one
-or more desktops on the AWS cloud.
+This is a set of notes for setting up [AWS WorkSpaces](https://aws.amazon.com/workspaces/), a service for running one or more desktops on the AWS cloud.
 
 <!--more-->
 

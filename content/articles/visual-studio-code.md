@@ -3,9 +3,10 @@ Title = "Setting up the Visual Studio Code Text Editor"
 Slug = "visual-studio-code"
 Date = "2019-04-13T08:11:00+01:00"
 Description = "Setting up the Visual Studio Code text editor for development and systems administration"
-Categories = ["administration", "programming"]
-Tags = ["golang", "javascript", "python", "ruby"]
+Categories = ["devops", "programming"]
+Tags = ["golang", "javascript", "python", "ruby", "VS Code"]
 Type = "article"
+Toc = true
 
 +++
 

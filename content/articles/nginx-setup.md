@@ -3,9 +3,10 @@ Title = "Configuring nginx"
 Slug = "nginx-setup"
 Date = "2016-11-13T12:40:00+00:00"
 Description = ""
-Categories = ["administration"]
+Categories = ["devops"]
 Tags = ["linux", "web"]
 Type = "article"
+Toc = true
 Draft = true
 
 +++
