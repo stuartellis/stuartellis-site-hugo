@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the Java Platform"
 Slug = "java-platform"
-Date = "2019-05-27T15:33:00+01:00"
+Date = "2019-05-28T07:29:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -126,6 +126,10 @@ The OpenJDK also includes these tools for monitoring and diagnostics:
 - _jinfo_ - Provides configuration information for a specified Java process
 - _jps_ - Java process viewer
 - _jstat_ - Java statistics monitoring
+
+## Performance Testing
+
+The OpenJDK includes [JMH](https://openjdk.java.net/projects/code-tools/jmh/), the Java Micro-benchmark Harness.
 
 # Popular Third-Party Software
 
