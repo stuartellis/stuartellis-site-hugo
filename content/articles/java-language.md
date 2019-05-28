@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the Java Programming Language"
 Slug = "java-language"
-Date = "2019-05-27T15:46:00+01:00"
+Date = "2019-05-28T06:50:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -73,6 +73,8 @@ A _constructor_ is a method in the class that has the same name as the class its
 The special behavior of constructors is that they work on objects whilst the object is being initialized.
 
 Static constructors run only once, when a class is first loaded.
+
+If a class contains no constructor declarations, then a default constructor is implicitly declared.
 
 ## Packages
 
