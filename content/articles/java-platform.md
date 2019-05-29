@@ -1,7 +1,7 @@
 +++
-Title = "Notes on the Java Platform"
+Title = "An Overview of the Java Platform"
 Slug = "java-platform"
-Date = "2019-05-28T07:29:00+01:00"
+Date = "2019-05-29T04:32:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -10,7 +10,7 @@ Toc = true
 
 +++
 
-An overview of the Java platform.
+The modern Java platform, with OpenJDK 11 and above.
 
 <!--more-->
 
@@ -32,7 +32,7 @@ Each _Java Virtual Machine_ (JVM) runs compiled binary Java _bytecode_. This byt
 
 ## Components of the JVM
 
-- Compiler - Interprets bytecode, and automatically applies JIT compilation (using C1 fast compiler and C2 optimized compiler)
+- Compiler - Interprets bytecode, and automatically applies JIT compilation (using the C1 fast compiler, and the C2 optimized compiler)
 - Runtime - Loads class files into memory, concurrency, interacts with the operating system (threads, memory allocation, sockets), works with external monitoring, handles logging
 - Garbage Collector - Memory management
 
@@ -58,7 +58,7 @@ The classpath is either defined by a CLASSPATH environment variable, or set by a
 
     java -classpath ".:../java-classes/*:/usr/local/lib/java-classes/*"
 
-The default value of classpath is _._, which means that it checks the current directory.
+The default value of classpath is _._ (the period character), which means that it checks the current directory.
 
 ## Properties
 
@@ -74,9 +74,11 @@ _Agents_ are plugins for the JVM. For example, _JRebel_ is an agent that enables
 
 # Java Distributions
 
-Each distribution of Java includes a Java Virtual Machine (JVM), and a Java Developers Kit (JDK) which provides the tools and class libraries. Compatibility tests verify whether distribution comply with Java standards.
+Each distribution of Java includes a Java Virtual Machine (JVM), and a Java Developers Kit (JDK) which provides the tools and class libraries. Compatibility tests verify whether a distribution complies with Java standards.
 
-Most distributions use the [HotSpot](https://openjdk.java.net/groups/hotspot/) JVM. For example, both Amazon Corretto and Azul Zulu include versions of the HotSpot JVM. [OpenJ9](https://www.eclipse.org/openj9/) is an alternative Open Source JVM that is maintained by IBM and the Eclipse Foundation. Most Java distributions now use versions of the OpenJDK tools and libraries.
+Most distributions use the [HotSpot](https://openjdk.java.net/groups/hotspot/) JVM. For example, both Amazon Corretto and Azul Zulu include versions of the HotSpot JVM. [OpenJ9](https://www.eclipse.org/openj9/) is an alternative Open Source JVM that is maintained by IBM and the Eclipse Foundation.
+
+Almost every Java distribution now uses versions of the OpenJDK tools and libraries.
 
 > Android uses the Java language, but Android software development kits (SDKs) are not fully compatible with Java standards.
 
@@ -141,6 +143,7 @@ The OpenJDK includes [JMH](https://openjdk.java.net/projects/code-tools/jmh/), t
 
 ## Testing Tools
 
+- [AssertJ](https://joel-costigliola.github.io/assertj/) - Test assertions
 - [JUnit 5](https://junit.org/junit5/) - Unit testing
 - [Hamcrest](http://hamcrest.org/JavaHamcrest/) - Matchers
 - [Mockito](https://site.mockito.org/) - Mocking
@@ -174,11 +177,13 @@ The OpenJDK includes [JMH](https://openjdk.java.net/projects/code-tools/jmh/), t
 
 ## Other Libraries
 
+- [Ehcache](https://www.ehcache.org/) - In-memory caching
 - [Google Guice](https://github.com/google/guice) - Dependency injection framework
 - [Jackson](https://github.com/FasterXML/jackson) - Libraries for JSON and other data formats
 - [Logback](https://logback.qos.ch/) - Logging
 - [Micrometer](http://micrometer.io/) - Metrics collection agent library
 - [OpenPDF](https://github.com/LibrePDF/OpenPDF)
+- [Quartz](https://www.quartz-scheduler.org/) - Job scheduler
 - [resilience4j](https://github.com/resilience4j/resilience4j) - Fault tolerance
 - [Thymeleaf](https://www.thymeleaf.org/) - Templating
 
