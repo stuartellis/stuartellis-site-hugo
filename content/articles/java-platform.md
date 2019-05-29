@@ -1,7 +1,7 @@
 +++
 Title = "An Overview of the Java Platform"
 Slug = "java-platform"
-Date = "2019-05-29T04:32:00+01:00"
+Date = "2019-05-29T05:10:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -172,8 +172,10 @@ The OpenJDK includes [JMH](https://openjdk.java.net/projects/code-tools/jmh/), t
 
 ## Databases
 
+- [Flyway](https://flywaydb.org/) - Schema management
 - [H2](https://h2database.com) - SQL database in pure Java
 - [Hibernate](http://hibernate.org/) - Database toolkit and ORM
+- [Liquibase](http://www.liquibase.org) - Older schema management tool
 
 ## Other Libraries
 
