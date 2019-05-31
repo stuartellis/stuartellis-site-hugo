@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2019-05-26T11:39:00+01:00"
+Date = "2019-05-31T20:39:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["devops", "macos", "golang", "java", "javascript", "python", "ruby"]
@@ -338,7 +338,7 @@ JAVA_HOME=/usr/local/lib/jdk-11.0.3+7/Contents/Home
 PATH=$PATH:/usr/local/lib/jdk-11.0.3+7/Contents/Home/bin
 ```
 
- To manually install a copy of [Apache Maven](https://maven.apache.org):
+To manually install a copy of [Apache Maven](https://maven.apache.org):
 
 1. Download the latest version of Maven
 2. Unzip the download
@@ -346,7 +346,6 @@ PATH=$PATH:/usr/local/lib/jdk-11.0.3+7/Contents/Home/bin
 4. Add _/usr/local/lib/MAVEN-DIRECTORY_ to your PATH environment variable
 
 Replace _MAVEN-DIRECTORY_ with the name of the directory that Maven uses, such as _apache-maven-3.6.0_.
-
 
 ## pipenv for Python Development
 
@@ -489,7 +488,7 @@ various types of invalid data to be entered.
 
 [Minikube](https://kubernetes.io/docs/setup/minikube/) sets up and manages Kubernetes on a single system, so that you can develop and test without needing a set of servers.
 
-To install Minikube with Homebrew, run these commands in a terminal window: 
+To install Minikube with Homebrew, run these commands in a terminal window:
 
     brew install kubernetes-cli
     brew cask install minikube
@@ -497,6 +496,14 @@ To install Minikube with Homebrew, run these commands in a terminal window:
 By default, Minikube uses a virtual machine manager. If you do not need VirtualBox, install [hyperkit](https://github.com/moby/hyperkit), which provides a minimal virtual machine manager.
 
     brew install hyperkit
+
+To install [Helm](https://helm.sh/) with Homebrew, run this command in a terminal window:
+
+    brew install kubernetes-helm
+
+To install [Skaffold](https://skaffold.dev/) with Homebrew, run this command in a terminal window:
+
+    brew install skaffold
 
 [This article explains Minikube in more detail](https://www.stuartellis.name/articles/minikube).
 
