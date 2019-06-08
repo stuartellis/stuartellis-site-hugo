@@ -1,7 +1,7 @@
 +++
 Title = "An Overview of the Java Platform"
 Slug = "java-platform"
-Date = "2019-05-29T05:10:00+01:00"
+Date = "2019-06-08T09:07:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -84,7 +84,7 @@ Almost every Java distribution now uses versions of the OpenJDK tools and librar
 
 ## Free, Open Source Distributions
 
-- [AdoptOpenJDK](https://adoptopenjdk.net/) - Provides free versions of the OpenJDK with either HotSpot or OpenJ9 Java Virtual Machines
+- [AdoptOpenJDK](https://adoptopenjdk.net/) - Provides free versions of the OpenJDK with either HotSpot or OpenJ9 Java Virtual Machines. [IBM offers commercial support contracts](https://www-01.ibm.com/support/docview.wss?uid=ibm10741649)
 - [Amazon Corretto](https://aws.amazon.com/corretto/) - OpenJDK with HotSpot Java Virtual Machine, supported by AWS
 - [Eclipse OpenJ9](https://www.eclipse.org/openj9/) - OpenJDK with the OpenJ9 JVM
 - [Red Hat OpenJDK](https://developers.redhat.com/products/openjdk/overview/) - OpenJDK with HotSpot Java Virtual Machine, supported by Red Hat, Linux and Windows only
@@ -96,6 +96,7 @@ Almost every Java distribution now uses versions of the OpenJDK tools and librar
 - [IBM Java SDK](https://www.ibm.com/developerworks/java/jdk/)
 - [JamaicaVM](https://www.aicas.com/cms/en/JamaicaVM) - A proprietary Java implementation for real-time systems.
 - [Oracle JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html) - Proprietary builds of HotSpot and OpenJDK, supported by Oracle
+- [Pivotal Spring Runtime](https://pivotal.io/pivotal-spring-runtime) - A distribution of the OpenJDK that is supported by Pivotal
 - [Zing](https://www.azul.com/products/zing/) - High-performance proprietary Java implementation maintained by Azul Systems
 
 # Standard Tools
@@ -116,7 +117,7 @@ JDK 9 introduced _jaotc_, an experimental alternative compiler to _javac_ that p
 
 ## Debugging
 
-Java Virtual Machines accept connections from debuggers, which may either be on the same system, or connecting from a remote system. The OpenJDK includes _jdb_, a command-line debugger, and IDEs for Java include graphical debuggers.
+Java Virtual Machines accept connections from debuggers. The debugger may either be on the same system, or connecting from a remote system. The OpenJDK tself includes _jdb_, a command-line debugger. Each IDE for Java includes a graphical debugger.
 
 ## Monitoring
 
