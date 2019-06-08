@@ -1,7 +1,7 @@
 +++
-Title = "Setting Up an Apple Mac for Software Development"
+Title = "How to Set up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2019-05-31T20:39:00+01:00"
+Date = "2019-06-08T10:31:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["devops", "macos", "golang", "java", "javascript", "python", "ruby"]
@@ -10,7 +10,7 @@ Toc = true
 
 +++
 
-A guide to setting up an Apple Mac for DevOps and software development.
+A guide to setting up an Apple Mac for DevOps and software development. This is current for macOS 10.14 (Mojave).
 
 <!--more-->
 
@@ -195,7 +195,9 @@ Installations of macOS include older command-line versions of both
 TextEdit, a desktop text editor. TextEdit is designed for light-weight word processing,
 and has no support for programming. Add the code editors or IDEs that you would prefer to use.
 
-If you do not have a preferred editor, consider using a version of [Visual Studio Code](https://code.visualstudio.com). To work with a modern Vim editor, install [Neovim](https://neovim.io).
+If you do not have a preferred editor, consider using a version of [Visual Studio Code](https://code.visualstudio.com). Read the next section for more details.
+
+To work with a modern Vim editor, install [Neovim](https://neovim.io).
 
 ### Visual Studio Code
 
@@ -258,9 +260,9 @@ To create an SSH key, run the _ssh-keygen_ command in a terminal window. For exa
 > Use 4096-bit RSA keys for all systems. The older DSA standard only supports 1024-bit
 > keys, which are now too small to be considered secure.
 
-# Setting Up Environments
+# Programming Languages
 
-## Node.js for JavaScript Development
+## JavaScript Development: Node.js
 
 Homebrew provides separate packages for each version of [Node.js](https://nodejs.org).
 To ensure that you are using the version of Node.js that you expect, specify the version
@@ -278,13 +280,15 @@ install it:
 
     brew install yarn
 
-## Developer Tools for Go
+## Go Development
 
 Use Homebrew to install [Go](https://golang.org/):
 
     brew install golang
 
-The current version of Go includes experimental support for dependency management with modules, but existing projects may use [dep](https://golang.github.io/dep/), or an older tool.
+This provides the standard command-line tools for Go.
+
+The current version of Go includes experimental support for dependency management with modules. Use modules for new projects. Some existing projects use [dep](https://golang.github.io/dep/), or an older tool.
 
 ### Setting a GOPATH
 
@@ -301,17 +305,19 @@ Then, add this to your PATH:
 
 Close the Terminal and open it again for the changes to take effect.
 
-## AdoptOpenJDK for Java Development
+## Java Development: AdoptOpenJDK
 
 ### Which Version of Java?
 
-Install the macOS package of the OpenJDK that are provided by the [AdoptOpenJDK](https://adoptopenjdk.net/) project to avoid potential licensing and support issues. The versions of Java on the OpenJDK Website are for testers, and the Oracle JDK is a proprietary product that requires license fees.
+Many vendors provide a JDK. To avoid potential licensing and support issues, use the JDK that is provided by the [AdoptOpenJDK](https://adoptopenjdk.net/) project. The versions of Java on the OpenJDK Website are for testers, and the Oracle JDK is a proprietary product that requires license fees.
 
 Use the _LTS_ version of the OpenJDK, unless you need features that are in the latest releases.
 
-Most Java projects use the Apache Maven build tool. This is provided by the Maven project itself, and is not part of the OpenJDK. Maven is written in Java, which means that the project provides one package, which works on any operating system, with any OpenJDK.
+Once you have installed a JDK, get the [Apache Maven](https://maven.apache.org) build tool. This is provided by the Maven project itself, and is not part of the OpenJDK.
 
-### Setting Up Java with Homebrew
+Use [jEnv](https://www.jenv.be/) if you need to run multiple JDKs, such as different versions of the same JDK.
+
+### Setting up Java with Homebrew
 
 Run these commands in a terminal window:
 
@@ -324,7 +330,37 @@ Run this command in a terminal window to install Maven:
 
     brew install maven
 
-### Manual Setup
+## Setting up jEnv
+
+Run this command in a terminal window to install [jEnv](https://www.jenv.be/):
+
+    brew install jenv
+
+Next, add this to your PATH:
+
+    $HOME/.jenv/bin
+
+Add this to your _~/.bashrc_ file:
+
+    eval "$(jenv init -)"
+
+Open a new terminal window, and run this command:
+
+    jenv enable-plugin export
+
+This enables jEnv to manage the JAVA_HOME environment variable.
+
+To avoid inconsistent behaviour, close all the terminal windows that you currently have open. The jEnv utility will work correctly in new terminal windows.
+
+Lastly, run this command to register your current JDK with jEnv:
+
+    jenv add $(/usr/libexec/java_home)
+
+To see a list of the available commands, type _jenv_ in a terminal window:
+
+    jenv
+
+### Manual Set up of AdoptOpenJDK
 
 To manually install a copy of the JDK:
 
@@ -347,7 +383,9 @@ To manually install a copy of [Apache Maven](https://maven.apache.org):
 
 Replace _MAVEN-DIRECTORY_ with the name of the directory that Maven uses, such as _apache-maven-3.6.0_.
 
-## pipenv for Python Development
+Maven is written in Java, which means that the project provides one package, which works on any operating system that has a supported version of Java.
+
+## Python Development: pipenv
 
 Unfortunately, macOS includes a copy of Python 2, so you will need to install Python 3 yourself.
 
@@ -359,8 +397,7 @@ Enter this command to install Python 3 and pipenv using Homebrew:
 
 Use pipenv to manage your Python projects. The pipenv tool itself will automatically work with the copy of Python 3 from Homebrew.
 
-To use
-the Python 3 interpreter outside of projects that are managed by pipenv, specify _python3_ on the command-line and in
+To use the Python 3 interpreter outside of projects that are managed by pipenv, specify _python3_ on the command-line and in
 your scripts, rather than _python_:
 
     python3 --version
@@ -372,7 +409,7 @@ If you need to run the _pip_ utility, rather than setting up a development envir
 The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
 shows you how to work with _pipenv_.
 
-## rustup for Rust Development
+## Rust Development: rustup
 
 The official _rustup_ utility enables you to install the tools for building software
 with the Rust programming language. Click on the Install button on the front page of the
@@ -386,7 +423,7 @@ work, add this to your PATH manually:
 This process installs all of the tools into your home directory, and does not add any
 files into system directories.
 
-## RVM for Ruby Development
+## Ruby Development: RVM
 
 All macOS systems include a copy of Ruby, but it is outdated. To maintain current and
 clean Ruby environments, use the [RVM](https://rvm.io/) system.
@@ -407,13 +444,33 @@ _.gemrc_ and put this line in it:
 
     gem: --no-ri --no-rdoc
 
+# Kubernetes: Minikube
+
+[Minikube](https://kubernetes.io/docs/setup/minikube/) sets up and manages Kubernetes on a single system, so that you can develop and test without needing a set of servers.
+
+To install Minikube with Homebrew, run these commands in a terminal window:
+
+    brew install kubernetes-cli
+    brew cask install minikube
+
+By default, Minikube uses a virtual machine manager. If you do not need VirtualBox, install [hyperkit](https://github.com/moby/hyperkit), which provides a minimal virtual machine manager.
+
+    brew install hyperkit
+
+To install [Helm](https://helm.sh/) with Homebrew, run this command in a terminal window:
+
+    brew install kubernetes-helm
+
+To install [Skaffold](https://skaffold.dev/) with Homebrew, run this command in a terminal window:
+
+    brew install skaffold
+
+[This article explains Minikube in more detail](https://www.stuartellis.name/articles/minikube).
+
 # SQL Databases
 
-If you develop any kind of database-driven application, it is useful to have a version
-of the database server available on your system. Consider using
-[Docker](https://www.docker.com/) containers for this. If you prefer to install services
-directly on to your workstation, Homebrew provides packages for PostgreSQL, MariaDB and
-MySQL.
+Consider using containers to run the databases that you need. If you prefer to install services
+directly on to your workstation, Homebrew provides packages for PostgreSQL, MariaDB and MySQL.
 
 ## Installing PostgreSQL
 
@@ -484,35 +541,18 @@ file on your Mac. Production installations of MySQL should be configured with
 appropriate _SQL modes_ to enable data integrity safeguards. By default, MySQL permits
 various types of invalid data to be entered.
 
-# Running Kubernetes with Minikube
+## Database Management Tools
 
-[Minikube](https://kubernetes.io/docs/setup/minikube/) sets up and manages Kubernetes on a single system, so that you can develop and test without needing a set of servers.
-
-To install Minikube with Homebrew, run these commands in a terminal window:
-
-    brew install kubernetes-cli
-    brew cask install minikube
-
-By default, Minikube uses a virtual machine manager. If you do not need VirtualBox, install [hyperkit](https://github.com/moby/hyperkit), which provides a minimal virtual machine manager.
-
-    brew install hyperkit
-
-To install [Helm](https://helm.sh/) with Homebrew, run this command in a terminal window:
-
-    brew install kubernetes-helm
-
-To install [Skaffold](https://skaffold.dev/) with Homebrew, run this command in a terminal window:
-
-    brew install skaffold
-
-[This article explains Minikube in more detail](https://www.stuartellis.name/articles/minikube).
+- [Azure Data Studio](https://docs.microsoft.com/en-gb/sql/azure-data-studio/what-is?view=sql-server-2017) for Microsoft SQL Server
+- [MySQL Workbench](http://wb.mysql.com/)
+- [Oracle SQL Developer](https://www.oracle.com/database/technologies/appdev/sql-developer.html)
+- [pgAdmin](https://www.pgadmin.org/) for PostgreSQL
 
 # Other Useful Desktop Applications for Developers
 
 - [LibreOffice](http://www.libreoffice.org/) suite: _brew cask install libreoffice_
 - [VirtualBox](http://www.virtualbox.org/) virtual machine management: _brew cask install virtualbox_
 - [Docker](https://store.docker.com/editions/community/docker-ce-desktop-mac) container management: _brew cask install docker_
-- [MySQL Workbench](http://wb.mysql.com/): _brew cask install mysqlworkbench_
 
 # Online Resources
 
