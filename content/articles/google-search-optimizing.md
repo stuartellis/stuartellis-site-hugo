@@ -1,7 +1,7 @@
 +++
 Title = "Optimizing Websites for Google Search"
 Slug = "google-search-optimizing"
-Date = "2019-04-27T10:43:00+01:00"
+Date = "2019-06-08T18:50:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["google", "web"]
@@ -81,7 +81,7 @@ Google crawlers honor robots.txt files. The expected format for these files is d
 
 Pages that are served to Googlebot crawlers should be designed with the crawler in mind. Modern JavaScript frameworks do not prevent Google indexing, but you need to avoid practices that make the indexing process less reliable.
 
-Search renderers use Chrome 41, and default to rendering as if for mobile. The version of Chrome means that you must use JavaScript that follows the old ES5 standard. Obviously you can write modern JavaScript and run a transpiler on your code to convert this to ES5 JavaScript efore you ship your Website.
+The search renderers use the latest stable release of Chromium. The version of Chromium is updated every six weeks, when a new stable version of Google Chrome is released. By default, the renderers emulate Chromium on mobile.
 
 The indexer avoid activating JavaScript events. To ensure that the indexer notices links on your pages, use the traditional _a href_ markup for links, rather than just JavaScript _.onclick()_ event handlers.
 
