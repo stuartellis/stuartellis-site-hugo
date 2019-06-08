@@ -330,7 +330,7 @@ Run this command in a terminal window to install Maven:
 
     brew install maven
 
-## Setting up jEnv
+### Setting up jEnv
 
 Run this command in a terminal window to install [jEnv](https://www.jenv.be/):
 
