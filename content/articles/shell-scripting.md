@@ -1,7 +1,7 @@
 +++
 Title = "Shell Scripting for UNIX-like Systems"
 Slug = "shell-scripting"
-Date = "2018-12-15T15:36:00+00:00"
+Date = "2019-06-09T20:10:00+01:00"
 Description = "Shell scripting"
 Categories = ["automation", "devops", "programming"]
 Tags = ["automation", "devops", "shell", "bash"]
@@ -16,16 +16,19 @@ Notes on shell scripting with Bash and other UNIX shells.
 
 # The Shebang Line: /bin/sh and /bin/bash
 
-Start your shell scripts with the shebang for either _sh_ or _bash_.
-The _bash_ shebang means that the script may use syntax that is specific to Bash. The _sh_ shebang means that the script should follow the syntax of the [Bourne shell](https://en.wikipedia.org/wiki/Bourne_shell), which is implemented by many shells. The shells that support Bourne syntax include Bash, and the [Almquist](https://en.wikipedia.org/wiki/Almquist_shell) shell that is part of Busybox.
+Start your shell scripts with the shebang _sh_, unless you have a specific reason to require another shell. Linux and other UNIX-like systems all include a symbolic link for _/bin/sh_ that points to the default shell for the operating system.
+
+If you use the _sh_ shebang, the shell should interpret your script using the syntax of the [Bourne shell](https://en.wikipedia.org/wiki/Bourne_shell), and should not enable features that are specific to that shell. The shells that support Bourne syntax include Bash, [Z shell (zsh)](https://en.wikipedia.org/wiki/Z_shell), the Debian Almquist shell (dash), and the [Almquist](https://en.wikipedia.org/wiki/Almquist_shell) shell that is part of Busybox.
 
 The shebang line for _sh_ is:
 
-```bash
+```shell
 #!/bin/sh
 ```
 
-Most Linux systems use Bash for shell scripts. Current versions of macOS also use Bash. Debian-based systems include Bash, but use the Dash shell for _sh_ scripts. Alpine Linux uses Busybox.
+Most Linux systems use Bash for shell scripts. Current versions of macOS also provide Bash, but [macOS Catalina uses Z shell by default](https://support.apple.com/en-ca/HT208050). Debian-based systems use the Dash shell for _sh_ scripts, and Bash for interactive shells. Alpine Linux uses Busybox.
+
+If you need to use features that are specific to Bash, use the _bash_ shebang. This means that the script will be run by Bash, rather than the default shell.
 
 This [Stack Overflow answer on bash vs .sh](https://stackoverflow.com/questions/5725296/difference-between-sh-and-bash) provides more details.
 
@@ -35,11 +38,15 @@ Debian-based systems, such as Ubuntu, provide the [checkbashisms](http://manpage
 
 Always use a _set_ command at the start of your scripts, immediately after the shebang line:
 
-```bash
-set -euo pipefail
+```shell
+set -eu
 ```
 
 Bash and some other shells provide the _-o pipefail_ option, but it is not part of the POSIX standard.
+
+```bash
+set -euo pipefail
+```
 
 In addition, add the _-E_ option to ensure that _ERR_ traps catch errors from functions and subshells:
 
@@ -97,7 +104,7 @@ ssh user1@server1.example "command"
 
 To run multiple commands, use a HERE-doc:
 
-```bash
+```shell
 ssh user1@server1.example << HERE
  command1
  command2
@@ -106,7 +113,7 @@ HERE
 
 To run a script on a remote system, use SSH to send the contents of the script file to a script interpreter on the remote system. This example uses the bash shell:
 
-```bash
+```shell
 ssh user1@server1.example '/bin/bash -s' < scriptfile.sh
 ```
 
@@ -116,8 +123,14 @@ The _-s_ option means that the bash shell will run what is sent to it from the s
 
 # Online Resources
 
+## The Command-line
+
+- [The Art of Command Line](https://github.com/jlevy/the-art-of-command-line) - A guide to mastering the command-line
+- [Explainshell](https://explainshell.com/) - enter a command-line on this site to see the help text that matches each argument
+
+## Bash
+
 - [Ryan Chadwick's Tutorial for Bash Scripting](https://ryanstutorials.net/bash-scripting-tutorial) - A gentle introduction to Bash
 - [GreyCat's Bash Guide](http://mywiki.wooledge.org/FullBashGuide) - A more comprehensive guide to Bash
 - [Progrium notes on good Bash style](https://github.com/progrium/bashstyle)
 - [Google Style Guide for Shell](https://google.github.io/styleguide/shell.xml)
-- [Explainshell](https://explainshell.com/) - enter a command-line on this site to see the help text that matches each argument
