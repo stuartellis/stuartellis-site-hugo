@@ -1,7 +1,7 @@
 +++
 Title = "Shell Scripting for UNIX-like Systems"
 Slug = "shell-scripting"
-Date = "2019-06-09T20:10:00+01:00"
+Date = "2019-06-09T21:29:00+01:00"
 Description = "Shell scripting"
 Categories = ["automation", "devops", "programming"]
 Tags = ["automation", "devops", "shell", "bash"]
@@ -18,13 +18,15 @@ Notes on shell scripting with Bash and other UNIX shells.
 
 Start your shell scripts with the shebang _sh_, unless you have a specific reason to require another shell. Linux and other UNIX-like systems all include a symbolic link for _/bin/sh_ that points to the default shell for the operating system.
 
-If you use the _sh_ shebang, the shell should interpret your script using the syntax of the [Bourne shell](https://en.wikipedia.org/wiki/Bourne_shell), and should not enable features that are specific to that shell. The shells that support Bourne syntax include Bash, [Z shell (zsh)](https://en.wikipedia.org/wiki/Z_shell), the Debian Almquist shell (dash), and the [Almquist](https://en.wikipedia.org/wiki/Almquist_shell) shell that is part of Busybox.
+If you use the _sh_ shebang, shells will detect this, and interpret your script using the syntax of the [Bourne shell](https://en.wikipedia.org/wiki/Bourne_shell), without any extra features. This means that the script should run correctly in all of the shells that supports the Bourne syntax.
 
 The shebang line for _sh_ is:
 
 ```shell
 #!/bin/sh
 ```
+
+The shells that support Bourne syntax include Bash, [Z shell (zsh)](https://en.wikipedia.org/wiki/Z_shell), the Debian Almquist shell (dash), and the [Almquist](https://en.wikipedia.org/wiki/Almquist_shell) shell that is part of Busybox.
 
 Most Linux systems use Bash for shell scripts. Current versions of macOS also provide Bash, but [macOS Catalina uses Z shell by default](https://support.apple.com/en-ca/HT208050). Debian-based systems use the Dash shell for _sh_ scripts, and Bash for interactive shells. Alpine Linux uses Busybox.
 
@@ -72,6 +74,8 @@ The [sh](https://github.com/mvdan/sh) utility will format your shell scripts to 
 
 Each UNIX shell runs a specific set of scripts each time that starts. Use these default scripts to set environment variables.
 
+## Bash Startup Scripts
+
 Bash runs different scripts, depending on how is started:
 
 - Started as an interactive non-login shell, it runs the .bashrc scripts. The terminal windows on a Linux graphical desktop are non-login shells.
@@ -92,7 +96,7 @@ The [Debian Wiki](https://wiki.debian.org/EnvironmentVariables) page lists these
 - _LOGNAME_ Current user's name.
 - _SHELL_ The user's preferred shell.
 - _EDITOR_ The user's preferred text editor.
-- _MAIL_ The user's electronic mail inbox location.
+- _MAIL_ The user's email inbox location.
 
 # Running Commands on Remote Systems with SSH
 
@@ -123,12 +127,12 @@ The _-s_ option means that the bash shell will run what is sent to it from the s
 
 # Online Resources
 
-## The Command-line
+## Using the Command-line
 
 - [The Art of Command Line](https://github.com/jlevy/the-art-of-command-line) - A guide to mastering the command-line
 - [Explainshell](https://explainshell.com/) - enter a command-line on this site to see the help text that matches each argument
 
-## Bash
+## Bash Scripting
 
 - [Ryan Chadwick's Tutorial for Bash Scripting](https://ryanstutorials.net/bash-scripting-tutorial) - A gentle introduction to Bash
 - [GreyCat's Bash Guide](http://mywiki.wooledge.org/FullBashGuide) - A more comprehensive guide to Bash
