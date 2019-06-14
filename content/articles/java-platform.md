@@ -1,7 +1,7 @@
 +++
 Title = "An Overview of the Java Platform"
 Slug = "java-platform"
-Date = "2019-06-08T09:07:00+01:00"
+Date = "2019-06-14T20:18:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -74,7 +74,7 @@ _Agents_ are plugins for the JVM. For example, _JRebel_ is an agent that enables
 
 # Java Distributions
 
-Each distribution of Java includes a Java Virtual Machine (JVM), and a Java Developers Kit (JDK) which provides the tools and class libraries. Compatibility tests verify whether a distribution complies with Java standards.
+Each distribution of Java includes a Java Virtual Machine (JVM), and a Java Developers Kit (JDK), which provides the tools and class libraries. Compatibility tests verify whether a distribution complies with Java standards.
 
 Most distributions use the [HotSpot](https://openjdk.java.net/groups/hotspot/) JVM. For example, both Amazon Corretto and Azul Zulu include versions of the HotSpot JVM. [OpenJ9](https://www.eclipse.org/openj9/) is an alternative Open Source JVM that is maintained by IBM and the Eclipse Foundation.
 
@@ -136,11 +136,13 @@ The OpenJDK includes [JMH](https://openjdk.java.net/projects/code-tools/jmh/), t
 
 # Popular Third-Party Software
 
-## Build Tools
+## Development Tools
 
-- [Gradle](https://gradle.org/)
-- [Maven](https://maven.apache.org/)
+- [jEnv](https://www.jenv.be/) - Convenient switching between JDKs
+- [Maven](https://maven.apache.org/) - The standard project management tool
+- [Gradle](https://gradle.org/) - Powerful build system
 - [Jib](https://github.com/GoogleContainerTools/jib) - Container builder
+- [JBake](https://jbake.org/) - Static site generator
 
 ## Testing Tools
 
@@ -149,7 +151,7 @@ The OpenJDK includes [JMH](https://openjdk.java.net/projects/code-tools/jmh/), t
 - [Hamcrest](http://hamcrest.org/JavaHamcrest/) - Matchers
 - [Mockito](https://site.mockito.org/) - Mocking
 
-## Code Quality
+## Code Quality Tools
 
 - [CheckStyle](https://checkstyle.org/) - Code style checks
 - [Google Java Format](https://github.com/google/google-java-format) - Reformats Java code to [Google Java Style](https://google.github.io/styleguide/javaguide.html), can be automated with the [Maven plugin](https://github.com/coveo/fmt-maven-plugin)
@@ -158,7 +160,7 @@ The OpenJDK includes [JMH](https://openjdk.java.net/projects/code-tools/jmh/), t
 - [SonarQube](https://www.sonarqube.org/) - Code analysis framework
 - [SpotBugs](https://spotbugs.github.io/) - Static analysis of code
 
-## Frameworks
+## Application Frameworks
 
 - [Dropwizard](https://www.dropwizard.io) - Framework for REST APIs
 - [Ratpack](https://ratpack.io/) - Toolkit for lean, asynchronous HTTP services
@@ -175,14 +177,18 @@ The OpenJDK includes [JMH](https://openjdk.java.net/projects/code-tools/jmh/), t
 
 - [Flyway](https://flywaydb.org/) - Schema management
 - [H2](https://h2database.com) - SQL database in pure Java
-- [Hibernate](http://hibernate.org/) - Database toolkit and ORM
+- [Hibernate](http://hibernate.org/) - Most popular SQL database toolkit and ORM
 - [Liquibase](http://www.liquibase.org) - Older schema management tool
+- [MyBatis](http://www.mybatis.org) - Powerful SQL database framework
 
 ## Other Libraries
 
 - [Ehcache](https://www.ehcache.org/) - In-memory caching
+- [Google Guava](https://github.com/google/guava) - A set of utility libraries
 - [Google Guice](https://github.com/google/guice) - Dependency injection framework
 - [Jackson](https://github.com/FasterXML/jackson) - Libraries for JSON and other data formats
+- [JavaPoet](https://github.com/square/javapoet) - Java code generation
+- [jsoup](https://jsoup.org/) - HTML parser
 - [Logback](https://logback.qos.ch/) - Logging
 - [Micrometer](http://micrometer.io/) - Metrics collection agent library
 - [OpenPDF](https://github.com/LibrePDF/OpenPDF)
@@ -195,6 +201,7 @@ The OpenJDK includes [JMH](https://openjdk.java.net/projects/code-tools/jmh/), t
 ## Package Index
 
 - [Maven Package Search](https://search.maven.org/)
+- [Awesome Java](https://github.com/akullpp/awesome-java) - A curated list of frameworks, libraries and software for Java
 
 ## Tutorials
 
