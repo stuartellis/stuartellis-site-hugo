@@ -14,7 +14,7 @@ A colllection of best practices for [AWS CloudFormation](https://aws.amazon.com/
 
 <!--more-->
 
-## Learning
+### Learning
 
 - Understand how CloudFormation identifies and replaces resources
 - Understand the elements of a CloudFormation template
@@ -27,7 +27,7 @@ A colllection of best practices for [AWS CloudFormation](https://aws.amazon.com/
 - Resources
 - Output
 
-## Usage
+### Usage
 
 - Use Parameter Types
 - Use Parameter Constraints
@@ -49,19 +49,19 @@ Organize by layers:
 - Deactivate Rollback Flag during tests
 - Use WaitConditions to provide "breakpoints"
 
-## Security
+### Security
 
 - Enable AWS CloudFormation Stack Notifications
 - Limit access to CloudFormation stacks with IAM
 - Use CloudFormation Stack Policies
 
-## Tools from AWS
+### Tools from AWS
 
 - [CloudFormation Linter](https://github.com/aws-cloudformation/cfn-python-lint)
 - [AWS Serverless Application Model](https://aws.amazon.com/serverless/sam/)
 - [Custom Resource Helper](https://github.com/aws-cloudformation/custom-resource-helper) - Simplifies best practice when building Custom Resources
 
-## Resources
+### Resources
 
 - [AWS CloudFormation Best Practices](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/best-practices.html)
 - [StackSet Best Practices](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-bestpractices.html)

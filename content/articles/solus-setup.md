@@ -16,7 +16,7 @@ How to set up an installation of the [Solus](https://solus-project.com/) Linux d
 
 # Installation
 
-## Enable Disk Encryption
+### Enable Disk Encryption
 
 Enable _LVM_ and disk encryption when prompted during the setup process.
 
@@ -25,7 +25,7 @@ computer. All other security measures will be completely bypassed if someone wit
 physical access either restarts your computer with a bootable pen drive, or removes the
 internal hard drive and attaches it to another computer.
 
-## Set a Password for UEFI or BIOS
+### Set a Password for UEFI or BIOS
 
 Once you have installed Solus, restart your computer, and press the function key to
 enter the setup menu for the UEFI firmware, or BIOS. Change the boot options so that the
@@ -46,7 +46,7 @@ may decide to turn off _Location Services_ or _Usage & History_.
 
 Every developer needs a text editor and a version control system.
 
-## Git Version Control
+### Git Version Control
 
 To install the [Git version control system](http://www.git-scm.com/) on Solus, run this
 command in a terminal window:
@@ -66,7 +66,7 @@ To enable colors in the output, which can be very helpful, enter this command:
 
     git config --global color.ui auto
 
-## Text Editors
+### Text Editors
 
 Solus includes a command-line version of [nano](https://www.nano-editor.org/), as well
 as a desktop text editor. These text editors have some support for programming, but are
@@ -78,7 +78,7 @@ work that you do, but you should always look at version control integration, con
 access to the terminal, and linters for your preferred programming languages and data
 file formats.
 
-### Setting The EDITOR Environment Variable
+#### Setting The EDITOR Environment Variable
 
 Whichever text editor you choose, remember to set the EDITOR environment variable in
 your _~/.bashrc_ file, so that this editor is automatically invoked by command-line
@@ -87,7 +87,7 @@ make _nano_ the favored text editor:
 
     export EDITOR="nano"
 
-## Setting Up A Directory Structure for Projects
+### Setting Up A Directory Structure for Projects
 
 To keep your projects tidy, I would recommend following the
 [Go developer conventions](http://golang.org/doc/code.html). These guidelines may seem
@@ -115,7 +115,7 @@ The final directory structure looks like this:
           my-gitlab-username/
             another-project/
 
-## Creating SSH Keys
+### Creating SSH Keys
 
 You will frequently use SSH to access Git repositories or remote UNIX systems. Solus
 includes the standard OpenSSH suite of tools.
@@ -129,7 +129,7 @@ To create an SSH key, run the _ssh-keygen_ command in a terminal window. For exa
 
 # Setting Up Environments
 
-## C Compiler
+### C Compiler
 
 To install GCC and a complete C compiler toolchain on Solus, run this command in a
 terminal window:
@@ -139,7 +139,7 @@ terminal window:
 Once the toolchain is installed, you can compile C programs and native extensions for
 languages like Python and JavaScript.
 
-## nvm for Node.js Development
+### nvm for Node.js Development
 
 To maintain multiple Node.js versions on your system, use the
 [nvm](https://github.com/creationix/nvm) utility.
@@ -160,7 +160,7 @@ terminal window:
 
     npm -g upgrade npm
 
-## Developer Tools for Go
+### Developer Tools for Go
 
 Use _eopkg_ to install [Go](https://golang.org/):
 
@@ -180,7 +180,7 @@ Then, add this to your PATH:
 
 Close the terminal and open it again for the changes to take effect.
 
-## Python Development
+### Python Development
 
 Solus includes both Python 2 and Python 3. To run Python 3, be sure to specify _python3_
 as the interpreter:
@@ -195,7 +195,7 @@ and [virtual environment](https://docs.python.org/3/tutorial/venv.html) features
 are included with Python itself, but is more powerful and easier to use than working
 with these features directly.
 
-## rustup for Rust Development
+### rustup for Rust Development
 
 The official _rustup_ utility enables you to install the tools for building software
 with the Rust programming language. Click on the Install button on the front page of the
@@ -221,7 +221,7 @@ _systemd-nspawn_ for simple containers. The Docker packages for Solus may have m
 thorough testing and better system integration than the generic Linux packages from the
 Docker, Inc. Website.
 
-## Installing Docker
+### Installing Docker
 
 To install Docker on Solus, enter these commands in a terminal window:
 
@@ -237,7 +237,7 @@ user account to the _docker_ group:
 Replace _USERNAME_ with your username. You must log out and log in again for this change
 to take effect.
 
-## Installing GNOME Boxes
+### Installing GNOME Boxes
 
 If you need a virtual machine manager, consider using
 [GNOME Boxes](https://wiki.gnome.org/Apps/Boxes) to create and manage your virtual
@@ -257,7 +257,7 @@ packages for PostgreSQL and [MariaDB](https://mariadb.org/). If you need a datab
 server that is compatible with MySQL, install MariaDB. Otherwise, PostgreSQL is often a
 better choice for new applications.
 
-## Installing PostgreSQL
+### Installing PostgreSQL
 
 To install PostgreSQL using _eopkg_, enter these commands in a terminal window:
 
@@ -285,7 +285,7 @@ For example, to create an extra user account that is not a superuser:
 
 Replace _EXTRA-ACCOUNT_ with the username of the new account.
 
-## Installing MariaDB
+### Installing MariaDB
 
 To install MariaDB using _eopkg_, enter these commands in a terminal window:
 

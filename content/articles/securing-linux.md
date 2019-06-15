@@ -123,7 +123,7 @@ provided by GRUB:
 
 <http://www.gnu.org/software/grub/>
 
-## Enabling Password Security for Recovery Mode ##
+### Enabling Password Security for Recovery Mode ###
 
 Recovery mode (or *single-user mode*) boots the system without
 activating a network connection, using only the minimum processes needed
@@ -146,7 +146,7 @@ This change takes effect the next time that you boot the system.
 > systems, consider locking the non-standard boot options, as described
 > in the previous section.
 
-## Disabling Special Key Combinations ##
+### Disabling Special Key Combinations ###
 
 Linux systems support several key combinations that may override the
 normal running of the system. The well-known *Ctrl-Alt-Delete* key
@@ -158,7 +158,7 @@ These enable users to control an unresponsive system, but may also be
 used by malicious users to bring down a running system. For this reason,
 you may wish to disable them on publicly accessible computers.
 
-## Disabling Ctrl-Alt-Delete ##
+### Disabling Ctrl-Alt-Delete ###
 
 To disable the *Ctrl-Alt-Delete* key combination, add a comment marker
 (#) to the start of the relevant line in /etc/inittab:
@@ -169,7 +169,7 @@ You must have root access to edit /etc/inittab.
 
 This change takes effect the next time that you boot the system.
 
-## Disabling SysRq ##
+### Disabling SysRq ###
 
 To disable the *Magic SysRq* facility, add this to /etc/sysctl.conf:
 
@@ -201,14 +201,14 @@ damaged or deleted, but they may not modify system files, nor may they
 alter the files in the home directories of others. Use su or sudo to
 safely obtain root privileges when carrying out administrative tasks.
 
-## Avoid Generic and Shared Accounts ##
+### Avoid Generic and Shared Accounts ###
 
 Automated cracking programs use standard and generic account names like
 admin and guest for their login attempts. Only enable remote access to
 uniquely identifiable accounts that are associated with a named
 individual.
 
-## Understanding Strong Passwords ##
+### Understanding Strong Passwords ###
 
 Automated password cracking programs include multiple dictionaries for
 one or more languages, in order to be able to identify any password that
@@ -248,7 +248,7 @@ site:
 
 <http://www.openwall.com/john/>
 
-## Securing Home Directories on Debian and Ubuntu ##
+### Securing Home Directories on Debian and Ubuntu ###
 
 Debian and Ubuntu systems create world-readable home directories by
 default. This allows users on a shared system to conveniently access
@@ -278,7 +278,7 @@ automatically prompt for a password as required.
 Ubuntu systems lock the root account, and configure sudo by default.
 Most distributions require you to manually configure sudo.
 
-## root Access with su ##
+### root Access with su ###
 
 The su utility enables you to acquire the privileges of another account.
 By default, su switches your terminal session to root privileges. This
@@ -310,7 +310,7 @@ Read the info manual on your system for details of the su command:
 
     info su
 
-## Controlled root Access with sudo ##
+### Controlled root Access with sudo ###
 
 If you have several administrators for a system, configure sudo to
 enable each administrator to carry out commands with root access.
@@ -400,7 +400,7 @@ a separate package: libpam-cracklib. Install either pam_cracklib or the
 stronger pam_passwdqc module. The package libpam-passwdqc provides
 pam_passwdqc.
 
-## Configuring PAM ##
+### Configuring PAM ###
 
 On many distributions, the PAM configuration file for each service
 imports settings from a central set of files. This enables you to
@@ -420,7 +420,7 @@ Debian-based systems use four files:
 * /etc/pam.d/common-session - modules that set up facilities for valid
     users during the login process
 
-## Ensuring Strong Passwords with PAM ##
+### Ensuring Strong Passwords with PAM ###
 
 Red Hat and Fedora systems include the pam_cracklib password complexity
 check in their default configuration. For Debian and Ubuntu systems,
@@ -442,7 +442,7 @@ in /etc/pam.d/common-password:
     password required pam_unix.so use_authtok md5
     password required pam_cracklib.so retry=1 minlen=6 difok=3
 
-## Enforcing Resource Limits with PAM ##
+### Enforcing Resource Limits with PAM ###
 
 The pam_limits module applies the hardware resource limits set in
 /etc/security/limits.conf to each account that logs in. Set resource
@@ -505,7 +505,7 @@ configuration file is saved.
 > defines the maximum amount of CPU time that a session may use before
 > it is forced to log out.
 
-## Protecting Network Services from Attack ##
+### Protecting Network Services from Attack ###
 
 Every system connected to the Internet is eventually checked by
 automated cracking programs. Such programs frequently run on systems
@@ -519,7 +519,7 @@ countermeasures.
 > the number of issues that you deal with, simply by carefully selecting
 > the services and Web applications that run on your systems.
 
-## Selecting Services ##
+### Selecting Services ###
 
 Expose the minimum number of services possible. Certain types of service
 are inherently unsafe, and if possible you should avoid them:
@@ -549,7 +549,7 @@ version 9 rather than any earlier version, and enable the distribution
 security features. Alternatively, use a different Open Source DNS
 server, such as Dnsmasq, MaraDNS, or PowerDNS.
 
-## Choose Web Applications with Care ##
+### Choose Web Applications with Care ###
 
 By their nature Web applications may be exposed to the public Internet,
 accept information from remote systems, and often have access to
@@ -563,7 +563,7 @@ application manually, rather than from packages provided by your
 distribution, subscribe to a relevant email or *RSS* service to receive
 news of security alerts and product updates.
 
-## Configuring Services ##
+### Configuring Services ###
 
 Unless a particular service is intended for public or global access,
 configure it to only accept connections from the specific networks or
@@ -592,7 +592,7 @@ provide read-only access by default. If a file sharing or database
 service permits users to edit the data that it provides, ensure that
 access is protected by key-based authentication or strong passwords.
 
-## Ensure That The Security Features are Enabled! ##
+### Ensure That The Security Features are Enabled! ###
 
 The OpenSSH service automatically encrypts all of the communications
 between SSH clients and the server, as well as providing a means for
@@ -602,7 +602,7 @@ You must configure most other services to use a security facility for
 identification and encryption. Use either SSH, Kerberos, or TLS (also
 known as SSL), as the product documentation describes.
 
-## Apply New Updates Rapidly ##
+### Apply New Updates Rapidly ###
 
 Many attacks attempt to exploit known vulnerabilities in Web
 applications or network services, and may be defeated by running current
@@ -621,7 +621,7 @@ until they are updated. If a system becomes compromised it may not only
 affect your own data, but that system could also be used to carry out
 attacks on others.
 
-## Understand Firewalls and Their Limitations ##
+### Understand Firewalls and Their Limitations ###
 
 The *netfilter* framework included in the Linux kernel restricts
 incoming and outgoing network connections according to a set of rules
@@ -662,7 +662,7 @@ circumstances. The programs listed here are widely-used and well
 maintained, but you may find other applications that better suit your
 needs.
 
-## Popular Backup Software ##
+### Popular Backup Software ###
 
 The command-line tool rdiff-backup provides simple backup and recovery
 facilities:
@@ -694,7 +694,7 @@ Configure backups to run automatically on a schedule. If you rely on
 manual backups you may later find that you do not have copies of
 important versions of your files.
 
-## Important Files to Backup ##
+### Important Files to Backup ###
 
 Configuration files:
 
@@ -719,7 +719,7 @@ Data files:
 > install a new application or service, especially if the software was
 > not provided by your distribution.
 
-## Enabling Email Reports ##
+### Enabling Email Reports ###
 
 Automated processes on your Linux system use the email (SMTP) service to
 send reports to the system administrator. If installed, the logwatch
@@ -760,7 +760,7 @@ The newaliases command requires root privileges.
 > to run the newaliases command on systems that use Exim as their email
 > service. Debian systems include Exim by default.
 
-## Restricting Task Scheduling ##
+### Restricting Task Scheduling ###
 
 Current Linux systems include four mechanisms for users to schedule
 tasks. You may wish to disable user access to these on your servers.
@@ -778,7 +778,7 @@ The task schedulers are:
 > facilities each use a separate service. Both at and batch both rely on
 > the atd service.
 
-## Restricting Access to at and batch ##
+### Restricting Access to at and batch ###
 
 All accounts listed in /etc/at.deny may not use the at and batch
 facilities. To block all user access to these facilities, create an
@@ -790,7 +790,7 @@ If an /etc/at.allow file exists, then no user may access at or batch
 unless their account is explicitly listed in that file. Each facility
 checks for an at.allow file before reading at.deny.
 
-## Restricting Access to cron ##
+### Restricting Access to cron ###
 
 To restrict user access to cron, create a file called /etc/cron.allow.
 If this file exists, cron limits access to specific users. Only those
@@ -813,7 +813,7 @@ file by default.
 
 # Subscribing to Security Announcement Services #
 
-## Distribution Announcement Services {#announce-distros}
+### Distribution Announcement Services {#announce-distros}
 
 Each distribution vendor notifies users of security issues through email
 announcements or *RSS feeds*. For example, the Debian project announces
@@ -829,7 +829,7 @@ visit this Web page:
 Red Hat provide security updates and information to their customers
 through the Red Hat Network service.
 
-## US-CERT Bulletins {#announce-cert}
+### US-CERT Bulletins {#announce-cert}
 
 US-CERT provide security advisories for all commonly used operating
 systems and software. If you administer a range of systems, subscribe to
@@ -872,7 +872,7 @@ compromise a server:
 
 # Security Checklists #
 
-## Securing the Boot Process ##
+### Securing the Boot Process ###
 
 * Set the BIOS, or firmware, of your machine to boot from the drive
     that holds the Linux system
@@ -884,7 +884,7 @@ compromise a server:
 * Lock the GRUB boot loader by setting a password
 * Ensure that access to single-user mode requires a password
 
-## Using Your System Safely ##
+### Using Your System Safely ###
 
 * Use strong passwords for your accounts
 * Log in with a standard user account
@@ -895,7 +895,7 @@ compromise a server:
 * Only keep or copy a file if you know the original source of that
     file
 
-## Secure System Configuration ##
+### Secure System Configuration ###
 
 * Create one system account per active user
 * Configure password complexity checking, to ensure strong passwords
@@ -915,7 +915,7 @@ compromise a server:
     anti-virus software
 * Consider limiting access to task scheduling
 
-## Routine Security Tasks ##
+### Routine Security Tasks ###
 
 Linux distributions include tools for all of the tasks below. Much of
 this work can, and should, be automated. Human administrators must of

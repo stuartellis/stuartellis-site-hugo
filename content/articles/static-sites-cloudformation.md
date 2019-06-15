@@ -38,12 +38,12 @@ CloudFront includes a feature for integrating with S3 called _Origin Access Iden
 
 # Resources
 
-## Static Websites on AWS
+### Static Websites on AWS
 
 - [Hosting a Static Website on Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html) - Official documentation
 - [Serving index pages from a non-root location via CloudFront](http://someguyontheinter.net/blog/serving-index-pages-from-a-non-root-location-via-cloudfront/)
 
-## Tools
+### Tools
 
 - [Hugo](https://gohugo.io) - Static Website generator
 - [s3deploy](https://github.com/bep/s3deploy) - Deploys static websites to Amazon S3

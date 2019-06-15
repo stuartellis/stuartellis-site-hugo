@@ -18,7 +18,7 @@ for systems administration and Web development.
 
 # Installation
 
-## Enable Disk Encryption
+### Enable Disk Encryption
 
 Enable disk encryption when prompted during the setup process.
 
@@ -27,7 +27,7 @@ computer. All other security measures will be completely bypassed if someone wit
 physical access either restarts your computer with a bootable pen drive, or removes the
 internal hard drive and attaches it to another computer.
 
-## Set a Password for UEFI or BIOS
+### Set a Password for UEFI or BIOS
 
 Once you have installed Fedora, restart your computer, and press the function key to
 enter the setup menu for the UEFI firmware, or BIOS. Change the boot options so that the
@@ -60,7 +60,7 @@ Every developer needs a text editor and a version control system. Fedora Worksta
 includes the [Git version control system](http://www.git-scm.com/), but you will want to
 install the text editor or IDE of your choice.
 
-## Text Editors
+### Text Editors
 
 Fedora includes a small command-line version of [vim](http://www.vim.org/) with a limited set of features, as well as a
 desktop text editor with basic support for programming. Add the code editors or IDEs that you would prefer to use.
@@ -96,7 +96,7 @@ make Neovim (_nvim_) the favored text editor:
 
     export EDITOR="nvim"
 
-## Configuring Git
+### Configuring Git
 
 Always set your details for Git before you create or clone repositories on a new system. This
 requires two commands in a terminal window:
@@ -111,7 +111,7 @@ To enable colors in the output, which can be very helpful, enter this command:
 
     git config --global color.ui auto
 
-## Setting Up A Directory Structure for Projects
+### Setting Up A Directory Structure for Projects
 
 To keep your projects tidy, I would recommend following the
 [Go developer conventions](http://golang.org/doc/code.html). These guidelines may seem
@@ -139,7 +139,7 @@ The final directory structure looks like this:
           my-gitlab-username/
             another-project/
 
-## Creating SSH Keys
+### Creating SSH Keys
 
 You will frequently use SSH to access Git repositories or remote UNIX systems. Fedora
 includes the standard OpenSSH suite of tools.
@@ -153,11 +153,11 @@ To create an SSH key, run the _ssh-keygen_ command in a terminal window. For exa
 
 # Support for Programming Languages
 
-## Default Languages: Python and C
+### Default Languages: Python and C
 
 Fedora Workstation includes Python 3. It also has the GCC compiler and toolchain, for working with C. The GCC tools enable languages like Python and JavaScript to compile native extensions that are written in C code.
 
-## Working with Python on Fedora
+### Working with Python on Fedora
 
 Fedora includes both Python 2 and Python 3. To run Python 3, be sure to specify
 _python3_ as the interpreter:
@@ -176,13 +176,13 @@ Enter this command to install pipenv:
 
     sudo dnf install pipenv
 
-## Using Modules to Add Extra Languages
+### Using Modules to Add Extra Languages
 
 Fedora now includes the optional [modularity](https://docs.fedoraproject.org/en-US/modularity/) feature to provide sets of software packages that are updated independently of the operating system. Use modules to install packages for extra programming languages, such as Java and Go.
 
 Modules allow to you to switch the installed packages between different streams of releases, such as LTS and current. This feature will not enable you to have multiple versions of the same product on the same system at the same time. Use containers or tools such as [nvm](https://github.com/creationix/nvm) and [rustup](https://rustup.rs/) to run multiple versions of the same product at the same time.
 
-## Using nvm to Manage Node.js
+### Using nvm to Manage Node.js
 
 The [nvm](https://github.com/creationix/nvm) tool enables you to use multiple versions of Node.js, including the latest versions.
 
@@ -201,7 +201,7 @@ terminal window:
 
     npm -g upgrade npm
 
-## Installing rustup for Rust Development
+### Installing rustup for Rust Development
 
 Use the official [rustup](https://rustup.rs/) utility to install the tools for building software
 with the Rust programming language. It supports using multiple versions of Rust on the same system, and has other features to assist with software development.
@@ -224,7 +224,7 @@ Rust tools into system directories.
 
 # Containers and Virtual Machines
 
-## Using Podman for Containers
+### Using Podman for Containers
 
 Use [Podman](https://podman.io/) to work with containers on Fedora. Podman is a command-line tool that is designed to be more robust and secure than [Docker](https://www.docker.com/). Unlike Docker, Podman does not run a background service, or require root privileges.
 
@@ -244,7 +244,7 @@ The [Usage Transfer](https://github.com/containers/libpod/blob/master/transfer.m
 
 > Use [pods](https://developers.redhat.com/blog/2019/01/15/podman-managing-containers-pods/) to run groups of containers. This feature of Podman replaces _docker\-compose_.
 
-## Working with Virtual Machines
+### Working with Virtual Machines
 
 Fedora Workstation installs [GNOME Boxes](https://wiki.gnome.org/Apps/Boxes) by default, to enable you to create and manage virtual machines. GNOME Boxes provides a graphical interface for the standard KVM and QEMU software. You can also use these directly on the command-line.
 
@@ -260,7 +260,7 @@ packages for PostgreSQL and [MariaDB](https://mariadb.org/). If you need a datab
 server that is compatible with MySQL, install MariaDB. Otherwise, PostgreSQL is often a
 better choice for new applications.
 
-## Installing PostgreSQL
+### Installing PostgreSQL
 
 To install PostgreSQL using _dnf_, enter these commands in a terminal window:
 

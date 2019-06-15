@@ -15,15 +15,15 @@ Some of the best free videos on the [Python](https://www.python.org/) programmin
 
 <!--more-->
 
-## Coding Style
+### Coding Style
 
 - [Beyond PEP 8 -- Best practices for beautiful intelligible code](https://youtu.be/wf-BqAjZb8M), Raymond Hettinger at PyCon 2015
 
-## Concurrency
+### Concurrency
 
 - [Python Concurrency From the Ground Up: LIVE!](https://youtu.be/MCs5OvhV9S4), David Beazley at PyCon 2015
 - [Asynchronous Python for the Complete Beginner](https://youtu.be/iG6fr81xHKA), Miguel Grinberg at PyCon 2017
 
-## Frameworks
+### Frameworks
 
 - [Flask for Fun and Profit](https://youtu.be/1ByQhAM5c1I), Armin Ronacher at PyBay2016

@@ -22,7 +22,7 @@ The Microsoft releases of Visual Studio Code are proprietary software with telem
 
 # Installing Visual Studio Code
 
-## Installing Code on macOS
+### Installing Code on macOS
 
 To install Visual Studio Code on macOS with Homebrew, enter this command in a terminal window:
 
@@ -30,11 +30,11 @@ To install Visual Studio Code on macOS with Homebrew, enter this command in a te
 
 If you manually install Visual Studio Code, rather than using Homebrew, you will need to add the _code_ executable to your PATH. To do this, start Visual Studio Code, open the command palette, and choose _Shell Command: Install 'code' command in PATH_.
 
-## Installing Visual Studio Code to a USB Drive
+### Installing Visual Studio Code to a USB Drive
 
 To run Visual Studio Code directly from a USB device, without installing it on the computer, use [portable mode](https://code.visualstudio.com/docs/editor/portable).
 
-## The EDITOR Environment Variable
+### The EDITOR Environment Variable
 
 Remember to set the EDITOR environment variable in your shell profile, so that this
 editor is automatically invoked by command-line tools like your version control system.
@@ -76,12 +76,12 @@ To automatically format files on save, enable this setting:
 
 # Extensions
 
-## Extensions for Writing
+### Extensions for Writing
 
 - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
 - [Spell Right](https://marketplace.visualstudio.com/items?itemName=ban.spellright)
 
-## Extensions for Software Development
+### Extensions for Software Development
 
 - [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) to enhance the Git support in the user interface
 - The
@@ -91,7 +91,7 @@ To automatically format files on save, enable this setting:
 - [VSCodeVim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) to emulate Vim
 - [YAML Support](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
 
-## Extensions for Popular Programming Languages
+### Extensions for Popular Programming Languages
 
 Visual Studio Code includes support for JavaScript, TypeScript and Node.js. To add support for other programming languages, install the extension for the languages that you would like to use.
 
@@ -125,7 +125,7 @@ For UNIX shell scripts, use [Shellcheck](https://www.shellcheck.net/). Run this 
 
 You will need to install [Shellcheck](https://www.shellcheck.net/) into the environment to use all of the features of this extension.
 
-## Useful Extensions for Web Development
+### Useful Extensions for Web Development
 
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
   or [TSLint](https://marketplace.visualstudio.com/items?itemName=eg2.tslint) for
@@ -133,7 +133,7 @@ You will need to install [Shellcheck](https://www.shellcheck.net/) into the envi
 - [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
   to debug JavaScript in the Web browser
 
-## Useful Extensions for Operations
+### Useful Extensions for Operations
 
 - [Ansible](https://marketplace.visualstudio.com/items?itemName=vscoss.vscode-ansible)
 - [AWS CloudFormation Linter](https://marketplace.visualstudio.com/items?itemName=kddejong.vscode-cfn-lint)

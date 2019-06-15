@@ -16,17 +16,17 @@ Notes on development with [Node.js](https://nodejs.org) and JavaScript.
 
 # Installing Node.js
 
-## Node.js on Windows
+### Node.js on Windows
 
 To install Node.js on Windows, download it from
 [the official Website](https://nodejs.org). Choose the 64-bit _Windows installer_
 package for the current LTS version, unless you know that you need a different option.
 
-## Node.js on macOS
+### Node.js on macOS
 
 To install Node.js on macOS, use [Homebrew](http://brew.sh/).
 
-## Node.js on Linux
+### Node.js on Linux
 
 To install Node.js on Linux, use the
 [recommended installation process for your distribution](https://nodejs.org/en/download/package-manager/). [Nodesource](https://nodesource.com/) maintain the Linux packages for popular distributions.
@@ -36,11 +36,11 @@ If the Linux distribution supports snaps, you can also install
 Snaps automatically update, so are not suitable for situations where you need a
 reproducible environment.
 
-## Node.js with Docker
+### Node.js with Docker
 
 Use the [official Docker image for Node.js](https://hub.docker.com/_/node/). The Node.js Foundation maintain these Docker images.
 
-## Linux and macOS: Global Package Installation
+### Linux and macOS: Global Package Installation
 
 If you use macOS or Linux, follow the instructions in this [guide to npm global without sudo](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md) to make global package installation use your home directory.
 
@@ -48,11 +48,11 @@ On these operating systems, the default configuration of Node.js causes the _glo
 
 > Whenever possible use npx to run commands, rather than installing them globally.
 
-## Using Multiple Versions of Node.js
+### Using Multiple Versions of Node.js
 
 If you need to have multiple versions of Node.js on the same system, use [nvm](https://github.com/creationix/nvm) on Linux or macOS, and [nvm-windows](https://github.com/coreybutler/nvm-windows) for Microsoft Windows.
 
-## Post-Installation Check
+### Post-Installation Check
 
 Once you have installed Node.js, run the _npm doctor_ command in a terminal window:
 
@@ -64,7 +64,7 @@ This run various checks to verify that Node.js and Git are installed correctly, 
 
 Every current Node.js installation includes the [npm](https://docs.npmjs.com/cli/npm) and [npx](https://www.npmjs.com/package/npx) command-line tools.
 
-## npm for Managing Projects
+### npm for Managing Projects
 
 The [npm](https://docs.npmjs.com/cli/npm) tool helps you to manage your project throughout the development process.
 
@@ -83,7 +83,7 @@ You also use npm to [publish to package registries](https://docs.npmjs.com/cli/p
 
 The npm tool is intended for use by automated systems as well as humans. Use the [ci command](https://docs.npmjs.com/cli/ci.html) to install clean versions of your projects for automated testing and deployment.
 
-## npx for Running Commands
+### npx for Running Commands
 
 The [npx](https://www.npmjs.com/package/npx) utility automatically finds and runs JavaScript command-line tools that you specify. If the tool is not already installed on your computer, npx automatically downloads and runs a temporary copy, without permanently installing it.
 
@@ -109,7 +109,7 @@ There are a number of very popular utilities and libraries for JavaScript softwa
 development, but a few tools are so fundamental that you should install them even before
 you begin to write JavaScript code.
 
-## Git for Version Control
+### Git for Version Control
 
 Ensure that [Git](http://git-scm.com/) is installed on your system. Git is now effectively the standard version control tool for developers, and npm also uses it for some operations.
 
@@ -119,7 +119,7 @@ you should also consider installing the
 [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 extension, which enhances the integration with Git.
 
-## ESLint for Code Quality
+### ESLint for Code Quality
 
 Set up [ESLint](http://eslint.org/) in all of your projects to run code quality checks. Add the [ESLint plugin for Node](https://www.npmjs.com/package/eslint-plugin-node) to include specific checks for Node.js code.
 
@@ -128,7 +128,7 @@ Consider using ESLint with [Prettier](https://prettier.io/), a code formatting t
 Plugins enable the popular text editors and IDEs to integrate ESLint and Prettier, so
 that your code can be formatted and checked as you work. If you use Visual Studio Code, install the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and the [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode). The Prettier extension includes a copy of Prettier, so it will work immediately.
 
-## Testing Tools
+### Testing Tools
 
 [Jest](https://facebook.github.io/jest/) provides a comprehensive set of tools for
 testing. If you do not already have a preference, add Jest to your project.
@@ -139,7 +139,7 @@ framework, in conjunction with [Sinon.js](http://sinonjs.org/) for mocks,
 [Chai](http://www.chaijs.com/) for assertions, [Karma](https://karma-runner.github.io)
 for running tests, and [Istanbul](https://istanbul.js.org/) to measure test coverage.
 
-## Writing Documentation
+### Writing Documentation
 
 Use the [Markdown](https://commonmark.org/) format for separate documents, such as README files, and the [JSDoc](http://usejsdoc.org/) format for writing documentation in code. Many tools understand these formats.
 

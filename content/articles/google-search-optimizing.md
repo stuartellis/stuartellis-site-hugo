@@ -95,7 +95,7 @@ Ensure that all of the assets that are needed to render a page are accessible to
 
 # Online Tools
 
-## Google Search Console
+### Google Search Console
 
 The [Google Search Console](https://search.google.com/search-console/about) is your main interface for understanding how Google interacts with your Website.
 
@@ -103,20 +103,20 @@ The [Google Search Console](https://search.google.com/search-console/about) is y
 - Google provide search data with the Search Console API
 - Google now also provide an API for fast link submission
 
-## The Chrome User Experience Report
+### The Chrome User Experience Report
 
 The [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (CrUX) measures user experiences on popular Websites.
 
 The CrUX dataset is updated monthly. Aggregate data for origins (Websites) is published on Google BigQuery, so that you can query that data yourself with Google Data Studio or other tools. [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) uses URL-level data.
 
-## Website Testing Tools
+### Website Testing Tools
 
 - [Google "mobile-friendly" test](https://search.google.com/test/mobile-friendly) can also show the source code of a page, as rendered by Googlebot.
 - [Google "rich results" test](https://search.google.com/test/rich-results) shows how Googlebot sees your page when rendering as a desktop browser
 
 # Resources
 
-## Google Documentation
+### Google Documentation
 
 Google are consolidating their information to the site [web.dev](https://web.dev/). [The Google Developers Website](https://developers.google.com/web/) still has a large amount of content.
 
@@ -124,14 +124,14 @@ The details of the page ranking systems are secret. To help content creators und
 
 The [Webmaster Guidelines](https://support.google.com/webmasters/answer/35769?hl=en) are a brief summary of good practice.
 
-## Videos
+### Videos
 
 - [Build a successful web presence with Google Search (Google I/O '18)](https://www.youtube.com/watch?v=NO-sdBzb1Hc)
 - [Deliver search-friendly JavaScript-powered websites (Google I/O '18)](https://www.youtube.com/watch?v=PFwUbgvpdaQ)
 - [Use Lighthouse and Chrome UX Report to optimize web app performance (Google I/O '18)](https://www.youtube.com/watch?v=UvK9zAsSM8Q)
 - [SEO Snippets series](https://www.youtube.com/watch?v=p74HC4x5AUE&list=PLKoqnv2vTMUPhLQ054sMg3vgzy9md9tWg)
 
-## Third-Party Resources
+### Third-Party Resources
 
 ### SEO
 

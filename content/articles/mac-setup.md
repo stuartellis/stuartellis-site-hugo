@@ -34,7 +34,7 @@ possible, as it provides the most easy method for backing up your system.
 
 # Configuring a User Account
 
-## Configuring The Trackpad
+### Configuring The Trackpad
 
 To make the trackpad behave correctly, ensure that these settings are enabled:
 
@@ -42,7 +42,7 @@ To make the trackpad behave correctly, ensure that these settings are enabled:
 - _System Preferences \> Accessibility \> Mouse & Trackpad \> Trackpad Options… \>
   Enable dragging_
 
-## Creating a Private Applications Folder
+### Creating a Private Applications Folder
 
 Once you have logged into your account, create a folder called _Applications_ within
 your home folder. Whenever you are prompted to drag a new applications into the global
@@ -51,7 +51,7 @@ applications have to be installed to global folders, but in most cases you can k
 system directories clean by storing third-party products in your private Applications
 folder.
 
-## Securing the Safari Browser
+### Securing the Safari Browser
 
 Whether or not you regularly use Safari, you should open it once, and adjust the
 settings in case that you use it later.
@@ -69,7 +69,7 @@ over security in a few places. These can easily be corrected by changing a few s
 If you are using a laptop then you should probably make all of these changes as soon as
 possible.
 
-## Basic Settings
+### Basic Settings
 
 Select _System Preferences \> Security & Privacy_, and set the following:
 
@@ -80,13 +80,13 @@ Select _System Preferences \> Security & Privacy_, and set the following:
 - Under _Firewall_, click _Turn Firewall On_.
 - Under _Privacy_, select _Analytics_ and ensure that the options are not enabled.
 
-## Disable Spotlight
+### Disable Spotlight
 
 By default, Spotlight sends queries to Apple. Unless you want this feature, turn it off.
 
 Select _System Preferences \> Spotlight \> Search Results_, and ensure that _Spotlight Suggestions_ is not enabled.
 
-## Enable File Vault NOW
+### Enable File Vault NOW
 
 Current versions of macOS include File Vault 2, a full-disk encryption system that has
 little in common with the much more limited File Vault 1. You should enable File Vault
@@ -97,7 +97,7 @@ physical access simply restarts the computer with a bootable pen drive.
 > File Vault really is secure, which means that you can permanently lose access to your
 > data if you lose the passwords and the recovery key.
 
-## Set a Firmware Password
+### Set a Firmware Password
 
 Set a password to stop access to the
 [Recovery](https://support.apple.com/en-us/HT201314) mode. Otherwise, any malicious
@@ -108,7 +108,7 @@ to all of the files on the system.
 [Apple Knowledge Base article HT204455](https://support.apple.com/en-gb/HT204455)
 provides full details.
 
-## Setting Up Time Machine Backups
+### Setting Up Time Machine Backups
 
 Time Machine is simple to set up. Just take a suitably large external hard drive, plug it
 in to your Mac, and agree when prompted. The drive setup process will reformat the hard
@@ -127,7 +127,7 @@ _Xcode Command Line Tools_ package.
 Once you have the compiler that is provided by Xcode, you can use
 [Homebrew](http://brew.sh/) to install everything else that you need.
 
-## Getting Xcode
+### Getting Xcode
 
 Apple now provide the Xcode suite as a free download from the App Store. To install
 Xcode Command Line Tools, install Xcode from the App Store, then open a Terminal window
@@ -135,7 +135,7 @@ and enter the following command:
 
     xcode-select --install
 
-## Setting Up Homebrew
+### Setting Up Homebrew
 
 [Homebrew](http://brew.sh/) provides a package management system for macOS, enabling you
 to quickly install and update the tools and libraries that you need. Follow the
@@ -161,7 +161,7 @@ Once you have set up Homebrew, use the _brew install_ command to add command-lin
 
     brew cask install slack
 
-## Installing the Git Version Control System
+### Installing the Git Version Control System
 
 The Xcode Command Line Tools include a copy of [Git](http://www.git-scm.com/), which is
 now the standard for Open Source development, but this will be out of date.
@@ -188,7 +188,7 @@ To enable colors in the output, which can be very helpful, enter this command:
 
     git config --global color.ui auto
 
-## Text Editors
+### Text Editors
 
 Installations of macOS include older command-line versions of both
 [Emacs](http://www.gnu.org/software/emacs/) and [vim](http://www.vim.org/), as well as
@@ -220,7 +220,7 @@ make Neovim (_nvim_) the favored text editor:
 
     export EDITOR="nvim"
 
-## Setting Up A Directory Structure for Projects
+### Setting Up A Directory Structure for Projects
 
 To keep your projects tidy, I would recommend following the
 [Go developer conventions](http://golang.org/doc/code.html). These guidelines may seem
@@ -243,7 +243,7 @@ The final directory structure looks like this:
           my-gitlab-username/
             another-project/
 
-## Creating SSH Keys
+### Creating SSH Keys
 
 You will frequently use SSH to access Git repositories or remote UNIX systems. macOS
 includes the standard OpenSSH suite of tools.
@@ -262,7 +262,7 @@ To create an SSH key, run the _ssh-keygen_ command in a terminal window. For exa
 
 # Programming Languages
 
-## JavaScript Development: Node.js
+### JavaScript Development: Node.js
 
 Homebrew provides separate packages for each version of [Node.js](https://nodejs.org).
 To ensure that you are using the version of Node.js that you expect, specify the version
@@ -280,7 +280,7 @@ install it:
 
     brew install yarn
 
-## Go Development
+### Go Development
 
 Use Homebrew to install [Go](https://golang.org/):
 
@@ -305,7 +305,7 @@ Then, add this to your PATH:
 
 Close the Terminal and open it again for the changes to take effect.
 
-## Java Development: AdoptOpenJDK
+### Java Development: AdoptOpenJDK
 
 ### Which Version of Java?
 
@@ -385,7 +385,7 @@ Replace _MAVEN-DIRECTORY_ with the name of the directory that Maven uses, such a
 
 Maven is written in Java, which means that the project provides one package, which works on any operating system that has a supported version of Java.
 
-## Python Development: pipenv
+### Python Development: pipenv
 
 Unfortunately, macOS includes a copy of Python 2, so you will need to install Python 3 yourself.
 
@@ -409,7 +409,7 @@ If you need to run the _pip_ utility, rather than setting up a development envir
 The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
 shows you how to work with _pipenv_.
 
-## Rust Development: rustup
+### Rust Development: rustup
 
 The official _rustup_ utility enables you to install the tools for building software
 with the Rust programming language. Click on the Install button on the front page of the
@@ -423,7 +423,7 @@ work, add this to your PATH manually:
 This process installs all of the tools into your home directory, and does not add any
 files into system directories.
 
-## Ruby Development: RVM
+### Ruby Development: RVM
 
 All macOS systems include a copy of Ruby, but it is outdated. To maintain current and
 clean Ruby environments, use the [RVM](https://rvm.io/) system.
@@ -472,7 +472,7 @@ To install [Skaffold](https://skaffold.dev/) with Homebrew, run this command in 
 Consider using containers to run the databases that you need. If you prefer to install services
 directly on to your workstation, Homebrew provides packages for PostgreSQL, MariaDB and MySQL.
 
-## Installing PostgreSQL
+### Installing PostgreSQL
 
 To install PostgreSQL using Homebrew, enter this command in a terminal window:
 
@@ -486,7 +486,7 @@ example, to start the server, follow the instructions that are displayed after t
 installation process is completed. If you upgrade your copy of PostgreSQL, you should
 use the _postgresql-upgrade-database_ command that Homebrew gives you.
 
-## Installing MariaDB or MySQL
+### Installing MariaDB or MySQL
 
 To install MariaDB using Homebrew, enter this command in a terminal window:
 
@@ -541,7 +541,7 @@ file on your Mac. Production installations of MySQL should be configured with
 appropriate _SQL modes_ to enable data integrity safeguards. By default, MySQL permits
 various types of invalid data to be entered.
 
-## Database Management Tools
+### Database Management Tools
 
 - [Azure Data Studio](https://docs.microsoft.com/en-gb/sql/azure-data-studio/what-is?view=sql-server-2017) for Microsoft SQL Server
 - [MySQL Workbench](http://wb.mysql.com/)

@@ -31,7 +31,7 @@ To quickly share pieces of code, use [Pastebin](https://pastebin.com/).
 
 # Working on Python Projects
 
-## Use pipenv for Virtual Environments
+### Use pipenv for Virtual Environments
 
 Install [pipenv](https://docs.pipenv.org/) to manage your Python projects. It ensures that each of your Python projects use a separate set of packages, and provides other features to help you maintain your work, such as [checking the code for style](https://docs.pipenv.org/advanced/#code-style-checking) and [warning you about security issues in libraries](https://docs.pipenv.org/advanced/#detection-of-security-vulnerabilities).
 
@@ -41,23 +41,23 @@ The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualen
 
 > [Poetry](https://poetry.eustace.io/) may replace pipenv, but it is not yet fully supported by code editors and third-party tools.
 
-## Working with Multiple Versions of Python
+### Working with Multiple Versions of Python
 
 If you need to develop with several different versions of Python, use [pyenv](https://github.com/pyenv/pyenv). This tool enables you to install multiple versions of Python on the same system, and switch between them.
 
-## Managing Projects
+### Managing Projects
 
 - [Cookiecutter](https://cookiecutter.readthedocs.io/) to create new projects from templates
 - [Sphinx](http://sphinx.pocoo.org) for building documentation
 
-## Code Quality
+### Code Quality
 
 - [Black](https://black.readthedocs.io/en/stable/) for code formatting
 - [Pylint](https://www.pylint.org) for code quality
 
 If you install the Python extension for Visual Studio Code, it will offer to use Pylint and autopep8 to check and format your code. Use Black instead of autopep8 for new projects.
 
-## Tools for Testing Python Code
+### Tools for Testing Python Code
 
 - [Pytest](http://pytest.org) for testing
 - [Tox](https://tox.readthedocs.io/) runs sets of tests in multiple Python environments
@@ -89,7 +89,7 @@ If you need more control over the infrastructure that your application uses, con
 
 > Whichever Web framework you use, add the [secure.py](https://secure.readthedocs.io/en/latest/) extension to implement Web security features.
 
-## Asynchronous Web Applications
+### Asynchronous Web Applications
 
 Treat Python asynchronous Web frameworks as experimental technology. The standards and libraries are still being developed for asynchronous Python.
 

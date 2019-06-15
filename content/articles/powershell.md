@@ -35,7 +35,7 @@ PowerShell Core is the latest implementation of PowerShell. It is built with .NE
 
 # Installing PowerShell #
 
-## Windows ##
+### Windows ###
 
 All of the recent versions of Windows desktop and server operating systems
 include versions of Windows PowerShell and the [Integrated Script
@@ -49,13 +49,13 @@ of PowerShell, along with PowerShell Desired State Configuration (DSC).
 
 You may install PowerShell Core on Windows systems. If you install PowerShell Core on Windows it does not replace the version of Windows PowerShell that is already provided by the operating system.
 
-## macOS and Linux ##
+### macOS and Linux ###
 
 To use PowerShell on Linux and macOS systems, install [PowerShell Core](https://github.com/powershell/powershell).
 
 Follow [these instructions](https://github.com/powershell/powershell#telemetry) to disable the telemetry in PowerShell Core. The PowerShell Core installer creates a directory called `/usr/local/microsoft/`, with one subdirectory per PowerShell installation.
 
-## Tools ##
+### Tools ###
 
 The current versions of PowerShell include features to install extra modules from
 remote repositories. By default, the public [PowerShell Gallery](http://www.powershellgallery.com) is configured as a repository.
@@ -64,7 +64,7 @@ To write and debug PowerShell scripts, install the [Visual Studio Code](https://
 
 # Running PowerShell #
 
-## Running an Interactive Session ##
+### Running an Interactive Session ###
 
 All current editions of Windows include a version of PowerShell, and display icons for it. PowerShell Core does not replace Windows PowerShell or other existing shells on your computer. You must specifically choose to run it.
 
@@ -72,7 +72,7 @@ Type *pwsh* in a Terminal window to start a PowerShell Core session:
 
     pwsh
 
-## Running Scripts ##
+### Running Scripts ###
 
 PowerShell files have the file extension of *.ps1*, regardless of the version of
 PowerShell.
@@ -125,7 +125,7 @@ Within PowerShell files, you can enclose code in functions, or *script blocks*.
 Functions are always named. Script blocks can be anonymous, or be assigned to
 variables, and can optionally return a value.
 
-## Variables and Collections ##
+### Variables and Collections ###
 
 In PowerShell, variables are prefixed by a *$* character:
 
@@ -151,7 +151,7 @@ To access an environment variable, use *$env*. For example, to read the *PATH* e
 $env:PATH
 ~~~
 
-## Conditionals #
+### Conditionals #
 
 PowerShell supports the standard *if/else* syntax. Write the condition within
 round brackets, and follow it with a script block:
@@ -178,7 +178,7 @@ default { <default action}
 }
 ~~~
 
-## Loops ##
+### Loops ###
 
 The basic loop statement is *foreach*:
 
@@ -238,7 +238,7 @@ Internally, each function is actually an instance of the .NET class
 *System.Management.Automation.FunctionInfo*, and filters are instances of
 *System.Management.Automation.FilterInfo*.
 
-## Error Handling ##
+### Error Handling ###
 
 Every cmdlet must support the parameters *ErrorAction*, *ErrorVariable*,
 *Debug*, and *Verbose*. This means that you can specify the error handling
@@ -285,7 +285,7 @@ Current versions of Windows Server enable WinRM, and allow users with administra
 
 By default, PowerShell uses the credentials of the logged in user.
 
-## Moving Between Local and Remote Systems ##
+### Moving Between Local and Remote Systems ###
 
 First, create a *persistent session* on the remote system. You then either pass the session object to other commands as an option, or use *Enter-PSSession* to run an interactive session on the remote system.
 
@@ -308,7 +308,7 @@ Remove-PSSession $session1
 
 Some PowerShell commandlets include specific options for remote systems. These create temporary connections that are automatically closed once the command is completed on the remote system.
 
-## Running Commands and Scripts on Remote Systems ##
+### Running Commands and Scripts on Remote Systems ###
 
 Use the *Invoke-Command* cmdlet to run PowerShell commands on remote systems:
 
@@ -326,7 +326,7 @@ The results of scripts and commands are returned to the PowerShell session as XM
 
 By default, *Invoke-Command* creates new temporary connections to run the command or script on each system. You may re-use persistent sessions if you wish.
 
-## Automating Management with Ansible or Windows PowerShell DSC ##
+### Automating Management with Ansible or Windows PowerShell DSC ###
 
 The [Ansible](https://www.ansible.com) automation tool uses PowerShell to
 execute tasks on the Windows systems that it manages, with PowerShell Remoting and [WinRM](https://msdn.microsoft.com/en-us/library/aa384426%28v=vs.85%29.aspx)
@@ -375,20 +375,20 @@ PS> Install-Module -Name AWSPowerShell.NetCore
 
 # Resources #
 
-## Videos ##
+### Videos ###
 
 * [Microsoft introductory video course](https://mva.microsoft.com/en-US/training-courses/getting-started-with-microsoft-powershell-8276)
 * [Microsoft video course on using PowerShell with SQL Server](https://mva.microsoft.com/en-US/training-courses/powershell-for-sql-data-professionals-16532?l=XgA5w0PgC_8805121157)
 * [Microsoft video tutorial on testing with Pester](https://mva.microsoft.com/en-US/training-courses/testing-powershell-with-pester-17650?l=mg8oBM9vD_8811787177)
 
-## Websites ##
+### Websites ###
 
 * [Awesome PowerShell](https://github.com/janikvonrotz/awesome-powershell) - Curated list of resources and modules for PowerShell
 * [Planet PowerShell](https://www.planetpowershell.com/) - Blog aggregator for the PowerShell community
 * [PowerShell.org](https://powershell.org/) - Community forums for PowerShell users
 * [PowerShell Magazine](http://www.powershellmagazine.com/)
 
-## Books ##
+### Books ###
 
 * [PowerShell Notes for Professionals book](http://goalkicker.com/PowerShellBook/) - Free ebook
 * [Secrets of PowerShell](https://www.penflip.com/powershellorg/) - A series of free short e-books from PowerShell.org
@@ -417,12 +417,12 @@ Run *Get-Alias* to see a list of the PowerShell commands that have shortcuts.
 The [Wikipedia page](https://en.wikipedia.org/wiki/Windows_PowerShell) also
 lists common commands.
 
-## Integrated Help System ##
+### Integrated Help System ###
 
 * *Update-Help* - Update the help for installed PowerShell modules
 * *Get-Help ITEM* - View the help for the ITEM
 
-## PowerShell Modules ##
+### PowerShell Modules ###
 
 * *Find-Module NAME* - Search the repositories for installable modules
 * *Install-Module NAME* - Install the specified module from an available repository
@@ -430,13 +430,13 @@ lists common commands.
 * *Remove-Module NAME* - Removes a module from the current session only
 * *$PSVersionTable* - Display the table of components versions for PowerShell itself
 
-## Network Interfaces ##
+### Network Interfaces ###
 
 * *Get-NetAdapter* - List network interfaces (Windows-only)
 * *Get-NetAdapter ADAPTER* - Show settings for network interface (Windows-only)
 * *Set-NetAdapter INTERFACE* - Set settings for network interface (Windows-only)
 
-## Network Clients ##
+### Network Clients ###
 
 * *Resolve-DnsName NAME* - Gets the DNS records for the specified NAME (Windows-only)
 * *Invoke-Webrequest URL* - HTTP request to URL
@@ -445,7 +445,7 @@ lists common commands.
 
 Use *Copy-Item* to transfer files over Windows file-sharing or PowerShell Remoting.
 
-## Services ##
+### Services ###
 
 * *Get-Process* - List the running processes
 * *Stop-Process PROCESS_ID* - Stop a running process
@@ -455,7 +455,7 @@ Use *Copy-Item* to transfer files over Windows file-sharing or PowerShell Remoti
 * *Stop-Service SERVICE-NAME* - Stop the service SERVICE-NAME (Windows-only)
 * *Get-EventLog LOG-NAME* - Fetch the specified log (Windows-only)
 
-## System ##
+### System ###
 
 * *$env:COMPUTERNAME* - Gets the current system DNS hostname (Windows-only)
 * *Rename-Computer -NewName NAME* - Sets the system DNS hostname (Windows-only)
@@ -468,7 +468,7 @@ Use *Copy-Item* to transfer files over Windows file-sharing or PowerShell Remoti
 * *$PSVersionTable* - Get PowerShell version
 * *[System.Environment]::OSVersion.Version* - Get operating system version (Windows-only)
 
-## Objects ##
+### Objects ###
 
 * *Get-ChildItem OBJECT* - List the child objects of an object
 * *Get-Member OBJECT* - List the members of an object
@@ -478,7 +478,7 @@ Use *Copy-Item* to transfer files over Windows file-sharing or PowerShell Remoti
 * *Measure-Object -property* - Show aggregate statistics for *property*
 * *Sort-Object PROPERTY1 -descending* - Sorts a collection of objects by the given property
 
-## Input and Output ##
+### Input and Output ###
 
 * *Get-Content FILE* - Output the contents of the file
 * *Set-Content FILE TEXT* - Write the text to the file

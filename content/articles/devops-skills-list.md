@@ -15,7 +15,7 @@ A list of the skills that are needed for DevOps practitioners.
 
 <!--more-->
 
-## Tools
+### Tools
 
 - Text editor (Vim)
 - Version control (Git)
@@ -24,7 +24,7 @@ A list of the skills that are needed for DevOps practitioners.
 - Build tool (Make)
 - Containerisation (Docker)
 
-## Systems and Services
+### Systems and Services
 
 - Linux system internals
 - SQL (PostgreSQL)
@@ -32,14 +32,14 @@ A list of the skills that are needed for DevOps practitioners.
 - Web server (nginx)
 - Continuous Integration (Jenkins)
 
-## Software Development
+### Software Development
 
 - JavaScript
 - Node.js and npm
 - A server-side programming language (Python or Go)
 - Regular expressions
 
-## Markup and Formatting
+### Markup and Formatting
 
 - HTML
 - CSS
@@ -47,7 +47,7 @@ A list of the skills that are needed for DevOps practitioners.
 - Markdown
 - YAML
 
-## Protocols
+### Protocols
 
 - DNS
 - HTTP
@@ -55,7 +55,7 @@ A list of the skills that are needed for DevOps practitioners.
 - SMTP
 - Authentication (OAuth2)
 
-## Cloud Administration
+### Cloud Administration
 
 - Authentication and authorisation (IAM)
 - Networking (VPC)

@@ -14,7 +14,7 @@ The modern Java platform, with OpenJDK 11 and above.
 
 <!--more-->
 
-# Specifications
+## Specifications
 
 The [Java Community Process](https://www.jcp.org) defines standards for these areas:
 
@@ -26,31 +26,31 @@ Each Java Specification Request (JSR) includes a Technology Compatibility Kit (T
 
 Similarly, the [Java Compatibility Kit](https://openjdk.java.net/groups/conformance/JckAccess/) (JCK) tests that Java Platform implementations are compatible with standards.
 
-# The Java Virtual Machine
+## The Java Virtual Machine
 
 Each _Java Virtual Machine_ (JVM) runs compiled binary Java _bytecode_. This bytecode is platform-independent. Bytecode is enclosed in _.class_ files.
 
-## Components of the JVM
+### Components of the JVM
 
 - Compiler - Interprets bytecode, and automatically applies JIT compilation (using the C1 fast compiler, and the C2 optimized compiler)
 - Runtime - Loads class files into memory, concurrency, interacts with the operating system (threads, memory allocation, sockets), works with external monitoring, handles logging
 - Garbage Collector - Memory management
 
-## Garbage Collector
+### Garbage Collector
 
 [G1](https://www.oracle.com/technetwork/tutorials/tutorials-1876574.html) is now the default garbage collector for OpenJDK 10 and above. It implements a parallel mark-sweep-compact algorithm. The default pause time goal for G1 is 200 milliseconds, but this is adjustable.
 
-## Java ARchives (JARs)
+### Java ARchives (JARs)
 
 _Java ARchive (JAR)_ files enable you to ship many class files inside a single compressed file. A JAR can also contain other types of files, such as the HTML, CSS and JavaScript for a Web application.
 
 A JAR is a ZIP file archive that should contain a directory named _META-INF_, and inside that a manifest file, which will be named _MANIFEST.MF_. The manifest file provides data about the files that are contained in the JAR.
 
-## Java Class Loaders
+### Java Class Loaders
 
 The JVM does not find classes itself. Instead, _Java Class Loaders_ look for the appropriate class file when the class is first used. By default, a JVM will use three class loaders: the _boot class loader_ (for core libraries that are supplied with the JVM), the _extension class loader_ (for libraries in the extensions directory), and a _system class loader_, which looks on the _classpath_, a list of directories and JARs. A classpath can specify any combination of directories, paths to individual JARs, and paths with wildcards to load multiple JARs. Web application servers use additional class loaders. The _boot class loader_ is written in platform-specific native code, and all other class loaders are written in Java.
 
-## The Classpath
+### The Classpath
 
 The system class loader looks for class files in the locations that are specified by the classpath. Each location can either be a directory, the path to a specific JAR file, or a directory with a wildcard. In the last case, the loader uses all of the JAR files in the specified directory.
 
@@ -60,7 +60,7 @@ The classpath is either defined by a CLASSPATH environment variable, or set by a
 
 The default value of classpath is _._ (the period character), which means that it checks the current directory.
 
-## Properties
+### Properties
 
 Java uses the concept of [Properties](https://docs.oracle.com/javase/tutorial/essential/environment/properties.html) objects to hold configuration information. A Properties object is an instance of the _java.util.Properties_ class. Each Properties object can hold multiple properties. A _property_ is a key-value pair that is held within a Properties object.
 
@@ -68,11 +68,11 @@ Properties objects are stored as _.properties_ files, usually alongside the the 
 
 The Java platform itself uses a Properties object for global configuration. This object provides [system properties](https://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html). The system properties are accessed through methods on the _System_ class.
 
-## Agents
+### Agents
 
 _Agents_ are plugins for the JVM. For example, _JRebel_ is an agent that enables hot-code reloading.
 
-# Java Distributions
+## Java Distributions
 
 Each distribution of Java includes a Java Virtual Machine (JVM), and a Java Developers Kit (JDK), which provides the tools and class libraries. Compatibility tests verify whether a distribution complies with Java standards.
 
@@ -82,7 +82,7 @@ Almost every Java distribution now uses versions of the OpenJDK tools and librar
 
 > Android uses the Java language, but Android software development kits (SDKs) are not fully compatible with Java standards.
 
-## Free, Open Source Distributions
+### Free, Open Source Distributions
 
 - [AdoptOpenJDK](https://adoptopenjdk.net/) - Provides free versions of the OpenJDK with either HotSpot or OpenJ9 Java Virtual Machines. [IBM offers commercial support contracts](https://www-01.ibm.com/support/docview.wss?uid=ibm10741649)
 - [Amazon Corretto](https://aws.amazon.com/corretto/) - OpenJDK with HotSpot Java Virtual Machine, supported by AWS
@@ -91,7 +91,7 @@ Almost every Java distribution now uses versions of the OpenJDK tools and librar
 - [SapMachine](https://sap.github.io/SapMachine/) - OpenJDK and JVM, provided by SAP for their customers
 - [Zulu](https://www.azul.com/downloads/zulu/) - OpenJDK with the Zulu JVM, maintained by Azul Systems
 
-## Proprietary Distributions
+### Proprietary Distributions
 
 - [IBM Java SDK](https://www.ibm.com/developerworks/java/jdk/)
 - [JamaicaVM](https://www.aicas.com/cms/en/JamaicaVM) - A proprietary Java implementation for real-time systems.
@@ -99,7 +99,7 @@ Almost every Java distribution now uses versions of the OpenJDK tools and librar
 - [Pivotal Spring Runtime](https://pivotal.io/pivotal-spring-runtime) - A distribution of the OpenJDK that is supported by Pivotal
 - [Zing](https://www.azul.com/products/zing/) - High-performance proprietary Java implementation maintained by Azul Systems
 
-# Standard Tools
+## Standard Tools
 
 OpenJDK packages include a JVM (such as HotSpot or OpenJ9), a standard library (the _Java Class Library_), and various tools, including:
 
@@ -113,13 +113,13 @@ OpenJDK packages include a JVM (such as HotSpot or OpenJ9), a standard library (
 
 JDK 9 introduced _jaotc_, an experimental alternative compiler to _javac_ that produces Ahead Of Time Compiled code, rather than generic bytecode. This is based on [Graal](https://openjdk.java.net/projects/graal/).
 
-# Monitoring and Debugging
+## Monitoring and Debugging
 
-## Debugging
+### Debugging
 
 Java Virtual Machines accept connections from debuggers. The debugger may either be on the same system, or connecting from a remote system. The OpenJDK tself includes _jdb_, a command-line debugger. Each IDE for Java includes a graphical debugger.
 
-## Monitoring
+### Monitoring
 
 [Java Flight Recorder and Java Mission Control](https://www.oracle.com/technetwork/java/javaseproducts/mission-control/java-mission-control-1998576.html) provide a data collection and profiling system for the OracleJDK.
 
@@ -130,13 +130,13 @@ The OpenJDK also includes these tools for monitoring and diagnostics:
 - _jps_ - Java process viewer
 - _jstat_ - Java statistics monitoring
 
-## Performance Testing
+### Performance Testing
 
 The OpenJDK includes [JMH](https://openjdk.java.net/projects/code-tools/jmh/), the Java Micro-benchmark Harness.
 
-# Popular Third-Party Software
+## Popular Third-Party Software
 
-## Development Tools
+### Development Tools
 
 - [jEnv](https://www.jenv.be/) - Convenient switching between JDKs
 - [Maven](https://maven.apache.org/) - The standard project management tool
@@ -144,14 +144,14 @@ The OpenJDK includes [JMH](https://openjdk.java.net/projects/code-tools/jmh/), t
 - [Jib](https://github.com/GoogleContainerTools/jib) - Container builder
 - [JBake](https://jbake.org/) - Static site generator
 
-## Testing Tools
+### Testing Tools
 
 - [AssertJ](https://joel-costigliola.github.io/assertj/) - Test assertions
 - [JUnit 5](https://junit.org/junit5/) - Unit testing
 - [Hamcrest](http://hamcrest.org/JavaHamcrest/) - Matchers
 - [Mockito](https://site.mockito.org/) - Mocking
 
-## Code Quality Tools
+### Code Quality Tools
 
 - [CheckStyle](https://checkstyle.org/) - Code style checks
 - [Google Java Format](https://github.com/google/google-java-format) - Reformats Java code to [Google Java Style](https://google.github.io/styleguide/javaguide.html), can be automated with the [Maven plugin](https://github.com/coveo/fmt-maven-plugin)
@@ -160,20 +160,20 @@ The OpenJDK includes [JMH](https://openjdk.java.net/projects/code-tools/jmh/), t
 - [SonarQube](https://www.sonarqube.org/) - Code analysis framework
 - [SpotBugs](https://spotbugs.github.io/) - Static analysis of code
 
-## Application Frameworks
+### Application Frameworks
 
 - [Dropwizard](https://www.dropwizard.io) - Framework for REST APIs
 - [Ratpack](https://ratpack.io/) - Toolkit for lean, asynchronous HTTP services
 - [Spring Batch](https://spring.io/projects/spring-batch) - Batch processing
 - [Spring Boot](https://spring.io/projects/spring-boot) - Opinionated Web framework
 
-## HTTP Servers
+### HTTP Servers
 
 - [Apache Tomcat](https://tomcat.apache.org/) - De-facto standard Web applications server for Java
 - [Eclipse Jetty](https://www.eclipse.org/jetty/) - Often embedded in applications
 - [Undertow](http://undertow.io) - High performance, embeddable Web server
 
-## Databases
+### Databases
 
 - [Flyway](https://flywaydb.org/) - Schema management
 - [H2](https://h2database.com) - SQL database in pure Java
@@ -181,7 +181,7 @@ The OpenJDK includes [JMH](https://openjdk.java.net/projects/code-tools/jmh/), t
 - [Liquibase](http://www.liquibase.org) - Older schema management tool
 - [MyBatis](http://www.mybatis.org) - Powerful SQL database framework
 
-## Other Libraries
+### Other Libraries
 
 - [Ehcache](https://www.ehcache.org/) - In-memory caching
 - [Google Guava](https://github.com/google/guava) - A set of utility libraries
@@ -196,25 +196,25 @@ The OpenJDK includes [JMH](https://openjdk.java.net/projects/code-tools/jmh/), t
 - [resilience4j](https://github.com/resilience4j/resilience4j) - Fault tolerance
 - [Thymeleaf](https://www.thymeleaf.org/) - Templating
 
-# Online Resources
+## Online Resources
 
-## Package Index
+### Package Index
 
 - [Maven Package Search](https://search.maven.org/)
 - [Awesome Java](https://github.com/akullpp/awesome-java) - A curated list of frameworks, libraries and software for Java
 
-## Tutorials
+### Tutorials
 
 - [Official Java Tutorials](https://docs.oracle.com/javase/tutorial/)
 - [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html)
 - [Java with Visual Studio Code](https://code.visualstudio.com/docs/java/java-tutorial)
 
-## News
+### News
 
 - [DZone Java Zone](https://dzone.com/java-jdk-development-tutorials-tools-news) - News and tips
 - [Baeldung](https://www.baeldung.com/) - Articles and a weekly newsletter on Java and Spring topics
 
-## Videos
+### Videos
 
 - [Official Java YouTube channel](https://www.youtube.com/user/java)
 - [Spring YouTube channel](https://www.youtube.com/user/SpringSourceDev) - Official YouTube channel for Spring

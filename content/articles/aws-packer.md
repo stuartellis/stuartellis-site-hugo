@@ -28,7 +28,7 @@ Packer also reads configuration settings from environment variables. Several run
 
 Environment variables also enables you to avoid writing API keys such as AWS Access IDs in the template file: you can either specify the path to an AWS client configuration file as an environment variable, or specify individual settings as environment variables.
 
-## Example Configuration
+### Example Configuration
 
 This example assumes that you will either provide the AWS Access Key, Secret Key and Region settings through environment variables, or run the process on an EC2 instance with an [appropriate IAM Role](https://packer.io/docs/builders/amazon.html#iam-task-or-instance-role).
 

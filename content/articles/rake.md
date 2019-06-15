@@ -31,7 +31,7 @@ in Ruby, following a specific format. This means that you do not need to
 deal with any new syntax to start automating your routine jobs. Anyone
 with a basic knowledge of Ruby can understand and maintain Rake tasks.
 
-## Rake is Declarative ##
+### Rake is Declarative ###
 
 Rake itself is designed to be a declarative system - you specify the
 result that you want, and Rake carries out the associated task and
@@ -44,7 +44,7 @@ example, the built-in types of tasks for creating file and directories
 creation automatically check for the specified item, and will not run if
 an up to date copy exists.
 
-## Project and Global Rake Task Files {#rakefile-locations}
+### Project and Global Rake Task Files {#rakefile-locations}
 
 By default, the Rake utility checks the current working directory for a
 file with the name *Rakefile* (with no extension). This enables you to
@@ -77,14 +77,14 @@ may well start using Rake before you have written a task file yourself.
 For example, every Ruby on Rails project automatically includes a large
 number of tasks which can be run from the root directory of the project.
 
-## Getting a List of the Available Tasks ##
+### Getting a List of the Available Tasks ###
 
 To see a list of all of the tasks available from the current Rake file,
 use the -T option of the rake utility:
 
     rake -T
 
-## Running a Task ##
+### Running a Task ###
 
 To run a named task, specify the name of the task:
 
@@ -102,7 +102,7 @@ for a task named *default*, and runs that task if one is found.
 
     rake
 
-## Specifying Options ##
+### Specifying Options ###
 
 All of the options of the *rake* utility may be called with either a
 single letter switch, or a longer word version. Note that command-line
@@ -131,7 +131,7 @@ elements, including constants and methods.
 > *Remember to set a default task:* It’s a good habit to specify a
 > default task in each Rake file (as explained below).
 
-## Task Definitions ##
+### Task Definitions ###
 
 Each task definition consists of:
 
@@ -190,7 +190,7 @@ and specify the task:
 > working directory of a task is the current working directory of the
 > user that runs the task.
 
-## Input Parameters for Tasks ##
+### Input Parameters for Tasks ###
 
 Rake refers to the input parameters for tasks as *arguments*. This task
 has both arguments and prerequisites:
@@ -219,7 +219,7 @@ If you do not give a value for an argument at the command-line, and the
 task does not specify a default value, the value of the argument is set
 to *nil*.
 
-## Setting a Default Task ##
+### Setting a Default Task ###
 
 For convenience, define a dummy task called *default* that depends on
 one or more of your tasks, and has no code itself. If a user runs the
@@ -234,7 +234,7 @@ This command now carries out the default task:
 
     rake
 
-## Running One Task with Another {#invoking-tasks}
+### Running One Task with Another {#invoking-tasks}
 
 Normally, you link tasks together with dependencies. If you need to run
 a task from within another, use the *invoke* method:
@@ -251,7 +251,7 @@ This code returns the specified task as a *Rake::Task*, and calls the
 
 # Managing Files and Directories with Rake #
 
-## File and Directory Generation Tasks ##
+### File and Directory Generation Tasks ###
 
 File and directory creation tasks are identified by the item that they
 generate, rather than by an arbitrary name. Any file or directory task
@@ -299,7 +299,7 @@ end
 Rather than tying tasks to specific file or directory names, you may use
 FileLists or Rules, as explained below.
 
-## Defining Sets of Files with FileLists ##
+### Defining Sets of Files with FileLists ###
 
 A FileList is an array of complete and partial file names, written in
 the Rake file itself (or one of the imported modules).
@@ -313,7 +313,7 @@ my_files = FileList['build/*.html', 'index.xml']
 > administrative files and directories for version control systems, UNIX
 > backup files, and core dumps.
 
-## Using the Clean-up Tasks ##
+### Using the Clean-up Tasks ###
 
 Rake includes two tasks to clean up a set of files, so that you do not
 need to write code to handle this kind of job. Simply *require* the
@@ -334,7 +334,7 @@ file that should not be mixed in with the set. Set up the *CLEAN* list
 to specifically handle temporary build files, and *CLOBBER* to
 aggressively match all potentially unwanted files.
 
-## Other File Handling Methods ##
+### Other File Handling Methods ###
 
 Rake automatically provides file handling methods, to enable you to
 write tasks that include the usual operations. For convenience, these
@@ -362,7 +362,7 @@ methods, refer to the *FileUtils* documentation:
 Use the standard tasks where possible, rather than these utility
 methods.
 
-## Rules ##
+### Rules ###
 
 A rule defines filenames, and a block of Ruby code. For each matching
 file, the rule creates and runs a new task with the specified code. You
@@ -415,7 +415,7 @@ automating platform-specific features. This section briefly describes
 how you can use the shell integration facility of Rake to call
 command-line utilities from within your own tasks.
 
-## Using Shell Commands in Rake Tasks ##
+### Using Shell Commands in Rake Tasks ###
 
 To handle shell commands in your Rake tasks, use the *sh* method. This
 is provided by an extension to the *FileUtils* module, so you need to
@@ -447,7 +447,7 @@ systems that have those exact utilities installed. Use Ruby code unless
 you require the features of a particular command-line utility, such as a
 configuration tool that is specific to one operating system.
 
-## Using Environment Variables ##
+### Using Environment Variables ###
 
 Rake automatically recognises the environment variables provided by the
 shell. You may also create or set environment variables specifically for
@@ -467,7 +467,7 @@ end
 
 See below for information on how to set variables at run-time.
 
-## Outputting Messages to the Shell ##
+### Outputting Messages to the Shell ###
 
 By default, Rake echoes error messages and the file handling operations
 of *RakeFileUtils* to the shell. You can use standard Ruby methods to
@@ -493,7 +493,7 @@ Rake file to dynamically generate tasks, enabling it to create many
 variations of the same process, or adapt the available tasks to the host
 system.
 
-## Using Namespaces to Organize Tasks ##
+### Using Namespaces to Organize Tasks ###
 
 To avoid duplicate or ambiguous names in large sets of tasks, enclose
 some of the tasks in namespaces. By convention, each namespace should be
@@ -541,7 +541,7 @@ The command-line utility uses the same naming convention:
 The above was taken from the task list of a standard Ruby on Rails
 application.
 
-## Defining Tasks Dynamically ##
+### Defining Tasks Dynamically ###
 
 To dynamically generate task definitions as the task file runs, directly
 integrate the definition keywords into Ruby code. All of the Rake
@@ -599,7 +599,7 @@ The *rake* utility provides many options. Some of these options are
 useful in many situations for testing, or for working around issues with
 the host system.
 
-## Specifying the Location of the Tasks File ##
+### Specifying the Location of the Tasks File ###
 
 To use a specific Rake file of your choice, use either -f,
 or --rakefile:
@@ -615,21 +615,21 @@ option:
 This option automatically uses all of the *.rake* files in the
 directory.
 
-## Suppressing the Output of Tasks ##
+### Suppressing the Output of Tasks ###
 
 The --quiet option only suppresses normal output. Use --silent to run
 Rake with absolutely no output at all:
 
     rake --silent my_task
 
-## Specifying Environment Variables for a Task ##
+### Specifying Environment Variables for a Task ###
 
 To specify environment variables for your tasks along with your command,
 simply use the format *variable=value*:
 
     rake my_task my_var1='Some value' my_var2='Another value'
 
-## Debugging Tasks ##
+### Debugging Tasks ###
 
 Finally, to debug a Rake task, either use the --dry-run option to see
 what steps it will take, without actually executing them, or
@@ -662,13 +662,13 @@ These are a few of the most well-known:
 
 # Useful Resources {#resources}
 
-## Tutorials
+### Tutorials
 
 -   [Ruby on Rails Rake
     Tutorial](http://www.railsenvy.com/2007/6/11/ruby-on-rails-rake-tutorial)
 -   [The official Rake tutorial](http://docs.rubyrake.org/)
 
-## Reference Documents {#reference}
+### Reference Documents {#reference}
 
 -   [The official API documentation](http://rake.rubyforge.org/)
 -   [Martin Fowler’s guide to
@@ -676,7 +676,7 @@ These are a few of the most well-known:
 -   [Rake Quick Reference, by Greg
     Hudson](http://ghouston.blogspot.com/2008/07/rake-quick-reference.html)
 
-## Hints and Tips {#tips}
+### Hints and Tips {#tips}
 
 -   [Jay Fields on Testing Rake
     Tasks](http://blog.jayfields.com/2006/11/ruby-testing-rake-tasks.html)

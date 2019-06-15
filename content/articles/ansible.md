@@ -22,7 +22,7 @@ Ansible runs tasks on either the control machine, or remote systems. Tasks are u
 
 Each time that you run a task, this calls a _module_ of code that connects to the relevant systems, and sends the appropriate commands to carry out the task. The list of available systems is known as the [inventory](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html), and individual systems are referred to as _nodes_.
 
-## Managing Systems with Ansible
+### Managing Systems with Ansible
 
 Modules for managing UNIX-like systems connect to the target nodes with SSH and then send Python code to the nodes. The Python interpreter on each node executes the code. Both SSH and Python are installed on most Linux systems, and are part of macOS. There are also modules to execute actions with more basic methods, such as the Bash shell that is the default for both macOS and GNU/Linux distributions.
 
@@ -31,11 +31,11 @@ Other types of modules use the appropriate network protocols and commands for th
 This means that you can
 manage almost any system with Ansible, possibly starting with tasks that use low-level modules to install the prerequisites for the more complex operations.
 
-## Ansible and API Services
+### Ansible and API Services
 
 Ansible modules for online services work slightly differently. These modules connect from the control machine to the relevant server or cloud, and use the API that the service provides to send commands to it.
 
-## Ansible Tower and AWX
+### Ansible Tower and AWX
 
 If you need a central service for managing tasks and nodes, Red Hat offer
 [Ansible Tower](https://www.ansible.com/products/tower). The software for Ansible Tower is developed as an Open Source project, called [AWX](https://github.com/ansible/awx). You may use AWX, rather than pay for Ansible Tower, but the project does not provide user support or long-term maintenance for releases. None of the features of Ansible itself rely on Ansible Tower or AWX.
@@ -52,7 +52,7 @@ If you use [pipx](https://pypi.org/project/pipx/) to manage Python utilities, us
 
     pipx install ansible
 
-## Installing Extra Packages on the Control Machine
+### Installing Extra Packages on the Control Machine
 
 Some Ansible modules require additional Python packages on either the control machine or the nodes. You can use an Ansible task to install packages on nodes, but you should avoid trying to manage the Ansible installation on the control machine with Ansible itself:w
 .
@@ -65,7 +65,7 @@ If you used _pip_ to install Ansible, add the _--user_ option to install Python 
 
     pip install --user passlib
 
-## Ansible Configuration Files
+### Ansible Configuration Files
 
 Ansible does not require a configuration file. It does check for [configuration files in several locations](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#the-configuration-file), so that you can customize the behavior of Ansible at the project, user or system level.
 
@@ -114,7 +114,7 @@ These are standard directories for Ansible projects:
 
 # Using Ansible
 
-## The Ansible Tools
+### The Ansible Tools
 
 Ansible provides three main tools:
 
@@ -131,7 +131,7 @@ You should also make use of these commands:
 
 Ansible includes [several other specialized tools](https://docs.ansible.com/ansible/latest/user_guide/command_line_tools.html). For example, [ansible-pull](https://docs.ansible.com/ansible/latest/cli/ansible-pull.html) configures a system to pull Ansible playbooks from a source code repository and run them on a schedule.
 
-## Specifying The Target Nodes
+### Specifying The Target Nodes
 
 Use _-i_ to specify the inventory that has the target nodes. If you do not provide an inventory, Ansible will run, as if you had specified an inventory that only contains _localhost_, and print a warning.
 
@@ -146,7 +146,7 @@ nodes.
 
 > The _all_ group is a built-in group that automatically includes all of the systems in the specified inventory.
 
-## The ansible Tool
+### The ansible Tool
 
 Use the _ansible_ command with the _-a_ option to execute a shell command:
 
@@ -170,7 +170,7 @@ This example copies the _~/Downloads/example.txt_ file to the nodes:
 
     ansible PATTERN -i INVENTORY -m copy -a "src=~/Downloads/example.txt dest=/tmp/example.txt"
 
-## The ansible-playbook Tool
+### The ansible-playbook Tool
 
 To run a playbook:
 

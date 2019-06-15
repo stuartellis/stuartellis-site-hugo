@@ -21,13 +21,13 @@ The [PyVideo](https://pyvideo.org/) site is an index of free videos on Python an
 
 # Books
 
-## The Official Python Documentation
+### The Official Python Documentation
 
 The official documentation for Python includes both reference guides and tutorials for the language and the standard library.
 
 This documentation is provided with many distributions of Python, and you can download the whole set as an [ebook in PDF or EPUB formats](https://docs.python.org/3/download.html).
 
-## Learning Python
+### Learning Python
 
 There are several excellent books for learning Python, including three that you can read for free online:
 
@@ -37,7 +37,7 @@ There are several excellent books for learning Python, including three that you 
 
 If you are teaching children, buy a copy of [Teach Your Kids to Code](https://nostarch.com/teachkids) by Bryson Payne.
 
-## Beyond the Basics
+### Beyond the Basics
 
 Once you are ready to build your own projects, read [Serious Python](https://serious-python.com/). This book provides practical guidance for writing, testing and delivering Python applications.
 

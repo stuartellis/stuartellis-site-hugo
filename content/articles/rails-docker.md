@@ -54,7 +54,7 @@ Before you begin, first ensure that the application runs without any errors. It 
 
 Once the application works without problems, create a branch in your version control system for the Docker changes. You will need to add and modify multiple files, and it may require a few attempts before you can successfully build a Docker image for your application.
 
-## Amend The .gitignore File ##
+### Amend The .gitignore File ###
 
 Add these lines to the *.gitignore* file in the project:
 
@@ -63,7 +63,7 @@ Add these lines to the *.gitignore* file in the project:
 
 If you do not use Git, amend the configuration of your version control system to exclude files whose names start with *.env*.
 
-## Switch the Application Web Server To Puma ##
+### Switch the Application Web Server To Puma ###
 
 To switch the application from WEBrick to [Puma](https://puma.io), add the RubyGem for the Puma Web server to the Gemfile:
 
@@ -71,7 +71,7 @@ To switch the application from WEBrick to [Puma](https://puma.io), add the RubyG
 
 Run *bundle install* to install the gem to your development environment.
 
-## Add Example Environment Files To The Project ##
+### Add Example Environment Files To The Project ###
 
 Create two text files in the root of the project, with the names *.example.env.web* and *.example.env.db*. These will hold the environment variables for the Web application and database containers.
 
@@ -89,7 +89,7 @@ Each time that you set an environment variable for the application, add it to th
 
 This enables developers and administrators to easily see the variables that they will need to set in order to run copies of the application.
 
-## Use an Environment Variable for the Database Configuration ##
+### Use an Environment Variable for the Database Configuration ###
 
 Current versions of Ruby on Rails allow you to specify all of the details for accessing the application database in a single environment variable, called *DATABASE_URL*. The Rails documentation recommends that you use this variable by specifying it in the *config/database.yml* file with the *url* setting, like this:
 
@@ -102,7 +102,7 @@ Copy the database url into the *.env.web* file as the variable *DATABASE_URL*:
 
     DATABASE_URL=your-secret-key
 
-## Use an Environment Variable for the Secret Key ##
+### Use an Environment Variable for the Secret Key ###
 
 Rails applications use a secret key for cookie-based security. This is a long string of letters and numbers that is unique to the application, and looks like this:
 
@@ -121,7 +121,7 @@ Edit the file *config/secrets.yml* to ad these lines:
     staging:
       secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
 
-## Amend the Logging To Send Messages To STDOUT ##
+### Amend the Logging To Send Messages To STDOUT ###
 
 Amend the configuration file for each environment that uses Docker. For example,
 the file  *config/environments/production.rb* is for the production environment.
@@ -145,7 +145,7 @@ environment variable, use these values:
     config.logger = Logger.new(STDOUT)
     config.log_level = ENV.fetch("LOG_LEVEL", "ERROR")
 
-## Decide How To Serve Static Assets ##
+### Decide How To Serve Static Assets ###
 
 For production environments, there are several ways to serve the static assets
 for the application. For example, you could delegate this to the reverse proxy
@@ -194,7 +194,7 @@ The full Docker configuration uses several files:
 
 Copy your *.example.env.web* file as *.env.web*.
 
-## The Dockerfile ##
+### The Dockerfile ###
 
 Note that we use a *CMD*, but not an *ENTRYPOINT*. *ENTRYPOINT* imposes which
 executable is used, although this can still be overridden by using the
@@ -206,7 +206,7 @@ so *ENTRYPOINT* is not appropriate.
 
 # Common Commands #
 
-## Build ##
+### Build ###
 
 You may use *Docker Compose* to build your containers:
 
@@ -218,7 +218,7 @@ To fully control the image building process, use *docker build*:
 
     docker build -t <tag> .
 
-## Run ##
+### Run ###
 
 To start the containers, use *docker-compose up*. You can then use *run* to
 carry out administrative commands, such as *rake*:
@@ -227,7 +227,7 @@ carry out administrative commands, such as *rake*:
     docker-compose run web rake db:migrate
     docker-compose run web rake db:seed
 
-## Cleanup ##
+### Cleanup ###
 
 To remove obsolete images and container references from Docker, run these commands:
 

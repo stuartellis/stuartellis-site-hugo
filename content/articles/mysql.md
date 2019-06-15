@@ -18,7 +18,7 @@ replication and clustering across networks.
 
 <!--more-->
 
-## Understanding MySQL User Accounts ##
+### Understanding MySQL User Accounts ###
 
 MySQL uses a separate set of user accounts to the operating system. The
 MySQL accounts are independent of the accounts used by the host system,
@@ -58,7 +58,7 @@ any script or application. The database service uses a copy of the
 necessary tables. You may force the service to refresh the user account
 information that it uses with the *FLUSH PRIVILEGES* SQL command.
 
-## Understanding Storage Engines ##
+### Understanding Storage Engines ###
 
 MySQL may use several types of *storage engine* for tables. Each engine
 uses a different set of file formats to support particular capabilities.
@@ -72,7 +72,7 @@ applications.
 > and require *MyISAM* tables for the mysql database. Do not attempt to
 > convert this database to *InnoDB*.
 
-## Understanding SQL Modes ##
+### Understanding SQL Modes ###
 
 MySQL 5 provides several optional *mode* settings, which enable you to
 configure it to emulate the behavior of other database systems, or
@@ -84,7 +84,7 @@ By default, MySQL attempts to correct invalid data, rather than
 rejecting it. To configure MySQL to reject invalid data, use the
 *TRADITIONAL* mode and *InnoDB* databases.
 
-## MySQL Administration Tools ##
+### MySQL Administration Tools ###
 
 MySQL provides sets of graphical and command-line utilities. The
 command-line utilities are automatically installed along with the MySQL
@@ -150,7 +150,7 @@ perform these tasks after the installation completes:
 4.  Disable anonymous access
 5.  Set up scheduled backups
 
-## Securing the root Accounts ##
+### Securing the root Accounts ###
 
 The Debian installer automatically prompts you for a root password
 before it configures a MySQL service.
@@ -189,7 +189,7 @@ to MySQL again, with the *-p* option:
 
 Enter your MySQL root password when prompted.
 
-## Configuring Stronger Data Protection ##
+### Configuring Stronger Data Protection ###
 
 In many cases, stronger data protection is more important than maximal
 performance. To enable the key features, edit the [mysqld] section of
@@ -258,7 +258,7 @@ mode*.
 
 Restart the MySQL service to make the changes take effect.
 
-## Activating the Query Cache ##
+### Activating the Query Cache ###
 
 The query cache contains both statements and the result set returned. If
 MySQL can match a statement in the query cache then it can return the
@@ -276,7 +276,7 @@ This specifies a query cache of 16 megabytes:
     query_cache_limit       = 1M
     query_cache_size        = 16M
 
-## Blocking Anonymous Access ##
+### Blocking Anonymous Access ###
 
 The anonymous account in MySQL enables some access without
 authentication. If you use the mysql\_secure\_installation script,
@@ -289,7 +289,7 @@ DROP USER '';
 
 The quotes must be empty.
 
-## Configuring Backups ##
+### Configuring Backups ###
 
 To backup MySQL fully, you must both create copies of the following:
 
@@ -408,7 +408,7 @@ Add the following line, and save the file:
 This specifies that the script /home/backup-user/mysql-backup.sh should
 run at 2am every day.
 
-## Other Security Measures ##
+### Other Security Measures ###
 
 -   Restrict access to mysql.user table
 -   Run MySQL as an unprivileged user
@@ -437,7 +437,7 @@ GRANT, CREATE USER etc. automatically flush the in-memory privileges
 data. If you manually alter data in the grant tables use FLUSH
 PRIVILEGES to force MySQL to reload the privileges data from the tables.
 
-## Starting and Stopping the MySQL Service ##
+### Starting and Stopping the MySQL Service ###
 
 To start or stop the MySQL service on Linux, use the service management
 tool provided with your distribution.
@@ -451,7 +451,7 @@ To cleanly shutdown a running MySQL service, use mysqladmin:
 
     mysqladmin -u root -p shutdown
 
-## Creating a Database ##
+### Creating a Database ###
 
 To create a new database, use either MySQL Workbench, the mysqladmin
 command-line utility, or a *CREATE DATABASE* SQL statement:
@@ -472,7 +472,7 @@ database and tables. MySQL is case-sensitive when it handles database
 and table names. The Windows version of the *InnoDB* storage engine also
 internally stores all object names in lowercase.
 
-## Creating MySQL User Accounts ##
+### Creating MySQL User Accounts ###
 
 To create a new user account, either use MySQL Workbench, or issue a SQL
 statement. Current versions of MySQL include a SQL *CREATE USER*
@@ -515,7 +515,7 @@ from any system in the domain, and may set privileges for others:
 GRANT ALL ON * TO 'bill'@'%.mydomain.com' IDENTIFIED BY 'passwd' WITH GRANT OPTION;
 ~~~
 
-## Resetting Account Passwords ##
+### Resetting Account Passwords ###
 
 To remove the accounts *bob* and *jim* on current versions of MySQL,
 *REVOKE* the privileges for the account and then carry out a *DROP USER*
@@ -530,7 +530,7 @@ The *REVOKE* statement removes the *GRANT* privilege, and all other
 privileges that the user has. *DROP USER* removes the record for the
 account in the mysql database.
 
-## Removing Obsolete Accounts {#remove-account}
+### Removing Obsolete Accounts {#remove-account}
 
 To remove the accounts *bob* and *jim* on current versions of MySQL,
 *REVOKE* the privileges for the account and then carry out a *DROP USER*
@@ -545,7 +545,7 @@ The *REVOKE* statement removes the *GRANT* privilege, and all other
 privileges that the user has. *DROP USER* removes the record for the
 account in the mysql database.
 
-## Upgrading MySQL ##
+### Upgrading MySQL ###
 
 Run the mysql\_upgrade utility after you upgrade your server. This
 checks your tables, and upgrades the system tables used by MySQL itself:
@@ -554,7 +554,7 @@ checks your tables, and upgrades the system tables used by MySQL itself:
 
 # Good Practices for MySQL #
 
-## Good Practices for Queries ##
+### Good Practices for Queries ###
 
 * Unless you are sure about the server, always specify the character set: SET NAMES ‘utf-8’
 * Always use prepared statements for better performance and security.
@@ -567,7 +567,7 @@ checks your tables, and upgrades the system tables used by MySQL itself:
 * Remember to check complex queries with EXPLAIN, to ensure that you have optimised correctly.
 * Consider using *unbuffered queries* with large result sets - these enable MySQL to start returning rows immediately, rather than waiting until the complete set has been constructed.
 
-## Good Practices for Database Design ##
+### Good Practices for Database Design ###
 
 * Create tables in a test instance, load in some data, and then run PROCEDURE ANALYSE to get optimisation suggestions.
 * Always specify NOT NULL for columns unless you specifically need to allow NULL values.
@@ -575,7 +575,7 @@ checks your tables, and upgrades the system tables used by MySQL itself:
 * Use the UNSIGNED INT type for IP addresses, and use the functions INET\_ATON and INET\_NTOA to convert addresses to numbers and back.
 * If a table contains no fields of the types VARCHAR, TEXT, or BLOB then MySQL handles it as a *fixed-length* table, which boosts performance.
 
-## Other Good Practices ##
+### Other Good Practices ###
 
 -   Never use the PASSWORD function for your own applications, use the
     SHA1 function instead.
@@ -625,7 +625,7 @@ irrelevant to the InnoDB engine.
 If you adjust a server parameter, pass attention to whether it is a
 global parameter, or per-thread (connection)!
 
-## Benchmarking ##
+### Benchmarking ###
 
 Remember to disable the query cache before performing benchmarks, by
 setting the cache size to 0.
@@ -635,7 +635,7 @@ setting the cache size to 0.
 * The best diagnostic is EXPLAIN.
 * The MySQL source distribution also includes the sql-bench benchmarking suite.
 
-## Effective Indexing ##
+### Effective Indexing ###
 
 * Look for opportunities to provide covering indexes.
 * On multi-column indexes, be aware that the order of the columns matter, e.g. keys of join tables.

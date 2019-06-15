@@ -30,7 +30,7 @@ entire working tree as a *snapshot*, along with the contents of those
 files that the user specifies and have changed. This means that Git only
 records those changes to the tree that the user chooses to register.
 
-## Distributed Version Control ##
+### Distributed Version Control ###
 
 Git is a distributed system, so the concept of a master repository is
 not really appropriate. Instead, you start with one repository, and then
@@ -62,7 +62,7 @@ can have any name that you wish. If you clone an existing repository
 then the source repository is automatically registered in the clone as a
 remote with the name *origin*.
 
-## The Two Forms of Repository ##
+### The Two Forms of Repository ###
 
 Git repositories are not binary files, unlike most databases. Instead, a
 Git repository is a directory that contains a set of files and
@@ -92,7 +92,7 @@ Both forms of repository use the same storage format. The repository
 format for Git is stable, which means that you can upgrade installed
 copies of Git without modifying your repositories.
 
-## Git is a Content Tracker ##
+### Git is a Content Tracker ###
 
 Git actually works with the contents of files, and is flexible about
 where the content currently resides. The advantage of this approach is
@@ -107,7 +107,7 @@ actually did. For these reasons, put your data and source code into
 version control, along with any scripts needed to compile binaries, but
 do not store the generated binaries.
 
-## The Index (or Staging Area) ##
+### The Index (or Staging Area) ###
 
 Whenever you register that one or more files in the working tree have
 changed, the details are noted in the *index*. The *commit* command
@@ -122,7 +122,7 @@ appropriate name.
 The *stash* command saves the current states of both the working tree
 and the index, without making commits.
 
-## Branches and Tags ##
+### Branches and Tags ###
 
 Every Git repository has one or more *branches* and *tags*, which
 identify alternative versions of the working tree. Each branch and tag
@@ -150,7 +150,7 @@ branch identical to the source branch, and then reapplies all of the
 committed changes. This enables outside developers to track the main
 line of development whilst working on customizations.
 
-## Remote Branches ##
+### Remote Branches ###
 
 By default, a repository database only actually holds the objects for
 those branches that were created locally. Each *remote tracking branch*
@@ -169,7 +169,7 @@ other branches in the source repository are created as remote branches
 in the clone. These inherited branches have a name prefixed by
 *origin/*.
 
-## Identifiers for Commits ##
+### Identifiers for Commits ###
 
 Git uniquely identifies each change with an SHA1 checksum, which looks
 like this:
@@ -245,7 +245,7 @@ not automatically be registered.
 Whichever operating system you use, remember to configure Git before you
 create a repository.
 
-## Installing Git on Linux ##
+### Installing Git on Linux ###
 
 To install Git on Linux, simply use the package management system built
 into the operating system. The package is often named *git-core*, to
@@ -258,14 +258,14 @@ Ubuntu systems, run this command:
 Debian and Ubuntu provide other supporting software, such as the gitweb
 interface, but put these in separate packages.
 
-## Installing Git on Microsoft Windows ##
+### Installing Git on Microsoft Windows ###
 
 Install one of the following:
 
 * [Git for Windows](http://code.google.com/p/msysgit/) - Package for command-line Git on Windows, including SSH
 * [Git Extensions](http://sourceforge.net/projects/gitextensions/) - Provides Git for Windows, as well as a graphical utility, and a Visual Studio plugin for Git
 
-## Installing Git on macOS ##
+### Installing Git on macOS ###
 
 Go to the [Git Web site](http://www.git-scm.com/) and follow the link
 for *Other Download Options*, to obtain a macOS disk image. Use the
@@ -287,7 +287,7 @@ command:
 
     git config --global color.ui auto
 
-## Global Exclusions ##
+### Global Exclusions ###
 
 You may want to ensure that some files never appear in any commit that
 you do in any repository. Specify a global ignore file with the
@@ -298,7 +298,7 @@ exclusions file, or the feature will silently fail. For example:
 
 Your exclusions file uses the same format as *.gitignore* files.
 
-## Command Aliases ##
+### Command Aliases ###
 
 Finally, you will probably to create short aliases for the commands that
 you use often. Use the keyword *alias*, followed by the alias, like
@@ -333,7 +333,7 @@ creates a branch called *spike*, and makes it the current branch:
 You can then makes changes and selectively merge them to the master
 branch.
 
-## Exclusions ##
+### Exclusions ###
 
 In addition to the global exclusions for your user account, you can
 specify exclusions for a repository in either the *exclude* file, or
@@ -374,7 +374,7 @@ so to view the man page for *git commit*, type this command:
 
     man git-commit
 
-## Adding Changes to the Index: git add {#cmds-add}
+### Adding Changes to the Index: git add {#cmds-add}
 
 Use *git add* to add changes to the index. All of the changes made on
 the specified files are registered. If you run *git add* again with the
@@ -392,7 +392,7 @@ Use the *-p* option to add just some of the changes to a file:
 Git then lets you interactively choose which of the changes to the file
 to register in the index.
 
-## Removing Changes to the Index: git reset ##
+### Removing Changes to the Index: git reset ###
 
 Use *git rm —cached* or *git reset* to remove files from the index,
 without actually deleting the copies in the working tree:
@@ -401,7 +401,7 @@ without actually deleting the copies in the working tree:
 
 The *reset* command accepts patterns as well as file names.
 
-## Committing the Index: git commit ##
+### Committing the Index: git commit ###
 
 The commit message should have a one line summary, a blank line, then
 details.
@@ -415,7 +415,7 @@ amend the message on a commit:
 
     git commit --amend -m  "New commit message" c34a14
 
-## Listing Changes: git status and git log ##
+### Listing Changes: git status and git log ###
 
 For a list of changes, whether they are staged or unstaged:
 
@@ -436,7 +436,7 @@ changes the format to show one commit per line:
 
     git log --pretty=oneline
 
-## Reviewing the Details of Changes: git show and git diff ##
+### Reviewing the Details of Changes: git show and git diff ###
 
 To see a specific commit, use *git show*:
 
@@ -471,7 +471,7 @@ To compare a set of changes, specify a range:
 
     git diff c34a14...b9c38e myfile.txt
 
-## Reverting Changes: git reset and git revert ##
+### Reverting Changes: git reset and git revert ###
 
 To get a previous version of an individual file, you can use *git
 checkout*:
@@ -496,7 +496,7 @@ specific changes made by the commit c34a140, run this command:
 
     git revert c34a14
 
-## Deleting Files: git rm ##
+### Deleting Files: git rm ###
 
 Use *git rm* to delete a file or directory from the working tree. This
 also marks it as deleted in the index, so that the next commit will
@@ -504,7 +504,7 @@ register the change in the repository.
 
     git rm my-file.txt
 
-## Moving or Renaming Files ##
+### Moving or Renaming Files ###
 
 As Git tracks content, you do not need to use any special commands to
 safely move or rename files. Simply copy, move, or rename the file, and
@@ -512,7 +512,7 @@ then use *git add* to register the resulting file in the staging area.
 
 # Repository Operations #
 
-## Cloning an Existing Repository: git clone ##
+### Cloning an Existing Repository: git clone ###
 
 To create a new copy of an existing repository, get the URL of the
 repository, and use *git clone*:
@@ -528,7 +528,7 @@ option to the command.
 Remember to create a local branch before you make any changes to the new
 clone.
 
-## Managing Linked Remote Repositories: git remote ##
+### Managing Linked Remote Repositories: git remote ###
 
 To register a remote with your repository, use the *remote* command:
 
@@ -541,7 +541,7 @@ Similarly, to remove a remote, use the *rm* option of *git remote*:
 You can also safely add or remove remotes by editing the *.git/config*
 file directly, if you wish.
 
-## Synchronizing with Another Repository: git pull and git fetch ##
+### Synchronizing with Another Repository: git pull and git fetch ###
 
 To fully synchronize a repository with another, Git has to do three
 things. Firstly, it has to get all of the objects that are stored within
@@ -569,7 +569,7 @@ branch:
 
     git merge origin/master
 
-## Exporting from a Repository: git archive and git checkout-index ##
+### Exporting from a Repository: git archive and git checkout-index ###
 
 By default, *git archive* streams the specified version of a working
 tree in *tar* archive format to the terminal STDOUT, so that you can
@@ -593,7 +593,7 @@ for more on exporting repositories.
 
 # Working with Branches: git branch and git checkout #
 
-## Creating a New Branch ##
+### Creating a New Branch ###
 
 You can create a branch at any time. Remember that this creates an
 alternate version of the entire working tree. If you do not specify a
@@ -614,7 +614,7 @@ prefix of your initials followed by a forward slash. For example, J S
 Bach’s local copy of the *useful-feature* branch should be named
 *jsb/useful-feature*. This is purely a helpful convention.
 
-## Listing Available Branches ##
+### Listing Available Branches ###
 
 To see the local branches, use *git branch -l*:
 
@@ -626,14 +626,14 @@ To see the remote branches, use *git branch -r*:
 
     git branch -r
 
-## Switching Branches {#branches-switching}
+### Switching Branches {#branches-switching}
 
 To change the current branch, use *git checkout*. Note that you must use
 the *-f* option to actually change the working tree to match:
 
     git checkout -f new-branch
 
-## Transferring Changes Between Branches ##
+### Transferring Changes Between Branches ###
 
 To merge the content of another branch into the current branch, use *git
 merge* or *git rebase*. Normally you use *merge* to apply just the
@@ -652,7 +652,7 @@ branch, and then use *cherry-pick* to import the specified commit:
 
     git cherry-pick f28e67
 
-## Publishing a Branch to Another Repository ##
+### Publishing a Branch to Another Repository ###
 
 To publish a branch to another repository that you have write access to,
 use *git push*. This adds the objects to the database of the remote
@@ -663,7 +663,7 @@ If the remote repository has been specified as a mirror, then every push
 will automatically transfer all new changes from all of the branches in
 the repository.
 
-## Deleting a Branch ##
+### Deleting a Branch ###
 
 To delete a local branch, use *git branch* with the *-d* option:
 
@@ -676,13 +676,13 @@ before the name of the branch that you want to remove:
 
 # Working with Tags: git tag #
 
-## Listing Available Tags ##
+### Listing Available Tags ###
 
 To see the tags, use *git tag -l*:
 
     git tag -l
 
-## Creating a New Tag ##
+### Creating a New Tag ###
 
 To create a new tag from the current branch:
 
@@ -697,7 +697,7 @@ work as if the submodule was a separate clone.
 Some experts advise using the newer subtree option instead of
 submodules.
 
-## Important: Submodule Names ##
+### Important: Submodule Names ###
 
 Git commands that use the submodule require the name of the submodule,
 not the local directory that it is attached to. By default, the local
@@ -711,7 +711,7 @@ This is a file path, which is wrong:
 
     git add submodule-name/
 
-## Creating a Submodule ##
+### Creating a Submodule ###
 
 To create a submodule within a project, use the *add* option of the *git
 submodule*:
@@ -728,7 +728,7 @@ submodules:
 
     git submodule init
 
-## Updating a Submodule ##
+### Updating a Submodule ###
 
 To update a submodule to match the latest remote version:
 
@@ -785,24 +785,24 @@ the shared repository may be changing at any time.
 
 # Resources and Documentation #
 
-## Getting Started ##
+### Getting Started ###
 
 * [Git for Designers](http://hoth.entp.com/output/git_for_designers.html) is actually a very lucid introduction to the concepts of Git that is suitable for anyone.
 * [Git Reference](http://gitref.org/) is actually a fairly short and well-written tutorial
 * [Effective Project Management with Git](http://scotland-on-rails.s3.amazonaws.com/1A02_Scott_Chacon.mp4) (MP4 download) - An excellent video presentation
 * [Git SVN Crash Course](http://git-scm.com/course/svn.html) for those coming from Subversion.
 
-## Reference Documentation ##
+### Reference Documentation ###
 
 * [Everyday Git](http://git-scm.com/docs/everyday) - The top 20 commands
 * [Pro Git](http://book.git-scm.com/) - An online version of the Apress book
 
-## Cheatsheets ##
+### Cheatsheets ###
 
 * [A useful one page cheatsheet](https://github.com/AlexZeitler/gitcheatsheet/blob/master/gitcheatsheet.pdf)
 * [A polished two page cheatsheet from the makers of Tower](http://www.git-tower.com/files/cheatsheet/Git_Cheat_Sheet_grey.pdf)
 
-## Advanced Use of Git {#resources-adv}
+### Advanced Use of Git {#resources-adv}
 
 * [git ready](http://gitready.com/)
 * [Understanding Git Submodules](http://speirs.org/blog/2009/5/11/understanding-git-submodules.html)

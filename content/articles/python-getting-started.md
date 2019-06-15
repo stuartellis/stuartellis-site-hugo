@@ -40,13 +40,13 @@ The tutorial that is supplied with Python can walk you through the basics. The d
 
 # Choosing a Code Editor or IDE
 
-## Learners
+### Learners
 
 If you are new to programming, start with [Mu](https://codewith.mu/), which is specifically designed to help new developers work with Python.
 
 Once you have become comfortable with programming, you should move on to a text editor for programmers, such as [Visual Studio Code](https://code.visualstudio.com) or [Neovim](https://neovim.io).
 
-## Visual Studio Code
+### Visual Studio Code
 
 [Visual Studio Code](https://code.visualstudio.com) is arguably the best desktop editor for programming, and is available free of charge. [The Python tutorial](https://code.visualstudio.com/docs/python/python-tutorial) explains how to use the features of Visual Studio Code with Python.
 
@@ -54,7 +54,7 @@ The Microsoft releases of Visual Studio Code are proprietary software with telem
 
 Once you have installed Visual Studio Code or VSCodium, read [this article](https://www.stuartellis.name/articles/visual-studio-code/) for more information about using the editor.
 
-## Integrated Development Environments
+### Integrated Development Environments
 
 If you would like to use a full IDE, there are several options available. [Wing IDE](http://www.wingware.com/) and [PyCharm](https://www.jetbrains.com/pycharm/) are proprietary, commercial products. The free Eclipse IDE can be be used for Python development with the [PyDev](http://www.pydev.org/) extension. Current versions of Microsoft Visual Studio also include support for Python.
 
@@ -64,7 +64,7 @@ There are a number of de-facto standard utilities and libraries for
 Python software development, but a few tools are so fundamental that you
 should install them even before you begin to write Python code.
 
-## Git for Version Control
+### Git for Version Control
 
 If you do not already use version control, you should also install [Git](http://git-scm.com/) on your
 system. Git is now effectively the standard version control tool for developers.
@@ -73,7 +73,7 @@ Version control is obviously vital for collaborating with other programmers. It 
 
 If Git is installed, Atom and Visual Studio Code provide you with access to information and features from Git directly in their user interfaces. If you use Visual Studio Code, you should also consider installing the [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) extension, which enhances the integration with Git.
 
-## pipenv for Virtual Environments
+### pipenv for Virtual Environments
 
 Install [pipenv](https://docs.pipenv.org/) to manage your Python projects. It ensures that each of your Python projects use a separate set of packages, and provides other features to help you maintain your work, such as [checking the code](https://docs.pipenv.org/advanced/#code-style-checking) and [warning you about security issues in libraries](https://docs.pipenv.org/advanced/#detection-of-security-vulnerabilities).
 

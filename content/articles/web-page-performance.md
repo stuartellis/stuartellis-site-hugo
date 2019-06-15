@@ -55,17 +55,17 @@ If you are developing a Progressive Web Application, Google recommend that you f
 
 # Online Tools
 
-## The Chrome User Experience Report
+### The Chrome User Experience Report
 
 The [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (CrUX) measures user experiences on popular Websites.
 
 The CrUX dataset is updated monthly. Aggregate data for origins (Websites) is published on Google BigQuery, so that you can query that data yourself with Google Data Studio or other tools. [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) uses URL-level data.
 
-## Website Testing Tools
+### Website Testing Tools
 
 # Resources
 
-## Google Documentation
+### Google Documentation
 
 Google are consolidating their information to the site [web.dev](https://web.dev/). [The Google Developers Website](https://developers.google.com/web/) still has a large amount of content.
 
@@ -73,12 +73,12 @@ The [Webmaster Guidelines](https://support.google.com/webmasters/answer/35769?hl
 
 Google provide an [infographic and page to summarize their performance tools](https://developers.google.com/web/fundamentals/performance/speed-tools/).
 
-## Google Videos
+### Google Videos
 
 - [Web performance made easy (Google I/O '18)](https://www.youtube.com/watch?v=Mv-l3-tJgGk&list=PLOU2XLYxmsIInFRc3M44HUTQc3b_YJ4-Y)
 - [Use Lighthouse and Chrome UX Report to optimize web app performance (Google I/O '18)](https://www.youtube.com/watch?v=UvK9zAsSM8Q)
 
-## Third-Party Resources
+### Third-Party Resources
 
 - [The Science Behind Google PageSpeed Insights & What It Actually Measures](https://wpsmackdown.com/google-pagespeed-insights-explained/)
 - [Essential Image Optimization](https://images.guide), a free ebook by Addy Osmani

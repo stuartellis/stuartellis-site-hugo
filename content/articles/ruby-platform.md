@@ -38,7 +38,7 @@ for all mainstream operating systems. Ruby 1.9 uses the much faster
 YARV, instead of MRI. JRuby runs on the JRE, and is actually a Java
 library.
 
-## RubyGems Packages ##
+### RubyGems Packages ###
 
 RubyGems provides a cross-platform mechanism for managing the
 third-party Ruby software on your system, which are provided as *gem*
@@ -71,7 +71,7 @@ Use the *-d* option to run irb with debugging:
 On Windows, use the *fxri* program provided by the One Click Ruby
 Installer, instead of irb.
 
-## Built-in Commands ##
+### Built-in Commands ###
 
 In addition to standard Ruby code, you may invoke built-in commands
 inside an irb session:
@@ -95,7 +95,7 @@ package installed. A gem may also be digitally signed, but this is not
 mandatory. Use the *security policy* option to specify how RubyGems
 should handle signed and unsigned gems.
 
-## Installing Packages with RubyGems ##
+### Installing Packages with RubyGems ###
 
 A very simple example:
 
@@ -138,7 +138,7 @@ To install a gem without the documentation, use the options:
 
 This option is probably most useful for servers.
 
-## Querying with RubyGems ##
+### Querying with RubyGems ###
 
 The *gem* utility provides two basic features for querying repositories.
 Use *gem list* as a convenient way to find the name of relevant gems,
@@ -178,7 +178,7 @@ term:
 
 Use the same command with *—local* to investigate an installed gem.
 
-## Removing Packages with RubyGems ##
+### Removing Packages with RubyGems ###
 
 To remove a gem, use *uninstall*:
 
@@ -187,7 +187,7 @@ To remove a gem, use *uninstall*:
 The routine will prompt you before it removes any command-line utilities
 that have been installed by the package.
 
-## Updating Installed Gems ##
+### Updating Installed Gems ###
 
 > *Updating System Files Requires Administrative Privileges:* As always,
 > you need administrator privileges to successfully change any software
@@ -210,7 +210,7 @@ To upgrade a particular gem, specify the name of the gem package:
 
 Any dependencies for the gem will also be updated at the same time.
 
-## Other RubyGems Facilities ##
+### Other RubyGems Facilities ###
 
 For a list of supported *gem* operations:
 
@@ -255,7 +255,7 @@ with the *-d* option. For example:
 
 Press Ctrl-C to shutdown the server.
 
-## Accessing the Documentation from the Command-line ##
+### Accessing the Documentation from the Command-line ###
 
 The *ri* utility provides access to documentation from the command-line.
 Simply type *ri*, followed by the name of item that you would
@@ -279,7 +279,7 @@ it in HTML format, and then redirect the result:
 
     ri -f html Array > array.html
 
-## Generating Documentation ##
+### Generating Documentation ###
 
 The supplied *rdoc* utility reads Ruby source code files and extracts
 information from the comments to generate HTML documentation.

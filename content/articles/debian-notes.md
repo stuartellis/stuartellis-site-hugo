@@ -17,7 +17,7 @@ Notes on Debian Linux.
 
 # Documentation and Help
 
-## Web Sites
+### Web Sites
 
 Refer to this Web site for the Debian official documentation:
 
@@ -35,13 +35,13 @@ The _Debian Administration_ site has tutorials for a wide range of topics:
 
 - [http://www.debian-administration.org/](http://www.debian-administration.org/)
 
-## Security Announcements
+### Security Announcements
 
 To subscribe to email security announcements from the Debian project, visit this Web page:
 
 - [http://lists.debian.org/debian-security-announce/](http://lists.debian.org/debian-security-announce/)
 
-## Supplied Documentation
+### Supplied Documentation
 
 Debian packages install their documentation to /usr/share/doc/package-name/. The standard files are compressed to save space. To unpack a compressed README.Debian.gz, use gunzip -c:
 
@@ -49,7 +49,7 @@ Debian packages install their documentation to /usr/share/doc/package-name/. The
 
 The dwww and dhelp packages provide support for browsing the installed documentation as HTML.
 
-## Books
+### Books
 
 _The Debian System_, by Martin F. Krafft, is highly recommended. It is available as PDF or hard-copy.
 

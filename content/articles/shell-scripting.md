@@ -74,7 +74,7 @@ The [sh](https://github.com/mvdan/sh) utility will format your shell scripts to 
 
 Each UNIX shell runs a specific set of scripts each time that starts. Use these default scripts to set environment variables.
 
-## Bash Startup Scripts
+### Bash Startup Scripts
 
 Bash runs different scripts, depending on how is started:
 
@@ -127,12 +127,12 @@ The _-s_ option means that the bash shell will run what is sent to it from the s
 
 # Online Resources
 
-## Using the Command-line
+### Using the Command-line
 
 - [The Art of Command Line](https://github.com/jlevy/the-art-of-command-line) - A guide to mastering the command-line
 - [Explainshell](https://explainshell.com/) - enter a command-line on this site to see the help text that matches each argument
 
-## Bash Scripting
+### Bash Scripting
 
 - [Ryan Chadwick's Tutorial for Bash Scripting](https://ryanstutorials.net/bash-scripting-tutorial) - A gentle introduction to Bash
 - [GreyCat's Bash Guide](http://mywiki.wooledge.org/FullBashGuide) - A more comprehensive guide to Bash

@@ -17,11 +17,11 @@ application.
 
 <!--more-->
 
-# More on Derby #
+## More on Derby
 
 Generated Derby databases can be bundled with your
 application, to remove the need for any separate installation or
-configuration. In *embedded* mode, the Derby libraries can directly read
+configuration. In _embedded_ mode, the Derby libraries can directly read
 database files that are held in JAR archives.
 
 Used as a stand-alone network server, Derby supports online backup,
@@ -53,12 +53,12 @@ As a historical note, Derby was originally released as a commercial
 product called Cloudscape. IBM bought it, and subsequently donated it to
 the Apache Foundation for development as an Open Source project.
 
-# Installing Java DB #
+## Installing Java DB
 
 For convenience, this section only gives instructions for Java DB, the
 Oracle build of Derby.
 
-## Installing Java DB on Windows ##
+### Installing Java DB on Windows
 
 Oracle bundles Java DB with their Java Development Kit (JDK), and this JDK
 is the simplest way to install a JRE and Java DB on Microsoft Windows.
@@ -70,12 +70,12 @@ the Oracle JDK.
 
 Remember to add the JDK to the beginning of your PATH environment
 variable. To do this, choose Start \> Control Panel \> System \>
-Advanced \> Environment Variables, find *path* in the System Variables
+Advanced \> Environment Variables, find _path_ in the System Variables
 list, and Edit it to add:
 
     C:\Program Files\Java\jdk1.6.0_06\bin\
 
-Substitute jdk1.6.0\_06 with the correct directory name for your JDK
+Substitute jdk1.6.0_06 with the correct directory name for your JDK
 version.
 
 Items in the PATH must be separated by semi-colons.
@@ -89,7 +89,7 @@ PATH:
 
     C:\Program Files\Sun\JavaDB\bin\
 
-Java DB also requires a separate DERBY\_HOME environment variable that
+Java DB also requires a separate DERBY_HOME environment variable that
 points to the root directory for your Java DB installation:
 
     C:\Program Files\Sun\JavaDB
@@ -99,7 +99,7 @@ window, and type:
 
     sysinfo
 
-## Installing Java DB on Linux ##
+### Installing Java DB on Linux
 
 For Linux, Oracle collaborates with other vendors and the community on a
 fully open source JDK (the OpenJDK). All of the major Linux
@@ -118,9 +118,9 @@ Note that the Ubuntu repositories include other, older Java DB packages.
 Use the sun-javadb-\* packages with the OpenJDK, not the
 sun-java6-javadb or sunwderby packages.
 
-To enable Java DB, add the *bin* directory for Java DB to your PATH
-environment variable, and set a new DERBY\_HOME environment variable. On
-Ubuntu and Debian systems, add these lines to the end of the *.bashrc*
+To enable Java DB, add the _bin_ directory for Java DB to your PATH
+environment variable, and set a new DERBY_HOME environment variable. On
+Ubuntu and Debian systems, add these lines to the end of the _.bashrc_
 file in your home directory:
 
     export PATH=\$PATH:/usr/share/javadb/bin/
@@ -129,31 +129,31 @@ file in your home directory:
 This will take effect the next time that you login or open a new
 terminal window.
 
-# Administration Tools #
+## Administration Tools
 
 Three command-line administration utilities are supplied with Derby:
 
-* *dblook*, for exporting schema information
-* *ij*, an interactive SQL command shell
-* The *sysinfo* diagnostics utility
+- _dblook_, for exporting schema information
+- _ij_, an interactive SQL command shell
+- The _sysinfo_ diagnostics utility
 
 If you have added the environment variables, you may run any of these
 commands by typing the name of the utility in a terminal window.
 
 Derby also includes built-in system procedures for administrative tasks,
 such as backup, consistency checking, and bulk import and export. All of
-these are provided in the SYSCS\_UTIL schema, so that you may run them
+these are provided in the SYSCS_UTIL schema, so that you may run them
 from any SQL connection.
 
-This article includes some brief notes on *ij* below, but the supplied
+This article includes some brief notes on _ij_ below, but the supplied
 Guides are the definitive resource on using the applications and system
 procedures.
 
-# Creating and Using Derby Databases #
+## Creating and Using Derby Databases
 
 Derby databases are stored as a directory with several subdirectories.
 You use a standard URL syntax to refer to either local or remote
-databases in commands and connection strings. The supplied *ij*
+databases in commands and connection strings. The supplied _ij_
 command-line utility can connect to both local and remote databases.
 
 For a local database, the syntax looks like this:
@@ -163,7 +163,7 @@ For a local database, the syntax looks like this:
 By default, Derby will simply check the current working directory for a
 subdirectory with the specified name. You may override this, and
 explicitly set the default parent directory that Derby should check with
-the property (Java setting) *derby.system.home*.
+the property (Java setting) _derby.system.home_.
 
 Alternatively, you can specify a relative or absolute path to the
 database directory itself in the JDBC string:
@@ -173,7 +173,7 @@ database directory itself in the JDBC string:
 
 The recommended practice is to define a root databases directory for
 your application and place all of the databases for that application in
-it. Configure your application to use the *embedded* Derby JDBC driver
+it. Configure your application to use the _embedded_ Derby JDBC driver
 when the databases will be part of that application and executed by the
 same instance of the Java runtime (the JVM).
 
@@ -181,13 +181,13 @@ To access a database via a Derby network server:
 
     jdbc:derby://host:port/databaseName;URLAttributes
 
-Configure your applications to use the *network client* JDBC driver when
+Configure your applications to use the _network client_ JDBC driver when
 they connect to a separate Derby database service. By default,
 stand-alone Derby services uses TCP port 1527.
 
 Derby does not require or support a CREATE DATABASE statement. To create
-a new database, simply append *create=true* to the connection string.
-For example, if you start *ij* and run this statement, it automatically
+a new database, simply append _create=true_ to the connection string.
+For example, if you start _ij_ and run this statement, it automatically
 creates a new database in the current working directory:
 
     CONNECT 'jdbc:derby:mydb;create=true';
@@ -196,7 +196,7 @@ Once your connection is active, you may immediately run further
 statements against the new database, such as CREATE TABLE.
 
 To create a new database for a running Derby service, include the
-*create* option in the connection URL in exactly the same way:
+_create_ option in the connection URL in exactly the same way:
 
     jdbc:derby://localhost:1527/mydb;create=true;user=myaccount;password=nocansay
 
@@ -204,19 +204,19 @@ There is also no separate command to drop a database. To destroy a
 database, just detach it from any service that might access it, and then
 delete the database files.
 
-## Using the ij Utility ##
+### Using the ij Utility
 
-The *ij* utility does not connect to any database until you explicitly
+The _ij_ utility does not connect to any database until you explicitly
 specify at least one connection. You may define connections either as
 part of the command, in a properties (settings) file, or with a CONNECT
-statement once *ij* has started. You may have multiple open connections
+statement once _ij_ has started. You may have multiple open connections
 and switch between them.
 
 To specify connections or other properties as part of the command, use
-the -D switch. The *ij.connection* property creates a connection that
+the -D switch. The _ij.connection_ property creates a connection that
 has whatever name you specify after the period, and assigns it the JDBC
 URL that you give. In the example above, the new connection has the name
-*myconnection*.
+_myconnection_.
 
     ij -Dij.connection.myconnection=jdbc:derby:mydb
     ij -Dij.connection.myconnection=jdbc:derby:mydb -Dderby.system.home=C:\\mydatabases
@@ -225,7 +225,7 @@ URL that you give. In the example above, the new connection has the name
 Note that there is no space between a -D switch and the property that it
 sets.
 
-A CONNECT statement in *ij* looks like this:
+A CONNECT statement in _ij_ looks like this:
 
     CONNECT 'jdbc:derby:mydb' AS 'myconnection';
 
@@ -233,8 +233,8 @@ Or:
 
     CONNECT 'jdbc:derby:mydb' AS 'mynetconnection' USER 'myaccount' PASSWORD 'nocansay';
 
-> *Semi-colons are mandatory:* Derby requires a semi-colon on the end of
-> every statement, including statements that use the built-in *ij*
+> _Semi-colons are mandatory:_ Derby requires a semi-colon on the end of
+> every statement, including statements that use the built-in _ij_
 > commands.
 
 You can set a connection without specifying a name, although it isn’t a
@@ -245,26 +245,25 @@ good habit:
 
 To change which connection is used, issue a SET CONNECTION statement:
 
-
 ij -Dij.connection.myconnection1=jdbc:derby:mydb1 -Dij.connection.myconnection2=jdbc:derby:mydb2
 ij \> SET CONNECTION myconnection2;
 
-To list the commands available in an *ij* session, type:
+To list the commands available in an _ij_ session, type:
 
     help;
 
-To exit a *ij* session, type:
+To exit a _ij_ session, type:
 
     exit;
 
-You may use *ij* to run scripts, and, optionally, output the results to
+You may use _ij_ to run scripts, and, optionally, output the results to
 a text file. Simply add the names of the required files to the
 command-line:
 
     ij myscript.sql
     ij myscript.sql output.txt
 
-# Running Derby as a Service #
+## Running Derby as a Service
 
 Refer to the supplied Server and Administration Guide for information on
 running and maintaining a Derby service.
@@ -272,17 +271,17 @@ running and maintaining a Derby service.
 By default, Derby services only accept connections from the local system
 (localhost). If you permit network access, note that you need to
 explicitly enable TLS/SSL encryption, and also user authentication.
-Derby refers to TLS/SSL protected access as *peerAuthentication*.
+Derby refers to TLS/SSL protected access as _peerAuthentication_.
 
 If you enable user authentication then you may either maintain accounts
 within Derby, or work with an external directory service (such as LDAP).
 The Security section of the Developers Guide provides an overview.
 
-The Web interface is supplied as a WAR file in the *lib* subdirectory of
-your Derby installation: *derby.war*. Refer to the Server and
+The Web interface is supplied as a WAR file in the _lib_ subdirectory of
+your Derby installation: _derby.war_. Refer to the Server and
 Administration Guide for more information.
 
-# Using Derby with JRuby on Rails #
+## Using Derby with JRuby on Rails
 
 JRuby on Rails supports both Java DB network database servers, and
 embedded copies of Java DB. In the latter case, Java DB works in the
@@ -293,7 +292,7 @@ To use Java DB embedded databases, specify the Derby adapter and a path
 in the config/database.yml configuration file of your JRuby on Rails
 application:
 
-~~~yaml
+```yaml
 development:
   adapter: derby
   database: db/development.db
@@ -305,21 +304,21 @@ test:
 production:
   adapter: derby
   database: db/production.db
-~~~
+```
 
 To configure your Rails application to use a Java DB network server,
 your database.yml settings must specify the JDBC Active Record adapter,
 set the Derby ClientDriver as the driver, and provide a URL. For
 example:
 
-~~~yaml
+```yaml
 development:
   adapter: jdbc
   driver: org.apache.derby.jdbc.ClientDriver
   url: jdbc:derby://localhost:1527/myapp_development
-~~~
+```
 
-# Finding the Documentation #
+## Finding the Documentation
 
 By default, the Windows version of Java DB installs to the folder:
 
@@ -331,7 +330,7 @@ guide, enter this URL in the address bar of your Web browser:
 
     file:///C:/Program%20Files/Sun/JavaDB/docs/html/getstart/index.html
 
-The Ubuntu package *sun-javadb-doc* installs documentation to the
+The Ubuntu package _sun-javadb-doc_ installs documentation to the
 directory /usr/share/doc/javadb/. Enter this URL in the address bar of
 your Web browser to see the documentation start page:
 

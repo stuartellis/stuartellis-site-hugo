@@ -103,7 +103,7 @@ a trailing hyphen to tags in Rails templates:
 <% end -%>
 ~~~
 
-## Using Text Transformation Methods ##
+### Using Text Transformation Methods ###
 
 ERB provides optional methods for transforming text.
 
@@ -133,7 +133,7 @@ This will be URL encoded:
 
 To use these features your code must *include* the module *ERB::Util*.
 
-## Conventions for Template Files ##
+### Conventions for Template Files ###
 
 A file that contains an ERB template may have any name, but it is the
 convention that the name of file should end with the *.erb* extension.
@@ -145,7 +145,7 @@ templates.
 If you store templates in files, it is good practice to keep each
 template in a separate file.
 
-## Using the ERB Library ##
+### Using the ERB Library ###
 
 This is a very simple example:
 
@@ -209,7 +209,7 @@ renderer = ERB.new(template)
 puts output = renderer.result(list.get_binding)
 ~~~
 
-## Running ERB in a Sandbox ##
+### Running ERB in a Sandbox ###
 
 You may protect your application from ERB by running it in a new thread.
 If you specify an integer as a second parameter when you create the
@@ -226,7 +226,7 @@ binding must be marked as trusted for ERB to use it.
 If you need to set the third or fourth parameters, but do not want ERB
 to run in a new thread, use 0 as the second parameter.
 
-## Suppressing Newlines ##
+### Suppressing Newlines ###
 
 The third parameter of *new* specifies optional modifiers, most of which
 alter when newline characters will be automatically added to the output.
@@ -237,7 +237,7 @@ the third parameter:
 renderer = ERB.new(template, 3, '>')
 ~~~
 
-## A Longer Example ##
+### A Longer Example ###
 
 ~~~ruby
 require 'erb'

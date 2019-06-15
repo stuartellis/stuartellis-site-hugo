@@ -17,17 +17,17 @@ Draft = true
 
 # Third-Party Tools
 
-## Development
+### Development
 
 - [Visual Studio Code extension for Terraform](https://github.com/mauve/vscode-terraform) - Syntax highlighting, linting, formatting, and validation for Terraform files
 - [TFLint](https://github.com/wata727/tflint) - Linter for Terraform files (BETA)
 - [Terratest](https://github.com/gruntwork-io/terratest) - Testing framework for Terraform and other tools
 
-## Extensions
+### Extensions
 
 - [Ansible Provisioner](https://github.com/radekg/terraform-provisioner-ansible)
 
-## Continuous Integration
+### Continuous Integration
 
 - [Atlantis](https://www.runatlantis.io/) - Terraform for teams
 

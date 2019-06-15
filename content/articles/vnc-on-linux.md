@@ -83,7 +83,7 @@ Some third-party products extend the VNC protocol to provide encryption
 or other features, and such features will only work with a viewer that
 supports those particular vendor extensions.
 
-## Web Browser Access ##
+### Web Browser Access ###
 
 Users may access desktops with VNC through their Web browser, without
 needing to install separate viewer applications. VNC displays a desktop
@@ -91,7 +91,7 @@ within a browser window by running a Java applet, and this facility
 should work on any system that has a JVM (Java Virtual Machine)
 installed.
 
-## VNC on Linux and UNIX ##
+### VNC on Linux and UNIX ###
 
 You may use VNC on Linux and UNIX systems in one of two ways:
 
@@ -132,7 +132,7 @@ dependency.
 To run on-demand VNC services on Fedora and Red Hat Enterprise Linux,
 you must install the package xinetd.
 
-## VNC Clients for Microsoft Windows ##
+### VNC Clients for Microsoft Windows ###
 
 To run VNC on Microsoft Windows, install either
 [UltraVNC](http://www.uvnc.com/), or one of the
@@ -158,7 +158,7 @@ with VNC, and set their own desktop options at the login screen. You
 must configure the display manager to enable support for remote logins,
 as explained below.
 
-## Securing VNC Access with a Password ##
+### Securing VNC Access with a Password ###
 
 To set a password for direct access to your own VNC desktops, enter this
 command in a terminal window:
@@ -173,7 +173,7 @@ the account.
 > *VNC Password Maximum Length*: For backwards compatibility, VNC
 > supports a maximum password length of 8 characters.
 
-## Providing Login Screens with XDMCP ##
+### Providing Login Screens with XDMCP ###
 
 To enable VNC to generate login screens on demand you must enable
 support for XDMCP (X Display Manager Control Protocol) in the display
@@ -254,7 +254,7 @@ service uses a separate TCP port.
 Debian installs inetd by default. You must install xinetd on Fedora and
 Red Hat Enterprise Linux systems.
 
-## Registering the VNC Services ##
+### Registering the VNC Services ###
 
 Register each VNC service in the /etc/services file. For example, these
 lines register two VNC services:
@@ -263,7 +263,7 @@ lines register two VNC services:
     vnc-lowres 5950/tcp # Very low resolution VNC desktops on this system
     vnc-normalres 5951/tcp # Standard VNC desktops on this system
 
-## Configuring the VNC Services ##
+### Configuring the VNC Services ###
 
 The example services shown below use the *geometry* option to set the
 display resolution, and the *depth* option to set the color depth.
@@ -337,7 +337,7 @@ are maintained until either the server shuts down, or the session is
 deliberately terminated. A user may disconnect or reconnect to the
 session at any time.
 
-## VNC Desktops on Red Hat and Mandriva Systems ##
+### VNC Desktops on Red Hat and Mandriva Systems ###
 
 The VNC implementations provided with Mandriva, Fedora, and Red Hat
 Enterprise Linux have a facility for starting a set of VNC desktops on
@@ -355,7 +355,7 @@ listed as part of the boot process.
 For other systems, use either xinetd or inetd to launch persistent VNC
 desktops for specific user accounts, as described in the next section.
 
-## Persistent Desktops with inetd or xinetd ##
+### Persistent Desktops with inetd or xinetd ###
 
 The example below shows configurations for the account *youraccount*.
 Replace *youraccount* with the relevant username.
@@ -402,7 +402,7 @@ Refer to the section above on setting the password in .vnc/passwd.
 > and Ubuntu include the file /etc/vnc.conf to provide global options
 > for vncserver.
 
-## Configuring the Startup Process ##
+### Configuring the Startup Process ###
 
 When a user runs vncserver, it executes the commands in .vnc/xstartup in
 sequence. To launch a standard desktop environment, you must include a
@@ -447,7 +447,7 @@ Set the file permissions on xstartup to allow the user to execute them:
 
     chmod 700 ~/.vnc/xstartup
 
-## Starting a VNC Desktop ##
+### Starting a VNC Desktop ###
 
 To launch a desktop, run vncserver:
 
@@ -503,7 +503,7 @@ any operating system you may use the vncviewer utility included with the
 VNC software package, or a Web browser with Java support enabled. The
 sections below explain these options in more detail.
 
-## Specifying a VNC Display ##
+### Specifying a VNC Display ###
 
 Whichever client you use, specify the address of the display with one of
 these formats:
@@ -516,7 +516,7 @@ Alternatively, specify the display number rather than the TCP port:
 * (system name or IP address):(display number)
 * server.example.com:4
 
-## Using the vncviewer Client ##
+### Using the vncviewer Client ###
 
 Run vncviewer without options to prompt for the server name and display.
 
@@ -524,7 +524,7 @@ You may specify the address as part of the vncviewer command:
 
     vncviewer server.example.com::5904
 
-## Using VNC on GNOME ##
+### Using VNC on GNOME ###
 
 The Terminal Server Client on the default Ubuntu desktop supports VNC.
 To run the Terminal Server Client, choose *Applications > Internet >
@@ -540,14 +540,14 @@ reads *No Icon* by default. Select *OK* to confirm the settings and
 create the launcher. You may then double-click the launcher to carry out
 the command and run the remote application.
 
-## Using a Web Browser {#vnc-web}
+### Using a Web Browser {#vnc-web}
 
 For Web access, type the appropriate URL in any Web browser that has
 Java support enabled:
 
     http://server.example.com:port number for the display
 
-## Securing VNC Connections with OpenSSH ##
+### Securing VNC Connections with OpenSSH ###
 
 The standard VNC software does not encrypt the connection between the
 client and the server. In order to protect VNC communications, we can

@@ -26,7 +26,7 @@ Docker, Inc. maintain [Docker images](https://store.docker.com/images/golang) fo
 
 # Essential Tools
 
-## The Go Plugin for Your Code Editor
+### The Go Plugin for Your Code Editor
 
 The Open Source community around Go provides a range of tools for code quality and
 refactoring that are designed to be integrated with both editors and automated build
@@ -37,7 +37,7 @@ If you use [Visual Studio Code](https://code.visualstudio.com), install the Micr
 would prefer to use an IDE, JetBrains offer [GoLand](https://www.jetbrains.com/go/) as a
 commercial product.
 
-## Git for Version Control
+### Git for Version Control
 
 If you do not already use version control, you should install [Git](http://git-scm.com/)
 on your system. Git is now effectively the standard version control tool for developers.
@@ -52,7 +52,7 @@ Studio Code, you should also consider adding the
 [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 extension, which enhances the integration with Git.
 
-## Code Quality
+### Code Quality
 
 Use either [Go Meta Linter](https://github.com/alecthomas/gometalinter) or [golangci-lint](https://github.com/golangci/golangci-lint) to run a suite of
 quality checks on your code, including the official
@@ -64,7 +64,7 @@ public Git repositories, using some of the standard quality checks. You do not n
 do anything to enable the service to analyse your project. If you wish, you may add a
 badge to the README in your repository that links to the Report Card for your project.
 
-## Dependency Management
+### Dependency Management
 
 Version 1.11 of Go and above include support for [modules](https://github.com/golang/go/wiki/Modules). The previous standard for managing dependencies was [dep](https://golang.github.io/dep/).
 

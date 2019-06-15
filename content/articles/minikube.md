@@ -51,7 +51,7 @@ Install Docker on the macOS host system, so that you can use the command-line to
 
 Optionally, install [Helm](https://helm.sh/) and [Skaffold](https://skaffold.dev) to deploy your applications. Download the versions for macOS and copy them to the _~/.local/bin/_ directory. Minikube itself does not use or require these tools.
 
-## Creating a Cluster on Minikube
+### Creating a Cluster on Minikube
 
 Minikube downloads images and sets up a cluster the first time that you run the _minikube start_ command. Configure Minikube before you start the cluster.
 

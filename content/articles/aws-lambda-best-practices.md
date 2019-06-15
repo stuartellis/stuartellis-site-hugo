@@ -14,14 +14,14 @@ A colllection of best practices for [AWS Lambda](https://aws.amazon.com/lambda/)
 
 <!--more-->
 
-## Logging
+### Logging
 
 - Format all logs in json. This allows you to use the json path filtering option on CW.
 - Add function version & tag to the log lines. CW doesn't allow you to filter based on version.
 - Don't expect CW log querying to work all the time.
 - Output runtime stats to CW metrics.
 
-## Resources
+### Resources
 
 ### Tools
 

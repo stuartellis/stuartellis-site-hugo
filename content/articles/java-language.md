@@ -52,11 +52,11 @@ Modern Java applications usually use dependency injection. For this reason, avoi
 
 Fields can be marked as _transient_ if they should not included when the object is serialized.
 
-## Application Entry Point
+### Application Entry Point
 
 Every application must have a _main()_ method as an entry point. A _main()_ method must be public.
 
-## The Keyword "Final"
+### The Keyword "Final"
 
 Variables that are declared as _final_ can only have a value assigned once within the scope that they belong to, and are not accessible outside of that scope. If the scope is a loop, then the final variable can be assigned a value once per iteration.
 
@@ -66,7 +66,7 @@ A _final_ class cannot be extended. A method that has been marked as _final_ can
 
 By convention, the name of a final variable should be in uppercase.
 
-## Constructors
+### Constructors
 
 A _constructor_ is a method in the class that has the same name as the class itself. Constructors must have no return value.
 
@@ -76,7 +76,7 @@ Static constructors run only once, when a class is first loaded.
 
 If a class contains no constructor declarations, then a default constructor is implicitly declared.
 
-## Packages
+### Packages
 
 A package is a namespace for classes. Packages are heirarchical, with a path of elements separated by the period (full-stop) character. The full name of a class includes the package that it belongs to.
 
@@ -84,13 +84,13 @@ Always specify a package for your classes. If you do not specify a package, the 
 
 If a package is marked as _sealed_, then all of the classes must be in the same JAR file.
 
-## Modules
+### Modules
 
 Modules encapsulate sets of packages. Packages in a module are only available to code outside of the module if the definition of the module specifies that they should be exposed.
 
 The Java run-time in JDK 9 and above can use modules instead of a classpath.
 
-## Exceptions
+### Exceptions
 
 The exceptions that a method can throw are part of the public API.
 
@@ -111,7 +111,7 @@ Use _try-with-resources_ for things like I/O.
 
 You can have a _finally_ statement without an _except_ statement.
 
-## JavaBeans
+### JavaBeans
 
 JavaBeans are classes that encapsulate many objects into a single object (the bean). To be a valid bean, the class must be:
 

@@ -35,7 +35,7 @@ AWS limit your account to just 1 workspace, until you request a larger limit.
 
 # Networking and Directories #
 
-## The VPC ##
+### The VPC ###
 
 A directory requires a VPC with at least 2 subnets. You can have multiple directories on the same VPC.
 
@@ -43,7 +43,7 @@ Each workspace is tied to one user account in one directory. A workspace will ex
 
 Remember that you cannot expand a VPC. If you destroy a VPC you will lose all of the directories,  workspaces and images.
 
-## Directories ##
+### Directories ###
 
 For many scenarios, you need to use the full *AWS Directory Service for Active
 Directory*. The Simple AD does not support features such as Group Policy and trust relationships between Active Directory domains.
@@ -74,7 +74,7 @@ At the time of writing, you cannot create an image from a workspace that has enc
 * [Administration guide for AWS WorkSpaces](http://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces.html)
 * [Official list of resources for AWS WorkSpaces](https://aws.amazon.com/workspaces/resources/)
 
-## Videos ##
+### Videos ###
 
 * [Move your desktops to the cloud with Amazon WorkSpaces](https://youtu.be/r2Bh1hc-fak?list=PLufobnmLAUEygUaDDci7JT2JkGX7slDPA)
 * [Best Practices from the Trenches: Deploy Amazon WorkSpaces Like a Pro](https://www.youtube.com/watch?v=9Q-ahnw2Lsc)

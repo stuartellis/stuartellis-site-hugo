@@ -29,17 +29,17 @@ There are currently other implementations of the .NET APIs and programming
 languages. The .NET Framework supplied with most editions of Windows is not Open Source, although the [code
 is available](http://referencesource.microsoft.com/) for reference purposes.
 
-## Programming Languages ##
+### Programming Languages ###
 
 The .NET platforms support multiple programming languages. In practice, the [C# language](https://docs.microsoft.com/en-gb/dotnet/csharp/) is the standard for .NET development.
 
-## Releases ##
+### Releases ###
 
 Microsoft support [two tracks of .NET Core releases](https://docs.microsoft.com/en-gb/dotnet/core/versions/lts-current). Long-Term Support (LTS) versions of .NET Core are supported for three years, and Current versions are supported for one year.
 
 Install .NET Core releases on systems that need to run .NET applications, and the [.NET Core SDK](https://docs.microsoft.com/en-us/dotnet/core/sdk) on developer systems. The .NET Core SDK includes .NET Core and the tools for building .NET Core applications.
 
-## Deployment ##
+### Deployment ###
 
 There are [two types of build](https://docs.microsoft.com/en-gb/dotnet/core/deploying) for .NET Core applications. By default, .NET Core applications compile into Framework-Dependent Deployments (FDD), which means that the application itself uses platform-independent code, but relies on there being a copy of .NET Core installed on the host system. If you choose to build a Self-Contained Deployment (SCD), then the result is an executable application that includes .NET Core. Each SCD must be built for specific operating systems.
 
@@ -115,7 +115,7 @@ To run an application:
 
 If the application is an ASP.NET Web application, the *run* command starts a Web server that hosts the application on port 5000.
 
-## Environments ##
+### Environments ###
 
 ASP.NET Core applications have several different modes, known as [environments](https://docs.microsoft.com/en-gb/aspnet/core/fundamentals/environments). By default, Web applications run in Production mode. To specify a different
 environment, set a shell environment variable with the name *ASPNETCORE_ENVIRONMENT*:

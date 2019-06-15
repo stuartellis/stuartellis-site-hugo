@@ -35,7 +35,7 @@ To use restic you only need these things:
 
 # Setting Up restic
 
-## Creating a Remote Repository on S3
+### Creating a Remote Repository on S3
 
 The built-in support for AWS S3 enables restic to use an S3 bucket to store a repository. Multiple systems can back up to the same repository, but for security, you should use separate buckets for different sets of computers.
 
@@ -43,7 +43,7 @@ Create the S3 bucket first, before you setup restic. We need to do this, because
 
 > Multiple systems can back up to the same repository, but for security, you should use separate buckets for different sets of computers.
 
-## Installing restic
+### Installing restic
 
 You can install restic with the package manager of your Linux distribution, or Homebrew on macOS. To ensure that you have the latest version of restic, you should download it directly from GitHub instead.
 
@@ -51,7 +51,7 @@ The simplest ways to orchestrate backups with restic are to write a shell script
 
 Alternatively, use this [Ansible role for restic](https://galaxy.ansible.com/paulfantom/restic), which can install restic for system-wide use, and set up scheduled backups.
 
-## Manually Installing restic Into A Home Directory
+### Manually Installing restic Into A Home Directory
 
 Download the file for restic from GitHub, and then set permissions on it:
 
@@ -60,7 +60,7 @@ Download the file for restic from GitHub, and then set permissions on it:
     chown -R $USER:$USER $HOME/.restic/bin
     chmod -R 750 $HOME/.restic/bin
 
-## Manually Installing restic for System-Level Use
+### Manually Installing restic for System-Level Use
 
 Download the file for restic from GitHub. Once the file is downloaded, set the permissions to limit who can use it, and then give it the capabilities to access the whole system:
 
@@ -73,7 +73,7 @@ Download the file for restic from GitHub. Once the file is downloaded, set the p
 
 All of these commands apart from the first require administrative privileges.
 
-## Environment Variables for restic
+### Environment Variables for restic
 
 Set environment variables in the _.profile_ for your account, or in the script.
 

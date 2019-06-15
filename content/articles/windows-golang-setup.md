@@ -85,7 +85,7 @@ To install Git using Scoop, enter this command in a PowerShell window:
 If you do not use Scoop, go to the [Git Web site](http://www.git-scm.com/) and follow
 the link for _Downloads_ to find a Windows installer.
 
-## Configuring Git
+### Configuring Git
 
 Once you have installed Git on a system, set your details. These are automatically
 applied to every commit that you make. This requires two commands:
@@ -96,7 +96,7 @@ applied to every commit that you make. This requires two commands:
 The _global_ option means that the setting will apply to every repository that you work
 with in the current user account.
 
-## Creating SSH Keys
+### Creating SSH Keys
 
 You will frequently use SSH to access Git repositories or remote UNIX systems. The Git
 package includes the standard OpenSSH suite of tools.
@@ -144,7 +144,7 @@ Use PostgreSQL for Web applications. The default configuration of PostgreSQL onl
 small amount of memory and CPU, so you can install it even on computers with limited
 resources.
 
-## Installing PostgreSQL
+### Installing PostgreSQL
 
 To install PostgreSQL using Scoop, enter this command in a PowerShell window:
 

@@ -24,7 +24,7 @@ To install Neovim on Fedora Linux, run this command:
 
     sudo dnf install neovim
 
-## The EDITOR Environment Variable
+### The EDITOR Environment Variable
 
 Remember to set the EDITOR environment
 variable in your _~/.bash_profile_ file, so that this editor is
@@ -35,7 +35,7 @@ To make Neovim your default editor, use this line:
 
     export EDITOR="nvim"
 
-## Creating A Configuration File
+### Creating A Configuration File
 
 Once you have installed Neovim, create a file called _~/.config/nvim/init.vim_. This is your configuration file for Neovim.
 

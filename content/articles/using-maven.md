@@ -14,13 +14,13 @@ Notes on using the [Maven](https://maven.apache.org/) tool for Java projects.
 
 <!--more-->
 
-# Concepts
+## Concepts
 
 Maven uses a _Project Object Model_ (POM) to describe the project that it manages. This is stored as an XML file in the root directory of the project. The POM file will have the name _pom.xml_.
 
 Maven supports project templates, known as _archetypes_. This means that you can create a POM file for your project from an existing template.
 
-## Phases, Lifecycles and Goals
+### Phases, Lifecycles and Goals
 
 A _phase_ is a step in a _lifecycle_, which is an ordered sequence of phases. If you specify a phase with the _mvn_ command, Maven will execute every phase in the sequence up to and including the one defined.
 
@@ -42,11 +42,11 @@ There are two other standard Maven lifecycles. These are:
 
 _Goals_ are tasks or targets. Each goal is associated with one or more phases of a lifecycle. Maven _plugins_ are collections of goals.
 
-## Profiles
+### Profiles
 
 A build _profile_ is a set of configuration values, which can be used to set or override default values.
 
-## Repositories
+### Repositories
 
 Maven downloads dependencies from the _central repository_, and from your _remote repository_. The central repository is the Maven public repository. Use the [Maven Package Search](https://search.maven.org/) page to see what is available. Downloads are cached in a _local repository_ directory. This means that Maven looks for dependencies in the local repository first, then the central repository, and then the remote repository.
 
@@ -54,11 +54,11 @@ You may also specify _external dependencies_ in the POM. These are dependencies 
 
 _SNAPSHOT_ is a special version that indicates a current development copy. Maven checks for a new SNAPSHOT version in a remote repository for every build.
 
-## Documentation Generation
+### Documentation Generation
 
 Maven includes [Doxia](https://maven.apache.org/doxia/index.html), a framework for generating documentation from a set of plain-text files. It supports various formats, including Markdown. Doxia is mainly for maintaining project Websites, rather than API documentation from JavaDoc annotations in the source code.
 
-# Setup
+## Setup
 
 Maven is a Java tool, so the same package will run on any operating system that has a JDK installed.
 
@@ -67,7 +67,7 @@ Maven is a Java tool, so the same package will run on any operating system that 
 3. Copy the Maven directory to /usr/local/lib
 4. Add /usr/local/lib/<MAVEN_DIRECTORY> to your PATH environment variable
 
-# Project Structure
+## Project Structure
 
 Maven assumes a specific project structure:
 
@@ -77,7 +77,7 @@ Maven assumes a specific project structure:
 - Compiled byte code: _target/_
 - Distributable JAR: _target/classes/_
 
-# Project Object Model (POM)
+## Project Object Model (POM)
 
 Each POM file must have these properties defined:
 
@@ -102,13 +102,13 @@ To see the effective POM for a project, run this command:
 
 Each POM uses the _Super POM_ that is provided by Maven, unless you declare a different Super POM.
 
-# Maven Plugins
+## Maven Plugins
 
 - [Assembly](https://maven.apache.org/plugins/maven-assembly-plugin/) - Packs multiple outputs into a single compressed archive, such as a JAR, WAR, or ZIP file
 - [FMT](https://github.com/coveo/fmt-maven-plugin) - Reformats Java code to [Google Java Style](https://google.github.io/styleguide/javaguide.html)
 - [Jib](https://github.com/GoogleContainerTools/jib) - Container builder
 
-# Online Resources
+## Online Resources
 
 - [Maven tutorial for beginners](https://www.tutorialspoint.com/maven), by Tutorials Point
 - [Official Maven project documentation](https://maven.apache.org/)
