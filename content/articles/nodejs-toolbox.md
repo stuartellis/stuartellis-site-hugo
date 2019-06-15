@@ -1,7 +1,7 @@
 +++
 Title = "Useful Node.js Tools and Libraries"
 Slug = "nodejs-toolbox"
-Date = "2019-04-21T11:36:00+01:00"
+Date = "2019-06-15T12:08:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["javascript", "node.js"]
@@ -89,6 +89,7 @@ You should probably learn these as you need them.
 - [Husky](https://github.com/typicode/husky) - Convenient Git hooks
 - [Nodemon](https://nodemon.io/) - Instant code reloading during development
 - [PM2](http://pm2.keymetrics.io/) - Process manager for Node.js applications
+- [Swagger](https://swagger.io/tools/open-source/) - [OpenAPI](https://www.openapis.org/) code generation for clients and servers
 - [Webpack](https://webpack.js.org/) - Web assets compiler
 
 # Popular Libraries

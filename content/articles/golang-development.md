@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2019-03-03T17:15:00+01:00"
+Date = "2019-06-15T12:07:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -169,6 +169,7 @@ such as [Arduino](https://www.arduino.cc/) boards.
 - [go-cmp](https://github.com/google/go-cmp) - Package for comparing Go values in tests
 - [gonum](https://www.gonum.org/) - Packages for numeric and scientific work
 - [logrus](https://github.com/Sirupsen/logrus) - Structured logging for Go applications
+- [OpenAPI Toolkit](https://github.com/go-openapi) - Go libraries for [OpenAPI](https://www.openapis.org/)
 - [Plush](https://github.com/gobuffalo/plush) - Powerful templating system
 - [Viper](https://github.com/spf13/viper) - Configuration for Go applications
 

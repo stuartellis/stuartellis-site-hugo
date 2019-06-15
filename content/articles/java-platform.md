@@ -1,7 +1,7 @@
 +++
 Title = "An Overview of the Java Platform"
 Slug = "java-platform"
-Date = "2019-06-14T20:18:00+01:00"
+Date = "2019-06-15T12:07:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -143,6 +143,7 @@ The OpenJDK includes [JMH](https://openjdk.java.net/projects/code-tools/jmh/), t
 - [Gradle](https://gradle.org/) - Powerful build system
 - [Jib](https://github.com/GoogleContainerTools/jib) - Container builder
 - [JBake](https://jbake.org/) - Static site generator
+- [Swagger](https://swagger.io/tools/open-source/) - [OpenAPI](https://www.openapis.org/) code generation for clients and servers
 
 ### Testing Tools
 
@@ -198,7 +199,7 @@ The OpenJDK includes [JMH](https://openjdk.java.net/projects/code-tools/jmh/), t
 
 ## Online Resources
 
-### Package Index
+### Finding Packages
 
 - [Maven Package Search](https://search.maven.org/)
 - [Awesome Java](https://github.com/akullpp/awesome-java) - A curated list of frameworks, libraries and software for Java
