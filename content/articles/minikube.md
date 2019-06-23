@@ -60,7 +60,7 @@ Always specify resource limits before you run the _start_ command:
     minikube config set memory 4096
     minikube config set cpus 2
 
-> You must set a limit of 2 CPUs or higher for the Kubernete cluster to run.
+> You must set a limit of 2 CPUs or higher for the Kubernetes cluster to run.
 
 To pin the Kubernetes version that Minikube uses, add the _--kubernetes-version_ option:
 
