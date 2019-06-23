@@ -1,7 +1,7 @@
 +++
 Title = "Minikube - Kubernetes on a Single Computer"
 Slug = "minikube"
-Date = "2019-05-25T09:08:00+01:00"
+Date = "2019-06-23T08:24:00+01:00"
 Description = "Using Minikube for developing with Kubernetes"
 Categories = ["devops"]
 Tags = ["ansible", "devops", "kubernetes"]
@@ -36,7 +36,7 @@ Finally, Minikube creates a kubectl context called _minikube_. This means that t
 
 # Manually Setting up Minikube on macOS
 
-If possible, use Homebrew to manage the software on macOS 
+If possible, use Homebrew to manage the software on macOS
 
 1. Create a _~/.local/bin/_ directory
 2. Add _~/.local/bin/_ to your PATH
@@ -60,9 +60,11 @@ Always specify resource limits before you run the _start_ command:
     minikube config set memory 4096
     minikube config set cpus 2
 
+> You must set a limit of 2 CPUs or higher for the Kubernete cluster to run.
+
 To pin the Kubernetes version that Minikube uses, add the _--kubernetes-version_ option:
 
-    minikube start --kubernetes-version=1.14.2
+    minikube start --kubernetes-version=v1.14.3
 
 Use the _--extra-config_ option to pass other settings to Kubernetes components:
 
