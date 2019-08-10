@@ -1,7 +1,7 @@
 +++
 Title = "Modern Python Practices"
 Slug = "python-modern-practices"
-Date = "2019-04-27T11:19:00+01:00"
+Date = "2019-08-10T10:49:00+01:00"
 Description = ""
 Categories = ["programming", "python"]
 Tags = ["python"]
@@ -27,9 +27,9 @@ There are several tools that help you to manage your Python projects, and use vi
 
 ### Format Your Code
 
-[PEP 8](https://www.python.org/dev/peps/pep-0008/) provides the accepted style guide for Python code. Use a formatting tool with a plugin to your editor, so that your code is automatically formatted to meet the guidelines in PEP 8.
+Use a formatting tool with a plugin to your editor, so that your code is automatically formatted to a consistent style.
 
-> [Black](https://black.readthedocs.io/en/stable/) is becoming the standard code formatting tool for Python projects. Use Black for new projects.
+[Black](https://black.readthedocs.io/en/stable/) has been adopted by the Python Software Foundation, to become their code formatting tool. It formats Python code to a style that follows the [PEP 8](https://www.python.org/dev/peps/pep-0008/) standard. Use Black for new projects.
 
 # Language Syntax
 
