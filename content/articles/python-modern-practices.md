@@ -1,7 +1,7 @@
 +++
 Title = "Modern Python Practices"
 Slug = "python-modern-practices"
-Date = "2019-08-10T10:49:00+01:00"
+Date = "2019-08-28T07:23:00+01:00"
 Description = ""
 Categories = ["programming", "python"]
 Tags = ["python"]
@@ -29,7 +29,7 @@ There are several tools that help you to manage your Python projects, and use vi
 
 Use a formatting tool with a plugin to your editor, so that your code is automatically formatted to a consistent style.
 
-[Black](https://black.readthedocs.io/en/stable/) has been adopted by the Python Software Foundation, to become their code formatting tool. It formats Python code to a style that follows the [PEP 8](https://www.python.org/dev/peps/pep-0008/) standard. Use Black for new projects.
+[Black](https://black.readthedocs.io/en/stable/) is being adopted by the Python Software Foundation and other projects. It formats Python code to a style that follows the [PEP 8](https://www.python.org/dev/peps/pep-0008/) standard, but allows longer line lengths. Use Black for new projects.
 
 # Language Syntax
 
@@ -143,7 +143,7 @@ The [subprocess](https://docs.python.org/3/library/subprocess.html) module provi
 
 ### Use Requests for HTTP Clients
 
-Use the [requests](http://docs.python-requests.org/en/master/) package for HTTP, rather than the _urllib.request_ in the standard library.
+Use the [requests](https://2.python-requests.org/en/master/) package for HTTP, rather than the _urllib.request_ in the standard library.
 
 ### Test with pytest
 
