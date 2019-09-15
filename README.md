@@ -1,7 +1,5 @@
 # Source for www.stuartellis.name
 
-This site is built with [Hugo](https://gohugo.io/), and deployed to AWS with [s3deploy](https://github.com/bep/s3deploy).
+This is the personal Website of Stuart Ellis.
 
-To see options, run _make_:
-
-    make help
+It is built with [Hugo](https://gohugo.io/). 
