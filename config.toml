@@ -43,7 +43,6 @@ tags_counter = false # Enable counter for each tag in "Tags" widget (disabled by
 # Enable parts of social widget
 linkedin = "stuart-ellis"
 github = "stuartellis"
-gitlab = "stuart-ellis"
 email = "stuart@stuartellis.name"
 
 [deployment]
