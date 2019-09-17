@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.7
+    commands: ./do.sh
+  build:
+    commands: hugo
+artifacts:
+  files:
+    - 'public/**/*'
+  name: www-stuartellis-name-$(date +%Y-%m-%d)
