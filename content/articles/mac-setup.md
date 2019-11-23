@@ -1,7 +1,7 @@
 +++
 Title = "How to Set up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2019-06-08T10:31:00+01:00"
+Date = "2019-11-23T16:16:00+00:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["devops", "macos", "golang", "java", "javascript", "python", "ruby"]
@@ -267,13 +267,13 @@ To create an SSH key, run the _ssh-keygen_ command in a terminal window. For exa
 Homebrew provides separate packages for each version of [Node.js](https://nodejs.org).
 To ensure that you are using the version of Node.js that you expect, specify the version
 when you install it. For example, enter this command in a Terminal window to install the
-Node.js 10, the current LTS release:
+Node.js 12, the current LTS release:
 
-    brew install node@10
+    brew install node@12
 
 Add the _bin/_ directory for this Node.js installation to your PATH:
 
-    /usr/local/opt/node@10/bin
+    /usr/local/opt/node@12/bin
 
 If you need [yarn](https://yarnpkg.com/en/), enter this command in a Terminal window to
 install it:
@@ -288,12 +288,11 @@ Use Homebrew to install [Go](https://golang.org/):
 
 This provides the standard command-line tools for Go.
 
-The current version of Go includes experimental support for dependency management with modules. Use modules for new projects. Some existing projects use [dep](https://golang.github.io/dep/), or an older tool.
+The current version of Go includes support for dependency management with [modules](https://blog.golang.org/using-go-modules). Use modules for new projects. Some existing projects still use [dep](https://golang.github.io/dep/), or an older tool.
 
 ### Setting a GOPATH
 
-By default, current versions of Go use the GOPATH. To ensure that third-party tools and Terminal
-auto-completion work, you should explicitly set two environment variables.
+Current versions of Go do not require a GOPATH environment variable, but you should set it to ensure that third-party tools and Terminal auto-completion work correctly.
 
 Set a GOPATH environment variable in your _~/.bashrc_ file:
 

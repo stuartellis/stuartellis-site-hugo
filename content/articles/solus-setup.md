@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Solus for Software Development"
 Slug = "solus-setup"
-Date = "2018-08-14T18:44:00+01:00"
+Date = "2019-11-23T16:10:00+00:00"
 Description = "Setting up a Solus installation for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["devops", "linux", "solus", "golang", "javascript", "python"]
@@ -166,9 +166,7 @@ Use _eopkg_ to install [Go](https://golang.org/):
 
     sudo eopkg install golang
 
-By default, current versions of Go automatically create and use a _go_ directory in your
-home directory as the GOPATH. To ensure that third-party tools and terminal
-auto-completion work, you should still explicitly set the environment variables.
+Current versions of Go do not require a GOPATH environment variable, but you should set it to ensure that third-party tools and Terminal auto-completion work correctly.
 
 Set a GOPATH environment variable in your _~/.bashrc_ file:
 
