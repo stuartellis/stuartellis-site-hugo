@@ -1,7 +1,7 @@
 +++
 Title = "How to Set up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2019-11-23T16:16:00+00:00"
+Date = "2020-03-28T18:02:00+00:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["devops", "macos", "golang", "java", "javascript", "python", "ruby"]
@@ -14,7 +14,7 @@ A guide to setting up an Apple Mac for DevOps and software development. This is 
 
 <!--more-->
 
-# Do This First!
+## Do This First!
 
 Log in once, run Software Update, and ensure that the operating system is at the latest
 point release. After all of the updates have been applied, restart the computer.
@@ -32,7 +32,7 @@ untouched is that it ensures that you always have a working account to login wit
 You should also find an external hard drive. Begin using Time Machine as soon as
 possible, as it provides the most easy method for backing up your system.
 
-# Configuring a User Account
+## Configuring a User Account
 
 ### Configuring The Trackpad
 
@@ -62,7 +62,7 @@ Second, go to _Safari \> Preferences \> Search_. Decide which search engine that
 
 Then, check the plug-in settings. Go to _Safari \> Preferences \> Security \> Plug-in Settings..._ and review the plug-ins and settings.
 
-# Configuring Security
+## Configuring Security
 
 Apple provide quite secure operating systems, but unfortunately convenience has won out
 over security in a few places. These can easily be corrected by changing a few settings.
@@ -119,7 +119,7 @@ list any folders that contain ISO disk images, virtual machines, or database fil
 as Entourage). If the external hard drive is short of space, exclude the _System_
 folder.
 
-# Setting Up for Development
+## Setting Up for Development
 
 The first step is to install a compiler. The easiest way to install one is with the
 _Xcode Command Line Tools_ package.
@@ -260,7 +260,7 @@ To create an SSH key, run the _ssh-keygen_ command in a terminal window. For exa
 > Use 4096-bit RSA keys for all systems. The older DSA standard only supports 1024-bit
 > keys, which are now too small to be considered secure.
 
-# Programming Languages
+## Programming Languages
 
 ### JavaScript Development: Node.js
 
@@ -306,7 +306,7 @@ Close the Terminal and open it again for the changes to take effect.
 
 ### Java Development: AdoptOpenJDK
 
-### Which Version of Java?
+#### Which Version of Java?
 
 Many vendors provide a JDK. To avoid potential licensing and support issues, use the JDK that is provided by the [AdoptOpenJDK](https://adoptopenjdk.net/) project. The versions of Java on the OpenJDK Website are for testers, and the Oracle JDK is a proprietary product that requires license fees.
 
@@ -316,7 +316,7 @@ Once you have installed a JDK, get the [Apache Maven](https://maven.apache.org) 
 
 Use [jEnv](https://www.jenv.be/) if you need to run multiple JDKs, such as different versions of the same JDK.
 
-### Setting up Java with Homebrew
+#### Setting up Java with Homebrew
 
 Run these commands in a terminal window:
 
@@ -329,7 +329,7 @@ Run this command in a terminal window to install Maven:
 
     brew install maven
 
-### Setting up jEnv
+#### Setting up jEnv
 
 Run this command in a terminal window to install [jEnv](https://www.jenv.be/):
 
@@ -359,7 +359,7 @@ To see a list of the available commands, type _jenv_ in a terminal window:
 
     jenv
 
-### Manual Set up of AdoptOpenJDK
+#### Manual Set up of AdoptOpenJDK
 
 To manually install a copy of the JDK:
 
@@ -443,7 +443,7 @@ _.gemrc_ and put this line in it:
 
     gem: --no-ri --no-rdoc
 
-# Kubernetes: Minikube
+## Kubernetes: Minikube
 
 [Minikube](https://kubernetes.io/docs/setup/minikube/) sets up and manages Kubernetes on a single system, so that you can develop and test without needing a set of servers.
 
@@ -466,7 +466,7 @@ To install [Skaffold](https://skaffold.dev/) with Homebrew, run this command in 
 
 [This article explains Minikube in more detail](https://www.stuartellis.name/articles/minikube).
 
-# SQL Databases
+## SQL Databases
 
 Consider using containers to run the databases that you need. If you prefer to install services
 directly on to your workstation, Homebrew provides packages for PostgreSQL, MariaDB and MySQL.
@@ -553,7 +553,7 @@ various types of invalid data to be entered.
 - [VirtualBox](http://www.virtualbox.org/) virtual machine management: _brew cask install virtualbox_
 - [Docker](https://store.docker.com/editions/community/docker-ce-desktop-mac) container management: _brew cask install docker_
 
-# Online Resources
+## Online Resources
 
 Apple offer overviews and task-orientated help on their
 [support Web site for new macOS users](https://support.apple.com/explore/new-to-mac).
