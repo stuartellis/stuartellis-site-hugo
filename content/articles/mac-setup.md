@@ -1,7 +1,7 @@
 +++
 Title = "How to Set up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2020-03-28T18:02:00+00:00"
+Date = "2020-12-23T11:15:00+00:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["devops", "macos", "golang", "java", "javascript", "python", "ruby"]
@@ -10,7 +10,7 @@ Toc = true
 
 +++
 
-A guide to setting up an Apple Mac for DevOps and software development. This is current for macOS 10.14 (Mojave).
+A guide to setting up an Apple Mac for DevOps and software development. This is current for macOS 10.14 (Catalina).
 
 <!--more-->
 
@@ -142,7 +142,7 @@ to quickly install and update the tools and libraries that you need. Follow the
 instructions on the site.
 
 You should also amend your PATH, so that the versions of tools that are installed with
-Homebrew take precedence over others. To do this, edit the file _.bashrc_ in
+Homebrew take precedence over others. To do this, edit the file _.zshrc_ in
 your home directory to include this line:
 
     export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
@@ -160,6 +160,20 @@ To update the index of available packages, run this command in a terminal window
 Once you have set up Homebrew, use the _brew install_ command to add command-line software to your Mac, and _brew cask install_ to add graphical software. For example, this command installs the Slack app:
 
     brew cask install slack
+
+### Enabling Auto Completion of Commands
+
+Many command-line tools provide automatic completion of commands. These include Git, curl and the AWS command-line tool. Homebrew installs the files for each command-line tool that provides completion, but it does not enable automatic completion in your shell.
+
+To enable auto completion, edit the file _.zshrc_ in your home directory to include this line:
+
+```bash
+autoload bashcompinit && bashcompinit
+```
+
+Close all of the Terminal windows. Every new Terminal window will support autocompletion.
+
+To use auto completion, type the name of the command, and press the Tab key on your keyboard. You will see a list of possible completions. Press the Tab key to cycle through the completions, and press the Enter key to accept a completion.
 
 ### Installing the Git Version Control System
 
@@ -214,7 +228,7 @@ If you would like a modern Vim editor with a good default configuration, [set up
 ### Setting The EDITOR Environment Variable
 
 Whichever text editor you choose, remember to set the EDITOR environment variable in
-your _~/.bashrc_ file, so that this editor is automatically invoked by command-line
+your _~/.zshrc_ file, so that this editor is automatically invoked by command-line
 tools like your version control system. For example, put this line in your profile to
 make Neovim (_nvim_) the favored text editor:
 
@@ -294,7 +308,7 @@ The current version of Go includes support for dependency management with [modul
 
 Current versions of Go do not require a GOPATH environment variable, but you should set it to ensure that third-party tools and Terminal auto-completion work correctly.
 
-Set a GOPATH environment variable in your _~/.bashrc_ file:
+Set a GOPATH environment variable in your _~/.zshrc_ file:
 
     export GOPATH="$HOME/go"
 
@@ -339,7 +353,7 @@ Next, add this to your PATH:
 
     $HOME/.jenv/bin
 
-Add this to your _~/.bashrc_ file:
+Add this to your _~/.zshrc_ file:
 
     eval "$(jenv init -)"
 
@@ -366,7 +380,7 @@ To manually install a copy of the JDK:
 1. Download the version of the JDK that you need from AdoptOpenJDK
 2. Unzip the download
 3. Copy the JDK directory to _/usr/local/lib_
-4. Edit your _~/.bashrc_ file to set environment variables. For example, to use jdk-11.0.3+7 as the Java version:
+4. Edit your _~/.zshrc_ file to set environment variables. For example, to use jdk-11.0.3+7 as the Java version:
 
 ```bash
 JAVA_HOME=/usr/local/lib/jdk-11.0.3+7/Contents/Home
@@ -386,7 +400,7 @@ Maven is written in Java, which means that the project provides one package, whi
 
 ### Python Development: pipenv
 
-Unfortunately, macOS includes a copy of Python 2, so you will need to install Python 3 yourself.
+Current versions of macOS include a copy of Python 3, but this will not be the latest version of Python. Use Homebrew to install the latest release of Python.
 
 To maintain current and clean Python environments, you should also use [pipenv](https://docs.pipenv.org/). This builds on two features of Python: the [virtual environments](https://docs.python.org/3/tutorial/venv.html) and the [pip](https://pip.pypa.io/en/stable/) utility.
 
