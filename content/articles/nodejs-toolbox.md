@@ -1,9 +1,9 @@
 +++
 Title = "Useful Node.js Tools and Libraries"
 Slug = "nodejs-toolbox"
-Date = "2019-06-15T12:08:00+01:00"
+Date = "2020-12-23T11:51:00+00:00"
 Description = ""
-Categories = ["programming"]
+Categories = ["javascript", "programming"]
 Tags = ["javascript", "node.js"]
 Type = "article"
 Toc = true
@@ -20,7 +20,7 @@ Notes on useful tools and libraries for [Node.js](https://nodejs.org).
 
 [Fastify](https://www.fastify.io/) is an alternative to Express and hapi that can use Express plugins. Consider using Fastify for smaller Websites and services.
 
-Cloud services such as [Zeit Now](https://zeit.co/now), [Google App Engine](https://cloud.google.com/appengine/), [Heroku](https://www.heroku.com/) and [Red Hat OpenShift](https://www.openshift.com/) provide low-maintenance hosting for Node.js Web applications.
+Cloud services such as [Vercel](https://vercel.com), [Google App Engine](https://cloud.google.com/appengine/), [Heroku](https://www.heroku.com/) and [Red Hat OpenShift](https://www.openshift.com/) provide low-maintenance hosting for Node.js Web applications.
 
 To produce applications for _function as a service_ infrastructure, such as
 [AWS Lambda](https://aws.amazon.com/lambda/), use the
