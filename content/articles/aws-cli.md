@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the AWS CLI"
 Slug = "aws-cli"
-Date = "2020-12-26T12:21:00+00:00"
+Date = "2020-12-26T12:43:00+00:00"
 Description = "Using the AWS CLI tool"
 Categories = ["automation", "devops"]
 Tags = ["automation", "devops"]
@@ -62,7 +62,7 @@ Use *yaml-stream* as the default output format. This output format shows results
 
 > The *yaml-stream* output format was introduced in version 2 of the AWS CLI.
 
-The output format is applied to the final result. This means that you can use the *--query* option and format the result as any supported type of output.
+The output format is applied to the final result. This means that you can use the *query* option and format the result as any supported type of output.
 
 ## Command Syntax
 
@@ -106,7 +106,7 @@ AWS CLI v2 includes interactive wizards for common tasks. For example:
 
 ### Auto Prompt
 
-The CLI also provides the *--cli-auto-prompt* option. This lists the required and optional parameters, and fills them out with the values that you specify.
+The CLI also provides the *cli-auto-prompt* option. This lists the required and optional parameters, and fills them out with the values that you specify.
 
 ## Queries
 
@@ -120,7 +120,7 @@ The *query* option filters the data in the response, using the [JMESPath](https:
 
 > If you specify *json* or *yaml* formats, the AWS CLI applies the query after the complete document has been returned.
 
-All of the AWS CLI commands support the *--query* option. This uses the JMSPath syntax.
+All of the AWS CLI commands support the *query* option. This uses the JMSPath syntax.
 
 ### Example Queries
 
@@ -140,9 +140,9 @@ To understand the JMESPath syntax, use [the official tutorial](https://jmespath.
 
 > Numbers must be enclosed in backticks.
 
-It is difficult to construct queries without knowing the structure. To see the structure of the returned documents without running a large query, use the *--max-items* option to generate a document with a small number of items:
+It is difficult to construct queries without knowing the structure. To see the structure of the returned documents without running a large query, use the *max-items* option to generate a document with a small number of items:
 
-    aws s3api list-objects --bucket www.mysite.example --output json --query "sort_by(Contents[?contains(@.Key, 'ansible')], &Key)" --max-items 1
+    aws s3api list-objects-v2 --bucket www.mysite.example --output json --query "sort_by(Contents[?contains(@.Key, 'ansible')], &Key)" --max-items 1
 
 Queries can include functions, such as *sum* and *sort*.
 
@@ -154,11 +154,11 @@ You can use it to construct JSON results:
 
 ## CLI Skeletons
 
-Most of the commands support the ability to accept all of the parameter input from a file using the *--cli-input-json* and *--cli-input-yaml* parameters.
+Most of the commands support the ability to accept all of the parameter input from a file using the *cli-input-json* and *cli-input-yaml* parameters.
 
-Those same commands provide the *--generate-cli-skeleton* parameter, to generate a file in either JSON or YAML format with all of the parameters that you can edit and fill in. Then you can run the command with the relevant *--cli-input-json* or *--cli-input-yaml* parameter and point to the filled-in file. 
+Those same commands provide the *generate-cli-skeleton* parameter, to generate a file in either JSON or YAML format with all of the parameters that you can edit and fill in. Then you can run the command with the relevant *cli-input-json* or *cli-input-yaml* parameter and point to the filled-in file. 
 
-Run the command with the completed parameters by passing the completed template file to either the *--cli-input-json* or *--cli-input-yaml* parameter by using the *file://* prefix.
+Run the command with the completed parameters by passing the completed template file to either the *cli-input-json* or *cli-input-yaml* parameter by using the *file://* prefix.
 
     aws ec2 run-instances --generate-cli-skeleton yaml-input > run-ec2.yaml
 	aws ec2 run-instances --cli-input-yaml file://run-ec2.yaml
