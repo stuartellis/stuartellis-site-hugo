@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the AWS CLI"
 Slug = "aws-cli"
-Date = "2020-12-26T12:43:00+00:00"
+Date = "2021-01-02T10:40:00+00:00"
 Description = "Using the AWS CLI tool"
 Categories = ["automation", "devops"]
 Tags = ["automation", "devops"]
@@ -10,7 +10,7 @@ Toc = true
 
 +++
 
-Notes on using the [command-line tool for AWS](https://aws.amazon.com/cli/).
+Notes on version 2 of the [command-line tool for AWS](https://aws.amazon.com/cli/).
 
 <!--more-->
 
@@ -24,8 +24,8 @@ Use the latest version of the AWS CLI. AWS update the CLI regularly as they add 
 
 You can use the *configure* command to both view and edit the configration of the AWS CLI. It accepts sub-commands:
 
-  aws configure list
-  aws configure get region
+    aws configure list
+	aws configure get region
 
 > Use *get* and *set* to programmatically manage the AWS configuration.
 
@@ -33,15 +33,12 @@ You can use the *configure* command to both view and edit the configration of th
 
 The AWS CLI uses two files:
 
-- ~/.aws/credentials 
-- ~/.aws/config
-
-The *credentials* file:
+The *~/.aws/credentials* file:
 
 - This is supported by all AWS SDKs
 - It only contains credentials
 
-The *config* file:
+The *~/.aws/config* file:
 
 - This is only used by the CLI
 - It can contain credentials, but that is not the default behaviour
@@ -50,7 +47,7 @@ The *config* file:
 
 ## Command Completion
 
-To enable command completion, add this line to your shell profile:
+To enable [command completion](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-prompting.html), add this line to your shell profile:
 
     complete -C aws2_completer aws2
 
@@ -84,7 +81,7 @@ The *yaml-stream* output format displays responses as they are received. Most ou
 
 There are defined [parameter types](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html). Parameter names and their values are separated by spaces on the command line. If a string value contains an embedded space, then you must surround the entire string with quotation marks.
 
-> Use single quotation marks ' ' to enclose the parameters string
+> Use single quotation marks ' ' to enclose the parameters string.
 
 You can use a short-hand syntax for specifying parameters:
 
@@ -100,57 +97,13 @@ If you use single quotation marks, you do not need to escape double quotation ma
 
 ## Interactive Support
 
-AWS CLI v2 includes interactive wizards for common tasks. For example:
+AWS CLI version 2 includes [interactive wizards](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-wizard.html) for common tasks. For example:
 
     aws dynamodb wizard new-table
 
 ### Auto Prompt
 
 The CLI also provides the *cli-auto-prompt* option. This lists the required and optional parameters, and fills them out with the values that you specify.
-
-## Queries
-
-The CLI has three relevant features for queries:
-
-- *query* - Shows the results of a JMESPath query on the returned data
-- *output* - Sets the format of the final output
-- *filter* - Some AWS services support filters, to return limited sets of data
-
-The *query* option filters the data in the response, using the [JMESPath](https://jmespath.org) syntax to describe the filter. The filter is applied on the client-side (the CLI), before the response is sent to the output renderer, rather than on the AWS end.
-
-> If you specify *json* or *yaml* formats, the AWS CLI applies the query after the complete document has been returned.
-
-All of the AWS CLI commands support the *query* option. This uses the JMSPath syntax.
-
-### Example Queries
-
-    aws cloudformation list-stacks --stack-status-filter DELETE_COMPLETE --output json --query "length(StackSummaries[?contains(@.StackName, 'lambda')])"
-
-    aws cloudformation list-stacks --stack-status-filter DELETE_COMPLETE --output table --query "StackSummaries[].{Name: StackName, Deleted: DeletionTime}"
-
-    aws cloudformation list-stacks --stack-status-filter DELETE_COMPLETE --output json --query "StackSummaries[].{Name: StackName, Desc: TemplateDescription} | [0:2]"
-
-    aws cloudformation list-stacks --stack-status-filter CREATE_COMPLETE --output json --query "StackSummaries[?contains(@.StackName, 'web')].{Name: StackName, Created: CreationTime}"
-
-    aws s3api list-objects --bucket example-bucket --output json --query "sort_by(Contents[?contains(@.Key, 'ansible')], &Key)"
-
-> JMESPath uses dot-separated paths. The @ character represents the current element.
-
-To understand the JMESPath syntax, use [the official tutorial](https://jmespath.org/tutorial.html).
-
-> Numbers must be enclosed in backticks.
-
-It is difficult to construct queries without knowing the structure. To see the structure of the returned documents without running a large query, use the *max-items* option to generate a document with a small number of items:
-
-    aws s3api list-objects-v2 --bucket www.mysite.example --output json --query "sort_by(Contents[?contains(@.Key, 'ansible')], &Key)" --max-items 1
-
-Queries can include functions, such as *sum* and *sort*.
-
-     aws s3api list-objects-v2 --bucket example-bucket --query "Contents[].[Key, Size]"
-
-You can use it to construct JSON results:
-
-    aws s3api list-objects-v2 --bucket example-bucket --query "Contents[].{key: Key, size: Size}" --output json
 
 ## CLI Skeletons
 
