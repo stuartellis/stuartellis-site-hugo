@@ -122,13 +122,29 @@ To override values in the input file, specify the names of the parameters as opt
 
 ## Tricks
 
-Use STS to determine your current identity:
+Use STS to determine your current AWS identity:
 
     aws sts get-caller-identity
 
 Use Secrets Manager to generate a random password:
 
     aws secretsmanager get-random-password --password-length 7
+
+Generate a presigned URL to provide temporary access to an S3 object:
+
+    aws s3 presign s3://BUCKET-NAME/FILE-PATH
+
+Quickly create an S3 bucket from the command-line to transfer files:
+
+    aws s3api create-bucket --bucket BUCKET-NAME --create-bucket-configuration LocationConstraint=REGION
+
+    # Copy the files between systems, then:
+    
+    aws s3api delete-bucket --bucket BUCKET-NAME 
+
+Empty an S3 bucket:
+
+    aws s3 rm s3://BUCKET-NAME --recursive
 
 ## Resources
 
