@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the AWS CLI"
 Slug = "aws-cli"
-Date = "2021-01-02T10:40:00+00:00"
+Date = "2021-01-31T15:38:00+00:00"
 Description = "Using the AWS CLI tool"
 Categories = ["automation", "devops"]
 Tags = ["automation", "devops"]
@@ -122,6 +122,8 @@ To override values in the input file, specify the names of the parameters as opt
 
 ## Tricks
 
+### One-Liners
+
 Use STS to determine your current AWS identity:
 
     aws sts get-caller-identity
@@ -130,9 +132,36 @@ Use Secrets Manager to generate a random password:
 
     aws secretsmanager get-random-password --password-length 7
 
+Send a message to an SNS topic:
+
+    aws sns publish --topic-arn TOPIC-ARN --message "Hello World!"
+
+### S3 One-Liners
+
 Generate a presigned URL to provide temporary access to an S3 object:
 
     aws s3 presign s3://BUCKET-NAME/FILE-PATH
+
+Empty an S3 bucket:
+
+    aws s3 rm s3://BUCKET-NAME --recursive
+
+### Parameter Store
+
+Use Parameter Store to share variables between systems:
+
+    aws ssm put-parameter --name "FirstParameter" --type "String" --value "Hello" --overwrite
+    aws ssm put-parameter --name "SecondParameter" --type "String" --value "World" --overwrite
+    aws ssm get-parameters --names "FirstParameter" "SecondParameter" --query "Parameters[].{Name: Name, Value: Value}"
+    aws ssm delete-parameters --names "FirstParameter" "SecondParameter"
+
+Use the *SecureString* type for sensitive information:
+
+    aws ssm put-parameter --name "ThirdParameter" --type "SecureString" --value "Hello" --overwrite
+    aws ssm put-parameter --name "FourthParameter" --type "SecureString" --value "World" --overwrite
+    aws ssm get-parameters --names "ThirdParameter" "FourthParameter" --with-decryption --query "Parameters[].{Name: Name, Value: Value}"
+
+### S3
 
 Quickly create an S3 bucket from the command-line to transfer files:
 
@@ -141,10 +170,6 @@ Quickly create an S3 bucket from the command-line to transfer files:
     # Copy the files between systems, then:
     
     aws s3api delete-bucket --bucket BUCKET-NAME 
-
-Empty an S3 bucket:
-
-    aws s3 rm s3://BUCKET-NAME --recursive
 
 ## Resources
 
