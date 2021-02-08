@@ -16,7 +16,7 @@ Azure DevOps has an extension that provides [a calendar for each Team](https://m
 
 ## Installing The Team Calendar
 
-[Azure DevOps Team Calendar](https://marketplace.visualstudio.com/items?itemName=ms-devlabs.team-calendar&targetId=b2bf9ecf-25cc-486f-82cb-6111d79e2adc&utm_source=vstsproduct&utm_medium=ExtHubManageList)
+Add the [Azure DevOps Team Calendar](https://marketplace.visualstudio.com/items?itemName=ms-devlabs.team-calendar&targetId=b2bf9ecf-25cc-486f-82cb-6111d79e2adc&utm_source=vstsproduct&utm_medium=ExtHubManageList) from the Marketplace to your organization in Azure DevOps.
 
 ## URL Format
 
