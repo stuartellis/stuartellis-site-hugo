@@ -4,7 +4,7 @@ Slug = "dotnet-crossplatform"
 Date = "2017-08-23T12:40:00+01:00"
 Description = ".NET Core and supporting tools"
 Categories = ["programming"]
-Tags = ["C#", ".NET"]
+Tags = [".NET"]
 Type = "article"
 Toc = true
 
