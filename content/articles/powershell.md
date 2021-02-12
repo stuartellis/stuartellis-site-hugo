@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2019-04-03T18:39:00+01:00"
+Date = "2021-02-12T11:29:00+00:00"
 Description = ""
 Categories = ["automation", "devops"]
 Tags = [".NET", "automation", "devops", "powershell", "windows"]
@@ -41,7 +41,9 @@ All of the recent versions of Windows desktop and server operating systems
 include versions of Windows PowerShell and the [Integrated Script
 Environment](https://technet.microsoft.com/en-us/library/dd315244.aspx) (ISE)
 for editing PowerShell scripts. Windows 10 and Windows Server 2016 provide Windows
-PowerShell 5.1. Microsoft now recommend that you use Visual Studio Code for writing PowerShell code, rather than ISE.
+PowerShell 5.1. 
+
+> ISE is no longer developed. Microsoft now recommend that you use Visual Studio Code for writing PowerShell code, rather than ISE.
 
 To install the latest version of PowerShell 5 on older Windows systems, install
 the Windows Management Framework (WMF). WMF is a package of the latest version
@@ -194,6 +196,8 @@ This is actually a shortcut for *ForEach-Object*. You can use *ForEach-Object* i
 Get-Service | Where-Object { $_.Name -ilike '*Web*' } | ForEach-Object { $_.Name + ' - ' + $.Status }
 ~~~
 
+> *ForEach-Object* supports parallel execution of iterations in PowerShell 7 and above.
+
 # Functions #
 
 Functions are named script blocks. Use this syntax to declare a function:
@@ -279,7 +283,7 @@ The $PROFILE variable stores the path to the profile for the current user. To ed
 
 # Accessing Remote Systems #
 
-By default, PowerShell accesses remote systems by connecting to the Windows Remote Management (WinRM) service on those systems, using the WS-MAN protocol. Microsoft are adding SSH support to Windows and PowerShell as an alternative to WinRM and WS-MAN.
+By default, PowerShell accesses remote systems by connecting to the Windows Remote Management (WinRM) service on those systems, using the WS-MAN protocol. Microsoft have added [SSH support](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core) as an alternative to WinRM and WS-MAN.
 
 Current versions of Windows Server enable WinRM, and allow users with administrative rights to log in. For other versions of Windows, you must first run the *Enable-PSRemoting* cmdlet to set up remote access.
 
@@ -334,44 +338,14 @@ execute tasks on the Windows systems that it manages, with PowerShell Remoting a
 targets. This means that PowerShell Remoting must be enabled on all of the Windows systems that you woul like to manage with Ansible.
 
 [Windows PowerShell Desired State
-Configuration](https://msdn.microsoft.com/en-us/PowerShell/DSC/overview) (DSC)
+Configuration](https://docs.microsoft.com/en-us/powershell/scripting/dsc/overview/dscforengineers) (DSC)
 provides extensions for managing multiple remote Windows systems using
 PowerShell, and also uses WinRM for communications. DSC does not need PowerShell
 Remoting to be enabled on the target systems, only WinRM.
 
-# Managing Cloud Infrastructure with PowerShell #
+### Cloud Management with PowerShell ###
 
 Amazon Web Services, Google Cloud Platform and Microsoft Azure all provide PowerShell modules for working with their infrastructure. You will need to install the modules for the platforms that you use.
-
-To install the AWS Tools for PowerShell Core:
-
-~~~powershell
-Install-Module -Scope CurrentUser -Name AWSPowerShell.NetCore -Force
-~~~
-
-Once you have installed the module, you will need to import it into your session, and set the necessary credentials. For AWS, this means that you must set an AWS profile, and specify the default AWS region for your operations.
-
-By default, PowerShell Core reads and writes credentials into an encrypted store. If you have already created AWS profiles in plain-text files with the AWS CLI or libraries, it will also read those files.
-
-~~~powershell
-# Import the module
-Import-Module AWSPowerShell.NetCore
-# Use the AWS profile named "default"
-Set-AWSCredential -ProfileName default
-# Set the default AWS region
-Set-DefaultAWSRegion -Region us-west-1
-~~~
-
-Once the module and credentials are in your session, you may use AWS cmdlets to manage your infrastructure. The module also defines [aliases for the cmdlets](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-discovery-aliases.html), and a special [$AWSHistory variable](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-pipelines.html).
-
-If you do not import the AWS module, it will automatically be loaded the first time that you use an AWS cmdlet.
-
-To upgrade the PowerShell module for AWS, you must uninstall the existing version, and then install the latest version:
-
-~~~powershell
-Uninstall-Module -Name AWSPowerShell.NetCore -AllVersions
-PS> Install-Module -Name AWSPowerShell.NetCore
-~~~
 
 # Resources #
 
@@ -440,7 +414,7 @@ lists common commands.
 
 * *Resolve-DnsName NAME* - Gets the DNS records for the specified NAME (Windows-only)
 * *Invoke-Webrequest URL* - HTTP request to URL
-* *Test-Connection ADDRESS* - ICMP ping to the specified address (Windows-only)
+* *Test-Connection ADDRESS* - ICMP ping to the specified address
 * *Send-MailMessage* - Send an email (requires PowerShell for Windows 5.0 or above)
 
 Use *Copy-Item* to transfer files over Windows file-sharing or PowerShell Remoting.
