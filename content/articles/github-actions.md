@@ -24,9 +24,9 @@ Each time that you push a change to the code repository, GitHub automatically pr
 
 ## Runners
 
-[GitHub provides Linux, Windows and macOS runners](https://docs.github.com/en/actions/reference/specifications-for-github-hosted-runners). 
+[GitHub provides Linux, Windows and macOS runners](https://docs.github.com/en/actions/reference/specifications-for-github-hosted-runners). These are preloaded with popular tools and programming languages.
 
-The Linux runners use Ubuntu, and the macOS runners offer current versions of macOS. The Linux and macOS virtual machines both run using passwordless sudo.
+The Linux runners use LTS versions of Ubuntu, and the macOS runners offer current versions of macOS. The Linux and macOS virtual machines both run using passwordless sudo.
 
 Windows virtual machines are configured to run as administrators with User Account Control (UAC) disabled. Windows runners use PowerShell as the default shell.
 
@@ -34,7 +34,9 @@ You can also use [service containers](https://docs.github.com/en/actions/guides/
 
 > If your workflows use Docker container actions or service containers, then you must use a Linux runner.
 
-You can also [host your own runners](https://docs.github.com/en/actions/hosting-your-own-runners).
+You can get details and build code for the current runners from the [virtual-environments GitHub repository](https://github.com/actions/virtual-environments).
+
+If you wish, you can also [host your own runners](https://docs.github.com/en/actions/hosting-your-own-runners).
 
 ## Artifacts
 
