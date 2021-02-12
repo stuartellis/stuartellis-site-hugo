@@ -44,8 +44,6 @@ https://docs.github.com/en/actions/guides/storing-workflow-data-as-artifacts
 
 ## Caching
 
-A workflow can access and restore a cache created in the current branch, the base branch (including base branches of forked repositories), or the default branch (usually main).
-
 The cache action will attempt to restore a cache based on the key you provide. When the action finds a cache, the action restores the cached files to the path you configure.
 
 You can optionally provide a list of restore keys to use when the key doesn't match an existing cache. A list of restore keys is useful when you are restoring a cache from another branch because restore keys can partially match cache keys.
@@ -63,21 +61,21 @@ You can optionally provide a list of restore keys to use when the key doesn't ma
             ${{ runner.os }}-build-
 ```
 
+A workflow can access and restore a cache created in the current branch, the base branch (including base branches of forked repositories), or the default branch (usually main).
+
 > See the [actions/cache repository](https://github.com/actions/cache) for examples with popular languages.
 
 ## Updating Dependencies with Dependabot
 
-https://docs.github.com/en/github/administering-a-repository/keeping-your-dependencies-updated-automatically
-
-You enable Dependabot updates by checking a *dependabot.yml* configuration file in to your repository's *.github/* directory.
-
-By default, Dependabot checks for new versions at 05:00 UTC.
-
-By default, Dependabot checks for manifest files on the default branch and raises pull requests for version updates against this branch. Use target-branch to specify a different branch for manifest files and for pull requests.
+[Dependabot is now integrated with GitHub](https://docs.github.com/en/github/administering-a-repository/keeping-your-dependencies-updated-automatically). You enable Dependabot updates by checking a *dependabot.yml* configuration file in to your repository's *.github/* directory.
 
 When Dependabot identifies an outdated dependency, it raises a pull request to update the manifest to the latest version of the dependency. For vendored dependencies, Dependabot raises a pull request to directly replace the outdated dependency with the new version. You check that your tests pass, review the changelog and release notes included in the pull request summary, and then merge it.
 
 If you enable security updates, Dependabot also raises pull requests to update vulnerable dependencies. By default, it breaks these up into up to five pull requests.
+
+Dependabot checks for manifest files on the default branch and raises pull requests for version updates against this branch. Use *target-branch* to specify a different branch for manifest files and for pull requests.
+
+By default, Dependabot checks for new versions at 05:00 UTC.
 
 ### Enabling Version Updates
 
