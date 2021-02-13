@@ -1,7 +1,7 @@
 +++
 Title = "PowerShell and AWS"
 Slug = "powershell-aws"
-Date = "2021-02-12T11:31:00+00:00"
+Date = "2021-02-12T23:31:00+00:00"
 Description = ""
 Categories = ["automation", "devops"]
 Tags = [".NET", "automation", "devops", "powershell", "windows"]

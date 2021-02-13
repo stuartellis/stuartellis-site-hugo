@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2021-02-13T21:18:00+00:00"
+Date = "2021-02-13T23:45:00+00:00"
 Description = ""
 Categories = ["automation", "devops"]
 Tags = [".NET", "automation", "devops", "powershell", "windows"]
@@ -17,7 +17,7 @@ The least that you need to know about [PowerShell](https://microsoft.com/powersh
 # Why PowerShell Matters
 
 PowerShell is both an object-oriented shell that is built on .NET, and a custom programming language that runs
-within that shell. Third-parties such as VMWare and Amazon Web Services provide
+within that shell. Third-parties such as [VMWare](https://developer.vmware.com/powercli) and [Amazon Web Services](https://aws.amazon.com/powershell/) provide
 modules to enable users to work with their products through PowerShell.
 
 You can
@@ -25,12 +25,12 @@ also supplement the capabilities of PowerShell modules by directly accessing
 classes from the underlying installation of .NET, and by running standard
 commands and scripts from the host operating system.
 
-# PowerShell Editions #
+# PowerShell Versions #
 
 PowerShell 7 is the current version of PowerShell. It is built with .NET Core to be cross-platform and Open Source. It replaces Windows PowerShell and PowerShell Core.
 
 Windows PowerShell is the older, proprietary implementation of PowerShell that is
-shipped with most versions of Windows. It is sometimes referred to as the
+shipped with most versions of Microsoft Windows. It is sometimes referred to as the
 *Desktop* edition. Windows PowerShell is still maintained, but will receive no new features. The intention is to replace it with PowerShell 7.
 
 PowerShell Core was the first Open Source version of PowerShell. Releases of PowerShell Core were designated as PowerShell version 6.
@@ -41,13 +41,13 @@ PowerShell Core was the first Open Source version of PowerShell. Releases of Pow
 
 All of the supported versions of Windows desktop and server operating systems
 include Windows PowerShell and the [Integrated Script
-Environment](https://technet.microsoft.com/en-us/library/dd315244.aspx) (ISE)
+Environment](https://docs.microsoft.com/en-us/powershell/scripting/windows-powershell/ise/introducing-the-windows-powershell-ise) (ISE)
 for editing PowerShell scripts. Windows 10 and Windows Server 2016 provide Windows
 PowerShell 5.1. 
 
 > ISE is no longer developed. Microsoft now recommend that you use Visual Studio Code for writing PowerShell code, rather than ISE.
 
-Install PowerShell 7 on Windows systems to get the current version of PowerShell. PowerShell 7 does not replace the version of Windows PowerShell that is already provided by the operating system. Instead, it is installed as a complete separate application.
+Install PowerShell 7 on Windows systems to get the current version of PowerShell. PowerShell 7 does not replace the version of Windows PowerShell that is already provided by the operating system. Instead, it is installed as a completely separate application.
 
 To install Windows PowerShell 5 on older Windows systems, you must install
 the Windows Management Framework (WMF). WMF is a package of the latest version
@@ -61,7 +61,7 @@ Follow [these instructions](https://github.com/powershell/powershell#telemetry) 
 
 ### Tools ###
 
-The current versions of PowerShell include features to install extra modules from
+PowerShell 7 includes features to install extra modules from
 remote repositories. By default, the public [PowerShell Gallery](http://www.powershellgallery.com) is configured as a repository.
 
 To write and debug PowerShell scripts, install the [Visual Studio Code](https://code.visualstudio.com) editor and add the [PowerShell Language Support](https://marketplace.visualstudio.com/items?itemname=ms-vscode.powershell) extension. This extension includes support for the [Pester](https://github.com/pester/Pester) testing framework, and [PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer), which is the recommended static code analyzer for PowerShell. Use [Plaster](https://github.com/PowerShell/Plaster) to generate new projects from standard templates.
@@ -104,7 +104,7 @@ accepts items as inputs, and returns items as output.
 
 This means that you construct pipelines by chaining PowerShell cmdlets together,
 and the items are sent from one cmdlet to another. The experience appears
-similar to UNIX shells, but is more flexible and consistent. For example, this
+similar to UNIX shells, but it is more flexible and consistent. For example, this
 code gets a list of the name of all of the services on the system that have the
 *Status* property with a value of *Stopped*:
 
@@ -305,16 +305,13 @@ The $PROFILE variable stores the path to the profile for the current user. To ed
 
 # Extra Modules #
 
-* [AWS Tools for Windows PowerShell](https://aws.amazon.com/powershell/) - Modules for managing Amazon Web Services
-* [Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure/) - Modules for managing Microsoft Azure cloud services
-* Google's [Cloud Tools for PowerShell](https://cloud.google.com/powershell/) - Modules for managing Google Cloud Platform services
 * [dbachecks](https://github.com/sqlcollaborative/dbachecks) - Microsoft SQL Server Environmental Validation
 * [dbatools](https://dbatools.io/) - Community module of tools for Microsoft SQL Server
 * [posh-git](https://dahlbyk.github.io/posh-git/) - Git integration for PowerShell
 * [psake](https://github.com/psake/psake) - Build tool
 * [Pscx](https://github.com/Pscx/Pscx) - PowerShell Community Extensions module repository
 * [PSSlack](https://github.com/RamblingCookieMonster/PSSlack/) - Third-party module for Slack
-* [PSWindowsUpdate](https://gallery.technet.microsoft.com/scriptcenter/2d191bcd-3308-4edd-9de2-88dff796b0bc) - Third-party module to manage and run Microsoft Updates on Windows systems, as explained in [this tutorial](https://www.petri.com/manage-windows-updates-with-powershell-module)
+* [PSWindowsUpdate](https://www.powershellgallery.com/packages/PSWindowsUpdate) - Third-party module to manage and run Microsoft Updates on Windows systems, as explained in [this tutorial](https://www.petri.com/manage-windows-updates-with-powershell-module)
 * [SqlServer](https://www.powershellgallery.com/packages/Sqlserver/21.0.17224) - Current official module for Microsoft SQL Server, which replaces SQLPS
-* [VMWare PowerCLI](https://www.vmware.com/support/developer/PowerCLI/index.html) - PowerShell modules for managing VMware products
+
 

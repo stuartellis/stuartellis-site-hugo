@@ -79,3 +79,10 @@ Remoting to be enabled on the target systems, only WinRM.
 ## Cloud Management with PowerShell
 
 Amazon Web Services, Google Cloud Platform and Microsoft Azure all provide PowerShell modules for working with their infrastructure. You will need to install the modules for the platforms that you use.
+
+# Modules #
+
+- [AWS Tools for Windows PowerShell](https://aws.amazon.com/powershell/) - Modules for managing Amazon Web Services
+- [Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure/) - Modules for managing Microsoft Azure cloud services
+- Google's [Cloud Tools for PowerShell](https://cloud.google.com/powershell/) - Modules for managing Google Cloud Platform services
+- [VMWare PowerCLI](https://developer.vmware.com/powercli) - PowerShell modules for managing VMware products
