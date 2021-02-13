@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2021-02-12T11:29:00+00:00"
+Date = "2021-02-13T21:18:00+00:00"
 Description = ""
 Categories = ["automation", "devops"]
 Tags = [".NET", "automation", "devops", "powershell", "windows"]
@@ -27,35 +27,37 @@ commands and scripts from the host operating system.
 
 # PowerShell Editions #
 
+PowerShell 7 is the current version of PowerShell. It is built with .NET Core to be cross-platform and Open Source. It replaces Windows PowerShell and PowerShell Core.
+
 Windows PowerShell is the older, proprietary implementation of PowerShell that is
 shipped with most versions of Windows. It is sometimes referred to as the
-*Desktop* edition. Windows PowerShell is still maintained, but will receive no new features. The intention is to replace it with PowerShell Core.
+*Desktop* edition. Windows PowerShell is still maintained, but will receive no new features. The intention is to replace it with PowerShell 7.
 
-PowerShell Core is the latest implementation of PowerShell. It is built with .NET Core to be cross-platform and Open Source. For consistency with the version numbers of Windows PowerShell, the first full release of PowerShell Core has 6.0 as the version number.
+PowerShell Core was the first Open Source version of PowerShell. Releases of PowerShell Core were designated as PowerShell version 6.
 
 # Installing PowerShell #
 
 ### Windows ###
 
-All of the recent versions of Windows desktop and server operating systems
-include versions of Windows PowerShell and the [Integrated Script
+All of the supported versions of Windows desktop and server operating systems
+include Windows PowerShell and the [Integrated Script
 Environment](https://technet.microsoft.com/en-us/library/dd315244.aspx) (ISE)
 for editing PowerShell scripts. Windows 10 and Windows Server 2016 provide Windows
 PowerShell 5.1. 
 
 > ISE is no longer developed. Microsoft now recommend that you use Visual Studio Code for writing PowerShell code, rather than ISE.
 
-To install the latest version of PowerShell 5 on older Windows systems, install
+Install PowerShell 7 on Windows systems to get the current version of PowerShell. PowerShell 7 does not replace the version of Windows PowerShell that is already provided by the operating system. Instead, it is installed as a complete separate application.
+
+To install Windows PowerShell 5 on older Windows systems, you must install
 the Windows Management Framework (WMF). WMF is a package of the latest version
 of PowerShell, along with PowerShell Desired State Configuration (DSC).
 
-You may install PowerShell Core on Windows systems. If you install PowerShell Core on Windows it does not replace the version of Windows PowerShell that is already provided by the operating system.
-
 ### macOS and Linux ###
 
-To use PowerShell on Linux and macOS systems, install [PowerShell Core](https://github.com/powershell/powershell).
+To use PowerShell on Linux and macOS systems, install [PowerShell 7](https://github.com/powershell/powershell).
 
-Follow [these instructions](https://github.com/powershell/powershell#telemetry) to disable the telemetry in PowerShell Core. The PowerShell Core installer creates a directory called `/usr/local/microsoft/`, with one subdirectory per PowerShell installation.
+Follow [these instructions](https://github.com/powershell/powershell#telemetry) to disable the telemetry in PowerShell. The PowerShell installer creates a directory called `/usr/local/microsoft/`, with one subdirectory per PowerShell installation.
 
 ### Tools ###
 
@@ -68,9 +70,9 @@ To write and debug PowerShell scripts, install the [Visual Studio Code](https://
 
 ### Running an Interactive Session ###
 
-All current editions of Windows include a version of PowerShell, and display icons for it. PowerShell Core does not replace Windows PowerShell or other existing shells on your computer. You must specifically choose to run it.
+All of the current editions of Windows include a version of Windows PowerShell, and display icons for it. PowerShell 7 does not replace Windows PowerShell or other existing shells on your computer. You must specifically choose to run it.
 
-Type *pwsh* in a Terminal window to start a PowerShell Core session:
+Type *pwsh* in a Terminal window to start a PowerShell 7 session:
 
     pwsh
 
