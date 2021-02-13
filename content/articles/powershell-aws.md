@@ -16,13 +16,13 @@ The least that you need to know about [PowerShell](https://microsoft.com/powersh
 
 ## Summary
 
-AWS provide [PowerShell modules](https://aws.amazon.com/powershell/) for working with their infrastructure. The AWS Tools for PowerShell modules are compatible with both PowerShell and PowerShell Core. You can also run [PowerShell Core with AWS Lambda](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-lambda.html). 
+AWS provide [PowerShell modules](https://aws.amazon.com/powershell/) for working with their infrastructure. The AWS Tools for PowerShell modules are compatible with both Windows PowerShell and PowerShell 7. You can also run [PowerShell 7 with AWS Lambda](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-lambda.html). 
 
 > These notes use the modular distribution that AWS provide. AWS also offer a monolithic PowerShell module.
 
 ## Installing The Initial AWS Modules
 
-To install the AWS Tools for PowerShell Core, run this command in PowerShell:
+To install the AWS Tools for PowerShell 7, run this command in PowerShell:
 
 ~~~powershell
 Install-Module -Name AWS.Tools.Installer
@@ -47,7 +47,7 @@ Set-AWSCredential -ProfileName default
 Set-DefaultAWSRegion -Region us-west-1
 ~~~
 
-> By default, PowerShell Core reads and writes these credentials into an encrypted store. 
+> By default, PowerShell reads and writes these credentials into an encrypted store. 
 
 Once the module and credentials are available, you may use AWS cmdlets to manage your infrastructure. The module also defines [aliases for the cmdlets](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-discovery-aliases.html), and a special [$AWSHistory variable](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-pipelines.html).
 
