@@ -294,17 +294,25 @@ Get-ChildItem . | Out-Host -Paging
 To convert PowerShell objects to or from a known data format, use the *ConvertTo* and *ConvertFrom* cmdlets.
 
 ~~~powershell
-Get-ChildItem . | ConvertTo-Csv
+Get-ChildItem . | ConvertTo-Json
 ~~~
 
-PowerShell includes full support for these formats:
+PowerShell includes full support for translating object to and from these formats:
 
 - CSV
 - HTML
 - JSON
 - XML
 
+> Use *Test-Json* to check that strings are valid JSON. 
+
+For convenience, PowerShell also includes cmdlets to open and save CSV files: *Import-CSV* and *Export-Csv*.
+
 In addition, it can convert from Markdown and strings (*StringData*).
+
+~~~powershell
+$items = Import-CSV ./things.csv
+~~~
 
 # Resources #
 
