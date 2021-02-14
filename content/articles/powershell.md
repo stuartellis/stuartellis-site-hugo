@@ -14,7 +14,7 @@ The least that you need to know about [PowerShell](https://microsoft.com/powersh
 
 <!--more-->
 
-# Why PowerShell Matters
+## Why PowerShell Matters
 
 PowerShell is both an object-oriented shell that is built on .NET, and a custom programming language that runs
 within that shell. Third-parties such as [VMWare](https://developer.vmware.com/powercli) and [Amazon Web Services](https://aws.amazon.com/powershell/) provide
@@ -25,7 +25,7 @@ also supplement the capabilities of PowerShell modules by directly accessing
 classes from the underlying installation of .NET, and by running standard
 commands and scripts from the host operating system.
 
-# PowerShell Versions #
+## PowerShell Versions
 
 PowerShell 7 is the current version of PowerShell. It is built with .NET Core to be cross-platform and Open Source. It replaces Windows PowerShell and PowerShell Core.
 
@@ -35,9 +35,9 @@ shipped with most versions of Microsoft Windows. It is sometimes referred to as 
 
 PowerShell Core was the first Open Source version of PowerShell. Releases of PowerShell Core were designated as PowerShell version 6.
 
-# Installing PowerShell #
+## Installing PowerShell
 
-### Windows ###
+### Windows
 
 All of the supported versions of Windows desktop and server operating systems
 include Windows PowerShell and the [Integrated Script
@@ -53,22 +53,22 @@ To install Windows PowerShell 5 on older Windows systems, you must install
 the Windows Management Framework (WMF). WMF is a package of the latest version
 of PowerShell, along with PowerShell Desired State Configuration (DSC).
 
-### macOS and Linux ###
+### macOS and Linux
 
 To use PowerShell on Linux and macOS systems, install [PowerShell 7](https://github.com/powershell/powershell).
 
 Follow [these instructions](https://github.com/powershell/powershell#telemetry) to disable the telemetry in PowerShell. The PowerShell installer creates a directory called `/usr/local/microsoft/`, with one subdirectory per PowerShell installation.
 
-### Tools ###
+### Tools
 
 PowerShell 7 includes features to install extra modules from
 remote repositories. By default, the public [PowerShell Gallery](http://www.powershellgallery.com) is configured as a repository.
 
 To write and debug PowerShell scripts, install the [Visual Studio Code](https://code.visualstudio.com) editor and add the [PowerShell Language Support](https://marketplace.visualstudio.com/items?itemname=ms-vscode.powershell) extension. This extension includes support for the [Pester](https://github.com/pester/Pester) testing framework, and [PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer), which is the recommended static code analyzer for PowerShell. Use [Plaster](https://github.com/PowerShell/Plaster) to generate new projects from standard templates.
 
-# Running PowerShell #
+## Running PowerShell
 
-### Running an Interactive Session ###
+### Running an Interactive Session
 
 All of the current editions of Windows include a version of Windows PowerShell, and display icons for it. PowerShell 7 does not replace Windows PowerShell or other existing shells on your computer. You must specifically choose to run it.
 
@@ -76,7 +76,7 @@ Type *pwsh* in a Terminal window to start a PowerShell 7 session:
 
     pwsh
 
-### Running Scripts ###
+### Running Scripts
 
 PowerShell files have the file extension of *.ps1*, regardless of the version of
 PowerShell.
@@ -95,7 +95,7 @@ Internet to be signed, set the policy to *RemoteSigned*:
 Set-ExecutionPolicy RemoteSigned
 ~~~
 
-# Syntax #
+## Syntax
 
 In PowerShell, the operations are abstract. The same syntax works
 on all of the types of *items*, which are .NET objects. Each abstract *drive*
@@ -129,7 +129,7 @@ Within PowerShell files, you can enclose code in functions, or *script blocks*.
 Functions are always named. Script blocks can be anonymous, or be assigned to
 variables, and can optionally return a value.
 
-### Variables and Collections ###
+### Variables and Collections
 
 In PowerShell, variables are prefixed by a *$* character:
 
@@ -155,7 +155,7 @@ To access an environment variable, use *$env*. For example, to read the *PATH* e
 $env:PATH
 ~~~
 
-### Conditionals #
+### Conditionals
 
 PowerShell supports the standard *if/else* syntax. Write the condition within
 round brackets, and follow it with a script block:
@@ -182,7 +182,7 @@ default { <default action}
 }
 ~~~
 
-### Loops ###
+### Loops
 
 The basic loop statement is *foreach*:
 
@@ -200,14 +200,14 @@ Get-Service | Where-Object { $_.Name -ilike '*Web*' } | ForEach-Object { $_.Name
 
 > *ForEach-Object* supports parallel execution of iterations in PowerShell 7 and above.
 
-# Functions #
+## Functions
 
 Functions are named script blocks. Use this syntax to declare a function:
 
 ~~~powershell
 function <name>(<parameter list>)
 {
-    #function body
+   function body
 }
 ~~~
 
@@ -220,11 +220,11 @@ You may set the types and default values for parameters in the function definiti
 
 ~~~powershell
 function Some-Task($a = "bar", $b = "foo") {
-    #function body
+   function body
 }
 
 function Get-RandomNumber([int] $quantity) {
-    #function body
+   function body
 }
 ~~~
 
@@ -244,7 +244,7 @@ Internally, each function is actually an instance of the .NET class
 *System.Management.Automation.FunctionInfo*, and filters are instances of
 *System.Management.Automation.FilterInfo*.
 
-### Error Handling ###
+### Error Handling
 
 Every cmdlet must support the parameters *ErrorAction*, *ErrorVariable*,
 *Debug*, and *Verbose*. This means that you can specify the error handling
@@ -271,11 +271,11 @@ To handle particular types of errors in your code, use *error traps*. These are 
 
 ~~~powershell
 trap [System.Management.Automation.PSInvalidCastException] {
-  # code
+  code
 }
 ~~~
 
-# The Shell Profile #
+## The Shell Profile
 
 Your PowerShell profile is a PowerShell script that runs each time that you start a PowerShell session. Use your profile to import modules that you use very frequently, or set useful variables. By default, your profile is empty.
 
@@ -283,7 +283,7 @@ The $PROFILE variable stores the path to the profile for the current user. To ed
 
     code $PROFILE
 
-# Formatting Output #
+## Formatting Output
 
 Use *Out-Host* to print to the console. Add *-Paging* to paginate the output:
 
@@ -314,27 +314,27 @@ In addition, it can convert from Markdown and strings (*StringData*).
 $items = Import-CSV ./things.csv
 ~~~
 
-# Resources #
+## Resources
 
-### Videos ###
+### Videos
 
 * [Microsoft introductory video course](https://mva.microsoft.com/en-US/training-courses/getting-started-with-microsoft-powershell-8276)
 * [Microsoft video course on using PowerShell with SQL Server](https://mva.microsoft.com/en-US/training-courses/powershell-for-sql-data-professionals-16532?l=XgA5w0PgC_8805121157)
 * [Microsoft video tutorial on testing with Pester](https://mva.microsoft.com/en-US/training-courses/testing-powershell-with-pester-17650?l=mg8oBM9vD_8811787177)
 
-### Websites ###
+### Websites
 
 * [Awesome PowerShell](https://github.com/janikvonrotz/awesome-powershell) - Curated list of resources and modules for PowerShell
 * [Planet PowerShell](https://www.planetpowershell.com/) - Blog aggregator for the PowerShell community
 * [PowerShell.org](https://powershell.org/) - Community forums for PowerShell users
 * [PowerShell Magazine](http://www.powershellmagazine.com/)
 
-### Books ###
+### Books
 
 * [PowerShell Notes for Professionals book](http://goalkicker.com/PowerShellBook/) - Free ebook
 * [Secrets of PowerShell](https://www.penflip.com/powershellorg/) - A series of free short e-books from PowerShell.org
 
-# Extra Modules #
+## Extra Modules
 
 * [dbachecks](https://github.com/sqlcollaborative/dbachecks) - Microsoft SQL Server Environmental Validation
 * [dbatools](https://dbatools.io/) - Community module of tools for Microsoft SQL Server
