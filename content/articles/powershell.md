@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2021-02-13T23:45:00+00:00"
+Date = "2021-02-14T21:25:00+00:00"
 Description = ""
 Categories = ["automation", "devops"]
 Tags = [".NET", "automation", "devops", "powershell", "windows"]
@@ -282,6 +282,29 @@ Your PowerShell profile is a PowerShell script that runs each time that you star
 The $PROFILE variable stores the path to the profile for the current user. To edit your profile, start your editor from PowerShell and specify $PROFILE as the file to edit. For example, to edit your PowerShell profile with Visual Studio Code, start *code*:
 
     code $PROFILE
+
+# Formatting Output #
+
+Use *Out-Host* to print to the console. Add *-Paging* to paginate the output:
+
+~~~powershell
+Get-ChildItem . | Out-Host -Paging
+~~~
+
+To convert PowerShell objects to or from a known data format, use the *ConvertTo* and *ConvertFrom* cmdlets.
+
+~~~powershell
+Get-ChildItem . | ConvertTo-Csv
+~~~
+
+PowerShell includes full support for these formats:
+
+- CSV
+- HTML
+- JSON
+- XML
+
+In addition, it can convert from Markdown and strings (*StringData*).
 
 # Resources #
 
