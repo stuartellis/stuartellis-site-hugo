@@ -1,7 +1,7 @@
 +++
 Title = "Using GitHub Actions"
 Slug = "github-actions"
-Date = "2021-02-12T13:58:00+00:00"
+Date = "2021-02-17T21:53:00+00:00"
 Description = ""
 Categories = ["automation", "devops"]
 Tags = ["github", "automation", "devops"]
@@ -87,12 +87,13 @@ After you enable version updates, you'll see a new Dependabot tab in the depende
 
 ### Dependabot for GitHub Actions
 
-Dependabot can check your GitHub Actions:
+Always configure Dependabot to check your GitHub Actions:
 
 ```yaml
 version: 2
 updates:
 
+  # Enable version updates for GitHub Actions
   - package-ecosystem: "github-actions"
   directory: "/"
   schedule:
@@ -105,14 +106,44 @@ updates:
 Dependabot can check the Docker images that you use:
 
 ```yaml
-  # Enable version updates for Docker
-  - package-ecosystem: "docker"
-    # Look for a `Dockerfile` in the `root` directory
-    directory: "/"
+# Enable version updates for Docker
+- package-ecosystem: "docker"
+  # Look for a `Dockerfile` in the `root` directory
+  directory: "/"
+  schedule:
     # Check for updates once a week
-    schedule:
-      interval: "weekly"
+    interval: "weekly"
 ```
+
+### Dependabot for Node.js
+
+Dependabot can check the npm packages that you use:
+
+```yaml
+# Enable version updates for Node.js
+- package-ecosystem: "npm"
+  # Look for a `package.json` in the `root` directory
+  directory: "/"
+  schedule:
+    # Check for updates every weekday
+    interval: "daily"
+```
+
+### Dependabot for Python
+
+Dependabot can check the Python packages that you use:
+
+```yaml
+# Enable version updates for Python
+- package-ecosystem: "pip"
+  # Look in the `root` directory
+  directory: "/"
+  schedule:
+    # Check for updates every weekday
+    interval: "daily"
+```
+
+> Dependabot requires [recent versions of pip, Poetry, or pip-tools](https://docs.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates#package-ecosystem).
 
 ## Pricing
 
@@ -127,6 +158,7 @@ Dependabot can check the Docker images that you use:
 ## Other Resources
 
 - [Node.js Support](https://github.com/marketplace/actions/setup-node-js-environment)
+- [Python Support](https://github.com/marketplace/actions/setup-python)
 - [Official AWS Actions](https://github.com/aws-actions)
 - [Starter Workflows](https://github.com/actions/starter-workflows)
 - [Migrating from Azure Pipelines](https://docs.github.com/en/actions/learn-github-actions/migrating-from-azure-pipelines-to-github-actions)
