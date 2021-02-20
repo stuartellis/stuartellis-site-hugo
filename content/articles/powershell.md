@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2021-02-14T21:25:00+00:00"
+Date = "2021-02-20T12:19:00+00:00"
 Description = ""
 Categories = ["automation", "devops"]
 Tags = [".NET", "automation", "devops", "powershell", "windows"]
@@ -64,7 +64,7 @@ Follow [these instructions](https://github.com/powershell/powershell#telemetry) 
 PowerShell 7 includes features to install extra modules from
 remote repositories. By default, the public [PowerShell Gallery](http://www.powershellgallery.com) is configured as a repository.
 
-To write and debug PowerShell scripts, install the [Visual Studio Code](https://code.visualstudio.com) editor and add the [PowerShell Language Support](https://marketplace.visualstudio.com/items?itemname=ms-vscode.powershell) extension. This extension includes support for the [Pester](https://github.com/pester/Pester) testing framework, and [PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer), which is the recommended static code analyzer for PowerShell. Use [Plaster](https://github.com/PowerShell/Plaster) to generate new projects from standard templates.
+To write and debug PowerShell scripts, install the [Visual Studio Code](https://code.visualstudio.com) editor and add the [PowerShell Language Support](https://marketplace.visualstudio.com/items?itemname=ms-vscode.powershell) extension. This extension includes support for the [Pester](https://github.com/pester/Pester) testing framework, and [PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer), which is the recommended static code analyzer for PowerShell.
 
 ## Running PowerShell
 
@@ -154,6 +154,12 @@ To access an environment variable, use *$env*. For example, to read the *PATH* e
 ~~~powershell
 $env:PATH
 ~~~
+
+### Strings
+
+PowerShell uses the *System.String* type for strings. This means that you manipulate strings by calling methods on the string object, rather than piping the object to separate cmdlets. PowerShell provides operators for some actions, such as *-replace* for the *.Replace()* method.
+
+Refer to the [Adam the Automator tutorial on strings](https://adamtheautomator.com/powershell-strings/).
 
 ### Conditionals
 
@@ -324,6 +330,7 @@ $items = Import-CSV ./things.csv
 
 ### Websites
 
+* [Adam the Automator](https://adamtheautomator.com) - A blog with very useful articles on PowerShell
 * [Awesome PowerShell](https://github.com/janikvonrotz/awesome-powershell) - Curated list of resources and modules for PowerShell
 * [Planet PowerShell](https://www.planetpowershell.com/) - Blog aggregator for the PowerShell community
 * [PowerShell.org](https://powershell.org/) - Community forums for PowerShell users
@@ -334,15 +341,24 @@ $items = Import-CSV ./things.csv
 * [PowerShell Notes for Professionals book](http://goalkicker.com/PowerShellBook/) - Free ebook
 * [Secrets of PowerShell](https://www.penflip.com/powershellorg/) - A series of free short e-books from PowerShell.org
 
+## Tools
+
+- [Pester](https://github.com/pester/Pester) - Testing framework
+- [PlatyPS](https://github.com/PowerShell/platyPS) - Transform Markdown to PowerShell help documentation
+- [psake](https://github.com/psake/psake) - Build tool
+- [PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) - Code quality checking for PowerShell
+
 ## Extra Modules
 
-* [dbachecks](https://github.com/sqlcollaborative/dbachecks) - Microsoft SQL Server Environmental Validation
-* [dbatools](https://dbatools.io/) - Community module of tools for Microsoft SQL Server
 * [posh-git](https://dahlbyk.github.io/posh-git/) - Git integration for PowerShell
-* [psake](https://github.com/psake/psake) - Build tool
 * [Pscx](https://github.com/Pscx/Pscx) - PowerShell Community Extensions module repository
 * [PSSlack](https://github.com/RamblingCookieMonster/PSSlack/) - Third-party module for Slack
 * [PSWindowsUpdate](https://www.powershellgallery.com/packages/PSWindowsUpdate) - Third-party module to manage and run Microsoft Updates on Windows systems, as explained in [this tutorial](https://www.petri.com/manage-windows-updates-with-powershell-module)
+
+### Extra Modules for SQL Server
+
+* [dbachecks](https://github.com/sqlcollaborative/dbachecks) - Microsoft SQL Server Environmental Validation
+* [dbatools](https://dbatools.io/) - Community module of tools for Microsoft SQL Server
 * [SqlServer](https://www.powershellgallery.com/packages/Sqlserver/21.0.17224) - Current official module for Microsoft SQL Server, which replaces SQLPS
 
 
