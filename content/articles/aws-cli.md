@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the AWS CLI"
 Slug = "aws-cli"
-Date = "2021-01-31T15:38:00+00:00"
+Date = "2021-04-24T20:08:00+00:00"
 Description = "Using the AWS CLI tool"
 Categories = ["automation", "devops"]
 Tags = ["automation", "devops"]
@@ -130,7 +130,7 @@ Use STS to determine your current AWS identity:
 
 Use Secrets Manager to generate a random password:
 
-    aws secretsmanager get-random-password --password-length 7
+    aws secretsmanager get-random-password --password-length 7 --query "RandomPassword"
 
 Send a message to an SNS topic:
 
@@ -171,7 +171,30 @@ Quickly create an S3 bucket from the command-line to transfer files:
     
     aws s3api delete-bucket --bucket BUCKET-NAME 
 
+## EC2
+
+Get the ID of the latest AMI for Ubuntu LTS Server:
+
+```
+aws ec2 describe-images \
+    --owners 099720109477 \
+    --filters "Name=name,Values=ubuntu/images/hvm-ssd/ubuntu-focus-20.04-amd64-server-????????" "Name=state,Values=available" \
+    --query "reverse(sort_by(Images, &CreationDate))[:1].ImageId" \
+    --output text
+```
+
+Get the ID of the latest AMI for Amazon Linux 2:
+
+```
+aws ec2 describe-images \
+    --owners amazon \
+    --filters "Name=name,Values=amzn2-ami-hvm-2.0.????????.?-x86_64-gp2" "Name=state,Values=available" \
+    --query "reverse(sort_by(Images, &CreationDate))[:1].ImageId" \
+    --output text
+```
+
 ## Resources
 
+- [AWS CLI version 2 commands](https://awscli.amazonaws.com/v2/documentation/api/latest/index.html)
 - [Video: AWS Command Line Interface Deep Dive](https://www.youtube.com/watch?v=ZbgvG7yFoQI)
 - [Video: AWS CLI v2 Changes](https://www.youtube.com/watch?v=U5y7JI_mHk8)
