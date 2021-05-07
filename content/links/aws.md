@@ -1,7 +1,7 @@
 +++
-Title = "Links for AWS"
+Title = "DevOps Links for AWS"
 Slug = "aws"
-Date = "2021-04-27T19:08:00+00:00"
+Date = "2021-05-07T19:08:00+00:00"
 Description = "Links for AWS"
 Type = "article"
 Toc = false
@@ -16,7 +16,7 @@ Useful links for working with AWS.
 
 - [AWS CLI Version 2 Commands](https://awscli.amazonaws.com/v2/documentation/api/latest/index.html)
 - [AWS CloudFormation Resource Types](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html)
-- [AWS IAM Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference.html)
+- [AWS IAM Actions, Resources and Conditions](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html)
 
 ## Services
 
