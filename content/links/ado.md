@@ -1,7 +1,7 @@
 +++
 Title = "Links for Azure DevOps"
 Slug = "ado"
-Date = "2021-04-24T20:09:00+00:00"
+Date = "2021-05-08T10:09:00+00:00"
 Description = "Links for Azure DevOps"
 Type = "article"
 Toc = false
@@ -23,7 +23,7 @@ Useful links for working with Azure DevOps.
 - [Azure DevOps CLI](https://docs.microsoft.com/en-us/azure/devops/cli/quick-reference?view=azure-devops)
 - [Using Postman to call the Azure DevOps API](https://sanderh.dev/call-Azure-DevOps-REST-API-Postman/)
 
-> This collection is available through the Postman Public API Network: **manb-msft/Azure DevOps REST Security APIs with Examples**.
+> A collection is available through the Postman Public API Network: **manb-msft/Azure DevOps REST Security APIs with Examples**.
 
 ## Pipelines Documentation
 
@@ -31,4 +31,3 @@ Useful links for working with Azure DevOps.
 - [Pipeline Expressions](https://docs.microsoft.com/en-gb/azure/devops/pipelines/process/expressions?view=azure-devops)
 - [AWS ToolKit for Azure DevOps](https://docs.aws.amazon.com/vsts/index.html) - Enables ADO to work with AWS
 - [Release Notes for Build Environments](https://github.com/actions/virtual-environments/releases)
-
