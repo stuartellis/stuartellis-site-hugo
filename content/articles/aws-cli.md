@@ -1,7 +1,7 @@
 +++
 Title = "Notes on the AWS CLI"
 Slug = "aws-cli"
-Date = "2021-04-24T20:08:00+00:00"
+Date = "2021-05-08T15:09:00+00:00"
 Description = "Using the AWS CLI tool"
 Categories = ["automation", "devops"]
 Tags = ["automation", "devops"]
@@ -178,7 +178,7 @@ Get the ID of the latest AMI for Ubuntu LTS Server:
 ```
 aws ec2 describe-images \
     --owners 099720109477 \
-    --filters "Name=name,Values=ubuntu/images/hvm-ssd/ubuntu-focus-20.04-amd64-server-????????" "Name=state,Values=available" \
+    --filters "Name=name,Values=ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-????????" "Name=state,Values=available" \
     --query "reverse(sort_by(Images, &CreationDate))[:1].ImageId" \
     --output text
 ```
