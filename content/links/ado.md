@@ -1,7 +1,7 @@
 +++
 Title = "Links for Azure DevOps"
 Slug = "ado"
-Date = "2021-05-08T10:09:00+00:00"
+Date = "2021-06-30T19:57:00+00:00"
 Description = "Links for Azure DevOps"
 Type = "article"
 Toc = false
@@ -28,6 +28,7 @@ Useful links for working with Azure DevOps.
 ## Pipelines Documentation
 
 - [Pipelines Documentation](https://docs.microsoft.com/en-gb/azure/devops/pipelines/)
+- [Pipelines YAML Syntax](https://docs.microsoft.com/en-gb/azure/devops/pipelines/yaml-schema?view=azure-devops)
 - [Pipeline Expressions](https://docs.microsoft.com/en-gb/azure/devops/pipelines/process/expressions?view=azure-devops)
 - [AWS ToolKit for Azure DevOps](https://docs.aws.amazon.com/vsts/index.html) - Enables ADO to work with AWS
 - [Release Notes for Build Environments](https://github.com/actions/virtual-environments/releases)
