@@ -1,7 +1,7 @@
 +++
 Title = "DevOps Links for AWS"
 Slug = "aws"
-Date = "2021-06-28T06:01:00+00:00"
+Date = "2021-07-18T05:01:00+00:00"
 Description = "Links for AWS"
 Type = "article"
 Toc = false
@@ -30,3 +30,4 @@ Useful links for working with AWS.
 - [AWS SDK for JavaScript](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/index.html)
 - [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
 - [AWS Code Samples](https://docs.aws.amazon.com/code-samples/latest/catalog/welcome.html)
+- [Postman Collections for AWS](https://www.postman.com/api-evangelist/workspace/amazon-web-services-aws/overview)

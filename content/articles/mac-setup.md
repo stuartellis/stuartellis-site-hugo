@@ -1,7 +1,7 @@
 +++
 Title = "How to Set up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2020-12-23T11:15:00+00:00"
+Date = "2021-07-15T22:06:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["devops", "macos", "golang", "java", "javascript", "python", "ruby"]
@@ -10,7 +10,7 @@ Toc = true
 
 +++
 
-A guide to setting up an Apple Mac for DevOps and software development. This is current for macOS 10.14 (Catalina).
+A guide to setting up an Apple Mac for DevOps and software development. This is current for macOS 11 (Big Sur).
 
 <!--more-->
 
@@ -281,13 +281,13 @@ To create an SSH key, run the _ssh-keygen_ command in a terminal window. For exa
 Homebrew provides separate packages for each version of [Node.js](https://nodejs.org).
 To ensure that you are using the version of Node.js that you expect, specify the version
 when you install it. For example, enter this command in a Terminal window to install the
-Node.js 12, the current LTS release:
+Node.js 14, the current LTS release:
 
-    brew install node@12
+    brew install node@14
 
 Add the _bin/_ directory for this Node.js installation to your PATH:
 
-    /usr/local/opt/node@12/bin
+    /usr/local/opt/node@14/bin
 
 If you need [yarn](https://yarnpkg.com/en/), enter this command in a Terminal window to
 install it:
@@ -402,7 +402,7 @@ Maven is written in Java, which means that the project provides one package, whi
 
 Current versions of macOS include a copy of Python 3, but this will not be the latest version of Python. Use Homebrew to install the latest release of Python.
 
-To maintain current and clean Python environments, you should also use [pipenv](https://docs.pipenv.org/). This builds on two features of Python: the [virtual environments](https://docs.python.org/3/tutorial/venv.html) and the [pip](https://pip.pypa.io/en/stable/) utility.
+To maintain current and clean Python environments, use [pipenv](https://docs.pipenv.org/). This builds on two features of Python: the [virtual environments](https://docs.python.org/3/tutorial/venv.html) and the [pip](https://pip.pypa.io/en/stable/) utility.
 
 Enter this command to install Python 3 and pipenv using Homebrew:
 
@@ -564,15 +564,11 @@ various types of invalid data to be entered.
 # Other Useful Desktop Applications for Developers
 
 - [LibreOffice](http://www.libreoffice.org/) suite: _brew cask install libreoffice_
-- [VirtualBox](http://www.virtualbox.org/) virtual machine management: _brew cask install virtualbox_
 - [Docker](https://store.docker.com/editions/community/docker-ce-desktop-mac) container management: _brew cask install docker_
+- [VirtualBox](http://www.virtualbox.org/) virtual machine management: _brew cask install virtualbox_
+
+> If you install VirtualBox, use [Vagrant](https://www.vagrantup.com/) to manage virtual machines for development.
 
 ## Online Resources
-
-Apple offer overviews and task-orientated help on their
-[support Web site for new macOS users](https://support.apple.com/explore/new-to-mac).
-
-Every new user should probably read
-[How to switch to the Mac](http://taoofmac.com/space/HOWTO/Switch), by Rui Carmo.
 
 The [macOS Privacy and Security Guide](https://github.com/drduh/macOS-Security-and-Privacy-Guide) by Dr Doh provides extensive information about those topics.
