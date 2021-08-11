@@ -1,7 +1,7 @@
 +++
 Title = "Useful Node.js Tools and Libraries"
 Slug = "nodejs-toolbox"
-Date = "2021-08-09T20:35:00+01:00"
+Date = "2021-08-11T19:10:00+01:00"
 Description = ""
 Categories = ["javascript", "programming"]
 Tags = ["javascript", "node.js"]
@@ -71,7 +71,7 @@ Every JavaScript project should use [ESLint](http://eslint.org/).
 [Jest](https://facebook.github.io/jest/) provides a comprehensive set of tools for
 testing. Use [AVA](https://www.npmjs.com/package/ava) if you would like a more lightweight test runner.
 
-> Avoid [Mocha](https://mochajs.org/) for new projects. This was a standard tool, but it now been superseded.
+> Avoid [Mocha](https://mochajs.org/) for new projects. This was a standard tool, but it has now been superseded.
 
 - [Faker.js](https://github.com/Marak/faker.js) - Generates fake data
 - [Nock](https://www.npmjs.com/package/nock) - Server mocking and expectations library
@@ -111,7 +111,7 @@ query building, connection handling, and schema migrations.
 [Objection.js](https://vincit.github.io/objection.js) is an Object Relational Mapper
 (ORM) that builds on Knex.
 
-Modern SQL databases support JSON documents. For example, PostgreSQL includes [data types for JSON](https://www.postgresql.org/docs/11/datatype-json.html), which means that it can store and query JSON documents alongside any other data type. For most projects, a SQL database with JSON support may be more appropriate than a document database.
+Modern SQL databases support JSON documents. For example, PostgreSQL includes [data types for JSON](https://www.postgresql.org/docs/13/datatype-json.html), which means that it can store and query JSON documents alongside any other data type. For most projects, a SQL database with JSON support may be more appropriate than a document database.
 
 To access existing MongoDB services, use [Mongoose](http://mongoosejs.com/).
 Avoid using MongoDB for new projects, because current versions of MongoDB are not Open Source.
