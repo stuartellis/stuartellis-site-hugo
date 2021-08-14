@@ -1,7 +1,7 @@
 +++
 Title = "Useful Node.js Tools and Libraries"
 Slug = "nodejs-toolbox"
-Date = "2021-08-11T19:10:00+01:00"
+Date = "2021-08-14T21:14:00+01:00"
 Description = ""
 Categories = ["javascript", "programming"]
 Tags = ["javascript", "node.js"]
@@ -100,7 +100,7 @@ These packages offer commonly used items:
 
 ### Web Clients
 
-To connect with APIs, transfer files, and other Web tasks, use either [got](https://github.com/sindresorhus/got), which provides a lightweight interface over the Node.js HTTP client library, or the larger [axios](https://github.com/axios/axios) library. You can use the HTTP client library that is included with Node.js without any third-party modules, although it uses an API that is based on callbacks, rather than promises.
+To connect with APIs, transfer files, and other Web tasks, use either [got](https://github.com/sindresorhus/got), which provides a lightweight interface over the Node.js HTTP client library, or the larger [axios](https://axios-http.com/) library. You can use the HTTP client library that is included with Node.js without any third-party modules, although it uses an API that is based on callbacks, rather than promises.
 
 [Puppeteer](https://github.com/GoogleChrome/puppeteer) enables you to automate copies of Google Chrome and Chromium Web browsers.
 
@@ -125,6 +125,7 @@ Avoid using MongoDB for new projects, because current versions of MongoDB are no
 - [Decimal.js](https://mikemcl.github.io/decimal.js/) - A Decimal type for JavaScript
 - [Format.js](https://formatjs.io/) - String formatting for internationalization
 - [Math.js](http://mathjs.org/) - Library of standard mathematical functions
+- [uuid](https://www.npmjs.com/package/uuid) - creates and parses UUIDs
 
 ### JSON
 
