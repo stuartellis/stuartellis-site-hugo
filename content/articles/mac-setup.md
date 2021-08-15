@@ -1,7 +1,7 @@
 +++
 Title = "How to Set up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2021-07-15T22:06:00+01:00"
+Date = "2021-08-15T15:30:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["devops", "macos", "golang", "java", "javascript", "python", "ruby"]
@@ -464,7 +464,7 @@ _.gemrc_ and put this line in it:
 To install Minikube with Homebrew, run these commands in a terminal window:
 
     brew install kubernetes-cli
-    brew cask install minikube
+    brew install minikube
 
 By default, Minikube uses a virtual machine manager. If you do not need VirtualBox, install [hyperkit](https://github.com/moby/hyperkit), which provides a minimal virtual machine manager.
 
