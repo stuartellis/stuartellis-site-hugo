@@ -1,7 +1,7 @@
 +++
 Title = "Useful Node.js Tools and Libraries"
 Slug = "nodejs-toolbox"
-Date = "2021-08-14T21:14:00+01:00"
+Date = "2021-08-20T06:10:00+01:00"
 Description = ""
 Categories = ["javascript", "programming"]
 Tags = ["javascript", "node.js"]
@@ -100,9 +100,13 @@ These packages offer commonly used items:
 
 ### Web Clients
 
-To connect with APIs, transfer files, and other Web tasks, use either [got](https://github.com/sindresorhus/got), which provides a lightweight interface over the Node.js HTTP client library, or the larger [axios](https://axios-http.com/) library. You can use the HTTP client library that is included with Node.js without any third-party modules, although it uses an API that is based on callbacks, rather than promises.
+To connect with APIs, transfer files, and other Web tasks, use [axios](https://axios-http.com/), a HTTP client library that has a full range of features.
 
-[Puppeteer](https://github.com/GoogleChrome/puppeteer) enables you to automate copies of Google Chrome and Chromium Web browsers.
+If you only need a simple HTTP client, consider [got](https://github.com/sindresorhus/got), which is a lightweight interface over the Node.js HTTP client library.
+
+You can use the HTTP client library that is included with Node.js without any third-party modules, but it uses an API that is based on callbacks, rather than promises.
+
+In some cases, you may need to automate a Web browser. [Puppeteer](https://github.com/GoogleChrome/puppeteer) enables you to automate copies of Google Chrome and Chromium Web browsers.
 
 ### Database Access
 
@@ -132,7 +136,7 @@ Avoid using MongoDB for new projects, because current versions of MongoDB are no
 The standard library includes support for JSON. These libraries provide additional capabilities:
 
 - [ajv](https://github.com/ajv-validator/ajv) - JSON schema validator
-- [JSONata](:/a61f4fef7adb480ba816c92eac4eec91) - JSON querying
+- [JSONata](https://jsonata.org) - JSON querying
 
 ### Support for Other File Formats
 
