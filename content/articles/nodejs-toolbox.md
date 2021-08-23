@@ -1,7 +1,7 @@
 +++
 Title = "Useful Node.js Tools and Libraries"
 Slug = "nodejs-toolbox"
-Date = "2021-08-23T05:10:00+01:00"
+Date = "2021-08-23T05:57:00+01:00"
 Description = ""
 Categories = ["javascript", "programming"]
 Tags = ["javascript", "node.js"]
@@ -76,13 +76,15 @@ testing. Use [AVA](https://www.npmjs.com/package/ava) if you would like a more l
 - [Faker.js](https://github.com/Marak/faker.js) - Generates fake data
 - [Nock](https://www.npmjs.com/package/nock) - Server mocking and expectations library
 
+### Pre-commit Checks
+
+Add [Husky](https://typicode.github.io/husky/) to your projects. It automatically runs commands before you commit code to version control. Use it with [lint-staged](https://github.com/okonet/lint-staged), which applies commands to the specific files that a Git commit would change.
+
 ### Build Tools
 
 You should learn these as you need them.
 
 - [dotenv](https://github.com/motdotla/dotenv) - Loads environment variables from files
-- [Husky](https://typicode.github.io/husky/) - Convenient Git hooks
-- [lint-staged](https://github.com/okonet/lint-staged) - Apply commands to files in Git before they are committed. Use this with Husky.
 - [rimraf](https://www.npmjs.com/package/rimraf) - Cross-platform file deletion
 - [semantic-release](https://github.com/semantic-release/semantic-release) - Automates the package release workflow
 - [Swagger](https://swagger.io/tools/open-source/) - [OpenAPI](https://www.openapis.org/) code generation for clients and servers
