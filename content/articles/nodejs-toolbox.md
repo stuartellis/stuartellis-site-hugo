@@ -1,7 +1,7 @@
 +++
 Title = "Useful Node.js Tools and Libraries"
 Slug = "nodejs-toolbox"
-Date = "2021-08-20T06:10:00+01:00"
+Date = "2021-08-23T05:10:00+01:00"
 Description = ""
 Categories = ["javascript", "programming"]
 Tags = ["javascript", "node.js"]
@@ -81,7 +81,8 @@ testing. Use [AVA](https://www.npmjs.com/package/ava) if you would like a more l
 You should learn these as you need them.
 
 - [dotenv](https://github.com/motdotla/dotenv) - Loads environment variables from files
-- [Husky](https://typicode.github.io/husky/) - Convenient Git pre-commit hooks
+- [Husky](https://typicode.github.io/husky/) - Convenient Git hooks
+- [lint-staged](https://github.com/okonet/lint-staged) - Apply commands to files in Git before they are committed. Use this with Husky.
 - [rimraf](https://www.npmjs.com/package/rimraf) - Cross-platform file deletion
 - [semantic-release](https://github.com/semantic-release/semantic-release) - Automates the package release workflow
 - [Swagger](https://swagger.io/tools/open-source/) - [OpenAPI](https://www.openapis.org/) code generation for clients and servers
@@ -135,7 +136,7 @@ Avoid using MongoDB for new projects, because current versions of MongoDB are no
 
 The standard library includes support for JSON. These libraries provide additional capabilities:
 
-- [ajv](https://github.com/ajv-validator/ajv) - JSON schema validator
+- [ajv](https://ajv.js.org/) - JSON schema validator
 - [JSONata](https://jsonata.org) - JSON querying
 
 ### Support for Other File Formats
