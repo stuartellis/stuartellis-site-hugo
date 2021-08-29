@@ -1,7 +1,7 @@
 +++
 Title = "Links for Azure DevOps"
 Slug = "ado"
-Date = "2021-07-03T08:40:00+00:00"
+Date = "2021-08-29T07:06:00+00:00"
 Description = "Links for Azure DevOps"
 Type = "article"
 Toc = false
@@ -21,6 +21,7 @@ Useful links for working with Azure DevOps.
 
 - [Azure DevOps REST API](https://docs.microsoft.com/en-us/rest/api/azure/devops)
 - [Azure DevOps CLI](https://docs.microsoft.com/en-us/azure/devops/cli/quick-reference?view=azure-devops)
+- [Terraform Provider](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs)
 - [Using Postman to call the Azure DevOps API](https://sanderh.dev/call-Azure-DevOps-REST-API-Postman/)
 
 > A collection is available through the Postman Public API Network: **manb-msft/Azure DevOps REST Security APIs with Examples**.
