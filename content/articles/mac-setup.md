@@ -1,7 +1,7 @@
 +++
 Title = "How to Set up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2021-09-10T06:02:00+01:00"
+Date = "2021-09-10T06:15:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["devops", "macos", "golang", "java", "javascript", "python", "ruby"]
@@ -204,9 +204,7 @@ To enable colors in the output, which can be very helpful, enter this command:
 
 ### Text Editors
 
-Installations of macOS include older command-line versions of both
-[Emacs](http://www.gnu.org/software/emacs/) and [vim](http://www.vim.org/), as well as
-TextEdit, a desktop text editor. TextEdit is designed for light-weight word processing,
+Installations of macOS include a command-line version of [vim](http://www.vim.org/) and TextEdit, a desktop text editor. TextEdit is designed for light-weight word processing,
 and has no support for programming. Add the code editors or IDEs that you would prefer to use.
 
 If you do not have a preferred editor, consider using a version of [Visual Studio Code](https://code.visualstudio.com). Read the next section for more details.
@@ -217,7 +215,7 @@ To work with a modern Vim editor, install [Neovim](https://neovim.io).
 
 [Visual Studio Code](https://code.visualstudio.com) is a powerful desktop editor for programming, with built-in support for version control and debugging. The large range of extensions for Visual Studio Code enable it to work with every popular programming language and framework. It is available free of charge.
 
-The Microsoft releases of Visual Studio Code are proprietary software with telemetry enabled by default. To avoid these issues, use the packages that are provided by the [vscodium](https://github.com/VSCodium/vscodium) project instead.
+The Microsoft releases of Visual Studio Code are proprietary software with telemetry enabled by default. To avoid these issues, use the packages that are provided by the [VSCodium](https://vscodium.com/) project instead.
 
 Once you have installed Visual Studio Code or VSCodium, read [this article](https://www.stuartellis.name/articles/visual-studio-code/) for more information about using the editor.
 
