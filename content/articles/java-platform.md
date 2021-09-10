@@ -1,7 +1,7 @@
 +++
 Title = "An Overview of the Java Platform"
 Slug = "java-platform"
-Date = "2019-06-15T12:07:00+01:00"
+Date = "2021-09-10T06:01:00+01:00"
 Description = ""
 Categories = ["programming"]
 Tags = ["java"]
@@ -84,10 +84,11 @@ Almost every Java distribution now uses versions of the OpenJDK tools and librar
 
 ### Free, Open Source Distributions
 
-- [AdoptOpenJDK](https://adoptopenjdk.net/) - Provides free versions of the OpenJDK with either HotSpot or OpenJ9 Java Virtual Machines. [IBM offers commercial support contracts](https://www-01.ibm.com/support/docview.wss?uid=ibm10741649)
-- [Amazon Corretto](https://aws.amazon.com/corretto/) - OpenJDK with HotSpot Java Virtual Machine, supported by AWS
+- [Adoptium](https://adoptium.net/) - Provides Eclipse Temurin, a free version of the OpenJDK with the HotSpot Java Virtual Machine for all popular operating systems. [IBM offers commercial support contracts](https://www-01.ibm.com/support/docview.wss?uid=ibm10741649)
+- [Amazon Corretto](https://aws.amazon.com/corretto/) - OpenJDK with the HotSpot Java Virtual Machine, supported by AWS
 - [Eclipse OpenJ9](https://www.eclipse.org/openj9/) - OpenJDK with the OpenJ9 JVM
-- [Red Hat OpenJDK](https://developers.redhat.com/products/openjdk/overview/) - OpenJDK with HotSpot Java Virtual Machine, supported by Red Hat, Linux and Windows only
+- [IBM Semeru](https://developer.ibm.com/languages/java/semeru-runtimes/) - OpenJDK with the OpenJ9 Java Virtual Machine, supported by IBM
+- [Red Hat OpenJDK](https://developers.redhat.com/products/openjdk/overview/) - OpenJDK with the HotSpot Java Virtual Machine, supported by Red Hat, Linux and Windows only
 - [SapMachine](https://sap.github.io/SapMachine/) - OpenJDK and JVM, provided by SAP for their customers
 - [Zulu](https://www.azul.com/downloads/zulu/) - OpenJDK with the Zulu JVM, maintained by Azul Systems
 

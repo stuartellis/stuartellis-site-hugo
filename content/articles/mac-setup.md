@@ -1,7 +1,7 @@
 +++
 Title = "How to Set up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2021-08-15T15:30:00+01:00"
+Date = "2021-09-10T06:02:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["devops", "macos", "golang", "java", "javascript", "python", "ruby"]
@@ -289,11 +289,6 @@ Add the _bin/_ directory for this Node.js installation to your PATH:
 
     /usr/local/opt/node@14/bin
 
-If you need [yarn](https://yarnpkg.com/en/), enter this command in a Terminal window to
-install it:
-
-    brew install yarn
-
 ### Go Development
 
 Use Homebrew to install [Go](https://golang.org/):
@@ -318,30 +313,42 @@ Then, add this to your PATH:
 
 Close the Terminal and open it again for the changes to take effect.
 
-### Java Development: AdoptOpenJDK
+### Java Development: Adoptium
 
 #### Which Version of Java?
 
-Many vendors provide a JDK. To avoid potential licensing and support issues, use the JDK that is provided by the [AdoptOpenJDK](https://adoptopenjdk.net/) project. The versions of Java on the OpenJDK Website are for testers, and the Oracle JDK is a proprietary product that requires license fees.
+Many vendors provide a JDK. To avoid potential licensing and support issues, use Eclipse Temurin, which is provided by the [Adoptium](https://adoptium.net/) project. The versions of Java on the OpenJDK Website are for testers, and the Oracle JDK is a proprietary product that requires license fees.
 
-Use the _LTS_ version of the OpenJDK, unless you need features that are in the latest releases.
+Use the _LTS_ version of Temurin, unless you need features that are in the latest releases.
 
-Once you have installed a JDK, get the [Apache Maven](https://maven.apache.org) build tool. This is provided by the Maven project itself, and is not part of the OpenJDK.
+Once you have installed a JDK, get the [Apache Maven](https://maven.apache.org) build tool. This is provided by the Maven project itself, and is not part of Temurin or the OpenJDK.
 
 Use [jEnv](https://www.jenv.be/) if you need to run multiple JDKs, such as different versions of the same JDK.
 
-#### Setting up Java with Homebrew
+#### Manual Set up of Eclipse Temurin
 
-Run these commands in a terminal window:
+To manually install a copy of the JDK:
 
-    brew tap adoptopenjdk/openjdk
-    brew cask install adoptopenjdk11
+1. Download the version of the JDK that you need from Adoptium
+2. Unzip the download
+3. Copy the JDK directory to _/usr/local/lib_
+4. Edit your _~/.zshrc_ file to set environment variables. For example, to use jdk-11.0.3+7 as the Java version:
 
-This installs version 11 of the OpenJDK, from the AdoptOpenJDK project.
+```bash
+JAVA_HOME=/usr/local/lib/jdk-11.0.3+7/Contents/Home
+PATH=$PATH:/usr/local/lib/jdk-11.0.3+7/Contents/Home/bin
+```
 
-Run this command in a terminal window to install Maven:
+To manually install a copy of [Apache Maven](https://maven.apache.org):
 
-    brew install maven
+1. Download the latest version of Maven
+2. Unzip the download
+3. Copy the Maven directory to _/usr/local/lib/_
+4. Add _/usr/local/lib/MAVEN-DIRECTORY_ to your PATH environment variable
+
+Replace _MAVEN-DIRECTORY_ with the name of the directory that Maven uses, such as _apache-maven-3.6.0_.
+
+Maven is written in Java, which means that the project provides one package, which works on any operating system that has a supported version of Java.
 
 #### Setting up jEnv
 
@@ -372,31 +379,6 @@ Lastly, run this command to register your current JDK with jEnv:
 To see a list of the available commands, type _jenv_ in a terminal window:
 
     jenv
-
-#### Manual Set up of AdoptOpenJDK
-
-To manually install a copy of the JDK:
-
-1. Download the version of the JDK that you need from AdoptOpenJDK
-2. Unzip the download
-3. Copy the JDK directory to _/usr/local/lib_
-4. Edit your _~/.zshrc_ file to set environment variables. For example, to use jdk-11.0.3+7 as the Java version:
-
-```bash
-JAVA_HOME=/usr/local/lib/jdk-11.0.3+7/Contents/Home
-PATH=$PATH:/usr/local/lib/jdk-11.0.3+7/Contents/Home/bin
-```
-
-To manually install a copy of [Apache Maven](https://maven.apache.org):
-
-1. Download the latest version of Maven
-2. Unzip the download
-3. Copy the Maven directory to _/usr/local/lib/_
-4. Add _/usr/local/lib/MAVEN-DIRECTORY_ to your PATH environment variable
-
-Replace _MAVEN-DIRECTORY_ with the name of the directory that Maven uses, such as _apache-maven-3.6.0_.
-
-Maven is written in Java, which means that the project provides one package, which works on any operating system that has a supported version of Java.
 
 ### Python Development: pipenv
 
