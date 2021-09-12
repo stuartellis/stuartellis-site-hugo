@@ -1,7 +1,7 @@
 +++
 Title = "How to Set up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2021-09-10T06:15:00+01:00"
+Date = "2021-09-10T18:50:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["devops", "macos", "golang", "java", "javascript", "python", "ruby"]
@@ -543,9 +543,9 @@ various types of invalid data to be entered.
 
 # Other Useful Desktop Applications for Developers
 
-- [LibreOffice](http://www.libreoffice.org/) suite: _brew cask install libreoffice_
-- [Docker](https://store.docker.com/editions/community/docker-ce-desktop-mac) container management: _brew cask install docker_
-- [VirtualBox](http://www.virtualbox.org/) virtual machine management: _brew cask install virtualbox_
+- [LibreOffice](http://www.libreoffice.org/) suite: _brew install --cask libreoffice_
+- [Docker](https://store.docker.com/editions/community/docker-ce-desktop-mac) container management: _brew install --cask docker_
+- [VirtualBox](http://www.virtualbox.org/) virtual machine management: _brew install --cask virtualbox_
 
 > If you install VirtualBox, use [Vagrant](https://www.vagrantup.com/) to manage virtual machines for development.
 
