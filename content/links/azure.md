@@ -1,7 +1,7 @@
 +++
 Title = "DevOps Links for Azure"
 Slug = "azure"
-Date = "2021-09-13T21:01:00+01:00"
+Date = "2021-09-13T21:05:00+01:00"
 Description = "Links for Azure"
 Type = "article"
 Toc = false
@@ -15,6 +15,7 @@ Useful links for working with Azure.
 ## Operations Documentation
 
 - [Azure CLI](https://docs.microsoft.com/en-gb/cli/azure/)
+- [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/)
 
 ## Services
 
