@@ -1,7 +1,7 @@
 +++
 Title = "Useful Node.js Tools and Libraries"
 Slug = "nodejs-toolbox"
-Date = "2021-08-23T05:57:00+01:00"
+Date = "2021-09-25T17:26:00+01:00"
 Description = ""
 Categories = ["javascript", "programming"]
 Tags = ["javascript", "node.js"]
@@ -132,6 +132,7 @@ Avoid using MongoDB for new projects, because current versions of MongoDB are no
 - [Decimal.js](https://mikemcl.github.io/decimal.js/) - A Decimal type for JavaScript
 - [Format.js](https://formatjs.io/) - String formatting for internationalization
 - [Math.js](http://mathjs.org/) - Library of standard mathematical functions
+- [URI.js](https://www.npmjs.com/package/urijs) - Library for working with URIs, URLs and URNs
 - [uuid](https://www.npmjs.com/package/uuid) - creates and parses UUIDs
 
 ### JSON
