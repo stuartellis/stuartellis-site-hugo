@@ -1,7 +1,7 @@
 +++
 Title = "How to Set up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2021-09-10T19:00:00+01:00"
+Date = "2021-10-11T19:25:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["devops", "macos", "golang", "java", "javascript", "python", "ruby"]
@@ -382,7 +382,7 @@ To see a list of the available commands, type _jenv_ in a terminal window:
 
 Current versions of macOS include a copy of Python 3, but this will not be the latest version of Python. Use Homebrew to install the latest release of Python.
 
-To maintain current and clean Python environments, use [pipenv](https://docs.pipenv.org/). This builds on two features of Python: the [virtual environments](https://docs.python.org/3/tutorial/venv.html) and the [pip](https://pip.pypa.io/en/stable/) utility.
+To maintain current and clean Python environments, use [pipenv](https://pipenv.pypa.io). This builds on two features of Python: the [virtual environments](https://docs.python.org/3/tutorial/venv.html) and the [pip](https://pip.pypa.io/en/stable/) utility.
 
 Enter this command to install Python 3 and pipenv using Homebrew:
 
