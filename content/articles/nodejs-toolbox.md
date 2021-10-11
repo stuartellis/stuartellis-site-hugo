@@ -1,7 +1,7 @@
 +++
 Title = "Useful Node.js Tools and Libraries"
 Slug = "nodejs-toolbox"
-Date = "2021-09-25T17:26:00+01:00"
+Date = "2021-10-11T07:06:00+01:00"
 Description = ""
 Categories = ["javascript", "programming"]
 Tags = ["javascript", "node.js"]
@@ -140,6 +140,7 @@ Avoid using MongoDB for new projects, because current versions of MongoDB are no
 The standard library includes support for JSON. These libraries provide additional capabilities:
 
 - [ajv](https://ajv.js.org/) - JSON schema validator
+- [flat](https://www.npmjs.com/package/flat) - Flatten or unflatten objects
 - [JSONata](https://jsonata.org) - JSON querying
 
 ### Support for Other File Formats
