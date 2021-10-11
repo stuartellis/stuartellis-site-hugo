@@ -1,7 +1,7 @@
 +++
 Title = "Useful Python Tools and Libraries"
 Slug = "python-toolbox"
-Date = "2021-10-11T19:20:00+01:00"
+Date = "2021-10-11T19:35:00+01:00"
 Description = ""
 Categories = ["programming", "python"]
 Tags = ["python"]
@@ -14,13 +14,13 @@ Key tools and libraries for the [Python](https://www.python.org/) programming la
 
 <!--more-->
 
-# Using Python Command-Line Applications
+## Using Python Command-Line Applications
 
 Use [pipx](https://pypi.org/project/pipx/) to install Python command-line tools.
 
 The pipx utility uses the _pip_ and [virtual environment](https://docs.python.org/3/tutorial/venv.html) facilities that are included with Python itself.
 
-# Online Development Environments
+## Online Development Environments
 
 These services enable you to work on Python projects in a cloud-based environment:
 
@@ -29,7 +29,7 @@ These services enable you to work on Python projects in a cloud-based environmen
 
 To quickly share pieces of code, use [Pastebin](https://pastebin.com/).
 
-# Working on Python Projects
+## Working on Python Projects
 
 ### Use pipenv for Virtual Environments
 
@@ -67,13 +67,13 @@ If you install the Python extension for Visual Studio Code, it will offer to use
 - [Bandit](https://pypi.python.org/pypi/bandit) to check your code for common security issues
 - [Safety](https://pyup.io/safety/) to check your project dependencies for known security vulnerabilities
 
-# Developing Command-line Applications
+## Developing Command-line Applications
 
 Use the [Click](http://click.pocoo.org) framework to build command-line tools with Python.
 
 [Python Fire](https://github.com/google/python-fire) enables you to add a command-line interface to existing code.
 
-# Building Web Applications
+## Building Web Applications
 
 For simple Websites and services, use the [Flask](http://flask.pocoo.org/) framework. Flask itself provides the basic package of features that you need for a Web application, and the framework has [a wide range of extensions](http://flask.pocoo.org/extensions/) to add more capabilities.
 
@@ -99,13 +99,13 @@ Both Starlette and Quart implement the [ASGI](https://asgi.readthedocs.io/en/lat
 
 The [aiohttp](https://docs.aiohttp.org/en/stable) library provides an asynchronous HTTP client and server, but it does not currently support ASGI.
 
-# Developing Web Clients
+## Developing Web Clients
 
 Use the [requests](http://docs.python-requests.org/en/master/) library for your Web client software, such as downloading files or working with APIs. The HTTP support in the Python standard library is for low-level code.
 
 If you need to get information from Websites that do not provide an API, use [Scrapy](https://doc.scrapy.org). You can then extract content from the pages with the [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/) library.
 
-# Working with SQL Databases
+## Working with SQL Databases
 
 The Python standard library includes a version of [SQLite](http://www.sqlite.org/). This means that you can use SQL databases in any Python project without installing a separate database product. Avoid underestimating SQLite: it is a robust and efficient database that will handle gigabytes of data.
 
@@ -119,17 +119,17 @@ Whichever brand of SQL database you work with, use a database toolkit, rather th
 
 If your project has limited or specific needs, consider alternatives to SQLAlchemy. [Peewee](http://docs.peewee-orm.com/) offers a lightweight alternative to SQLAlchemy for accessing the most popular brands of Open Source database. For Django projects, use the Object-Relational Mapper (ORM) that is provided with Django, because this is integrated with the other features of the framework.
 
-# Building Graphical Desktop Applications
+## Building Graphical Desktop Applications
 
 Consider using [wxPython](http://wxpython.org/) to build graphical interfaces for your applications. The Tk interface toolkit that is supplied with the Python standard library is rather basic and dated. If you have advanced needs, you may prefer [QT for Python](https://www.qt.io/qt-for-python), which enables you to make use of the [QT](https://www.qt.io/) libraries.
 
 If you are building 2D games, try [pygame](https://www.pygame.org). This provides a simple toolkit for games and multimedia applications.
 
-# Microsoft Windows Integration
+## Microsoft Windows Integration
 
 Python includes support for some features that are unique to Microsoft Windows, but not all of them. To use Python with other features of Windows, such as COM and the Registry, install the [win32 Extensions](https://github.com/mhammond/pywin32).
 
-# Packaging Applications
+## Packaging Applications
 
 Use [PyInstaller](http://www.pyinstaller.org/) to create applications that you can give to other people. PyInstaller creates stand-alone executables that include Python itself, your code, and any other dependencies. Follow the steps described in the [RealPython.com tutorial](https://realpython.com/pyinstaller-python/) to add PyInstaller to your project.
 
@@ -137,7 +137,7 @@ If you only need to deploy your application to systems that you know will have a
 
 To run your Python server applications on Kubernetes, package them as containers.
 
-# Other Useful Libraries
+## Other Useful Libraries
 
 - [Jinja2](http://jinja.pocoo.org/) - Text templating, for generating HTML and other formats
 - [Matplotlib](https://matplotlib.org/) - Plotting 2D graphs and charts
@@ -148,6 +148,6 @@ To run your Python server applications on Kubernetes, package them as containers
 - [PyYAML](https://pyyaml.org/) - YAML support for Python
 - [Reportlab](https://www.reportlab.com/opensource/) - PDF generation
 
-# Learning Resources
+## Learning Resources
 
 [This article](https://www.stuartellis.name/articles/python-learning-resources) lists useful learning resources for Python.
