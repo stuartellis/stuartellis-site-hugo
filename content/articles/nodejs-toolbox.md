@@ -1,7 +1,7 @@
 +++
 Title = "Useful Node.js Tools and Libraries"
 Slug = "nodejs-toolbox"
-Date = "2021-10-11T07:06:00+01:00"
+Date = "2021-10-24T07:48:00+01:00"
 Description = ""
 Categories = ["javascript", "programming"]
 Tags = ["javascript", "node.js"]
@@ -18,7 +18,7 @@ Notes on useful tools and libraries for [Node.js](https://nodejs.org).
 
 ### Web Applications
 
-> [Express](https://expressjs.com/) is still most popular Web framework for Node.js, but it is not the best choice. 
+> [Express](https://expressjs.com/) is still most popular Web framework for Node.js, but it has been superseded by Fastify and Hapi. 
 
 Use [Fastify](https://www.fastify.io/) for smaller Websites and services. Fastify can use Express plugins. 
 
@@ -125,6 +125,8 @@ Avoid using MongoDB for new projects, because current versions of MongoDB are no
 
 > _Driver software required:_ To access a database service such as PostgreSQL or
 > MongoDB, you will need to install the appropriate Node.js driver.
+
+To work with Git repositories, use [simple-git](https://www.npmjs.com/package/simple-git). This provides a Node.js interface for the Git command-line tool.
 
 ### Common Data Types
 
