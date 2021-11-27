@@ -245,14 +245,16 @@ In this directory, create an _src_ sub-directory. For each repository host, crea
 subdirectory in _src_ that matches your username. Check out projects in the directory.
 The final directory structure looks like this:
 
-    code/
-      src/
-        gitlab.com/
-          my-gitlab-username/
-            another-project/
-        sr.ht/
-          my-sourcehut-username/
-            a-project/
+```
+code/
+     src/
+         gitlab.com/
+                    my-gitlab-username/
+                                       a-project/
+         sr.ht/
+               my-sourcehut-username/
+                                     a-project/
+```
 
 ### Creating SSH Keys
 
@@ -548,7 +550,7 @@ Each database vendor recommend a specific graphical tool. These are the tools th
 - [Oracle SQL Developer](https://www.oracle.com/database/technologies/appdev/sql-developer.html) - The official tool for Oracle
 - [pgAdmin](https://www.pgadmin.org/) - The recommended tool for PostgreSQL
 
-# Other Useful Desktop Applications for Developers
+## Other Useful Desktop Applications for Developers
 
 - [Joplin](https://joplinapp.org/) note-taking: _brew install \--cask joplin_
 - [LibreOffice](http://www.libreoffice.org/) suite: _brew install \--cask libreoffice_
