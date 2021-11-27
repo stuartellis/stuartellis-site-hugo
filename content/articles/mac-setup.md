@@ -1,7 +1,7 @@
 +++
 Title = "How to Set up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2021-10-11T19:25:00+01:00"
+Date = "2021-10-27T10:59:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["devops", "macos", "golang", "java", "javascript", "python", "ruby"]
@@ -234,8 +234,7 @@ make Neovim (_nvim_) the favored text editor:
 
 ### Setting Up A Directory Structure for Projects
 
-To keep your projects tidy, I would recommend following the
-[Go developer conventions](http://golang.org/doc/code.html). These guidelines may seem
+To keep your projects tidy, I would recommend following these guidelines. They may seem
 slightly fussy, but they pay off when you have many projects, some of which are on
 different version control hosts.
 
@@ -248,12 +247,12 @@ The final directory structure looks like this:
 
     code/
       src/
-        bitbucket.org/
-          my-bitbucket-username/
-            a-project/
         gitlab.com/
           my-gitlab-username/
             another-project/
+        sr.ht/
+          my-sourcehut-username/
+            a-project/
 
 ### Creating SSH Keys
 
@@ -279,13 +278,13 @@ To create an SSH key, run the _ssh-keygen_ command in a terminal window. For exa
 Homebrew provides separate packages for each version of [Node.js](https://nodejs.org).
 To ensure that you are using the version of Node.js that you expect, specify the version
 when you install it. For example, enter this command in a Terminal window to install the
-Node.js 14, the current LTS release:
+Node.js 16, the current LTS release:
 
-    brew install node@14
+    brew install node@16
 
 Add the _bin/_ directory for this Node.js installation to your PATH:
 
-    /usr/local/opt/node@14/bin
+    /usr/local/opt/node@16/bin
 
 ### Go Development
 
@@ -315,7 +314,7 @@ Close the Terminal and open it again for the changes to take effect.
 
 #### Which Version of Java?
 
-Many vendors provide a JDK. To avoid potential licensing and support issues, use Eclipse Temurin, which is provided by the [Adoptium](https://adoptium.net/) project. The versions of Java on the OpenJDK Website are for testers, and the Oracle JDK is a proprietary product that requires license fees.
+Many vendors provide a JDK. To avoid licensing and support issues, use Eclipse Temurin. This is an Open Source JDK that is maintained by the [Adoptium](https://adoptium.net/) project. The versions of Java on the OpenJDK Website are for testers, and the Oracle JDK is a proprietary product.
 
 Use the _LTS_ version of Temurin, unless you need features that are in the latest releases.
 
@@ -446,7 +445,7 @@ To install Minikube with Homebrew, run these commands in a terminal window:
     brew install kubernetes-cli
     brew install minikube
 
-By default, Minikube uses a virtual machine manager. If you do not need VirtualBox, install [hyperkit](https://github.com/moby/hyperkit), which provides a minimal virtual machine manager.
+By default, Minikube uses a virtual machine manager. If you choose to install VirtualBox, MiniKube will use it. If you do not need VirtualBox, install [hyperkit](https://github.com/moby/hyperkit), which provides a minimal virtual machine manager.
 
     brew install hyperkit
 
@@ -536,15 +535,23 @@ various types of invalid data to be entered.
 
 ### Database Management Tools
 
-- [Azure Data Studio](https://docs.microsoft.com/en-gb/sql/azure-data-studio/what-is?view=sql-server-2017) for Microsoft SQL Server
-- [MySQL Workbench](http://wb.mysql.com/)
-- [Oracle SQL Developer](https://www.oracle.com/database/technologies/appdev/sql-developer.html)
-- [pgAdmin](https://www.pgadmin.org/) for PostgreSQL
+To work with SQL databases, use [Beekeeper Studio](https://www.beekeeperstudio.io). This graphical tool supports the popular Open Source databases, as well as Microsoft SQL Server and Amazon Redshift.
+
+Install Beekeeper with Homebrew:
+
+    brew install beekeeper-studio
+
+Each database vendor recommend a specific graphical tool. These are the tools that the vendors recommend:
+
+- [Azure Data Studio](https://docs.microsoft.com/en-gb/sql/azure-data-studio/what-is?view=sql-server-2017) - Microsoft tool for SQL Server and Azure databases
+- [MySQL Workbench](http://wb.mysql.com/) - The official tool for MySQL
+- [Oracle SQL Developer](https://www.oracle.com/database/technologies/appdev/sql-developer.html) - The official tool for Oracle
+- [pgAdmin](https://www.pgadmin.org/) - The recommended tool for PostgreSQL
 
 # Other Useful Desktop Applications for Developers
 
+- [Joplin](https://joplinapp.org/) note-taking: _brew install \--cask joplin_
 - [LibreOffice](http://www.libreoffice.org/) suite: _brew install \--cask libreoffice_
-- [Docker](https://store.docker.com/editions/community/docker-ce-desktop-mac) container management: _brew install \--cask docker_
 - [VirtualBox](http://www.virtualbox.org/) virtual machine management: _brew install \--cask virtualbox_
 
 > If you install VirtualBox, use [Vagrant](https://www.vagrantup.com/) to manage virtual machines for development.
