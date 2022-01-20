@@ -1,7 +1,7 @@
 +++
 Title = "DevOps Links for Azure"
 Slug = "azure"
-Date = "2022-12-20T19:20:00+00:00"
+Date = "2022-01-20T19:20:00+00:00"
 Description = "Links for Azure"
 Type = "article"
 Toc = false
@@ -25,6 +25,7 @@ Useful links for working with Azure.
 
 ## Developer Documentation
 
+- [Azure REST APIs](https://docs.microsoft.com/en-us/rest/api/?view=Azure)
 - [Serverless Framework for Azure](https://www.serverless.com/framework/docs/providers/azure/)
 - [Azure and JavaScript](https://docs.microsoft.com/en-us/azure/developer/javascript/)
 - [Azure REST APIs with Postman](https://blog.jongallant.com/2021/02/azure-rest-apis-postman-2021/)
