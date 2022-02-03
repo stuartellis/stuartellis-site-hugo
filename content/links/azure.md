@@ -1,7 +1,7 @@
 +++
 Title = "DevOps Links for Azure"
 Slug = "azure"
-Date = "2022-01-20T19:20:00+00:00"
+Date = "2022-02-03T21:15:00+00:00"
 Description = "Links for Azure"
 Type = "article"
 Toc = false
@@ -33,4 +33,5 @@ Useful links for working with Azure.
 
 ## Tools
 
+- [Ansible Collection](https://docs.ansible.com/ansible/latest/collections/azure/azcollection)
 - [Terraform Provider](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)

@@ -1,7 +1,7 @@
 +++
 Title = "DevOps Links for AWS"
 Slug = "aws"
-Date = "2021-08-29T07:04:00+00:00"
+Date = "2022-02-03T21:15:00+00:00"
 Description = "Links for AWS"
 Type = "article"
 Toc = false
@@ -34,4 +34,5 @@ Useful links for working with AWS.
 
 ## Tools
 
+- [Ansible Collection](https://docs.ansible.com/ansible/latest/collections/amazon/aws/)
 - [Terraform Provider](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)

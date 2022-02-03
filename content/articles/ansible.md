@@ -1,7 +1,7 @@
 +++
 Title = "Task Automation with Ansible"
 Slug = "ansible"
-Date = "2019-04-27T13:47:00+01:00"
+Date = "2022-01-22T12:09:00+00:00"
 Description = "The Ansible task automation framework"
 Categories = ["automation", "python"]
 Tags = ["ansible", "automation", "devops", "python"]
@@ -35,10 +35,14 @@ manage almost any system with Ansible, possibly starting with tasks that use low
 
 Ansible modules for online services work slightly differently. These modules connect from the control machine to the relevant server or cloud, and use the API that the service provides to send commands to it.
 
-### Ansible Tower and AWX
+### Ansible Automation Controller and Ansible Tower
 
 If you need a central service for managing tasks and nodes, Red Hat offer
-[Ansible Tower](https://www.ansible.com/products/tower). The software for Ansible Tower is developed as an Open Source project, called [AWX](https://github.com/ansible/awx). You may use AWX, rather than pay for Ansible Tower, but the project does not provide user support or long-term maintenance for releases. None of the features of Ansible itself rely on Ansible Tower or AWX.
+[Ansible automation controller](https://www.ansible.com/products/controller). This replaces Ansible Tower.
+
+The software for Ansible Tower is developed as an Open Source project, called [AWX](https://github.com/ansible/awx). You may use AWX, rather than pay for Ansible Tower, but the project does not provide user support or long-term maintenance for releases.
+
+None of the features of Ansible itself rely on Automation Controller, Ansible Tower or AWX.
 
 # Setting Up a Control Machine
 
@@ -46,11 +50,11 @@ To set up Ansible on a macOS or Linux system, first ensure that Python 3 and the
 
 To install Ansible with pip, run this command in a terminal:
 
-    pip3 install --user ansible
+    pip3 install --user ansible-core
 
 If you use [pipx](https://pypi.org/project/pipx/) to manage Python utilities, use this command to install Ansible:
 
-    pipx install ansible
+    pipx install ansible-core
 
 ### Installing Extra Packages on the Control Machine
 
@@ -241,7 +245,7 @@ Any YAML file that stores password variables should be encrypted using the [Vaul
 
 # Resources
 
-- [Ansible Documentation](https://docs.ansible.com/)
-- [Ansible Module Index](https://docs.ansible.com/ansible/latest/modules/modules_by_category.html) - Documentation for the modules that are provided with Ansible
+- [Ansible Documentation](https://docs.ansible.com/ansible/latest/)
+- [Ansible Module Index](https://docs.ansible.com/ansible/latest/collections/index.html) - Documentation for standard modules
 - [Ansible for DevOps](https://www.ansiblefordevops.com), by Jeff Geerling - The most popular book on Ansible
 - [Ansible Lightbulb](https://ansible.github.io/lightbulb/) - Material for running training workshops on Ansible
