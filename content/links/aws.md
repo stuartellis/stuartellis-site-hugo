@@ -1,7 +1,7 @@
 +++
 Title = "DevOps Links for AWS"
 Slug = "aws"
-Date = "2022-02-03T21:15:00+00:00"
+Date = "2022-03-18T06:42:00+00:00"
 Description = "Links for AWS"
 Type = "article"
 Toc = false
@@ -12,9 +12,13 @@ Useful links for working with AWS.
 
 <!--more-->
 
-## Operations Documentation
+## CLI Documentation
 
 - [AWS CLI Version 2 Commands](https://awscli.amazonaws.com/v2/documentation/api/latest/index.html)
+- [PowerShell for AWS](https://aws.amazon.com/powershell/)
+
+## Operations Documentation
+
 - [AWS CloudFormation Resource Types](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html)
 - [AWS IAM Actions, Resources and Conditions](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html)
 - [CloudWatch Logs Query Syntax](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html)

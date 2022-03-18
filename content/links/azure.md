@@ -1,7 +1,7 @@
 +++
 Title = "DevOps Links for Azure"
 Slug = "azure"
-Date = "2022-02-03T21:15:00+00:00"
+Date = "2022-03-18T06:41:00+00:00"
 Description = "Links for Azure"
 Type = "article"
 Toc = false
@@ -12,11 +12,15 @@ Useful links for working with Azure.
 
 <!--more-->
 
-## Operations Documentation
+## CLI Documentation
 
 - [Azure CLI](https://docs.microsoft.com/en-gb/cli/azure/)
+- [Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/)
+
+## Infrastructure as Code
+
 - [Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/)
-- [Bicep](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview)
+- [Kusto Query Language](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/)
 
 ## Services
 
@@ -34,4 +38,5 @@ Useful links for working with Azure.
 ## Tools
 
 - [Ansible Collection](https://docs.ansible.com/ansible/latest/collections/azure/azcollection)
+- [Bicep](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview)
 - [Terraform Provider](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
