@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2021-02-20T12:19:00+00:00"
+Date = "2022-03-18T06:45:00+00:00"
 Description = ""
 Categories = ["automation", "devops"]
 Tags = [".NET", "automation", "devops", "powershell", "windows"]
@@ -27,13 +27,13 @@ commands and scripts from the host operating system.
 
 ## PowerShell Versions
 
-PowerShell 7 is the current version of PowerShell. It is built with .NET Core to be cross-platform and Open Source. It replaces Windows PowerShell and PowerShell Core.
-
 Windows PowerShell is the older, proprietary implementation of PowerShell that is
-shipped with most versions of Microsoft Windows. It is sometimes referred to as the
-*Desktop* edition. Windows PowerShell is still maintained, but will receive no new features. The intention is to replace it with PowerShell 7.
+included with Microsoft Windows. It is sometimes referred to as the
+*Desktop* edition. Windows PowerShell is still maintained, but will receive no new features.
 
-PowerShell Core was the first Open Source version of PowerShell. Releases of PowerShell Core were designated as PowerShell version 6.
+PowerShell 7 is the current version of PowerShell. It is built with .NET Core to be cross-platform and Open Source. If you install PowerShell 7 on Microsoft Windows it does *not* replace the version of Windows PowerShell on the system.
+
+> PowerShell Core was the first Open Source version of PowerShell. Releases of PowerShell Core were designated as PowerShell version 6.
 
 ## Installing PowerShell
 
@@ -61,7 +61,7 @@ Follow [these instructions](https://github.com/powershell/powershell#telemetry) 
 
 ### Tools
 
-PowerShell 7 includes features to install extra modules from
+Current versions of PowerShell include features to install extra modules from
 remote repositories. By default, the public [PowerShell Gallery](http://www.powershellgallery.com) is configured as a repository.
 
 To write and debug PowerShell scripts, install the [Visual Studio Code](https://code.visualstudio.com) editor and add the [PowerShell Language Support](https://marketplace.visualstudio.com/items?itemname=ms-vscode.powershell) extension. This extension includes support for the [Pester](https://github.com/pester/Pester) testing framework, and [PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer), which is the recommended static code analyzer for PowerShell.
@@ -123,7 +123,7 @@ $today = [datetime]::Today
 ~~~
 
 The PowerShell language also supports the usual programming constructs, such as
-variables and loops. Exception handlers are known as *traps* in PowerShell.
+variables and loops.
 
 Within PowerShell files, you can enclose code in functions, or *script blocks*.
 Functions are always named. Script blocks can be anonymous, or be assigned to
@@ -273,7 +273,7 @@ For example:
 del *.log -ErrorAction Inquire
 ~~~
 
-To handle particular types of errors in your code, use *error traps*. These are the equivalent of exceptions in PowerShell.
+PowerShell also provides exception handlers for control flow. These are known as *traps* in PowerShell.
 
 ~~~powershell
 trap [System.Management.Automation.PSInvalidCastException] {
@@ -324,9 +324,14 @@ $items = Import-CSV ./things.csv
 
 ### Videos
 
+* [John Savill Master Class on PowerShell](https://www.youtube.com/playlist?list=PLlVtbbG169nFq_hR7FcMYg32xsSAObuq8)
 * [Microsoft introductory video course](https://mva.microsoft.com/en-US/training-courses/getting-started-with-microsoft-powershell-8276)
 * [Microsoft video course on using PowerShell with SQL Server](https://mva.microsoft.com/en-US/training-courses/powershell-for-sql-data-professionals-16532?l=XgA5w0PgC_8805121157)
 * [Microsoft video tutorial on testing with Pester](https://mva.microsoft.com/en-US/training-courses/testing-powershell-with-pester-17650?l=mg8oBM9vD_8811787177)
+
+### References
+
+- [Style Guide](https://github.com/PoshCode/PowerShellPracticeAndStyle)
 
 ### Websites
 
@@ -341,17 +346,21 @@ $items = Import-CSV ./things.csv
 * [PowerShell Notes for Professionals book](http://goalkicker.com/PowerShellBook/) - Free ebook
 * [Secrets of PowerShell](https://www.penflip.com/powershellorg/) - A series of free short e-books from PowerShell.org
 
-## Tools
+## Shell Extensions
+
+* [posh-git](https://dahlbyk.github.io/posh-git/) - Git integration for PowerShell
+* [posh-sshell](https://github.com/dahlbyk/posh-sshell) - SSH integration for PowerShell
+
+## Development Tools
 
 - [Pester](https://github.com/pester/Pester) - Testing framework
-- [PlatyPS](https://github.com/PowerShell/platyPS) - Transform Markdown to PowerShell help documentation
-- [psake](https://github.com/psake/psake) - Build tool
+- [PlatyPS](https://github.com/PowerShell/platyPS) - Documentation generation
 - [PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) - Code quality checking for PowerShell
 
 ## Extra Modules
 
-* [posh-git](https://dahlbyk.github.io/posh-git/) - Git integration for PowerShell
 * [Pscx](https://github.com/Pscx/Pscx) - PowerShell Community Extensions module repository
+* [Carbon](http://get-carbon.org/) - Managing legacy Windows systems
 * [PSSlack](https://github.com/RamblingCookieMonster/PSSlack/) - Third-party module for Slack
 * [PSWindowsUpdate](https://www.powershellgallery.com/packages/PSWindowsUpdate) - Third-party module to manage and run Microsoft Updates on Windows systems, as explained in [this tutorial](https://www.petri.com/manage-windows-updates-with-powershell-module)
 
@@ -360,5 +369,3 @@ $items = Import-CSV ./things.csv
 * [dbachecks](https://github.com/sqlcollaborative/dbachecks) - Microsoft SQL Server Environmental Validation
 * [dbatools](https://dbatools.io/) - Community module of tools for Microsoft SQL Server
 * [SqlServer](https://www.powershellgallery.com/packages/Sqlserver/21.0.17224) - Current official module for Microsoft SQL Server, which replaces SQLPS
-
-

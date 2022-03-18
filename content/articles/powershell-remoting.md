@@ -1,7 +1,7 @@
 +++
 Title = "Accessing Remote Systems with PowerShell"
 Slug = "powershell-remoting"
-Date = "2021-02-12T20:07:00+00:00"
+Date = "2022-03-18T06:50:00+00:00"
 Description = ""
 Categories = ["automation", "devops"]
 Tags = [".NET", "automation", "devops", "powershell", "windows"]
@@ -68,21 +68,8 @@ By default, *Invoke-Command* creates new temporary connections to run the comman
 The [Ansible](https://www.ansible.com) automation tool uses PowerShell to
 execute tasks on the Windows systems that it manages, with PowerShell Remoting and [WinRM](https://msdn.microsoft.com/en-us/library/aa384426%28v=vs.85%29.aspx)
 (Windows Remote Management) to communicate between the controller and the
-targets. This means that PowerShell Remoting must be enabled on all of the Windows systems that you woul like to manage with Ansible.
+targets. This means that PowerShell Remoting must be enabled on all of the Windows systems that you would like to manage with Ansible.
 
-[Windows PowerShell Desired State
-Configuration](https://docs.microsoft.com/en-us/powershell/scripting/dsc/overview/overview) (DSC)
-provides extensions for managing multiple remote Windows systems using
+[Desired State Configuration](https://docs.microsoft.com/en-us/powershell/scripting/dsc/) (DSC) provides extensions for managing multiple remote systems using
 PowerShell, and also uses WinRM for communications. DSC does not need PowerShell
 Remoting to be enabled on the target systems, only WinRM.
-
-## Cloud Management with PowerShell
-
-Amazon Web Services, Google Cloud Platform and Microsoft Azure all provide PowerShell modules for working with their infrastructure. You will need to install the modules for the platforms that you use.
-
-# Modules #
-
-- [AWS Tools for Windows PowerShell](https://aws.amazon.com/powershell/) - Modules for managing Amazon Web Services
-- [Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure/) - Modules for managing Microsoft Azure cloud services
-- Google's [Cloud Tools for PowerShell](https://cloud.google.com/powershell/) - Modules for managing Google Cloud Platform services
-- [VMWare PowerCLI](https://developer.vmware.com/powercli) - PowerShell modules for managing VMware products
