@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2019-06-15T12:07:00+01:00"
+Date = "2022-04-03T18:03:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -20,7 +20,7 @@ To install Go on Windows, download it from [the official Website](https://golang
 Choose the 64-bit _Windows installer_ package for the current version, unless you know
 that you need a different option.
 
-To install Go on macOS or Linux, use [gimme](https://github.com/travis-ci/gimme). The _gimme_ tool enables you to choose which versions of Go to install on your system, and switch between them. [Homebrew](http://brew.sh/) on macOS also provides current versions of Go. Linux distributions supply versions of Go, but these will frequently be older than the current release.
+To install Go on macOS or Linux, use [Homebrew](http://brew.sh/). Linux distributions supply versions of Go, but these will frequently be older than the current release.
 
 Docker, Inc. maintain [Docker images](https://store.docker.com/images/golang) for Go. These are useful for Continuous Integration, where you need containers that include a Go compiler to build releases of your software.
 
@@ -46,11 +46,8 @@ Version control is obviously vital for collaborating with other programmers. It 
 enables you to efficiently copy your application to other systems for testing,
 deployment and backup.
 
-If you have installed Git, Atom and Visual Studio Code will provide you with access to
-information and features from Git directly in their user interfaces. If you use Visual
-Studio Code, you should also consider adding the
-[Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
-extension, which enhances the integration with Git.
+If you have installed Git, Visual Studio Code will provide you with access to
+information and features from Git directly in their user interfaces.
 
 ### Code Quality
 
@@ -74,7 +71,6 @@ Version 1.11 of Go and above include support for [modules](https://github.com/go
 - [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports) - Removes unused import statements from Go code
 - [Gomacro](https://github.com/cosmos72/gomacro) - Interactive interpreter for Go
 - [GoReleaser](https://goreleaser.com/) - Release automation for Go projects
-- [Packr2](https://github.com/gobuffalo/packr/tree/master/v2) - Embeds files into Go binaries
 
 Code editors with a Go plugin will integrate with Delve and goimports.
 
@@ -110,8 +106,7 @@ services such as [Google App Engine](https://cloud.google.com/appengine/),
 provide low-maintenance hosting, but you can set up any server to run Go applications.
 
 To produce applications for [AWS Lambda](https://aws.amazon.com/lambda/), use the
-[Serverless](https://serverless.com/), [Sparta](http://gosparta.io/) or
-[Apex](http://apex.run/) frameworks.
+[Serverless](https://serverless.com/) or [Sparta](http://gosparta.io/).
 
 # Web Clients
 
