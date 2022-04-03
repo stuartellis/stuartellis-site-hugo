@@ -1,7 +1,7 @@
 +++
 Title = "Backups with restic"
 Slug = "restic-backups"
-Date = "2021-02-01T20:05:00+00:00"
+Date = "2022-04-03T17:46:00+01:00"
 Description = "Managing backups with restic"
 Categories = ["automation", "devops"]
 Tags = ["ansible", "automation", "devops"]
@@ -56,7 +56,7 @@ Alternatively, use this [Ansible role for restic](https://galaxy.ansible.com/pau
 Download the file for restic from GitHub, and then set permissions on it:
 
     mkdir -p $HOME/.restic/bin
-    curl -L https://github.com/restic/restic/releases/download/v0.12.0/restic_0.12.0_linux_amd64.bz2 | bunzip2 > $HOME/.restic/bin/restic
+    curl -L https://github.com/restic/restic/releases/download/v0.13.0/restic_0.13.0_linux_amd64.bz2 | bunzip2 > $HOME/.restic/bin/restic
     chown -R $USER:$USER $HOME/.restic/bin
     chmod -R 750 $HOME/.restic/bin
 
@@ -64,7 +64,7 @@ Download the file for restic from GitHub, and then set permissions on it:
 
 Download the file for restic from GitHub. Once the file is downloaded, set the permissions to limit who can use it, and then give it the capabilities to access the whole system:
 
-    curl -L https://github.com/restic/restic/releases/download/v0.12.0/restic_0.12.0_linux_amd64.bz2 | bunzip2 > restic
+    curl -L https://github.com/restic/restic/releases/download/v0.13.0/restic_0.13.0_linux_amd64.bz2 | bunzip2 > restic
     mkdir -p /opt/restic/bin
     mv restic /opt/restic/bin
     chown -R root:$USER /opt/restic/bin
