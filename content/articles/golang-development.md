@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2022-04-03T18:03:00+01:00"
+Date = "2022-04-03T19:33:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -10,13 +10,13 @@ Toc = true
 
 +++
 
-Notes on developing software with the [Go](https://golang.org/) language.
+Notes on developing software with the [Go](https://go.dev/) language.
 
 <!--more-->
 
 # Installing Go
 
-To install Go on Windows, download it from [the official Website](https://golang.org/).
+To install Go on Windows, download it from [the official Website](https://go.dev/).
 Choose the 64-bit _Windows installer_ package for the current version, unless you know
 that you need a different option.
 
@@ -51,10 +51,8 @@ information and features from Git directly in their user interfaces.
 
 ### Code Quality
 
-Use either [Go Meta Linter](https://github.com/alecthomas/gometalinter) or [golangci-lint](https://github.com/golangci/golangci-lint) to run a suite of
-quality checks on your code, including the official
-[linter](https://github.com/golang/lint). The Go plugins for text editors and IDEs often
-support the Go Meta Linter, and may support golangci-lint. For example, the Go plugin for Visual Studio Code installs the official linter and Go Meta Linter, but you must [enable quality check suites](https://github.com/Microsoft/vscode-go#linter). You should also add Go Meta Linter or golangci-lint to your Continuous Integration process, to ensure that the code that is submitted passes quality checks.
+Use [golangci-lint](https://golangci-lint.run/) to run a suite of
+quality checks on your code. This tools works with popular code editors and IDEs. You should also add golangci-lint to your Continuous Integration process, to ensure that the code that is submitted passes quality checks.
 
 The [Go Report Card](https://goreportcard.com/) service analyses the Go software in
 public Git repositories, using some of the standard quality checks. You do not need to
@@ -105,8 +103,7 @@ services such as [Google App Engine](https://cloud.google.com/appengine/),
 [Heroku](https://www.heroku.com/) and [Red Hat OpenShift](https://www.openshift.com)
 provide low-maintenance hosting, but you can set up any server to run Go applications.
 
-To produce applications for [AWS Lambda](https://aws.amazon.com/lambda/), use the
-[Serverless](https://serverless.com/) or [Sparta](http://gosparta.io/).
+To produce applications for [AWS Lambda](https://aws.amazon.com/lambda/), use [Serverless](https://serverless.com/) or [Sparta](http://gosparta.io/).
 
 # Web Clients
 
