@@ -1,7 +1,7 @@
 +++
 Title = "Notes on PowerShell"
 Slug = "powershell"
-Date = "2022-03-18T06:45:00+00:00"
+Date = "2022-04-03T17:34:00+01:00"
 Description = ""
 Categories = ["automation", "devops"]
 Tags = [".NET", "automation", "devops", "powershell", "windows"]
@@ -331,7 +331,8 @@ $items = Import-CSV ./things.csv
 
 ### References
 
-- [Style Guide](https://github.com/PoshCode/PowerShellPracticeAndStyle)
+- [PowerShell Style Guide](https://github.com/PoshCode/PowerShellPracticeAndStyle)
+- [PowerShell Notes for Professionals book](http://goalkicker.com/PowerShellBook/) - Free ebook
 
 ### Websites
 
@@ -340,11 +341,6 @@ $items = Import-CSV ./things.csv
 * [Planet PowerShell](https://www.planetpowershell.com/) - Blog aggregator for the PowerShell community
 * [PowerShell.org](https://powershell.org/) - Community forums for PowerShell users
 * [PowerShell Magazine](http://www.powershellmagazine.com/)
-
-### Books
-
-* [PowerShell Notes for Professionals book](http://goalkicker.com/PowerShellBook/) - Free ebook
-* [Secrets of PowerShell](https://www.penflip.com/powershellorg/) - A series of free short e-books from PowerShell.org
 
 ## Shell Extensions
 
