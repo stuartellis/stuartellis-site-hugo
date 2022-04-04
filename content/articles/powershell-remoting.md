@@ -4,7 +4,7 @@ Slug = "powershell-remoting"
 Date = "2022-03-18T06:50:00+00:00"
 Description = ""
 Categories = ["automation", "devops"]
-Tags = [".NET", "automation", "devops", "powershell", "windows"]
+Tags = ["dotNET", "automation", "devops", "powershell", "windows"]
 Type = "article"
 Toc = true
 

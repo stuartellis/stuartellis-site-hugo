@@ -4,7 +4,7 @@ Slug = "powershell-aws"
 Date = "2022-04-03T17:39:00+01:00"
 Description = ""
 Categories = ["automation", "devops"]
-Tags = [".NET", "automation", "devops", "powershell", "windows"]
+Tags = ["dotNET", "automation", "devops", "powershell", "windows"]
 Type = "article"
 Toc = true
 
