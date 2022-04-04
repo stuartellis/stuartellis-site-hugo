@@ -1,7 +1,7 @@
 +++
 Title = "Commonly Used Commands in PowerShell"
 Slug = "powershell-commands"
-Date = "2021-02-12T11:29:00+00:00"
+Date = "2022-04-04T19:58:00+01:00"
 Description = ""
 Categories = ["automation", "devops"]
 Tags = [".NET", "automation", "devops", "powershell", "windows"]
@@ -46,6 +46,7 @@ lists common commands.
 
 * *Resolve-DnsName NAME* - Gets the DNS records for the specified NAME (Windows-only)
 * *Invoke-Webrequest URL* - HTTP request to URL
+* *Invoke-WebRequest URL | Select-Object -ExpandProperty Content | Out-File FILE* - Download a file
 * *Test-Connection ADDRESS* - ICMP ping to the specified address
 * *Send-MailMessage* - Send an email (requires PowerShell for Windows 5.0 or above)
 
