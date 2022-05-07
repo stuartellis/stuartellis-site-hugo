@@ -1,7 +1,7 @@
 +++
 Title = "Useful Python Tools and Libraries"
 Slug = "python-toolbox"
-Date = "2022-05-07T07:35:00+01:00"
+Date = "2022-05-07T08:18:00+01:00"
 Description = ""
 Categories = ["programming", "python"]
 Tags = ["python"]
@@ -91,11 +91,11 @@ If you need more control over the infrastructure that your application uses, con
 
 ### Asynchronous Web Applications
 
-Use [FastAPI](https://fastapi.tiangolo.com) for building API services that are asynchronous. If you need more control or compatibility than FastAPI provides, consider using either [Starlette](https://www.starlette.io/) or [Quart](https://pgjones.gitlab.io/quart/). Starlette is nore low-level than FastAPI. Quart is specifically designed to use the same API as Flask.
+Use [FastAPI](https://fastapi.tiangolo.com) for building API services that are asynchronous. If you need more control or compatibility than FastAPI provides, consider using either [Starlette](https://www.starlette.io/) or [Quart](https://pgjones.gitlab.io/quart/). Starlette is more low-level than FastAPI. Quart is specifically designed to use the same API as Flask.
 
 These frameworks implement the [ASGI](https://asgi.readthedocs.io/en/latest/) standard. The [Uvicorn](http://www.uvicorn.org/) server implements ASGI, so that it can host applications that are built with any asynchronous framework that follows ASGI.
 
-The [aiohttp](https://docs.aiohttp.org/en/stable) library provides an asynchronous HTTP client and server, but it does not currently support ASGI.
+The [aiohttp](https://docs.aiohttp.org/en/stable) library provides an asynchronous HTTP client and server. The aiohttp server does not support ASGI.
 
 ## Developing Web Clients
 
