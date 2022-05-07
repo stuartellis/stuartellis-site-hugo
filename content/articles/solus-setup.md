@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Solus for Software Development"
 Slug = "solus-setup"
-Date = "2018-07-15T01:01:00+00:00"
+Date = "2022-05-07T22:05:00+01:00"
 Description = "Setting up a Solus installation for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["devops", "linux", "solus", "golang", "javascript", "python"]
@@ -186,12 +186,6 @@ as the interpreter:
     python3 --version
 
 The _python_ interpreter is Python 2, which you should not use for new software.
-
-To maintain current and clean Python environments, install
-[pipenv](https://docs.pipenv.org/). It drives the [pip](https://pip.pypa.io/en/stable/)
-and [virtual environment](https://docs.python.org/3/tutorial/venv.html) features that
-are included with Python itself, but is more powerful and easier to use than working
-with these features directly.
 
 ### rustup for Rust Development
 

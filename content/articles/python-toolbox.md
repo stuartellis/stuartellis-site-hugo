@@ -31,16 +31,6 @@ To quickly share pieces of code, use [Pastebin](https://pastebin.com/).
 
 ## Working on Python Projects
 
-### Use pipenv for Virtual Environments
-
-Install [pipenv](https://pipenv.pypa.io) to manage your Python projects. It ensures that each of your Python projects use a separate set of packages, and provides other features to help you maintain your work, such as [checking the code for style](https://docs.pipenv.org/advanced/#code-style-checking) and [warning you about security issues in libraries](https://docs.pipenv.org/advanced/#detection-of-security-vulnerabilities).
-
-The pipenv tool uses the _pip_ and [virtual environment](https://docs.python.org/3/tutorial/venv.html) facilities that are included with Python itself, so it is compatible with other Python utilities.
-
-The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualenvs/) shows you how to work with _pipenv_.
-
-> [Hatch](https://ofek.dev/hatch) may replace pipenv, but it is not yet fully supported by code editors and third-party tools.
-
 ### Working with Multiple Versions of Python
 
 If you need to develop with several different versions of Python, use [pyenv](https://github.com/pyenv/pyenv). This tool enables you to install multiple versions of Python on the same system, and switch between them.
@@ -53,9 +43,10 @@ If you need to develop with several different versions of Python, use [pyenv](ht
 ### Code Quality
 
 - [Black](https://black.readthedocs.io/en/stable/) for code formatting
-- [Pylint](https://www.pylint.org) for code quality
+- [Mypy](http://mypy-lang.org/) for type hinting
+- [Flake8](https://flake8.pycqa.org) for code quality
 
-If you install the Python extension for Visual Studio Code, it will offer to use Pylint and autopep8 to check and format your code. Use Black instead of autopep8 for new projects.
+If you install the Python extension for Visual Studio Code, it will offer to use autopep8 to check and format your code. Use Black instead of autopep8 for new projects.
 
 ### Tools for Testing Python Code
 

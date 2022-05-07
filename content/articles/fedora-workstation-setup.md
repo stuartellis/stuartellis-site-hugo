@@ -1,7 +1,7 @@
 +++
 Title = "Setting Up Fedora Workstation for Software Development"
 Slug = "fedora-workstation-setup"
-Date = "2019-04-27T10:45:00+01:00"
+Date = "2022-05-07T22:06:00+01:00"
 Description = "Setting up a Fedora Workstation for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["devops", "linux", "fedora", "golang", "javascript", "python"]
@@ -165,16 +165,6 @@ _python3_ as the interpreter:
     python3 --version
 
 The _python_ command runs Python 2, which you should not use for new software.
-
-To maintain current and clean Python environments, install
-[pipenv](https://docs.pipenv.org/). It drives the [pip](https://pip.pypa.io/en/stable/)
-and [virtual environment](https://docs.python.org/3/tutorial/venv.html) features that
-are included with Python itself, but is more powerful and easier to use than working
-with these features directly.
-
-Enter this command to install pipenv:
-
-    sudo dnf install pipenv
 
 ### Using Modules to Add Extra Languages
 

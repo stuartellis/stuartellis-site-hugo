@@ -1,7 +1,7 @@
 +++
 Title = "Modern Python Practices"
 Slug = "python-modern-practices"
-Date = "2019-08-28T07:23:00+01:00"
+Date = "2022-05-07T22:10:00+01:00"
 Description = ""
 Categories = ["programming", "python"]
 Tags = ["python"]
@@ -17,19 +17,19 @@ Type = "article"
 
 ### Use Python 3
 
-Use Python 3 for all new work. Python 2 will no longer be supported, as of 2020. All of the major libraries and frameworks now support Python 3. Some projects have removed support for Python 2 in their latest releases.
+Use Python 3.9 or above for new work. Python 3.7 is the oldest version that is currently supported. Avoid using Python 2.
 
 ### Use Virtual Environments for Development
 
 The [virtual environments](https://docs.python.org/3/tutorial/venv.html) feature enables you to define separate sets of packages for each Python project, so that they do not conflict with each other.
 
-There are several tools that help you to manage your Python projects, and use virtual environments. The most popular are [pipenv](https://docs.pipenv.org/) and [poetry](https://poetry.eustace.io/). Poetry is considered to be better designed, but pipenv is more widely supported. If you prefer, you can also manually set up and manage virtual environments.
+There are several tools that help you to manage your Python projects, and use virtual environments. [Poetry](https://python-poetry.org/) is quite popular, but it may be superseded by [Hatch](https://ofek.dev/hatch). If you prefer, you can also manually set up and manage virtual environments.
 
 ### Format Your Code
 
 Use a formatting tool with a plugin to your editor, so that your code is automatically formatted to a consistent style.
 
-[Black](https://black.readthedocs.io/en/stable/) is being adopted by the Python Software Foundation and other projects. It formats Python code to a style that follows the [PEP 8](https://www.python.org/dev/peps/pep-0008/) standard, but allows longer line lengths. Use Black for new projects.
+If possible, use [Black](https://black.readthedocs.io/en/stable/) to format your code. Black is now the leading code formatter for Python. It has been adopted by the Python Software Foundation and other projects. It formats Python code to a style that follows the [PEP 8](https://www.python.org/dev/peps/pep-0008/) standard, but allows longer line lengths.
 
 # Language Syntax
 
@@ -68,6 +68,12 @@ This function drops you into the debugger at the point where it is called. Both 
 The [breakpoint()](https://docs.python.org/3/library/functions.html#breakpoint) feature was added in version 3.7 of Python.
 
 > [PEP 553](https://www.python.org/dev/peps/pep-0553/) describes the _breakpoint()_ function.
+
+### Consider Using Type Hinting
+
+Current versions of Python support type hinting. If you include these annotations, the [Mypy](http://www.mypy-lang.org/) tool can check your code.
+
+> [PEP 484 - Type Hints](https://peps.python.org/pep-0484/) and [PEP 526 – Syntax for Variable Annotations](https://peps.python.org/pep-0526/) define the notation for type hinting.
 
 # Application Design
 

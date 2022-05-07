@@ -1,7 +1,7 @@
 +++
 Title = "How to Set up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2021-10-27T10:59:00+01:00"
+Date = "2022-05-07T22:12:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["devops", "macos", "golang", "java", "javascript", "python", "ruby"]
@@ -379,29 +379,9 @@ To see a list of the available commands, type _jenv_ in a terminal window:
 
     jenv
 
-### Python Development: pipenv
+### Python Development
 
 Current versions of macOS include a copy of Python 3, but this will not be the latest version of Python. Use Homebrew to install the latest release of Python.
-
-To maintain current and clean Python environments, use [pipenv](https://pipenv.pypa.io). This builds on two features of Python: the [virtual environments](https://docs.python.org/3/tutorial/venv.html) and the [pip](https://pip.pypa.io/en/stable/) utility.
-
-Enter this command to install Python 3 and pipenv using Homebrew:
-
-    brew install python3 pipenv
-
-Use pipenv to manage your Python projects. The pipenv tool itself will automatically work with the copy of Python 3 from Homebrew.
-
-To use the Python 3 interpreter outside of projects that are managed by pipenv, specify _python3_ on the command-line and in
-your scripts, rather than _python_:
-
-    python3 --version
-
-If you need to run the _pip_ utility, rather than setting up a development environment with pipenv, always use the command _pip3_:
-
-    pip3 --version
-
-The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
-shows you how to work with _pipenv_.
 
 ### Rust Development: rustup
 
@@ -461,10 +441,10 @@ To install [Skaffold](https://skaffold.dev/) with Homebrew, run this command in 
 
 [This article explains Minikube in more detail](https://www.stuartellis.name/articles/minikube).
 
-## SQL Databases
+## Databases
 
 Consider using containers to run the databases that you need. If you prefer to install services
-directly on to your workstation, Homebrew provides packages for PostgreSQL, MariaDB and MySQL.
+directly on to your workstation, Homebrew provides packages for PostgreSQL, MariaDB, MySQL and the [Community Edition of MongoDB](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/).
 
 ### Installing PostgreSQL
 
@@ -543,9 +523,10 @@ Install Beekeeper with Homebrew:
 
     brew install beekeeper-studio
 
-Each database vendor recommend a specific graphical tool. These are the tools that the vendors recommend:
+Each vendor recommends a preferred graphical tool for their particular database product. These are the tools that the vendors recommend:
 
 - [Azure Data Studio](https://docs.microsoft.com/en-gb/sql/azure-data-studio/what-is?view=sql-server-2017) - Microsoft tool for SQL Server and Azure databases
+- [Compass](https://www.mongodb.com/products/compass) - The official tool for MongoDB
 - [MySQL Workbench](http://wb.mysql.com/) - The official tool for MySQL
 - [Oracle SQL Developer](https://www.oracle.com/database/technologies/appdev/sql-developer.html) - The official tool for Oracle
 - [pgAdmin](https://www.pgadmin.org/) - The recommended tool for PostgreSQL
