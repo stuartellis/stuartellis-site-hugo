@@ -1,7 +1,7 @@
 +++
 Title = "Useful Python Tools and Libraries"
 Slug = "python-toolbox"
-Date = "2021-10-11T19:35:00+01:00"
+Date = "2022-05-07T07:35:00+01:00"
 Description = ""
 Categories = ["programming", "python"]
 Tags = ["python"]
@@ -39,7 +39,7 @@ The pipenv tool uses the _pip_ and [virtual environment](https://docs.python.org
 
 The [Python Guide tutorial](http://docs.python-guide.org/en/latest/dev/virtualenvs/) shows you how to work with _pipenv_.
 
-> [Poetry](https://poetry.eustace.io/) may replace pipenv, but it is not yet fully supported by code editors and third-party tools.
+> [Hatch](https://ofek.dev/hatch) may replace pipenv, but it is not yet fully supported by code editors and third-party tools.
 
 ### Working with Multiple Versions of Python
 
@@ -48,7 +48,7 @@ If you need to develop with several different versions of Python, use [pyenv](ht
 ### Managing Projects
 
 - [Cookiecutter](https://cookiecutter.readthedocs.io/) to create new projects from templates
-- [Sphinx](http://sphinx.pocoo.org) for building documentation
+- [Sphinx](https://www.sphinx-doc.org) for building documentation
 
 ### Code Quality
 
@@ -69,13 +69,13 @@ If you install the Python extension for Visual Studio Code, it will offer to use
 
 ## Developing Command-line Applications
 
-Use the [Click](http://click.pocoo.org) framework to build command-line tools with Python.
+Consider using [Typer](https://typer.tiangolo.com/) to build new command-line tools with Python. This builds on [Click](https://click.palletsprojects.com), which is the established framework for Python command-line tools.
 
 [Python Fire](https://github.com/google/python-fire) enables you to add a command-line interface to existing code.
 
 ## Building Web Applications
 
-For simple Websites and services, use the [Flask](http://flask.pocoo.org/) framework. Flask itself provides the basic package of features that you need for a Web application, and the framework has [a wide range of extensions](http://flask.pocoo.org/extensions/) to add more capabilities.
+For simple Websites and services, use the [Flask](https://flask.palletsprojects.com) framework. Flask itself provides the basic package of features that you need for a Web application, and the framework has a wide range of extensions to add more capabilities.
 
 Use either [Django](http://www.djangoproject.com/) or [Pyramid](https://trypyramid.com/) for larger projects. Django provides a set of custom tools and libraries that closely integrate together. The main Django framework has features for content Websites, whilst [Django REST Framework](https://www.django-rest-framework.org/) is specifically for building APIs. Pyramid offers a modular framework for integrating third-party Python libraries together into custom Web applications.
 
@@ -83,7 +83,7 @@ All of these Web frameworks follow the WSGI standard for synchronous Python Web 
 
 Several commercial services offer fully managed systems, so that you can deploy applications without any setting up or maintaining any servers yourself. These services include [Google App Engine](https://cloud.google.com/appengine/), [Heroku](https://www.heroku.com/) and [Python Anywhere](https://www.pythonanywhere.com/).
 
-If you need more control over the infrastructure that your application uses, consider using containers and a Kubernetes service, rather than setting up a cluster of Web servers. Kubernetes services include [Red Hat OpenShift](https://www.openshift.com/), [DigitalOcean Kubernetes](https://www.digitalocean.com/products/kubernetes/) and [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/).
+If you need more control over the infrastructure that your application uses, consider using containers, rather than setting up a cluster of Web servers. Services for hosting containers include [Red Hat OpenShift](https://www.openshift.com/), [DigitalOcean Kubernetes](https://www.digitalocean.com/products/kubernetes/) and [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/).
 
 [Full Stack Python](https://www.fullstackpython.com) provides a comprehensive guide to building Web applications with Python.
 
@@ -91,11 +91,9 @@ If you need more control over the infrastructure that your application uses, con
 
 ### Asynchronous Web Applications
 
-Treat Python asynchronous Web frameworks as experimental technology. The standards and libraries are still being developed for asynchronous Python.
+Use [FastAPI](https://fastapi.tiangolo.com) for building API services that are asynchronous. If you need more control or compatibility than FastAPI provides, consider using either [Starlette](https://www.starlette.io/) or [Quart](https://pgjones.gitlab.io/quart/). Starlette is nore low-level than FastAPI. Quart is specifically designed to use the same API as Flask.
 
-[Starlette](https://www.starlette.io/), [Sanic](https://sanicframework.org/) and [Quart](https://pgjones.gitlab.io/quart/) are probably the most well-known asynchronous frameworks. Quart is specifically designed to use the same API as Flask, whilst Starlette and Sanic are new designs.
-
-Both Starlette and Quart implement the [ASGI](https://asgi.readthedocs.io/en/latest/) standard. The [Uvicorn](http://www.uvicorn.org/) server implements ASGI, so that it can host applications that are built with any asynchronous framework that follows ASGI.
+These frameworks implement the [ASGI](https://asgi.readthedocs.io/en/latest/) standard. The [Uvicorn](http://www.uvicorn.org/) server implements ASGI, so that it can host applications that are built with any asynchronous framework that follows ASGI.
 
 The [aiohttp](https://docs.aiohttp.org/en/stable) library provides an asynchronous HTTP client and server, but it does not currently support ASGI.
 
@@ -144,7 +142,7 @@ To run your Python server applications on Kubernetes, package them as containers
 - [Pendulum](https://pendulum.eustace.io/) - Date and time parsing
 - [Pillow](https://python-pillow.org/) - Image processing
 - [python-dotenv](https://github.com/theskumar/python-dotenv) - Load environment variables from files
-- [pytz](https://pythonhosted.org/pytz/) - Olson timezone database
+- [pytz](https://pythonhosted.org/pytz/) - Timezone database, for Python versions 3.8 and below
 - [PyYAML](https://pyyaml.org/) - YAML support for Python
 - [Reportlab](https://www.reportlab.com/opensource/) - PDF generation
 
