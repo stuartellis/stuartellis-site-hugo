@@ -1,7 +1,7 @@
 +++
 Title = "Modern Python Practices"
 Slug = "python-modern-practices"
-Date = "2022-05-07T22:10:00+01:00"
+Date = "2022-05-10T21:10:00+01:00"
 Description = ""
 Categories = ["programming", "python"]
 Tags = ["python"]
@@ -9,7 +9,7 @@ Type = "article"
 
 +++
 
-[Python](https://www.python.org/) has a long history, and has evolved over time. This article describes some agreed modern best practices.
+[Python](https://www.python.org/) has a long history, and it has evolved over time. This article describes some agreed modern best practices.
 
 <!--more-->
 
@@ -17,13 +17,15 @@ Type = "article"
 
 ### Use Python 3
 
-Use Python 3.9 or above for new work. Python 3.7 is the oldest version that is currently supported. Avoid using Python 2.
+Use Python 3.9 or above for new work. Third-party libraries may require Python 3.6 or above, and several features of modern Python work best with version 3.7 or later.
+
+Avoid using Python 2. It is not supported by the Python development team. The current versions of many libraries are not compatible with Python 2.
 
 ### Use Virtual Environments for Development
 
 The [virtual environments](https://docs.python.org/3/tutorial/venv.html) feature enables you to define separate sets of packages for each Python project, so that they do not conflict with each other.
 
-There are several tools that help you to manage your Python projects, and use virtual environments. [Poetry](https://python-poetry.org/) is quite popular, but it may be superseded by [Hatch](https://ofek.dev/hatch). If you prefer, you can also manually set up and manage virtual environments.
+There are several tools that help you to manage your Python projects, and use virtual environments. [Poetry](https://python-poetry.org/) is currently popular, but it may be superseded by [Hatch](https://hatch.pypa.io). If you prefer, you can also manually set up and manage virtual environments.
 
 ### Format Your Code
 
@@ -153,4 +155,4 @@ Use the [requests](https://2.python-requests.org/en/master/) package for HTTP, r
 
 ### Test with pytest
 
-The [pytest](http://pytest.org) package has superceded _nose_ as the most popular testing system for Python. Use the _unittest_ module in the standard library for situations where you cannot add pytest to the project.
+Use [pytest](http://pytest.org) for testing. It has has superceded _nose_ as the most popular testing system for Python. Use the _unittest_ module in the standard library for situations where you cannot add pytest to the project.
