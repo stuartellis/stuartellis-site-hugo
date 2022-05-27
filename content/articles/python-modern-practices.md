@@ -1,7 +1,7 @@
 +++
 Title = "Modern Python Practices"
 Slug = "python-modern-practices"
-Date = "2022-05-26T06:30:00+01:00"
+Date = "2022-05-27T06:03:00+01:00"
 Description = ""
 Categories = ["programming", "python"]
 Tags = ["python"]
@@ -13,7 +13,7 @@ Type = "article"
 
 <!--more-->
 
-# Tooling
+## Tooling
 
 ### Use Python 3
 
@@ -33,7 +33,7 @@ Use a formatting tool with a plugin to your editor, so that your code is automat
 
 If possible, use [Black](https://black.readthedocs.io/en/stable/) to format your code. Black is now the leading code formatter for Python. Black has been adopted by the Python Software Foundation and other major Python projects. It formats Python code to a style that follows the [PEP 8](https://www.python.org/dev/peps/pep-0008/) standard, but allows longer line lengths.
 
-# Language Syntax
+## Language Syntax
 
 ### Format Strings with f-strings
 
@@ -47,13 +47,13 @@ The f-strings feature was added in version 3.6 of Python. Alternate implementati
 
 ### Use Datetime Objects with Time Zones
 
-Always use **datetime** objects that are [aware](https://docs.python.org/3/library/datetime.html?highlight=datetime#aware-and-naive-objects) of time zones. By default, Python creates datetime objects that do not include a time zone. The documentation refers to datetime objects without a time zone as **naive**.
+Always use _datetime_ objects that are [aware](https://docs.python.org/3/library/datetime.html?highlight=datetime#aware-and-naive-objects) of time zones. By default, Python creates _datetime_ objects that do not include a time zone. The documentation refers to _datetime_ objects without a time zone as **naive**.
 
-Avoid using **date** objects, except where the time of day is completely. The **date** objects are always **naive**, and do not include a time zone.
+Avoid using _date_ objects, except where the time of day is completely irrelevant. The _date_ objects are always **naive**, and do not include a time zone.
 
-Use aware datetime objects with the UTC time zone for timestamps, logs and other internal features.
+Use aware _datetime_ objects with the UTC time zone for timestamps, logs and other internal features.
 
-To get the current time and date in UTC as an aware datetime object, specify the UTC time zone with **now()**. For example:
+To get the current time and date in UTC as an aware _datetime_ object, specify the UTC time zone with _now()_. For example:
 
 ```python
 from datetime import datetime, timezone
@@ -61,7 +61,7 @@ from datetime import datetime, timezone
 dt = datetime.now(timezone.utc)
 ```
 
-Python 3.9 and above include the **zoneinfo** module. This provides access to the standard IANA database of time zones.
+Python 3.9 and above include the **zoneinfo** module. This provides access to the standard IANA database of time zones. Previous versions of Python require a third-party library for time zones.
 
 > [PEP 615](https://www.python.org/dev/peps/pep-0615/) describes support for the IANA time zone database with **zoneinfo**.
 
@@ -97,7 +97,7 @@ Current versions of Python support type hinting. If you include these annotation
 
 > [PEP 484 - Type Hints](https://peps.python.org/pep-0484/) and [PEP 526 – Syntax for Variable Annotations](https://peps.python.org/pep-0526/) define the notation for type hinting.
 
-# Application Design
+## Application Design
 
 ### Use Logging for Diagnostic Messages, Rather Than print()
 
@@ -117,7 +117,7 @@ The initial version of _asyncio_ was included in version 3.4 of Python. Keywords
 
 > [PEP 0567](https://www.python.org/dev/peps/pep-0567/) describes context variables.
 
-# Libraries
+## Libraries
 
 ### Handle Command-line Input with argparse
 
