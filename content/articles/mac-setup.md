@@ -1,7 +1,7 @@
 +++
 Title = "How to Set up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2022-05-07T22:12:00+01:00"
+Date = "2022-06-11T212:05:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["devops", "macos", "golang", "java", "javascript", "python", "ruby"]
@@ -10,7 +10,7 @@ Toc = true
 
 +++
 
-A guide to setting up an Apple Mac for DevOps and software development. This is current for macOS 11 (Big Sur).
+A guide to setting up an Apple Mac for DevOps and software development. This is current for macOS 12 (Monteray). 
 
 <!--more-->
 
@@ -18,6 +18,8 @@ A guide to setting up an Apple Mac for DevOps and software development. This is 
 
 Log in once, run Software Update, and ensure that the operating system is at the latest
 point release. After all of the updates have been applied, restart the computer.
+
+## Configuring a User Account
 
 Log in again and create an Admin user account for your use. If other people will be
 using the machine, create Standard accounts for them. Log out of the initial account,
@@ -29,28 +31,6 @@ untouched is that it ensures that you always have a working account to login wit
 > _Admin accounts have sudo privileges:_ All Admin accounts on a Mac may use sudo to run
 > command-line utilities with administrative (root) privileges.
 
-You should also find an external hard drive. Begin using Time Machine as soon as
-possible, as it provides the most easy method for backing up your system.
-
-## Configuring a User Account
-
-### Configuring The Trackpad
-
-To make the trackpad behave correctly, ensure that these settings are enabled:
-
-- _System Preferences \> Trackpad \> Tap to click_
-- _System Preferences \> Accessibility \> Mouse & Trackpad \> Trackpad Options… \>
-  Enable dragging_
-
-### Creating a Private Applications Folder
-
-Once you have logged into your account, create a folder called _Applications_ within
-your home folder. Whenever you are prompted to drag a new applications into the global
-Applications folder, put it in this private Applications folder instead. Some
-applications have to be installed to global folders, but in most cases you can keep the
-system directories clean by storing third-party products in your private Applications
-folder.
-
 ### Securing the Safari Browser
 
 Whether or not you regularly use Safari, you should open it once, and adjust the
@@ -58,9 +38,7 @@ settings in case that you use it later.
 
 First, choose _Safari \> Preferences \> General_ and deselect the option _Open “safe” files after downloading_.
 
-Second, go to _Safari \> Preferences \> Search_. Decide which search engine that you want to use. Ensure that _Safari Suggestions_ is not enabled.
-
-Then, check the plug-in settings. Go to _Safari \> Preferences \> Security \> Plug-in Settings..._ and review the plug-ins and settings.
+Second, go to _Safari \> Preferences \> Search_. Decide which search engine that you want to use. Ensure that _Safari Suggestions_  and _Preload Top Hit in the background_ are not enabled.
 
 ## Configuring Security
 
@@ -69,27 +47,25 @@ over security in a few places. These can easily be corrected by changing a few s
 If you are using a laptop then you should probably make all of these changes as soon as
 possible.
 
-### Basic Settings
+### Security & Privacy
 
 Select _System Preferences \> Security & Privacy_, and set the following:
 
 - Under _General_, set _require a password after sleep or screen saver begins_ to
   _immediately_
-- Click _Advanced..._ and select _Require an administrator password to access
-  system-wide preferences_
+- Under _General_, click _Advanced..._ and select _Require an administrator password to access system-wide preferences_
 - Under _Firewall_, click _Turn Firewall On_.
-- Under _Privacy_, select _Analytics_ and ensure that the options are not enabled.
+- Under _Privacy_, select _Analytics & Improvements_ and ensure that the options are not enabled.
 
-### Disable Spotlight
+### Spotlight
 
 By default, Spotlight sends queries to Apple. Unless you want this feature, turn it off.
 
-Select _System Preferences \> Spotlight \> Search Results_, and ensure that _Spotlight Suggestions_ is not enabled.
+Select _System Preferences \> Spotlight \> Search Results_, and ensure that _Siri Suggestions_ is not enabled.
 
 ### Enable File Vault NOW
 
-Current versions of macOS include File Vault 2, a full-disk encryption system that has
-little in common with the much more limited File Vault 1. You should enable File Vault
+File Vault 2, a full-disk encryption system. You should enable File Vault
 _NOW_, because it is the only protection against anyone with physical access to your
 computer. All other security measures will be completely bypassed if someone with
 physical access simply restarts the computer with a bootable pen drive.
@@ -121,19 +97,16 @@ folder.
 
 ## Setting Up for Development
 
-The first step is to install a compiler. The easiest way to install one is with the
-_Xcode Command Line Tools_ package.
-
-Once you have the compiler that is provided by Xcode, you can use
+The first step is to install the _Command Line Tools for Xcode_. Once you have installed Command Line Tools, you can use
 [Homebrew](http://brew.sh/) to install everything else that you need.
 
 ### Getting Xcode
 
-Apple now provide the Xcode suite as a free download from the App Store. To install
-Xcode Command Line Tools, install Xcode from the App Store, then open a Terminal window
-and enter the following command:
+Apple now provide the Xcode suite as a free download from the App Store. To install the Command Line Tools, install Xcode from the App Store, then open a Terminal window and enter the following command:
 
     xcode-select --install
+
+If you want to install just the Command Line Tools, you can download a package from [the Apple Developer Downloads site](https://developer.apple.com/download/all/).
 
 ### Setting Up Homebrew
 
@@ -157,10 +130,6 @@ To update the index of available packages, run this command in a terminal window
 
     brew update
 
-Once you have set up Homebrew, use the _brew install_ command to add command-line software to your Mac, and _brew cask install_ to add graphical software. For example, this command installs the Slack app:
-
-    brew cask install slack
-
 ### Enabling Auto Completion of Commands
 
 Many command-line tools provide automatic completion of commands. These include Git, curl and the AWS command-line tool. Homebrew installs the files for each command-line tool that provides completion, but it does not enable automatic completion in your shell.
@@ -177,8 +146,7 @@ To use auto completion, type the name of the command, and press the Tab key on y
 
 ### Installing the Git Version Control System
 
-The Xcode Command Line Tools include a copy of [Git](http://www.git-scm.com/), which is
-now the standard for Open Source development, but this will be out of date.
+The Xcode Command Line Tools include a copy of [Git](http://www.git-scm.com/), but this will be out of date.
 
 To install a newer version of Git than Apple provide, use Homebrew. Enter this command in a terminal window:
 
@@ -204,8 +172,7 @@ To enable colors in the output, which can be very helpful, enter this command:
 
 ### Text Editors
 
-Installations of macOS include a command-line version of [vim](http://www.vim.org/) and TextEdit, a desktop text editor. TextEdit is designed for light-weight word processing,
-and has no support for programming. Add the code editors or IDEs that you would prefer to use.
+Installations of macOS include a command-line version of [vim](http://www.vim.org/) and TextEdit, a desktop text editor. TextEdit is designed for light-weight word processing, and has no support for programming. Add the code editors or IDEs that you would prefer to use.
 
 If you do not have a preferred editor, consider using a version of [Visual Studio Code](https://code.visualstudio.com). Read the next section for more details.
 
@@ -238,22 +205,17 @@ To keep your projects tidy, I would recommend following these guidelines. They m
 slightly fussy, but they pay off when you have many projects, some of which are on
 different version control hosts.
 
-First create a top-level directory with a short, generic name like _code_. By default Go
-uses a directory called _go_, but you can change that when you set up a Go installation.
-
-In this directory, create an _src_ sub-directory. For each repository host, create a
-subdirectory in _src_ that matches your username. Check out projects in the directory.
-The final directory structure looks like this:
+First create a top-level directory with a short, generic name like _repos_. For each repository host, create a subdirectory in _repos_. Add a subdirectory that matches your username. The final directory structure looks like this:
 
 ```
-code/
-     src/
-         gitlab.com/
-                    my-gitlab-username/
-                                       a-project/
-         sr.ht/
-               my-sourcehut-username/
-                                     a-project/
+repos/
+    gitlab.com/
+        my-gitlab-username/
+            a-project/
+            another-project/
+    sr.ht/
+        my-sourcehut-username/
+            a-project/
 ```
 
 ### Creating SSH Keys
@@ -290,7 +252,7 @@ Add the _bin/_ directory for this Node.js installation to your PATH:
 
 ### Go Development
 
-Use Homebrew to install [Go](https://golang.org/):
+Use Homebrew to install [Go](https://go.dev/):
 
     brew install golang
 
@@ -379,9 +341,9 @@ To see a list of the available commands, type _jenv_ in a terminal window:
 
     jenv
 
-### Python Development
+### Python Development: pyenv
 
-Current versions of macOS include a copy of Python 3, but this will not be the latest version of Python. Use Homebrew to install the latest release of Python.
+Current versions of macOS include a copy of Python 3, but this will not be the latest version of Python. Use Homebrew to install *pyenv*. This tool enables you to use multiple versions of Python.
 
 ### Rust Development: rustup
 
@@ -517,13 +479,13 @@ various types of invalid data to be entered.
 
 ### Database Management Tools
 
-To work with SQL databases, use [Beekeeper Studio](https://www.beekeeperstudio.io). This graphical tool supports the popular Open Source databases, as well as Microsoft SQL Server and Amazon Redshift.
+To work with SQL databases, use [Beekeeper Studio](https://www.beekeeperstudio.io). This graphical tool supports the popular Open Source databases, as well as Microsoft SQL Server and Amazon Redshift. This enables you to use the same tool for all of your databases.
 
 Install Beekeeper with Homebrew:
 
-    brew install beekeeper-studio
+    brew install --cask beekeeper-studio
 
-Each vendor recommends a preferred graphical tool for their particular database product. These are the tools that the vendors recommend:
+Each vendor recommends a specific graphical tool for their particular database product. These are the tools that the vendors recommend:
 
 - [Azure Data Studio](https://docs.microsoft.com/en-gb/sql/azure-data-studio/what-is?view=sql-server-2017) - Microsoft tool for SQL Server and Azure databases
 - [Compass](https://www.mongodb.com/products/compass) - The official tool for MongoDB
@@ -541,4 +503,4 @@ Each vendor recommends a preferred graphical tool for their particular database 
 
 ## Online Resources
 
-The [macOS Privacy and Security Guide](https://github.com/drduh/macOS-Security-and-Privacy-Guide) by Dr Doh provides extensive information about those topics.
+The [macOS Privacy and Security Guide](https://github.com/drduh/macOS-Security-and-Privacy-Guide) by Dr Duh provides extensive information about those topics.
