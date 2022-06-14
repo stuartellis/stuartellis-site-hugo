@@ -1,7 +1,7 @@
 +++
 Title = "How to Set up an Apple Mac for Software Development"
 Slug = "mac-setup"
-Date = "2022-06-11T212:05:00+01:00"
+Date = "2022-06-11T12:05:00+01:00"
 Description = "Setting up an Apple Mac for development and systems administration"
 Categories = ["devops", "programming"]
 Tags = ["devops", "macos", "golang", "java", "javascript", "python", "ruby"]
@@ -172,11 +172,11 @@ To enable colors in the output, which can be very helpful, enter this command:
 
 ### Text Editors
 
-Installations of macOS include a command-line version of [vim](http://www.vim.org/) and TextEdit, a desktop text editor. TextEdit is designed for light-weight word processing, and has no support for programming. Add the code editors or IDEs that you would prefer to use.
+Installations of macOS include a command-line version of [vim](http://www.vim.org/) and TextEdit, a desktop text editor. TextEdit is designed for light-weight word processing, and it has no support for programming. Add the code editors or IDEs that you would prefer to use.
 
 If you do not have a preferred editor, consider using a version of [Visual Studio Code](https://code.visualstudio.com). Read the next section for more details.
 
-To work with a modern Vim editor, install [Neovim](https://neovim.io).
+To use a modern code editor that works like Vim, install [Neovim](https://neovim.io).
 
 ### Visual Studio Code
 
@@ -343,7 +343,11 @@ To see a list of the available commands, type _jenv_ in a terminal window:
 
 ### Python Development: pyenv
 
-Current versions of macOS include a copy of Python 3, but this will not be the latest version of Python. Use Homebrew to install *pyenv*. This tool enables you to use multiple versions of Python.
+Current versions of macOS include a copy of Python 3, but this will not be the latest version of Python. Use Homebrew to install [pyenv](https://github.com/pyenv/pyenv). This tool enables you to use multiple versions of Python.
+
+To install pyenv with Homebrew, run this command in a terminal window:
+
+    brew install pyenv
 
 ### Rust Development: rustup
 
@@ -364,8 +368,7 @@ files into system directories.
 All macOS systems include a copy of Ruby, but it is outdated. To maintain current and
 clean Ruby environments, use the [RVM](https://rvm.io/) system.
 
-RVM relies on Git, so you must have a working installation of Git before you can set up
-RVM.
+RVM relies on Git, so you must have a working installation of Git before you can set up RVM.
 
 By default, RVM downloads copies of Ruby that have been compiled for your operating
 system. If there is no compiled version, RVM then falls back to downloading the source
