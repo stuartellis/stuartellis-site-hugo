@@ -1,7 +1,7 @@
 +++
 Title = "Links for GitLab"
 Slug = "gitlab"
-Date = "2022-07-03T19:52:00+01:00"
+Date = "2022-10-01T10:20:00+01:00"
 Description = "Links for GitLab"
 Type = "article"
 Toc = false
@@ -16,7 +16,7 @@ Useful links for working with GitLab.
 
 - [Login Page](https://gitlab.com/users/sign_in/)
 - [Status Page](https://status.gitlab.com/)
-- [GitLab.com Runners](https://docs.gitlab.com/ee/ci/runners/)
+- [Hosted Runners](https://docs.gitlab.com/ee/ci/runners/)
 
 ## Tools
 
@@ -31,3 +31,7 @@ Useful links for working with GitLab.
 - [Pipelines Documentation](https://docs.gitlab.com/ee/ci/pipelines/)
 - [GitLab Runner Application](https://docs.gitlab.com/runner/)
 - [.gitlab-ci.yml Configuration Reference](https://docs.gitlab.com/ee/ci/yaml/index.html)
+
+## Projects Documentation
+
+- [Advanced Search Syntax](https://docs.gitlab.com/ee/user/search/global_search/advanced_search_syntax.html)
