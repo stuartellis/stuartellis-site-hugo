@@ -32,5 +32,10 @@
 				"EditorConfig.EditorConfig"
 			]
 		}
+	},
+	"portsAttributes": {
+		"1313": {
+			"label": "Hugo Web"
+		}
 	}
 }
