@@ -1,7 +1,7 @@
 +++
 Title = "Task Automation with Ansible"
 Slug = "ansible"
-Date = "2022-01-22T12:09:00+00:00"
+Date = "2022-10-22T19:59:00+01:00"
 Description = "The Ansible task automation framework"
 Categories = ["automation", "python"]
 Tags = ["ansible", "automation", "devops", "python"]
@@ -14,7 +14,7 @@ Toc = true
 
 <!--more-->
 
-# How Ansible Works
+## How Ansible Works
 
 First, set up a copy of Ansible and the required configuration files on a _control machine_, which can just be the workstation of an administrator.
 
@@ -35,16 +35,15 @@ manage almost any system with Ansible, possibly starting with tasks that use low
 
 Ansible modules for online services work slightly differently. These modules connect from the control machine to the relevant server or cloud, and use the API that the service provides to send commands to it.
 
-### Ansible Automation Controller and Ansible Tower
+### Centralized Ansible Management
 
-If you need a central service for managing tasks and nodes, Red Hat offer
-[Ansible automation controller](https://www.ansible.com/products/controller). This replaces Ansible Tower.
+Several groups provide systems for managing your Ansible tasks and nodes in a central service. Two of these are the [Red Hat Ansible Automation Platform](https://www.ansible.com/products/controller) and [Ansible Semaphore](https://www.ansible-semaphore.com/).
 
-The software for Ansible Tower is developed as an Open Source project, called [AWX](https://github.com/ansible/awx). You may use AWX, rather than pay for Ansible Tower, but the project does not provide user support or long-term maintenance for releases.
+Red Hat offer the [Ansible Automation Platform](https://www.ansible.com/products/controller) for their customers. The software for this is developed as an Open Source project, called [AWX](https://github.com/ansible/awx). The AWX project does not provide user support or long-term maintenance for releases.
 
-None of the features of Ansible itself rely on Automation Controller, Ansible Tower or AWX.
+The [Ansible Semaphore](https://www.ansible-semaphore.com/) project provides a lightweight Web application. This offers a user interface with the essential features, but lacks integration with other services.
 
-# Setting Up a Control Machine
+## Setting Up a Control Machine
 
 To set up Ansible on a macOS or Linux system, first ensure that Python 3 and the pip utility are installed. Homebrew includes pip in the _python_ package, but some Linux distributions provide it in a separate package.
 
@@ -92,7 +91,7 @@ option significantly increases the performance of Ansible over SSH.
 Unfortunately, it means that commands that require root access will fail if
 _sudo_ has the _requiretty_ option enabled.
 
-# Ansible and Version Control
+## Ansible and Version Control
 
 Store your Ansible playbooks and roles in a source code repository. Ansible files can be placed in the same repository as the other files for a project.
 
@@ -105,7 +104,7 @@ If you expect to use an Ansible configuration file in the root directory of a pr
 > Use the [Vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html) feature to encrypt
 > any YAML file that stores password variables.
 
-# Directory Conventions for Ansible
+## Directory Conventions for Ansible
 
 These are standard directories for Ansible projects:
 
@@ -116,7 +115,7 @@ These are standard directories for Ansible projects:
 - library/ - Custom Ansible modules
 - roles/ - Custom roles used by the Ansible playbooks
 
-# Using Ansible
+## Using Ansible
 
 ### The Ansible Tools
 
@@ -198,7 +197,7 @@ _ansible-vault_, add _--ask-vault-pass_:
 
 Enter the password for the encrypted files when prompted.
 
-# Managing Microsoft Windows Systems
+## Managing Microsoft Windows Systems
 
 Ansible 2.1 and above support managing Windows systems. This means that they may
 communicate with Windows nodes using the WinRM and PowerShell Remoting
@@ -213,7 +212,7 @@ Each Windows node must meet these requirements to be managed with Ansible:
 
 The [Ansible documentation on Windows](https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html) includes a PowerShell script to set up remote access for you.
 
-# A Note on Generating Passwords
+## A Note on Generating Passwords
 
 You must specify the SHA512 hashed version of a user password when you set it
 through Ansible. By default, macOS does not generate the same hashes as
@@ -227,25 +226,25 @@ Enter the password that you would like to use at the prompt.
 
 Any YAML file that stores password variables should be encrypted using the [Vault](http://docs.ansible.com/playbooks_vault.html) feature of Ansible.
 
-# Recommended Tools
+## Recommended Tools
 
 - [Ansible Lint](https://docs.ansible.com/ansible-lint/) - Maintained by the Ansible team
 - [Molecule](https://molecule.readthedocs.io/) - Official test framework for Ansible roles
-- [Visual Studio Code extension for Ansible](https://marketplace.visualstudio.com/items?itemName=vscoss.vscode-ansible) - Maintained by Microsoft
+- [Visual Studio Code extension for Ansible](https://marketplace.visualstudio.com/items?itemName=redhat.ansible)
 
-# Third-Party Tools
+## Third-Party Tools
 
 - [Ansible interactive tutorial](https://github.com/turkenh/ansible-interactive-tutorial)
 - [ARA](https://ara.recordsansible.org/) - Ansible plugin to record playbook activity for support and troubleshooting
 
-# Additional Ansible Roles
+## Additional Ansible Roles
 
 - [Ansible Lockdown](https://ansiblelockdown.io/) - Project to maintain roles that configure systems to meet security standards
 - [Linux System Roles](https://linux-system-roles.github.io/) - Project to provide a standard set of Ansible roles for configuring Linux systems
 
-# Resources
+## Resources
 
 - [Ansible Documentation](https://docs.ansible.com/ansible/latest/)
 - [Ansible Module Index](https://docs.ansible.com/ansible/latest/collections/index.html) - Documentation for standard modules
 - [Ansible for DevOps](https://www.ansiblefordevops.com), by Jeff Geerling - The most popular book on Ansible
-- [Ansible Lightbulb](https://ansible.github.io/lightbulb/) - Material for running training workshops on Ansible
+- [Red Hat Ansible Automation Platform Workshops](https://aap2.demoredhat.com/) - Material for running training workshops on Ansible
