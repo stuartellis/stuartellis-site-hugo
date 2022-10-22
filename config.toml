@@ -11,7 +11,7 @@ bio = "DevOps Engineer"
 avatar = "img/avatar.png"
 
 [Params]
-subtitle = "Notes taken" # Subtitle of your site. Used in site header
+subtitle = "" # Subtitle of your site. Used in site header
 description = "Personal notes" # Site description. Used in meta description
 copyright = "Stuart Ellis" # copyright holder, otherwise will use site title
 opengraph = false # Enable OpenGraph if true
