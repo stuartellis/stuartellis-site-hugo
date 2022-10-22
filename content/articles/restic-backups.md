@@ -24,9 +24,9 @@ A restic repository can be in a directory on the same computer as the source fil
 
 You also view and restore files from a repository with the restic command-line utility. This means that you can restore files from a repository to any computer that has a copy of restic.
 
-Since restic only handles the back up and restoration of files, you will need to use other tools to handle database exports, scheduling, logging, and notifications. You can [pipe the output of commands to restic](https://restic.readthedocs.io/en/stable/040_backup.html#reading-data-from-stdin), which enables you to turn data exports directly into snapshots.
+By design, restic only handles the back up and restoration of files. You need to use other software to handle database exports, scheduling, logging, and notifications. Since restic is a command-line tool, you can integrate it with any other product or utility that works with the command-line. For example, you can [pipe the output of commands to restic](https://restic.readthedocs.io/en/stable/040_backup.html#reading-data-from-stdin), which enables you to turn data exports directly into snapshots.
 
-To use restic you only need these things:
+To use restic itself you only need these things:
 
 1. A copy of the restic utility. It is a single file, so there is no setup or installation process
 2. The address or location of the repository. This can be provided as an environment variable.
@@ -34,6 +34,8 @@ To use restic you only need these things:
 4. The password for decrypting the repository. This can be provided as an environment variable or in a file.
 
 ## Setting Up restic
+
+> Ensure that you use restic version 0.14.0 or above. This is the first version that compresses backups.
 
 ### Creating a Remote Repository on S3
 
