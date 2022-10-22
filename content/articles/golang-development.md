@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2022-04-03T19:33:00+01:00"
+Date = "2022-10-022T16:13:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -154,11 +154,11 @@ such as [Arduino](https://www.arduino.cc/) boards.
 
 # Other Useful Libraries
 
-- [Blackfriday](https://github.com/russross/blackfriday) - Markdown processor
 - [decimal](https://godoc.org/github.com/ericlagergren/decimal) - Decimal support for Go
 - [etree](https://github.com/beevik/etree) - Parses and generates XML
 - [Fake](https://github.com/icrowley/fake) - Generates fake data
 - [go-cmp](https://github.com/google/go-cmp) - Package for comparing Go values in tests
+- [Goldmark](https://github.com/yuin/goldmark) - Markdown processor
 - [gonum](https://www.gonum.org/) - Packages for numeric and scientific work
 - [logrus](https://github.com/Sirupsen/logrus) - Structured logging for Go applications
 - [OpenAPI Toolkit](https://github.com/go-openapi) - Go libraries for [OpenAPI](https://www.openapis.org/)
