@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2022-10-022T16:13:00+01:00"
+Date = "2022-10-22T20:59:00+01:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -85,30 +85,21 @@ third-party packages, but you will need to handle many features and technical de
 yourself. These frameworks provide conventions and sets of tested components for your
 applications:
 
-- [chi](https://github.com/go-chi/chi) - A minimal router and middleware framework for
-  Web API services.
-- [Buffalo](https://gobuffalo.io) - A full set of integrated tools and components for
-  Web sites and applications.
-- [Echo](https://echo.labstack.com/) - A small, convenient framework for Web
-  applications
+- [Echo](https://echo.labstack.com/) - A small, convenient framework for Web applications
+- [chi](https://github.com/go-chi/chi) - A minimal router and middleware framework for Web API services.
+- [Buffalo](https://gobuffalo.io) - A full set of integrated tools and components for Web sites and applications.
 - [Go kit](https://gokit.io/) - Microservices in enterprise architectures
-
-The [Gorilla toolkit](http://www.gorillatoolkit.org/) is a popular collection of
-packages for developers who prefer to assemble their applications from individual
-components, rather than use one of the frameworks. For example, the _mux_ package from the Gorilla toolkit is often used as a direct replacement for the
-router that is provided by the Go standard library.
 
 Go Web applications can be deployed on a very wide variety of infrastructure. Cloud
 services such as [Google App Engine](https://cloud.google.com/appengine/),
 [Heroku](https://www.heroku.com/) and [Red Hat OpenShift](https://www.openshift.com)
 provide low-maintenance hosting, but you can set up any server to run Go applications.
 
-To produce applications for [AWS Lambda](https://aws.amazon.com/lambda/), use [Serverless](https://serverless.com/) or [Sparta](http://gosparta.io/).
+To produce applications for [AWS Lambda](https://aws.amazon.com/lambda/), use the [Serverless Framework](https://serverless.com/) or [AWS SAM](https://aws.amazon.com/serverless/sam/).
 
 # Web Clients
 
-The standard library for Go includes HTTP server and client software. These support both
-the HTTP 1.1 and HTTP/2 protocols. Use
+The standard library for Go includes HTTP server and client software. Use
 [resty](https://godoc.org/github.com/go-resty/resty) if you would like a more convenient
 API for REST client software.
 
@@ -123,13 +114,13 @@ components that are needed for database access, and you can use it in your own
 applications, but it is most valuable for the authors of libraries. In most cases, you
 should use a third-party database library.
 
-- [sqlx](http://jmoiron.github.io/sqlx/) - A convenient data access API that follows the
-  conventions of the Go standard library
-- [sqlboiler](https://github.com/volatiletech/sqlboiler) - A tool that generates full
-  sets of Go data access code for existing databases
-- [GORM](http://gorm.io/) - The most popular Object Relational Mapper for Go
-- [pop](https://github.com/gobuffalo/pop) - An Object Relational Mapper that is inspired
-  by ActiveRecord
+These libraries offer several different approaches:
+
+- [sqlx](http://jmoiron.github.io/sqlx/) - A convenient data access API that follows the conventions of the Go standard library
+- [sqlboiler](https://github.com/volatiletech/sqlboiler) - A tool that generates full sets of Go data access code for existing databases
+- [Ent](https://entgo.io/) - Object Relational Mapper that supports advanced use cases
+- [GORM](http://gorm.io/) - A popular Object Relational Mapper
+- [pop](https://github.com/gobuffalo/pop) - Object Relational Mapper for databases that strictly follow ActiveRecord conventions
 
 Whichever option you choose, you will also need a driver for the specific brand of
 database that your code will access. The most popular drivers are:
@@ -140,16 +131,20 @@ database that your code will access. The most popular drivers are:
 - [SQLite](https://mattn.github.io/go-sqlite3/)
 
 If you only need to store sets of data on the computer that runs your application,
-consider using [bbolt](https://godoc.org/go.etcd.io/bbolt) instead of a separate database. The bbolt package implements a
+consider using [Badger](https://dgraph.io/badger) instead of a separate SQL database. The Badger package implements a
 file-based key-value database system in pure Go.
 
 # Developing Command-line Tools
 
 The Go standard library includes the basic elements that you need to build your own command-line tools. Use the [Cobra](https://github.com/spf13/cobra) framework to create command-line tools with features such as sub-commands and autocompletion.
 
+# Developing Desktop Applications
+
+The [Wails](https://wails.io/) and [Fyne](https://fyne.io) projects provide tools for developing desktop applications with Go.
+
 # Robotics and Internet of Things
 
-[Gobot](http://gobot.io/) is the main package for working with robotics and hardware,
+[Gobot](http://gobot.io/) enables you to develop Go applications that work with robotics and hardware,
 such as [Arduino](https://www.arduino.cc/) boards.
 
 # Other Useful Libraries
