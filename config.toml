@@ -7,12 +7,12 @@ disqusShortname = "fieldnotes-1"
 
 [Author]
 name = "Stuart Ellis"
-bio = "DevOps Engineer"
-avatar = "img/avatar.png"
+bio = "Cloud Platform Engineer"
+avatar = ""
 
 [Params]
-subtitle = "" # Subtitle of your site. Used in site header
-description = "Personal notes" # Site description. Used in meta description
+subtitle = "An ongoing safari through the clouds..." # Subtitle of your site. Used in site header
+description = "Personal notes from software development and operations" # Site description. Used in meta description
 copyright = "Stuart Ellis" # copyright holder, otherwise will use site title
 opengraph = false # Enable OpenGraph if true
 twitter_cards = false # Enable Twitter Cards if true
