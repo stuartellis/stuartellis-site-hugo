@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2022-10-22T20:59:00+01:00"
+Date = "2022-12-23T21:18:00+00:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -26,7 +26,7 @@ Docker, Inc. maintain [Docker images](https://store.docker.com/images/golang) fo
 
 # Essential Tools
 
-### The Go Plugin for Your Code Editor
+## The Go Plugin for Your Code Editor
 
 The Open Source community around Go provides a range of tools for code quality and
 refactoring that are designed to be integrated with both editors and automated build
@@ -37,19 +37,12 @@ If you use [Visual Studio Code](https://code.visualstudio.com), install the Micr
 would prefer to use an IDE, JetBrains offer [GoLand](https://www.jetbrains.com/go/) as a
 commercial product.
 
-### Git for Version Control
+## Git for Version Control
 
-If you do not already use version control, you should install [Git](http://git-scm.com/)
-on your system. Git is now effectively the standard version control tool for developers.
-
-Version control is obviously vital for collaborating with other programmers. It also
-enables you to efficiently copy your application to other systems for testing,
-deployment and backup.
-
-If you have installed Git, Visual Studio Code will provide you with access to
+[Git](http://git-scm.com/) is effectively the standard version control tool for developers. If you have installed Git, Visual Studio Code and GoLand will provide you with access to
 information and features from Git directly in their user interfaces.
 
-### Code Quality
+## Code Quality
 
 Use [golangci-lint](https://golangci-lint.run/) to run a suite of
 quality checks on your code. This tools works with popular code editors and IDEs. You should also add golangci-lint to your Continuous Integration process, to ensure that the code that is submitted passes quality checks.
@@ -59,18 +52,13 @@ public Git repositories, using some of the standard quality checks. You do not n
 do anything to enable the service to analyse your project. If you wish, you may add a
 badge to the README in your repository that links to the Report Card for your project.
 
-### Dependency Management
-
-Version 1.11 of Go and above include support for [modules](https://github.com/golang/go/wiki/Modules). The previous standard for managing dependencies was [dep](https://golang.github.io/dep/).
-
 # Other Useful Tools
 
 - [Delve](https://github.com/derekparker/delve) - Debugger
 - [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports) - Removes unused import statements from Go code
 - [Gomacro](https://github.com/cosmos72/gomacro) - Interactive interpreter for Go
 - [GoReleaser](https://goreleaser.com/) - Release automation for Go projects
-
-Code editors with a Go plugin will integrate with Delve and goimports.
+- [staticcheck](https://staticcheck.io/) - Code linter for Go
 
 # Error Handling
 
@@ -85,10 +73,10 @@ third-party packages, but you will need to handle many features and technical de
 yourself. These frameworks provide conventions and sets of tested components for your
 applications:
 
-- [Echo](https://echo.labstack.com/) - A small, convenient framework for Web applications
-- [chi](https://github.com/go-chi/chi) - A minimal router and middleware framework for Web API services.
+- [Echo](https://echo.labstack.com) - A small, convenient framework for Web applications
+- [chi](https://go-chi.io) - A minimal router and middleware framework for Web API services.
 - [Buffalo](https://gobuffalo.io) - A full set of integrated tools and components for Web sites and applications.
-- [Go kit](https://gokit.io/) - Microservices in enterprise architectures
+- [Go kit](https://gokit.io) - Microservices in enterprise architectures
 
 Go Web applications can be deployed on a very wide variety of infrastructure. Cloud
 services such as [Google App Engine](https://cloud.google.com/appengine/),
@@ -99,15 +87,14 @@ To produce applications for [AWS Lambda](https://aws.amazon.com/lambda/), use th
 
 # Web Clients
 
-The standard library for Go includes HTTP server and client software. Use
-[resty](https://godoc.org/github.com/go-resty/resty) if you would like a more convenient
-API for REST client software.
-
-The [goquery](https://github.com/puerkitobio/goquery) library provides an implementation
+The standard library for Go includes HTTP server and client software. The [goquery](https://github.com/puerkitobio/goquery) library provides an implementation
 of the jQuery API for HTML parsing. [Colly](http://go-colly.org/) is a complete
 framework for Web scraping.
 
 # Accessing Databases
+
+If you only need to store sets of data on the computer that runs your application,
+consider using [Badger](https://dgraph.io/badger) instead of a separate SQL database. The Badger package implements a file-based key-value database system in pure Go.
 
 Go includes support for SQL in the standard library. This package provides the basic
 components that are needed for database access, and you can use it in your own
@@ -120,7 +107,6 @@ These libraries offer several different approaches:
 - [sqlboiler](https://github.com/volatiletech/sqlboiler) - A tool that generates full sets of Go data access code for existing databases
 - [Ent](https://entgo.io/) - Object Relational Mapper that supports advanced use cases
 - [GORM](http://gorm.io/) - A popular Object Relational Mapper
-- [pop](https://github.com/gobuffalo/pop) - Object Relational Mapper for databases that strictly follow ActiveRecord conventions
 
 Whichever option you choose, you will also need a driver for the specific brand of
 database that your code will access. The most popular drivers are:
@@ -130,10 +116,6 @@ database that your code will access. The most popular drivers are:
 - [PostgreSQL](https://github.com/lib/pq) (also recommended for CockroachDB)
 - [SQLite](https://mattn.github.io/go-sqlite3/)
 
-If you only need to store sets of data on the computer that runs your application,
-consider using [Badger](https://dgraph.io/badger) instead of a separate SQL database. The Badger package implements a
-file-based key-value database system in pure Go.
-
 # Developing Command-line Tools
 
 The Go standard library includes the basic elements that you need to build your own command-line tools. Use the [Cobra](https://github.com/spf13/cobra) framework to create command-line tools with features such as sub-commands and autocompletion.
@@ -142,23 +124,22 @@ The Go standard library includes the basic elements that you need to build your 
 
 The [Wails](https://wails.io/) and [Fyne](https://fyne.io) projects provide tools for developing desktop applications with Go.
 
-# Robotics and Internet of Things
+# Internet of Things
 
-[Gobot](http://gobot.io/) enables you to develop Go applications that work with robotics and hardware,
-such as [Arduino](https://www.arduino.cc/) boards.
+Use [TinyGo](https://tinygo.org/) to run Go on microcontrollers, as Arduino boards.
+
+[Gobot](http://gobot.io/) enables you to develop Go applications that work with robotics.
 
 # Other Useful Libraries
 
 - [decimal](https://godoc.org/github.com/ericlagergren/decimal) - Decimal support for Go
-- [etree](https://github.com/beevik/etree) - Parses and generates XML
 - [Fake](https://github.com/icrowley/fake) - Generates fake data
 - [go-cmp](https://github.com/google/go-cmp) - Package for comparing Go values in tests
 - [Goldmark](https://github.com/yuin/goldmark) - Markdown processor
 - [gonum](https://www.gonum.org/) - Packages for numeric and scientific work
-- [logrus](https://github.com/Sirupsen/logrus) - Structured logging for Go applications
 - [OpenAPI Toolkit](https://github.com/go-openapi) - Go libraries for [OpenAPI](https://www.openapis.org/)
-- [Plush](https://github.com/gobuffalo/plush) - Powerful templating system
 - [Viper](https://github.com/spf13/viper) - Configuration for Go applications
+- [zerolog](https://github.com/rs/zerolog) - Structured logging for Go applications
 
 # Resources
 
