@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2022-12-23T21:18:00+00:00"
+Date = "2022-12-23T22:31:00+00:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -134,8 +134,8 @@ Use [TinyGo](https://tinygo.org/) to run Go on microcontrollers, such as Arduino
 ## Other Useful Libraries
 
 - [decimal](https://godoc.org/github.com/ericlagergren/decimal) - Decimal support for Go
-- [Fake](https://github.com/icrowley/fake) - Generates fake data
 - [go-cmp](https://github.com/google/go-cmp) - Package for comparing Go values in tests
+- [Gofakeit](https://github.com/brianvoe/gofakeit) - Generates fake data
 - [Goldmark](https://github.com/yuin/goldmark) - Markdown processor
 - [go-mail](https://go-mail.dev/) - Library for formating and sending emails
 - [gonum](https://www.gonum.org/) - Packages for numeric and scientific work
