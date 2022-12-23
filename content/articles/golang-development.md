@@ -74,9 +74,9 @@ third-party packages, but you will need to handle many features and technical de
 yourself. These frameworks provide conventions and sets of tested components for your
 applications:
 
-- [Echo](https://echo.labstack.com) - A small, convenient framework for Web applications
-- [chi](https://go-chi.io) - A minimal router and middleware framework for Web API services.
-- [Buffalo](https://gobuffalo.io) - A full set of integrated tools and components for Web sites and applications.
+- [Hugo](https://gohugo.io/) - A generator for static Websites
+- [Echo](https://echo.labstack.com/) - A small, convenient framework for Web applications
+- [chi](https://go-chi.io/) - A minimal router and middleware framework for Web API services.
 - [Go kit](https://gokit.io) - Microservices in enterprise architectures
 
 Go Web applications can be deployed on a very wide variety of infrastructure. Cloud
@@ -140,7 +140,11 @@ Use [TinyGo](https://tinygo.org/) to run Go on microcontrollers, such as Arduino
 - [go-mail](https://go-mail.dev/) - Library for formating and sending emails
 - [gonum](https://www.gonum.org/) - Packages for numeric and scientific work
 - [OpenAPI Toolkit](https://github.com/go-openapi) - Go libraries for [OpenAPI](https://www.openapis.org/)
+- [toml](https://github.com/BurntSushi/toml)
 - [Viper](https://github.com/spf13/viper) - Configuration for Go applications
+- [xmlwriter](https://github.com/shabbyrobe/xmlwriter) - XML generator
+- [xpath](https://github.com/antchfx/xpath) - XPath query library
+- [YAML](https://github.com/go-yaml/yaml)
 - [zerolog](https://github.com/rs/zerolog) - Structured logging for Go applications
 
 ## Resources
