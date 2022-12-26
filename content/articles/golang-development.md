@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2022-12-26T08:52:00+00:00"
+Date = "2022-12-26T09:03:00+00:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -175,8 +175,8 @@ If a SQL database is not appropriate, consider using [bbolt](https://pkg.go.dev/
 
 ## Other Useful Libraries
 
-- [validator](https://github.com/go-playground/validator) - Validation, defined using struct tags
-- https://github.com/go-ozzo/ozzo-validation - Validation, based on functions
+- [ozzo-validation](https://github.com/go-ozzo/ozzo-validation) - Validations, based on functions
+- [validator](https://github.com/go-playground/validator) - Validations, defined using struct tags
 - [Viper](https://github.com/spf13/viper) - Configuration for Go applications
 - [Watermill](https://watermill.io/) - Library for event-driven applications
 - [zerolog](https://github.com/rs/zerolog) - Structured logging for Go applications
