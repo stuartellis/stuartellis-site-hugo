@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2022-12-24T12:52:00+00:00"
+Date = "2022-12-26T08:52:00+00:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -70,12 +70,6 @@ The Go standard library includes tools for testing. You may want to enhance your
 - [Gomacro](https://github.com/cosmos72/gomacro) - Interactive interpreter for Go
 - [GoReleaser](https://goreleaser.com/) - Release automation for Go projects
 
-## Error Handling
-
-Go assumes that error objects should be designed to match the needs of the particular
-application. The [errors](https://godoc.org/github.com/pkg/errors) package provides
-error objects that include stack traces.
-
 ## Web Applications
 
 You can develop Web applications in Go with just the standard library and a few
@@ -140,13 +134,14 @@ These libraries offer different approaches to SQL data access:
 - [sqlboiler](https://github.com/volatiletech/sqlboiler) - A tool that generates full sets of Go data access code for existing databases
 - [sqlc](https://sqlc.dev/) - A tool that generates Go data access code from specified SQL queries
 - [Ent](https://entgo.io/) - Object Relational Mapper that supports advanced use cases
-- [GORM](http://gorm.io/) - A popular Object Relational Mapper
 
-## Embedding a Database
+### Migrations for SQL Databases
 
-You can include a [SQLite for Go](https://gitlab.com/cznic/sqlite) in your applications. This provides the equivalent of a current version of SQLite3, but it is a pure Go library with no dependencies on C code.
+These projects manage schema migrations for SQL databases.
 
-If a SQL database is not appropriate, consider using [bbolt](https://pkg.go.dev/go.etcd.io/bbolt) or [Badger](https://dgraph.io/badger). These packages implement a file-based key-value database system in Go.
+[Goose](https://pressly.github.io/goose/) can either be used as separate command-line tool, or integrated into your Go  project.
+
+[Atlas](https://atlasgo.io/) is provided as a command-line tool, but it is also used by the [Ent](https://entgo.io/) ORM.
 
 ### Drivers for SQL Databases
 
@@ -158,18 +153,32 @@ The drivers for popular databases are:
 - [PostgreSQL](https://github.com/lib/pq) (also recommended for CockroachDB)
 - [SQLite](github.com/mattn/go-sqlite3)
 
-## Other Useful Libraries
+## Embedding a Database
+
+You can include a [SQLite for Go](https://gitlab.com/cznic/sqlite) in your applications. This provides the equivalent of a current version of SQLite3, but it is a pure Go library with no dependencies on C code.
+
+If a SQL database is not appropriate, consider using [bbolt](https://pkg.go.dev/go.etcd.io/bbolt) or [Badger](https://dgraph.io/badger). These packages implement file-based key-value database systems in Go.
+
+## Data Types
 
 - [decimal](https://github.com/shopspring/decimal) - Decimal support for Go
-- [Goldmark](https://github.com/yuin/goldmark) - Markdown processor
-- [go-mail](https://go-mail.dev/) - Library for formating and sending emails
 - [gonum](https://www.gonum.org/) - Packages for numeric and scientific work
-- [Viper](https://github.com/spf13/viper) - Configuration for Go applications
-- [Watermill](https://watermill.io/) - Library for event-driven applications
+- [uuid](https://github.com/google/uuid)
+
+## Data Formats
+
+- [go-mail](https://go-mail.dev/) - Library for formating and sending emails
+- [Goldmark](https://github.com/yuin/goldmark) - Markdown processor
 - [xmlwriter](https://github.com/shabbyrobe/xmlwriter) - XML generator
 - [xpath](https://github.com/antchfx/xpath) - XPath query library
-- [uuid](https://github.com/google/uuid)
 - [YAML](https://github.com/go-yaml/yaml)
+
+## Other Useful Libraries
+
+- [validator](https://github.com/go-playground/validator) - Validation, defined using struct tags
+- https://github.com/go-ozzo/ozzo-validation - Validation, based on functions
+- [Viper](https://github.com/spf13/viper) - Configuration for Go applications
+- [Watermill](https://watermill.io/) - Library for event-driven applications
 - [zerolog](https://github.com/rs/zerolog) - Structured logging for Go applications
 
 ## Resources
