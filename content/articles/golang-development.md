@@ -1,7 +1,7 @@
 +++
 Title = "Notes on Go Development"
 Slug = "golang-development"
-Date = "2022-12-26T09:03:00+00:00"
+Date = "2022-12-29T19:45:00+00:00"
 Description = "Notes on developing software with Go"
 Categories = ["programming"]
 Tags = ["golang"]
@@ -28,26 +28,16 @@ Docker, Inc. maintain [Docker images](https://store.docker.com/images/golang) fo
 
 ### The Go Plugin for Your Code Editor
 
-The Open Source community around Go provides a range of tools for code quality and
-refactoring that are designed to be integrated with both editors and automated build
-processes. Every popular editor has a plugin for Go support, which can use these
-standard utilities to check and refactor your code as you work.
-
 If you use [Visual Studio Code](https://code.visualstudio.com), install the Microsoft [plugin for Go](https://marketplace.visualstudio.com/items?itemName=ms-vscode.Go). Use the [vim-go](https://github.com/fatih/vim-go) plugin for Vim. If you
 would prefer to use an IDE, JetBrains offer [GoLand](https://www.jetbrains.com/go/) as a
 commercial product.
 
-### Git for Version Control
-
-[Git](http://git-scm.com/) is the standard version control tool for developers. If you have installed Git, Visual Studio Code and GoLand will provide you with access to
-information and features from Git directly in their user interfaces.
-
 ### Code Quality
 
-[staticcheck](https://staticcheck.io/) is the most popular code linter for Go. The Visual Studio Code extension for Go will use staticcheck.
+[staticcheck](https://staticcheck.io/) is the most popular code linter for Go. The Visual Studio Code extension for Go will install and use staticcheck.
 
 Use [golangci-lint](https://golangci-lint.run/) to run a suite of
-quality checks on your code, including staticcheck rules. This tools works with popular code editors and IDEs. You should also add golangci-lint to your Continuous Integration process, to ensure that the code that is submitted passes quality checks.
+quality checks on your code, including staticcheck rules. This tool works with popular code editors and IDEs. You should also add golangci-lint to your Continuous Integration process, to ensure that the code that is submitted passes quality checks.
 
 The [Go Report Card](https://goreportcard.com/) service analyses the Go software in
 public Git repositories, using some of the standard quality checks. You do not need to
@@ -65,9 +55,8 @@ The Go standard library includes tools for testing. You may want to enhance your
 
 ### Other Important Tools
 
-- [Delve](https://github.com/derekparker/delve) - Debugger
+- [Delve](https://github.com/go-delve/delve) - Debugger
 - [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports) - Removes unused import statements from Go code
-- [Gomacro](https://github.com/cosmos72/gomacro) - Interactive interpreter for Go
 - [GoReleaser](https://goreleaser.com/) - Release automation for Go projects
 
 ## Web Applications
@@ -124,7 +113,7 @@ The [Wails](https://wails.io/) and [Fyne](https://fyne.io) projects provide tool
 
 Go includes support for SQL in the standard library. The [database/sql](https://pkg.go.dev/database/sql) package provides the basic components that are needed for database access. You can use it in your own
 applications, but it is most valuable for the authors of libraries. In most cases, you
-should use a third-party data access library. In either case, you will need to install the appropriate driver for the database.
+should use a third-party library to work with SQL databases. In either case, you will need to install the appropriate driver for the database.
 
 ### Data Access with SQL
 
@@ -155,9 +144,11 @@ The drivers for popular databases are:
 
 ## Embedding a Database
 
-You can include a [SQLite for Go](https://gitlab.com/cznic/sqlite) in your applications. This provides the equivalent of a current version of SQLite3, but it is a pure Go library with no dependencies on C code.
+You can include a database feature in your Go application, rather than relying on a separate service.
 
-If a SQL database is not appropriate, consider using [bbolt](https://pkg.go.dev/go.etcd.io/bbolt) or [Badger](https://dgraph.io/badger). These packages implement file-based key-value database systems in Go.
+[SQLite for Go](https://gitlab.com/cznic/sqlite) provides the equivalent of a current version of SQLite, but it is a pure Go library with no dependencies on C code.
+
+If a SQL database is not appropriate, consider using [bbolt](https://pkg.go.dev/go.etcd.io/bbolt). This package implements a file-based key-value database system in Go.
 
 ## Data Types
 
@@ -175,6 +166,7 @@ If a SQL database is not appropriate, consider using [bbolt](https://pkg.go.dev/
 
 ## Other Useful Libraries
 
+- [go-git](https://pkg.go.dev/github.com/go-git/go-git) - Implementation of Git in Go
 - [ozzo-validation](https://github.com/go-ozzo/ozzo-validation) - Validations, based on functions
 - [validator](https://github.com/go-playground/validator) - Validations, defined using struct tags
 - [Viper](https://github.com/spf13/viper) - Configuration for Go applications
